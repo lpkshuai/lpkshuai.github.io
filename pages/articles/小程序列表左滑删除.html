@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>使用movable-area和movable-view实现列表项左滑取消收藏（其他操作同理） #### | Art Time</title>
+    <meta name="description" content=" 学习记录">
+    <link rel="icon" href="/Artist.png">
+    
+    <link rel="preload" href="/assets/css/0.styles.85645ac5.css" as="style"><link rel="preload" href="/assets/js/app.ea069912.js" as="script"><link rel="preload" href="/assets/js/2.280648e5.js" as="script"><link rel="preload" href="/assets/js/7.4c1791c2.js" as="script"><link rel="prefetch" href="/assets/js/10.881718dc.js"><link rel="prefetch" href="/assets/js/11.0fa0f2b2.js"><link rel="prefetch" href="/assets/js/12.d382afb3.js"><link rel="prefetch" href="/assets/js/13.23c3d041.js"><link rel="prefetch" href="/assets/js/14.b5f97d32.js"><link rel="prefetch" href="/assets/js/15.81241ea0.js"><link rel="prefetch" href="/assets/js/3.68c833bf.js"><link rel="prefetch" href="/assets/js/4.f08bac1b.js"><link rel="prefetch" href="/assets/js/5.2b7f881f.js"><link rel="prefetch" href="/assets/js/6.ddfea5a9.js"><link rel="prefetch" href="/assets/js/8.a1d34bed.js"><link rel="prefetch" href="/assets/js/9.60cd5175.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.85645ac5.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/Artist.png" alt="Art Time" class="logo"> <span class="site-name can-hide">Art Time</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="分类" class="dropdown-title"><span class="title">分类</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/articles/css优化性能.html" class="nav-link">文章</a></li><li class="dropdown-item"><!----> <a href="/pages/special/nothing.html" class="nav-link">其它</a></li></ul></div></div><div class="nav-item"><a href="/pages/special/nothing.html" class="nav-link">喜欢的事</a></div><div class="nav-item"><a href="https://github.com/lpkshuai" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="分类" class="dropdown-title"><span class="title">分类</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/articles/css优化性能.html" class="nav-link">文章</a></li><li class="dropdown-item"><!----> <a href="/pages/special/nothing.html" class="nav-link">其它</a></li></ul></div></div><div class="nav-item"><a href="/pages/special/nothing.html" class="nav-link">喜欢的事</a></div><div class="nav-item"><a href="https://github.com/lpkshuai" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>HTML</span> <!----></p> <!----></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>CSS</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/articles/css优化性能.html" class="sidebar-link">css性能优化</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>JavaScript</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/articles/js技巧.html" class="sidebar-link">JavaScript技巧</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Node</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/articles/node爬虫.html" class="sidebar-link">node简单爬虫</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>MiniProgram</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/articles/简单分页加载.html" class="sidebar-link">小程序简单分页加载</a></li><li><a href="/pages/articles/小程序返回上一页并刷新内容.html" class="sidebar-link">返回上一页并刷新</a></li><li><a href="/pages/articles/小程序列表左滑删除.html" class="active sidebar-link">小程序列表左滑操作</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h4 id="使用movable-area和movable-view实现列表项左滑取消收藏（其他操作同理）"><a href="#使用movable-area和movable-view实现列表项左滑取消收藏（其他操作同理）" class="header-anchor">#</a> 使用<code>movable-area</code>和<code>movable-view</code>实现列表项左滑取消收藏（其他操作同理）</h4> <blockquote><p>效果：<img src="/assets/img/moveleft.e7301437.gif" alt=""></p></blockquote> <p>wxml：</p> <pre><code>&lt;movable-area style=&quot;height:200rpx;width:690rpx;overflow:hidden;&quot; 
+              class=&quot;mb-20 bs-e0 br-32&quot;&gt;
+  &lt;movable-view style=&quot;height:200rpx;width:910rpx;&quot; 
+                x=&quot;&quot; y=&quot;&quot; 
+                direction=&quot;horizontal&quot;
+                catchtouchstart='touchStart' 
+                catchtouchend=&quot;touchEnd&quot;
+  &gt;
+    &lt;view class=&quot;favourite-list&quot;&gt;
+      &lt;image src=&quot;/images/register-img.png&quot;&gt;&lt;/image&gt;
+      &lt;view class=&quot;book-info&quot;&gt;
+    &lt;view class=&quot;mb-15 mxw-470 ellipse1&quot;&gt;新版林格伦作品选集·美绘版&lt;/view&gt;
+    &lt;view class=&quot;fs-20 c-999 mb-10 mxw-470 ellipse1&quot;&gt;阿斯特里德·林格伦/中国少年儿童出版社/2009-10-11&lt;/view&gt;
+    &lt;view class=&quot;fs-24&quot;&gt;原价:18.00元&lt;/view&gt;
+      &lt;/view&gt;
+      &lt;view class=&quot;cancel fs-24 c-fff&quot;&gt;取消收藏&lt;/view&gt;
+    &lt;/view&gt;
+  &lt;/movable-view&gt;
+&lt;/movable-area&gt;
+</code></pre> <blockquote><p>文档：<a href="https://developers.weixin.qq.com/miniprogram/dev/component/movable-view.html" target="_blank" rel="noopener noreferrer">https://developers.weixin.qq.com/miniprogram/dev/component/movable-view.html<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></blockquote> <p>部分样式：</p> <pre><code>.favourite-list {
+  display: flex;
+  align-items: center;
+  height: 200rpx;
+  padding: 0 0 0 30rpx;
+}
+.favourite-list image {
+  width: 140rpx;
+  height: 140rpx;
+  margin-right: 20rpx;
+  border-radius: 16rpx;
+}
+.favourite-list .book-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.favourite-list .cancel {
+  width:220rpx;
+  height:200rpx;
+  line-height: 200rpx;
+  margin-left: auto;
+  background:#FF7777;
+  text-align: center;
+}
+.mxw-470 {
+  max-width: 470rpx;
+}
+.ellipse1 {
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+</code></pre> <blockquote><p>其中的<code>margin-left: auto;</code>可以让取消收藏位于容器最右侧</p></blockquote> <p>js：</p> <pre><code>data: {
+  x: 0,
+  y: 0
+},
+touchStart(e) {
+  // console.log(e)
+  this.setData({
+    &quot;startX&quot;: e.changedTouches[0].clientX,
+    &quot;startY&quot;: e.changedTouches[0].clientY
+  });
+},
+touchEnd(e) {
+  let endX = e.changedTouches[0].clientX;
+  let endY = e.changedTouches[0].clientY;
+  let startX = this.data.startX;
+  let startY = this.data.startY;
+  let percentage = wx.getSystemInfoSync().windowWidth / 750;
+  let x = 220 * percentage;
+  if (endX - startX &gt; 50 &amp;&amp; Math.abs(endY - startY) &lt; 50) {  //右滑
+    this.setData({
+      x
+    })
+  } else if (endX - startX &lt; -50 &amp;&amp; Math.abs(endY - startY) &lt; 50) {   //左滑
+    this.setData({
+      x: -x
+    })
+  } else {
+    this.setData({
+      x: 0
+    })
+  }
+},
+</code></pre> <blockquote><p>这里的单位需要将rpx转为px</p> <p>rpx（responsive pixel）: 可以根据屏幕宽度进行自适应。规定屏幕宽为750rpx。如在 iPhone6 上，屏幕宽度为375px，共有750个物理像素，则750rpx = 375px = 750物理像素，1rpx = 0.5px = 1物理像素。</p></blockquote> <p><img src="/assets/img/rpx.efb4fee4.png" alt=""></p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/pages/articles/小程序返回上一页并刷新内容.html" class="prev">返回上一页并刷新</a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.ea069912.js" defer></script><script src="/assets/js/2.280648e5.js" defer></script><script src="/assets/js/7.4c1791c2.js" defer></script>
+  </body>
+</html>
