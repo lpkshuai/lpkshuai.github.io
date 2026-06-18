@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: process.env.NODE_ENV === "production" ? "/lpkshuai.github.io" : "",
+  // basePath: process.env.NODE_ENV === "production" ? "/lpkshuai.github.io" : "",
 };
 
 export default nextConfig;
