@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[22016,["/_next/static/chunks/3rdqn8rx95pw7.js","/_next/static/chunks/14mrh2-p_w84d.js"],""]
+3:I[97367,["/_next/static/chunks/3rdqn8rx95pw7.js","/_next/static/chunks/14mrh2-p_w84d.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-20 space-y-8","children":[["$","$L2",null,{"href":"/notes","className":"text-sm text-foreground/60","children":"← Back to Notes"}],["$","header",null,{"children":[["$","p",null,{"className":"text-sm text-foreground/50","children":"Vue"}],["$","h1",null,{"className":"mt-2 text-3xl font-bold","children":"Vue Reactivity System"}],["$","p",null,{"className":"mt-4 text-foreground/70","children":"Understanding Vue reactivity."}]]}],["$","article",null,{"className":"prose prose-neutral","children":["$","p",null,{"children":"Content coming soon..."}]}]]}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"keP4p-po4A7jqJP1_Ditp"}
+5:null
