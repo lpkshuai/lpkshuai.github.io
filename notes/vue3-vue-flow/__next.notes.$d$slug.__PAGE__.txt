@@ -1,0 +1,49 @@
+1:"$Sreact.fragment"
+2:I[22016,["/_next/static/chunks/3rdqn8rx95pw7.js","/_next/static/chunks/14mrh2-p_w84d.js","/_next/static/chunks/0jbyd6i7518-9.js"],""]
+c:I[5500,["/_next/static/chunks/3rdqn8rx95pw7.js","/_next/static/chunks/14mrh2-p_w84d.js","/_next/static/chunks/0jbyd6i7518-9.js"],"Image"]
+d:I[97367,["/_next/static/chunks/3rdqn8rx95pw7.js","/_next/static/chunks/14mrh2-p_w84d.js"],"OutletBoundary"]
+e:"$Sreact.suspense"
+3:T409,<template>
+  <VueFlow v-model="elements" />
+</template>
+
+<script setup>
+import { VueFlow  } from '@vue-flow/core'
+
+const elements = ref([
+  // Nodes
+  // An input node, specified by using `type: 'input'`
+  { id: '1', type: 'input', label: 'Node 1', position: { x: 250, y: 5 } },
+
+  // Default nodes, you can omit `type: 'default'`
+  { id: '2', label: 'Node 2', position: { x: 100, y: 100 }, },
+  { id: '3', label: 'Node 3', position: { x: 400, y: 100 } },
+
+  // An output node, specified by using `type: 'output'`
+  { id: '4', type: 'output', label: 'Node 4', position: { x: 400, y: 200 } },
+
+  // Edges
+  // Most basic edge, only consists of an id, source-id and target-id
+  { id: 'e1-3', source: '1', target: '3' },
+
+  // An animated edge
+  { id: 'e1-2', source: '1', target: '2', animated: true },
+])
+</script>
+
+<style>
+/* these are necessary styles for vue flow */
+@import "@vue-flow/core/dist/style.css";
+
+/* this contains the default theme, these are optional styles */
+@import "@vue-flow/core/dist/theme-default.css";
+</style>0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-20","children":[["$","$L2",null,{"href":"/notes","className":"text-sm text-foreground/60 transition hover:text-foreground","children":"Back to Notes"}],["$","header",null,{"className":"mt-10 border-b border-white/10 pb-10","children":[["$","div",null,{"className":"flex flex-wrap gap-2","children":[["$","span",null,{"className":"rounded-full bg-[var(--accent)]/10 px-2.5 py-1 text-xs text-[var(--accent)]","children":"Vue"}],["$","span",null,{"className":"rounded-full border border-white/10 px-2.5 py-1 text-xs text-foreground/55","children":"Snippet"}],["$","span",null,{"className":"rounded-full border border-white/10 px-2.5 py-1 text-xs text-foreground/55","children":"Published"}]]}],["$","h1",null,{"className":"mt-5 text-4xl font-bold tracking-tight","children":"Vue3 流程图组件库 Vue Flow 简单使用"}],["$","p",null,{"className":"mt-4 text-lg leading-8 text-foreground/65","children":"记录 Vue Flow 流程图组件库的使用。"}],["$","div",null,{"className":"mt-6 flex flex-wrap items-center gap-3 text-sm text-foreground/45","children":[["$","time",null,{"dateTime":"2023-01-03","children":["Updated ","2023-01-03"]}],["$","span",null,{"children":"1 min read"}],["$","a",null,{"href":"https://www.cnblogs.com/lpkshuai","target":"_blank","rel":"noreferrer","className":"transition hover:text-foreground","children":["Source: ","Cnblogs"]}]]}],["$","div",null,{"className":"mt-5 flex flex-wrap gap-2","children":[["$","span","Vue",{"className":"rounded-full bg-white/[0.04] px-2 py-1 text-xs text-foreground/55","children":"Vue"}],["$","span","Frontend",{"className":"rounded-full bg-white/[0.04] px-2 py-1 text-xs text-foreground/55","children":"Frontend"}],["$","span","Snippet",{"className":"rounded-full bg-white/[0.04] px-2 py-1 text-xs text-foreground/55","children":"Snippet"}]]}]]}],["$","article",null,{"className":"mt-10","children":["$","div",null,{"className":"space-y-6","children":[["$","h2","0",{"className":"font-semibold tracking-tight text-foreground pt-4 text-3xl","children":["官网"]}],["$","p","1",{"className":"leading-8 text-foreground/70","children":["",["$","a","1",{"href":"https://vueflow.dev/","target":"_blank","rel":"noreferrer","className":"text-[var(--accent)] underline decoration-white/20 underline-offset-4 transition hover:text-[var(--accent-strong)]","children":"Vue Flow 官网"}]," ",["$","a","3",{"href":"https://github.com/bcakmakoglu/vue-flow","target":"_blank","rel":"noreferrer","className":"text-[var(--accent)] underline decoration-white/20 underline-offset-4 transition hover:text-[var(--accent-strong)]","children":"Vue Flow GitHub"}],""]}],["$","h2","2",{"className":"font-semibold tracking-tight text-foreground pt-4 text-3xl","children":["安装"]}],["$","div","3",{"className":"overflow-hidden rounded-lg border border-white/10 bg-black/30","children":[null,["$","pre",null,{"className":"overflow-x-auto p-4 text-sm leading-7 text-foreground/75","children":["$","code",null,{"children":"npm i --save @vue-flow/core\n\nyarn add @vue-flow/core\n\npnpm i @vue-flow/core"}]}]]}],["$","h2","4",{"className":"font-semibold tracking-tight text-foreground pt-4 text-3xl","children":["使用"]}],["$","div","5",{"className":"overflow-hidden rounded-lg border border-white/10 bg-black/30","children":[null,["$","pre",null,{"className":"overflow-x-auto p-4 text-sm leading-7 text-foreground/75","children":["$","code",null,{"children":"$3"}]}]]}],"$L4","$L5","$L6","$L7","$L8","$L9"]}]}]]}],["$La"],"$Lb"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"pDlQpVPabBrlpAB9_SM13"}
+4:["$","figure","6",{"className":"overflow-hidden rounded-lg border border-white/10 bg-white/[0.03]","children":[["$","$Lc",null,{"src":"https://img2023.cnblogs.com/blog/1857566/202301/1857566-20230103165738635-922559221.png","alt":"image","width":1200,"height":720,"className":"h-auto w-full","unoptimized":true}],["$","figcaption",null,{"className":"border-t border-white/10 px-4 py-3 text-sm text-foreground/45","children":"image"}]]}]
+5:["$","p","7",{"className":"leading-8 text-foreground/70","children":["常用功能："]}]
+6:["$","ol","8",{"className":"space-y-2 pl-5 leading-7 text-foreground/70 list-decimal","children":[["$","li","画布居中",{"children":["画布居中"]}]]}]
+7:["$","div","9",{"className":"overflow-hidden rounded-lg border border-white/10 bg-black/30","children":[null,["$","pre",null,{"className":"overflow-x-auto p-4 text-sm leading-7 text-foreground/75","children":["$","code",null,{"children":"import { VueFlow, useVueFlow } from \"@vue-flow/core\";\nconst { onPaneReady } = useVueFlow();\nconst state = reactive({\n  instance: null,\n});\nonPaneReady((instance) => {\n  instance.fitView();\n  // 将对象缓存\n  state.instance = instance;\n});\n\n// 设置缩放级别\nstate.instance.fitView({ offset: { y: 50 } });\nstate.instance.zoomTo(1);"}]}]]}]
+8:["$","ol","10",{"className":"space-y-2 pl-5 leading-7 text-foreground/70 list-decimal","children":[["$","li","点击事件",{"children":["点击事件"]}]]}]
+9:["$","div","11",{"className":"overflow-hidden rounded-lg border border-white/10 bg-black/30","children":[null,["$","pre",null,{"className":"overflow-x-auto p-4 text-sm leading-7 text-foreground/75","children":["$","code",null,{"children":"  <VueFlow\n    v-model=\"flowElement\"\n    :style=\"{ background: 'transparent' }\"\n    :default-zoom=\"1\"\n    fit-view-on-init\n    @nodeClick=\"nodeClickHandler\"\n  />\n  const nodeClickHandler = (props) => {\n    const node = props.node;\n    console.log(node.id);\n  };"}]}]]}]
+a:["$","script","script-0",{"src":"/_next/static/chunks/0jbyd6i7518-9.js","async":true}]
+b:["$","$Ld",null,{"children":["$","$e",null,{"name":"Next.MetadataOutlet","children":"$@f"}]}]
+f:null

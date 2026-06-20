@@ -1,0 +1,194 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/chunks/0j24vi39tniy3.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/0dhbjz-xsmu83.js"/><script src="/_next/static/chunks/15orcrkp-_9ct.js" async=""></script><script src="/_next/static/chunks/3peubv2924kx4.js" async=""></script><script src="/_next/static/chunks/082obv3v03b-9.js" async=""></script><script src="/_next/static/chunks/turbopack-3czch9t65yeqo.js" async=""></script><script src="/_next/static/chunks/3rdqn8rx95pw7.js" async=""></script><script src="/_next/static/chunks/14mrh2-p_w84d.js" async=""></script><script src="/_next/static/chunks/0jbyd6i7518-9.js" async=""></script><link rel="icon" href="/favicon.ico?favicon.2vob68tjqpejf.ico" sizes="256x256" type="image/x-icon"/><script src="/_next/static/chunks/0cz1d0mv5g_q7.js" noModule=""></script></head><body><div hidden=""><!--$--><!--/$--></div><header class="sticky top-0 z-50 border-b border-white/[0.06] bg-white/[0.02] backdrop-blur-md"><div class="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-4 sm:flex-row sm:items-center sm:justify-between"><a class="text-sm font-bold tracking-[0.2em]" href="/">PERSONAL LAB</a><nav class="w-full overflow-x-auto sm:w-auto sm:overflow-visible" aria-label="Primary navigation"><ul class="flex min-w-max gap-1 text-sm text-foreground/70 sm:min-w-0"><li><a class="rounded-md px-3 py-2 transition hover:bg-white/10 hover:text-foreground" href="/">Home</a></li><li><a class="rounded-md px-3 py-2 transition hover:bg-white/10 hover:text-foreground" href="/notes">Notes</a></li><li><a class="rounded-md px-3 py-2 transition hover:bg-white/10 hover:text-foreground" href="/lab">Lab</a></li><li><a class="rounded-md px-3 py-2 transition hover:bg-white/10 hover:text-foreground" href="/projects">Projects</a></li><li><a class="rounded-md px-3 py-2 transition hover:bg-white/10 hover:text-foreground" href="/about">About</a></li></ul></nav></div></header><main class="mx-auto max-w-3xl px-6 py-20"><a class="text-sm text-foreground/60 transition hover:text-foreground" href="/notes">Back to Notes</a><header class="mt-10 border-b border-white/10 pb-10"><div class="flex flex-wrap gap-2"><span class="rounded-full bg-[var(--accent)]/10 px-2.5 py-1 text-xs text-[var(--accent)]">Vue</span><span class="rounded-full border border-white/10 px-2.5 py-1 text-xs text-foreground/55">Snippet</span><span class="rounded-full border border-white/10 px-2.5 py-1 text-xs text-foreground/55">Published</span></div><h1 class="mt-5 text-4xl font-bold tracking-tight">vue3 使用 html5-qrcode 实现扫描二维码功能</h1><p class="mt-4 text-lg leading-8 text-foreground/65">npm安装</p><div class="mt-6 flex flex-wrap items-center gap-3 text-sm text-foreground/45"><time dateTime="2026-06-20">Updated <!-- -->2026-06-20</time><span>2 min read</span><a href="https://www.cnblogs.com/lpkshuai" target="_blank" rel="noreferrer" class="transition hover:text-foreground">Source: <!-- -->Cnblogs</a></div><div class="mt-5 flex flex-wrap gap-2"><span class="rounded-full bg-white/[0.04] px-2 py-1 text-xs text-foreground/55">Vue</span><span class="rounded-full bg-white/[0.04] px-2 py-1 text-xs text-foreground/55">snippet</span><span class="rounded-full bg-white/[0.04] px-2 py-1 text-xs text-foreground/55">QRCode</span></div></header><article class="mt-10"><div class="space-y-6"><h3 class="font-semibold tracking-tight text-foreground pt-3 text-xl">1. 安装</h3><p class="leading-8 text-foreground/70">npm安装</p><div class="overflow-hidden rounded-lg border border-white/10 bg-black/30"><pre class="overflow-x-auto p-4 text-sm leading-7 text-foreground/75"><code>npm install --save-dev html5-qrcode</code></pre></div><p class="leading-8 text-foreground/70">或直接引入</p><div class="overflow-hidden rounded-lg border border-white/10 bg-black/30"><pre class="overflow-x-auto p-4 text-sm leading-7 text-foreground/75"><code>&lt;script src=&quot;https://unpkg.com/html5-qrcode&quot; type=&quot;text/javascript&quot;&gt;</code></pre></div><h3 class="font-semibold tracking-tight text-foreground pt-3 text-xl">2. 引入</h3><ol class="space-y-2 pl-5 leading-7 text-foreground/70 list-decimal"><li>根据需求自定义渲染 QR scanning UI 的容器。</li></ol><div class="overflow-hidden rounded-lg border border-white/10 bg-black/30"><pre class="overflow-x-auto p-4 text-sm leading-7 text-foreground/75"><code>&lt;div id=&quot;reader&quot; width=&quot;600px&quot;&gt;&lt;/div&gt;</code></pre></div><ol class="space-y-2 pl-5 leading-7 text-foreground/70 list-decimal"><li>引入 Html5Qrcode</li></ol><div class="overflow-hidden rounded-lg border border-white/10 bg-black/30"><pre class="overflow-x-auto p-4 text-sm leading-7 text-foreground/75"><code>// 简单模式（使用默认用户界面）
+import {Html5QrcodeScanner} from &quot;html5-qrcode&quot;;
+// 专业模式（使用自己的用户界面）
+import {Html5Qrcode} from &quot;html5-qrcode&quot;;</code></pre></div><blockquote class="border-l-2 border-[var(--accent)]/70 pl-4 text-foreground/65"><code class="rounded bg-white/[0.08] px-1.5 py-0.5 text-[0.9em] text-[var(--accent)]">Html5QrcodeScanner</code>允许您使用几行代码和默认用户界面实现端到端扫描仪，该用户界面允许使用相机进行扫描或从文件系统中选择图像。 <code class="rounded bg-white/[0.08] px-1.5 py-0.5 text-[0.9em] text-[var(--accent)]">Html5Qrcode</code>类用来设置 QR 码扫描仪（使用您自己的用户界面），并允许用户使用相机或通过选择文件系统中的图像文件或智能手机中的本机相机来扫描 QR 码。</blockquote><h3 class="font-semibold tracking-tight text-foreground pt-3 text-xl">3. 使用</h3><ol class="space-y-2 pl-5 leading-7 text-foreground/70 list-decimal"><li>如果使用 <code class="rounded bg-white/[0.08] px-1.5 py-0.5 text-[0.9em] text-[var(--accent)]">Html5QrcodeScanner</code>，系统默认</li></ol><div class="overflow-hidden rounded-lg border border-white/10 bg-black/30"><pre class="overflow-x-auto p-4 text-sm leading-7 text-foreground/75"><code>// 扫描成功
+function onScanSuccess(decodedText, decodedResult) {
+  console.log(`Code matched = ${decodedText}`, decodedResult);
+}
+// 扫描失败
+function onScanFailure(error) {
+  console.warn(`Code scan error = ${error}`);
+}
+// 创建并配置实例，渲染扫描仪
+let html5QrcodeScanner = new Html5QrcodeScanner(
+  &quot;reader&quot;,
+  { fps: 10, qrbox: {width: 250, height: 250} },
+  /* verbose= */ false);
+html5QrcodeScanner.render(onScanSuccess, onScanFailure);</code></pre></div><ol class="space-y-2 pl-5 leading-7 text-foreground/70 list-decimal"><li>如果使用 <code class="rounded bg-white/[0.08] px-1.5 py-0.5 text-[0.9em] text-[var(--accent)]">Html5Qrcode</code>，自定义</li></ol><p class="leading-8 text-foreground/70">获取相机id</p><div class="overflow-hidden rounded-lg border border-white/10 bg-black/30"><pre class="overflow-x-auto p-4 text-sm leading-7 text-foreground/75"><code>// 获取支持的相机列表
+Html5Qrcode.getCameras().then(devices =&gt; {
+  /**
+   * devices 类型为对象数组
+   * { id: &quot;id&quot;, label: &quot;label&quot; }
+   */
+  if (devices &amp;&amp; devices.length) {
+    let cameraId = devices[0].id;
+    // 开始扫描
+  }
+}).catch(err =&gt; {
+  // 处理错误
+});</code></pre></div><blockquote class="border-l-2 border-[var(--accent)]/70 pl-4 text-foreground/65">注意：如果未授予相机权限，会触发权限请求申请。 使用相机需要网站使用https协议， <a href="https://www.cnblogs.com/lpkshuai/p/17636869.html" target="_blank" rel="noreferrer" class="text-[var(--accent)] underline decoration-white/20 underline-offset-4 transition hover:text-[var(--accent-strong)]">vite 本地开启 https 调试参考随笔</a></blockquote><p class="leading-8 text-foreground/70">开始扫码</p><div class="overflow-hidden rounded-lg border border-white/10 bg-black/30"><pre class="overflow-x-auto p-4 text-sm leading-7 text-foreground/75"><code>// 开始扫码
+const html5QrCode = new Html5Qrcode(/* element id */ &quot;reader&quot;);
+html5QrCode.start(
+  cameraId,
+  {
+    fps: 10,    // 帧率，控制扫描速度
+    qrbox: { width: 250, height: 250 }  // 限制要用于扫描的取景器区域
+  },
+  (decodedText, decodedResult) =&gt; {
+    // 获取扫描结果
+  },
+  (errorMessage) =&gt; {
+    // 结果错误处理
+  })
+.catch((err) =&gt; {
+  // 无法扫描时的错误处理
+});</code></pre></div><blockquote class="border-l-2 border-[var(--accent)]/70 pl-4 text-foreground/65">您可以选择在构造函数中设置另一个参数，以verbose将所有日志打印到控制台 <code class="rounded bg-white/[0.08] px-1.5 py-0.5 text-[0.9em] text-[var(--accent)]">const html5QrCode = new Html5Qrcode(&quot;reader&quot;, /* verbose= */ true);</code></blockquote><p class="leading-8 text-foreground/70">停止</p><div class="overflow-hidden rounded-lg border border-white/10 bg-black/30"><pre class="overflow-x-auto p-4 text-sm leading-7 text-foreground/75"><code>html5QrCode.stop().then((ignore) =&gt; {
+  // 停止扫描
+}).catch((err) =&gt; {
+  // 停止失败处理
+});</code></pre></div><blockquote class="border-l-2 border-[var(--accent)]/70 pl-4 text-foreground/65">其它相关配置 !<a href="https://img2024.cnblogs.com/blog/1857566/202402/1857566-20240223153325436-1751554591.png" target="_blank" rel="noreferrer" class="text-[var(--accent)] underline decoration-white/20 underline-offset-4 transition hover:text-[var(--accent-strong)]">image</a></blockquote><h3 class="font-semibold tracking-tight text-foreground pt-3 text-xl">4. 完整示例</h3><p class="leading-8 text-foreground/70">页面</p><div class="overflow-hidden rounded-lg border border-white/10 bg-black/30"><pre class="overflow-x-auto p-4 text-sm leading-7 text-foreground/75"><code>&lt;template&gt;
+  &lt;div class=&quot;page-box&quot;&gt;
+    &lt;div class=&quot;qr-container&quot;&gt;
+      &lt;div class=&quot;qr-box&quot;&gt;
+        &lt;div id=&quot;reader&quot;&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;btn-box&quot;&gt;
+      &lt;div&gt;
+        &lt;van-icon name=&quot;arrow-left&quot; @click=&quot;clickBack&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+        &lt;van-uploader
+          v-model=&quot;state.fileList&quot;
+          :preview-image=&quot;false&quot;
+          :after-read=&quot;uploadImg&quot;
+        &gt;
+          &lt;van-icon name=&quot;photo-o&quot;
+        /&gt;&lt;/van-uploader&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;style scoped&gt;
+.page-box {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #000;
+}
+.qr-container {
+  position: relative;
+  width: 100%;
+  height: 90%;
+}
+.qr-box {
+  height: 100%;
+}
+#reader {
+  top: 50%;
+  left: 0;
+}
+.btn-box {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-top: auto;
+  padding: 12px;
+  color: #fff;
+  font-size: 28px;
+}
+&lt;/style&gt;</code></pre></div><p class="leading-8 text-foreground/70">逻辑</p><div class="overflow-hidden rounded-lg border border-white/10 bg-black/30"><pre class="overflow-x-auto p-4 text-sm leading-7 text-foreground/75"><code>&lt;script setup&gt;
+import { reactive, onMounted, onUnmounted } from &quot;vue&quot;;
+import { Html5Qrcode } from &quot;html5-qrcode&quot;;
+import { showToast } from &quot;vant&quot;;
+
+import useVueRouter from &quot;@/hooks/useRouter&quot;;
+const { goBack } = useVueRouter();
+
+const state = reactive({
+  html5QrCode: null,
+  fileList: [],
+});
+
+onMounted(() =&gt; {
+  getCamerasInfo();
+});
+onUnmounted(() =&gt; {
+  if (state.html5QrCode?.isScanning) {
+    stopScan();
+  }
+});
+
+const clickBack = () =&gt; {
+  goBack();
+};
+
+const getCamerasInfo = () =&gt; {
+  Html5Qrcode.getCameras()
+    .then((devices) =&gt; {
+      if (devices &amp;&amp; devices.length) {
+        state.html5QrCode = new Html5Qrcode(&quot;reader&quot;);
+        startScan();
+      }
+    })
+    .catch((err) =&gt; {
+      showToast({
+        message: &quot;摄像头无访问权限！&quot;,
+        duration: 2000,
+      });
+    });
+};
+
+const startScan = () =&gt; {
+  state.html5QrCode
+    .start(
+      { facingMode: &quot;environment&quot; },
+      {
+        fps: 1,
+        qrbox: { width: 250, height: 250 },
+      },
+      (decodedText, decodedResult) =&gt; {
+        showToast(decodedText, decodedResult);
+      }
+    )
+    .catch((err) =&gt; {
+      console.log(&quot;扫码失败&quot;, err);
+    });
+};
+
+const stopScan = () =&gt; {
+  state.html5QrCode
+    .stop()
+    .then((a) =&gt; {
+      console.log(&quot;已停止扫码&quot;, a);
+    })
+    .catch((err) =&gt; {
+      console.log(err);
+      showToast(&quot;停止失败&quot;);
+    });
+};
+
+const uploadImg = () =&gt; {
+  try {
+    window.qrcode.callback = (result) =&gt; {
+      showToast(result);
+    };
+    let file = state.fileList[0].file;
+    let reader = new FileReader();
+    reader.onload = (function () {
+      return function (e) {
+        window.qrcode.decode(e.target.result);
+      };
+    })(file);
+    reader.readAsDataURL(file);
+  } catch (error) {
+    console.log(error);
+    showToast({
+      message: &quot;识别失败！&quot;,
+      duration: 2000,
+    });
+  }
+};
+&lt;/script&gt;</code></pre></div><h3 class="font-semibold tracking-tight text-foreground pt-3 text-xl">5. 相关链接</h3><p class="leading-8 text-foreground/70"><a href="https://github.com/mebjas/html5-qrcode" target="_blank" rel="noreferrer" class="text-[var(--accent)] underline decoration-white/20 underline-offset-4 transition hover:text-[var(--accent-strong)]">GitHub地址</a> <a href="https://scanapp.org/html5-qrcode-docs/docs/intro" target="_blank" rel="noreferrer" class="text-[var(--accent)] underline decoration-white/20 underline-offset-4 transition hover:text-[var(--accent-strong)]">官方教程</a> <a href="https://blog.minhazav.dev/research/html5-qrcode" target="_blank" rel="noreferrer" class="text-[var(--accent)] underline decoration-white/20 underline-offset-4 transition hover:text-[var(--accent-strong)]">qrcode.minhazav.dev</a> <a href="https://www.cnblogs.com/lpkshuai/p/17636869.html" target="_blank" rel="noreferrer" class="text-[var(--accent)] underline decoration-white/20 underline-offset-4 transition hover:text-[var(--accent-strong)]">vite 本地开启 https</a></p></div></article></main><!--$--><!--/$--><script src="/_next/static/chunks/0dhbjz-xsmu83.js" id="_R_" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[22016,[\"/_next/static/chunks/3rdqn8rx95pw7.js\",\"/_next/static/chunks/14mrh2-p_w84d.js\",\"/_next/static/chunks/0jbyd6i7518-9.js\"],\"\"]\n3:I[39756,[\"/_next/static/chunks/3rdqn8rx95pw7.js\",\"/_next/static/chunks/14mrh2-p_w84d.js\"],\"default\"]\n4:I[37457,[\"/_next/static/chunks/3rdqn8rx95pw7.js\",\"/_next/static/chunks/14mrh2-p_w84d.js\"],\"default\"]\n6:I[97367,[\"/_next/static/chunks/3rdqn8rx95pw7.js\",\"/_next/static/chunks/14mrh2-p_w84d.js\"],\"OutletBoundary\"]\n7:\"$Sreact.suspense\"\na:I[97367,[\"/_next/static/chunks/3rdqn8rx95pw7.js\",\"/_next/static/chunks/14mrh2-p_w84d.js\"],\"ViewportBoundary\"]\nc:I[97367,[\"/_next/static/chunks/3rdqn8rx95pw7.js\",\"/_next/static/chunks/14mrh2-p_w84d.js\"],\"MetadataBoundary\"]\ne:I[68027,[\"/_next/static/chunks/3rdqn8rx95pw7.js\",\"/_next/static/chunks/14mrh2-p_w84d.js\"],\"default\",1]\n:HL[\"/_next/static/chunks/0j24vi39tniy3.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"c\":[\"\",\"notes\",\"vue3-html5-qrcode-41e695\"],\"q\":\"\",\"i\":false,\"f\":[[[\"\",{\"children\":[\"notes\",{\"children\":[[\"slug\",\"vue3-html5-qrcode-41e695\",\"d\",null],{\"children\":[\"__PAGE__\",{}]}]}]},\"$undefined\",\"$undefined\",16],[[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/chunks/0j24vi39tniy3.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-0\",{\"src\":\"/_next/static/chunks/3rdqn8rx95pw7.js\",\"async\":true,\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-1\",{\"src\":\"/_next/static/chunks/14mrh2-p_w84d.js\",\"async\":true,\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[\"$\",\"body\",null,{\"children\":[[\"$\",\"header\",null,{\"className\":\"sticky top-0 z-50 border-b border-white/[0.06] bg-white/[0.02] backdrop-blur-md\",\"children\":[\"$\",\"div\",null,{\"className\":\"mx-auto flex max-w-6xl flex-col gap-3 px-6 py-4 sm:flex-row sm:items-center sm:justify-between\",\"children\":[[\"$\",\"$L2\",null,{\"href\":\"/\",\"className\":\"text-sm font-bold tracking-[0.2em]\",\"children\":\"PERSONAL LAB\"}],[\"$\",\"nav\",null,{\"className\":\"w-full overflow-x-auto sm:w-auto sm:overflow-visible\",\"aria-label\":\"Primary navigation\",\"children\":[\"$\",\"ul\",null,{\"className\":\"flex min-w-max gap-1 text-sm text-foreground/70 sm:min-w-0\",\"children\":[[\"$\",\"li\",\"/\",{\"children\":[\"$\",\"$L2\",null,{\"href\":\"/\",\"className\":\"rounded-md px-3 py-2 transition hover:bg-white/10 hover:text-foreground\",\"children\":\"Home\"}]}],[\"$\",\"li\",\"/notes\",{\"children\":[\"$\",\"$L2\",null,{\"href\":\"/notes\",\"className\":\"rounded-md px-3 py-2 transition hover:bg-white/10 hover:text-foreground\",\"children\":\"Notes\"}]}],[\"$\",\"li\",\"/lab\",{\"children\":[\"$\",\"$L2\",null,{\"href\":\"/lab\",\"className\":\"rounded-md px-3 py-2 transition hover:bg-white/10 hover:text-foreground\",\"children\":\"Lab\"}]}],[\"$\",\"li\",\"/projects\",{\"children\":[\"$\",\"$L2\",null,{\"href\":\"/projects\",\"className\":\"rounded-md px-3 py-2 transition hover:bg-white/10 hover:text-foreground\",\"children\":\"Projects\"}]}],[\"$\",\"li\",\"/about\",{\"children\":[\"$\",\"$L2\",null,{\"href\":\"/about\",\"className\":\"rounded-md px-3 py-2 transition hover:bg-white/10 hover:text-foreground\",\"children\":\"About\"}]}]]}]}]]}]}],[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}]}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[\"$L5\",[[\"$\",\"script\",\"script-0\",{\"src\":\"/_next/static/chunks/0jbyd6i7518-9.js\",\"async\":true,\"nonce\":\"$undefined\"}]],[\"$\",\"$L6\",null,{\"children\":[\"$\",\"$7\",null,{\"name\":\"Next.MetadataOutlet\",\"children\":\"$@8\"}]}]]}],{},null,false,null]},null,false,\"$@9\"]},null,false,\"$@9\"]},null,false,null],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$La\",null,{\"children\":\"$Lb\"}],[\"$\",\"div\",null,{\"hidden\":true,\"children\":[\"$\",\"$Lc\",null,{\"children\":[\"$\",\"$7\",null,{\"name\":\"Next.Metadata\",\"children\":\"$Ld\"}]}]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$e\",[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/chunks/0j24vi39tniy3.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]]],\"S\":true,\"h\":null,\"s\":\"$undefined\",\"l\":\"$undefined\",\"p\":\"$undefined\",\"d\":\"$undefined\",\"b\":\"pDlQpVPabBrlpAB9_SM13\"}\n"])</script><script>self.__next_f.push([1,"f:[]\n9:\"$Wf\"\n"])</script><script>self.__next_f.push([1,"b:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n"])</script><script>self.__next_f.push([1,"10:I[27201,[\"/_next/static/chunks/3rdqn8rx95pw7.js\",\"/_next/static/chunks/14mrh2-p_w84d.js\"],\"IconMark\"]\n8:null\nd:[[\"$\",\"link\",\"0\",{\"rel\":\"icon\",\"href\":\"/favicon.ico?favicon.2vob68tjqpejf.ico\",\"sizes\":\"256x256\",\"type\":\"image/x-icon\"}],[\"$\",\"$L10\",\"1\",{}]]\n"])</script><script>self.__next_f.push([1,"5:[\"$\",\"main\",null,{\"className\":\"mx-auto max-w-3xl px-6 py-20\",\"children\":[[\"$\",\"$L2\",null,{\"href\":\"/notes\",\"className\":\"text-sm text-foreground/60 transition hover:text-foreground\",\"children\":\"Back to Notes\"}],[\"$\",\"header\",null,{\"className\":\"mt-10 border-b border-white/10 pb-10\",\"children\":[[\"$\",\"div\",null,{\"className\":\"flex flex-wrap gap-2\",\"children\":[[\"$\",\"span\",null,{\"className\":\"rounded-full bg-[var(--accent)]/10 px-2.5 py-1 text-xs text-[var(--accent)]\",\"children\":\"Vue\"}],[\"$\",\"span\",null,{\"className\":\"rounded-full border border-white/10 px-2.5 py-1 text-xs text-foreground/55\",\"children\":\"Snippet\"}],[\"$\",\"span\",null,{\"className\":\"rounded-full border border-white/10 px-2.5 py-1 text-xs text-foreground/55\",\"children\":\"Published\"}]]}],[\"$\",\"h1\",null,{\"className\":\"mt-5 text-4xl font-bold tracking-tight\",\"children\":\"vue3 使用 html5-qrcode 实现扫描二维码功能\"}],[\"$\",\"p\",null,{\"className\":\"mt-4 text-lg leading-8 text-foreground/65\",\"children\":\"npm安装\"}],[\"$\",\"div\",null,{\"className\":\"mt-6 flex flex-wrap items-center gap-3 text-sm text-foreground/45\",\"children\":[[\"$\",\"time\",null,{\"dateTime\":\"2026-06-20\",\"children\":[\"Updated \",\"2026-06-20\"]}],[\"$\",\"span\",null,{\"children\":\"2 min read\"}],[\"$\",\"a\",null,{\"href\":\"https://www.cnblogs.com/lpkshuai\",\"target\":\"_blank\",\"rel\":\"noreferrer\",\"className\":\"transition hover:text-foreground\",\"children\":[\"Source: \",\"Cnblogs\"]}]]}],[\"$\",\"div\",null,{\"className\":\"mt-5 flex flex-wrap gap-2\",\"children\":[[\"$\",\"span\",\"Vue\",{\"className\":\"rounded-full bg-white/[0.04] px-2 py-1 text-xs text-foreground/55\",\"children\":\"Vue\"}],[\"$\",\"span\",\"snippet\",{\"className\":\"rounded-full bg-white/[0.04] px-2 py-1 text-xs text-foreground/55\",\"children\":\"snippet\"}],[\"$\",\"span\",\"QRCode\",{\"className\":\"rounded-full bg-white/[0.04] px-2 py-1 text-xs text-foreground/55\",\"children\":\"QRCode\"}]]}]]}],[\"$\",\"article\",null,{\"className\":\"mt-10\",\"children\":[\"$\",\"div\",null,{\"className\":\"space-y-6\",\"children\":[[\"$\",\"h3\",\"0\",{\"className\":\"font-semibold tracking-tight text-foreground pt-3 text-xl\",\"children\":[\"1. 安装\"]}],[\"$\",\"p\",\"1\",{\"className\":\"leading-8 text-foreground/70\",\"children\":[\"npm安装\"]}],[\"$\",\"div\",\"2\",{\"className\":\"overflow-hidden rounded-lg border border-white/10 bg-black/30\",\"children\":[null,[\"$\",\"pre\",null,{\"className\":\"overflow-x-auto p-4 text-sm leading-7 text-foreground/75\",\"children\":[\"$\",\"code\",null,{\"children\":\"npm install --save-dev html5-qrcode\"}]}]]}],[\"$\",\"p\",\"3\",{\"className\":\"leading-8 text-foreground/70\",\"children\":[\"或直接引入\"]}],[\"$\",\"div\",\"4\",{\"className\":\"overflow-hidden rounded-lg border border-white/10 bg-black/30\",\"children\":[null,[\"$\",\"pre\",null,{\"className\":\"overflow-x-auto p-4 text-sm leading-7 text-foreground/75\",\"children\":[\"$\",\"code\",null,{\"children\":\"\u003cscript src=\\\"https://unpkg.com/html5-qrcode\\\" type=\\\"text/javascript\\\"\u003e\"}]}]]}],[\"$\",\"h3\",\"5\",{\"className\":\"font-semibold tracking-tight text-foreground pt-3 text-xl\",\"children\":[\"2. 引入\"]}],[\"$\",\"ol\",\"6\",{\"className\":\"space-y-2 pl-5 leading-7 text-foreground/70 list-decimal\",\"children\":[[\"$\",\"li\",\"根据需求自定义渲染 QR scanning UI 的容器。\",{\"children\":[\"根据需求自定义渲染 QR scanning UI 的容器。\"]}]]}],[\"$\",\"div\",\"7\",{\"className\":\"overflow-hidden rounded-lg border border-white/10 bg-black/30\",\"children\":[null,[\"$\",\"pre\",null,{\"className\":\"overflow-x-auto p-4 text-sm leading-7 text-foreground/75\",\"children\":[\"$\",\"code\",null,{\"children\":\"\u003cdiv id=\\\"reader\\\" width=\\\"600px\\\"\u003e\u003c/div\u003e\"}]}]]}],[\"$\",\"ol\",\"8\",{\"className\":\"space-y-2 pl-5 leading-7 text-foreground/70 list-decimal\",\"children\":[[\"$\",\"li\",\"引入 Html5Qrcode\",{\"children\":[\"引入 Html5Qrcode\"]}]]}],[\"$\",\"div\",\"9\",{\"className\":\"overflow-hidden rounded-lg border border-white/10 bg-black/30\",\"children\":[null,[\"$\",\"pre\",null,{\"className\":\"overflow-x-auto p-4 text-sm leading-7 text-foreground/75\",\"children\":[\"$\",\"code\",null,{\"children\":\"// 简单模式（使用默认用户界面）\\nimport {Html5QrcodeScanner} from \\\"html5-qrcode\\\";\\n// 专业模式（使用自己的用户界面）\\nimport {Html5Qrcode} from \\\"html5-qrcode\\\";\"}]}]]}],[\"$\",\"blockquote\",\"10\",{\"className\":\"border-l-2 border-[var(--accent)]/70 pl-4 text-foreground/65\",\"children\":[\"\",[\"$\",\"code\",\"1\",{\"className\":\"rounded bg-white/[0.08] px-1.5 py-0.5 text-[0.9em] text-[var(--accent)]\",\"children\":\"Html5QrcodeScanner\"}],\"允许您使用几行代码和默认用户界面实现端到端扫描仪，该用户界面允许使用相机进行扫描或从文件系统中选择图像。 \",\"$L11\",\"类用来设置 QR 码扫描仪（使用您自己的用户界面），并允许用户使用相机或通过选择文件系统中的图像文件或智能手机中的本机相机来扫描 QR 码。\"]}],\"$L12\",\"$L13\",\"$L14\",\"$L15\",\"$L16\",\"$L17\",\"$L18\",\"$L19\",\"$L1a\",\"$L1b\",\"$L1c\",\"$L1d\",\"$L1e\",\"$L1f\",\"$L20\",\"$L21\",\"$L22\",\"$L23\",\"$L24\",\"$L25\"]}]}]]}]\n"])</script><script>self.__next_f.push([1,"11:[\"$\",\"code\",\"3\",{\"className\":\"rounded bg-white/[0.08] px-1.5 py-0.5 text-[0.9em] text-[var(--accent)]\",\"children\":\"Html5Qrcode\"}]\n12:[\"$\",\"h3\",\"11\",{\"className\":\"font-semibold tracking-tight text-foreground pt-3 text-xl\",\"children\":[\"3. 使用\"]}]\n13:[\"$\",\"ol\",\"12\",{\"className\":\"space-y-2 pl-5 leading-7 text-foreground/70 list-decimal\",\"children\":[[\"$\",\"li\",\"如果使用 `Html5QrcodeScanner`，系统默认\",{\"children\":[\"如果使用 \",[\"$\",\"code\",\"1\",{\"className\":\"rounded bg-white/[0.08] px-1.5 py-0.5 text-[0.9em] text-[var(--accent)]\",\"children\":\"Html5QrcodeScanner\"}],\"，系统默认\"]}]]}]\n14:[\"$\",\"div\",\"13\",{\"className\":\"overflow-hidden rounded-lg border border-white/10 bg-black/30\",\"children\":[null,[\"$\",\"pre\",null,{\"className\":\"overflow-x-auto p-4 text-sm leading-7 text-foreground/75\",\"children\":[\"$\",\"code\",null,{\"children\":\"// 扫描成功\\nfunction onScanSuccess(decodedText, decodedResult) {\\n  console.log(`Code matched = ${decodedText}`, decodedResult);\\n}\\n// 扫描失败\\nfunction onScanFailure(error) {\\n  console.warn(`Code scan error = ${error}`);\\n}\\n// 创建并配置实例，渲染扫描仪\\nlet html5QrcodeScanner = new Html5QrcodeScanner(\\n  \\\"reader\\\",\\n  { fps: 10, qrbox: {width: 250, height: 250} },\\n  /* verbose= */ false);\\nhtml5QrcodeScanner.render(onScanSuccess, onScanFailure);\"}]}]]}]\n15:[\"$\",\"ol\",\"14\",{\"className\":\"space-y-2 pl-5 leading-7 text-foreground/70 list-decimal\",\"children\":[[\"$\",\"li\",\"如果使用 `Html5Qrcode`，自定义\",{\"children\":[\"如果使用 \",[\"$\",\"code\",\"1\",{\"className\":\"rounded bg-white/[0.08] px-1.5 py-0.5 text-[0.9em] text-[var(--accent)]\",\"children\":\"Html5Qrcode\"}],\"，自定义\"]}]]}]\n16:[\"$\",\"p\",\"15\",{\"className\":\"leading-8 text-foreground/70\",\"children\":[\"获取相机id\"]}]\n17:[\"$\",\"div\",\"16\",{\"className\":\"overflow-hidden rounded-lg border border-white/10 bg-black/30\",\"children\":[null,[\"$\",\"pre\",null,{\"className\":\"overflow-x-auto p-4 text-sm leading-7 text-foreground/75\",\"children\":[\"$\",\"code\",null,{\"children\":\"// 获取支持的相机列表\\nHtml5Qrcode.getCameras().then(devices =\u003e {\\n  /**\\n   * devices 类型为对象数组\\n   * { id: \\\"id\\\", label: \\\"label\\\" }\\n   */\\n  if (devices \u0026\u0026 devices.length) {\\n    let cameraId = devices[0].id;\\n    // 开始扫描\\n  }\\n}).catch(err =\u003e {\\n  // 处理错误\\n});\"}]}]]}]\n18:[\"$\",\"blockquote\",\"17\",{\"className\":\"border-l-2 border-[var(--accent)]/70 pl-4 text-foreground/65\",\"children\":[\"注意：如果未授予相机权限，会触发权限请求申请。 使用相机需要网站使用https协议， \",[\"$\",\"a\",\"1\",{\"href\":\"https://www.cnblogs.com/lpkshuai/p/17636869.html\",\"target\":\"_blank\",\"rel\":\"noreferrer\",\"className\":\"text-[var(--accent)] underline decoration-white/20 underline-offset-4 transition hover:text-[var(--accent-strong)]\",\"children\":\"vite 本地开启 https 调试参考随笔\"}],\"\"]}]\n19:[\"$\",\"p\",\"18\",{\"className\":\"leading-8 text-foreground/70\",\"children\":[\"开始扫码\"]}]\n1a:[\"$\",\"div\",\"19\",{\"className\":\"overflow-hidden rounded-lg border border-white/10 bg-black/30\",\"children\":[null,[\"$\",\"pre\",null,{\"className\":\"overflow-x-auto p-4 text-sm leading-7 text-foreground/75\",\"children\":[\"$\",\"code\",null,{\"children\":\"// 开始扫码\\nconst html5QrCode = new Html5Qrcode(/* element id */ \\\"reader\\\");\\nhtml5QrCode.start(\\n  cameraId,\\n  {\\n    fps: 10,    // 帧率，控制扫描速度\\n    qrbox: { width: 250, height: 250 }  // 限制要用于扫描的取景器区域\\n  },\\n  (decodedText, decodedResult) =\u003e {\\n    // 获取扫描结果\\n  },\\n  (errorMessage) =\u003e {\\n    // 结果错误处理\\n  })\\n.catch((err) =\u003e {\\n  // 无法扫描时的错误处理\\n});\"}]}]]}]\n1b:[\"$\",\"blockquote\",\"20\",{\"className\":\"border-l-2 border-[var(--accent)]/70 pl-4 text-foreground/65\",\"children\":[\"您可以选择在构造函数中设置另一个参数，以verbose将所有日志打印到控制台 \",[\"$\",\"code\",\"1\",{\"className\":\"rounded bg-white/[0.08] px-1.5 py-0.5 text-[0.9em] text-[var(--accent)]\",\"children\":\"const html5QrCode = new Html5Qrcode(\\\"reader\\\", /* verbose= */ true);\"}],\"\"]}]\n1c:[\"$\",\"p\",\"21\",{\"className\":\"leading-8 text-for"])</script><script>self.__next_f.push([1,"eground/70\",\"children\":[\"停止\"]}]\n1d:[\"$\",\"div\",\"22\",{\"className\":\"overflow-hidden rounded-lg border border-white/10 bg-black/30\",\"children\":[null,[\"$\",\"pre\",null,{\"className\":\"overflow-x-auto p-4 text-sm leading-7 text-foreground/75\",\"children\":[\"$\",\"code\",null,{\"children\":\"html5QrCode.stop().then((ignore) =\u003e {\\n  // 停止扫描\\n}).catch((err) =\u003e {\\n  // 停止失败处理\\n});\"}]}]]}]\n1e:[\"$\",\"blockquote\",\"23\",{\"className\":\"border-l-2 border-[var(--accent)]/70 pl-4 text-foreground/65\",\"children\":[\"其它相关配置 !\",[\"$\",\"a\",\"1\",{\"href\":\"https://img2024.cnblogs.com/blog/1857566/202402/1857566-20240223153325436-1751554591.png\",\"target\":\"_blank\",\"rel\":\"noreferrer\",\"className\":\"text-[var(--accent)] underline decoration-white/20 underline-offset-4 transition hover:text-[var(--accent-strong)]\",\"children\":\"image\"}],\"\"]}]\n1f:[\"$\",\"h3\",\"24\",{\"className\":\"font-semibold tracking-tight text-foreground pt-3 text-xl\",\"children\":[\"4. 完整示例\"]}]\n20:[\"$\",\"p\",\"25\",{\"className\":\"leading-8 text-foreground/70\",\"children\":[\"页面\"]}]\n21:[\"$\",\"div\",\"26\",{\"className\":\"overflow-hidden rounded-lg border border-white/10 bg-black/30\",\"children\":[null,[\"$\",\"pre\",null,{\"className\":\"overflow-x-auto p-4 text-sm leading-7 text-foreground/75\",\"children\":[\"$\",\"code\",null,{\"children\":\"\u003ctemplate\u003e\\n  \u003cdiv class=\\\"page-box\\\"\u003e\\n    \u003cdiv class=\\\"qr-container\\\"\u003e\\n      \u003cdiv class=\\\"qr-box\\\"\u003e\\n        \u003cdiv id=\\\"reader\\\"\u003e\u003c/div\u003e\\n      \u003c/div\u003e\\n    \u003c/div\u003e\\n    \u003cdiv class=\\\"btn-box\\\"\u003e\\n      \u003cdiv\u003e\\n        \u003cvan-icon name=\\\"arrow-left\\\" @click=\\\"clickBack\\\" /\u003e\\n      \u003c/div\u003e\\n      \u003cdiv\u003e\\n        \u003cvan-uploader\\n          v-model=\\\"state.fileList\\\"\\n          :preview-image=\\\"false\\\"\\n          :after-read=\\\"uploadImg\\\"\\n        \u003e\\n          \u003cvan-icon name=\\\"photo-o\\\"\\n        /\u003e\u003c/van-uploader\u003e\\n      \u003c/div\u003e\\n    \u003c/div\u003e\\n  \u003c/div\u003e\\n\u003c/template\u003e\\n\\n\u003cstyle scoped\u003e\\n.page-box {\\n  display: flex;\\n  flex-direction: column;\\n  height: 100%;\\n  background: #000;\\n}\\n.qr-container {\\n  position: relative;\\n  width: 100%;\\n  height: 90%;\\n}\\n.qr-box {\\n  height: 100%;\\n}\\n#reader {\\n  top: 50%;\\n  left: 0;\\n}\\n.btn-box {\\n  flex: 1;\\n  display: flex;\\n  justify-content: space-around;\\n  align-items: flex-start;\\n  margin-top: auto;\\n  padding: 12px;\\n  color: #fff;\\n  font-size: 28px;\\n}\\n\u003c/style\u003e\"}]}]]}]\n22:[\"$\",\"p\",\"27\",{\"className\":\"leading-8 text-foreground/70\",\"children\":[\"逻辑\"]}]\n26:T748,"])</script><script>self.__next_f.push([1,"\u003cscript setup\u003e\nimport { reactive, onMounted, onUnmounted } from \"vue\";\nimport { Html5Qrcode } from \"html5-qrcode\";\nimport { showToast } from \"vant\";\n\nimport useVueRouter from \"@/hooks/useRouter\";\nconst { goBack } = useVueRouter();\n\nconst state = reactive({\n  html5QrCode: null,\n  fileList: [],\n});\n\nonMounted(() =\u003e {\n  getCamerasInfo();\n});\nonUnmounted(() =\u003e {\n  if (state.html5QrCode?.isScanning) {\n    stopScan();\n  }\n});\n\nconst clickBack = () =\u003e {\n  goBack();\n};\n\nconst getCamerasInfo = () =\u003e {\n  Html5Qrcode.getCameras()\n    .then((devices) =\u003e {\n      if (devices \u0026\u0026 devices.length) {\n        state.html5QrCode = new Html5Qrcode(\"reader\");\n        startScan();\n      }\n    })\n    .catch((err) =\u003e {\n      showToast({\n        message: \"摄像头无访问权限！\",\n        duration: 2000,\n      });\n    });\n};\n\nconst startScan = () =\u003e {\n  state.html5QrCode\n    .start(\n      { facingMode: \"environment\" },\n      {\n        fps: 1,\n        qrbox: { width: 250, height: 250 },\n      },\n      (decodedText, decodedResult) =\u003e {\n        showToast(decodedText, decodedResult);\n      }\n    )\n    .catch((err) =\u003e {\n      console.log(\"扫码失败\", err);\n    });\n};\n\nconst stopScan = () =\u003e {\n  state.html5QrCode\n    .stop()\n    .then((a) =\u003e {\n      console.log(\"已停止扫码\", a);\n    })\n    .catch((err) =\u003e {\n      console.log(err);\n      showToast(\"停止失败\");\n    });\n};\n\nconst uploadImg = () =\u003e {\n  try {\n    window.qrcode.callback = (result) =\u003e {\n      showToast(result);\n    };\n    let file = state.fileList[0].file;\n    let reader = new FileReader();\n    reader.onload = (function () {\n      return function (e) {\n        window.qrcode.decode(e.target.result);\n      };\n    })(file);\n    reader.readAsDataURL(file);\n  } catch (error) {\n    console.log(error);\n    showToast({\n      message: \"识别失败！\",\n      duration: 2000,\n    });\n  }\n};\n\u003c/script\u003e"])</script><script>self.__next_f.push([1,"23:[\"$\",\"div\",\"28\",{\"className\":\"overflow-hidden rounded-lg border border-white/10 bg-black/30\",\"children\":[null,[\"$\",\"pre\",null,{\"className\":\"overflow-x-auto p-4 text-sm leading-7 text-foreground/75\",\"children\":[\"$\",\"code\",null,{\"children\":\"$26\"}]}]]}]\n24:[\"$\",\"h3\",\"29\",{\"className\":\"font-semibold tracking-tight text-foreground pt-3 text-xl\",\"children\":[\"5. 相关链接\"]}]\n25:[\"$\",\"p\",\"30\",{\"className\":\"leading-8 text-foreground/70\",\"children\":[\"\",[\"$\",\"a\",\"1\",{\"href\":\"https://github.com/mebjas/html5-qrcode\",\"target\":\"_blank\",\"rel\":\"noreferrer\",\"className\":\"text-[var(--accent)] underline decoration-white/20 underline-offset-4 transition hover:text-[var(--accent-strong)]\",\"children\":\"GitHub地址\"}],\" \",[\"$\",\"a\",\"3\",{\"href\":\"https://scanapp.org/html5-qrcode-docs/docs/intro\",\"target\":\"_blank\",\"rel\":\"noreferrer\",\"className\":\"text-[var(--accent)] underline decoration-white/20 underline-offset-4 transition hover:text-[var(--accent-strong)]\",\"children\":\"官方教程\"}],\" \",[\"$\",\"a\",\"5\",{\"href\":\"https://blog.minhazav.dev/research/html5-qrcode\",\"target\":\"_blank\",\"rel\":\"noreferrer\",\"className\":\"text-[var(--accent)] underline decoration-white/20 underline-offset-4 transition hover:text-[var(--accent-strong)]\",\"children\":\"qrcode.minhazav.dev\"}],\" \",[\"$\",\"a\",\"7\",{\"href\":\"https://www.cnblogs.com/lpkshuai/p/17636869.html\",\"target\":\"_blank\",\"rel\":\"noreferrer\",\"className\":\"text-[var(--accent)] underline decoration-white/20 underline-offset-4 transition hover:text-[var(--accent-strong)]\",\"children\":\"vite 本地开启 https\"}],\"\"]}]\n"])</script></body></html>

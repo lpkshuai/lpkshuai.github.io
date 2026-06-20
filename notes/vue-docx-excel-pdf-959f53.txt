@@ -1,0 +1,82 @@
+1:"$Sreact.fragment"
+2:I[22016,["/_next/static/chunks/3rdqn8rx95pw7.js","/_next/static/chunks/14mrh2-p_w84d.js","/_next/static/chunks/0jbyd6i7518-9.js"],""]
+3:I[39756,["/_next/static/chunks/3rdqn8rx95pw7.js","/_next/static/chunks/14mrh2-p_w84d.js"],"default"]
+4:I[37457,["/_next/static/chunks/3rdqn8rx95pw7.js","/_next/static/chunks/14mrh2-p_w84d.js"],"default"]
+6:I[97367,["/_next/static/chunks/3rdqn8rx95pw7.js","/_next/static/chunks/14mrh2-p_w84d.js"],"OutletBoundary"]
+7:"$Sreact.suspense"
+a:I[97367,["/_next/static/chunks/3rdqn8rx95pw7.js","/_next/static/chunks/14mrh2-p_w84d.js"],"ViewportBoundary"]
+c:I[97367,["/_next/static/chunks/3rdqn8rx95pw7.js","/_next/static/chunks/14mrh2-p_w84d.js"],"MetadataBoundary"]
+e:I[68027,["/_next/static/chunks/3rdqn8rx95pw7.js","/_next/static/chunks/14mrh2-p_w84d.js"],"default",1]
+:HL["/_next/static/chunks/0j24vi39tniy3.css","style"]
+0:{"P":null,"c":["","notes","vue-docx-excel-pdf-959f53"],"q":"","i":false,"f":[[["",{"children":["notes",{"children":[["slug","vue-docx-excel-pdf-959f53","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0j24vi39tniy3.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/3rdqn8rx95pw7.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/14mrh2-p_w84d.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"children":[["$","header",null,{"className":"sticky top-0 z-50 border-b border-white/[0.06] bg-white/[0.02] backdrop-blur-md","children":["$","div",null,{"className":"mx-auto flex max-w-6xl flex-col gap-3 px-6 py-4 sm:flex-row sm:items-center sm:justify-between","children":[["$","$L2",null,{"href":"/","className":"text-sm font-bold tracking-[0.2em]","children":"PERSONAL LAB"}],["$","nav",null,{"className":"w-full overflow-x-auto sm:w-auto sm:overflow-visible","aria-label":"Primary navigation","children":["$","ul",null,{"className":"flex min-w-max gap-1 text-sm text-foreground/70 sm:min-w-0","children":[["$","li","/",{"children":["$","$L2",null,{"href":"/","className":"rounded-md px-3 py-2 transition hover:bg-white/10 hover:text-foreground","children":"Home"}]}],["$","li","/notes",{"children":["$","$L2",null,{"href":"/notes","className":"rounded-md px-3 py-2 transition hover:bg-white/10 hover:text-foreground","children":"Notes"}]}],["$","li","/lab",{"children":["$","$L2",null,{"href":"/lab","className":"rounded-md px-3 py-2 transition hover:bg-white/10 hover:text-foreground","children":"Lab"}]}],["$","li","/projects",{"children":["$","$L2",null,{"href":"/projects","className":"rounded-md px-3 py-2 transition hover:bg-white/10 hover:text-foreground","children":"Projects"}]}],["$","li","/about",{"children":["$","$L2",null,{"href":"/about","className":"rounded-md px-3 py-2 transition hover:bg-white/10 hover:text-foreground","children":"About"}]}]]}]}]]}]}],["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L5",[["$","script","script-0",{"src":"/_next/static/chunks/0jbyd6i7518-9.js","async":true,"nonce":"$undefined"}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],{},null,false,null]},null,false,"$@9"]},null,false,"$@9"]},null,false,null],["$","$1","h",{"children":[null,["$","$La",null,{"children":"$Lb"}],["$","div",null,{"hidden":true,"children":["$","$Lc",null,{"children":["$","$7",null,{"name":"Next.Metadata","children":"$Ld"}]}]}],null]}],false]],"m":"$undefined","G":["$e",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0j24vi39tniy3.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"pDlQpVPabBrlpAB9_SM13"}
+f:[]
+9:"$Wf"
+b:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+10:I[27201,["/_next/static/chunks/3rdqn8rx95pw7.js","/_next/static/chunks/14mrh2-p_w84d.js"],"IconMark"]
+8:null
+d:[["$","link","0",{"rel":"icon","href":"/favicon.ico?favicon.2vob68tjqpejf.ico","sizes":"256x256","type":"image/x-icon"}],["$","$L10","1",{}]]
+11:T67b,<template>
+  <div class="flex flex-col h-full">
+    <div class="flex flex-col justify-center items-center bg-[#fff]">
+      <div class="flex items-center w-1200px tab-box">
+        <el-tabs v-model="activeName" class="custom-tabs">
+          <el-tab-pane label="用户协议" name="1"> </el-tab-pane>
+          <el-tab-pane label="隐私政策及授权使用协议" name="2"> </el-tab-pane>
+        </el-tabs>
+      </div>
+      <div class="content w-full" v-show="activeName === '1'">
+        <vue-office-docx :src="src" />
+      </div>
+      <div class="content w-full" v-show="activeName === '2'">
+        <vue-office-docx :src="src" />
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { ref, onMounted } from "vue";
+import VueOfficeDocx from "@vue-office/docx";
+import "@vue-office/docx/lib/index.css";
+
+const activeName = ref("1");
+const src = ref("");
+
+onMounted(() => {
+  getUrl();
+});
+const getUrl = async () => {
+  try {
+    const response = await fetch("/agreement.docx");
+    if (!response.ok) throw new Error("Network response was not ok");
+    const arrayBuffer = await response.arrayBuffer();
+    src1.value = arrayBuffer;
+  } catch (error) {
+    console.error("Failed to fetch the document:", error);
+  }
+};
+</script>
+
+<style scoped>
+.tab-box:deep(.el-tabs__header) {
+  margin: 0;
+}
+.tab-box:deep(.el-tabs__item) {
+  height: 58px;
+}
+.content:deep(.docx-wrapper) {
+  background: #f9fafb;
+}
+.content:deep(.docx-wrapper > section.docx) {
+  box-shadow: none;
+  background: #f9fafb;
+  padding: 0 !important;
+  width: 1200px !important;
+}
+.content:deep(.docx-wrapper > section.docx p) {
+  background: #f9fafb !important;
+}
+</style>5:["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-20","children":[["$","$L2",null,{"href":"/notes","className":"text-sm text-foreground/60 transition hover:text-foreground","children":"Back to Notes"}],["$","header",null,{"className":"mt-10 border-b border-white/10 pb-10","children":[["$","div",null,{"className":"flex flex-wrap gap-2","children":[["$","span",null,{"className":"rounded-full bg-[var(--accent)]/10 px-2.5 py-1 text-xs text-[var(--accent)]","children":"Vue"}],["$","span",null,{"className":"rounded-full border border-white/10 px-2.5 py-1 text-xs text-foreground/55","children":"Snippet"}],["$","span",null,{"className":"rounded-full border border-white/10 px-2.5 py-1 text-xs text-foreground/55","children":"Published"}]]}],["$","h1",null,{"className":"mt-5 text-4xl font-bold tracking-tight","children":"vue 在网页中预览(docx、excel、pdf)文件"}],["$","p",null,{"className":"mt-4 text-lg leading-8 text-foreground/65","children":"npm install @vue-office/docx vue-demi@0.14.6"}],["$","div",null,{"className":"mt-6 flex flex-wrap items-center gap-3 text-sm text-foreground/45","children":[["$","time",null,{"dateTime":"2026-06-20","children":["Updated ","2026-06-20"]}],["$","span",null,{"children":"1 min read"}],["$","a",null,{"href":"https://www.cnblogs.com/lpkshuai","target":"_blank","rel":"noreferrer","className":"transition hover:text-foreground","children":["Source: ","Cnblogs"]}]]}],["$","div",null,{"className":"mt-5 flex flex-wrap gap-2","children":[["$","span","Vue",{"className":"rounded-full bg-white/[0.04] px-2 py-1 text-xs text-foreground/55","children":"Vue"}],["$","span","snippet",{"className":"rounded-full bg-white/[0.04] px-2 py-1 text-xs text-foreground/55","children":"snippet"}],["$","span","PDF",{"className":"rounded-full bg-white/[0.04] px-2 py-1 text-xs text-foreground/55","children":"PDF"}],["$","span","Excel",{"className":"rounded-full bg-white/[0.04] px-2 py-1 text-xs text-foreground/55","children":"Excel"}]]}]]}],["$","article",null,{"className":"mt-10","children":["$","div",null,{"className":"space-y-6","children":[["$","h2","0",{"className":"font-semibold tracking-tight text-foreground pt-4 text-2xl","children":["1. 安装依赖："]}],["$","div","1",{"className":"overflow-hidden rounded-lg border border-white/10 bg-black/30","children":[null,["$","pre",null,{"className":"overflow-x-auto p-4 text-sm leading-7 text-foreground/75","children":["$","code",null,{"children":"#docx文档预览组件\nnpm install @vue-office/docx vue-demi@0.14.6\n\n#excel文档预览组件\nnpm install @vue-office/excel vue-demi@0.14.6\n\n#pdf文档预览组件\nnpm install @vue-office/pdf vue-demi@0.14.6"}]}]]}],["$","blockquote","2",{"className":"border-l-2 border-[var(--accent)]/70 pl-4 text-foreground/65","children":["vue2.6版本或以下还需要额外安装 @vue/composition-api ",["$","code","1",{"className":"rounded bg-white/[0.08] px-1.5 py-0.5 text-[0.9em] text-[var(--accent)]","children":"npm install @vue/composition-api"}],""]}],["$","h2","3",{"className":"font-semibold tracking-tight text-foreground pt-4 text-2xl","children":["2. 使用示例："]}],["$","div","4",{"className":"overflow-hidden rounded-lg border border-white/10 bg-black/30","children":[null,["$","pre",null,{"className":"overflow-x-auto p-4 text-sm leading-7 text-foreground/75","children":["$","code",null,{"children":"$11"}]}]]}],"$L12","$L13","$L14"]}]}]]}]
+12:["$","blockquote","5",{"className":"border-l-2 border-[var(--accent)]/70 pl-4 text-foreground/65","children":["文档地址可以使用网络地址，比如 https://\\*\\*\\*.docx； 也可以文件上传时预览，此时可以获取文件的ArrayBuffer或Blob"]}]
+13:["$","h2","6",{"className":"font-semibold tracking-tight text-foreground pt-4 text-2xl","children":["3. 相关链接："]}]
+14:["$","p","7",{"className":"leading-8 text-foreground/70","children":["",["$","a","1",{"href":"https://github.com/501351981/vue-office#readme","target":"_blank","rel":"noreferrer","className":"text-[var(--accent)] underline decoration-white/20 underline-offset-4 transition hover:text-[var(--accent-strong)]","children":"GitHub地址"}]," ",["$","a","3",{"href":"https://www.npmjs.com/package/@vue-office/docx","target":"_blank","rel":"noreferrer","className":"text-[var(--accent)] underline decoration-white/20 underline-offset-4 transition hover:text-[var(--accent-strong)]","children":"npm地址"}]," ",["$","a","5",{"href":"https://501351981.github.io/vue-office/examples/dist/#/docx","target":"_blank","rel":"noreferrer","className":"text-[var(--accent)] underline decoration-white/20 underline-offset-4 transition hover:text-[var(--accent-strong)]","children":"效果预览"}],""]}]
