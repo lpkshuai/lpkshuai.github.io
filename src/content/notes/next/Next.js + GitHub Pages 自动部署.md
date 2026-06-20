@@ -1,0 +1,174 @@
+# 🚀 Next.js + GitHub Pages 自动部署（CI/CD 笔记）
+
+## 🧠 一、整体流程
+
+main 分支（源码）
+→ push 到 GitHub
+→ GitHub Actions 触发
+→ npm install
+→ next build + export
+→ 生成 out/
+→ 推送 gh-pages 分支
+→ GitHub Pages 读取 gh-pages
+→ 网站上线
+
+## ⚙️ 二、Next.js 项目配置
+
+### 1. next.config.js
+
+```js
+/\*\* @type {import('next').NextConfig} \*/;
+const nextConfig = {
+  output: "export",
+  images: {
+    unoptimized: true,
+  },
+};
+
+module.exports = nextConfig;
+```
+
+### 2. package.json
+
+```json
+{
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build"
+  }
+}
+```
+
+\---
+
+## 🤖 三、GitHub Actions 自动部署
+
+### 1. 文件路径
+
+新建目录及文件：
+
+.github/workflows/deploy.yml
+
+---
+
+### 2. deploy.yml
+
+```yml
+name: Deploy Next.js to GitHub Pages
+
+on:
+  push:
+    branches: \[main]
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Next.js project
+        run: npm run build
+
+      - name: Export static site
+        run: npx next export
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github\_token: ${{ secrets.GITHUB\_TOKEN }}
+          publish\_dir: ./out
+```
+
+## 🌐 四、GitHub Pages 设置
+
+Settings → Pages
+
+Source: Deploy from branch
+Branch: gh-pages
+Folder: /
+
+## 📦 五、首次部署步骤
+
+git add .
+git commit -m "setup github pages deploy"
+git push
+
+## 🌍 六、访问地址
+
+https://your-username.github.io/
+
+## ⚠️ 七、常见问题
+
+### ❌ 1. 页面显示 README
+
+原因：没有 index.html 或未 export
+
+解决：
+npm run build
+npx next export
+
+---
+
+### ❌ 2. 图片不显示
+
+images:
+unoptimized: true
+
+---
+
+### ❌ 3. Actions 失败
+
+检查：
+Node 版本（18/20）
+npm install 是否成功
+build 是否报错
+
+---
+
+### ❌ 4. gh-pages 没更新
+
+检查：
+Actions 是否成功
+Pages 是否选择 gh-pages
+
+---
+
+## 🚀 八、完整流程总结
+
+开发 Next.js
+→ push GitHub
+→ Actions 自动构建
+→ out/ 静态文件生成
+→ gh-pages 分支
+→ GitHub Pages
+→ 网站上线
+
+## 🎯 九、效果
+
+✔ push 即部署
+✔ 自动构建
+✔ 自动发布
+✔ 无需手动上传
+✔ 完整 CI/CD
+
+## 🧠 十、可升级方向
+
+- pnpm + build 缓存优化
+- SEO 优化
+- 自定义域名
+- GitHub API 自动项目列表
+- monorepo 多项目部署

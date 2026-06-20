@@ -1,0 +1,281 @@
+### 1. 安装
+
+npm安装
+
+```
+npm install --save-dev html5-qrcode
+```
+
+或直接引入
+
+```
+<script src="https://unpkg.com/html5-qrcode" type="text/javascript">
+```
+
+### 2. 引入
+
+1. 根据需求自定义渲染 QR scanning UI 的容器。
+
+```
+<div id="reader" width="600px"></div>
+```
+
+2. 引入 Html5Qrcode
+
+```
+// 简单模式（使用默认用户界面）
+import {Html5QrcodeScanner} from "html5-qrcode";
+// 专业模式（使用自己的用户界面）
+import {Html5Qrcode} from "html5-qrcode";
+```
+
+> `Html5QrcodeScanner`允许您使用几行代码和默认用户界面实现端到端扫描仪，该用户界面允许使用相机进行扫描或从文件系统中选择图像。
+> `Html5Qrcode`类用来设置 QR 码扫描仪（使用您自己的用户界面），并允许用户使用相机或通过选择文件系统中的图像文件或智能手机中的本机相机来扫描 QR 码。
+
+### 3. 使用
+
+1. 如果使用 `Html5QrcodeScanner`，系统默认
+
+```
+// 扫描成功
+function onScanSuccess(decodedText, decodedResult) {
+  console.log(`Code matched = ${decodedText}`, decodedResult);
+}
+// 扫描失败
+function onScanFailure(error) {
+  console.warn(`Code scan error = ${error}`);
+}
+// 创建并配置实例，渲染扫描仪
+let html5QrcodeScanner = new Html5QrcodeScanner(
+  "reader",
+  { fps: 10, qrbox: {width: 250, height: 250} },
+  /* verbose= */ false);
+html5QrcodeScanner.render(onScanSuccess, onScanFailure);
+```
+
+2. 如果使用 `Html5Qrcode`，自定义
+
+获取相机id
+
+```
+// 获取支持的相机列表
+Html5Qrcode.getCameras().then(devices => {
+  /**
+   * devices 类型为对象数组
+   * { id: "id", label: "label" }
+   */
+  if (devices && devices.length) {
+    let cameraId = devices[0].id;
+    // 开始扫描
+  }
+}).catch(err => {
+  // 处理错误
+});
+```
+
+> 注意：如果未授予相机权限，会触发权限请求申请。
+> 使用相机需要网站使用https协议， [vite 本地开启 https 调试参考随笔](https://www.cnblogs.com/lpkshuai/p/17636869.html "vite 本地开启 https 调试参考随笔")
+
+开始扫码
+
+```
+// 开始扫码
+const html5QrCode = new Html5Qrcode(/* element id */ "reader");
+html5QrCode.start(
+  cameraId,
+  {
+    fps: 10,    // 帧率，控制扫描速度
+    qrbox: { width: 250, height: 250 }  // 限制要用于扫描的取景器区域
+  },
+  (decodedText, decodedResult) => {
+    // 获取扫描结果
+  },
+  (errorMessage) => {
+    // 结果错误处理
+  })
+.catch((err) => {
+  // 无法扫描时的错误处理
+});
+```
+
+> 您可以选择在构造函数中设置另一个参数，以verbose将所有日志打印到控制台
+> `const html5QrCode = new Html5Qrcode("reader", /* verbose= */ true);`
+
+停止
+
+```
+html5QrCode.stop().then((ignore) => {
+  // 停止扫描
+}).catch((err) => {
+  // 停止失败处理
+});
+```
+
+> 其它相关配置
+> ![image](https://img2024.cnblogs.com/blog/1857566/202402/1857566-20240223153325436-1751554591.png)
+
+### 4. 完整示例
+
+页面
+
+```
+<template>
+  <div class="page-box">
+    <div class="qr-container">
+      <div class="qr-box">
+        <div id="reader"></div>
+      </div>
+    </div>
+    <div class="btn-box">
+      <div>
+        <van-icon name="arrow-left" @click="clickBack" />
+      </div>
+      <div>
+        <van-uploader
+          v-model="state.fileList"
+          :preview-image="false"
+          :after-read="uploadImg"
+        >
+          <van-icon name="photo-o"
+        /></van-uploader>
+      </div>
+    </div>
+  </div>
+</template>
+
+<style scoped>
+.page-box {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #000;
+}
+.qr-container {
+  position: relative;
+  width: 100%;
+  height: 90%;
+}
+.qr-box {
+  height: 100%;
+}
+#reader {
+  top: 50%;
+  left: 0;
+}
+.btn-box {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-top: auto;
+  padding: 12px;
+  color: #fff;
+  font-size: 28px;
+}
+</style>
+```
+
+逻辑
+
+```
+<script setup>
+import { reactive, onMounted, onUnmounted } from "vue";
+import { Html5Qrcode } from "html5-qrcode";
+import { showToast } from "vant";
+
+import useVueRouter from "@/hooks/useRouter";
+const { goBack } = useVueRouter();
+
+const state = reactive({
+  html5QrCode: null,
+  fileList: [],
+});
+
+onMounted(() => {
+  getCamerasInfo();
+});
+onUnmounted(() => {
+  if (state.html5QrCode?.isScanning) {
+    stopScan();
+  }
+});
+
+const clickBack = () => {
+  goBack();
+};
+
+const getCamerasInfo = () => {
+  Html5Qrcode.getCameras()
+    .then((devices) => {
+      if (devices && devices.length) {
+        state.html5QrCode = new Html5Qrcode("reader");
+        startScan();
+      }
+    })
+    .catch((err) => {
+      showToast({
+        message: "摄像头无访问权限！",
+        duration: 2000,
+      });
+    });
+};
+
+const startScan = () => {
+  state.html5QrCode
+    .start(
+      { facingMode: "environment" },
+      {
+        fps: 1,
+        qrbox: { width: 250, height: 250 },
+      },
+      (decodedText, decodedResult) => {
+        showToast(decodedText, decodedResult);
+      }
+    )
+    .catch((err) => {
+      console.log("扫码失败", err);
+    });
+};
+
+const stopScan = () => {
+  state.html5QrCode
+    .stop()
+    .then((a) => {
+      console.log("已停止扫码", a);
+    })
+    .catch((err) => {
+      console.log(err);
+      showToast("停止失败");
+    });
+};
+
+const uploadImg = () => {
+  try {
+    window.qrcode.callback = (result) => {
+      showToast(result);
+    };
+    let file = state.fileList[0].file;
+    let reader = new FileReader();
+    reader.onload = (function () {
+      return function (e) {
+        window.qrcode.decode(e.target.result);
+      };
+    })(file);
+    reader.readAsDataURL(file);
+  } catch (error) {
+    console.log(error);
+    showToast({
+      message: "识别失败！",
+      duration: 2000,
+    });
+  }
+};
+</script>
+```
+
+### 5. 相关链接
+
+[GitHub地址](https://github.com/mebjas/html5-qrcode "GitHub地址")
+[官方教程](https://scanapp.org/html5-qrcode-docs/docs/intro "官方教程")
+[qrcode.minhazav.dev](https://blog.minhazav.dev/research/html5-qrcode "qrcode.minhazav.dev")
+[vite 本地开启 https](https://www.cnblogs.com/lpkshuai/p/17636869.html "vite 本地开启 https")
