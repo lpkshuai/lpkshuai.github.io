@@ -2,7 +2,7 @@
 
 在使用axios请求的时候一般会进行封装，如：
 
-```
+```js
 import axios from "axios";
 const request = axios.create({
   // baseURL: import.meta.env.VITE_APP_BASEURL,
@@ -15,7 +15,7 @@ export default request;
 
 在有些情况下需要动态修改baseURL或其他配置，此时可通过以下方法修改默认配置：
 
-```
+```js
 import request from "/xxx/xxx";
 request.defaults.baseURL = "http://xxxxxx";
 ```
@@ -28,7 +28,7 @@ request.defaults.baseURL = "http://xxxxxx";
 
 1. 直接请求
 
-```
+```js
 import request from "/xxx/xxx";
 const config = {
   baseUrl: "http://xxxxxx",
@@ -54,7 +54,7 @@ export function postData(params) {
 
 2. 请求方式别名
 
-```
+```js
 import request from "/xxx/xxx";
 const config = {
   baseUrl: "http://xxxxxx",

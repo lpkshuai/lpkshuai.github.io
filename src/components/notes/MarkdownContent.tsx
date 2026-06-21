@@ -1,15 +1,41 @@
+"use client";
+
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
 import rehypeRaw from "rehype-raw";
 import remarkBreaks from "remark-breaks";
-import "highlight.js/styles/github-dark.css";
+import { useTheme } from "@/contexts/ThemeContext";
+import { useEffect } from "react";
 
 type MarkdownContentProps = {
   content: string;
 };
 
 export default function MarkdownContent({ content }: MarkdownContentProps) {
+  const { theme } = useTheme();
+
+  useEffect(() => {
+    // 动态加载 highlight.js 样式
+    const loadHighlightStyle = async () => {
+      // 移除旧的样式
+      const existingLink = document.querySelector('link[data-highlight-style]');
+      if (existingLink) {
+        existingLink.remove();
+      }
+
+      // 根据主题加载对应的样式
+      const style = theme === "dark" ? "github-dark" : "github";
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = `https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/${style}.min.css`;
+      link.setAttribute("data-highlight-style", "true");
+      document.head.appendChild(link);
+    };
+
+    loadHighlightStyle();
+  }, [theme]);
+
   return (
     <div className="space-y-6 prose prose-invert max-w-none">
       <ReactMarkdown
@@ -69,7 +95,7 @@ export default function MarkdownContent({ content }: MarkdownContentProps) {
             const isInline = !className?.includes("language-");
             if (isInline) {
               return (
-                <code className="rounded bg-white/[0.08] px-1.5 py-0.5 text-[0.9em] text-[var(--accent)]">
+                <code className="rounded px-1.5 py-0.5 text-[0.9em] text-[var(--accent)]" style={{ backgroundColor: 'var(--accent-bg)' }}>
                   {children}
                 </code>
               );
@@ -79,7 +105,7 @@ export default function MarkdownContent({ content }: MarkdownContentProps) {
             );
           },
           pre: ({ children }) => (
-            <div className="overflow-hidden rounded-lg border border-white/10 bg-black/30">
+            <div className="overflow-hidden rounded-lg border border-white/10" style={{ backgroundColor: 'var(--panel)' }}>
               <pre className="overflow-x-auto p-4 text-sm leading-7">
                 {children}
               </pre>
