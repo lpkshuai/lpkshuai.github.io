@@ -1,9 +1,28 @@
 1:"$Sreact.fragment"
-2:I[22016,["/_next/static/chunks/159zmf7qigmp9.js","/_next/static/chunks/14mrh2-p_w84d.js"],""]
-9:I[97367,["/_next/static/chunks/159zmf7qigmp9.js","/_next/static/chunks/14mrh2-p_w84d.js"],"OutletBoundary"]
-a:"$Sreact.suspense"
-:HL["/_next/static/chunks/1e0n14egb9bme.css","style"]
-3:T67c,<template>
+2:I[22016,["/_next/static/chunks/34669d-qbhlaz.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/058eujvpmf-iw.js"],""]
+3:I[70831,["/_next/static/chunks/34669d-qbhlaz.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/058eujvpmf-iw.js"],"default"]
+7:I[97367,["/_next/static/chunks/34669d-qbhlaz.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
+8:"$Sreact.suspense"
+4:T996,## 1. 安装依赖：
+
+```
+#docx文档预览组件
+npm install @vue-office/docx vue-demi@0.14.6
+
+#excel文档预览组件
+npm install @vue-office/excel vue-demi@0.14.6
+
+#pdf文档预览组件
+npm install @vue-office/pdf vue-demi@0.14.6
+```
+
+> vue2.6版本或以下还需要额外安装 @vue/composition-api
+> `npm install @vue/composition-api`
+
+## 2. 使用示例：
+
+```
+<template>
   <div class="flex flex-col h-full">
     <div class="flex flex-col justify-center items-center bg-[#fff]">
       <div class="flex items-center w-1200px tab-box">
@@ -65,10 +84,17 @@ const getUrl = async () => {
   background: #f9fafb !important;
 }
 </style>
-0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-20","children":[["$","$L2",null,{"href":"/notes","className":"text-sm text-foreground-muted transition hover:text-foreground","children":"Back to Notes"}],["$","header",null,{"className":"mt-10 border-b border-white/10 pb-10","children":[["$","div",null,{"className":"flex flex-wrap gap-2","children":[["$","span",null,{"className":"rounded-full bg-[var(--accent-bg)] px-2.5 py-1 text-xs text-[var(--accent)]","children":"Vue"}],["$","span",null,{"className":"rounded-full border border-white/10 px-2.5 py-1 text-xs text-foreground-muted","children":"Snippet"}],["$","span",null,{"className":"rounded-full border border-white/10 px-2.5 py-1 text-xs text-foreground-muted","children":"Published"}]]}],["$","h1",null,{"className":"mt-5 text-4xl font-bold tracking-tight","children":"vue 在网页中预览(docx、excel、pdf)文件"}],["$","p",null,{"className":"mt-4 text-lg leading-8 text-foreground-muted","children":"npm install @vue-office/docx vue-demi@0.14.6"}],["$","div",null,{"className":"mt-6 flex flex-wrap items-center gap-3 text-sm text-foreground-dim","children":[["$","time",null,{"dateTime":"2026-06-20","children":["Updated ","2026-06-20"]}],["$","span",null,{"children":"1 min read"}],["$","a",null,{"href":"https://www.cnblogs.com/lpkshuai","target":"_blank","rel":"noreferrer","className":"transition hover:text-foreground","children":["Source: ","Cnblogs"]}]]}],["$","div",null,{"className":"mt-5 flex flex-wrap gap-2","children":[["$","span","Vue",{"className":"rounded-full bg-white/[0.04] px-2 py-1 text-xs text-foreground-muted","children":"Vue"}],["$","span","snippet",{"className":"rounded-full bg-white/[0.04] px-2 py-1 text-xs text-foreground-muted","children":"snippet"}],["$","span","PDF",{"className":"rounded-full bg-white/[0.04] px-2 py-1 text-xs text-foreground-muted","children":"PDF"}],["$","span","Excel",{"className":"rounded-full bg-white/[0.04] px-2 py-1 text-xs text-foreground-muted","children":"Excel"}]]}]]}],["$","article",null,{"className":"mt-10","children":["$","div",null,{"className":"space-y-6 prose prose-invert max-w-none","children":[["$","h2","h2-0",{"className":"text-2xl font-semibold tracking-tight text-foreground pt-4","children":"1. 安装依赖："}],"\n",["$","div","pre-0",{"className":"overflow-hidden rounded-lg border border-white/10 bg-black/30","children":["$","pre",null,{"className":"overflow-x-auto p-4 text-sm leading-7","children":["$","code","code-0",{"className":"rounded bg-white/[0.08] px-1.5 py-0.5 text-[0.9em] text-[var(--accent)]","children":"#docx文档预览组件\nnpm install @vue-office/docx vue-demi@0.14.6\n\n#excel文档预览组件\nnpm install @vue-office/excel vue-demi@0.14.6\n\n#pdf文档预览组件\nnpm install @vue-office/pdf vue-demi@0.14.6\n"}]}]}],"\n",["$","blockquote","blockquote-0",{"className":"border-l-2 border-[var(--accent)]/70 pl-4 text-foreground-muted","children":["\n",["$","p","p-0",{"className":"leading-8 text-foreground-muted","children":["vue2.6版本或以下还需要额外安装 @vue/composition-api",["$","br","br-0",{}],"\n",["$","code","code-0",{"className":"rounded bg-white/[0.08] px-1.5 py-0.5 text-[0.9em] text-[var(--accent)]","children":"npm install @vue/composition-api"}]]}],"\n"]}],"\n",["$","h2","h2-1",{"className":"text-2xl font-semibold tracking-tight text-foreground pt-4","children":"2. 使用示例："}],"\n",["$","div","pre-1",{"className":"overflow-hidden rounded-lg border border-white/10 bg-black/30","children":["$","pre",null,{"className":"overflow-x-auto p-4 text-sm leading-7","children":["$","code","code-0",{"className":"rounded bg-white/[0.08] px-1.5 py-0.5 text-[0.9em] text-[var(--accent)]","children":"$3"}]}]}],"\n","$L4","\n","$L5","\n","$L6"]}]}]]}],["$L7"],"$L8"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"hlEy8cSqDW14acnWwTOow"}
-4:["$","blockquote","blockquote-1",{"className":"border-l-2 border-[var(--accent)]/70 pl-4 text-foreground-muted","children":["\n",["$","p","p-0",{"className":"leading-8 text-foreground-muted","children":["文档地址可以使用网络地址，比如 https://***.docx；",["$","br","br-0",{}],"\n也可以文件上传时预览，此时可以获取文件的ArrayBuffer或Blob"]}],"\n"]}]
-5:["$","h2","h2-2",{"className":"text-2xl font-semibold tracking-tight text-foreground pt-4","children":"3. 相关链接："}]
-6:["$","p","p-0",{"className":"leading-8 text-foreground-muted","children":[["$","a","a-0",{"href":"https://github.com/501351981/vue-office#readme","target":"_blank","rel":"noreferrer","className":"text-[var(--accent)] underline decoration-white/20 underline-offset-4 transition hover:text-[var(--accent-strong)]","children":"GitHub地址"}],["$","br","br-0",{}],"\n",["$","a","a-1",{"href":"https://www.npmjs.com/package/@vue-office/docx","target":"_blank","rel":"noreferrer","className":"text-[var(--accent)] underline decoration-white/20 underline-offset-4 transition hover:text-[var(--accent-strong)]","children":"npm地址"}],["$","br","br-1",{}],"\n",["$","a","a-2",{"href":"https://501351981.github.io/vue-office/examples/dist/#/docx","target":"_blank","rel":"noreferrer","className":"text-[var(--accent)] underline decoration-white/20 underline-offset-4 transition hover:text-[var(--accent-strong)]","children":"效果预览"}]]}]
-7:["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/1e0n14egb9bme.css","precedence":"next"}]
-8:["$","$L9",null,{"children":["$","$a",null,{"name":"Next.MetadataOutlet","children":"$@b"}]}]
-b:null
+```
+
+> 文档地址可以使用网络地址，比如 https://\*\*\*.docx；
+> 也可以文件上传时预览，此时可以获取文件的ArrayBuffer或Blob
+
+## 3. 相关链接：
+
+[GitHub地址](https://github.com/501351981/vue-office#readme "GitHub地址")
+[npm地址](https://www.npmjs.com/package/@vue-office/docx "npm地址")
+[效果预览](https://501351981.github.io/vue-office/examples/dist/#/docx "效果预览")
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-20","children":[["$","$L2",null,{"href":"/notes","className":"text-sm text-foreground-muted transition hover:text-foreground","children":"Back to Notes"}],["$","header",null,{"className":"mt-10 border-b border-white/10 pb-10","children":[["$","div",null,{"className":"flex flex-wrap gap-2","children":[["$","span",null,{"className":"rounded-full bg-[var(--accent-bg)] px-2.5 py-1 text-xs text-[var(--accent)]","children":"Vue"}],["$","span",null,{"className":"rounded-full border border-white/10 px-2.5 py-1 text-xs text-foreground-muted","children":"Snippet"}],["$","span",null,{"className":"rounded-full border border-white/10 px-2.5 py-1 text-xs text-foreground-muted","children":"Published"}]]}],["$","h1",null,{"className":"mt-5 text-4xl font-bold tracking-tight","children":"vue 在网页中预览(docx、excel、pdf)文件"}],["$","p",null,{"className":"mt-4 text-lg leading-8 text-foreground-muted","children":"npm install @vue-office/docx vue-demi@0.14.6"}],["$","div",null,{"className":"mt-6 flex flex-wrap items-center gap-3 text-sm text-foreground-dim","children":[["$","time",null,{"dateTime":"2026-06-20","children":["Updated ","2026-06-20"]}],["$","span",null,{"children":"1 min read"}],["$","a",null,{"href":"https://www.cnblogs.com/lpkshuai","target":"_blank","rel":"noreferrer","className":"transition hover:text-foreground","children":["Source: ","Cnblogs"]}]]}],["$","div",null,{"className":"mt-5 flex flex-wrap gap-2","children":[["$","span","Vue",{"className":"rounded-full bg-white/[0.04] px-2 py-1 text-xs text-foreground-muted","children":"Vue"}],["$","span","snippet",{"className":"rounded-full bg-white/[0.04] px-2 py-1 text-xs text-foreground-muted","children":"snippet"}],["$","span","PDF",{"className":"rounded-full bg-white/[0.04] px-2 py-1 text-xs text-foreground-muted","children":"PDF"}],["$","span","Excel",{"className":"rounded-full bg-white/[0.04] px-2 py-1 text-xs text-foreground-muted","children":"Excel"}]]}]]}],["$","article",null,{"className":"mt-10","children":["$","$L3",null,{"content":"$4"}]}]]}],["$L5"],"$L6"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"sCwkuR5ZRhgeN2MKZNzqb"}
+5:["$","script","script-0",{"src":"/_next/static/chunks/058eujvpmf-iw.js","async":true}]
+6:["$","$L7",null,{"children":["$","$8",null,{"name":"Next.MetadataOutlet","children":"$@9"}]}]
+9:null

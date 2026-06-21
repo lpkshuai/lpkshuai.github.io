@@ -1,12 +1,12 @@
 1:"$Sreact.fragment"
-2:I[758,["/_next/static/chunks/159zmf7qigmp9.js","/_next/static/chunks/14mrh2-p_w84d.js","/_next/static/chunks/1ecdnnlegqmjk.js"],"default"]
-b:I[97367,["/_next/static/chunks/159zmf7qigmp9.js","/_next/static/chunks/14mrh2-p_w84d.js"],"OutletBoundary"]
+2:I[758,["/_next/static/chunks/34669d-qbhlaz.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3u41-rumaknwd.js"],"default"]
+b:I[97367,["/_next/static/chunks/34669d-qbhlaz.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
 c:"$Sreact.suspense"
-3:T6d2,## 一. 修改全局默认配置：
+3:T6da,## 一. 修改全局默认配置：
 
 在使用axios请求的时候一般会进行封装，如：
 
-```
+```js
 import axios from "axios";
 const request = axios.create({
   // baseURL: import.meta.env.VITE_APP_BASEURL,
@@ -19,7 +19,7 @@ export default request;
 
 在有些情况下需要动态修改baseURL或其他配置，此时可通过以下方法修改默认配置：
 
-```
+```js
 import request from "/xxx/xxx";
 request.defaults.baseURL = "http://xxxxxx";
 ```
@@ -32,7 +32,7 @@ request.defaults.baseURL = "http://xxxxxx";
 
 1. 直接请求
 
-```
+```js
 import request from "/xxx/xxx";
 const config = {
   baseUrl: "http://xxxxxx",
@@ -58,7 +58,7 @@ export function postData(params) {
 
 2. 请求方式别名
 
-```
+```js
 import request from "/xxx/xxx";
 const config = {
   baseUrl: "http://xxxxxx",
@@ -906,7 +906,7 @@ state.instance.zoomTo(1);
     console.log(node.id);
   };
 ```
-0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-6xl px-6 py-20","children":[["$","header",null,{"className":"mb-8","children":[["$","p",null,{"className":"text-sm uppercase tracking-[0.25em] text-[var(--accent)]","children":"Field Notes"}],["$","h1",null,{"className":"mt-4 text-4xl font-bold tracking-tight md:text-6xl","children":"All Notes"}],["$","p",null,{"className":"mt-5 max-w-3xl text-lg leading-8 text-foreground/65","children":"Browse through the complete collection of frontend notes with search and filtering capabilities."}]]}],["$","$L2",null,{"notes":[{"slug":"axios-baseurl-089fd3","title":"Axios在实例化之后修改baseURL或其他配置","category":"JavaScript","type":"setup","description":"在使用axios请求的时候一般会进行封装，如：","status":"published","tags":["JavaScript","setup","Axios"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"$3"},{"slug":"next-js-plus-github-pages-ci-cd-2c6362","title":"🚀 Next.js + GitHub Pages 自动部署（CI/CD 笔记）","category":"Next.js","type":"setup","description":"main 分支（源码）","status":"published","tags":["Next.js","setup","GitHub Pages"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"$4"},{"slug":"vite-https-self-signed-certificate-115fa2","title":"vite 本地代理请求https接口 self signed certificate 自签名证书错误","category":"Tooling","type":"debugging","description":"server: {","status":"published","tags":["Tooling","debugging","Vite"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"### vite本地代理后端接口为https时，无法发送请求，并报错如下：\n\n![image](https://img2023.cnblogs.com/blog/1857566/202306/1857566-20230614155931692-1367583313.png)\n\n### 查询vite文档，更改配置 `server.https` 为 `true` ，无效\n\n![image](https://img2023.cnblogs.com/blog/1857566/202306/1857566-20230614160643604-1187369552.png)\n\n### 又根据vite文档中描述添加 @vitejs/plugin-basic-ssl 到项目插件中，它会自动创建和缓存一个自签名的证书。 结果无效\n\n### 于是本地添加证书文件并配置在 `server.https` 中 ，无效\n\n### 最终 `server.proxy` 中增加配置 `secure: false` 后，请求发起成功，问题解决\n\n```\n  server: {\n    hmr: true,\n    open: true,\n    port: \"8080\",\n    proxy: {\n      \"/api\": {\n        target: \"https://xx.xx.xx.xx:xx\",\n        changeOrigin: true,\n        rewrite: (path) => path.replace(/^\\/api/, \"\"),\n        secure: false,\n      },\n    },\n  },\n```\n\n> [参考链接 https://github.com/vitejs/vite/issues/3475](https://github.com/vitejs/vite/issues/3475 \"参考链接\")\n> ![image](https://img2023.cnblogs.com/blog/1857566/202306/1857566-20230614161536221-1457769704.png)\n"},{"slug":"vue-docx-excel-pdf-959f53","title":"vue 在网页中预览(docx、excel、pdf)文件","category":"Vue","type":"snippet","description":"npm install @vue-office/docx vue-demi@0.14.6","status":"published","tags":["Vue","snippet","PDF","Excel"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"$5"},{"slug":"vue3-html5-qrcode-41e695","title":"vue3 使用 html5-qrcode 实现扫描二维码功能","category":"Vue","type":"snippet","description":"npm安装","status":"published","tags":["Vue","snippet","QRCode"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"2 min read","content":"$6"},{"slug":"el-table-display-issues","title":"el-table 设置合并行或列时，显示错乱问题","category":"Vue","type":"snippet","description":"记录 el-table 合并行或列时显示错乱问题的解决方法。","status":"published","tags":["Vue","Element","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-01-05","readingTime":"2 min read","content":"$7"},{"slug":"vue3-vue-flow","title":"Vue3 流程图组件库 Vue Flow 简单使用","category":"Vue","type":"snippet","description":"记录 Vue Flow 流程图组件库的使用。","status":"published","tags":["Vue","Frontend","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-01-03","readingTime":"1 min read","content":"$8"}]}]]}],["$L9"],"$La"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"hlEy8cSqDW14acnWwTOow"}
-9:["$","script","script-0",{"src":"/_next/static/chunks/1ecdnnlegqmjk.js","async":true}]
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-6xl px-6 py-20","children":[["$","header",null,{"className":"mb-8","children":[["$","p",null,{"className":"text-sm uppercase tracking-[0.25em] text-[var(--accent)]","children":"Field Notes"}],["$","h1",null,{"className":"mt-4 text-4xl font-bold tracking-tight md:text-6xl","children":"All Notes"}],["$","p",null,{"className":"mt-5 max-w-3xl text-lg leading-8 text-foreground/65","children":"Browse through the complete collection of frontend notes with search and filtering capabilities."}]]}],["$","$L2",null,{"notes":[{"slug":"axios-baseurl-089fd3","title":"Axios在实例化之后修改baseURL或其他配置","category":"JavaScript","type":"setup","description":"在使用axios请求的时候一般会进行封装，如：","status":"published","tags":["JavaScript","setup","Axios"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"$3"},{"slug":"next-js-plus-github-pages-ci-cd-2c6362","title":"🚀 Next.js + GitHub Pages 自动部署（CI/CD 笔记）","category":"Next.js","type":"setup","description":"main 分支（源码）","status":"published","tags":["Next.js","setup","GitHub Pages"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"$4"},{"slug":"vite-https-self-signed-certificate-115fa2","title":"vite 本地代理请求https接口 self signed certificate 自签名证书错误","category":"Tooling","type":"debugging","description":"server: {","status":"published","tags":["Tooling","debugging","Vite"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"### vite本地代理后端接口为https时，无法发送请求，并报错如下：\n\n![image](https://img2023.cnblogs.com/blog/1857566/202306/1857566-20230614155931692-1367583313.png)\n\n### 查询vite文档，更改配置 `server.https` 为 `true` ，无效\n\n![image](https://img2023.cnblogs.com/blog/1857566/202306/1857566-20230614160643604-1187369552.png)\n\n### 又根据vite文档中描述添加 @vitejs/plugin-basic-ssl 到项目插件中，它会自动创建和缓存一个自签名的证书。 结果无效\n\n### 于是本地添加证书文件并配置在 `server.https` 中 ，无效\n\n### 最终 `server.proxy` 中增加配置 `secure: false` 后，请求发起成功，问题解决\n\n```\n  server: {\n    hmr: true,\n    open: true,\n    port: \"8080\",\n    proxy: {\n      \"/api\": {\n        target: \"https://xx.xx.xx.xx:xx\",\n        changeOrigin: true,\n        rewrite: (path) => path.replace(/^\\/api/, \"\"),\n        secure: false,\n      },\n    },\n  },\n```\n\n> [参考链接 https://github.com/vitejs/vite/issues/3475](https://github.com/vitejs/vite/issues/3475 \"参考链接\")\n> ![image](https://img2023.cnblogs.com/blog/1857566/202306/1857566-20230614161536221-1457769704.png)\n"},{"slug":"vue-docx-excel-pdf-959f53","title":"vue 在网页中预览(docx、excel、pdf)文件","category":"Vue","type":"snippet","description":"npm install @vue-office/docx vue-demi@0.14.6","status":"published","tags":["Vue","snippet","PDF","Excel"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"$5"},{"slug":"vue3-html5-qrcode-41e695","title":"vue3 使用 html5-qrcode 实现扫描二维码功能","category":"Vue","type":"snippet","description":"npm安装","status":"published","tags":["Vue","snippet","QRCode"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"2 min read","content":"$6"},{"slug":"el-table-display-issues","title":"el-table 设置合并行或列时，显示错乱问题","category":"Vue","type":"snippet","description":"记录 el-table 合并行或列时显示错乱问题的解决方法。","status":"published","tags":["Vue","Element","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-01-05","readingTime":"2 min read","content":"$7"},{"slug":"vue3-vue-flow","title":"Vue3 流程图组件库 Vue Flow 简单使用","category":"Vue","type":"snippet","description":"记录 Vue Flow 流程图组件库的使用。","status":"published","tags":["Vue","Frontend","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-01-03","readingTime":"1 min read","content":"$8"}]}]]}],["$L9"],"$La"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"sCwkuR5ZRhgeN2MKZNzqb"}
+9:["$","script","script-0",{"src":"/_next/static/chunks/3u41-rumaknwd.js","async":true}]
 a:["$","$Lb",null,{"children":["$","$c",null,{"name":"Next.MetadataOutlet","children":"$@d"}]}]
 d:null

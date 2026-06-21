@@ -1,43 +1,204 @@
 1:"$Sreact.fragment"
-2:I[75144,["/_next/static/chunks/159zmf7qigmp9.js","/_next/static/chunks/14mrh2-p_w84d.js"],"ThemeProvider"]
-3:I[45678,["/_next/static/chunks/159zmf7qigmp9.js","/_next/static/chunks/14mrh2-p_w84d.js"],"default"]
-4:I[39756,["/_next/static/chunks/159zmf7qigmp9.js","/_next/static/chunks/14mrh2-p_w84d.js"],"default"]
-5:I[37457,["/_next/static/chunks/159zmf7qigmp9.js","/_next/static/chunks/14mrh2-p_w84d.js"],"default"]
-7:I[97367,["/_next/static/chunks/159zmf7qigmp9.js","/_next/static/chunks/14mrh2-p_w84d.js"],"OutletBoundary"]
+2:I[75144,["/_next/static/chunks/34669d-qbhlaz.js","/_next/static/chunks/2im7c515bo69p.js"],"ThemeProvider"]
+3:I[45678,["/_next/static/chunks/34669d-qbhlaz.js","/_next/static/chunks/2im7c515bo69p.js"],"default"]
+4:I[39756,["/_next/static/chunks/34669d-qbhlaz.js","/_next/static/chunks/2im7c515bo69p.js"],"default"]
+5:I[37457,["/_next/static/chunks/34669d-qbhlaz.js","/_next/static/chunks/2im7c515bo69p.js"],"default"]
+7:I[97367,["/_next/static/chunks/34669d-qbhlaz.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
 8:"$Sreact.suspense"
-b:I[97367,["/_next/static/chunks/159zmf7qigmp9.js","/_next/static/chunks/14mrh2-p_w84d.js"],"ViewportBoundary"]
-d:I[97367,["/_next/static/chunks/159zmf7qigmp9.js","/_next/static/chunks/14mrh2-p_w84d.js"],"MetadataBoundary"]
-f:I[68027,["/_next/static/chunks/159zmf7qigmp9.js","/_next/static/chunks/14mrh2-p_w84d.js"],"default",1]
-:HL["/_next/static/chunks/0yefnz03gab83.css","style"]
-:HL["/_next/static/chunks/1e0n14egb9bme.css","style"]
-0:{"P":null,"c":["","notes","vue3-html5-qrcode-41e695"],"q":"","i":false,"f":[[["",{"children":["notes",{"children":[["slug","vue3-html5-qrcode-41e695","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0yefnz03gab83.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/159zmf7qigmp9.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/14mrh2-p_w84d.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"children":["$","$L2",null,{"children":[["$","$L3",null,{}],["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L6",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/1e0n14egb9bme.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","$L7",null,{"children":["$","$8",null,{"name":"Next.MetadataOutlet","children":"$@9"}]}]]}],{},null,false,null]},null,false,"$@a"]},null,false,"$@a"]},null,false,null],["$","$1","h",{"children":[null,["$","$Lb",null,{"children":"$Lc"}],["$","div",null,{"hidden":true,"children":["$","$Ld",null,{"children":["$","$8",null,{"name":"Next.Metadata","children":"$Le"}]}]}],null]}],false]],"m":"$undefined","G":["$f",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0yefnz03gab83.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"hlEy8cSqDW14acnWwTOow"}
+b:I[97367,["/_next/static/chunks/34669d-qbhlaz.js","/_next/static/chunks/2im7c515bo69p.js"],"ViewportBoundary"]
+d:I[97367,["/_next/static/chunks/34669d-qbhlaz.js","/_next/static/chunks/2im7c515bo69p.js"],"MetadataBoundary"]
+f:I[68027,["/_next/static/chunks/34669d-qbhlaz.js","/_next/static/chunks/2im7c515bo69p.js"],"default",1]
+:HL["/_next/static/chunks/2u57nszw-__lz.css","style"]
+0:{"P":null,"c":["","notes","vue3-html5-qrcode-41e695"],"q":"","i":false,"f":[[["",{"children":["notes",{"children":[["slug","vue3-html5-qrcode-41e695","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/2u57nszw-__lz.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/34669d-qbhlaz.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/2im7c515bo69p.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"children":["$","$L2",null,{"children":[["$","$L3",null,{}],["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L6",[["$","script","script-0",{"src":"/_next/static/chunks/058eujvpmf-iw.js","async":true,"nonce":"$undefined"}]],["$","$L7",null,{"children":["$","$8",null,{"name":"Next.MetadataOutlet","children":"$@9"}]}]]}],{},null,false,null]},null,false,"$@a"]},null,false,"$@a"]},null,false,null],["$","$1","h",{"children":[null,["$","$Lb",null,{"children":"$Lc"}],["$","div",null,{"hidden":true,"children":["$","$Ld",null,{"children":["$","$8",null,{"name":"Next.Metadata","children":"$Le"}]}]}],null]}],false]],"m":"$undefined","G":["$f",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/2u57nszw-__lz.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"sCwkuR5ZRhgeN2MKZNzqb"}
 10:[]
 a:"$W10"
 c:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
-11:I[27201,["/_next/static/chunks/159zmf7qigmp9.js","/_next/static/chunks/14mrh2-p_w84d.js"],"IconMark"]
+11:I[27201,["/_next/static/chunks/34669d-qbhlaz.js","/_next/static/chunks/2im7c515bo69p.js"],"IconMark"]
 9:null
 e:[["$","link","0",{"rel":"icon","href":"/favicon.ico?favicon.2vob68tjqpejf.ico","sizes":"256x256","type":"image/x-icon"}],["$","$L11","1",{}]]
-12:I[22016,["/_next/static/chunks/159zmf7qigmp9.js","/_next/static/chunks/14mrh2-p_w84d.js"],""]
-6:["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-20","children":[["$","$L12",null,{"href":"/notes","className":"text-sm text-foreground-muted transition hover:text-foreground","children":"Back to Notes"}],["$","header",null,{"className":"mt-10 border-b border-white/10 pb-10","children":[["$","div",null,{"className":"flex flex-wrap gap-2","children":[["$","span",null,{"className":"rounded-full bg-[var(--accent-bg)] px-2.5 py-1 text-xs text-[var(--accent)]","children":"Vue"}],["$","span",null,{"className":"rounded-full border border-white/10 px-2.5 py-1 text-xs text-foreground-muted","children":"Snippet"}],["$","span",null,{"className":"rounded-full border border-white/10 px-2.5 py-1 text-xs text-foreground-muted","children":"Published"}]]}],["$","h1",null,{"className":"mt-5 text-4xl font-bold tracking-tight","children":"vue3 使用 html5-qrcode 实现扫描二维码功能"}],["$","p",null,{"className":"mt-4 text-lg leading-8 text-foreground-muted","children":"npm安装"}],["$","div",null,{"className":"mt-6 flex flex-wrap items-center gap-3 text-sm text-foreground-dim","children":[["$","time",null,{"dateTime":"2026-06-20","children":["Updated ","2026-06-20"]}],["$","span",null,{"children":"2 min read"}],["$","a",null,{"href":"https://www.cnblogs.com/lpkshuai","target":"_blank","rel":"noreferrer","className":"transition hover:text-foreground","children":["Source: ","Cnblogs"]}]]}],["$","div",null,{"className":"mt-5 flex flex-wrap gap-2","children":[["$","span","Vue",{"className":"rounded-full bg-white/[0.04] px-2 py-1 text-xs text-foreground-muted","children":"Vue"}],["$","span","snippet",{"className":"rounded-full bg-white/[0.04] px-2 py-1 text-xs text-foreground-muted","children":"snippet"}],["$","span","QRCode",{"className":"rounded-full bg-white/[0.04] px-2 py-1 text-xs text-foreground-muted","children":"QRCode"}]]}]]}],["$","article",null,{"className":"mt-10","children":["$","div",null,{"className":"space-y-6 prose prose-invert max-w-none","children":[["$","h3","h3-0",{"className":"text-xl font-semibold tracking-tight text-foreground pt-3","children":"1. 安装"}],"\n",["$","p","p-0",{"className":"leading-8 text-foreground-muted","children":"npm安装"}],"\n",["$","div","pre-0",{"className":"overflow-hidden rounded-lg border border-white/10 bg-black/30","children":["$","pre",null,{"className":"overflow-x-auto p-4 text-sm leading-7","children":["$","code","code-0",{"className":"rounded bg-white/[0.08] px-1.5 py-0.5 text-[0.9em] text-[var(--accent)]","children":"npm install --save-dev html5-qrcode\n"}]}]}],"\n",["$","p","p-1",{"className":"leading-8 text-foreground-muted","children":"或直接引入"}],"\n",["$","div","pre-1",{"className":"overflow-hidden rounded-lg border border-white/10 bg-black/30","children":["$","pre",null,{"className":"overflow-x-auto p-4 text-sm leading-7","children":["$","code","code-0",{"className":"rounded bg-white/[0.08] px-1.5 py-0.5 text-[0.9em] text-[var(--accent)]","children":"<script src=\"https://unpkg.com/html5-qrcode\" type=\"text/javascript\">\n"}]}]}],"\n",["$","h3","h3-1",{"className":"text-xl font-semibold tracking-tight text-foreground pt-3","children":"2. 引入"}],"\n",["$","ol","ol-0",{"className":"space-y-2 pl-5 leading-7 text-foreground-muted list-decimal","children":["\n",["$","li","li-0",{"children":"根据需求自定义渲染 QR scanning UI 的容器。"}],"\n"]}],"\n",["$","div","pre-2",{"className":"overflow-hidden rounded-lg border border-white/10 bg-black/30","children":["$","pre",null,{"className":"overflow-x-auto p-4 text-sm leading-7","children":["$","code","code-0",{"className":"rounded bg-white/[0.08] px-1.5 py-0.5 text-[0.9em] text-[var(--accent)]","children":"<div id=\"reader\" width=\"600px\"></div>\n"}]}]}],"\n",["$","ol","ol-1",{"className":"space-y-2 pl-5 leading-7 text-foreground-muted list-decimal","children":["\n",["$","li","li-0",{"children":"引入 Html5Qrcode"}],"\n"]}],"\n",["$","div","pre-3",{"className":"overflow-hidden rounded-lg border border-white/10 bg-black/30","children":["$","pre",null,{"className":"overflow-x-auto p-4 text-sm leading-7","children":["$","code","code-0",{"className":"rounded bg-white/[0.08] px-1.5 py-0.5 text-[0.9em] text-[var(--accent)]","children":"// 简单模式（使用默认用户界面）\nimport {Html5QrcodeScanner} from \"html5-qrcode\";\n// 专业模式（使用自己的用户界面）\nimport {Html5Qrcode} from \"html5-qrcode\";\n"}]}]}],"\n","$L13","\n","$L14","\n","$L15","\n","$L16","\n","$L17","\n","$L18","\n","$L19","\n","$L1a","\n","$L1b","\n","$L1c","\n","$L1d","\n","$L1e","\n","$L1f","\n","$L20","\n","$L21","\n","$L22","\n","$L23","\n","$L24","\n","$L25","\n","$L26","\n","$L27"]}]}]]}]
-13:["$","blockquote","blockquote-0",{"className":"border-l-2 border-[var(--accent)]/70 pl-4 text-foreground-muted","children":["\n",["$","p","p-0",{"className":"leading-8 text-foreground-muted","children":[["$","code","code-0",{"className":"rounded bg-white/[0.08] px-1.5 py-0.5 text-[0.9em] text-[var(--accent)]","children":"Html5QrcodeScanner"}],"允许您使用几行代码和默认用户界面实现端到端扫描仪，该用户界面允许使用相机进行扫描或从文件系统中选择图像。",["$","br","br-0",{}],"\n",["$","code","code-1",{"className":"rounded bg-white/[0.08] px-1.5 py-0.5 text-[0.9em] text-[var(--accent)]","children":"Html5Qrcode"}],"类用来设置 QR 码扫描仪（使用您自己的用户界面），并允许用户使用相机或通过选择文件系统中的图像文件或智能手机中的本机相机来扫描 QR 码。"]}],"\n"]}]
-14:["$","h3","h3-2",{"className":"text-xl font-semibold tracking-tight text-foreground pt-3","children":"3. 使用"}]
-15:["$","ol","ol-2",{"className":"space-y-2 pl-5 leading-7 text-foreground-muted list-decimal","children":["\n",["$","li","li-0",{"children":["如果使用 ",["$","code","code-0",{"className":"rounded bg-white/[0.08] px-1.5 py-0.5 text-[0.9em] text-[var(--accent)]","children":"Html5QrcodeScanner"}],"，系统默认"]}],"\n"]}]
-16:["$","div","pre-4",{"className":"overflow-hidden rounded-lg border border-white/10 bg-black/30","children":["$","pre",null,{"className":"overflow-x-auto p-4 text-sm leading-7","children":["$","code","code-0",{"className":"rounded bg-white/[0.08] px-1.5 py-0.5 text-[0.9em] text-[var(--accent)]","children":"// 扫描成功\nfunction onScanSuccess(decodedText, decodedResult) {\n  console.log(`Code matched = ${decodedText}`, decodedResult);\n}\n// 扫描失败\nfunction onScanFailure(error) {\n  console.warn(`Code scan error = ${error}`);\n}\n// 创建并配置实例，渲染扫描仪\nlet html5QrcodeScanner = new Html5QrcodeScanner(\n  \"reader\",\n  { fps: 10, qrbox: {width: 250, height: 250} },\n  /* verbose= */ false);\nhtml5QrcodeScanner.render(onScanSuccess, onScanFailure);\n"}]}]}]
-17:["$","ol","ol-3",{"className":"space-y-2 pl-5 leading-7 text-foreground-muted list-decimal","children":["\n",["$","li","li-0",{"children":["如果使用 ",["$","code","code-0",{"className":"rounded bg-white/[0.08] px-1.5 py-0.5 text-[0.9em] text-[var(--accent)]","children":"Html5Qrcode"}],"，自定义"]}],"\n"]}]
-18:["$","p","p-2",{"className":"leading-8 text-foreground-muted","children":"获取相机id"}]
-19:["$","div","pre-5",{"className":"overflow-hidden rounded-lg border border-white/10 bg-black/30","children":["$","pre",null,{"className":"overflow-x-auto p-4 text-sm leading-7","children":["$","code","code-0",{"className":"rounded bg-white/[0.08] px-1.5 py-0.5 text-[0.9em] text-[var(--accent)]","children":"// 获取支持的相机列表\nHtml5Qrcode.getCameras().then(devices => {\n  /**\n   * devices 类型为对象数组\n   * { id: \"id\", label: \"label\" }\n   */\n  if (devices && devices.length) {\n    let cameraId = devices[0].id;\n    // 开始扫描\n  }\n}).catch(err => {\n  // 处理错误\n});\n"}]}]}]
-1a:["$","blockquote","blockquote-1",{"className":"border-l-2 border-[var(--accent)]/70 pl-4 text-foreground-muted","children":["\n",["$","p","p-0",{"className":"leading-8 text-foreground-muted","children":["注意：如果未授予相机权限，会触发权限请求申请。",["$","br","br-0",{}],"\n使用相机需要网站使用https协议， ",["$","a","a-0",{"href":"https://www.cnblogs.com/lpkshuai/p/17636869.html","target":"_blank","rel":"noreferrer","className":"text-[var(--accent)] underline decoration-white/20 underline-offset-4 transition hover:text-[var(--accent-strong)]","children":"vite 本地开启 https 调试参考随笔"}]]}],"\n"]}]
-1b:["$","p","p-3",{"className":"leading-8 text-foreground-muted","children":"开始扫码"}]
-1c:["$","div","pre-6",{"className":"overflow-hidden rounded-lg border border-white/10 bg-black/30","children":["$","pre",null,{"className":"overflow-x-auto p-4 text-sm leading-7","children":["$","code","code-0",{"className":"rounded bg-white/[0.08] px-1.5 py-0.5 text-[0.9em] text-[var(--accent)]","children":"// 开始扫码\nconst html5QrCode = new Html5Qrcode(/* element id */ \"reader\");\nhtml5QrCode.start(\n  cameraId,\n  {\n    fps: 10,    // 帧率，控制扫描速度\n    qrbox: { width: 250, height: 250 }  // 限制要用于扫描的取景器区域\n  },\n  (decodedText, decodedResult) => {\n    // 获取扫描结果\n  },\n  (errorMessage) => {\n    // 结果错误处理\n  })\n.catch((err) => {\n  // 无法扫描时的错误处理\n});\n"}]}]}]
-1d:["$","blockquote","blockquote-2",{"className":"border-l-2 border-[var(--accent)]/70 pl-4 text-foreground-muted","children":["\n",["$","p","p-0",{"className":"leading-8 text-foreground-muted","children":["您可以选择在构造函数中设置另一个参数，以verbose将所有日志打印到控制台",["$","br","br-0",{}],"\n",["$","code","code-0",{"className":"rounded bg-white/[0.08] px-1.5 py-0.5 text-[0.9em] text-[var(--accent)]","children":"const html5QrCode = new Html5Qrcode(\"reader\", /* verbose= */ true);"}]]}],"\n"]}]
-1e:["$","p","p-4",{"className":"leading-8 text-foreground-muted","children":"停止"}]
-1f:["$","div","pre-7",{"className":"overflow-hidden rounded-lg border border-white/10 bg-black/30","children":["$","pre",null,{"className":"overflow-x-auto p-4 text-sm leading-7","children":["$","code","code-0",{"className":"rounded bg-white/[0.08] px-1.5 py-0.5 text-[0.9em] text-[var(--accent)]","children":"html5QrCode.stop().then((ignore) => {\n  // 停止扫描\n}).catch((err) => {\n  // 停止失败处理\n});\n"}]}]}]
-20:["$","blockquote","blockquote-3",{"className":"border-l-2 border-[var(--accent)]/70 pl-4 text-foreground-muted","children":["\n",["$","p","p-0",{"className":"leading-8 text-foreground-muted","children":["其它相关配置",["$","br","br-0",{}],"\n",["$","figure","img-0",{"className":"overflow-hidden rounded-lg border border-white/10 bg-white/[0.03]","children":[["$","img",null,{"src":"https://img2024.cnblogs.com/blog/1857566/202402/1857566-20240223153325436-1751554591.png","alt":"image","className":"h-auto w-full","loading":"lazy"}],["$","figcaption",null,{"className":"border-t border-white/10 px-4 py-3 text-sm text-foreground-dim","children":"image"}]]}]]}],"\n"]}]
-21:["$","h3","h3-3",{"className":"text-xl font-semibold tracking-tight text-foreground pt-3","children":"4. 完整示例"}]
-22:["$","p","p-5",{"className":"leading-8 text-foreground-muted","children":"页面"}]
-23:["$","div","pre-8",{"className":"overflow-hidden rounded-lg border border-white/10 bg-black/30","children":["$","pre",null,{"className":"overflow-x-auto p-4 text-sm leading-7","children":["$","code","code-0",{"className":"rounded bg-white/[0.08] px-1.5 py-0.5 text-[0.9em] text-[var(--accent)]","children":"<template>\n  <div class=\"page-box\">\n    <div class=\"qr-container\">\n      <div class=\"qr-box\">\n        <div id=\"reader\"></div>\n      </div>\n    </div>\n    <div class=\"btn-box\">\n      <div>\n        <van-icon name=\"arrow-left\" @click=\"clickBack\" />\n      </div>\n      <div>\n        <van-uploader\n          v-model=\"state.fileList\"\n          :preview-image=\"false\"\n          :after-read=\"uploadImg\"\n        >\n          <van-icon name=\"photo-o\"\n        /></van-uploader>\n      </div>\n    </div>\n  </div>\n</template>\n\n<style scoped>\n.page-box {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  background: #000;\n}\n.qr-container {\n  position: relative;\n  width: 100%;\n  height: 90%;\n}\n.qr-box {\n  height: 100%;\n}\n#reader {\n  top: 50%;\n  left: 0;\n}\n.btn-box {\n  flex: 1;\n  display: flex;\n  justify-content: space-around;\n  align-items: flex-start;\n  margin-top: auto;\n  padding: 12px;\n  color: #fff;\n  font-size: 28px;\n}\n</style>\n"}]}]}]
-24:["$","p","p-6",{"className":"leading-8 text-foreground-muted","children":"逻辑"}]
-28:T749,<script setup>
+12:I[22016,["/_next/static/chunks/34669d-qbhlaz.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/058eujvpmf-iw.js"],""]
+13:I[70831,["/_next/static/chunks/34669d-qbhlaz.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/058eujvpmf-iw.js"],"default"]
+14:T1801,### 1. 安装
+
+npm安装
+
+```
+npm install --save-dev html5-qrcode
+```
+
+或直接引入
+
+```
+<script src="https://unpkg.com/html5-qrcode" type="text/javascript">
+```
+
+### 2. 引入
+
+1. 根据需求自定义渲染 QR scanning UI 的容器。
+
+```
+<div id="reader" width="600px"></div>
+```
+
+2. 引入 Html5Qrcode
+
+```
+// 简单模式（使用默认用户界面）
+import {Html5QrcodeScanner} from "html5-qrcode";
+// 专业模式（使用自己的用户界面）
+import {Html5Qrcode} from "html5-qrcode";
+```
+
+> `Html5QrcodeScanner`允许您使用几行代码和默认用户界面实现端到端扫描仪，该用户界面允许使用相机进行扫描或从文件系统中选择图像。
+> `Html5Qrcode`类用来设置 QR 码扫描仪（使用您自己的用户界面），并允许用户使用相机或通过选择文件系统中的图像文件或智能手机中的本机相机来扫描 QR 码。
+
+### 3. 使用
+
+1. 如果使用 `Html5QrcodeScanner`，系统默认
+
+```
+// 扫描成功
+function onScanSuccess(decodedText, decodedResult) {
+  console.log(`Code matched = ${decodedText}`, decodedResult);
+}
+// 扫描失败
+function onScanFailure(error) {
+  console.warn(`Code scan error = ${error}`);
+}
+// 创建并配置实例，渲染扫描仪
+let html5QrcodeScanner = new Html5QrcodeScanner(
+  "reader",
+  { fps: 10, qrbox: {width: 250, height: 250} },
+  /* verbose= */ false);
+html5QrcodeScanner.render(onScanSuccess, onScanFailure);
+```
+
+2. 如果使用 `Html5Qrcode`，自定义
+
+获取相机id
+
+```
+// 获取支持的相机列表
+Html5Qrcode.getCameras().then(devices => {
+  /**
+   * devices 类型为对象数组
+   * { id: "id", label: "label" }
+   */
+  if (devices && devices.length) {
+    let cameraId = devices[0].id;
+    // 开始扫描
+  }
+}).catch(err => {
+  // 处理错误
+});
+```
+
+> 注意：如果未授予相机权限，会触发权限请求申请。
+> 使用相机需要网站使用https协议， [vite 本地开启 https 调试参考随笔](https://www.cnblogs.com/lpkshuai/p/17636869.html "vite 本地开启 https 调试参考随笔")
+
+开始扫码
+
+```
+// 开始扫码
+const html5QrCode = new Html5Qrcode(/* element id */ "reader");
+html5QrCode.start(
+  cameraId,
+  {
+    fps: 10,    // 帧率，控制扫描速度
+    qrbox: { width: 250, height: 250 }  // 限制要用于扫描的取景器区域
+  },
+  (decodedText, decodedResult) => {
+    // 获取扫描结果
+  },
+  (errorMessage) => {
+    // 结果错误处理
+  })
+.catch((err) => {
+  // 无法扫描时的错误处理
+});
+```
+
+> 您可以选择在构造函数中设置另一个参数，以verbose将所有日志打印到控制台
+> `const html5QrCode = new Html5Qrcode("reader", /* verbose= */ true);`
+
+停止
+
+```
+html5QrCode.stop().then((ignore) => {
+  // 停止扫描
+}).catch((err) => {
+  // 停止失败处理
+});
+```
+
+> 其它相关配置
+> ![image](https://img2024.cnblogs.com/blog/1857566/202402/1857566-20240223153325436-1751554591.png)
+
+### 4. 完整示例
+
+页面
+
+```
+<template>
+  <div class="page-box">
+    <div class="qr-container">
+      <div class="qr-box">
+        <div id="reader"></div>
+      </div>
+    </div>
+    <div class="btn-box">
+      <div>
+        <van-icon name="arrow-left" @click="clickBack" />
+      </div>
+      <div>
+        <van-uploader
+          v-model="state.fileList"
+          :preview-image="false"
+          :after-read="uploadImg"
+        >
+          <van-icon name="photo-o"
+        /></van-uploader>
+      </div>
+    </div>
+  </div>
+</template>
+
+<style scoped>
+.page-box {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #000;
+}
+.qr-container {
+  position: relative;
+  width: 100%;
+  height: 90%;
+}
+.qr-box {
+  height: 100%;
+}
+#reader {
+  top: 50%;
+  left: 0;
+}
+.btn-box {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-top: auto;
+  padding: 12px;
+  color: #fff;
+  font-size: 28px;
+}
+</style>
+```
+
+逻辑
+
+```
+<script setup>
 import { reactive, onMounted, onUnmounted } from "vue";
 import { Html5Qrcode } from "html5-qrcode";
 import { showToast } from "vant";
@@ -130,6 +291,12 @@ const uploadImg = () => {
   }
 };
 </script>
-25:["$","div","pre-9",{"className":"overflow-hidden rounded-lg border border-white/10 bg-black/30","children":["$","pre",null,{"className":"overflow-x-auto p-4 text-sm leading-7","children":["$","code","code-0",{"className":"rounded bg-white/[0.08] px-1.5 py-0.5 text-[0.9em] text-[var(--accent)]","children":"$28"}]}]}]
-26:["$","h3","h3-4",{"className":"text-xl font-semibold tracking-tight text-foreground pt-3","children":"5. 相关链接"}]
-27:["$","p","p-7",{"className":"leading-8 text-foreground-muted","children":[["$","a","a-0",{"href":"https://github.com/mebjas/html5-qrcode","target":"_blank","rel":"noreferrer","className":"text-[var(--accent)] underline decoration-white/20 underline-offset-4 transition hover:text-[var(--accent-strong)]","children":"GitHub地址"}],["$","br","br-0",{}],"\n",["$","a","a-1",{"href":"https://scanapp.org/html5-qrcode-docs/docs/intro","target":"_blank","rel":"noreferrer","className":"text-[var(--accent)] underline decoration-white/20 underline-offset-4 transition hover:text-[var(--accent-strong)]","children":"官方教程"}],["$","br","br-1",{}],"\n",["$","a","a-2",{"href":"https://blog.minhazav.dev/research/html5-qrcode","target":"_blank","rel":"noreferrer","className":"text-[var(--accent)] underline decoration-white/20 underline-offset-4 transition hover:text-[var(--accent-strong)]","children":"qrcode.minhazav.dev"}],["$","br","br-2",{}],"\n",["$","a","a-3",{"href":"https://www.cnblogs.com/lpkshuai/p/17636869.html","target":"_blank","rel":"noreferrer","className":"text-[var(--accent)] underline decoration-white/20 underline-offset-4 transition hover:text-[var(--accent-strong)]","children":"vite 本地开启 https"}]]}]
+```
+
+### 5. 相关链接
+
+[GitHub地址](https://github.com/mebjas/html5-qrcode "GitHub地址")
+[官方教程](https://scanapp.org/html5-qrcode-docs/docs/intro "官方教程")
+[qrcode.minhazav.dev](https://blog.minhazav.dev/research/html5-qrcode "qrcode.minhazav.dev")
+[vite 本地开启 https](https://www.cnblogs.com/lpkshuai/p/17636869.html "vite 本地开启 https")
+6:["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-20","children":[["$","$L12",null,{"href":"/notes","className":"text-sm text-foreground-muted transition hover:text-foreground","children":"Back to Notes"}],["$","header",null,{"className":"mt-10 border-b border-white/10 pb-10","children":[["$","div",null,{"className":"flex flex-wrap gap-2","children":[["$","span",null,{"className":"rounded-full bg-[var(--accent-bg)] px-2.5 py-1 text-xs text-[var(--accent)]","children":"Vue"}],["$","span",null,{"className":"rounded-full border border-white/10 px-2.5 py-1 text-xs text-foreground-muted","children":"Snippet"}],["$","span",null,{"className":"rounded-full border border-white/10 px-2.5 py-1 text-xs text-foreground-muted","children":"Published"}]]}],["$","h1",null,{"className":"mt-5 text-4xl font-bold tracking-tight","children":"vue3 使用 html5-qrcode 实现扫描二维码功能"}],["$","p",null,{"className":"mt-4 text-lg leading-8 text-foreground-muted","children":"npm安装"}],["$","div",null,{"className":"mt-6 flex flex-wrap items-center gap-3 text-sm text-foreground-dim","children":[["$","time",null,{"dateTime":"2026-06-20","children":["Updated ","2026-06-20"]}],["$","span",null,{"children":"2 min read"}],["$","a",null,{"href":"https://www.cnblogs.com/lpkshuai","target":"_blank","rel":"noreferrer","className":"transition hover:text-foreground","children":["Source: ","Cnblogs"]}]]}],["$","div",null,{"className":"mt-5 flex flex-wrap gap-2","children":[["$","span","Vue",{"className":"rounded-full bg-white/[0.04] px-2 py-1 text-xs text-foreground-muted","children":"Vue"}],["$","span","snippet",{"className":"rounded-full bg-white/[0.04] px-2 py-1 text-xs text-foreground-muted","children":"snippet"}],["$","span","QRCode",{"className":"rounded-full bg-white/[0.04] px-2 py-1 text-xs text-foreground-muted","children":"QRCode"}]]}]]}],["$","article",null,{"className":"mt-10","children":["$","$L13",null,{"content":"$14"}]}]]}]

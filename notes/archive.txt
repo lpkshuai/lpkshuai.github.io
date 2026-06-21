@@ -1,27 +1,27 @@
 1:"$Sreact.fragment"
-2:I[75144,["/_next/static/chunks/159zmf7qigmp9.js","/_next/static/chunks/14mrh2-p_w84d.js"],"ThemeProvider"]
-3:I[45678,["/_next/static/chunks/159zmf7qigmp9.js","/_next/static/chunks/14mrh2-p_w84d.js"],"default"]
-4:I[39756,["/_next/static/chunks/159zmf7qigmp9.js","/_next/static/chunks/14mrh2-p_w84d.js"],"default"]
-5:I[37457,["/_next/static/chunks/159zmf7qigmp9.js","/_next/static/chunks/14mrh2-p_w84d.js"],"default"]
-7:I[97367,["/_next/static/chunks/159zmf7qigmp9.js","/_next/static/chunks/14mrh2-p_w84d.js"],"OutletBoundary"]
+2:I[75144,["/_next/static/chunks/34669d-qbhlaz.js","/_next/static/chunks/2im7c515bo69p.js"],"ThemeProvider"]
+3:I[45678,["/_next/static/chunks/34669d-qbhlaz.js","/_next/static/chunks/2im7c515bo69p.js"],"default"]
+4:I[39756,["/_next/static/chunks/34669d-qbhlaz.js","/_next/static/chunks/2im7c515bo69p.js"],"default"]
+5:I[37457,["/_next/static/chunks/34669d-qbhlaz.js","/_next/static/chunks/2im7c515bo69p.js"],"default"]
+7:I[97367,["/_next/static/chunks/34669d-qbhlaz.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
 8:"$Sreact.suspense"
-b:I[97367,["/_next/static/chunks/159zmf7qigmp9.js","/_next/static/chunks/14mrh2-p_w84d.js"],"ViewportBoundary"]
-d:I[97367,["/_next/static/chunks/159zmf7qigmp9.js","/_next/static/chunks/14mrh2-p_w84d.js"],"MetadataBoundary"]
-f:I[68027,["/_next/static/chunks/159zmf7qigmp9.js","/_next/static/chunks/14mrh2-p_w84d.js"],"default",1]
-:HL["/_next/static/chunks/0yefnz03gab83.css","style"]
-0:{"P":null,"c":["","notes","archive"],"q":"","i":false,"f":[[["",{"children":["notes",{"children":["archive",{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0yefnz03gab83.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/159zmf7qigmp9.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/14mrh2-p_w84d.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"children":["$","$L2",null,{"children":[["$","$L3",null,{}],["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L6",[["$","script","script-0",{"src":"/_next/static/chunks/1ecdnnlegqmjk.js","async":true,"nonce":"$undefined"}]],["$","$L7",null,{"children":["$","$8",null,{"name":"Next.MetadataOutlet","children":"$@9"}]}]]}],{},null,false,null]},null,false,"$@a"]},null,false,"$@a"]},null,false,null],["$","$1","h",{"children":[null,["$","$Lb",null,{"children":"$Lc"}],["$","div",null,{"hidden":true,"children":["$","$Ld",null,{"children":["$","$8",null,{"name":"Next.Metadata","children":"$Le"}]}]}],null]}],false]],"m":"$undefined","G":["$f",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0yefnz03gab83.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"hlEy8cSqDW14acnWwTOow"}
+b:I[97367,["/_next/static/chunks/34669d-qbhlaz.js","/_next/static/chunks/2im7c515bo69p.js"],"ViewportBoundary"]
+d:I[97367,["/_next/static/chunks/34669d-qbhlaz.js","/_next/static/chunks/2im7c515bo69p.js"],"MetadataBoundary"]
+f:I[68027,["/_next/static/chunks/34669d-qbhlaz.js","/_next/static/chunks/2im7c515bo69p.js"],"default",1]
+:HL["/_next/static/chunks/2u57nszw-__lz.css","style"]
+0:{"P":null,"c":["","notes","archive"],"q":"","i":false,"f":[[["",{"children":["notes",{"children":["archive",{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/2u57nszw-__lz.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/34669d-qbhlaz.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/2im7c515bo69p.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"children":["$","$L2",null,{"children":[["$","$L3",null,{}],["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L6",[["$","script","script-0",{"src":"/_next/static/chunks/3u41-rumaknwd.js","async":true,"nonce":"$undefined"}]],["$","$L7",null,{"children":["$","$8",null,{"name":"Next.MetadataOutlet","children":"$@9"}]}]]}],{},null,false,null]},null,false,"$@a"]},null,false,"$@a"]},null,false,null],["$","$1","h",{"children":[null,["$","$Lb",null,{"children":"$Lc"}],["$","div",null,{"hidden":true,"children":["$","$Ld",null,{"children":["$","$8",null,{"name":"Next.Metadata","children":"$Le"}]}]}],null]}],false]],"m":"$undefined","G":["$f",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/2u57nszw-__lz.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"sCwkuR5ZRhgeN2MKZNzqb"}
 10:[]
 a:"$W10"
 c:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
-11:I[27201,["/_next/static/chunks/159zmf7qigmp9.js","/_next/static/chunks/14mrh2-p_w84d.js"],"IconMark"]
+11:I[27201,["/_next/static/chunks/34669d-qbhlaz.js","/_next/static/chunks/2im7c515bo69p.js"],"IconMark"]
 9:null
 e:[["$","link","0",{"rel":"icon","href":"/favicon.ico?favicon.2vob68tjqpejf.ico","sizes":"256x256","type":"image/x-icon"}],["$","$L11","1",{}]]
-12:I[758,["/_next/static/chunks/159zmf7qigmp9.js","/_next/static/chunks/14mrh2-p_w84d.js","/_next/static/chunks/1ecdnnlegqmjk.js"],"default"]
-13:T6d2,## 一. 修改全局默认配置：
+12:I[758,["/_next/static/chunks/34669d-qbhlaz.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3u41-rumaknwd.js"],"default"]
+13:T6da,## 一. 修改全局默认配置：
 
 在使用axios请求的时候一般会进行封装，如：
 
-```
+```js
 import axios from "axios";
 const request = axios.create({
   // baseURL: import.meta.env.VITE_APP_BASEURL,
@@ -34,7 +34,7 @@ export default request;
 
 在有些情况下需要动态修改baseURL或其他配置，此时可通过以下方法修改默认配置：
 
-```
+```js
 import request from "/xxx/xxx";
 request.defaults.baseURL = "http://xxxxxx";
 ```
@@ -47,7 +47,7 @@ request.defaults.baseURL = "http://xxxxxx";
 
 1. 直接请求
 
-```
+```js
 import request from "/xxx/xxx";
 const config = {
   baseUrl: "http://xxxxxx",
@@ -73,7 +73,7 @@ export function postData(params) {
 
 2. 请求方式别名
 
-```
+```js
 import request from "/xxx/xxx";
 const config = {
   baseUrl: "http://xxxxxx",
