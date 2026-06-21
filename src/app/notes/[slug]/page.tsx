@@ -34,20 +34,20 @@ export default async function NoteDetailPage({
     <main className="mx-auto max-w-3xl px-6 py-20">
       <Link
         href="/notes"
-        className="text-sm text-foreground/60 transition hover:text-foreground"
+        className="text-sm text-foreground-muted transition hover:text-foreground"
       >
         Back to Notes
       </Link>
 
       <header className="mt-10 border-b border-white/10 pb-10">
         <div className="flex flex-wrap gap-2">
-          <span className="rounded-full bg-[var(--accent)]/10 px-2.5 py-1 text-xs text-[var(--accent)]">
+          <span className="rounded-full bg-[var(--accent-bg)] px-2.5 py-1 text-xs text-[var(--accent)]">
             {note.category}
           </span>
-          <span className="rounded-full border border-white/10 px-2.5 py-1 text-xs text-foreground/55">
+          <span className="rounded-full border border-white/10 px-2.5 py-1 text-xs text-foreground-muted">
             {typeLabel[note.type]}
           </span>
-          <span className="rounded-full border border-white/10 px-2.5 py-1 text-xs text-foreground/55">
+          <span className="rounded-full border border-white/10 px-2.5 py-1 text-xs text-foreground-muted">
             {statusLabel[note.status]}
           </span>
         </div>
@@ -55,11 +55,11 @@ export default async function NoteDetailPage({
         <h1 className="mt-5 text-4xl font-bold tracking-tight">
           {note.title}
         </h1>
-        <p className="mt-4 text-lg leading-8 text-foreground/65">
+        <p className="mt-4 text-lg leading-8 text-foreground-muted">
           {note.description}
         </p>
 
-        <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-foreground/45">
+        <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-foreground-dim">
           <time dateTime={note.updatedAt}>Updated {note.updatedAt}</time>
           <span>{note.readingTime}</span>
           {note.source ? (
@@ -78,7 +78,7 @@ export default async function NoteDetailPage({
           {note.tags.map((tag) => (
             <span
               key={tag}
-              className="rounded-full bg-white/[0.04] px-2 py-1 text-xs text-foreground/55"
+              className="rounded-full bg-white/[0.04] px-2 py-1 text-xs text-foreground-muted"
             >
               {tag}
             </span>

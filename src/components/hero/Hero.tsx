@@ -61,14 +61,14 @@ export default function Hero() {
           <div className="flex flex-wrap gap-3">
             <Link
               href="/lab"
-              className="rounded-md bg-[var(--accent)] px-4 py-2 text-sm font-medium text-background transition hover:bg-[var(--accent-strong)]"
+              className="rounded-md bg-[var(--accent)] px-4 py-2 text-sm font-medium text-background transition hover:bg-[var(--accent-strong)] active:scale-95"
             >
               Explore Lab
             </Link>
 
             <Link
               href="/notes"
-              className="rounded-md border border-white/10 px-4 py-2 text-sm font-medium transition hover:bg-white/10"
+              className="rounded-md border border-white/10 px-4 py-2 text-sm font-medium transition hover:bg-white/10 active:scale-95"
             >
               Read Notes
             </Link>
@@ -119,7 +119,7 @@ export default function Hero() {
               <li key={item.label}>
                 <Link
                   href={item.href}
-                  className="block h-full rounded-lg border border-white/10 bg-white/[0.03] p-5 transition duration-200 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-white/[0.06]"
+                  className="block h-full rounded-lg border border-white/10 bg-white/[0.03] p-5 transition duration-200 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-white/[0.06] active:scale-98"
                 >
                   <span className="font-medium">{item.label}</span>
                   <p className="mt-3 text-sm leading-6 text-foreground/60">

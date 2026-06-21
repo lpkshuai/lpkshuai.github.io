@@ -3,16 +3,25 @@
 :root {
   --background: #080a0f;
   --foreground: #f4f7fb;
-  --muted: #8b95a7;
+  --foreground-muted: #8b95a7;
+  --foreground-dim: #6b7587;
   --panel: #10131b;
   --panel-border: #252b38;
   --accent: #63e6be;
   --accent-strong: #38bdf8;
+  --accent-bg: rgba(99, 230, 190, 0.1);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+[data-theme="light"] {
+  --background: #ffffff;
+  --foreground: #1a1a2e;
+  --foreground-muted: #6b7280;
+  --foreground-dim: #9ca3af;
+  --panel: #f9fafb;
+  --panel-border: #e5e7eb;
+  --accent: #059669;
+  --accent-strong: #0284c7;
+  --accent-bg: rgba(5, 150, 105, 0.1);
 }
 
 html {

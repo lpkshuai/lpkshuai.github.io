@@ -1,0 +1,202 @@
+---
+slug: el-table-display-issues
+title: el-table 设置合并行或列时，显示错乱问题
+category: Vue
+type: snippet
+description: 记录 el-table 合并行或列时显示错乱问题的解决方法。
+status: published
+tags: Vue, Element, Snippet
+updatedAt: 2024-01-05
+---
+
+### 1. 需求效果图：
+
+![image](https://img2024.cnblogs.com/blog/1857566/202401/1857566-20240105164934394-685397237.png)
+
+### 2. 接口数据格式：
+
+<details>
+<summary>点击查看代码</summary>
+
+```
+  const list = [
+    {
+      contractNo: "CAI-20220801001",
+      contractItem: "用户质量指数",
+      count: 15234,
+      customerItems: [
+        {
+          contractNo: null,
+          contractItem: "反欺诈分",
+          price: null,
+          priceType: null,
+          count: 7302,
+          amount: null,
+        },
+        {
+          contractNo: null,
+          contractItem: "逾期评估分",
+          price: null,
+          priceType: null,
+          count: 8234,
+          amount: null,
+        },
+      ],
+    },
+    {
+      contractNo: "CAI-20220801001",
+      contractItem: "价值经营分",
+      count: 900,
+      customerItems: [
+        {
+          contractNo: null,
+          contractItem: "价值经营分",
+          price: null,
+          priceType: null,
+          count: 15234,
+          amount: null,
+        },
+      ],
+    },
+  ];
+```
+
+</details>
+
+### 3. 实现过程：
+
+> element plus 官网中有描述合并表格行列的方法：[点此查看文档](https://element-plus.org/zh-CN/component/table.html#%E5%90%88%E5%B9%B6%E8%A1%8C%E6%88%96%E5%88%97 "点此查看文档")
+> ![image](https://img2024.cnblogs.com/blog/1857566/202401/1857566-20240105170011523-1215553764.png)
+
+表格部分代码如下：
+
+```
+  <el-table
+    class="table-box"
+    border
+    m-t-27px
+    :data="tableData"
+    style="width: 100%"
+    height="605px"
+    :header-cell-style="{
+      background: '#FAFAFA',
+      color: 'rgba(0, 0, 0, 0.40)',
+    }"
+    :span-method="spanMethod"
+  >
+    <el-table-column prop="contractNo" label="合同编号" />
+    <el-table-column prop="contractItem" label="合同项：" />
+
+    <el-table-column prop="customerItemsContractItem" label="对客合同项" />
+    <el-table-column
+      prop="customerItemsCount"
+      label="当天收费量(次)"
+      align="right"
+    >
+      <template #default="scope">
+        <span>{{ $utils.addCommas(scope.row.customerItemsCount) }}</span>
+      </template>
+    </el-table-column>
+
+    <el-table-column prop="count" label="合同项当天收费量" align="center">
+      <template #default="scope">
+        <span>{{ $utils.addCommas(scope.row.count) }}</span>
+      </template>
+    </el-table-column>
+  </el-table>
+```
+
+根据element文档所给的示例结合需求分析，需要把接口返回的数据进行格式化处理，把嵌套数据进行拆分，这里开始我是这样实现的（坑）：
+
+```
+const formatListFn = (list) => {
+  let arr = [];
+  for (let i = 0; i < list.length; i++) {
+    const item = list[i];
+    for (let j = 0; j < item["customerItems"].length; j++) {
+      const itm = item["customerItems"][j];
+      arr.push({
+        customerItemsContractItem: itm.contractItem,
+        customerItemsCount: itm.count,
+        ...item,
+      });
+    }
+  }
+  // console.log(arr);
+  return arr;
+};
+```
+
+> 此处把嵌套数组中需要使用的字段提取了出来，自定义了属性名`customerItemsContractItem`和`customerItemsCount`。其他属性原样复制即可，不需要进行额外操作。
+
+然后定义并给 table 传入span-method方法来实现合并行或列：
+
+```
+const spanMethod = ({ row, column, rowIndex, columnIndex }) => {
+  const len = row["customerItems"].length;
+  if (columnIndex > 3 || columnIndex < 2) {
+    return {
+      rowspan: len,
+      colspan: 1,
+    };
+  }
+};
+```
+
+> 根据索引给需要合并的部分设置rowspan，值为嵌套数组的长度。
+
+此时以为大功告成，结果保存后查看页面如下：
+![image](https://img2024.cnblogs.com/blog/1857566/202401/1857566-20240105172232256-879437951.png)
+可以看到框选处的展示是有问题的，对比需求效果如下：
+![image](https://img2024.cnblogs.com/blog/1857566/202401/1857566-20240105172545487-973196104.png)
+
+![image](https://img2024.cnblogs.com/blog/1857566/202401/1857566-20240105172426376-883457838.png)
+
+### 4. 问题排查处理：
+
+经过多处排查后发现问题出在spanMethod中。在spanMethod方法中，只判断了列索引，所以同一列可能会重复多次执行rowspan，导致合并错乱。
+
+> 嵌套行被拆分后，原来两行数据被拆分成了三行，因此rowspan操作会多次执行。
+
+解决办法就是让多行嵌套数据只执行一次rowspan操作。可以给每行数据添加标识，区分是否进行合并操作。这里我是这样处理的：
+首先给每行数据设置rowspan值
+
+```
+const formatListFn = (list) => {
+  let arr = [];
+  for (let i = 0; i < list.length; i++) {
+    const item = list[i];
+    for (let j = 0; j < item["customerItems"].length; j++) {
+      const itm = item["customerItems"][j];
+      arr.push({
+        customerItemsContractItem: itm.contractItem,
+        customerItemsCount: itm.count,
+        ...item,
+        rowspan: j === 0 ? item.customerItems.length : 0,
+      });
+    }
+  }
+  // console.log(arr);
+  return arr;
+};
+```
+
+> 注意这行 `rowspan: j === 0 ? item.customerItems.length : 0,`，每次遍历customerItems时，给第一项设置rowspan为customerItems.length。其余项设置为0，不执行合并。
+
+然后修改spanMethod方法
+
+```
+const spanMethod = ({ row, column, rowIndex, columnIndex }) => {
+  if (columnIndex > 3 || columnIndex < 2) {
+    return {
+      rowspan: row.rowspan,
+      colspan: 1,
+    };
+  }
+};
+```
+
+> 注意这行`rowspan: row.rowspan`
+
+刷新页面查看，问题解决：
+![image](https://img2024.cnblogs.com/blog/1857566/202401/1857566-20240105174312143-22142749.png)
