@@ -8,27 +8,27 @@
 b:I[97367,["/_next/static/chunks/34669d-qbhlaz.js","/_next/static/chunks/2im7c515bo69p.js"],"ViewportBoundary"]
 d:I[97367,["/_next/static/chunks/34669d-qbhlaz.js","/_next/static/chunks/2im7c515bo69p.js"],"MetadataBoundary"]
 f:I[68027,["/_next/static/chunks/34669d-qbhlaz.js","/_next/static/chunks/2im7c515bo69p.js"],"default",1]
-:HL["/_next/static/chunks/2u57nszw-__lz.css","style"]
-0:{"P":null,"c":["","notes","vue3-html5-qrcode-41e695"],"q":"","i":false,"f":[[["",{"children":["notes",{"children":[["slug","vue3-html5-qrcode-41e695","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/2u57nszw-__lz.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/34669d-qbhlaz.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/2im7c515bo69p.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"children":["$","$L2",null,{"children":[["$","$L3",null,{}],["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L6",[["$","script","script-0",{"src":"/_next/static/chunks/058eujvpmf-iw.js","async":true,"nonce":"$undefined"}]],["$","$L7",null,{"children":["$","$8",null,{"name":"Next.MetadataOutlet","children":"$@9"}]}]]}],{},null,false,null]},null,false,"$@a"]},null,false,"$@a"]},null,false,null],["$","$1","h",{"children":[null,["$","$Lb",null,{"children":"$Lc"}],["$","div",null,{"hidden":true,"children":["$","$Ld",null,{"children":["$","$8",null,{"name":"Next.Metadata","children":"$Le"}]}]}],null]}],false]],"m":"$undefined","G":["$f",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/2u57nszw-__lz.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"sCwkuR5ZRhgeN2MKZNzqb"}
+:HL["/_next/static/chunks/1uovmtrpazun4.css","style"]
+0:{"P":null,"c":["","notes","vue3-html5-qrcode-41e695"],"q":"","i":false,"f":[[["",{"children":["notes",{"children":[["slug","vue3-html5-qrcode-41e695","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/1uovmtrpazun4.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/34669d-qbhlaz.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/2im7c515bo69p.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"children":["$","$L2",null,{"children":[["$","$L3",null,{}],["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L6",[["$","script","script-0",{"src":"/_next/static/chunks/0lqcxnkgj2ca3.js","async":true,"nonce":"$undefined"}]],["$","$L7",null,{"children":["$","$8",null,{"name":"Next.MetadataOutlet","children":"$@9"}]}]]}],{},null,false,null]},null,false,"$@a"]},null,false,"$@a"]},null,false,null],["$","$1","h",{"children":[null,["$","$Lb",null,{"children":"$Lc"}],["$","div",null,{"hidden":true,"children":["$","$Ld",null,{"children":["$","$8",null,{"name":"Next.Metadata","children":"$Le"}]}]}],null]}],false]],"m":"$undefined","G":["$f",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/1uovmtrpazun4.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"gK3Pn9GVrNTaPwCpnfl0w"}
 10:[]
 a:"$W10"
 c:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
 11:I[27201,["/_next/static/chunks/34669d-qbhlaz.js","/_next/static/chunks/2im7c515bo69p.js"],"IconMark"]
 9:null
 e:[["$","link","0",{"rel":"icon","href":"/favicon.ico?favicon.2vob68tjqpejf.ico","sizes":"256x256","type":"image/x-icon"}],["$","$L11","1",{}]]
-12:I[22016,["/_next/static/chunks/34669d-qbhlaz.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/058eujvpmf-iw.js"],""]
-13:I[70831,["/_next/static/chunks/34669d-qbhlaz.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/058eujvpmf-iw.js"],"default"]
-14:T1801,### 1. 安装
+12:I[22016,["/_next/static/chunks/34669d-qbhlaz.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/0lqcxnkgj2ca3.js"],""]
+13:I[70831,["/_next/static/chunks/34669d-qbhlaz.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/0lqcxnkgj2ca3.js"],"default"]
+14:T1841,### 1. 安装
 
 npm安装
 
-```
+```bash
 npm install --save-dev html5-qrcode
 ```
 
 或直接引入
 
-```
+```js
 <script src="https://unpkg.com/html5-qrcode" type="text/javascript">
 ```
 
@@ -36,17 +36,17 @@ npm install --save-dev html5-qrcode
 
 1. 根据需求自定义渲染 QR scanning UI 的容器。
 
-```
+```html
 <div id="reader" width="600px"></div>
 ```
 
 2. 引入 Html5Qrcode
 
-```
+```js
 // 简单模式（使用默认用户界面）
-import {Html5QrcodeScanner} from "html5-qrcode";
+import { Html5QrcodeScanner } from "html5-qrcode";
 // 专业模式（使用自己的用户界面）
-import {Html5Qrcode} from "html5-qrcode";
+import { Html5Qrcode } from "html5-qrcode";
 ```
 
 > `Html5QrcodeScanner`允许您使用几行代码和默认用户界面实现端到端扫描仪，该用户界面允许使用相机进行扫描或从文件系统中选择图像。
@@ -56,7 +56,7 @@ import {Html5Qrcode} from "html5-qrcode";
 
 1. 如果使用 `Html5QrcodeScanner`，系统默认
 
-```
+```js
 // 扫描成功
 function onScanSuccess(decodedText, decodedResult) {
   console.log(`Code matched = ${decodedText}`, decodedResult);
@@ -68,8 +68,9 @@ function onScanFailure(error) {
 // 创建并配置实例，渲染扫描仪
 let html5QrcodeScanner = new Html5QrcodeScanner(
   "reader",
-  { fps: 10, qrbox: {width: 250, height: 250} },
-  /* verbose= */ false);
+  { fps: 10, qrbox: { width: 250, height: 250 } },
+  /* verbose= */ false,
+);
 html5QrcodeScanner.render(onScanSuccess, onScanFailure);
 ```
 
@@ -77,20 +78,22 @@ html5QrcodeScanner.render(onScanSuccess, onScanFailure);
 
 获取相机id
 
-```
+```js
 // 获取支持的相机列表
-Html5Qrcode.getCameras().then(devices => {
-  /**
-   * devices 类型为对象数组
-   * { id: "id", label: "label" }
-   */
-  if (devices && devices.length) {
-    let cameraId = devices[0].id;
-    // 开始扫描
-  }
-}).catch(err => {
-  // 处理错误
-});
+Html5Qrcode.getCameras()
+  .then((devices) => {
+    /**
+     * devices 类型为对象数组
+     * { id: "id", label: "label" }
+     */
+    if (devices && devices.length) {
+      let cameraId = devices[0].id;
+      // 开始扫描
+    }
+  })
+  .catch((err) => {
+    // 处理错误
+  });
 ```
 
 > 注意：如果未授予相机权限，会触发权限请求申请。
@@ -98,24 +101,26 @@ Html5Qrcode.getCameras().then(devices => {
 
 开始扫码
 
-```
+```js
 // 开始扫码
 const html5QrCode = new Html5Qrcode(/* element id */ "reader");
-html5QrCode.start(
-  cameraId,
-  {
-    fps: 10,    // 帧率，控制扫描速度
-    qrbox: { width: 250, height: 250 }  // 限制要用于扫描的取景器区域
-  },
-  (decodedText, decodedResult) => {
-    // 获取扫描结果
-  },
-  (errorMessage) => {
-    // 结果错误处理
-  })
-.catch((err) => {
-  // 无法扫描时的错误处理
-});
+html5QrCode
+  .start(
+    cameraId,
+    {
+      fps: 10, // 帧率，控制扫描速度
+      qrbox: { width: 250, height: 250 }, // 限制要用于扫描的取景器区域
+    },
+    (decodedText, decodedResult) => {
+      // 获取扫描结果
+    },
+    (errorMessage) => {
+      // 结果错误处理
+    },
+  )
+  .catch((err) => {
+    // 无法扫描时的错误处理
+  });
 ```
 
 > 您可以选择在构造函数中设置另一个参数，以verbose将所有日志打印到控制台
@@ -123,22 +128,25 @@ html5QrCode.start(
 
 停止
 
-```
-html5QrCode.stop().then((ignore) => {
-  // 停止扫描
-}).catch((err) => {
-  // 停止失败处理
-});
+```js
+html5QrCode
+  .stop()
+  .then((ignore) => {
+    // 停止扫描
+  })
+  .catch((err) => {
+    // 停止失败处理
+  });
 ```
 
 > 其它相关配置
-> ![image](https://img2024.cnblogs.com/blog/1857566/202402/1857566-20240223153325436-1751554591.png)
+> ![image](/notes/vue/vue3-html5-qrcode-config.png)
 
 ### 4. 完整示例
 
 页面
 
-```
+```js
 <template>
   <div class="page-box">
     <div class="qr-container">
@@ -197,7 +205,7 @@ html5QrCode.stop().then((ignore) => {
 
 逻辑
 
-```
+```js
 <script setup>
 import { reactive, onMounted, onUnmounted } from "vue";
 import { Html5Qrcode } from "html5-qrcode";

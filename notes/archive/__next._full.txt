@@ -8,8 +8,8 @@
 b:I[97367,["/_next/static/chunks/34669d-qbhlaz.js","/_next/static/chunks/2im7c515bo69p.js"],"ViewportBoundary"]
 d:I[97367,["/_next/static/chunks/34669d-qbhlaz.js","/_next/static/chunks/2im7c515bo69p.js"],"MetadataBoundary"]
 f:I[68027,["/_next/static/chunks/34669d-qbhlaz.js","/_next/static/chunks/2im7c515bo69p.js"],"default",1]
-:HL["/_next/static/chunks/2u57nszw-__lz.css","style"]
-0:{"P":null,"c":["","notes","archive"],"q":"","i":false,"f":[[["",{"children":["notes",{"children":["archive",{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/2u57nszw-__lz.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/34669d-qbhlaz.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/2im7c515bo69p.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"children":["$","$L2",null,{"children":[["$","$L3",null,{}],["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L6",[["$","script","script-0",{"src":"/_next/static/chunks/3u41-rumaknwd.js","async":true,"nonce":"$undefined"}]],["$","$L7",null,{"children":["$","$8",null,{"name":"Next.MetadataOutlet","children":"$@9"}]}]]}],{},null,false,null]},null,false,"$@a"]},null,false,"$@a"]},null,false,null],["$","$1","h",{"children":[null,["$","$Lb",null,{"children":"$Lc"}],["$","div",null,{"hidden":true,"children":["$","$Ld",null,{"children":["$","$8",null,{"name":"Next.Metadata","children":"$Le"}]}]}],null]}],false]],"m":"$undefined","G":["$f",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/2u57nszw-__lz.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"sCwkuR5ZRhgeN2MKZNzqb"}
+:HL["/_next/static/chunks/1uovmtrpazun4.css","style"]
+0:{"P":null,"c":["","notes","archive"],"q":"","i":false,"f":[[["",{"children":["notes",{"children":["archive",{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/1uovmtrpazun4.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/34669d-qbhlaz.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/2im7c515bo69p.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"children":["$","$L2",null,{"children":[["$","$L3",null,{}],["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L6",[["$","script","script-0",{"src":"/_next/static/chunks/3u41-rumaknwd.js","async":true,"nonce":"$undefined"}]],["$","$L7",null,{"children":["$","$8",null,{"name":"Next.MetadataOutlet","children":"$@9"}]}]]}],{},null,false,null]},null,false,"$@a"]},null,false,"$@a"]},null,false,null],["$","$1","h",{"children":[null,["$","$Lb",null,{"children":"$Lc"}],["$","div",null,{"hidden":true,"children":["$","$Ld",null,{"children":["$","$8",null,{"name":"Next.Metadata","children":"$Le"}]}]}],null]}],false]],"m":"$undefined","G":["$f",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/1uovmtrpazun4.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"gK3Pn9GVrNTaPwCpnfl0w"}
 10:[]
 a:"$W10"
 c:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
@@ -265,9 +265,9 @@ Pages 是否选择 gh-pages
 - 自定义域名
 - GitHub API 自动项目列表
 - monorepo 多项目部署
-15:T996,## 1. 安装依赖：
+15:T99c,## 1. 安装依赖：
 
-```
+```bash
 #docx文档预览组件
 npm install @vue-office/docx vue-demi@0.14.6
 
@@ -283,7 +283,7 @@ npm install @vue-office/pdf vue-demi@0.14.6
 
 ## 2. 使用示例：
 
-```
+```js
 <template>
   <div class="flex flex-col h-full">
     <div class="flex flex-col justify-center items-center bg-[#fff]">
@@ -356,17 +356,17 @@ const getUrl = async () => {
 [GitHub地址](https://github.com/501351981/vue-office#readme "GitHub地址")
 [npm地址](https://www.npmjs.com/package/@vue-office/docx "npm地址")
 [效果预览](https://501351981.github.io/vue-office/examples/dist/#/docx "效果预览")
-16:T1801,### 1. 安装
+16:T1841,### 1. 安装
 
 npm安装
 
-```
+```bash
 npm install --save-dev html5-qrcode
 ```
 
 或直接引入
 
-```
+```js
 <script src="https://unpkg.com/html5-qrcode" type="text/javascript">
 ```
 
@@ -374,17 +374,17 @@ npm install --save-dev html5-qrcode
 
 1. 根据需求自定义渲染 QR scanning UI 的容器。
 
-```
+```html
 <div id="reader" width="600px"></div>
 ```
 
 2. 引入 Html5Qrcode
 
-```
+```js
 // 简单模式（使用默认用户界面）
-import {Html5QrcodeScanner} from "html5-qrcode";
+import { Html5QrcodeScanner } from "html5-qrcode";
 // 专业模式（使用自己的用户界面）
-import {Html5Qrcode} from "html5-qrcode";
+import { Html5Qrcode } from "html5-qrcode";
 ```
 
 > `Html5QrcodeScanner`允许您使用几行代码和默认用户界面实现端到端扫描仪，该用户界面允许使用相机进行扫描或从文件系统中选择图像。
@@ -394,7 +394,7 @@ import {Html5Qrcode} from "html5-qrcode";
 
 1. 如果使用 `Html5QrcodeScanner`，系统默认
 
-```
+```js
 // 扫描成功
 function onScanSuccess(decodedText, decodedResult) {
   console.log(`Code matched = ${decodedText}`, decodedResult);
@@ -406,8 +406,9 @@ function onScanFailure(error) {
 // 创建并配置实例，渲染扫描仪
 let html5QrcodeScanner = new Html5QrcodeScanner(
   "reader",
-  { fps: 10, qrbox: {width: 250, height: 250} },
-  /* verbose= */ false);
+  { fps: 10, qrbox: { width: 250, height: 250 } },
+  /* verbose= */ false,
+);
 html5QrcodeScanner.render(onScanSuccess, onScanFailure);
 ```
 
@@ -415,20 +416,22 @@ html5QrcodeScanner.render(onScanSuccess, onScanFailure);
 
 获取相机id
 
-```
+```js
 // 获取支持的相机列表
-Html5Qrcode.getCameras().then(devices => {
-  /**
-   * devices 类型为对象数组
-   * { id: "id", label: "label" }
-   */
-  if (devices && devices.length) {
-    let cameraId = devices[0].id;
-    // 开始扫描
-  }
-}).catch(err => {
-  // 处理错误
-});
+Html5Qrcode.getCameras()
+  .then((devices) => {
+    /**
+     * devices 类型为对象数组
+     * { id: "id", label: "label" }
+     */
+    if (devices && devices.length) {
+      let cameraId = devices[0].id;
+      // 开始扫描
+    }
+  })
+  .catch((err) => {
+    // 处理错误
+  });
 ```
 
 > 注意：如果未授予相机权限，会触发权限请求申请。
@@ -436,24 +439,26 @@ Html5Qrcode.getCameras().then(devices => {
 
 开始扫码
 
-```
+```js
 // 开始扫码
 const html5QrCode = new Html5Qrcode(/* element id */ "reader");
-html5QrCode.start(
-  cameraId,
-  {
-    fps: 10,    // 帧率，控制扫描速度
-    qrbox: { width: 250, height: 250 }  // 限制要用于扫描的取景器区域
-  },
-  (decodedText, decodedResult) => {
-    // 获取扫描结果
-  },
-  (errorMessage) => {
-    // 结果错误处理
-  })
-.catch((err) => {
-  // 无法扫描时的错误处理
-});
+html5QrCode
+  .start(
+    cameraId,
+    {
+      fps: 10, // 帧率，控制扫描速度
+      qrbox: { width: 250, height: 250 }, // 限制要用于扫描的取景器区域
+    },
+    (decodedText, decodedResult) => {
+      // 获取扫描结果
+    },
+    (errorMessage) => {
+      // 结果错误处理
+    },
+  )
+  .catch((err) => {
+    // 无法扫描时的错误处理
+  });
 ```
 
 > 您可以选择在构造函数中设置另一个参数，以verbose将所有日志打印到控制台
@@ -461,22 +466,25 @@ html5QrCode.start(
 
 停止
 
-```
-html5QrCode.stop().then((ignore) => {
-  // 停止扫描
-}).catch((err) => {
-  // 停止失败处理
-});
+```js
+html5QrCode
+  .stop()
+  .then((ignore) => {
+    // 停止扫描
+  })
+  .catch((err) => {
+    // 停止失败处理
+  });
 ```
 
 > 其它相关配置
-> ![image](https://img2024.cnblogs.com/blog/1857566/202402/1857566-20240223153325436-1751554591.png)
+> ![image](/notes/vue/vue3-html5-qrcode-config.png)
 
 ### 4. 完整示例
 
 页面
 
-```
+```js
 <template>
   <div class="page-box">
     <div class="qr-container">
@@ -535,7 +543,7 @@ html5QrCode.stop().then((ignore) => {
 
 逻辑
 
-```
+```js
 <script setup>
 import { reactive, onMounted, onUnmounted } from "vue";
 import { Html5Qrcode } from "html5-qrcode";
@@ -637,56 +645,56 @@ const uploadImg = () => {
 [官方教程](https://scanapp.org/html5-qrcode-docs/docs/intro "官方教程")
 [qrcode.minhazav.dev](https://blog.minhazav.dev/research/html5-qrcode "qrcode.minhazav.dev")
 [vite 本地开启 https](https://www.cnblogs.com/lpkshuai/p/17636869.html "vite 本地开启 https")
-17:T160c,### 1. 需求效果图：
+17:T148f,### 1. 需求效果图：
 
-![image](https://img2024.cnblogs.com/blog/1857566/202401/1857566-20240105164934394-685397237.png)
+![image](/notes/element-ui/el-table-display-need.png)
 
 ### 2. 接口数据格式：
 
 <details>
 <summary>点击查看代码</summary>
 
-```
-  const list = [
-    {
-      contractNo: "CAI-20220801001",
-      contractItem: "用户质量指数",
-      count: 15234,
-      customerItems: [
-        {
-          contractNo: null,
-          contractItem: "反欺诈分",
-          price: null,
-          priceType: null,
-          count: 7302,
-          amount: null,
-        },
-        {
-          contractNo: null,
-          contractItem: "逾期评估分",
-          price: null,
-          priceType: null,
-          count: 8234,
-          amount: null,
-        },
-      ],
-    },
-    {
-      contractNo: "CAI-20220801001",
-      contractItem: "价值经营分",
-      count: 900,
-      customerItems: [
-        {
-          contractNo: null,
-          contractItem: "价值经营分",
-          price: null,
-          priceType: null,
-          count: 15234,
-          amount: null,
-        },
-      ],
-    },
-  ];
+```js
+const list = [
+  {
+    contractNo: "CAI-20220801001",
+    contractItem: "用户质量指数",
+    count: 15234,
+    customerItems: [
+      {
+        contractNo: null,
+        contractItem: "反欺诈分",
+        price: null,
+        priceType: null,
+        count: 7302,
+        amount: null,
+      },
+      {
+        contractNo: null,
+        contractItem: "逾期评估分",
+        price: null,
+        priceType: null,
+        count: 8234,
+        amount: null,
+      },
+    ],
+  },
+  {
+    contractNo: "CAI-20220801001",
+    contractItem: "价值经营分",
+    count: 900,
+    customerItems: [
+      {
+        contractNo: null,
+        contractItem: "价值经营分",
+        price: null,
+        priceType: null,
+        count: 15234,
+        amount: null,
+      },
+    ],
+  },
+];
 ```
 
 </details>
@@ -694,49 +702,49 @@ const uploadImg = () => {
 ### 3. 实现过程：
 
 > element plus 官网中有描述合并表格行列的方法：[点此查看文档](https://element-plus.org/zh-CN/component/table.html#%E5%90%88%E5%B9%B6%E8%A1%8C%E6%88%96%E5%88%97 "点此查看文档")
-> ![image](https://img2024.cnblogs.com/blog/1857566/202401/1857566-20240105170011523-1215553764.png)
+> ![image](/notes/element-ui/el-table-span-method-doc.png)
 
 表格部分代码如下：
 
-```
-  <el-table
-    class="table-box"
-    border
-    m-t-27px
-    :data="tableData"
-    style="width: 100%"
-    height="605px"
-    :header-cell-style="{
+```html
+<el-table
+  class="table-box"
+  border
+  m-t-27px
+  :data="tableData"
+  style="width: 100%"
+  height="605px"
+  :header-cell-style="{
       background: '#FAFAFA',
       color: 'rgba(0, 0, 0, 0.40)',
     }"
-    :span-method="spanMethod"
+  :span-method="spanMethod"
+>
+  <el-table-column prop="contractNo" label="合同编号" />
+  <el-table-column prop="contractItem" label="合同项：" />
+
+  <el-table-column prop="customerItemsContractItem" label="对客合同项" />
+  <el-table-column
+    prop="customerItemsCount"
+    label="当天收费量(次)"
+    align="right"
   >
-    <el-table-column prop="contractNo" label="合同编号" />
-    <el-table-column prop="contractItem" label="合同项：" />
+    <template #default="scope">
+      <span>{{ $utils.addCommas(scope.row.customerItemsCount) }}</span>
+    </template>
+  </el-table-column>
 
-    <el-table-column prop="customerItemsContractItem" label="对客合同项" />
-    <el-table-column
-      prop="customerItemsCount"
-      label="当天收费量(次)"
-      align="right"
-    >
-      <template #default="scope">
-        <span>{{ $utils.addCommas(scope.row.customerItemsCount) }}</span>
-      </template>
-    </el-table-column>
-
-    <el-table-column prop="count" label="合同项当天收费量" align="center">
-      <template #default="scope">
-        <span>{{ $utils.addCommas(scope.row.count) }}</span>
-      </template>
-    </el-table-column>
-  </el-table>
+  <el-table-column prop="count" label="合同项当天收费量" align="center">
+    <template #default="scope">
+      <span>{{ $utils.addCommas(scope.row.count) }}</span>
+    </template>
+  </el-table-column>
+</el-table>
 ```
 
 根据element文档所给的示例结合需求分析，需要把接口返回的数据进行格式化处理，把嵌套数据进行拆分，这里开始我是这样实现的（坑）：
 
-```
+```js
 const formatListFn = (list) => {
   let arr = [];
   for (let i = 0; i < list.length; i++) {
@@ -759,7 +767,7 @@ const formatListFn = (list) => {
 
 然后定义并给 table 传入span-method方法来实现合并行或列：
 
-```
+```js
 const spanMethod = ({ row, column, rowIndex, columnIndex }) => {
   const len = row["customerItems"].length;
   if (columnIndex > 3 || columnIndex < 2) {
@@ -774,11 +782,11 @@ const spanMethod = ({ row, column, rowIndex, columnIndex }) => {
 > 根据索引给需要合并的部分设置rowspan，值为嵌套数组的长度。
 
 此时以为大功告成，结果保存后查看页面如下：
-![image](https://img2024.cnblogs.com/blog/1857566/202401/1857566-20240105172232256-879437951.png)
+![image](/notes/element-ui/el-table-span-result-1.png)
 可以看到框选处的展示是有问题的，对比需求效果如下：
-![image](https://img2024.cnblogs.com/blog/1857566/202401/1857566-20240105172545487-973196104.png)
+![image](/notes/element-ui/el-table-span-result-2.png)
 
-![image](https://img2024.cnblogs.com/blog/1857566/202401/1857566-20240105172426376-883457838.png)
+![image](/notes/element-ui/el-table-span-result-3.png)
 
 ### 4. 问题排查处理：
 
@@ -789,7 +797,7 @@ const spanMethod = ({ row, column, rowIndex, columnIndex }) => {
 解决办法就是让多行嵌套数据只执行一次rowspan操作。可以给每行数据添加标识，区分是否进行合并操作。这里我是这样处理的：
 首先给每行数据设置rowspan值
 
-```
+```js
 const formatListFn = (list) => {
   let arr = [];
   for (let i = 0; i < list.length; i++) {
@@ -813,7 +821,7 @@ const formatListFn = (list) => {
 
 然后修改spanMethod方法
 
-```
+```js
 const spanMethod = ({ row, column, rowIndex, columnIndex }) => {
   if (columnIndex > 3 || columnIndex < 2) {
     return {
@@ -827,15 +835,15 @@ const spanMethod = ({ row, column, rowIndex, columnIndex }) => {
 > 注意这行`rowspan: row.rowspan`
 
 刷新页面查看，问题解决：
-![image](https://img2024.cnblogs.com/blog/1857566/202401/1857566-20240105174312143-22142749.png)
-18:T80e,# 官网
+![image](/notes/element-ui/el-table-span-result.png)
+18:T7e5,# 官网
 
 [Vue Flow 官网](https://vueflow.dev/ "Vue Flow 官网")
 [Vue Flow GitHub](https://github.com/bcakmakoglu/vue-flow "Vue Flow GitHub")
 
 # 安装
 
-```
+```bash
 npm i --save @vue-flow/core
 
 yarn add @vue-flow/core
@@ -845,7 +853,7 @@ pnpm i @vue-flow/core
 
 # 使用
 
-```
+```js
 <template>
   <VueFlow v-model="elements" />
 </template>
@@ -883,13 +891,13 @@ const elements = ref([
 </style>
 ```
 
-![image](https://img2023.cnblogs.com/blog/1857566/202301/1857566-20230103165738635-922559221.png)
+![image](/notes/vue/vue3-vue-flow-preview.png)
 
 常用功能：
 
 1. 画布居中
 
-```
+```js
 import { VueFlow, useVueFlow } from "@vue-flow/core";
 const { onPaneReady } = useVueFlow();
 const state = reactive({
@@ -908,7 +916,7 @@ state.instance.zoomTo(1);
 
 2. 点击事件
 
-```
+```js
   <VueFlow
     v-model="flowElement"
     :style="{ background: 'transparent' }"
@@ -921,4 +929,4 @@ state.instance.zoomTo(1);
     console.log(node.id);
   };
 ```
-6:["$","main",null,{"className":"mx-auto max-w-6xl px-6 py-20","children":[["$","header",null,{"className":"mb-8","children":[["$","p",null,{"className":"text-sm uppercase tracking-[0.25em] text-[var(--accent)]","children":"Field Notes"}],["$","h1",null,{"className":"mt-4 text-4xl font-bold tracking-tight md:text-6xl","children":"All Notes"}],["$","p",null,{"className":"mt-5 max-w-3xl text-lg leading-8 text-foreground/65","children":"Browse through the complete collection of frontend notes with search and filtering capabilities."}]]}],["$","$L12",null,{"notes":[{"slug":"axios-baseurl-089fd3","title":"Axios在实例化之后修改baseURL或其他配置","category":"JavaScript","type":"setup","description":"在使用axios请求的时候一般会进行封装，如：","status":"published","tags":["JavaScript","setup","Axios"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"$13"},{"slug":"next-js-plus-github-pages-ci-cd-2c6362","title":"🚀 Next.js + GitHub Pages 自动部署（CI/CD 笔记）","category":"Next.js","type":"setup","description":"main 分支（源码）","status":"published","tags":["Next.js","setup","GitHub Pages"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"$14"},{"slug":"vite-https-self-signed-certificate-115fa2","title":"vite 本地代理请求https接口 self signed certificate 自签名证书错误","category":"Tooling","type":"debugging","description":"server: {","status":"published","tags":["Tooling","debugging","Vite"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"### vite本地代理后端接口为https时，无法发送请求，并报错如下：\n\n![image](https://img2023.cnblogs.com/blog/1857566/202306/1857566-20230614155931692-1367583313.png)\n\n### 查询vite文档，更改配置 `server.https` 为 `true` ，无效\n\n![image](https://img2023.cnblogs.com/blog/1857566/202306/1857566-20230614160643604-1187369552.png)\n\n### 又根据vite文档中描述添加 @vitejs/plugin-basic-ssl 到项目插件中，它会自动创建和缓存一个自签名的证书。 结果无效\n\n### 于是本地添加证书文件并配置在 `server.https` 中 ，无效\n\n### 最终 `server.proxy` 中增加配置 `secure: false` 后，请求发起成功，问题解决\n\n```\n  server: {\n    hmr: true,\n    open: true,\n    port: \"8080\",\n    proxy: {\n      \"/api\": {\n        target: \"https://xx.xx.xx.xx:xx\",\n        changeOrigin: true,\n        rewrite: (path) => path.replace(/^\\/api/, \"\"),\n        secure: false,\n      },\n    },\n  },\n```\n\n> [参考链接 https://github.com/vitejs/vite/issues/3475](https://github.com/vitejs/vite/issues/3475 \"参考链接\")\n> ![image](https://img2023.cnblogs.com/blog/1857566/202306/1857566-20230614161536221-1457769704.png)\n"},{"slug":"vue-docx-excel-pdf-959f53","title":"vue 在网页中预览(docx、excel、pdf)文件","category":"Vue","type":"snippet","description":"npm install @vue-office/docx vue-demi@0.14.6","status":"published","tags":["Vue","snippet","PDF","Excel"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"$15"},{"slug":"vue3-html5-qrcode-41e695","title":"vue3 使用 html5-qrcode 实现扫描二维码功能","category":"Vue","type":"snippet","description":"npm安装","status":"published","tags":["Vue","snippet","QRCode"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"2 min read","content":"$16"},{"slug":"el-table-display-issues","title":"el-table 设置合并行或列时，显示错乱问题","category":"Vue","type":"snippet","description":"记录 el-table 合并行或列时显示错乱问题的解决方法。","status":"published","tags":["Vue","Element","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-01-05","readingTime":"2 min read","content":"$17"},{"slug":"vue3-vue-flow","title":"Vue3 流程图组件库 Vue Flow 简单使用","category":"Vue","type":"snippet","description":"记录 Vue Flow 流程图组件库的使用。","status":"published","tags":["Vue","Frontend","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-01-03","readingTime":"1 min read","content":"$18"}]}]]}]
+6:["$","main",null,{"className":"mx-auto max-w-6xl px-6 py-20","children":[["$","header",null,{"className":"mb-8","children":[["$","p",null,{"className":"text-sm uppercase tracking-[0.25em] text-[var(--accent)]","children":"Field Notes"}],["$","h1",null,{"className":"mt-4 text-4xl font-bold tracking-tight md:text-6xl","children":"All Notes"}],["$","p",null,{"className":"mt-5 max-w-3xl text-lg leading-8 text-foreground/65","children":"Browse through the complete collection of frontend notes with search and filtering capabilities."}]]}],["$","$L12",null,{"notes":[{"slug":"axios-baseurl-089fd3","title":"Axios在实例化之后修改baseURL或其他配置","category":"JavaScript","type":"setup","description":"在使用axios请求的时候一般会进行封装，如：","status":"published","tags":["JavaScript","setup","Axios"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"$13"},{"slug":"next-js-plus-github-pages-ci-cd-2c6362","title":"🚀 Next.js + GitHub Pages 自动部署（CI/CD 笔记）","category":"Next.js","type":"setup","description":"main 分支（源码）","status":"published","tags":["Next.js","setup","GitHub Pages"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"$14"},{"slug":"vue-docx-excel-pdf-959f53","title":"vue 在网页中预览(docx、excel、pdf)文件","category":"Vue","type":"snippet","description":"npm install @vue-office/docx vue-demi@0.14.6","status":"published","tags":["Vue","snippet","PDF","Excel"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"$15"},{"slug":"vue3-html5-qrcode-41e695","title":"vue3 使用 html5-qrcode 实现扫描二维码功能","category":"Vue","type":"snippet","description":"npm安装","status":"published","tags":["Vue","snippet","QRCode"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"2 min read","content":"$16"},{"slug":"el-table-display-issues","title":"el-table 设置合并行或列时，显示错乱问题","category":"Vue","type":"snippet","description":"记录 el-table 合并行或列时显示错乱问题的解决方法。","status":"published","tags":["Vue","Element","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-01-05","readingTime":"2 min read","content":"$17"},{"slug":"vite-https-self-signed-certificate","title":"vite 本地代理请求https接口 self signed certificate 自签名证书错误","category":"Tooling","type":"debugging","description":"记录 vite 本地代理请求https接口时自签名证书错误。","status":"published","tags":["Vite","Tooling"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-06-14","readingTime":"1 min read","content":"### vite本地代理后端接口为https时，无法发送请求，并报错如下：\n\n![image](/notes/vite/error-self-signed-certificate.png)\n\n### 查询vite文档，更改配置 `server.https` 为 `true` ，无效\n\n![image](/notes/vite/server.https-config.png)\n\n### 又根据vite文档中描述添加 @vitejs/plugin-basic-ssl 到项目插件中，它会自动创建和缓存一个自签名的证书。 结果无效\n\n### 于是本地添加证书文件并配置在 `server.https` 中 ，无效\n\n### 最终 `server.proxy` 中增加配置 `secure: false` 后，请求发起成功，问题解决\n\n```js\n  server: {\n    hmr: true,\n    open: true,\n    port: \"8080\",\n    proxy: {\n      \"/api\": {\n        target: \"https://xx.xx.xx.xx:xx\",\n        changeOrigin: true,\n        rewrite: (path) => path.replace(/^\\/api/, \"\"),\n        secure: false,\n      },\n    },\n  },\n```\n\n> [参考链接 https://github.com/vitejs/vite/issues/3475](https://github.com/vitejs/vite/issues/3475 \"参考链接\")\n> ![image](/notes/vite/github-issues-error-self-signed-cetificate.png)\n"},{"slug":"vue3-vue-flow","title":"Vue3 流程图组件库 Vue Flow 简单使用","category":"Vue","type":"snippet","description":"记录 Vue Flow 流程图组件库的使用。","status":"published","tags":["Vue","Frontend","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-01-03","readingTime":"1 min read","content":"$18"}]}]]}]
