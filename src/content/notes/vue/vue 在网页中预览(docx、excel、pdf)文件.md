@@ -1,6 +1,6 @@
 ## 1. 安装依赖：
 
-```
+```bash
 #docx文档预览组件
 npm install @vue-office/docx vue-demi@0.14.6
 
@@ -16,7 +16,7 @@ npm install @vue-office/pdf vue-demi@0.14.6
 
 ## 2. 使用示例：
 
-```
+```js
 <template>
   <div class="flex flex-col h-full">
     <div class="flex flex-col justify-center items-center bg-[#fff]">

@@ -2,13 +2,13 @@
 
 npm安装
 
-```
+```bash
 npm install --save-dev html5-qrcode
 ```
 
 或直接引入
 
-```
+```js
 <script src="https://unpkg.com/html5-qrcode" type="text/javascript">
 ```
 
@@ -16,17 +16,17 @@ npm install --save-dev html5-qrcode
 
 1. 根据需求自定义渲染 QR scanning UI 的容器。
 
-```
+```html
 <div id="reader" width="600px"></div>
 ```
 
 2. 引入 Html5Qrcode
 
-```
+```js
 // 简单模式（使用默认用户界面）
-import {Html5QrcodeScanner} from "html5-qrcode";
+import { Html5QrcodeScanner } from "html5-qrcode";
 // 专业模式（使用自己的用户界面）
-import {Html5Qrcode} from "html5-qrcode";
+import { Html5Qrcode } from "html5-qrcode";
 ```
 
 > `Html5QrcodeScanner`允许您使用几行代码和默认用户界面实现端到端扫描仪，该用户界面允许使用相机进行扫描或从文件系统中选择图像。
@@ -36,7 +36,7 @@ import {Html5Qrcode} from "html5-qrcode";
 
 1. 如果使用 `Html5QrcodeScanner`，系统默认
 
-```
+```js
 // 扫描成功
 function onScanSuccess(decodedText, decodedResult) {
   console.log(`Code matched = ${decodedText}`, decodedResult);
@@ -48,8 +48,9 @@ function onScanFailure(error) {
 // 创建并配置实例，渲染扫描仪
 let html5QrcodeScanner = new Html5QrcodeScanner(
   "reader",
-  { fps: 10, qrbox: {width: 250, height: 250} },
-  /* verbose= */ false);
+  { fps: 10, qrbox: { width: 250, height: 250 } },
+  /* verbose= */ false,
+);
 html5QrcodeScanner.render(onScanSuccess, onScanFailure);
 ```
 
@@ -57,20 +58,22 @@ html5QrcodeScanner.render(onScanSuccess, onScanFailure);
 
 获取相机id
 
-```
+```js
 // 获取支持的相机列表
-Html5Qrcode.getCameras().then(devices => {
-  /**
-   * devices 类型为对象数组
-   * { id: "id", label: "label" }
-   */
-  if (devices && devices.length) {
-    let cameraId = devices[0].id;
-    // 开始扫描
-  }
-}).catch(err => {
-  // 处理错误
-});
+Html5Qrcode.getCameras()
+  .then((devices) => {
+    /**
+     * devices 类型为对象数组
+     * { id: "id", label: "label" }
+     */
+    if (devices && devices.length) {
+      let cameraId = devices[0].id;
+      // 开始扫描
+    }
+  })
+  .catch((err) => {
+    // 处理错误
+  });
 ```
 
 > 注意：如果未授予相机权限，会触发权限请求申请。
@@ -78,24 +81,26 @@ Html5Qrcode.getCameras().then(devices => {
 
 开始扫码
 
-```
+```js
 // 开始扫码
 const html5QrCode = new Html5Qrcode(/* element id */ "reader");
-html5QrCode.start(
-  cameraId,
-  {
-    fps: 10,    // 帧率，控制扫描速度
-    qrbox: { width: 250, height: 250 }  // 限制要用于扫描的取景器区域
-  },
-  (decodedText, decodedResult) => {
-    // 获取扫描结果
-  },
-  (errorMessage) => {
-    // 结果错误处理
-  })
-.catch((err) => {
-  // 无法扫描时的错误处理
-});
+html5QrCode
+  .start(
+    cameraId,
+    {
+      fps: 10, // 帧率，控制扫描速度
+      qrbox: { width: 250, height: 250 }, // 限制要用于扫描的取景器区域
+    },
+    (decodedText, decodedResult) => {
+      // 获取扫描结果
+    },
+    (errorMessage) => {
+      // 结果错误处理
+    },
+  )
+  .catch((err) => {
+    // 无法扫描时的错误处理
+  });
 ```
 
 > 您可以选择在构造函数中设置另一个参数，以verbose将所有日志打印到控制台
@@ -103,22 +108,25 @@ html5QrCode.start(
 
 停止
 
-```
-html5QrCode.stop().then((ignore) => {
-  // 停止扫描
-}).catch((err) => {
-  // 停止失败处理
-});
+```js
+html5QrCode
+  .stop()
+  .then((ignore) => {
+    // 停止扫描
+  })
+  .catch((err) => {
+    // 停止失败处理
+  });
 ```
 
 > 其它相关配置
-> ![image](https://img2024.cnblogs.com/blog/1857566/202402/1857566-20240223153325436-1751554591.png)
+> ![image](/notes/vue/vue3-html5-qrcode-config.png)
 
 ### 4. 完整示例
 
 页面
 
-```
+```js
 <template>
   <div class="page-box">
     <div class="qr-container">
@@ -177,7 +185,7 @@ html5QrCode.stop().then((ignore) => {
 
 逻辑
 
-```
+```js
 <script setup>
 import { reactive, onMounted, onUnmounted } from "vue";
 import { Html5Qrcode } from "html5-qrcode";

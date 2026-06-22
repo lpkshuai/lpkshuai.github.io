@@ -16,7 +16,7 @@ updatedAt: 2023-01-03
 
 # 安装
 
-```
+```bash
 npm i --save @vue-flow/core
 
 yarn add @vue-flow/core
@@ -26,7 +26,7 @@ pnpm i @vue-flow/core
 
 # 使用
 
-```
+```js
 <template>
   <VueFlow v-model="elements" />
 </template>
@@ -64,13 +64,13 @@ const elements = ref([
 </style>
 ```
 
-![image](https://img2023.cnblogs.com/blog/1857566/202301/1857566-20230103165738635-922559221.png)
+![image](/notes/vue/vue3-vue-flow-preview.png)
 
 常用功能：
 
 1. 画布居中
 
-```
+```js
 import { VueFlow, useVueFlow } from "@vue-flow/core";
 const { onPaneReady } = useVueFlow();
 const state = reactive({
@@ -89,7 +89,7 @@ state.instance.zoomTo(1);
 
 2. 点击事件
 
-```
+```js
   <VueFlow
     v-model="flowElement"
     :style="{ background: 'transparent' }"
