@@ -47,3 +47,28 @@ body {
   background-attachment: fixed;
   color: var(--foreground);
 }
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+.animate-shine {
+  animation: shine 2.5s ease-in-out infinite;
+}

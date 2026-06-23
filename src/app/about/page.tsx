@@ -3,203 +3,223 @@ import Link from "next/link";
 const stack = {
   core: [
     "Vue",
-    "Vue 3",
     "React",
-    "JavaScript",
-    "TypeScript",
     "HTML",
-    "CSS",
+    "Tailwindcss",
+    "JavaScript",
     "UniApp",
+    "React native",
   ],
   learning: ["Next.js", "React Server Components", "Motion UI", "Three.js"],
 };
 
-const journey = [
+const achievements = [
   {
     year: "2019",
-    desc: "Started frontend journey with Vue 2 and WeChat Mini Programs.",
+    title: "First Blood: 踏入前端领域",
+    desc: "使用 Vue 2 和小程序完成了最初的代码构建，解锁 [网页开发者] 称号。",
+    unlocked: true,
   },
   {
     year: "2022",
-    desc: "Worked with Vue 3, H5 applications, and UniApp cross-platform development.",
+    title: "Mastery: 跨端大师",
+    desc: "熟练掌握 Vue 3 与 UniApp，实现在移动端 H5 与多端环境下的无缝穿梭。",
+    unlocked: true,
   },
   {
     year: "2023",
-    desc: "Explored React Native, continued Vue 3 projects, and started using AI tools.",
+    title: "Expansion: 认知拓展",
+    desc: "点亮 React Native 技能树，并将 AI 辅助开发正式编入日常作战流。",
+    unlocked: true,
   },
   {
     year: "2025",
-    desc: "Focused on both React and Vue, improving architecture and frontend engineering skills.",
+    title: "Veteran: 架构重塑者",
+    desc: "双端精通。能够独立完成前端工程化基建与复杂组件库架构的搭建。",
+    unlocked: true,
   },
   {
     year: "2026",
-    desc: "Building Personal Lab with Next.js and modern web experiments.",
+    title: "Awakening: 视觉觉醒",
+    desc: "正在构建 Personal Lab。向着 WebGL 和高阶动效发起最终冲刺。",
+    unlocked: false, // 正在进行中的成就
   },
 ];
 
 export default function AboutPage() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-16 space-y-12">
-      {/* Hero */}
-      <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] items-start">
-        <div className="space-y-6">
-          <div className="inline-flex rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-sm text-foreground/70">
-            About / Personal Lab
-          </div>
+    <section className="mx-auto max-w-5xl px-6 py-16 selection:bg-[var(--accent)]/30">
+      {/* 玩家主横幅 (Profile Banner) */}
+      <div className="relative rounded-2xl overflow-hidden bg-[var(--panel)] border border-[var(--panel-border)] shadow-xl mb-10">
+        {/* 顶部背景图/渐变 */}
+        <div className="h-32 bg-gradient-to-r from-[var(--accent-strong)]/20 via-[var(--accent)]/20 to-[var(--background)]"></div>
 
-          <h1 className="text-5xl font-bold tracking-tight md:text-6xl">
-            Building, Learning,
-            <span className="text-[var(--accent)]"> and Sharing</span> in
-            Public.
-          </h1>
-
-          <p className="text-lg leading-8 text-foreground/70 max-w-2xl">
-            Frontend developer with 6+ years of experience, currently exploring
-            React, Next.js, motion design, and modern web architectures. This
-            site is my personal lab for notes, experiments, and ideas.
-          </p>
-        </div>
-
-        {/* Status Card */}
-        <aside className="rounded-lg border border-white/10 bg-white/[0.035] p-5 space-y-4">
-          <div className="flex items-center justify-between border-b border-white/10 pb-3">
-            <span className="text-sm font-medium">Status</span>
-            <span className="rounded-full bg-[var(--accent)]/15 px-2 py-1 text-xs text-[var(--accent)]">
-              Active
+        <div className="px-8 pb-8 pt-4 relative">
+          {/* 头像占位 / 等级 */}
+          <div className="absolute -top-12 left-8 w-24 h-24 rounded-2xl bg-[var(--background)] border-4 border-[var(--panel)] flex items-center justify-center shadow-lg rotate-3">
+            <span className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-br from-[var(--accent)] to-[var(--accent-strong)]">
+              L
             </span>
           </div>
 
-          <div className="space-y-3 text-sm">
+          <div className="ml-32 flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
-              <p className="text-foreground/40">Role</p>
-              <p className="font-medium">Frontend Developer</p>
+              <h1 className="text-3xl font-extrabold text-[var(--foreground)]">
+                pkli
+              </h1>
+              <p className="text-[var(--foreground-muted)] text-sm mt-1 font-medium">
+                Frontend Developer & Creative Explorer
+              </p>
             </div>
 
-            <div>
-              <p className="text-foreground/40">Experience</p>
-              <p className="font-medium">6+ Years</p>
-            </div>
-
-            <div>
-              <p className="text-foreground/40">Focus</p>
-              <p className="font-medium">React & Next.js</p>
-            </div>
-
-            <div>
-              <p className="text-foreground/40">Mode</p>
-              <p className="font-medium">Building in Public</p>
+            <div className="flex gap-4">
+              <div className="text-center px-4 py-2 bg-[var(--background)] rounded-lg border border-[var(--panel-border)]">
+                <p className="text-xs text-[var(--foreground-dim)] uppercase font-bold">
+                  Playtime
+                </p>
+                <p className="text-lg font-bold text-[var(--accent)]">6+ Yrs</p>
+              </div>
+              <div className="text-center px-4 py-2 bg-[var(--background)] rounded-lg border border-[var(--panel-border)]">
+                <p className="text-xs text-[var(--foreground-dim)] uppercase font-bold">
+                  Trophies
+                </p>
+                <p className="text-lg font-bold text-[var(--accent-strong)]">
+                  {achievements.filter((a) => a.unlocked).length}
+                </p>
+              </div>
             </div>
           </div>
-        </aside>
-      </div>
-
-      {/* Who Am I */}
-      <div className="rounded-xl border border-white/10 bg-white/[0.03] p-6 space-y-3">
-        <h2 className="text-xl font-semibold">Who Am I</h2>
-
-        <p className="text-foreground/70 leading-7">
-          Hi, I’m a frontend developer who enjoys building things on the web.
-          Over the past years, I’ve worked with Vue, React, UniApp and various
-          frontend ecosystems in real-world projects.
-        </p>
-
-        <p className="text-foreground/70 leading-7">
-          I believe the best way to grow is by building, experimenting, and
-          sharing what I learn. This site is a personal lab where I collect
-          notes, explore ideas, and document my learning process.
-        </p>
-      </div>
-
-      {/* Journey */}
-      <div className="space-y-6">
-        <h2 className="text-xl font-semibold">Journey</h2>
-
-        <div className="space-y-4">
-          {journey.map((item) => (
-            <div
-              key={item.year}
-              className="flex gap-6 rounded-lg border border-white/10 bg-white/[0.03] p-4"
-            >
-              <div className="w-16 shrink-0 text-[var(--accent)] font-semibold">
-                {item.year}
-              </div>
-              <div className="text-sm text-foreground/70 leading-6">
-                {item.desc}
-              </div>
-            </div>
-          ))}
         </div>
       </div>
 
-      {/* Tech Stack */}
-      <div className="space-y-6">
-        <h2 className="text-xl font-semibold">Tech Stack</h2>
-
-        <div className="grid gap-6 md:grid-cols-2">
-          <div className="rounded-lg border border-white/10 bg-white/[0.03] p-5">
-            <h3 className="font-medium mb-3">Core Stack</h3>
-            <div className="flex flex-wrap gap-2">
+      <div className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr]">
+        {/* 左侧：装备栏 & 好友联络 */}
+        <div className="space-y-8">
+          {/* 技能徽章 (Badges) */}
+          <div className="bg-[var(--panel)] rounded-2xl p-6 border border-[var(--panel-border)]">
+            <h2 className="text-sm font-bold uppercase tracking-wider text-[var(--foreground)] mb-4 flex justify-between">
+              <span>Equipped Loadout</span>
+              <span className="text-[var(--accent)]">Core</span>
+            </h2>
+            <div className="flex flex-wrap gap-2 mb-6">
               {stack.core.map((item) => (
                 <span
                   key={item}
-                  className="text-xs rounded-full border border-white/10 bg-white/[0.04] px-2 py-1"
+                  className="px-3 py-1.5 rounded-lg bg-[var(--background)] border border-[var(--panel-border)] text-xs font-semibold text-[var(--foreground-muted)] hover:text-[var(--foreground)] transition-colors shadow-sm"
                 >
                   {item}
                 </span>
               ))}
             </div>
-          </div>
 
-          <div className="rounded-lg border border-white/10 bg-white/[0.03] p-5">
-            <h3 className="font-medium mb-3">Currently Learning</h3>
+            <h2 className="text-sm font-bold uppercase tracking-wider text-[var(--foreground)] mb-4 flex justify-between pt-4 border-t border-[var(--panel-border)]">
+              <span>Next Skill Tree</span>
+              <span className="text-[var(--accent-strong)] animate-pulse">
+                Grinding
+              </span>
+            </h2>
             <div className="flex flex-wrap gap-2">
               {stack.learning.map((item) => (
                 <span
                   key={item}
-                  className="text-xs rounded-full border border-[var(--accent)]/30 bg-[var(--accent)]/10 text-[var(--accent)] px-2 py-1"
+                  className="px-3 py-1.5 rounded-lg bg-[var(--accent-strong)]/10 border border-[var(--accent-strong)]/30 text-xs font-bold text-[var(--accent-strong)] shadow-[0_0_10px_var(--accent-bg)]"
                 >
                   {item}
                 </span>
               ))}
             </div>
           </div>
+
+          {/* 联机卡片 (Multiplayer) */}
+          <div className="bg-[var(--panel)] rounded-2xl p-6 border border-[var(--panel-border)] text-center space-y-4">
+            <h2 className="text-sm font-bold uppercase tracking-wider text-[var(--foreground)]">
+              Join Session
+            </h2>
+            <p className="text-xs text-[var(--foreground-muted)] leading-relaxed">
+              Always open for co-op development, technical discussions, or
+              exploring new web paradigms.
+            </p>
+            <div className="flex flex-col gap-2 pt-2">
+              <Link
+                href="https://github.com/lpkshuai/"
+                target="_blank"
+                className="py-2.5 rounded-lg bg-[var(--foreground)] text-[var(--background)] text-sm font-bold hover:scale-[1.02] active:scale-95 transition-transform"
+              >
+                Add on GitHub
+              </Link>
+              <Link
+                href="https://www.cnblogs.com/lpkshuai"
+                target="_blank"
+                className="py-2.5 rounded-lg bg-[var(--background)] border border-[var(--panel-border)] text-[var(--foreground)] text-sm font-bold hover:bg-[var(--panel-border)] transition-colors"
+              >
+                View Blog Stats
+              </Link>
+            </div>
+          </div>
         </div>
-      </div>
 
-      {/* Goals */}
-      <div className="rounded-xl border border-dashed border-white/15 p-6 space-y-3">
-        <h2 className="text-xl font-semibold">Current Goals</h2>
+        {/* 右侧：成就列表 (Achievements) */}
+        <div className="space-y-6">
+          <h2 className="text-xl font-extrabold text-[var(--foreground)] pl-2">
+            Milestone Achievements
+          </h2>
 
-        <ul className="space-y-2 text-sm text-foreground/70">
-          <li>✓ Build Personal Lab</li>
-          <li>✓ Organize technical notes</li>
-          <li>□ Create interactive animation demos</li>
-          <li>□ Explore Three.js / WebGL</li>
-          <li>□ Experiment with AI-assisted development</li>
-          <li>□ Share more public learning content</li>
-        </ul>
-      </div>
+          <div className="space-y-4">
+            {achievements.map((achieve, idx) => (
+              <div
+                key={idx}
+                className={`flex gap-5 p-5 rounded-2xl border transition-all duration-300 ${
+                  achieve.unlocked
+                    ? "bg-[var(--panel)] border-[var(--panel-border)] hover:border-[var(--accent)] hover:shadow-lg"
+                    : "bg-[var(--background)] border-dashed border-[var(--panel-border)] opacity-60 grayscale hover:grayscale-0"
+                }`}
+              >
+                {/* 成就图标/奖杯 */}
+                <div
+                  className={`w-14 h-14 shrink-0 rounded-xl flex items-center justify-center shadow-inner ${
+                    achieve.unlocked
+                      ? "bg-[var(--background)] border-2 border-[var(--accent)]"
+                      : "bg-[var(--panel)] border-2 border-[var(--panel-border)]"
+                  }`}
+                >
+                  <span
+                    className={`text-xl ${achieve.unlocked ? "text-[var(--accent)]" : "text-[var(--foreground-dim)]"}`}
+                  >
+                    {achieve.unlocked ? "🏆" : "🔒"}
+                  </span>
+                </div>
 
-      {/* Connect */}
-      <div className="rounded-xl border border-white/10 bg-white/[0.03] p-6 space-y-4">
-        <h2 className="text-xl font-semibold">Connect</h2>
+                <div className="flex-1 space-y-1">
+                  <div className="flex justify-between items-start">
+                    <h3
+                      className={`font-bold ${achieve.unlocked ? "text-[var(--foreground)]" : "text-[var(--foreground-muted)]"}`}
+                    >
+                      {achieve.title}
+                    </h3>
+                    <span className="text-xs font-mono text-[var(--foreground-dim)] bg-[var(--background)] px-2 py-0.5 rounded border border-[var(--panel-border)]">
+                      {achieve.year}
+                    </span>
+                  </div>
+                  <p className="text-sm text-[var(--foreground-muted)] leading-relaxed">
+                    {achieve.desc}
+                  </p>
 
-        <div className="flex flex-col gap-2 text-sm text-foreground/70">
-          <Link
-            href="https://github.com/lpkshuai/"
-            target="_blank"
-            className="hover:text-white transition"
-          >
-            GitHub → github.com/lpkshuai
-          </Link>
-
-          <Link
-            href="https://www.cnblogs.com/lpkshuai"
-            target="_blank"
-            className="hover:text-white transition"
-          >
-            Blog → cnblogs.com/lpkshuai
-          </Link>
+                  {/* 未解锁成就的进度条 */}
+                  {!achieve.unlocked && (
+                    <div className="pt-3">
+                      <div className="flex justify-between text-[10px] uppercase font-bold text-[var(--accent-strong)] mb-1">
+                        <span>Grinding in progress...</span>
+                        <span>45%</span>
+                      </div>
+                      <div className="h-1.5 w-full bg-[var(--background)] rounded-full overflow-hidden border border-[var(--panel-border)]">
+                        <div className="h-full bg-[var(--accent-strong)] w-[45%]"></div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

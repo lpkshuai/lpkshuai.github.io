@@ -1,36 +1,109 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
 
 const topics = ["Vue & React", "TypeScript", "Tailwind CSS", "Web Animation"];
 
 const cardStack = [
   {
     label: "Lab / 实验场",
-    desc: "Interactive demos, motion experiments, and small frontend ideas built while learning.",
+    desc: "交互 Demo、CSS 动效实验、Canvas 粒子，以及后期结合 Canvas 与 WebGL 的视觉奇思妙想。",
     href: "/lab",
-    // 史诗级（紫色）动态发光样式
     rarityClass:
-      "border-purple-500/30 text-purple-300 hover:border-purple-400 hover:shadow-[0_0_40px_rgba(168,85,247,0.35)] hover:bg-purple-500/5",
+      "border-purple-200 dark:border-purple-500/20 text-purple-700 dark:text-purple-400 hover:border-purple-500 hover:shadow-[0_0_20px_rgba(168,85,247,0.15)] hover:bg-purple-50/50 dark:hover:bg-purple-500/[0.02]",
     tag: "EPIC / 史诗",
   },
   {
     label: "Notes / 知识库",
-    desc: "A growing collection of Markdown notes about frontend, frameworks, and problem solving.",
+    desc: "关于前端工程化、双端框架底层原理、大厂工程踩坑日常，以及个人技术树的 Markdown 沉淀。",
     href: "/notes",
-    // 稀有级（蓝色）动态发光样式
     rarityClass:
-      "border-blue-400/20 text-blue-300 hover:border-blue-400 hover:shadow-[0_0_25px_rgba(59,130,246,0.25)] hover:bg-blue-500/5",
+      "border-blue-200 dark:border-blue-500/20 text-blue-700 dark:text-blue-400 hover:border-blue-500 hover:shadow-[0_0_20px_rgba(59,130,246,0.15)] hover:bg-blue-50/50 dark:hover:bg-blue-500/[0.02]",
     tag: "RARE / 稀有",
   },
   {
     label: "About / 角色面板",
     desc: "关于我、主修技术栈、当前的进化路线，以及如何在这个充满代码的数字世界中建立连接。",
     href: "/about",
-    // 普通级（常规色）动态发光样式
+    // 修改点：保持固定琥珀色
     rarityClass:
-      "border-[var(--panel-border)] text-[var(--foreground-muted)] hover:border-[var(--accent)] hover:shadow-[0_0_15px_rgba(234,179,8,0.12)] hover:bg-[var(--accent-bg)]",
-    tag: "COMMON / 普通",
+      "border-amber-200 dark:border-amber-500/20 text-amber-700 dark:text-amber-400 hover:border-amber-500 hover:shadow-[0_0_20px_rgba(234,179,8,0.15)] hover:bg-amber-50/50 dark:hover:bg-amber-500/[0.02]",
+    // 修改点：COMMON 改为 LEGENDARY
+    tag: "LEGENDARY / 传说",
   },
 ];
+
+// 独立的 3D 卡片组件
+function Card3D({ item }: { item: (typeof cardStack)[number] }) {
+  const [transform, setTransform] = useState("");
+  const [glarePos, setGlarePos] = useState({ x: 50, y: 50 });
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const { clientX, clientY, currentTarget } = e;
+    const { left, top, width, height } = currentTarget.getBoundingClientRect();
+
+    const x = (clientX - left) / width;
+    const y = (clientY - top) / height;
+
+    const rotateX = (y - 0.5) * -8;
+    const rotateY = (x - 0.5) * 8;
+
+    setTransform(
+      `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03) translateY(-4px)`,
+    );
+    setGlarePos({ x: x * 100, y: y * 100 });
+  };
+
+  const handleMouseLeave = () => {
+    setTransform(
+      "perspective(1000px) rotateX(0) rotateY(0) scale(1) translateY(0)",
+    );
+    setGlarePos({ x: 50, y: 50 });
+  };
+
+  const getGlowColor = (tag: string) => {
+    if (tag.includes("EPIC")) return "rgba(168, 85, 247, 0.12)";
+    if (tag.includes("RARE")) return "rgba(59, 130, 246, 0.12)";
+    return "rgba(234, 179, 8, 0.12)"; // 固定的琥珀色高光
+  };
+
+  return (
+    <li key={item.label} style={{ perspective: "1000px" }}>
+      <Link
+        href={item.href}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        className={`relative block h-full rounded-lg border bg-[var(--panel)] p-5 transition-transform duration-200 ease-out ${item.rarityClass} group/card active:scale-[0.99] shadow-sm dark:shadow-none overflow-hidden`}
+        style={{ transform, transformStyle: "preserve-3d" }}
+      >
+        <div
+          className="absolute inset-0 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 pointer-events-none z-0"
+          style={{
+            background: `radial-gradient(circle at ${glarePos.x}% ${glarePos.y}%, ${getGlowColor(item.tag)}, transparent 50%)`,
+          }}
+        />
+
+        <div
+          className="relative z-10 flex flex-col h-full"
+          style={{ transform: "translateZ(40px)" }}
+        >
+          <span className="absolute top-0 right-0 font-mono text-[9px] tracking-widest opacity-60 dark:opacity-40 group-hover/card:opacity-100 transition-opacity">
+            {item.tag}
+          </span>
+
+          <span className="font-mono font-bold tracking-wide text-[var(--foreground)] group-hover/card:text-current block">
+            {item.label}
+          </span>
+
+          <p className="mt-4 text-sm leading-6 text-[var(--foreground-muted)] transition-colors group-hover/card:text-[var(--foreground)] flex-1">
+            {item.desc}
+          </p>
+        </div>
+      </Link>
+    </li>
+  );
+}
 
 export default function Hero() {
   return (
@@ -38,9 +111,11 @@ export default function Hero() {
       <div className="grid items-center gap-10 lg:grid-cols-[1.2fr_0.8fr]">
         {/* 左侧：主文本与核心操作区域 */}
         <div className="space-y-8">
-          <div className="inline-flex items-center gap-2 rounded-sm border border-(--panel-border) bg-(--panel)/60 px-3 py-1 text-xs text-(--foreground-muted) font-mono">
-            <span className="h-2 w-2 rounded-full bg-[var(--accent)] animate-ping" />
+          <div className="inline-flex items-center gap-2 rounded-sm border border-(--panel-border) bg-(--panel)/60 px-3 py-1.5 text-xs text-(--foreground-muted) font-mono">
+            <span className="h-2 w-2 rounded-full bg-[var(--accent)] animate-pulse" />
             <span>&gt; system.init("Frontend_Architect");</span>
+            {/* 新增：终端闪烁光标 */}
+            <span className="inline-block w-1.5 h-3 bg-[var(--accent)] animate-blink ml-0.5"></span>
           </div>
 
           <div className="space-y-5">
@@ -75,7 +150,6 @@ export default function Hero() {
               className="group relative overflow-hidden rounded-md bg-[var(--accent)] px-6 py-3 font-mono text-sm font-bold tracking-wider text-black transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_24px_var(--accent)] active:scale-95"
             >
               <span className="relative z-10">▶ ENTER LAB</span>
-
               <span className="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
             </Link>
 
@@ -90,10 +164,8 @@ export default function Hero() {
 
         {/* 右侧：沉浸式游戏面板 Game Status Panel */}
         <aside className="rounded-lg border border-[var(--panel-border)] bg-[var(--panel)]/60 p-6 shadow-xl dark:shadow-black/40 font-mono relative overflow-hidden group">
-          {/* 背景极光装饰 */}
           <div className="absolute -right-16 -top-16 h-36 w-36 rounded-full bg-[var(--accent)]/10 blur-3xl transition-opacity group-hover:opacity-70" />
 
-          {/* 面板头部 */}
           <div className="flex items-center justify-between border-b border-[var(--panel-border)] pb-4">
             <div className="flex items-center gap-2">
               <span className="text-sm font-bold tracking-widest uppercase text-[var(--foreground)]">
@@ -105,7 +177,6 @@ export default function Hero() {
             </span>
           </div>
 
-          {/* 属性网格 */}
           <div className="mt-6 space-y-6">
             <div className="grid grid-cols-2 gap-4 text-xs">
               <div className="space-y-1">
@@ -126,20 +197,22 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* EXP 经验条区域 */}
             <div className="space-y-2">
               <div className="text-xs uppercase flex justify-between font-bold text-[var(--foreground-dim)]">
                 <span className="tracking-wider">
-                  Quest: Mastering Three.js & Shader
+                  {" "}
+                  Quest: Mastering Three.js & Shader{" "}
                 </span>
                 <span className="text-[var(--accent)]">45%</span>
               </div>
-              <div className="h-2 w-full bg-[var(--panel-border)] rounded-full overflow-hidden p-[1px]">
-                <div className="h-full bg-gradient-to-r from-[var(--accent)] to-amber-400 rounded-full w-[45%] shadow-[0_0_10px_var(--accent)]" />
+              <div className="relative h-2.5 w-full bg-[var(--panel-border)] rounded-full overflow-hidden p-[1px]">
+                <div className="h-full bg-gradient-to-r from-[var(--accent)] to-amber-400 rounded-full w-[45%] shadow-[0_0_10px_var(--accent)]"></div>
+                <div className="absolute top-0 left-0 h-full w-[45%] overflow-hidden rounded-full">
+                  <div className="h-full w-full bg-gradient-to-r from-transparent via-white/40 to-transparent animate-shine"></div>
+                </div>
               </div>
             </div>
 
-            {/* Equipped Skills / 核心技能插槽 */}
             <div className="space-y-2">
               <p className="text-[var(--foreground-dim)] text-xs uppercase font-bold tracking-wider">
                 Equipped Skills
@@ -165,7 +238,6 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Current Buff 状态加成区 */}
             <div className="rounded-sm border-l-2 border-green-500 bg-green-500/5 dark:bg-green-500/10 p-3 text-xs leading-5 text-[var(--foreground-muted)]">
               <span className="font-bold text-emerald-600 dark:text-emerald-400 block mb-1 uppercase tracking-wider">
                 ⚡ CURRENT BUFF: 像素共鸣 (Pixel Resonance)
@@ -180,45 +252,9 @@ export default function Hero() {
       {/* 底部：三格装备栏 / 路由入口 */}
       <div className="pt-8 border-t border-[var(--panel-border)]">
         <ul className="grid gap-4 md:grid-cols-3">
-          {cardStack.map((item) => {
-            return (
-              <li key={item.label}>
-                <Link
-                  href={item.href}
-                  className={`group/card relative block h-full rounded-xl border bg-[var(--panel)] p-6 transition-all duration-300 hover:-translate-y-2 ${item.rarityClass} shadow-sm dark:shadow-none overflow-hidden`}
-                >
-                  {/* 背景光晕（核心升级点） */}
-                  <div className="absolute -top-10 -right-10 h-32 w-32 rounded-full opacity-0 blur-2xl transition-opacity duration-500 group-hover/card:opacity-100 bg-current" />
-
-                  {/* icon / 标识区 */}
-                  <div className="flex items-center gap-2 mb-4">
-                    <div className="h-8 w-8 rounded-md bg-[var(--panel-elevated)] flex items-center justify-center text-sm">
-                      {item.tag.split(" / ")[0] === "EPIC" && "⚡"}
-                      {item.tag.split(" / ")[0] === "RARE" && "📘"}
-                      {item.tag.split(" / ")[0] === "COMMON" && "👤"}
-                    </div>
-
-                    <span className="font-mono text-[10px] opacity-60">
-                      {item.tag}
-                    </span>
-                  </div>
-
-                  {/* 标题 */}
-                  <span className="font-mono font-bold tracking-wide text-[var(--foreground)] block text-lg">
-                    {item.label}
-                  </span>
-
-                  {/* 描述 */}
-                  <p className="mt-3 text-sm leading-6 text-[var(--foreground-muted)] transition-colors group-hover/card:text-[var(--foreground)]">
-                    {item.desc}
-                  </p>
-
-                  {/* 底部提示线 */}
-                  <div className="mt-5 h-px w-full bg-gradient-to-r from-transparent via-[var(--panel-border)] to-transparent opacity-60" />
-                </Link>
-              </li>
-            );
-          })}
+          {cardStack.map((item) => (
+            <Card3D key={item.label} item={item} />
+          ))}
         </ul>
       </div>
     </section>
