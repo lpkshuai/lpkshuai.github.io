@@ -2,21 +2,38 @@
 
 import Link from "next/link";
 import ThemeToggle from "@/components/ThemeToggle";
-
-type NavItem = {
-  href: string;
-  label: string;
-};
-
-const navItems: NavItem[] = [
-  { href: "/", label: "Home" },
-  { href: "/notes", label: "Notes" },
-  { href: "/lab", label: "Lab" },
-  { href: "/projects", label: "Projects" },
-  { href: "/about", label: "About" },
-];
+import LanguageToggle from "@/components/LanguageToggle";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { dictionaries } from "@/i18n";
 
 export default function Navbar() {
+  const { language } = useLanguage();
+
+  const dict = dictionaries[language];
+
+  const navItems = [
+    {
+      href: "/",
+      label: dict.nav.home,
+    },
+    {
+      href: "/notes",
+      label: dict.nav.notes,
+    },
+    {
+      href: "/lab",
+      label: dict.nav.lab,
+    },
+    {
+      href: "/projects",
+      label: dict.nav.projects,
+    },
+    {
+      href: "/about",
+      label: dict.nav.about,
+    },
+  ];
+
   return (
     <header className="sticky top-0 z-50 border-b border-white/[0.06] bg-white/[0.02] backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
@@ -42,8 +59,10 @@ export default function Navbar() {
               ))}
             </ul>
           </nav>
-          
+
           <ThemeToggle />
+
+          <LanguageToggle />
         </div>
       </div>
     </header>
