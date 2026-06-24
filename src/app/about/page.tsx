@@ -209,10 +209,10 @@ export default function AboutPage() {
                     <div className="pt-3">
                       <div className="flex justify-between text-[10px] uppercase font-bold text-[var(--accent-strong)] mb-1">
                         <span>Grinding in progress...</span>
-                        <span>45%</span>
+                        <span>35%</span>
                       </div>
                       <div className="h-1.5 w-full bg-[var(--background)] rounded-full overflow-hidden border border-[var(--panel-border)]">
-                        <div className="h-full bg-[var(--accent-strong)] w-[45%]"></div>
+                        <div className="h-full bg-[var(--accent-strong)] w-[35%]"></div>
                       </div>
                     </div>
                   )}

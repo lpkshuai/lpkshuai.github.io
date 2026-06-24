@@ -8,15 +8,15 @@ const topics = ["Vue & React", "TypeScript", "Tailwind CSS", "Web Animation"];
 const cardStack = [
   {
     label: "Lab / 实验场",
-    desc: "交互 Demo、CSS 动效实验、Canvas 粒子，以及后期结合 Canvas 与 WebGL 的视觉奇思妙想。",
+    desc: "尚未归档的魔法实验皆寄存于此。包含动效演练、交互原型，以及各种狂野且有趣的代码奇思。",
     href: "/lab",
     rarityClass:
       "border-purple-200 dark:border-purple-500/20 text-purple-700 dark:text-purple-400 hover:border-purple-500 hover:shadow-[0_0_20px_rgba(168,85,247,0.15)] hover:bg-purple-50/50 dark:hover:bg-purple-500/[0.02]",
     tag: "EPIC / 史诗",
   },
   {
-    label: "Notes / 知识库",
-    desc: "关于前端工程化、双端框架底层原理、大厂工程踩坑日常，以及个人技术树的 Markdown 沉淀。",
+    label: "Notes / 档案库",
+    desc: "冒险途中的见闻与阵痛。涵盖技术笔记、踩坑记录以及工作和个人项目中的问题与思考。",
     href: "/notes",
     rarityClass:
       "border-blue-200 dark:border-blue-500/20 text-blue-700 dark:text-blue-400 hover:border-blue-500 hover:shadow-[0_0_20px_rgba(59,130,246,0.15)] hover:bg-blue-50/50 dark:hover:bg-blue-500/[0.02]",
@@ -24,7 +24,7 @@ const cardStack = [
   },
   {
     label: "About / 角色面板",
-    desc: "关于我、主修技术栈、当前的进化路线，以及如何在这个充满代码的数字世界中建立连接。",
+    desc: "查阅角色的核心属性、技能树加点，以及未来的转职路线。",
     href: "/about",
     // 修改点：保持固定琥珀色
     rarityClass:
@@ -113,21 +113,22 @@ export default function Hero() {
         <div className="space-y-8">
           <div className="inline-flex items-center gap-2 rounded-sm border border-(--panel-border) bg-(--panel)/60 px-3 py-1.5 text-xs text-(--foreground-muted) font-mono">
             <span className="h-2 w-2 rounded-full bg-[var(--accent)] animate-pulse" />
-            <span>&gt; system.init("Frontend_Architect");</span>
+            <span>&gt; System booted. Loading frontend adventure...</span>
             {/* 新增：终端闪烁光标 */}
             <span className="inline-block w-1.5 h-3 bg-[var(--accent)] animate-blink ml-0.5"></span>
           </div>
 
           <div className="space-y-5">
             <h1 className="max-w-3xl text-4xl font-extrabold tracking-tight text-balance md:text-6xl leading-tight">
-              构建扎实的前端架构，
+              Leveling Up Through Code，
               <br />
               <span className="font-serif italic tracking-wide bg-gradient-to-r from-[var(--accent)] to-amber-500 bg-clip-text text-transparent">
-                打磨极致的视觉与交互。
+                一名前端开发者的冒险日志。
               </span>
             </h1>
             <p className="max-w-2xl text-lg leading-8 text-[var(--foreground-muted)]">
-              这里是我的个人数字工坊。用来陈列具有游戏般打磨质感的前端实验性作品，记录代码踩坑日常，并映射我在前端世界里的“打怪升级”路线。
+              “欢迎来到我的营地。这里陈列着如极品装备般精心打磨的交互实验，卷轴上记录着与
+              Bug 搏杀的日常，也映射出我在代码世界中不断‘打怪升级’的轨迹。”
             </p>
           </div>
 
@@ -149,7 +150,7 @@ export default function Hero() {
               href="/lab"
               className="group relative overflow-hidden rounded-md bg-[var(--accent)] px-6 py-3 font-mono text-sm font-bold tracking-wider text-black transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_24px_var(--accent)] active:scale-95"
             >
-              <span className="relative z-10">▶ ENTER LAB</span>
+              <span className="relative z-10">⚔️ ENTER LAB</span>
               <span className="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
             </Link>
 
@@ -157,7 +158,7 @@ export default function Hero() {
               href="/notes"
               className="group rounded-md border border-[var(--panel-border)] bg-[var(--panel)]/40 px-6 py-3 font-mono text-sm font-bold tracking-wider text-[var(--foreground)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--accent)] hover:bg-[var(--accent-bg)] hover:text-[var(--accent)] active:scale-95"
             >
-              📂 OPEN ARCHIVE
+              📜 OPEN ARCHIVE
             </Link>
           </div>
         </div>
@@ -184,7 +185,7 @@ export default function Hero() {
                   Primary Class
                 </p>
                 <p className="font-bold text-[var(--accent)] text-sm">
-                  Web Frontend Eng.
+                  Frontend Engineer
                 </p>
               </div>
               <div className="space-y-1">
@@ -201,7 +202,7 @@ export default function Hero() {
               <div className="text-xs uppercase flex justify-between font-bold text-[var(--foreground-dim)]">
                 <span className="tracking-wider">
                   {" "}
-                  Quest: Mastering Three.js & Shader{" "}
+                  Quest: Master React & Next.js{" "}
                 </span>
                 <span className="text-[var(--accent)]">45%</span>
               </div>
@@ -240,10 +241,10 @@ export default function Hero() {
 
             <div className="rounded-sm border-l-2 border-green-500 bg-green-500/5 dark:bg-green-500/10 p-3 text-xs leading-5 text-[var(--foreground-muted)]">
               <span className="font-bold text-emerald-600 dark:text-emerald-400 block mb-1 uppercase tracking-wider">
-                ⚡ CURRENT BUFF: 像素共鸣 (Pixel Resonance)
+                ⚡ ACTIVE BUFF: 像素共鸣 (Pixel Resonance)
               </span>
-              专注度提升。当前正在深度打磨跨端组件库交互，并正在构思将 Canvas
-              粒子效果注入 Lab 实验场。
+              [持续效果] 专注力 +50%。当前正深度打磨跨端组件库交互，并酝酿将
+              Canvas/WebGL 粒子魔法注入 Lab 实验场。
             </div>
           </div>
         </aside>
