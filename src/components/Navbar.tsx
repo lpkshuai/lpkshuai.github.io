@@ -3,13 +3,11 @@
 import Link from "next/link";
 import ThemeToggle from "@/components/ThemeToggle";
 import LanguageToggle from "@/components/LanguageToggle";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { dictionaries } from "@/i18n";
+
+import { useDictionary } from "@/hooks/useDictionary";
 
 export default function Navbar() {
-  const { language } = useLanguage();
-
-  const dict = dictionaries[language];
+  const dict = useDictionary();
 
   const navItems = [
     {
