@@ -1,13 +1,8 @@
 1:"$Sreact.fragment"
-2:I[22016,["/_next/static/chunks/05qp0mciuml13.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3w2-v51cy6vxz.js"],""]
-b:I[53849,["/_next/static/chunks/05qp0mciuml13.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3w2-v51cy6vxz.js"],"default"]
-11:I[97367,["/_next/static/chunks/05qp0mciuml13.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
-12:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-6xl px-6 py-20 font-mono selection:bg-[var(--accent)]/30","children":[["$","header",null,{"className":"mb-16 space-y-6","children":[["$","div",null,{"className":"flex flex-col md:flex-row md:items-end justify-between gap-10 border-b-2 border-dashed border-[var(--panel-border)] pb-8","children":[["$","div",null,{"className":"space-y-5","children":[["$","div",null,{"className":"inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[var(--accent)]","children":[["$","span",null,{"className":"h-2 w-2 bg-[var(--accent)] shadow-[0_0_8px_var(--accent)] animate-pulse"}],"DATA_ARCHIVE // 个人知识库"]}],["$","h1",null,{"className":"text-4xl font-extrabold tracking-tight md:text-5xl text-[var(--foreground)] leading-tight","children":["Notes /"," ",["$","span",null,{"className":"font-serif italic tracking-wide bg-gradient-to-r from-[var(--accent)] to-amber-500 bg-clip-text text-transparent","children":"战术图鉴"}]]}],["$","p",null,{"className":"max-w-xl text-base leading-8 text-[var(--foreground-muted)]","children":"\"冒险途中的见闻与阵痛。记录每一次代码踩坑与灵感迸发的时刻。这里存放着我从前端世界收集来的实战卷轴与魔法蓝图。所有卷轴皆从真实的代码搏杀中提取。\""}]]}],["$","div",null,{"className":"flex gap-6 rounded-xl border border-[var(--panel-border)] bg-[var(--panel)] p-5 shadow-lg","children":[["$","div",null,{"className":"flex flex-col justify-end text-right","children":[["$","span",null,{"className":"text-[10px] font-bold uppercase tracking-widest text-[var(--foreground-dim)] mb-1","children":"Total Logs"}],["$","span",null,{"className":"text-3xl font-black text-[var(--foreground)] leading-none","children":7}]]}],["$","div",null,{"className":"w-px bg-[var(--panel-border)]"}],["$","div",null,{"className":"flex flex-col justify-end text-right","children":[["$","span",null,{"className":"text-[10px] font-bold uppercase tracking-widest text-[var(--accent)] mb-1","children":"Deployed"}],["$","span",null,{"className":"text-3xl font-black text-[var(--accent)] leading-none","children":7}]]}],["$","div",null,{"className":"w-px bg-[var(--panel-border)]"}],["$","div",null,{"className":"flex flex-col justify-end text-right opacity-60","children":[["$","span",null,{"className":"text-[10px] font-bold uppercase tracking-widest text-[var(--foreground-dim)] mb-1","children":"Drafts"}],["$","span",null,{"className":"text-xl font-bold text-[var(--foreground)] leading-none","children":0}]]}]]}]]}],["$","div",null,{"className":"flex flex-wrap items-center gap-3 pt-2","children":[["$","span",null,{"className":"text-[10px] font-bold uppercase tracking-widest text-[var(--foreground-dim)] mr-2","children":"> Filter_By_Tags:"}],[["$","$L2","JavaScript",{"href":"/notes/archive?category=JavaScript","className":"group relative overflow-hidden rounded border border-[var(--panel-border)] bg-[var(--panel)] px-3 py-1.5 text-xs font-bold text-[var(--foreground-muted)] transition-all hover:border-[var(--accent)] hover:text-[var(--accent)] shadow-sm","children":[["$","span",null,{"className":"relative z-10","children":"JavaScript"}],["$","div",null,{"className":"absolute inset-0 bg-[var(--accent)]/10 translate-y-full group-hover:translate-y-0 transition-transform duration-200"}]]}],["$","$L2","Next.js",{"href":"/notes/archive?category=Next.js","className":"group relative overflow-hidden rounded border border-[var(--panel-border)] bg-[var(--panel)] px-3 py-1.5 text-xs font-bold text-[var(--foreground-muted)] transition-all hover:border-[var(--accent)] hover:text-[var(--accent)] shadow-sm","children":[["$","span",null,{"className":"relative z-10","children":"Next.js"}],["$","div",null,{"className":"absolute inset-0 bg-[var(--accent)]/10 translate-y-full group-hover:translate-y-0 transition-transform duration-200"}]]}],["$","$L2","Vue",{"href":"/notes/archive?category=Vue","className":"group relative overflow-hidden rounded border border-[var(--panel-border)] bg-[var(--panel)] px-3 py-1.5 text-xs font-bold text-[var(--foreground-muted)] transition-all hover:border-[var(--accent)] hover:text-[var(--accent)] shadow-sm","children":["$L3","$L4"]}],"$L5"]]}]]}],"$L6","$L7","$L8"]}],["$L9"],"$La"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"IJhCu6kIo23BNq-WS3zCj"}
-3:["$","span",null,{"className":"relative z-10","children":"Vue"}]
-4:["$","div",null,{"className":"absolute inset-0 bg-[var(--accent)]/10 translate-y-full group-hover:translate-y-0 transition-transform duration-200"}]
-5:["$","$L2","Tooling",{"href":"/notes/archive?category=Tooling","className":"group relative overflow-hidden rounded border border-[var(--panel-border)] bg-[var(--panel)] px-3 py-1.5 text-xs font-bold text-[var(--foreground-muted)] transition-all hover:border-[var(--accent)] hover:text-[var(--accent)] shadow-sm","children":[["$","span",null,{"className":"relative z-10","children":"Tooling"}],["$","div",null,{"className":"absolute inset-0 bg-[var(--accent)]/10 translate-y-full group-hover:translate-y-0 transition-transform duration-200"}]]}]
-c:T6da,## 一. 修改全局默认配置：
+2:I[34127,["/_next/static/chunks/04aubedwedcgw.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/2tdyl2mc41wlq.js"],"default"]
+b:I[97367,["/_next/static/chunks/04aubedwedcgw.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
+c:"$Sreact.suspense"
+3:T6da,## 一. 修改全局默认配置：
 
 在使用axios请求的时候一般会进行封装，如：
 
@@ -81,8 +76,7 @@ export function postData(params) {
 
 [其他配置项见官方文档](https://axios-http.com/zh/docs/req_config "其他配置项见官方文档")
 [其他请求方式见官方文档](https://axios-http.com/zh/docs/api_intro "其他请求方式见官方文档")
-6:["$","section",null,{"aria-labelledby":"featured-note-title","className":"mb-12","children":[["$","h2",null,{"id":"featured-note-title","className":"mb-6 flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[var(--accent-strong)]","children":[["$","span",null,{"className":"animate-pulse","children":"✦"}]," Latest Breakthrough // 最新破译"]}],["$","div",null,{"className":"group relative rounded-2xl border-2 border-[var(--accent-strong)]/30 bg-[var(--panel)] p-2 transition-all hover:border-[var(--accent-strong)] hover:shadow-[0_0_30px_var(--accent-strong)]/20","children":[["$","div",null,{"className":"absolute -right-3 -top-3 rotate-12 rounded-lg border-2 border-[var(--accent-strong)] bg-[var(--background)] px-3 py-1 text-xs font-black text-[var(--accent-strong)] shadow-lg","children":"NEW!"}],["$","div",null,{"className":"rounded-xl bg-[var(--background)]","children":["$","$Lb",null,{"note":{"slug":"axios-baseurl-089fd3","title":"Axios在实例化之后修改baseURL或其他配置","category":"JavaScript","type":"setup","description":"在使用axios请求的时候一般会进行封装，如：","status":"published","tags":["JavaScript","setup","Axios"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"$c"},"featured":true}]}]]}]]}]
-d:Ta58,# 🚀 Next.js + GitHub Pages 自动部署（CI/CD 笔记）
+4:Ta58,# 🚀 Next.js + GitHub Pages 自动部署（CI/CD 笔记）
 
 ## 🧠 一、整体流程
 
@@ -256,11 +250,7 @@ Pages 是否选择 gh-pages
 - 自定义域名
 - GitHub API 自动项目列表
 - monorepo 多项目部署
-7:["$","section",null,{"aria-labelledby":"recent-notes-title","className":"mb-16","children":[["$","h2",null,{"id":"recent-notes-title","className":"mb-6 flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[var(--foreground-muted)]","children":"Recently Unlocked // 最近解锁"}],["$","ul",null,{"className":"grid gap-6 md:grid-cols-2","children":[["$","li","next-js-plus-github-pages-ci-cd-2c6362",{"className":"group h-full","children":["$","div",null,{"className":"h-full rounded-2xl border border-[var(--panel-border)] bg-[var(--panel)] p-1 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent)] hover:shadow-[0_8px_30px_-10px_var(--accent-bg)]","children":["$","div",null,{"className":"h-full rounded-xl bg-[var(--background)]","children":["$","$Lb",null,{"note":{"slug":"next-js-plus-github-pages-ci-cd-2c6362","title":"🚀 Next.js + GitHub Pages 自动部署（CI/CD 笔记）","category":"Next.js","type":"setup","description":"main 分支（源码）","status":"published","tags":["Next.js","setup","GitHub Pages"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"$d"}}]}]}]}],["$","li","vue-docx-excel-pdf-959f53",{"className":"group h-full","children":["$","div",null,{"className":"h-full rounded-2xl border border-[var(--panel-border)] bg-[var(--panel)] p-1 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent)] hover:shadow-[0_8px_30px_-10px_var(--accent-bg)]","children":"$Le"}]}],"$Lf","$L10"]}]]}]
-8:["$","section",null,{"className":"mt-8 border-t border-dashed border-[var(--panel-border)] pt-12","children":["$","$L2",null,{"href":"/notes/archive","className":"group relative flex w-full flex-col items-center justify-center overflow-hidden rounded-2xl border border-[var(--panel-border)] bg-[var(--panel)] py-12 transition-all hover:border-[var(--accent)] hover:shadow-[0_0_40px_var(--accent-bg)]","children":[["$","div",null,{"className":"absolute inset-0 bg-[linear-gradient(transparent_50%,rgba(0,0,0,0.1)_50%)] bg-[length:100%_4px] pointer-events-none opacity-20"}],["$","div",null,{"className":"relative z-10 flex flex-col items-center gap-3","children":[["$","span",null,{"className":"flex h-12 w-12 items-center justify-center rounded-full bg-[var(--background)] border border-[var(--accent)] text-[var(--accent)] shadow-[0_0_15px_var(--accent-bg)] transition-transform group-hover:scale-110","children":["$","svg",null,{"className":"w-5 h-5","fill":"none","viewBox":"0 0 24 24","stroke":"currentColor","children":["$","path",null,{"strokeLinecap":"round","strokeLinejoin":"round","strokeWidth":2,"d":"M13 10V3L4 14h7v7l9-11h-7z"}]}]}],["$","h3",null,{"className":"text-xl font-bold text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors","children":"Access Full Archive"}],["$","p",null,{"className":"text-xs font-sans text-[var(--foreground-muted)]","children":"Enter the grand library to search, filter, and explore all knowledge tomes."}]]}]]}]}]
-9:["$","script","script-0",{"src":"/_next/static/chunks/3w2-v51cy6vxz.js","async":true}]
-a:["$","$L11",null,{"children":["$","$12",null,{"name":"Next.MetadataOutlet","children":"$@13"}]}]
-14:T99c,## 1. 安装依赖：
+5:T99c,## 1. 安装依赖：
 
 ```bash
 #docx文档预览组件
@@ -351,8 +341,7 @@ const getUrl = async () => {
 [GitHub地址](https://github.com/501351981/vue-office#readme "GitHub地址")
 [npm地址](https://www.npmjs.com/package/@vue-office/docx "npm地址")
 [效果预览](https://501351981.github.io/vue-office/examples/dist/#/docx "效果预览")
-e:["$","div",null,{"className":"h-full rounded-xl bg-[var(--background)]","children":["$","$Lb",null,{"note":{"slug":"vue-docx-excel-pdf-959f53","title":"vue 在网页中预览(docx、excel、pdf)文件","category":"Vue","type":"snippet","description":"npm install @vue-office/docx vue-demi@0.14.6","status":"published","tags":["Vue","snippet","PDF","Excel"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"$14"}}]}]
-15:T1841,### 1. 安装
+6:T1841,### 1. 安装
 
 npm安装
 
@@ -641,8 +630,7 @@ const uploadImg = () => {
 [官方教程](https://scanapp.org/html5-qrcode-docs/docs/intro "官方教程")
 [qrcode.minhazav.dev](https://blog.minhazav.dev/research/html5-qrcode "qrcode.minhazav.dev")
 [vite 本地开启 https](https://www.cnblogs.com/lpkshuai/p/17636869.html "vite 本地开启 https")
-f:["$","li","vue3-html5-qrcode-41e695",{"className":"group h-full","children":["$","div",null,{"className":"h-full rounded-2xl border border-[var(--panel-border)] bg-[var(--panel)] p-1 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent)] hover:shadow-[0_8px_30px_-10px_var(--accent-bg)]","children":["$","div",null,{"className":"h-full rounded-xl bg-[var(--background)]","children":["$","$Lb",null,{"note":{"slug":"vue3-html5-qrcode-41e695","title":"vue3 使用 html5-qrcode 实现扫描二维码功能","category":"Vue","type":"snippet","description":"npm安装","status":"published","tags":["Vue","snippet","QRCode"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"2 min read","content":"$15"}}]}]}]}]
-16:T148f,### 1. 需求效果图：
+7:T148f,### 1. 需求效果图：
 
 ![image](/notes/element-ui/el-table-display-need.png)
 
@@ -833,5 +821,100 @@ const spanMethod = ({ row, column, rowIndex, columnIndex }) => {
 
 刷新页面查看，问题解决：
 ![image](/notes/element-ui/el-table-span-result.png)
-10:["$","li","el-table-display-issues",{"className":"group h-full","children":["$","div",null,{"className":"h-full rounded-2xl border border-[var(--panel-border)] bg-[var(--panel)] p-1 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent)] hover:shadow-[0_8px_30px_-10px_var(--accent-bg)]","children":["$","div",null,{"className":"h-full rounded-xl bg-[var(--background)]","children":["$","$Lb",null,{"note":{"slug":"el-table-display-issues","title":"el-table 设置合并行或列时，显示错乱问题","category":"Vue","type":"snippet","description":"记录 el-table 合并行或列时显示错乱问题的解决方法。","status":"published","tags":["Vue","Element","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-01-05","readingTime":"2 min read","content":"$16"}}]}]}]}]
-13:null
+8:T7e5,# 官网
+
+[Vue Flow 官网](https://vueflow.dev/ "Vue Flow 官网")
+[Vue Flow GitHub](https://github.com/bcakmakoglu/vue-flow "Vue Flow GitHub")
+
+# 安装
+
+```bash
+npm i --save @vue-flow/core
+
+yarn add @vue-flow/core
+
+pnpm i @vue-flow/core
+```
+
+# 使用
+
+```js
+<template>
+  <VueFlow v-model="elements" />
+</template>
+
+<script setup>
+import { VueFlow  } from '@vue-flow/core'
+
+const elements = ref([
+  // Nodes
+  // An input node, specified by using `type: 'input'`
+  { id: '1', type: 'input', label: 'Node 1', position: { x: 250, y: 5 } },
+
+  // Default nodes, you can omit `type: 'default'`
+  { id: '2', label: 'Node 2', position: { x: 100, y: 100 }, },
+  { id: '3', label: 'Node 3', position: { x: 400, y: 100 } },
+
+  // An output node, specified by using `type: 'output'`
+  { id: '4', type: 'output', label: 'Node 4', position: { x: 400, y: 200 } },
+
+  // Edges
+  // Most basic edge, only consists of an id, source-id and target-id
+  { id: 'e1-3', source: '1', target: '3' },
+
+  // An animated edge
+  { id: 'e1-2', source: '1', target: '2', animated: true },
+])
+</script>
+
+<style>
+/* these are necessary styles for vue flow */
+@import "@vue-flow/core/dist/style.css";
+
+/* this contains the default theme, these are optional styles */
+@import "@vue-flow/core/dist/theme-default.css";
+</style>
+```
+
+![image](/notes/vue/vue3-vue-flow-preview.png)
+
+常用功能：
+
+1. 画布居中
+
+```js
+import { VueFlow, useVueFlow } from "@vue-flow/core";
+const { onPaneReady } = useVueFlow();
+const state = reactive({
+  instance: null,
+});
+onPaneReady((instance) => {
+  instance.fitView();
+  // 将对象缓存
+  state.instance = instance;
+});
+
+// 设置缩放级别
+state.instance.fitView({ offset: { y: 50 } });
+state.instance.zoomTo(1);
+```
+
+2. 点击事件
+
+```js
+  <VueFlow
+    v-model="flowElement"
+    :style="{ background: 'transparent' }"
+    :default-zoom="1"
+    fit-view-on-init
+    @nodeClick="nodeClickHandler"
+  />
+  const nodeClickHandler = (props) => {
+    const node = props.node;
+    console.log(node.id);
+  };
+```
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-6xl px-6 py-20 font-mono selection:bg-[var(--accent)]/30","children":["$","$L2",null,{"notes":[{"slug":"axios-baseurl-089fd3","title":"Axios在实例化之后修改baseURL或其他配置","category":"JavaScript","type":"setup","description":"在使用axios请求的时候一般会进行封装，如：","status":"published","tags":["JavaScript","setup","Axios"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"$3"},{"slug":"next-js-plus-github-pages-ci-cd-2c6362","title":"🚀 Next.js + GitHub Pages 自动部署（CI/CD 笔记）","category":"Next.js","type":"setup","description":"main 分支（源码）","status":"published","tags":["Next.js","setup","GitHub Pages"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"$4"},{"slug":"vue-docx-excel-pdf-959f53","title":"vue 在网页中预览(docx、excel、pdf)文件","category":"Vue","type":"snippet","description":"npm install @vue-office/docx vue-demi@0.14.6","status":"published","tags":["Vue","snippet","PDF","Excel"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"$5"},{"slug":"vue3-html5-qrcode-41e695","title":"vue3 使用 html5-qrcode 实现扫描二维码功能","category":"Vue","type":"snippet","description":"npm安装","status":"published","tags":["Vue","snippet","QRCode"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"2 min read","content":"$6"},{"slug":"el-table-display-issues","title":"el-table 设置合并行或列时，显示错乱问题","category":"Vue","type":"snippet","description":"记录 el-table 合并行或列时显示错乱问题的解决方法。","status":"published","tags":["Vue","Element","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-01-05","readingTime":"2 min read","content":"$7"},{"slug":"vite-https-self-signed-certificate","title":"vite 本地代理请求https接口 self signed certificate 自签名证书错误","category":"Tooling","type":"debugging","description":"记录 vite 本地代理请求https接口时自签名证书错误。","status":"published","tags":["Vite","Tooling"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-06-14","readingTime":"1 min read","content":"### vite本地代理后端接口为https时，无法发送请求，并报错如下：\n\n![image](/notes/vite/error-self-signed-certificate.png)\n\n### 查询vite文档，更改配置 `server.https` 为 `true` ，无效\n\n![image](/notes/vite/server.https-config.png)\n\n### 又根据vite文档中描述添加 @vitejs/plugin-basic-ssl 到项目插件中，它会自动创建和缓存一个自签名的证书。 结果无效\n\n### 于是本地添加证书文件并配置在 `server.https` 中 ，无效\n\n### 最终 `server.proxy` 中增加配置 `secure: false` 后，请求发起成功，问题解决\n\n```js\n  server: {\n    hmr: true,\n    open: true,\n    port: \"8080\",\n    proxy: {\n      \"/api\": {\n        target: \"https://xx.xx.xx.xx:xx\",\n        changeOrigin: true,\n        rewrite: (path) => path.replace(/^\\/api/, \"\"),\n        secure: false,\n      },\n    },\n  },\n```\n\n> [参考链接 https://github.com/vitejs/vite/issues/3475](https://github.com/vitejs/vite/issues/3475 \"参考链接\")\n> ![image](/notes/vite/github-issues-error-self-signed-cetificate.png)\n"},{"slug":"vue3-vue-flow","title":"Vue3 流程图组件库 Vue Flow 简单使用","category":"Vue","type":"snippet","description":"记录 Vue Flow 流程图组件库的使用。","status":"published","tags":["Vue","Frontend","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-01-03","readingTime":"1 min read","content":"$8"}],"categories":["JavaScript","Next.js","Vue","Tooling"],"featuredNote":"$0:rsc:props:children:0:props:children:props:notes:0","recentNotes":["$0:rsc:props:children:0:props:children:props:notes:1","$0:rsc:props:children:0:props:children:props:notes:2","$0:rsc:props:children:0:props:children:props:notes:3","$0:rsc:props:children:0:props:children:props:notes:4"],"publishedCount":7,"draftCount":0}]}],["$L9"],"$La"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"eC2FJIEi6kldIEE7J3ljm"}
+9:["$","script","script-0",{"src":"/_next/static/chunks/2tdyl2mc41wlq.js","async":true}]
+a:["$","$Lb",null,{"children":["$","$c",null,{"name":"Next.MetadataOutlet","children":"$@d"}]}]
+d:null
