@@ -1,28 +1,850 @@
 1:"$Sreact.fragment"
-2:I[75144,["/_next/static/chunks/2ayjngd95ieln.js","/_next/static/chunks/2im7c515bo69p.js"],"ThemeProvider"]
-3:I[11110,["/_next/static/chunks/2ayjngd95ieln.js","/_next/static/chunks/2im7c515bo69p.js"],"LanguageProvider"]
-4:I[45678,["/_next/static/chunks/2ayjngd95ieln.js","/_next/static/chunks/2im7c515bo69p.js"],"default"]
-5:I[39756,["/_next/static/chunks/2ayjngd95ieln.js","/_next/static/chunks/2im7c515bo69p.js"],"default"]
-6:I[37457,["/_next/static/chunks/2ayjngd95ieln.js","/_next/static/chunks/2im7c515bo69p.js"],"default"]
-8:I[97367,["/_next/static/chunks/2ayjngd95ieln.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
+2:I[75144,["/_next/static/chunks/24i19o1q_m7il.js","/_next/static/chunks/2im7c515bo69p.js"],"ThemeProvider"]
+3:I[11110,["/_next/static/chunks/24i19o1q_m7il.js","/_next/static/chunks/2im7c515bo69p.js"],"LanguageProvider"]
+4:I[45678,["/_next/static/chunks/24i19o1q_m7il.js","/_next/static/chunks/2im7c515bo69p.js"],"default"]
+5:I[39756,["/_next/static/chunks/24i19o1q_m7il.js","/_next/static/chunks/2im7c515bo69p.js"],"default"]
+6:I[37457,["/_next/static/chunks/24i19o1q_m7il.js","/_next/static/chunks/2im7c515bo69p.js"],"default"]
+8:I[97367,["/_next/static/chunks/24i19o1q_m7il.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
 9:"$Sreact.suspense"
-c:I[97367,["/_next/static/chunks/2ayjngd95ieln.js","/_next/static/chunks/2im7c515bo69p.js"],"ViewportBoundary"]
-e:I[97367,["/_next/static/chunks/2ayjngd95ieln.js","/_next/static/chunks/2im7c515bo69p.js"],"MetadataBoundary"]
-10:I[68027,["/_next/static/chunks/2ayjngd95ieln.js","/_next/static/chunks/2im7c515bo69p.js"],"default",1]
-:HL["/_next/static/chunks/26_pxbfovg7q7.css","style"]
-0:{"P":null,"c":["","notes"],"q":"","i":false,"f":[[["",{"children":["notes",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/26_pxbfovg7q7.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/2ayjngd95ieln.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/2im7c515bo69p.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"children":["$","$L2",null,{"children":["$","$L3",null,{"children":[["$","$L4",null,{}],["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}]}]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L7",null,["$","$L8",null,{"children":["$","$9",null,{"name":"Next.MetadataOutlet","children":"$@a"}]}]]}],{},null,false,null]},null,false,"$@b"]},null,false,null],["$","$1","h",{"children":[null,["$","$Lc",null,{"children":"$Ld"}],["$","div",null,{"hidden":true,"children":["$","$Le",null,{"children":["$","$9",null,{"name":"Next.Metadata","children":"$Lf"}]}]}],null]}],false]],"m":"$undefined","G":["$10",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/26_pxbfovg7q7.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"jDWu_Xym888ovN9a8fVdZ"}
+c:I[97367,["/_next/static/chunks/24i19o1q_m7il.js","/_next/static/chunks/2im7c515bo69p.js"],"ViewportBoundary"]
+e:I[97367,["/_next/static/chunks/24i19o1q_m7il.js","/_next/static/chunks/2im7c515bo69p.js"],"MetadataBoundary"]
+10:I[68027,["/_next/static/chunks/24i19o1q_m7il.js","/_next/static/chunks/2im7c515bo69p.js"],"default",1]
+:HL["/_next/static/chunks/1tx0xnfonpb8g.css","style"]
+0:{"P":null,"c":["","notes"],"q":"","i":false,"f":[[["",{"children":["notes",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/1tx0xnfonpb8g.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/24i19o1q_m7il.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/2im7c515bo69p.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"children":["$","$L2",null,{"children":["$","$L3",null,{"children":[["$","$L4",null,{}],["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}]}]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L7",[["$","script","script-0",{"src":"/_next/static/chunks/3w2-v51cy6vxz.js","async":true,"nonce":"$undefined"}]],["$","$L8",null,{"children":["$","$9",null,{"name":"Next.MetadataOutlet","children":"$@a"}]}]]}],{},null,false,null]},null,false,"$@b"]},null,false,null],["$","$1","h",{"children":[null,["$","$Lc",null,{"children":"$Ld"}],["$","div",null,{"hidden":true,"children":["$","$Le",null,{"children":["$","$9",null,{"name":"Next.Metadata","children":"$Lf"}]}]}],null]}],false]],"m":"$undefined","G":["$10",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/1tx0xnfonpb8g.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"ZV5iHPUWqM0BmH8qci7N5"}
 11:[]
 b:"$W11"
 d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
-12:I[27201,["/_next/static/chunks/2ayjngd95ieln.js","/_next/static/chunks/2im7c515bo69p.js"],"IconMark"]
+12:I[27201,["/_next/static/chunks/24i19o1q_m7il.js","/_next/static/chunks/2im7c515bo69p.js"],"IconMark"]
 a:null
 f:[["$","link","0",{"rel":"icon","href":"/favicon.ico?favicon.2vob68tjqpejf.ico","sizes":"256x256","type":"image/x-icon"}],["$","$L12","1",{}]]
-13:I[22016,["/_next/static/chunks/2ayjngd95ieln.js","/_next/static/chunks/2im7c515bo69p.js"],""]
-7:["$","main",null,{"className":"mx-auto max-w-6xl px-6 py-20","children":[["$","header",null,{"className":"grid gap-8 border-b border-white/10 pb-12 lg:grid-cols-[1.2fr_0.8fr]","children":[["$","div",null,{"children":[["$","p",null,{"className":"text-sm uppercase tracking-[0.25em] text-[var(--accent)]","children":"Field Notes"}],["$","h1",null,{"className":"mt-4 text-4xl font-bold tracking-tight md:text-6xl","children":"Notes from real frontend work and learning."}],["$","p",null,{"className":"mt-5 max-w-3xl text-lg leading-8 text-foreground/65","children":"Practical frontend notes collected from debugging sessions, framework experiments, setup records, and small implementation details worth keeping."}]]}],["$","aside",null,{"className":"rounded-lg border border-white/10 bg-white/[0.03] p-5","children":[["$","p",null,{"className":"text-sm font-medium","children":"Knowledge Base"}],["$","dl",null,{"className":"mt-5 grid grid-cols-3 gap-3 text-sm","children":[["$","div",null,{"className":"rounded-md border border-white/10 bg-black/10 p-3","children":[["$","dt",null,{"className":"text-foreground-dim","children":"Notes"}],["$","dd",null,{"className":"mt-2 text-2xl font-semibold","children":7}]]}],["$","div",null,{"className":"rounded-md border border-white/10 bg-black/10 p-3","children":[["$","dt",null,{"className":"text-foreground-dim","children":"Live"}],["$","dd",null,{"className":"mt-2 text-2xl font-semibold","children":7}]]}],["$","div",null,{"className":"rounded-md border border-white/10 bg-black/10 p-3","children":[["$","dt",null,{"className":"text-foreground-dim","children":"Drafts"}],["$","dd",null,{"className":"mt-2 text-2xl font-semibold","children":0}]]}]]}],["$","div",null,{"className":"mt-5","children":[["$","p",null,{"className":"text-xs uppercase tracking-[0.2em] text-foreground-dim","children":"Browse by category"}],["$","div",null,{"className":"mt-3 flex flex-wrap gap-2","children":[["$","$L13","JavaScript",{"href":"/notes/archive?category=JavaScript","className":"rounded-full border border-white/10 bg-white/[0.03] px-2.5 py-1 text-xs text-foreground/60 transition hover:border-cyan-300/40 hover:text-foreground","children":"JavaScript"}],["$","$L13","Next.js",{"href":"/notes/archive?category=Next.js","className":"rounded-full border border-white/10 bg-white/[0.03] px-2.5 py-1 text-xs text-foreground/60 transition hover:border-cyan-300/40 hover:text-foreground","children":"Next.js"}],["$","$L13","Vue",{"href":"/notes/archive?category=Vue","className":"rounded-full border border-white/10 bg-white/[0.03] px-2.5 py-1 text-xs text-foreground/60 transition hover:border-cyan-300/40 hover:text-foreground","children":"Vue"}],["$","$L13","Tooling",{"href":"/notes/archive?category=Tooling","className":"rounded-full border border-white/10 bg-white/[0.03] px-2.5 py-1 text-xs text-foreground/60 transition hover:border-cyan-300/40 hover:text-foreground","children":"Tooling"}]]}]]}]]}]]}],["$","section",null,{"className":"mt-12","aria-labelledby":"recent-notes-title","children":[["$","div",null,{"className":"mb-5 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between","children":[["$","div",null,{"children":[["$","h2",null,{"id":"recent-notes-title","className":"text-2xl font-semibold","children":"Recently Updated"}],["$","p",null,{"className":"mt-2 text-sm text-foreground-muted","children":"A short preview of the newest notes. The full archive includes search and filters."}]]}],["$","$L13",null,{"href":"/notes/archive","className":"w-fit rounded-md border border-white/10 px-4 py-2 text-sm transition hover:bg-white/10","children":"View all notes"}]]}],["$","ul",null,{"className":"grid gap-4","children":[["$","li","axios-baseurl-089fd3",{"children":["$","article",null,{"className":"h-full","children":["$","$L13",null,{"href":"/notes/axios-baseurl-089fd3","className":"block h-full rounded-lg border border-white/10 bg-white/[0.03] p-5 transition duration-200 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-white/[0.06] active:scale-98","children":["$L14","$L15","$L16"]}]}]}],"$L17","$L18","$L19","$L1a"]}]]}]]}]
-14:["$","div",null,{"className":"flex flex-col gap-4 md:flex-row md:items-start md:justify-between","children":[["$","div",null,{"children":[["$","div",null,{"className":"flex flex-wrap gap-2","children":[["$","span",null,{"className":"rounded-full bg-[var(--accent-bg)] px-2.5 py-1 text-xs text-[var(--accent)]","children":"JavaScript"}],["$","span",null,{"className":"rounded-full border border-white/10 px-2.5 py-1 text-xs text-foreground-muted","children":"Setup"}]]}],["$","h3",null,{"className":"mt-4 text-xl font-semibold","children":"Axios在实例化之后修改baseURL或其他配置"}],["$","p",null,{"className":"mt-3 max-w-3xl text-sm leading-6 text-foreground-muted","children":"在使用axios请求的时候一般会进行封装，如："}]]}],["$","span",null,{"className":"w-fit shrink-0 rounded-full border border-white/10 px-2.5 py-1 text-xs text-foreground-muted","children":"Published"}]]}]
-15:["$","div",null,{"className":"mt-5 flex flex-wrap items-center gap-3 text-xs text-foreground-dim","children":[["$","time",null,{"dateTime":"2026-06-20","children":"2026-06-20"}],["$","span",null,{"children":"1 min read"}],["$","span",null,{"children":["Source: ","Cnblogs"]}]]}]
-16:["$","div",null,{"className":"mt-4 flex flex-wrap gap-2","children":[["$","span","JavaScript",{"className":"rounded-full bg-white/[0.04] px-2 py-1 text-xs text-foreground-muted","children":"JavaScript"}],["$","span","setup",{"className":"rounded-full bg-white/[0.04] px-2 py-1 text-xs text-foreground-muted","children":"setup"}],["$","span","Axios",{"className":"rounded-full bg-white/[0.04] px-2 py-1 text-xs text-foreground-muted","children":"Axios"}]]}]
-17:["$","li","next-js-plus-github-pages-ci-cd-2c6362",{"children":["$","article",null,{"className":"h-full","children":["$","$L13",null,{"href":"/notes/next-js-plus-github-pages-ci-cd-2c6362","className":"block h-full rounded-lg border border-white/10 bg-white/[0.03] p-5 transition duration-200 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-white/[0.06] active:scale-98","children":[["$","div",null,{"className":"flex flex-col gap-4 md:flex-row md:items-start md:justify-between","children":[["$","div",null,{"children":[["$","div",null,{"className":"flex flex-wrap gap-2","children":[["$","span",null,{"className":"rounded-full bg-[var(--accent-bg)] px-2.5 py-1 text-xs text-[var(--accent)]","children":"Next.js"}],["$","span",null,{"className":"rounded-full border border-white/10 px-2.5 py-1 text-xs text-foreground-muted","children":"Setup"}]]}],["$","h3",null,{"className":"mt-4 text-xl font-semibold","children":"🚀 Next.js + GitHub Pages 自动部署（CI/CD 笔记）"}],["$","p",null,{"className":"mt-3 max-w-3xl text-sm leading-6 text-foreground-muted","children":"main 分支（源码）"}]]}],["$","span",null,{"className":"w-fit shrink-0 rounded-full border border-white/10 px-2.5 py-1 text-xs text-foreground-muted","children":"Published"}]]}],["$","div",null,{"className":"mt-5 flex flex-wrap items-center gap-3 text-xs text-foreground-dim","children":[["$","time",null,{"dateTime":"2026-06-20","children":"2026-06-20"}],["$","span",null,{"children":"1 min read"}],["$","span",null,{"children":["Source: ","Cnblogs"]}]]}],["$","div",null,{"className":"mt-4 flex flex-wrap gap-2","children":[["$","span","Next.js",{"className":"rounded-full bg-white/[0.04] px-2 py-1 text-xs text-foreground-muted","children":"Next.js"}],["$","span","setup",{"className":"rounded-full bg-white/[0.04] px-2 py-1 text-xs text-foreground-muted","children":"setup"}],["$","span","GitHub Pages",{"className":"rounded-full bg-white/[0.04] px-2 py-1 text-xs text-foreground-muted","children":"GitHub Pages"}]]}]]}]}]}]
-18:["$","li","vue-docx-excel-pdf-959f53",{"children":["$","article",null,{"className":"h-full","children":["$","$L13",null,{"href":"/notes/vue-docx-excel-pdf-959f53","className":"block h-full rounded-lg border border-white/10 bg-white/[0.03] p-5 transition duration-200 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-white/[0.06] active:scale-98","children":[["$","div",null,{"className":"flex flex-col gap-4 md:flex-row md:items-start md:justify-between","children":[["$","div",null,{"children":[["$","div",null,{"className":"flex flex-wrap gap-2","children":[["$","span",null,{"className":"rounded-full bg-[var(--accent-bg)] px-2.5 py-1 text-xs text-[var(--accent)]","children":"Vue"}],["$","span",null,{"className":"rounded-full border border-white/10 px-2.5 py-1 text-xs text-foreground-muted","children":"Snippet"}]]}],["$","h3",null,{"className":"mt-4 text-xl font-semibold","children":"vue 在网页中预览(docx、excel、pdf)文件"}],["$","p",null,{"className":"mt-3 max-w-3xl text-sm leading-6 text-foreground-muted","children":"npm install @vue-office/docx vue-demi@0.14.6"}]]}],["$","span",null,{"className":"w-fit shrink-0 rounded-full border border-white/10 px-2.5 py-1 text-xs text-foreground-muted","children":"Published"}]]}],["$","div",null,{"className":"mt-5 flex flex-wrap items-center gap-3 text-xs text-foreground-dim","children":[["$","time",null,{"dateTime":"2026-06-20","children":"2026-06-20"}],["$","span",null,{"children":"1 min read"}],["$","span",null,{"children":["Source: ","Cnblogs"]}]]}],["$","div",null,{"className":"mt-4 flex flex-wrap gap-2","children":[["$","span","Vue",{"className":"rounded-full bg-white/[0.04] px-2 py-1 text-xs text-foreground-muted","children":"Vue"}],["$","span","snippet",{"className":"rounded-full bg-white/[0.04] px-2 py-1 text-xs text-foreground-muted","children":"snippet"}],["$","span","PDF",{"className":"rounded-full bg-white/[0.04] px-2 py-1 text-xs text-foreground-muted","children":"PDF"}],["$","span","Excel",{"className":"rounded-full bg-white/[0.04] px-2 py-1 text-xs text-foreground-muted","children":"Excel"}]]}]]}]}]}]
-19:["$","li","vue3-html5-qrcode-41e695",{"children":["$","article",null,{"className":"h-full","children":["$","$L13",null,{"href":"/notes/vue3-html5-qrcode-41e695","className":"block h-full rounded-lg border border-white/10 bg-white/[0.03] p-5 transition duration-200 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-white/[0.06] active:scale-98","children":[["$","div",null,{"className":"flex flex-col gap-4 md:flex-row md:items-start md:justify-between","children":[["$","div",null,{"children":[["$","div",null,{"className":"flex flex-wrap gap-2","children":[["$","span",null,{"className":"rounded-full bg-[var(--accent-bg)] px-2.5 py-1 text-xs text-[var(--accent)]","children":"Vue"}],["$","span",null,{"className":"rounded-full border border-white/10 px-2.5 py-1 text-xs text-foreground-muted","children":"Snippet"}]]}],["$","h3",null,{"className":"mt-4 text-xl font-semibold","children":"vue3 使用 html5-qrcode 实现扫描二维码功能"}],["$","p",null,{"className":"mt-3 max-w-3xl text-sm leading-6 text-foreground-muted","children":"npm安装"}]]}],["$","span",null,{"className":"w-fit shrink-0 rounded-full border border-white/10 px-2.5 py-1 text-xs text-foreground-muted","children":"Published"}]]}],["$","div",null,{"className":"mt-5 flex flex-wrap items-center gap-3 text-xs text-foreground-dim","children":[["$","time",null,{"dateTime":"2026-06-20","children":"2026-06-20"}],["$","span",null,{"children":"2 min read"}],["$","span",null,{"children":["Source: ","Cnblogs"]}]]}],["$","div",null,{"className":"mt-4 flex flex-wrap gap-2","children":[["$","span","Vue",{"className":"rounded-full bg-white/[0.04] px-2 py-1 text-xs text-foreground-muted","children":"Vue"}],["$","span","snippet",{"className":"rounded-full bg-white/[0.04] px-2 py-1 text-xs text-foreground-muted","children":"snippet"}],["$","span","QRCode",{"className":"rounded-full bg-white/[0.04] px-2 py-1 text-xs text-foreground-muted","children":"QRCode"}]]}]]}]}]}]
-1a:["$","li","el-table-display-issues",{"children":["$","article",null,{"className":"h-full","children":["$","$L13",null,{"href":"/notes/el-table-display-issues","className":"block h-full rounded-lg border border-white/10 bg-white/[0.03] p-5 transition duration-200 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-white/[0.06] active:scale-98","children":[["$","div",null,{"className":"flex flex-col gap-4 md:flex-row md:items-start md:justify-between","children":[["$","div",null,{"children":[["$","div",null,{"className":"flex flex-wrap gap-2","children":[["$","span",null,{"className":"rounded-full bg-[var(--accent-bg)] px-2.5 py-1 text-xs text-[var(--accent)]","children":"Vue"}],["$","span",null,{"className":"rounded-full border border-white/10 px-2.5 py-1 text-xs text-foreground-muted","children":"Snippet"}]]}],["$","h3",null,{"className":"mt-4 text-xl font-semibold","children":"el-table 设置合并行或列时，显示错乱问题"}],["$","p",null,{"className":"mt-3 max-w-3xl text-sm leading-6 text-foreground-muted","children":"记录 el-table 合并行或列时显示错乱问题的解决方法。"}]]}],["$","span",null,{"className":"w-fit shrink-0 rounded-full border border-white/10 px-2.5 py-1 text-xs text-foreground-muted","children":"Published"}]]}],["$","div",null,{"className":"mt-5 flex flex-wrap items-center gap-3 text-xs text-foreground-dim","children":[["$","time",null,{"dateTime":"2024-01-05","children":"2024-01-05"}],["$","span",null,{"children":"2 min read"}],["$","span",null,{"children":["Source: ","Cnblogs"]}]]}],["$","div",null,{"className":"mt-4 flex flex-wrap gap-2","children":[["$","span","Vue",{"className":"rounded-full bg-white/[0.04] px-2 py-1 text-xs text-foreground-muted","children":"Vue"}],["$","span","Element",{"className":"rounded-full bg-white/[0.04] px-2 py-1 text-xs text-foreground-muted","children":"Element"}],["$","span","Snippet",{"className":"rounded-full bg-white/[0.04] px-2 py-1 text-xs text-foreground-muted","children":"Snippet"}]]}]]}]}]}]
+13:I[22016,["/_next/static/chunks/24i19o1q_m7il.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3w2-v51cy6vxz.js"],""]
+7:["$","main",null,{"className":"mx-auto max-w-6xl px-6 py-20 font-mono selection:bg-[var(--accent)]/30","children":[["$","header",null,{"className":"mb-16 space-y-6","children":[["$","div",null,{"className":"flex flex-col md:flex-row md:items-end justify-between gap-10 border-b-2 border-dashed border-[var(--panel-border)] pb-8","children":[["$","div",null,{"className":"space-y-5","children":[["$","div",null,{"className":"inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[var(--accent)]","children":[["$","span",null,{"className":"h-2 w-2 bg-[var(--accent)] shadow-[0_0_8px_var(--accent)] animate-pulse"}],"DATA_ARCHIVE // 个人知识库"]}],["$","h1",null,{"className":"text-4xl font-extrabold tracking-tight md:text-5xl text-[var(--foreground)] leading-tight","children":["Notes /"," ",["$","span",null,{"className":"font-serif italic tracking-wide bg-gradient-to-r from-[var(--accent)] to-amber-500 bg-clip-text text-transparent","children":"战术图鉴"}]]}],["$","p",null,{"className":"max-w-xl text-base leading-8 text-[var(--foreground-muted)]","children":"\"冒险途中的见闻与阵痛。记录每一次代码踩坑与灵感迸发的时刻。这里存放着我从前端世界收集来的实战卷轴与魔法蓝图。所有卷轴皆从真实的代码搏杀中提取。\""}]]}],["$","div",null,{"className":"flex gap-6 rounded-xl border border-[var(--panel-border)] bg-[var(--panel)] p-5 shadow-lg","children":[["$","div",null,{"className":"flex flex-col justify-end text-right","children":[["$","span",null,{"className":"text-[10px] font-bold uppercase tracking-widest text-[var(--foreground-dim)] mb-1","children":"Total Logs"}],["$","span",null,{"className":"text-3xl font-black text-[var(--foreground)] leading-none","children":7}]]}],["$","div",null,{"className":"w-px bg-[var(--panel-border)]"}],["$","div",null,{"className":"flex flex-col justify-end text-right","children":[["$","span",null,{"className":"text-[10px] font-bold uppercase tracking-widest text-[var(--accent)] mb-1","children":"Deployed"}],["$","span",null,{"className":"text-3xl font-black text-[var(--accent)] leading-none","children":7}]]}],["$","div",null,{"className":"w-px bg-[var(--panel-border)]"}],["$","div",null,{"className":"flex flex-col justify-end text-right opacity-60","children":[["$","span",null,{"className":"text-[10px] font-bold uppercase tracking-widest text-[var(--foreground-dim)] mb-1","children":"Drafts"}],["$","span",null,{"className":"text-xl font-bold text-[var(--foreground)] leading-none","children":0}]]}]]}]]}],["$","div",null,{"className":"flex flex-wrap items-center gap-3 pt-2","children":[["$","span",null,{"className":"text-[10px] font-bold uppercase tracking-widest text-[var(--foreground-dim)] mr-2","children":"> Filter_By_Tags:"}],[["$","$L13","JavaScript",{"href":"/notes/archive?category=JavaScript","className":"group relative overflow-hidden rounded border border-[var(--panel-border)] bg-[var(--panel)] px-3 py-1.5 text-xs font-bold text-[var(--foreground-muted)] transition-all hover:border-[var(--accent)] hover:text-[var(--accent)] shadow-sm","children":[["$","span",null,{"className":"relative z-10","children":"JavaScript"}],["$","div",null,{"className":"absolute inset-0 bg-[var(--accent)]/10 translate-y-full group-hover:translate-y-0 transition-transform duration-200"}]]}],["$","$L13","Next.js",{"href":"/notes/archive?category=Next.js","className":"group relative overflow-hidden rounded border border-[var(--panel-border)] bg-[var(--panel)] px-3 py-1.5 text-xs font-bold text-[var(--foreground-muted)] transition-all hover:border-[var(--accent)] hover:text-[var(--accent)] shadow-sm","children":[["$","span",null,{"className":"relative z-10","children":"Next.js"}],["$","div",null,{"className":"absolute inset-0 bg-[var(--accent)]/10 translate-y-full group-hover:translate-y-0 transition-transform duration-200"}]]}],["$","$L13","Vue",{"href":"/notes/archive?category=Vue","className":"group relative overflow-hidden rounded border border-[var(--panel-border)] bg-[var(--panel)] px-3 py-1.5 text-xs font-bold text-[var(--foreground-muted)] transition-all hover:border-[var(--accent)] hover:text-[var(--accent)] shadow-sm","children":["$L14","$L15"]}],"$L16"]]}]]}],"$L17","$L18","$L19"]}]
+1a:I[53849,["/_next/static/chunks/24i19o1q_m7il.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3w2-v51cy6vxz.js"],"default"]
+14:["$","span",null,{"className":"relative z-10","children":"Vue"}]
+15:["$","div",null,{"className":"absolute inset-0 bg-[var(--accent)]/10 translate-y-full group-hover:translate-y-0 transition-transform duration-200"}]
+16:["$","$L13","Tooling",{"href":"/notes/archive?category=Tooling","className":"group relative overflow-hidden rounded border border-[var(--panel-border)] bg-[var(--panel)] px-3 py-1.5 text-xs font-bold text-[var(--foreground-muted)] transition-all hover:border-[var(--accent)] hover:text-[var(--accent)] shadow-sm","children":[["$","span",null,{"className":"relative z-10","children":"Tooling"}],["$","div",null,{"className":"absolute inset-0 bg-[var(--accent)]/10 translate-y-full group-hover:translate-y-0 transition-transform duration-200"}]]}]
+1b:T6da,## 一. 修改全局默认配置：
+
+在使用axios请求的时候一般会进行封装，如：
+
+```js
+import axios from "axios";
+const request = axios.create({
+  // baseURL: import.meta.env.VITE_APP_BASEURL,
+  baseURL: "https://www.xxx.com",
+  timeout: 10 * 1000,
+});
+...
+export default request;
+```
+
+在有些情况下需要动态修改baseURL或其他配置，此时可通过以下方法修改默认配置：
+
+```js
+import request from "/xxx/xxx";
+request.defaults.baseURL = "http://xxxxxx";
+```
+
+[官方文档相关链接](https://axios-http.com/zh/docs/config_defaults "官方文档相关链接")
+
+## 二. 修改单个接口配置：
+
+当不想修改全局设置，只要修改某个接口的配置项时，按以下方法修改：
+
+1. 直接请求
+
+```js
+import request from "/xxx/xxx";
+const config = {
+  baseUrl: "http://xxxxxx",
+  timeout: 5 * 1000,
+};
+export function getData(params) {
+  return request({
+    method: "get",
+    url: "/api/get/xxx",
+    params,
+    ...config,
+  });
+}
+export function postData(params) {
+  return request({
+    method: "post",
+    url: "/api/post/xxx",
+    data: params,
+    ...config,
+  });
+}
+```
+
+2. 请求方式别名
+
+```js
+import request from "/xxx/xxx";
+const config = {
+  baseUrl: "http://xxxxxx",
+  timeout: 5 * 1000,
+};
+// axios.get(url[, config])
+export function getData(params) {
+  return request.get("/api/get/xxx", { params, ...config });
+}
+// axios.post(url[, data[, config]])
+export function postData(params) {
+  return request.post("/api/post/xxx", params, config);
+}
+```
+
+[其他配置项见官方文档](https://axios-http.com/zh/docs/req_config "其他配置项见官方文档")
+[其他请求方式见官方文档](https://axios-http.com/zh/docs/api_intro "其他请求方式见官方文档")
+17:["$","section",null,{"aria-labelledby":"featured-note-title","className":"mb-12","children":[["$","h2",null,{"id":"featured-note-title","className":"mb-6 flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[var(--accent-strong)]","children":[["$","span",null,{"className":"animate-pulse","children":"✦"}]," Latest Breakthrough // 最新破译"]}],["$","div",null,{"className":"group relative rounded-2xl border-2 border-[var(--accent-strong)]/30 bg-[var(--panel)] p-2 transition-all hover:border-[var(--accent-strong)] hover:shadow-[0_0_30px_var(--accent-strong)]/20","children":[["$","div",null,{"className":"absolute -right-3 -top-3 rotate-12 rounded-lg border-2 border-[var(--accent-strong)] bg-[var(--background)] px-3 py-1 text-xs font-black text-[var(--accent-strong)] shadow-lg","children":"NEW!"}],["$","div",null,{"className":"rounded-xl bg-[var(--background)]","children":["$","$L1a",null,{"note":{"slug":"axios-baseurl-089fd3","title":"Axios在实例化之后修改baseURL或其他配置","category":"JavaScript","type":"setup","description":"在使用axios请求的时候一般会进行封装，如：","status":"published","tags":["JavaScript","setup","Axios"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"$1b"},"featured":true}]}]]}]]}]
+1c:Ta58,# 🚀 Next.js + GitHub Pages 自动部署（CI/CD 笔记）
+
+## 🧠 一、整体流程
+
+main 分支（源码）
+→ push 到 GitHub
+→ GitHub Actions 触发
+→ npm install
+→ next build + export
+→ 生成 out/
+→ 推送 gh-pages 分支
+→ GitHub Pages 读取 gh-pages
+→ 网站上线
+
+## ⚙️ 二、Next.js 项目配置
+
+### 1. next.config.js
+
+```js
+/\*\* @type {import('next').NextConfig} \*/;
+const nextConfig = {
+  output: "export",
+  images: {
+    unoptimized: true,
+  },
+};
+
+module.exports = nextConfig;
+```
+
+### 2. package.json
+
+```json
+{
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build"
+  }
+}
+```
+
+\---
+
+## 🤖 三、GitHub Actions 自动部署
+
+### 1. 文件路径
+
+新建目录及文件：
+
+.github/workflows/deploy.yml
+
+---
+
+### 2. deploy.yml
+
+```yml
+name: Deploy Next.js to GitHub Pages
+
+on:
+  push:
+    branches: \[main]
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Next.js project
+        run: npm run build
+
+      - name: Export static site
+        run: npx next export
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github\_token: ${{ secrets.GITHUB\_TOKEN }}
+          publish\_dir: ./out
+```
+
+## 🌐 四、GitHub Pages 设置
+
+Settings → Pages
+
+Source: Deploy from branch
+Branch: gh-pages
+Folder: /
+
+## 📦 五、首次部署步骤
+
+git add .
+git commit -m "setup github pages deploy"
+git push
+
+## 🌍 六、访问地址
+
+https://your-username.github.io/
+
+## ⚠️ 七、常见问题
+
+### ❌ 1. 页面显示 README
+
+原因：没有 index.html 或未 export
+
+解决：
+npm run build
+npx next export
+
+---
+
+### ❌ 2. 图片不显示
+
+images:
+unoptimized: true
+
+---
+
+### ❌ 3. Actions 失败
+
+检查：
+Node 版本（18/20）
+npm install 是否成功
+build 是否报错
+
+---
+
+### ❌ 4. gh-pages 没更新
+
+检查：
+Actions 是否成功
+Pages 是否选择 gh-pages
+
+---
+
+## 🚀 八、完整流程总结
+
+开发 Next.js
+→ push GitHub
+→ Actions 自动构建
+→ out/ 静态文件生成
+→ gh-pages 分支
+→ GitHub Pages
+→ 网站上线
+
+## 🎯 九、效果
+
+✔ push 即部署
+✔ 自动构建
+✔ 自动发布
+✔ 无需手动上传
+✔ 完整 CI/CD
+
+## 🧠 十、可升级方向
+
+- pnpm + build 缓存优化
+- SEO 优化
+- 自定义域名
+- GitHub API 自动项目列表
+- monorepo 多项目部署
+18:["$","section",null,{"aria-labelledby":"recent-notes-title","className":"mb-16","children":[["$","h2",null,{"id":"recent-notes-title","className":"mb-6 flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[var(--foreground-muted)]","children":"Recently Unlocked // 最近解锁"}],["$","ul",null,{"className":"grid gap-6 md:grid-cols-2","children":[["$","li","next-js-plus-github-pages-ci-cd-2c6362",{"className":"group h-full","children":["$","div",null,{"className":"h-full rounded-2xl border border-[var(--panel-border)] bg-[var(--panel)] p-1 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent)] hover:shadow-[0_8px_30px_-10px_var(--accent-bg)]","children":["$","div",null,{"className":"h-full rounded-xl bg-[var(--background)]","children":["$","$L1a",null,{"note":{"slug":"next-js-plus-github-pages-ci-cd-2c6362","title":"🚀 Next.js + GitHub Pages 自动部署（CI/CD 笔记）","category":"Next.js","type":"setup","description":"main 分支（源码）","status":"published","tags":["Next.js","setup","GitHub Pages"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"$1c"}}]}]}]}],["$","li","vue-docx-excel-pdf-959f53",{"className":"group h-full","children":["$","div",null,{"className":"h-full rounded-2xl border border-[var(--panel-border)] bg-[var(--panel)] p-1 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent)] hover:shadow-[0_8px_30px_-10px_var(--accent-bg)]","children":"$L1d"}]}],"$L1e","$L1f"]}]]}]
+19:["$","section",null,{"className":"mt-8 border-t border-dashed border-[var(--panel-border)] pt-12","children":["$","$L13",null,{"href":"/notes/archive","className":"group relative flex w-full flex-col items-center justify-center overflow-hidden rounded-2xl border border-[var(--panel-border)] bg-[var(--panel)] py-12 transition-all hover:border-[var(--accent)] hover:shadow-[0_0_40px_var(--accent-bg)]","children":[["$","div",null,{"className":"absolute inset-0 bg-[linear-gradient(transparent_50%,rgba(0,0,0,0.1)_50%)] bg-[length:100%_4px] pointer-events-none opacity-20"}],["$","div",null,{"className":"relative z-10 flex flex-col items-center gap-3","children":[["$","span",null,{"className":"flex h-12 w-12 items-center justify-center rounded-full bg-[var(--background)] border border-[var(--accent)] text-[var(--accent)] shadow-[0_0_15px_var(--accent-bg)] transition-transform group-hover:scale-110","children":["$","svg",null,{"className":"w-5 h-5","fill":"none","viewBox":"0 0 24 24","stroke":"currentColor","children":["$","path",null,{"strokeLinecap":"round","strokeLinejoin":"round","strokeWidth":2,"d":"M13 10V3L4 14h7v7l9-11h-7z"}]}]}],["$","h3",null,{"className":"text-xl font-bold text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors","children":"Access Full Archive"}],["$","p",null,{"className":"text-xs font-sans text-[var(--foreground-muted)]","children":"Enter the grand library to search, filter, and explore all knowledge tomes."}]]}]]}]}]
+20:T99c,## 1. 安装依赖：
+
+```bash
+#docx文档预览组件
+npm install @vue-office/docx vue-demi@0.14.6
+
+#excel文档预览组件
+npm install @vue-office/excel vue-demi@0.14.6
+
+#pdf文档预览组件
+npm install @vue-office/pdf vue-demi@0.14.6
+```
+
+> vue2.6版本或以下还需要额外安装 @vue/composition-api
+> `npm install @vue/composition-api`
+
+## 2. 使用示例：
+
+```js
+<template>
+  <div class="flex flex-col h-full">
+    <div class="flex flex-col justify-center items-center bg-[#fff]">
+      <div class="flex items-center w-1200px tab-box">
+        <el-tabs v-model="activeName" class="custom-tabs">
+          <el-tab-pane label="用户协议" name="1"> </el-tab-pane>
+          <el-tab-pane label="隐私政策及授权使用协议" name="2"> </el-tab-pane>
+        </el-tabs>
+      </div>
+      <div class="content w-full" v-show="activeName === '1'">
+        <vue-office-docx :src="src" />
+      </div>
+      <div class="content w-full" v-show="activeName === '2'">
+        <vue-office-docx :src="src" />
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { ref, onMounted } from "vue";
+import VueOfficeDocx from "@vue-office/docx";
+import "@vue-office/docx/lib/index.css";
+
+const activeName = ref("1");
+const src = ref("");
+
+onMounted(() => {
+  getUrl();
+});
+const getUrl = async () => {
+  try {
+    const response = await fetch("/agreement.docx");
+    if (!response.ok) throw new Error("Network response was not ok");
+    const arrayBuffer = await response.arrayBuffer();
+    src1.value = arrayBuffer;
+  } catch (error) {
+    console.error("Failed to fetch the document:", error);
+  }
+};
+</script>
+
+<style scoped>
+.tab-box:deep(.el-tabs__header) {
+  margin: 0;
+}
+.tab-box:deep(.el-tabs__item) {
+  height: 58px;
+}
+.content:deep(.docx-wrapper) {
+  background: #f9fafb;
+}
+.content:deep(.docx-wrapper > section.docx) {
+  box-shadow: none;
+  background: #f9fafb;
+  padding: 0 !important;
+  width: 1200px !important;
+}
+.content:deep(.docx-wrapper > section.docx p) {
+  background: #f9fafb !important;
+}
+</style>
+```
+
+> 文档地址可以使用网络地址，比如 https://\*\*\*.docx；
+> 也可以文件上传时预览，此时可以获取文件的ArrayBuffer或Blob
+
+## 3. 相关链接：
+
+[GitHub地址](https://github.com/501351981/vue-office#readme "GitHub地址")
+[npm地址](https://www.npmjs.com/package/@vue-office/docx "npm地址")
+[效果预览](https://501351981.github.io/vue-office/examples/dist/#/docx "效果预览")
+1d:["$","div",null,{"className":"h-full rounded-xl bg-[var(--background)]","children":["$","$L1a",null,{"note":{"slug":"vue-docx-excel-pdf-959f53","title":"vue 在网页中预览(docx、excel、pdf)文件","category":"Vue","type":"snippet","description":"npm install @vue-office/docx vue-demi@0.14.6","status":"published","tags":["Vue","snippet","PDF","Excel"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"$20"}}]}]
+21:T1841,### 1. 安装
+
+npm安装
+
+```bash
+npm install --save-dev html5-qrcode
+```
+
+或直接引入
+
+```js
+<script src="https://unpkg.com/html5-qrcode" type="text/javascript">
+```
+
+### 2. 引入
+
+1. 根据需求自定义渲染 QR scanning UI 的容器。
+
+```html
+<div id="reader" width="600px"></div>
+```
+
+2. 引入 Html5Qrcode
+
+```js
+// 简单模式（使用默认用户界面）
+import { Html5QrcodeScanner } from "html5-qrcode";
+// 专业模式（使用自己的用户界面）
+import { Html5Qrcode } from "html5-qrcode";
+```
+
+> `Html5QrcodeScanner`允许您使用几行代码和默认用户界面实现端到端扫描仪，该用户界面允许使用相机进行扫描或从文件系统中选择图像。
+> `Html5Qrcode`类用来设置 QR 码扫描仪（使用您自己的用户界面），并允许用户使用相机或通过选择文件系统中的图像文件或智能手机中的本机相机来扫描 QR 码。
+
+### 3. 使用
+
+1. 如果使用 `Html5QrcodeScanner`，系统默认
+
+```js
+// 扫描成功
+function onScanSuccess(decodedText, decodedResult) {
+  console.log(`Code matched = ${decodedText}`, decodedResult);
+}
+// 扫描失败
+function onScanFailure(error) {
+  console.warn(`Code scan error = ${error}`);
+}
+// 创建并配置实例，渲染扫描仪
+let html5QrcodeScanner = new Html5QrcodeScanner(
+  "reader",
+  { fps: 10, qrbox: { width: 250, height: 250 } },
+  /* verbose= */ false,
+);
+html5QrcodeScanner.render(onScanSuccess, onScanFailure);
+```
+
+2. 如果使用 `Html5Qrcode`，自定义
+
+获取相机id
+
+```js
+// 获取支持的相机列表
+Html5Qrcode.getCameras()
+  .then((devices) => {
+    /**
+     * devices 类型为对象数组
+     * { id: "id", label: "label" }
+     */
+    if (devices && devices.length) {
+      let cameraId = devices[0].id;
+      // 开始扫描
+    }
+  })
+  .catch((err) => {
+    // 处理错误
+  });
+```
+
+> 注意：如果未授予相机权限，会触发权限请求申请。
+> 使用相机需要网站使用https协议， [vite 本地开启 https 调试参考随笔](https://www.cnblogs.com/lpkshuai/p/17636869.html "vite 本地开启 https 调试参考随笔")
+
+开始扫码
+
+```js
+// 开始扫码
+const html5QrCode = new Html5Qrcode(/* element id */ "reader");
+html5QrCode
+  .start(
+    cameraId,
+    {
+      fps: 10, // 帧率，控制扫描速度
+      qrbox: { width: 250, height: 250 }, // 限制要用于扫描的取景器区域
+    },
+    (decodedText, decodedResult) => {
+      // 获取扫描结果
+    },
+    (errorMessage) => {
+      // 结果错误处理
+    },
+  )
+  .catch((err) => {
+    // 无法扫描时的错误处理
+  });
+```
+
+> 您可以选择在构造函数中设置另一个参数，以verbose将所有日志打印到控制台
+> `const html5QrCode = new Html5Qrcode("reader", /* verbose= */ true);`
+
+停止
+
+```js
+html5QrCode
+  .stop()
+  .then((ignore) => {
+    // 停止扫描
+  })
+  .catch((err) => {
+    // 停止失败处理
+  });
+```
+
+> 其它相关配置
+> ![image](/notes/vue/vue3-html5-qrcode-config.png)
+
+### 4. 完整示例
+
+页面
+
+```js
+<template>
+  <div class="page-box">
+    <div class="qr-container">
+      <div class="qr-box">
+        <div id="reader"></div>
+      </div>
+    </div>
+    <div class="btn-box">
+      <div>
+        <van-icon name="arrow-left" @click="clickBack" />
+      </div>
+      <div>
+        <van-uploader
+          v-model="state.fileList"
+          :preview-image="false"
+          :after-read="uploadImg"
+        >
+          <van-icon name="photo-o"
+        /></van-uploader>
+      </div>
+    </div>
+  </div>
+</template>
+
+<style scoped>
+.page-box {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #000;
+}
+.qr-container {
+  position: relative;
+  width: 100%;
+  height: 90%;
+}
+.qr-box {
+  height: 100%;
+}
+#reader {
+  top: 50%;
+  left: 0;
+}
+.btn-box {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-top: auto;
+  padding: 12px;
+  color: #fff;
+  font-size: 28px;
+}
+</style>
+```
+
+逻辑
+
+```js
+<script setup>
+import { reactive, onMounted, onUnmounted } from "vue";
+import { Html5Qrcode } from "html5-qrcode";
+import { showToast } from "vant";
+
+import useVueRouter from "@/hooks/useRouter";
+const { goBack } = useVueRouter();
+
+const state = reactive({
+  html5QrCode: null,
+  fileList: [],
+});
+
+onMounted(() => {
+  getCamerasInfo();
+});
+onUnmounted(() => {
+  if (state.html5QrCode?.isScanning) {
+    stopScan();
+  }
+});
+
+const clickBack = () => {
+  goBack();
+};
+
+const getCamerasInfo = () => {
+  Html5Qrcode.getCameras()
+    .then((devices) => {
+      if (devices && devices.length) {
+        state.html5QrCode = new Html5Qrcode("reader");
+        startScan();
+      }
+    })
+    .catch((err) => {
+      showToast({
+        message: "摄像头无访问权限！",
+        duration: 2000,
+      });
+    });
+};
+
+const startScan = () => {
+  state.html5QrCode
+    .start(
+      { facingMode: "environment" },
+      {
+        fps: 1,
+        qrbox: { width: 250, height: 250 },
+      },
+      (decodedText, decodedResult) => {
+        showToast(decodedText, decodedResult);
+      }
+    )
+    .catch((err) => {
+      console.log("扫码失败", err);
+    });
+};
+
+const stopScan = () => {
+  state.html5QrCode
+    .stop()
+    .then((a) => {
+      console.log("已停止扫码", a);
+    })
+    .catch((err) => {
+      console.log(err);
+      showToast("停止失败");
+    });
+};
+
+const uploadImg = () => {
+  try {
+    window.qrcode.callback = (result) => {
+      showToast(result);
+    };
+    let file = state.fileList[0].file;
+    let reader = new FileReader();
+    reader.onload = (function () {
+      return function (e) {
+        window.qrcode.decode(e.target.result);
+      };
+    })(file);
+    reader.readAsDataURL(file);
+  } catch (error) {
+    console.log(error);
+    showToast({
+      message: "识别失败！",
+      duration: 2000,
+    });
+  }
+};
+</script>
+```
+
+### 5. 相关链接
+
+[GitHub地址](https://github.com/mebjas/html5-qrcode "GitHub地址")
+[官方教程](https://scanapp.org/html5-qrcode-docs/docs/intro "官方教程")
+[qrcode.minhazav.dev](https://blog.minhazav.dev/research/html5-qrcode "qrcode.minhazav.dev")
+[vite 本地开启 https](https://www.cnblogs.com/lpkshuai/p/17636869.html "vite 本地开启 https")
+1e:["$","li","vue3-html5-qrcode-41e695",{"className":"group h-full","children":["$","div",null,{"className":"h-full rounded-2xl border border-[var(--panel-border)] bg-[var(--panel)] p-1 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent)] hover:shadow-[0_8px_30px_-10px_var(--accent-bg)]","children":["$","div",null,{"className":"h-full rounded-xl bg-[var(--background)]","children":["$","$L1a",null,{"note":{"slug":"vue3-html5-qrcode-41e695","title":"vue3 使用 html5-qrcode 实现扫描二维码功能","category":"Vue","type":"snippet","description":"npm安装","status":"published","tags":["Vue","snippet","QRCode"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"2 min read","content":"$21"}}]}]}]}]
+22:T148f,### 1. 需求效果图：
+
+![image](/notes/element-ui/el-table-display-need.png)
+
+### 2. 接口数据格式：
+
+<details>
+<summary>点击查看代码</summary>
+
+```js
+const list = [
+  {
+    contractNo: "CAI-20220801001",
+    contractItem: "用户质量指数",
+    count: 15234,
+    customerItems: [
+      {
+        contractNo: null,
+        contractItem: "反欺诈分",
+        price: null,
+        priceType: null,
+        count: 7302,
+        amount: null,
+      },
+      {
+        contractNo: null,
+        contractItem: "逾期评估分",
+        price: null,
+        priceType: null,
+        count: 8234,
+        amount: null,
+      },
+    ],
+  },
+  {
+    contractNo: "CAI-20220801001",
+    contractItem: "价值经营分",
+    count: 900,
+    customerItems: [
+      {
+        contractNo: null,
+        contractItem: "价值经营分",
+        price: null,
+        priceType: null,
+        count: 15234,
+        amount: null,
+      },
+    ],
+  },
+];
+```
+
+</details>
+
+### 3. 实现过程：
+
+> element plus 官网中有描述合并表格行列的方法：[点此查看文档](https://element-plus.org/zh-CN/component/table.html#%E5%90%88%E5%B9%B6%E8%A1%8C%E6%88%96%E5%88%97 "点此查看文档")
+> ![image](/notes/element-ui/el-table-span-method-doc.png)
+
+表格部分代码如下：
+
+```html
+<el-table
+  class="table-box"
+  border
+  m-t-27px
+  :data="tableData"
+  style="width: 100%"
+  height="605px"
+  :header-cell-style="{
+      background: '#FAFAFA',
+      color: 'rgba(0, 0, 0, 0.40)',
+    }"
+  :span-method="spanMethod"
+>
+  <el-table-column prop="contractNo" label="合同编号" />
+  <el-table-column prop="contractItem" label="合同项：" />
+
+  <el-table-column prop="customerItemsContractItem" label="对客合同项" />
+  <el-table-column
+    prop="customerItemsCount"
+    label="当天收费量(次)"
+    align="right"
+  >
+    <template #default="scope">
+      <span>{{ $utils.addCommas(scope.row.customerItemsCount) }}</span>
+    </template>
+  </el-table-column>
+
+  <el-table-column prop="count" label="合同项当天收费量" align="center">
+    <template #default="scope">
+      <span>{{ $utils.addCommas(scope.row.count) }}</span>
+    </template>
+  </el-table-column>
+</el-table>
+```
+
+根据element文档所给的示例结合需求分析，需要把接口返回的数据进行格式化处理，把嵌套数据进行拆分，这里开始我是这样实现的（坑）：
+
+```js
+const formatListFn = (list) => {
+  let arr = [];
+  for (let i = 0; i < list.length; i++) {
+    const item = list[i];
+    for (let j = 0; j < item["customerItems"].length; j++) {
+      const itm = item["customerItems"][j];
+      arr.push({
+        customerItemsContractItem: itm.contractItem,
+        customerItemsCount: itm.count,
+        ...item,
+      });
+    }
+  }
+  // console.log(arr);
+  return arr;
+};
+```
+
+> 此处把嵌套数组中需要使用的字段提取了出来，自定义了属性名`customerItemsContractItem`和`customerItemsCount`。其他属性原样复制即可，不需要进行额外操作。
+
+然后定义并给 table 传入span-method方法来实现合并行或列：
+
+```js
+const spanMethod = ({ row, column, rowIndex, columnIndex }) => {
+  const len = row["customerItems"].length;
+  if (columnIndex > 3 || columnIndex < 2) {
+    return {
+      rowspan: len,
+      colspan: 1,
+    };
+  }
+};
+```
+
+> 根据索引给需要合并的部分设置rowspan，值为嵌套数组的长度。
+
+此时以为大功告成，结果保存后查看页面如下：
+![image](/notes/element-ui/el-table-span-result-1.png)
+可以看到框选处的展示是有问题的，对比需求效果如下：
+![image](/notes/element-ui/el-table-span-result-2.png)
+
+![image](/notes/element-ui/el-table-span-result-3.png)
+
+### 4. 问题排查处理：
+
+经过多处排查后发现问题出在spanMethod中。在spanMethod方法中，只判断了列索引，所以同一列可能会重复多次执行rowspan，导致合并错乱。
+
+> 嵌套行被拆分后，原来两行数据被拆分成了三行，因此rowspan操作会多次执行。
+
+解决办法就是让多行嵌套数据只执行一次rowspan操作。可以给每行数据添加标识，区分是否进行合并操作。这里我是这样处理的：
+首先给每行数据设置rowspan值
+
+```js
+const formatListFn = (list) => {
+  let arr = [];
+  for (let i = 0; i < list.length; i++) {
+    const item = list[i];
+    for (let j = 0; j < item["customerItems"].length; j++) {
+      const itm = item["customerItems"][j];
+      arr.push({
+        customerItemsContractItem: itm.contractItem,
+        customerItemsCount: itm.count,
+        ...item,
+        rowspan: j === 0 ? item.customerItems.length : 0,
+      });
+    }
+  }
+  // console.log(arr);
+  return arr;
+};
+```
+
+> 注意这行 `rowspan: j === 0 ? item.customerItems.length : 0,`，每次遍历customerItems时，给第一项设置rowspan为customerItems.length。其余项设置为0，不执行合并。
+
+然后修改spanMethod方法
+
+```js
+const spanMethod = ({ row, column, rowIndex, columnIndex }) => {
+  if (columnIndex > 3 || columnIndex < 2) {
+    return {
+      rowspan: row.rowspan,
+      colspan: 1,
+    };
+  }
+};
+```
+
+> 注意这行`rowspan: row.rowspan`
+
+刷新页面查看，问题解决：
+![image](/notes/element-ui/el-table-span-result.png)
+1f:["$","li","el-table-display-issues",{"className":"group h-full","children":["$","div",null,{"className":"h-full rounded-2xl border border-[var(--panel-border)] bg-[var(--panel)] p-1 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent)] hover:shadow-[0_8px_30px_-10px_var(--accent-bg)]","children":["$","div",null,{"className":"h-full rounded-xl bg-[var(--background)]","children":["$","$L1a",null,{"note":{"slug":"el-table-display-issues","title":"el-table 设置合并行或列时，显示错乱问题","category":"Vue","type":"snippet","description":"记录 el-table 合并行或列时显示错乱问题的解决方法。","status":"published","tags":["Vue","Element","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-01-05","readingTime":"2 min read","content":"$22"}}]}]}]}]
