@@ -3,7 +3,6 @@
 import { useState, useMemo } from "react";
 import NoteCard from "@/components/notes/NoteCard";
 import Dropdown from "@/components/notes/Dropdown";
-// import { statusLabel, typeLabel } from "@/lib/note-labels";
 import type { Note, NoteStatus, NoteType } from "@/types/note";
 
 import { useDictionary } from "@/hooks/useDictionary";
@@ -195,11 +194,13 @@ export default function NotesArchive({ notes }: NotesArchiveProps) {
       <div className="mb-4 flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[var(--foreground-dim)]">
         <span className="text-[var(--accent)]">[SYS]</span>
         <span>
-          Scan Results: {filteredNotes.length} of {notes.length} entries found
+          {archive.scanResults
+            .replace("{found}", String(filteredNotes.length))
+            .replace("{total}", String(notes.length))}
         </span>
         {isLoading && (
           <span className="ml-2 animate-pulse text-[var(--accent)]">
-            Scanning...
+            {archive.scanning}
           </span>
         )}
       </div>
