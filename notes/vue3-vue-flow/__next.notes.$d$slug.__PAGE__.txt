@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
-2:I[30525,["/_next/static/chunks/04aubedwedcgw.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/39vgxeydq7imu.js","/_next/static/chunks/129fd5onpwf8h.js"],"default"]
-4:I[97367,["/_next/static/chunks/04aubedwedcgw.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
+2:I[30525,["/_next/static/chunks/0yc44vx2eu349.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/39vgxeydq7imu.js","/_next/static/chunks/0yc3coc95l0nc.js"],"default"]
+4:I[97367,["/_next/static/chunks/0yc44vx2eu349.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
 5:"$Sreact.suspense"
 3:T7e5,# 官网
 
@@ -95,5 +95,5 @@ state.instance.zoomTo(1);
     console.log(node.id);
   };
 ```
-0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-20 font-mono selection:bg-[var(--accent)]/30","children":["$","$L2",null,{"note":{"slug":"vue3-vue-flow","title":"Vue3 流程图组件库 Vue Flow 简单使用","category":"Vue","type":"snippet","description":"记录 Vue Flow 流程图组件库的使用。","status":"published","tags":["Vue","Frontend","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-01-03","readingTime":"1 min read","content":"$3"}}]}],[["$","script","script-0",{"src":"/_next/static/chunks/39vgxeydq7imu.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/129fd5onpwf8h.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"eC2FJIEi6kldIEE7J3ljm"}
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-20 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"vue3-vue-flow","title":"Vue3 流程图组件库 Vue Flow 简单使用","category":"Vue","type":"snippet","description":"记录 Vue Flow 流程图组件库的使用。","status":"published","tags":["Vue","Frontend","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-01-03","readingTime":"1 min read","content":"$3"}}]}],[["$","script","script-0",{"src":"/_next/static/chunks/39vgxeydq7imu.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/0yc3coc95l0nc.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"mImLE5XakIBv9Z9ox0IaA"}
 6:null
