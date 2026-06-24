@@ -3,18 +3,28 @@
 import { useState, useMemo } from "react";
 import NoteCard from "@/components/notes/NoteCard";
 import Dropdown from "@/components/notes/Dropdown";
-import { statusLabel, typeLabel } from "@/lib/note-labels";
+// import { statusLabel, typeLabel } from "@/lib/note-labels";
 import type { Note, NoteStatus, NoteType } from "@/types/note";
+
+import { useDictionary } from "@/hooks/useDictionary";
+import { useNoteLabels } from "@/hooks/useNoteLabels";
 
 type NotesArchiveProps = {
   notes: Note[];
 };
 
 export default function NotesArchive({ notes }: NotesArchiveProps) {
+  const dict = useDictionary();
+  const archive = dict.notes.archive;
+
+  const { statusLabel, typeLabel } = useNoteLabels();
+
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [selectedType, setSelectedType] = useState<NoteType | "all">("all");
-  const [selectedStatus, setSelectedStatus] = useState<NoteStatus | "all">("all");
+  const [selectedStatus, setSelectedStatus] = useState<NoteStatus | "all">(
+    "all",
+  );
   const [isLoading, setIsLoading] = useState(false);
 
   // Simulate loading state for better UX
@@ -51,7 +61,6 @@ export default function NotesArchive({ notes }: NotesArchiveProps) {
   // Filter notes based on search and filters
   const filteredNotes = useMemo(() => {
     return notes.filter((note) => {
-      // Search filter
       const searchLower = searchQuery.toLowerCase();
       const matchesSearch =
         !searchQuery ||
@@ -59,14 +68,9 @@ export default function NotesArchive({ notes }: NotesArchiveProps) {
         note.description.toLowerCase().includes(searchLower) ||
         note.tags.some((tag) => tag.toLowerCase().includes(searchLower));
 
-      // Category filter
       const matchesCategory =
         selectedCategory === "all" || note.category === selectedCategory;
-
-      // Type filter
       const matchesType = selectedType === "all" || note.type === selectedType;
-
-      // Status filter
       const matchesStatus =
         selectedStatus === "all" || note.status === selectedStatus;
 
@@ -76,81 +80,96 @@ export default function NotesArchive({ notes }: NotesArchiveProps) {
 
   return (
     <>
-      {/* Search and Filters */}
-      <section className="mb-8 rounded-lg border border-white/10 bg-white/[0.03] p-5">
-        <div className="mb-4">
+      {/* 检索控制台面板 */}
+      <section className="mb-8 rounded-lg border border-[var(--panel-border)] bg-[var(--panel)]/60 p-5 md:p-6 shadow-xl dark:shadow-black/40">
+        {/* 搜索输入框 - 带提示符 */}
+        <div className="mb-6">
           <label htmlFor="search-input" className="sr-only">
-            Search notes
+            Search archive
           </label>
-          <input
-            id="search-input"
-            type="text"
-            placeholder="Search notes by title, description, or tags..."
-            value={searchQuery}
-            onChange={(e) => handleSearchChange(e.target.value)}
-            className="w-full rounded-md border border-white/10 bg-black/10 px-4 py-2 text-sm text-foreground placeholder-foreground/40 focus:border-cyan-300/40 focus:outline-none"
-            disabled={isLoading}
-            aria-label="Search notes by title, description, or tags"
-          />
+          <div className="relative">
+            <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[var(--accent)] font-bold pointer-events-none">
+              &gt;
+            </span>
+            <input
+              id="search-input"
+              type="text"
+              placeholder={archive.searchPlaceholder}
+              value={searchQuery}
+              onChange={(e) => handleSearchChange(e.target.value)}
+              className="w-full rounded-md border border-[var(--panel-border)] bg-[var(--background)] py-2.5 pl-10 pr-4 text-sm text-[var(--foreground)] placeholder-[var(--foreground-dim)] focus:border-[var(--accent)] focus:outline-none focus:shadow-[0_0_15px_var(--accent-bg)] transition-all"
+              disabled={isLoading}
+              aria-label="Search notes by title, description, or tags"
+            />
+          </div>
         </div>
 
         <div className="flex flex-wrap gap-4">
           {/* Category Filter */}
           <div className="flex-1 min-w-[150px]">
-            <label htmlFor="category-filter" className="mb-1 block text-xs uppercase tracking-[0.2em] text-foreground-dim">
-              Category
+            <label
+              htmlFor="category-filter"
+              className="mb-1.5 block text-[10px] uppercase tracking-widest text-[var(--foreground-dim)] font-bold"
+            >
+              &gt; Element
             </label>
             <Dropdown
               id="category-filter"
               value={selectedCategory}
               onChange={handleCategoryChange}
               options={[
-                { value: "all", label: "All Categories" },
+                { value: "all", label: archive.allCategories },
                 ...categories.map((cat) => ({ value: cat, label: cat })),
               ]}
-              placeholder="All Categories"
+              placeholder={archive.allCategories}
               disabled={isLoading}
             />
           </div>
 
           {/* Type Filter */}
           <div className="flex-1 min-w-[150px]">
-            <label htmlFor="type-filter" className="mb-1 block text-xs uppercase tracking-[0.2em] text-foreground-dim">
-              Type
+            <label
+              htmlFor="type-filter"
+              className="mb-1.5 block text-[10px] uppercase tracking-widest text-[var(--foreground-dim)] font-bold"
+            >
+              &gt; Format
             </label>
             <Dropdown
               id="type-filter"
               value={selectedType}
               onChange={handleTypeChange}
               options={[
-                { value: "all", label: "All Types" },
+                { value: "all", label: archive.allTypes },
                 ...Object.entries(typeLabel).map(([value, label]) => ({
                   value,
                   label,
                 })),
               ]}
-              placeholder="All Types"
+              placeholder={archive.allTypes}
               disabled={isLoading}
             />
           </div>
 
           {/* Status Filter */}
           <div className="flex-1 min-w-[150px]">
-            <label htmlFor="status-filter" className="mb-1 block text-xs uppercase tracking-[0.2em] text-foreground-dim">
-              Status
+            <label
+              htmlFor="status-filter"
+              className="mb-1.5 block text-[10px] uppercase tracking-widest text-[var(--foreground-dim)] font-bold"
+            >
+              &gt; State
             </label>
             <Dropdown
               id="status-filter"
               value={selectedStatus}
               onChange={handleStatusChange}
               options={[
-                { value: "all", label: "All Statuses" },
+                { value: "all", label: archive.allStatuses },
                 ...Object.entries(statusLabel).map(([value, label]) => ({
                   value,
                   label,
                 })),
               ]}
-              placeholder="All Statuses"
+              placeholder={archive.allStatuses}
               disabled={isLoading}
             />
           </div>
@@ -164,40 +183,51 @@ export default function NotesArchive({ notes }: NotesArchiveProps) {
                 setSelectedType("all");
                 setSelectedStatus("all");
               }}
-              className="rounded-md border border-white/10 px-4 py-2 text-sm transition hover:bg-white/10"
+              className="rounded-md border border-[var(--panel-border)] bg-[var(--background)] px-4 py-2 text-xs font-bold uppercase tracking-widest text-[var(--foreground-muted)] transition-all hover:border-[var(--accent)] hover:text-[var(--accent)] active:scale-95"
             >
-              Clear Filters
+              {archive.reset}
             </button>
           </div>
         </div>
       </section>
 
-      {/* Results Count */}
-      <div className="mb-4 text-sm text-foreground-muted">
-        Showing {filteredNotes.length} of {notes.length} notes
+      {/* 结果日志 - RPG 系统提示 */}
+      <div className="mb-4 flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[var(--foreground-dim)]">
+        <span className="text-[var(--accent)]">[SYS]</span>
+        <span>
+          Scan Results: {filteredNotes.length} of {notes.length} entries found
+        </span>
+        {isLoading && (
+          <span className="ml-2 animate-pulse text-[var(--accent)]">
+            Scanning...
+          </span>
+        )}
       </div>
 
-      {/* Loading State */}
-      {isLoading && (
-        <div className="flex items-center justify-center py-8">
-          <div className="text-sm text-foreground-muted">Loading...</div>
-        </div>
-      )}
-
-      {/* Notes Grid */}
+      {/* 笔记网格 */}
       {!isLoading && filteredNotes.length === 0 ? (
-        <div className="rounded-lg border border-white/10 bg-white/[0.03] p-8 text-center">
-          <p className="text-foreground-muted">No notes match your filters.</p>
+        <div className="rounded-lg border border-dashed border-[var(--panel-border)] bg-[var(--panel)]/40 p-8 text-center">
+          <p className="font-mono text-sm text-[var(--foreground-muted)]">
+            &gt; ERROR: NO_DATA_FOUND. <br />
+            <span className="text-[var(--foreground-dim)]">
+              {archive.noDataDescription}
+            </span>
+          </p>
         </div>
-      ) : !isLoading ? (
-        <ul className="grid gap-4">
+      ) : (
+        <ul className="grid gap-6 md:grid-cols-2">
           {filteredNotes.map((note) => (
-            <li key={note.slug}>
-              <NoteCard note={note} />
+            <li key={note.slug} className="group h-full">
+              {/* 使用与 /notes 首页完全一致的“相框”包装结构 */}
+              <div className="h-full rounded-lg border border-[var(--panel-border)] bg-[var(--panel)] p-1.5 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent)]/50 hover:shadow-[0_8px_30px_-10px_var(--accent-bg)]">
+                <div className="h-full rounded-md bg-[var(--background)]">
+                  <NoteCard note={note} />
+                </div>
+              </div>
             </li>
           ))}
         </ul>
-      ) : null}
+      )}
     </>
   );
 }
