@@ -73,7 +73,7 @@ export default function Dropdown({
                 }}
                 className={`cursor-pointer px-3 py-2 text-sm transition hover:bg-white/10 ${
                   option.value === value
-                    ? "bg-white/10 text-[var(--accent)]"
+                    ? "bg-white/10 text-(--accent)"
                     : "text-foreground"
                 }`}
               >

@@ -80,14 +80,14 @@ export default function NotesArchive({ notes }: NotesArchiveProps) {
   return (
     <>
       {/* 检索控制台面板 */}
-      <section className="mb-8 rounded-lg border border-[var(--panel-border)] bg-[var(--panel)]/60 p-5 md:p-6 shadow-xl dark:shadow-black/40">
+      <section className="mb-8 rounded-lg border border-(--panel-border) bg-(--panel)/60 p-5 md:p-6 shadow-xl dark:shadow-black/40">
         {/* 搜索输入框 - 带提示符 */}
         <div className="mb-6">
           <label htmlFor="search-input" className="sr-only">
             Search archive
           </label>
           <div className="relative">
-            <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[var(--accent)] font-bold pointer-events-none">
+            <span className="absolute left-4 top-1/2 -translate-y-1/2 text-(--accent) font-bold pointer-events-none">
               &gt;
             </span>
             <input
@@ -96,7 +96,7 @@ export default function NotesArchive({ notes }: NotesArchiveProps) {
               placeholder={archive.searchPlaceholder}
               value={searchQuery}
               onChange={(e) => handleSearchChange(e.target.value)}
-              className="w-full rounded-md border border-[var(--panel-border)] bg-[var(--background)] py-2.5 pl-10 pr-4 text-sm text-[var(--foreground)] placeholder-[var(--foreground-dim)] focus:border-[var(--accent)] focus:outline-none focus:shadow-[0_0_15px_var(--accent-bg)] transition-all"
+              className="w-full rounded-md border border-(--panel-border) bg-(--background) py-2.5 pl-10 pr-4 text-sm text-(--foreground) placeholder-(--foreground-dim) focus:border-(--accent) focus:outline-none focus:shadow-[0_0_15px_var(--accent-bg)] transition-all"
               disabled={isLoading}
               aria-label="Search notes by title, description, or tags"
             />
@@ -108,7 +108,7 @@ export default function NotesArchive({ notes }: NotesArchiveProps) {
           <div className="flex-1 min-w-[150px]">
             <label
               htmlFor="category-filter"
-              className="mb-1.5 block text-[10px] uppercase tracking-widest text-[var(--foreground-dim)] font-bold"
+              className="mb-1.5 block text-[10px] uppercase tracking-widest text-(--foreground-dim) font-bold"
             >
               &gt; Element
             </label>
@@ -129,7 +129,7 @@ export default function NotesArchive({ notes }: NotesArchiveProps) {
           <div className="flex-1 min-w-[150px]">
             <label
               htmlFor="type-filter"
-              className="mb-1.5 block text-[10px] uppercase tracking-widest text-[var(--foreground-dim)] font-bold"
+              className="mb-1.5 block text-[10px] uppercase tracking-widest text-(--foreground-dim) font-bold"
             >
               &gt; Format
             </label>
@@ -153,7 +153,7 @@ export default function NotesArchive({ notes }: NotesArchiveProps) {
           <div className="flex-1 min-w-[150px]">
             <label
               htmlFor="status-filter"
-              className="mb-1.5 block text-[10px] uppercase tracking-widest text-[var(--foreground-dim)] font-bold"
+              className="mb-1.5 block text-[10px] uppercase tracking-widest text-(--foreground-dim) font-bold"
             >
               &gt; State
             </label>
@@ -182,7 +182,7 @@ export default function NotesArchive({ notes }: NotesArchiveProps) {
                 setSelectedType("all");
                 setSelectedStatus("all");
               }}
-              className="rounded-md border border-[var(--panel-border)] bg-[var(--background)] px-4 py-2 text-xs font-bold uppercase tracking-widest text-[var(--foreground-muted)] transition-all hover:border-[var(--accent)] hover:text-[var(--accent)] active:scale-95"
+              className="rounded-md border border-(--panel-border) bg-(--background) px-4 py-2 text-xs font-bold uppercase tracking-widest text-(--foreground-muted) transition-all hover:border-(--accent) hover:text-(--accent) active:scale-95"
             >
               {archive.reset}
             </button>
@@ -191,15 +191,15 @@ export default function NotesArchive({ notes }: NotesArchiveProps) {
       </section>
 
       {/* 结果日志 - RPG 系统提示 */}
-      <div className="mb-4 flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[var(--foreground-dim)]">
-        <span className="text-[var(--accent)]">[SYS]</span>
+      <div className="mb-4 flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-(--foreground-dim)">
+        <span className="text-(--accent)">[SYS]</span>
         <span>
           {archive.scanResults
             .replace("{found}", String(filteredNotes.length))
             .replace("{total}", String(notes.length))}
         </span>
         {isLoading && (
-          <span className="ml-2 animate-pulse text-[var(--accent)]">
+          <span className="ml-2 animate-pulse text-(--accent)">
             {archive.scanning}
           </span>
         )}
@@ -207,10 +207,10 @@ export default function NotesArchive({ notes }: NotesArchiveProps) {
 
       {/* 笔记网格 */}
       {!isLoading && filteredNotes.length === 0 ? (
-        <div className="rounded-lg border border-dashed border-[var(--panel-border)] bg-[var(--panel)]/40 p-8 text-center">
-          <p className="font-mono text-sm text-[var(--foreground-muted)]">
+        <div className="rounded-lg border border-dashed border-(--panel-border) bg-(--panel)/40 p-8 text-center">
+          <p className="font-mono text-sm text-(--foreground-muted)">
             &gt; ERROR: NO_DATA_FOUND. <br />
-            <span className="text-[var(--foreground-dim)]">
+            <span className="text-(--foreground-dim)">
               {archive.noDataDescription}
             </span>
           </p>
@@ -220,8 +220,8 @@ export default function NotesArchive({ notes }: NotesArchiveProps) {
           {filteredNotes.map((note) => (
             <li key={note.slug} className="group h-full">
               {/* 使用与 /notes 首页完全一致的“相框”包装结构 */}
-              <div className="h-full rounded-lg border border-[var(--panel-border)] bg-[var(--panel)] p-1.5 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent)]/50 hover:shadow-[0_8px_30px_-10px_var(--accent-bg)]">
-                <div className="h-full rounded-md bg-[var(--background)]">
+              <div className="h-full rounded-lg border border-(--panel-border) bg-(--panel) p-1.5 transition-all duration-300 hover:-translate-y-1 hover:border-(--accent)/50 hover:shadow-[0_8px_30px_-10px_var(--accent-bg)]">
+                <div className="h-full rounded-md bg-(--background)">
                   <NoteCard note={note} />
                 </div>
               </div>

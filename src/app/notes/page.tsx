@@ -13,7 +13,7 @@ export default async function NotesPage() {
   const draftCount = notes.filter((note) => note.status === "draft").length;
 
   return (
-    <main className="mx-auto max-w-6xl px-6 py-20 font-mono selection:bg-[var(--accent)]/30">
+    <main className="mx-auto max-w-6xl px-6 py-20 font-mono selection:bg-(--accent)/30">
       <NotesHomeView
         notes={notes}
         categories={categories}

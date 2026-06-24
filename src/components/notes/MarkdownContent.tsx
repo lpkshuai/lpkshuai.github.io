@@ -99,14 +99,14 @@ export default function MarkdownContent({ content }: MarkdownContentProps) {
               href={href}
               target="_blank"
               rel="noreferrer"
-              className="text-[var(--accent)] underline decoration-white/20 underline-offset-4 transition hover:text-[var(--accent-strong)]"
+              className="text-(--accent) underline decoration-white/20 underline-offset-4 transition hover:text-(--accent-strong)"
             >
               {children}
             </a>
           ),
 
           blockquote: ({ children }) => (
-            <blockquote className="border-l-2 border-[var(--accent)]/70 pl-4 text-foreground-muted">
+            <blockquote className="border-l-2 border-(--accent)/70 pl-4 text-foreground-muted">
               {children}
             </blockquote>
           ),
@@ -131,7 +131,7 @@ export default function MarkdownContent({ content }: MarkdownContentProps) {
             if (isInline) {
               return (
                 <code
-                  className="rounded px-1.5 py-0.5 text-[0.9em] text-[var(--accent)]"
+                  className="rounded px-1.5 py-0.5 text-[0.9em] text-(--accent)"
                   style={{ backgroundColor: "var(--accent-bg)" }}
                 >
                   {children}
@@ -160,7 +160,7 @@ export default function MarkdownContent({ content }: MarkdownContentProps) {
             if (!imageSrc) return null;
 
             return (
-              <figure className="my-6 overflow-hidden rounded-xl border border-white/10 bg-white/[0.03]">
+              <figure className="my-6 overflow-hidden rounded-xl border border-white/10 bg-white/3">
                 <img
                   src={imageSrc}
                   alt={alt || ""}
@@ -187,7 +187,7 @@ export default function MarkdownContent({ content }: MarkdownContentProps) {
           ),
 
           thead: ({ children }) => (
-            <thead className="border-b border-white/10 bg-white/[0.03]">
+            <thead className="border-b border-white/10 bg-white/3">
               {children}
             </thead>
           ),
