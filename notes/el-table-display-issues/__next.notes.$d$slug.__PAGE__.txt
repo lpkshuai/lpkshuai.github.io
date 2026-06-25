@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
-2:I[30525,["/_next/static/chunks/0yc44vx2eu349.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/39vgxeydq7imu.js","/_next/static/chunks/0yc3coc95l0nc.js"],"default"]
-7:I[97367,["/_next/static/chunks/0yc44vx2eu349.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
+2:I[30525,["/_next/static/chunks/0r8vl-xkq3w-2.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/39vgxeydq7imu.js","/_next/static/chunks/0yc3coc95l0nc.js"],"default"]
+7:I[97367,["/_next/static/chunks/0r8vl-xkq3w-2.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
 8:"$Sreact.suspense"
 3:T148f,### 1. 需求效果图：
 
@@ -193,7 +193,7 @@ const spanMethod = ({ row, column, rowIndex, columnIndex }) => {
 
 刷新页面查看，问题解决：
 ![image](/notes/element-ui/el-table-span-result.png)
-0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-20 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"el-table-display-issues","title":"el-table 设置合并行或列时，显示错乱问题","category":"Vue","type":"snippet","description":"记录 el-table 合并行或列时显示错乱问题的解决方法。","status":"published","tags":["Vue","Element","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-01-05","readingTime":"2 min read","content":"$3"}}]}],["$L4","$L5"],"$L6"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"mImLE5XakIBv9Z9ox0IaA"}
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"el-table-display-issues","title":"el-table 设置合并行或列时，显示错乱问题","category":"Vue","type":"snippet","description":"记录 el-table 合并行或列时显示错乱问题的解决方法。","status":"published","tags":["Vue","Element","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-01-05","readingTime":"2 min read","content":"$3"}}]}],["$L4","$L5"],"$L6"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"4xuEFGrmqvRdVsSsemJbE"}
 4:["$","script","script-0",{"src":"/_next/static/chunks/39vgxeydq7imu.js","async":true}]
 5:["$","script","script-1",{"src":"/_next/static/chunks/0yc3coc95l0nc.js","async":true}]
 6:["$","$L7",null,{"children":["$","$8",null,{"name":"Next.MetadataOutlet","children":"$@9"}]}]
