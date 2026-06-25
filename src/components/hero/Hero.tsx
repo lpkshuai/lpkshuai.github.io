@@ -9,16 +9,6 @@ const topics = ["Vue & React", "TypeScript", "Tailwind CSS", "Web Animation"];
 
 const cardConfig = [
   {
-    key: "lab",
-    href: "/lab",
-
-    rarityClass:
-      "border-purple-200 dark:border-purple-500/20 text-purple-700 dark:text-purple-400 hover:border-purple-500 hover:shadow-[0_0_20px_rgba(168,85,247,0.15)] hover:bg-purple-50/50 dark:hover:bg-purple-500/[0.02]",
-
-    tag: "EPIC / 史诗",
-  },
-
-  {
     key: "notes",
     href: "/notes",
 
@@ -26,6 +16,16 @@ const cardConfig = [
       "border-blue-200 dark:border-blue-500/20 text-blue-700 dark:text-blue-400 hover:border-blue-500 hover:shadow-[0_0_20px_rgba(59,130,246,0.15)] hover:bg-blue-50/50 dark:hover:bg-blue-500/[0.02]",
 
     tag: "RARE / 稀有",
+  },
+
+  {
+    key: "lab",
+    href: "/lab",
+
+    rarityClass:
+      "border-purple-200 dark:border-purple-500/20 text-purple-700 dark:text-purple-400 hover:border-purple-500 hover:shadow-[0_0_20px_rgba(168,85,247,0.15)] hover:bg-purple-50/50 dark:hover:bg-purple-500/[0.02]",
+
+    tag: "EPIC / 史诗",
   },
 
   {

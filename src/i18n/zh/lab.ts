@@ -1,0 +1,31 @@
+export const lab = {
+  gallery: {
+    badge: "ARTIFACT_GALLERY // 藏品陈列室",
+    titlePre: "Lab /",
+    titleHighlight: "藏品陈列室",
+    desc: "所有被成功锻造并封印于此的视觉交互圣物。按魔法派系（技术栈）分类归档，点击即可进入对应的演示结界。",
+    relicsUnlocked: "圣物 已解锁",
+    inspect: "INSPECT",
+    arrow: "➔",
+    noExperiments: "暂无实验数据",
+  },
+  common: {
+    back: "返回实验室",
+    demo: "在线演示",
+    source: "源代码",
+    tags: "技术标签",
+  },
+  detail: {
+    back: "返回陈列室",
+    status: "状态: 已破译",
+    live: "演示运行中",
+    coreCode: "核心咒语代码",
+    forgedWith: "锻造材料",
+    accessTerminal: "存取终端",
+    sourceDesc: "获取完整的工程配置文件与相关依赖组件，请查阅远程仓库。",
+    viewSource: "查看源代码",
+    viewDemo: "在线演示",
+    copyCode: "复制咒语",
+    copied: "已复制!",
+  },
+};

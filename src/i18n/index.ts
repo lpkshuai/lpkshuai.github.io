@@ -6,6 +6,8 @@ import { about as zhAbout } from "./zh/about";
 import { about as enAbout } from "./en/about";
 import { notes as zhNotes } from "./zh/notes";
 import { notes as enNotes } from "./en/notes";
+import { lab as zhLab } from "./zh/lab";
+import { lab as enLab } from "./en/lab";
 
 export const dictionaries = {
   zh: {
@@ -13,6 +15,7 @@ export const dictionaries = {
     home: zhHome,
     about: zhAbout,
     notes: zhNotes,
+    lab: zhLab,
   },
 
   en: {
@@ -20,6 +23,7 @@ export const dictionaries = {
     home: enHome,
     about: enAbout,
     notes: enNotes,
+    lab: enLab,
   },
 };
 

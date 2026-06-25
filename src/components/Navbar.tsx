@@ -22,10 +22,10 @@ export default function Navbar() {
       href: "/lab",
       label: dict.nav.lab,
     },
-    {
-      href: "/projects",
-      label: dict.nav.projects,
-    },
+    // {
+    //   href: "/projects",
+    //   label: dict.nav.projects,
+    // },
     {
       href: "/about",
       label: dict.nav.about,

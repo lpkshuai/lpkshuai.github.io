@@ -15,7 +15,7 @@ export default async function NoteDetailPage({
   if (!note) notFound();
 
   return (
-    <main className="mx-auto max-w-3xl px-6 py-20 font-mono selection:bg-(--accent)/30">
+    <main className="mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30">
       <NotesDetailView note={note} />
     </main>
   );
