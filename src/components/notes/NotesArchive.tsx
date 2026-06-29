@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useDeferredValue } from "react";
 import NoteCard from "@/components/notes/NoteCard";
 import Dropdown from "@/components/notes/Dropdown";
 import type { Note, NoteStatus, NoteType } from "@/types/note";
@@ -24,32 +24,22 @@ export default function NotesArchive({ notes }: NotesArchiveProps) {
   const [selectedStatus, setSelectedStatus] = useState<NoteStatus | "all">(
     "all",
   );
-  const [isLoading, setIsLoading] = useState(false);
-
-  // Simulate loading state for better UX
-  const handleFilterChange = () => {
-    setIsLoading(true);
-    setTimeout(() => setIsLoading(false), 150);
-  };
+  const deferredSearchQuery = useDeferredValue(searchQuery);
 
   const handleSearchChange = (value: string) => {
     setSearchQuery(value);
-    handleFilterChange();
   };
 
   const handleCategoryChange = (value: string) => {
     setSelectedCategory(value);
-    handleFilterChange();
   };
 
   const handleTypeChange = (value: string) => {
     setSelectedType(value as NoteType | "all");
-    handleFilterChange();
   };
 
   const handleStatusChange = (value: string) => {
     setSelectedStatus(value as NoteStatus | "all");
-    handleFilterChange();
   };
 
   // Get unique categories
@@ -60,7 +50,7 @@ export default function NotesArchive({ notes }: NotesArchiveProps) {
   // Filter notes based on search and filters
   const filteredNotes = useMemo(() => {
     return notes.filter((note) => {
-      const searchLower = searchQuery.toLowerCase();
+      const searchLower = deferredSearchQuery.toLowerCase();
       const matchesSearch =
         !searchQuery ||
         note.title.toLowerCase().includes(searchLower) ||
@@ -76,6 +66,8 @@ export default function NotesArchive({ notes }: NotesArchiveProps) {
       return matchesSearch && matchesCategory && matchesType && matchesStatus;
     });
   }, [notes, searchQuery, selectedCategory, selectedType, selectedStatus]);
+
+  const isSearching = searchQuery !== deferredSearchQuery;
 
   return (
     <>
@@ -97,7 +89,6 @@ export default function NotesArchive({ notes }: NotesArchiveProps) {
               value={searchQuery}
               onChange={(e) => handleSearchChange(e.target.value)}
               className="w-full rounded-md border border-(--panel-border) bg-(--background) py-2.5 pl-10 pr-4 text-sm text-(--foreground) placeholder-(--foreground-dim) focus:border-(--accent) focus:outline-none focus:shadow-[0_0_15px_var(--accent-bg)] transition-all"
-              disabled={isLoading}
               aria-label="Search notes by title, description, or tags"
             />
           </div>
@@ -121,7 +112,6 @@ export default function NotesArchive({ notes }: NotesArchiveProps) {
                 ...categories.map((cat) => ({ value: cat, label: cat })),
               ]}
               placeholder={archive.allCategories}
-              disabled={isLoading}
             />
           </div>
 
@@ -145,7 +135,6 @@ export default function NotesArchive({ notes }: NotesArchiveProps) {
                 })),
               ]}
               placeholder={archive.allTypes}
-              disabled={isLoading}
             />
           </div>
 
@@ -169,7 +158,6 @@ export default function NotesArchive({ notes }: NotesArchiveProps) {
                 })),
               ]}
               placeholder={archive.allStatuses}
-              disabled={isLoading}
             />
           </div>
 
@@ -198,7 +186,7 @@ export default function NotesArchive({ notes }: NotesArchiveProps) {
             .replace("{found}", String(filteredNotes.length))
             .replace("{total}", String(notes.length))}
         </span>
-        {isLoading && (
+        {isSearching && (
           <span className="ml-2 animate-pulse text-(--accent)">
             {archive.scanning}
           </span>
@@ -206,7 +194,7 @@ export default function NotesArchive({ notes }: NotesArchiveProps) {
       </div>
 
       {/* 笔记网格 */}
-      {!isLoading && filteredNotes.length === 0 ? (
+      {filteredNotes.length === 0 ? (
         <div className="rounded-lg border border-dashed border-(--panel-border) bg-(--panel)/40 p-8 text-center">
           <p className="font-mono text-sm text-(--foreground-muted)">
             &gt; ERROR: NO_DATA_FOUND. <br />
