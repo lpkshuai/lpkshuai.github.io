@@ -24,10 +24,12 @@ export const notes = {
 
   type: {
     concept: "Concept",
+    guide: "Guide",
     debugging: "Debugging",
     setup: "Setup",
     snippet: "Snippet",
     review: "Review",
+    lab: "Lab",
   },
 
   archive: {

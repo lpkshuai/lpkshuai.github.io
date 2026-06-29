@@ -1,6 +1,13 @@
 export type NoteStatus = "published" | "learning" | "draft";
 
-export type NoteType = "concept" | "debugging" | "setup" | "snippet" | "review";
+export type NoteType =
+  | "concept"
+  | "guide"
+  | "debugging"
+  | "setup"
+  | "snippet"
+  | "review"
+  | "lab";
 
 export type Note = {
   slug: string;

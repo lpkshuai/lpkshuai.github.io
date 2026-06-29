@@ -6,8 +6,10 @@ export const statusLabel = {
 
 export const typeLabel = {
   concept: "Concept",
+  guide: "Guide",
   debugging: "Debugging",
   setup: "Setup",
   snippet: "Snippet",
   review: "Review",
+  lab: "Lab",
 };
