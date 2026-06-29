@@ -1,7 +1,7 @@
 1:"$Sreact.fragment"
-2:I[87519,["/_next/static/chunks/0r8vl-xkq3w-2.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/0z02ca-63h6bd.js"],"default"]
-b:I[97367,["/_next/static/chunks/0r8vl-xkq3w-2.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
-c:"$Sreact.suspense"
+2:I[87519,["/_next/static/chunks/2mm6bfp9kr5jr.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/1djbjfif2m0lz.js"],"default"]
+13:I[97367,["/_next/static/chunks/2mm6bfp9kr5jr.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
+14:"$Sreact.suspense"
 3:T6da,## 一. 修改全局默认配置：
 
 在使用axios请求的时候一般会进行封装，如：
@@ -630,7 +630,327 @@ const uploadImg = () => {
 [官方教程](https://scanapp.org/html5-qrcode-docs/docs/intro "官方教程")
 [qrcode.minhazav.dev](https://blog.minhazav.dev/research/html5-qrcode "qrcode.minhazav.dev")
 [vite 本地开启 https](https://www.cnblogs.com/lpkshuai/p/17636869.html "vite 本地开启 https")
-7:T148f,### 1. 需求效果图：
+7:T6c2,## 1. 安装
+
+```bash
+# 通过 npm 安装
+npm i @vant/weapp -S --production
+
+# 通过 yarn 安装
+yarn add @vant/weapp --production
+
+# 安装 0.x 版本
+npm i vant-weapp -S --production
+
+```
+
+## 2. 引入项目
+
+1. 首先在项目根目录创建文件夹 `wxcomponents` ，然后在其中创建 `vant` 文件夹。
+2. 把node_modules中的vant中的dist文件夹复制到刚创建的 `wxcomponents\vant` 中。
+   ![image](/notes/uni-app/wxcomponents-vant-dist.png)
+3. 打开App.vue，引入vant的样式文件：
+
+```js
+<style lang="scss">@import '/wxcomponents/vant/common/index.wxss';</style>
+```
+
+4. 打开 `pages.json` 文件，在globalStyle中引入需要的组件：
+   ![image](/notes/uni-app/vant-mini-pages-global-style-config.png)
+
+```javascript
+"usingComponents": {
+  "van-button": "wxcomponents/vant/button/index",
+  "van-tab": "wxcomponents/vant/tab/index",
+  "van-tabs": "wxcomponents/vant/tabs/index"
+}
+```
+
+5. 使用：
+
+```html
+<van-button type="default">默认按钮</van-button>
+```
+
+> 组件用法见文档。如果使用的vue，要改成vue的写法。
+> 如：
+
+```html
+<van-tabs active="{{ active }}" bind:change="onChange">
+  <van-tab title="标签 1">内容 1</van-tab>
+  <van-tab title="标签 2">内容 2</van-tab>
+  <van-tab title="标签 3">内容 3</van-tab>
+  <van-tab title="标签 4">内容 4</van-tab>
+</van-tabs>
+```
+
+改成
+
+```html
+<van-tabs :active="active" @change="onChange">
+  <van-tab title="标签 1">内容 1</van-tab>
+  <van-tab title="标签 2">内容 2</van-tab>
+  <van-tab title="标签 3">内容 3</van-tab>
+  <van-tab title="标签 4">内容 4</van-tab>
+</van-tabs>
+```
+
+## 文档
+
+[vant-weapp官方文档](https://vant-ui.github.io/vant-weapp/#/home "vant-weapp官方文档")
+8:T11bd,vue2 + element ui版：[点击此处](https://www.cnblogs.com/lpkshuai/p/17310220.html "点击此处")
+
+### 1. 外层菜单组件：
+
+LeftMenu.vue
+
+```js
+<template>
+  <el-menu
+    :default-active="activeMenu"
+    router
+    :class="'menu-left'"
+    :default-openeds="openedsArr"
+    text-color="#fff"
+  >
+    <LeftSubMenu :menuData="menuData"></LeftSubMenu>
+  </el-menu>
+</template>
+
+<script setup>
+import LeftSubMenu from "@/components/LeftSubMenu.vue";
+import { computed } from "vue";
+import { useRouter } from "vue-router";
+
+const openedsArr = props.menuData.map((item) => {
+  return item.path;
+});
+
+const props = defineProps({
+  menuData: {
+    type: Array,
+    default: [],
+  },
+});
+
+const activeMenu = computed(() => {
+  const router = useRouter();
+  const { meta, path } = router.currentRoute.value;
+  if (meta.matchPath2) {
+    return meta.matchPath2;
+  } else {
+    return path;
+  }
+});
+</script>
+
+<style scoped>
+.menu-left {
+  flex: 1;
+  padding: 0 8px;
+  border-right: none;
+  background: none;
+}
+.menu-left:deep(.el-menu),
+.menu-left:deep(.el-sub-menu__title:hover) {
+  background: none;
+}
+.menu-left:deep(.el-menu-item),
+.menu-left:deep(.el-sub-menu__title) {
+  height: 36px;
+  margin-bottom: 4px;
+  border-radius: 4px;
+  color: var(--text-main-color) !important;
+}
+.menu-left:deep(.el-menu-item:hover .icon),
+.menu-left:deep(.el-menu-item.is-active .icon) {
+  filter: invert(100%);
+  -webkit-filter: invert(100%);
+}
+.menu-left:deep(.el-menu-item:hover),
+.menu-left:deep(.el-menu-item.is-active) {
+  color: #ffffff !important;
+  background-color: #243158;
+}
+</style>
+```
+
+### 2. 子菜单组件（递归主体）：
+
+LeftSubMenu.vue
+
+```js
+<template>
+  <template v-for="item in menuData">
+    <el-sub-menu
+      :key="item.path"
+      v-if="item.children && item.children.length > 0"
+      :index="item.path"
+      :class="item.icon ? '' : 'noIcon'"
+    >
+      <template #title>
+        <img
+          class="icon pd-r-10"
+          :src="curRoute.indexOf(item.path) != -1 ? item.iconActive : item.icon"
+        />
+        <img class="icon pd-r-10" :src="item.icon" />
+        <span>{{ item.label }}</span>
+      </template>
+      <LeftSubMenu :menuData="item.children"></LeftSubMenu>
+    </el-sub-menu>
+    <el-menu-item
+      :key="item.id"
+      v-else
+      :index="item.path"
+      :disabled="item.disabled"
+    >
+      <template #title>
+        <img class="icon pd-r-10" :src="item.icon" />
+        <span>{{ item.label }}</span>
+      </template>
+    </el-menu-item>
+  </template>
+</template>
+
+<script setup>
+import LeftSubMenu from "./LeftSubMenu.vue";
+import { computed } from "vue";
+import { useRouter } from "vue-router";
+
+const props = defineProps({
+  menuData: {
+    type: Array,
+    default: [],
+  },
+});
+
+const curRoute = computed(() => {
+  const router = useRouter();
+  const { path } = router.currentRoute.value;
+  return path;
+});
+</script>
+```
+
+### 3. 使用：
+
+```js
+...
+<LeftMenu :menuData="menuList"></LeftMenu>
+...
+```
+
+```js
+const menuList = [
+  {
+    title: "菜单一",
+    path: "/menutest/menu1",
+    icon: new URL("@/assets/images/icons/icon.png", import.meta.url).href,
+    iconActive: new URL(
+      "@/assets/images/icons/icon_active.png",
+      import.meta.url,
+    ).href,
+    children: [
+      {
+        title: "子菜单一",
+        path: "/menutest/menu1/menu1-1",
+        // disabled: true,
+      },
+      {
+        title: "子菜单二",
+        path: "/menutest/menu1/menu1-2",
+      },
+    ],
+  },
+  {
+    title: "菜单二",
+    path: "/menutest/menu2",
+    icon: new URL("@/assets/images/icons/icon.png", import.meta.url).href,
+    iconActive: new URL(
+      "@/assets/images/icons/icon_active.png",
+      import.meta.url,
+    ).href,
+    children: [
+      {
+        title: "子菜单一",
+        path: "/menutest/menu2/menu2-1",
+      },
+      {
+        title: "子菜单二",
+        path: "/menutest/menu2/menu2-2",
+        children: [
+          {
+            title: "孙子菜单一",
+            path: "/menutest/menu2/menu2-2/menu2-1-1",
+          },
+          {
+            title: "孙子菜单二",
+            path: "/menutest/menu2/menu2-2/menu2-2-2",
+          },
+        ],
+      },
+      {
+        title: "子菜单三",
+        path: "/menutest/menu2/menu2-3",
+      },
+    ],
+  },
+  {
+    title: "菜单三",
+    path: "/menutest/menu3",
+    icon: new URL("@/assets/images/icons/icon.png", import.meta.url).href,
+    iconActive: new URL(
+      "@/assets/images/icons/icon_active.png",
+      import.meta.url,
+    ).href,
+  },
+];
+```
+
+> 注意vite图片引入的方式
+9:T75e,## 1. 启动模拟器
+
+**①可以在Android Studio中打开安装好的模拟器**
+![image](/notes/uni-app/open-android-studio-emulator.png)
+
+**②也可以不通过Android Studio，使用指令直接启动模拟器**
+
+- 首先找到Android Studio模拟器安装位置，一般如下图：
+
+`C:\Users\Lee\AppData\Local\Android\Sdk\emulator`
+![image](/notes/uni-app/open-emulator-command.png)
+
+> AppData文件夹默认隐藏，需要设置可见。
+
+- 然后再该路径下打开cmd控制台，输入指令`emulator.exe -list-avds`可以查看已安装的模拟器列表：
+  ![image](/notes/uni-app/emulator-list.png)
+
+- 选择需要启动的模拟器执行`emulator.exe -avd Pixel_7_Pro_API_33`指令，此时会启动相应的模拟器：
+  ![image](/notes/uni-app/emulator-avd.png)
+  > 指令`emulator.exe -avd Pixel_7_Pro_API_33`中的模拟器名称要换成自己的
+
+## 2. 启动项目
+
+![image](/notes/uni-app/start-project-emulator.png)
+
+在设备列表中找到对应的模拟器点击运行。
+
+## 3. 遇到的一些问题
+
+①***当前设备cpu类型×86_64不支持运行标准基座***
+在使用标准基座运行时提示了该问题，解决方法是改用自定义基座。
+（更为诡异的是，提示不支持后点击刷新模拟器列表，然后再使用标准基座竟然又可以使用了。。）
+
+> 后面尝试了别的版本也可以运行标准基座，如：
+> ![image](/notes/uni-app/problem-custom-avd.png)
+
+②***安装自定义基座App失败***
+在创建了自定义基座后运行，控制台提示该错误。经过多方搜查，由于我使用的是Android studio中的模拟器，之前用react native开发过其它app，可能模拟器内存不足以安装基座。在重新创建了一个新的模拟器后，安装基座成功。
+③***页面卡死在同步手机端程序文件完成***
+暂未解决
+
+> 有人说用Android 11可以进入
+a:T148f,### 1. 需求效果图：
 
 ![image](/notes/element-ui/el-table-display-need.png)
 
@@ -821,7 +1141,363 @@ const spanMethod = ({ row, column, rowIndex, columnIndex }) => {
 
 刷新页面查看，问题解决：
 ![image](/notes/element-ui/el-table-span-result.png)
-8:T7e5,# 官网
+b:Tc6e,## 介绍
+
+js-audio-recorder是一个纯js实现的浏览器端录音插件。
+目前支持以下功能：
+
+- 录音，暂停，恢复，和录音播放。
+- 音频数据的压缩，支持单双通道录音。
+- 录音时长、录音大小的显示。
+- 导出录音文件，格式为pcm或wav。
+- 录音波形显示，可自己定制。
+
+## 相关链接
+
+[GitHub地址](https://github.com/2fps/recorder "GitHub地址")
+[官网主页地址](https://recorder-api.zhuyuntao.cn/ "官网主页")
+[项目在线演示地址](https://recorder.zhuyuntao.cn/ "项目在线演示地址")
+
+## 前提条件
+
+需要使用127.0.0.1或localhost尝试，因为getUserMedia在高版本的chrome下需要使用https。
+
+## 安装
+
+npm安装
+
+```bash
+npm i js-audio-recorder
+```
+
+引入使用
+
+```js
+import Recorder from "js-audio-recorder";
+
+let recorder = new Recorder({
+  sampleBits: 16, // 采样位数，支持 8 或 16，默认是16
+  sampleRate: 16000, // 采样率，支持 11025、16000、22050、24000、44100、48000，根据浏览器默认值，我的chrome是48000
+  numChannels: 1, // 声道，支持 1 或 2， 默认是1
+  // compiling: false,(0.x版本中生效,1.x增加中)  // 是否边录边转换，默认是false
+});
+```
+
+> 更多详细属性见官方文档 [点击查看更多属性](https://recorder-api.zhuyuntao.cn/Recorder/config.html "更多属性")
+
+## 常用方法
+
+#### getPermission()
+
+> 未给予录音权限的页面在开始录音时需要再次点击允许录音，才能真正地录音，存在丢失开始这一段录音的情况，增加方法以便用户提前获取麦克风权限。
+
+```js
+Recorder.getPermission().then(
+  () => {
+    console.log("给权限了");
+  },
+  (error) => {
+    console.log(`${error.name} : ${error.message}`);
+  },
+);
+```
+
+#### start()
+
+> 开始录音，返回Promise
+
+```js
+recorder.start().then(
+  () => {
+    // 开始录音
+  },
+  (error) => {
+    // 出错了
+    console.log(`${error.name} : ${error.message}`);
+  },
+);
+```
+
+#### pause()
+
+> 暂停录音，返回void
+
+```js
+recorder.pause();
+```
+
+#### resume()
+
+> 继续录音，返回void
+
+```js
+recorder.resume();
+```
+
+#### stop()
+
+> 结束录音，返回void
+
+```js
+recorder.stop();
+```
+
+#### play()
+
+> 播放录音，返回void
+
+```js
+recorder.play();
+```
+
+#### pausePlay()
+
+> 暂停播放录音，返回void
+
+```js
+recorder.pausePlay();
+```
+
+#### resumePlay()
+
+> 恢复播放录音，返回void
+
+```js
+recorder.resumePlay();
+```
+
+#### stopPlay()
+
+> 停止播放录音，返回void
+
+```js
+recorder.stopPlay();
+```
+
+#### destroy()
+
+> 销毁实例，返回Promise
+
+```js
+// 销毁录音实例，置为null释放资源，fn为回调函数，
+recorder.destroy().then(function () {
+  recorder = null;
+});
+```
+
+#### getPCMBlob()
+
+> 获取 PCM 数据，在录音结束后使用，返回Blob
+> 注：使用该方法会默认调用 stop() 方法。
+
+```js
+recorder.getPCMBlob();
+```
+
+#### getWAVBlob()
+
+> 获取 WAV 数据，在录音结束后使用，返回Blob
+> 注：使用该方法会默认调用 stop() 方法。
+
+```js
+recorder.getWAVBlob();
+```
+
+> 更多api详见文档 [点击查看更多api](https://recorder-api.zhuyuntao.cn/Recorder/API.html "点击查看更多api")
+c:T6b9,### 1. Element UI
+
+使用 `picker-options 的 disabledDate` 属性限制选择相应日期。
+
+```js
+...
+<el-form-item prop="date" label="日期范围">
+  <el-date-picker
+    v-model="form.date"
+    type="daterange"
+    range-separator="－"
+    start-placeholder="开始时间"
+    end-placeholder="结束时间"
+    value-format="YYYY-MM-DD HH:mm:ss"
+    :picker-options="pickerOptions"
+  />
+</el-form-item>
+...
+
+...
+  data() {
+    return {
+      pickerOptions: {
+        disabledDate(time) {
+          // 获取今天的日期
+          const today = new Date();
+          // 如果选择的日期在今天之后，则禁用
+          return time.getTime() > today.getTime();
+        },
+      },
+    };
+  },
+...
+```
+
+> 官方文档：[点此查看](https://element.eleme.cn/#/zh-CN/component/date-picker "点此查看")
+> ![image](/notes/element-ui/el-date-picker-options.png)
+> ![image](/notes/element-ui/el-date-picker-options-2.png)
+
+### 2. Element Plus
+
+使用 `disabledDate` 属性限制选择相应日期。
+
+```js
+...
+<el-form-item prop="date" label="日期范围">
+  <el-date-picker
+    v-model="form.date"
+    type="daterange"
+    range-separator="－"
+    start-placeholder="开始时间"
+    end-placeholder="结束时间"
+    value-format="YYYY-MM-DD HH:mm:ss"
+    :disabledDate="disabledDate"
+  />
+</el-form-item>
+...
+
+...
+const disabledDate = (time) => {
+  // 获取今天的日期
+  const today = new Date();
+  // 如果选择的日期在今天之后，则禁用
+  return time.getTime() > today.getTime();
+};
+...
+```
+
+> 官方文档： [点此查看](https://element-plus.org/zh-CN/component/date-picker.html#%E5%B1%9E%E6%80%A7 "点此查看")
+> ![image](/notes/element-ui/el-date-picker-options-3.png)
+d:T942,## 1. CRLF概念
+
+CRLF（Carriage-Return Line-Feed），CR是回车符，LF是换行符。它们都是文本文件用于标记换行的控制字符（control characters）或字节码（bytecode）。
+
+**CR（Carriage Return）**，回车符号，对应字符 `'\r'`，十六进制 ascii 码为 `0x0D`，十进制 ascii 码为 `13`，用于将鼠标移动到行首，并不前进至下一行。
+
+**LF（Line Feed）**，换行符号，对应字符 `'\n'`，十六进制 ascii 码为 `0x0A`，十进制 ascii 码为 `10`，用于换行。
+
+紧邻的 CR 和 LF（组成 CRLF，`\r\n`，或十六进制 `0x0D0A`）将鼠标移动到下一行行首。
+
+Windows 操作系统默认的文本换行符为 CRLF；
+Linux 以及 macOS 系统默认使用 LF，早期的 mac os 系统使用 CR 换行。
+
+## 2. Git中配置
+
+由于编辑器的不同或者文件行尾的换行符在 Windows 下被替换了，一些细微的空格变化会不经意地混入提交的补丁或其它协作成果中。 Git 提供了一些配置项来帮助解决这些问题。
+
+### core.autocrlf
+
+- Git 可以在提交时自动地把回车和换行转换成换行，而在检出代码时把换行转换成回车和换行。 可以用 core.autocrlf 来打开此项功能。 如果是在 Windows 系统上，把它设置成 true，这样在检出代码时，换行会被转换成回车和换行：
+
+```bash
+git config --global core.autocrlf true # 全局设置
+git config --local core.autocrlf true # 项目设置
+```
+
+- 如果使用以换行作为行结束符的 Linux 或 macOS，不需要 Git 在检出文件时进行自动的转换； 然而当一个以回车加换行作为行结束符的文件不小心被引入时，想让 Git 修正。可以把 core.autocrlf 设置成 input 来告诉 Git 在提交时把回车和换行转换成换行，检出时不转换，这样在 Windows 上的检出文件中会保留回车和换行，而在 macOS 和 Linux 上，以及版本库中会保留换行。
+
+```bash
+git config --global core.autocrlf input
+```
+
+- 如果正在开发仅运行在 Windows 上的项目，可以设置 false 取消此功能，把回车保留在版本库中：
+
+```bash
+git config --global core.autocrlf false
+```
+
+###一般开发规范：
+
+- 使用 Windows 系统的开发`git config --global core.aurocrlf true`
+- 使用Linux/MacOS 的开发`git config --global core.autocrlf input`
+e:T7fa,### 1. 滚动条不在body元素
+
+> 场景：页面布局使用如下container容器布局，Aside固定高度，Main部分带纵向滚动条。
+> ![image](/notes/vue/vue3-scroll-to-top.png)
+
+- 页面部分
+
+```html
+<template>
+  <el-container>
+    <el-aside width="224px">
+      <div class="title fs-16 c-999">标题xxx</div>
+      <LeftMenu :menuData="menuList"></LeftMenu>
+    </el-aside>
+    <el-main id="monitor-main-box">
+      <el-backtop :right="50" :bottom="50" target="#monitor-main-box" />
+      <router-view v-slot="{ Component }">
+        <transition name="fade-slide" mode="out-in" appear>
+          <component :is="Component" id="main" />
+        </transition>
+      </router-view>
+    </el-main>
+  </el-container>
+</template>
+```
+
+- script部分
+
+```js
+<script setup>
+import { onBeforeRouteUpdate } from "vue-router";
+
+onBeforeRouteUpdate((to, from) => {
+  // 由于路由设置了0.3s过渡效果，所以此处设置了0.3s定时器。避免页面切换效果突兀。
+  setTimeout(() => {
+    document.getElementById("main").scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }, 300);
+});
+</script>
+```
+
+### 2. 滚动条直接在body元素
+
+- 方法一
+  > 如果滚动条是直接在body上时，可以使用vue router自带的 `scrollBehavior` 方法。
+  > [详见地址](https://router.vuejs.org/zh/guide/advanced/scroll-behavior.html "详见地址")
+
+```js
+const router = createRouter({
+  history: createWebHashHistory(),
+  routes: [...],
+  scrollBehavior (to, from, savedPosition) {
+    // 滚动到顶部
+    return { top: 0 }
+  }
+})
+```
+
+> 注：在 `vue router 4.x` 中使用 `top、left` 来设置纵向和水平方向滚动的距离，`vue router 3.x` 中则使用 `x、y` 属性
+
+- 方法二
+
+```js
+// main.js中添加
+router.beforeEach((to, from, next) => {
+  // chrome
+  document.body.scrollTop = 0;
+  // firefox
+  document.documentElement.scrollTop = 0;
+  // safari
+  window.pageYOffset = 0;
+  next();
+});
+// 或
+router.afterEach((to, from, next) => {
+  window.scrollTo(0, 0);
+});
+```
+f:T7e5,# 官网
 
 [Vue Flow 官网](https://vueflow.dev/ "Vue Flow 官网")
 [Vue Flow GitHub](https://github.com/bcakmakoglu/vue-flow "Vue Flow GitHub")
@@ -914,7 +1590,200 @@ state.instance.zoomTo(1);
     console.log(node.id);
   };
 ```
-0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-6xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"notes":[{"slug":"axios-baseurl-089fd3","title":"Axios在实例化之后修改baseURL或其他配置","category":"JavaScript","type":"setup","description":"在使用axios请求的时候一般会进行封装，如：","status":"published","tags":["JavaScript","setup","Axios"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"$3"},{"slug":"next-js-plus-github-pages-ci-cd-2c6362","title":"🚀 Next.js + GitHub Pages 自动部署（CI/CD 笔记）","category":"Next.js","type":"setup","description":"main 分支（源码）","status":"published","tags":["Next.js","setup","GitHub Pages"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"$4"},{"slug":"vue-docx-excel-pdf-959f53","title":"vue 在网页中预览(docx、excel、pdf)文件","category":"Vue","type":"snippet","description":"npm install @vue-office/docx vue-demi@0.14.6","status":"published","tags":["Vue","snippet","PDF","Excel"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"$5"},{"slug":"vue3-html5-qrcode-41e695","title":"vue3 使用 html5-qrcode 实现扫描二维码功能","category":"Vue","type":"snippet","description":"npm安装","status":"published","tags":["Vue","snippet","QRCode"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"2 min read","content":"$6"},{"slug":"el-table-display-issues","title":"el-table 设置合并行或列时，显示错乱问题","category":"Vue","type":"snippet","description":"记录 el-table 合并行或列时显示错乱问题的解决方法。","status":"published","tags":["Vue","Element","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-01-05","readingTime":"2 min read","content":"$7"},{"slug":"vite-https-self-signed-certificate","title":"vite 本地代理请求https接口 self signed certificate 自签名证书错误","category":"Tooling","type":"debugging","description":"记录 vite 本地代理请求https接口时自签名证书错误。","status":"published","tags":["Vite","Tooling"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-06-14","readingTime":"1 min read","content":"### vite本地代理后端接口为https时，无法发送请求，并报错如下：\n\n![image](/notes/vite/error-self-signed-certificate.png)\n\n### 查询vite文档，更改配置 `server.https` 为 `true` ，无效\n\n![image](/notes/vite/server.https-config.png)\n\n### 又根据vite文档中描述添加 @vitejs/plugin-basic-ssl 到项目插件中，它会自动创建和缓存一个自签名的证书。 结果无效\n\n### 于是本地添加证书文件并配置在 `server.https` 中 ，无效\n\n### 最终 `server.proxy` 中增加配置 `secure: false` 后，请求发起成功，问题解决\n\n```js\n  server: {\n    hmr: true,\n    open: true,\n    port: \"8080\",\n    proxy: {\n      \"/api\": {\n        target: \"https://xx.xx.xx.xx:xx\",\n        changeOrigin: true,\n        rewrite: (path) => path.replace(/^\\/api/, \"\"),\n        secure: false,\n      },\n    },\n  },\n```\n\n> [参考链接 https://github.com/vitejs/vite/issues/3475](https://github.com/vitejs/vite/issues/3475 \"参考链接\")\n> ![image](/notes/vite/github-issues-error-self-signed-cetificate.png)\n"},{"slug":"vue3-vue-flow","title":"Vue3 流程图组件库 Vue Flow 简单使用","category":"Vue","type":"snippet","description":"记录 Vue Flow 流程图组件库的使用。","status":"published","tags":["Vue","Frontend","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-01-03","readingTime":"1 min read","content":"$8"}]}]}],["$L9"],"$La"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"4xuEFGrmqvRdVsSsemJbE"}
-9:["$","script","script-0",{"src":"/_next/static/chunks/0z02ca-63h6bd.js","async":true}]
-a:["$","$Lb",null,{"children":["$","$c",null,{"name":"Next.MetadataOutlet","children":"$@d"}]}]
-d:null
+10:T1308,### 1. 安装 turn.js
+
+> 需要jQuery
+
+[turn.js官网](http://turnjs.com/ "turn.js官网")
+
+### 2. 安装 pdf.js
+
+```bash
+npm install vue-pdf --save-dev
+```
+
+### 3. 主体代码
+
+```js
+<template>
+  <div id="flipbook" ref="flipbook" v-loading="pdfLoading" v-show="rendered">
+    <div v-for="item in pageNum" :key="item">
+      <div class="gradient"></div>
+      <canvas :id="`pdf-canvas-${item}`" class="pdf-page" />
+    </div>
+  </div>
+</template>
+
+<script>
+import $ from "jquery";
+import turn from "../../assets/js/turn.min.js";
+
+import * as pdfjs from "pdfjs-dist";
+import * as pdfjsWorker from "pdfjs-dist/build/pdf.worker.entry";
+
+pdfjs.GlobalWorkerOptions.workerSrc = pdfjsWorker;
+
+// console.log(pdfjs);
+export default {
+  name: "PdfTurnViewer",
+  props: {
+    pdfUrl: {
+      type: String,
+      default: "",
+    },
+  },
+  data() {
+    return {
+      pdfLoading: false,
+      rendered: false,
+      pageNum: 0,
+      pdfCtx: null,
+      pageSize: {
+        width: 0,
+        height: 0,
+      },
+    };
+  },
+  mounted() {
+    this.getPdf(this.pdfUrl);
+    // this.startTurn();
+  },
+  methods: {
+    getPdf(url) {
+      this.pdfLoading = true;
+      const loadingTask = pdfjs.getDocument(url);
+      // console.log(loadingTask);
+      loadingTask.promise
+        .then((pdf) => {
+          this.pdfCtx = pdf;
+          this.pageNum = pdf.numPages;
+          this.$nextTick(() => {
+            this.renderPdf();
+          });
+        })
+        .catch((err) => {
+          this.pdfLoading = false;
+          console.error("pdf加载失败", err);
+        });
+    },
+    renderPdf(num = 1) {
+      this.pdfCtx.getPage(num).then((page) => {
+        const canvas = document.getElementById(`pdf-canvas-${num}`);
+        const ctx = canvas.getContext("2d");
+        const viewport = page.getViewport({ scale: 1 });
+
+        this.pageSize = {
+          width: viewport.width,
+          height: viewport.height,
+        };
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+
+        const clientWidth = 500;
+        canvas.style.width = clientWidth + "px";
+        // // 根据pdf每页的宽高比例设置canvas的高度
+        // canvas.style.height =
+        //   clientWidth * (viewport.height / viewport.width) + "px";
+
+        page.render({
+          canvasContext: ctx,
+          viewport,
+        });
+
+        if (num < this.pageNum) {
+          this.renderPdf(num + 1);
+        } else {
+          this.pdfLoading = false;
+          this.rendered = true;
+          console.log("render finished!");
+          this.startTurn();
+          // loading.clear();
+        }
+      });
+    },
+    startTurn() {
+      let self = this;
+      $("#flipbook").turn("center");
+      $("#flipbook").turn("page");
+      // this.$nextTick(() => {
+      $("#flipbook")
+        .turn({
+          display: "double", //single double
+          elevation: 50,
+          gradients: true,
+          duration: 1000,
+          autoCenter: true,
+          acceleration: true,
+          page: 2,
+          width: 1000,
+          height: (self.pageSize.height * 1000) / self.pageSize.width / 2,
+          when: {
+            turning: (event, page, pageObj) => {
+              // 禁止第1页时点击翻页
+              page === 1 && event.preventDefault();
+              // console.log(self.pageSize);
+              // console.log("翻页中", page); //246偶数
+              // if (page === this.numPages - 3) {
+              //   console.log("加载下一页");
+              //   this.numPages++;
+              // }
+            },
+            // turned: (event, page, pageObj) => {
+            //   //当前页
+            //   console.log("当前页: ", page);
+            //   console.log("当前页数组: ", pageObj);
+            //   //总页数
+            //   // console.log("共有" + $("#flipbook").turn("pages") + " 页");
+            // },
+          },
+        })
+        .bind("start", function (event, pageObject, corner) {
+          // console.log("hover位置方向", corner);
+          if (pageObject.page === 2) {
+            // 禁止第1页时手动拖拽翻页
+            event.preventDefault();
+          }
+        });
+      // .bind("turning", (event, page, view) => {
+      //   alert("turning the page to" + page);
+      // });
+      // .bind("last", function (event, pageObject, corner) {
+      //   console.log("最后一页");
+      // });
+      // });
+      // 销毁
+      // $("#flipbook").turn("destroy").remove();
+    },
+  },
+};
+</script>
+
+<style scoped>
+.container {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+#flipbook {
+  height: 800px;
+}
+#flipbook .even .gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(0.95, rgba(0, 0, 0, 0)),
+    color-stop(1, rgba(0, 0, 0, 0.2))
+  );
+}
+</style>
+```
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-6xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"notes":[{"slug":"axios-baseurl-089fd3","title":"Axios在实例化之后修改baseURL或其他配置","category":"JavaScript","type":"setup","description":"在使用axios请求的时候一般会进行封装，如：","status":"published","tags":["JavaScript","setup","Axios"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"$3"},{"slug":"next-js-plus-github-pages-ci-cd-2c6362","title":"🚀 Next.js + GitHub Pages 自动部署（CI/CD 笔记）","category":"Next.js","type":"setup","description":"main 分支（源码）","status":"published","tags":["Next.js","setup","GitHub Pages"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"$4"},{"slug":"vue-docx-excel-pdf-959f53","title":"vue 在网页中预览(docx、excel、pdf)文件","category":"Vue","type":"snippet","description":"npm install @vue-office/docx vue-demi@0.14.6","status":"published","tags":["Vue","snippet","PDF","Excel"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"$5"},{"slug":"vue3-html5-qrcode-41e695","title":"vue3 使用 html5-qrcode 实现扫描二维码功能","category":"Vue","type":"snippet","description":"npm安装","status":"published","tags":["Vue","snippet","QRCode"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"2 min read","content":"$6"},{"slug":"chrome-overwrite-window-config","title":"Google浏览器打开网页会覆盖原来的页面","category":"Browser","type":"guide","description":"Google浏览器打开网页会覆盖原来的页面，修改搜索设置即可解决。","status":"published","tags":["Chrome","Browser","Configuration"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-06-05","readingTime":"1 min read","content":"### 1. 打开主页\n\n[https://www.google.com/](https://www.google.com/ \"https://www.google.com/\")\n\n### 2. 选择右下角设置 -> 搜索设置\n\n![image](/notes/browser/google-search-setting.png)\n\n### 3. 找到在新窗口打开搜索结果即可\n\n![image](/notes/browser/other-setting-new-window.png)\n"},{"slug":"uni-app-miniproject-vant","title":"uniapp开发小程序引入vant","category":"UniApp","type":"snippet","description":"uni-app 开发微信小程序引入 vant 组件库的流程记录。","status":"published","tags":["UniApp","Vant","小程序"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-05-07","readingTime":"1 min read","content":"$7"},{"slug":"vue3-el-menu-recursive","title":"el-menu递归组件实现多级菜单（vue3+element plus版）","category":"Vue","type":"snippet","description":"vue3 + element plus 中 使用 el-menu 递归组件实现多级菜单。","status":"published","tags":["Vue","Element","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-04-23","readingTime":"1 min read","content":"$8"},{"slug":"uni-app-run-android-studio","title":"uni-app 项目运行到 Android Studio 模拟器","category":"UniApp","type":"snippet","description":"uni-app 项目运行到 Android Studio 模拟器。","status":"published","tags":["UniApp","Android Studio"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-04-07","readingTime":"2 min read","content":"$9"},{"slug":"el-table-display-issues","title":"el-table 设置合并行或列时，显示错乱问题","category":"Vue","type":"snippet","description":"记录 el-table 合并行或列时显示错乱问题的解决方法。","status":"published","tags":["Vue","Element","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-01-05","readingTime":"2 min read","content":"$a"},{"slug":"vscode-err-connection-closed","title":"vscode 安装插件报错：ERR_CONNECTION_CLOSED","category":"Tooling","type":"debugging","description":"vscode 安装插件时报错 [error] Download: net::ERR_CONNECTION_CLOSED 。","status":"published","tags":["VScode","Error"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-10-30","readingTime":"1 min read","content":"## 背景：\n\nvscode安装扩展插件时报错，显示下载失败：\n`[error] Download: net::ERR_CONNECTION_CLOSED`\n`[error] net::ERR_CONNECTION_CLOSED: Download: net::ERR_CONNECTION_CLOSED`\n\n![image](/notes/ide/err-connection-closed.png)\n\n## 解决方法：\n\n查找相关文档发现这么一段：\n**If you are behind a firewall that needs to allow specific domains used by VS Code, here's the list of hostnames you should allow communication to go through:**\n猜测可能是防火墙的问题，关闭后问题解决。\n\n## 链接：\n\n[Network Connections in Visual Studio Code](https://code.visualstudio.com/docs/setup/network \"Network Connections in Visual Studio Code\")\n"},{"slug":"vite-https-plugin-basic-ssl","title":"Vite 本地开启 https 模式便于调试","category":"Tooling","type":"setup","description":"Vite 本地开启 https 模式配置。","status":"published","tags":["Vite","Https"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-08-17","readingTime":"1 min read","content":"### 1. 安装依赖\n\n```shell\nnpm install @vitejs/plugin-basic-ssl -D\n```\n\n### 2. 配置 vite.config.js\n\n```js\n// vite.config.js\nimport  basicSsl  from  '@vitejs/plugin-basic-ssl'\n\nexport  default  {\n  plugins : [\n    basicSsl ( {\n      /** 认证名称 */\n      name : 'test' ,\n      /** 自定义信任域 * /\n      domains : [ '*.custom.com' ] ,\n      /** 自定义认证目录 */\n      certDir : '/Users/.../.devServer/cert'\n    } )\n  ]\n}\n```\n\n### 3. 相关链接\n\n[@vitejs/plugin-basic-ssl npm 地址](https://www.npmjs.com/package/@vitejs/plugin-basic-ssl \"@vitejs/plugin-basic-ssl npm 地址\")\n[GitHub 地址](https://github.com/vitejs/vite-plugin-basic-ssl \"GitHub 地址\")\n[Vite server-https](https://vitejs.dev/config/server-options.html#server-https \"Vite server-https\")\n"},{"slug":"js-audio-recorder","title":"js-audio-recorder 插件实现web端录音","category":"JavaScript","type":"snippet","description":"使用 js-audio-recorder 插件实现web端录音。","status":"published","tags":["JavaScript","Frontend","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-06-19","readingTime":"2 min read","content":"$b"},{"slug":"vite-https-self-signed-certificate","title":"vite 本地代理请求https接口 self signed certificate 自签名证书错误","category":"Tooling","type":"debugging","description":"记录 vite 本地代理请求https接口时自签名证书错误。","status":"published","tags":["Vite","Tooling"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-06-14","readingTime":"1 min read","content":"### vite本地代理后端接口为https时，无法发送请求，并报错如下：\n\n![image](/notes/vite/error-self-signed-certificate.png)\n\n### 查询vite文档，更改配置 `server.https` 为 `true` ，无效\n\n![image](/notes/vite/server.https-config.png)\n\n### 又根据vite文档中描述添加 @vitejs/plugin-basic-ssl 到项目插件中，它会自动创建和缓存一个自签名的证书。 结果无效\n\n### 于是本地添加证书文件并配置在 `server.https` 中 ，无效\n\n### 最终 `server.proxy` 中增加配置 `secure: false` 后，请求发起成功，问题解决\n\n```js\n  server: {\n    hmr: true,\n    open: true,\n    port: \"8080\",\n    proxy: {\n      \"/api\": {\n        target: \"https://xx.xx.xx.xx:xx\",\n        changeOrigin: true,\n        rewrite: (path) => path.replace(/^\\/api/, \"\"),\n        secure: false,\n      },\n    },\n  },\n```\n\n> [参考链接 https://github.com/vitejs/vite/issues/3475](https://github.com/vitejs/vite/issues/3475 \"参考链接\")\n> ![image](/notes/vite/github-issues-error-self-signed-cetificate.png)\n"},{"slug":"el-date-picker-before-today","title":"element 日期选择器禁止选择今天之后的日期","category":"Vue","type":"snippet","description":"element 日期选择器禁止选择今天之后的日期。","status":"published","tags":["Vue","Element","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-05-25","readingTime":"1 min read","content":"$c"},{"slug":"crlf-lf-concept","title":"CRLF和LF区别","category":"Engineering","type":"concept","description":"CRLF 和 LF 概念和区别。","status":"published","tags":["Git","CRLF","LF","工程化"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-04-07","readingTime":"2 min read","content":"$d"},{"slug":"vue3-define-expose","title":"Vue3 父组件调用子组件内部的方法","category":"Vue","type":"snippet","description":"vue3 通过 defineExpose 和 ref ，父组件可访问子组件中定义的方法。","status":"published","tags":["Vue","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-03-03","readingTime":"1 min read","content":"### 1. 子组件中定义方法并通过defineExpose暴露出去\n\n```js\nimport { reactive, defineExpose } from \"vue\";\nconst state = reactive({\n  dataList: [],\n});\nconst changeData = () => {\n  state.dataList.push(1);\n};\ndefineExpose({\n  changeData,\n});\n```\n\n### 2. 父组件通过ref调用子组件暴露的方法\n\n```js\n<child ref=\"childRef\"></child>\n\nimport {ref} from \"vue\"；\nconst childRef = ref(null);\nchildRef.value.changeData();\n```\n\n_vue2中通过$refs方法调用_\n"},{"slug":"vue3-scroll-to-top","title":"vue3 中路由切换后让页面返回到顶部","category":"Vue","type":"snippet","description":"记录在 vue3 中，不同情况下，路由切换时让页面正常返回到顶部的方法。","status":"published","tags":["Vue","Frontend","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-02-28","readingTime":"1 min read","content":"$e"},{"slug":"vue3-vue-flow","title":"Vue3 流程图组件库 Vue Flow 简单使用","category":"Vue","type":"snippet","description":"记录 Vue Flow 流程图组件库的使用。","status":"published","tags":["Vue","Frontend","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-01-03","readingTime":"1 min read","content":"$f"},{"slug":"vue-turnjs-pdf","title":"Vue 借助 turn.js 实现翻书效果预览pdf文件","category":"Vue","type":"snippet","description":"vue 中使用 turn.js 插件实现翻书预览pdf文件效果。","status":"published","tags":["Vue","PDF","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2022-06-09","readingTime":"1 min read","content":"$10"},{"slug":"mini-program-router","title":"小程序返回上级页面并刷新列表","category":"MiniProgram","type":"snippet","description":"微信小程序返回上级页面并刷新列表。","status":"published","tags":["小程序"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2019-11-13","readingTime":"1 min read","content":"### 微信小程序进行操作后返回之前页面并刷新列表的方法。\n\n```js\nlet pages = getCurrentPages();\nlet beforePage = pages[pages.length - 2]; // -2 是上一个页面，-3是上上个页面以此类推。\nbeforePage.getList(参数);\nwx.navigateBack({\n  delta: 1,\n});\n```\n\n> 小程序以栈的形式维护当前的所有页面。\n\n![](/notes/mini-program/mini-stack-router-doc.png)\n\n> `getCurrentPages()` 函数可以获取当前页面栈.\n>\n> 前一页面栈： `pages[pages.length - 2];`\n>\n> 当前页面栈：`pages[pages.length - 1];`\n\n_获取到之前的页面栈，就可以调用其中获取列表的方法，从而做到刷新列表，然后执行跳转页面方法返回上一级页面_\n_还可以将要传递的参数直接`beforePage.setData`。上个页面就会执行这里的操作。_\n"}]}]}],["$L11"],"$L12"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"g9cplSRzzmF84Bv9dq3BK"}
+11:["$","script","script-0",{"src":"/_next/static/chunks/1djbjfif2m0lz.js","async":true}]
+12:["$","$L13",null,{"children":["$","$14",null,{"name":"Next.MetadataOutlet","children":"$@15"}]}]
+15:null
