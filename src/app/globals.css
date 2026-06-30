@@ -72,3 +72,14 @@ body {
 .animate-shine {
   animation: shine 2.5s ease-in-out infinite;
 }
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0.5;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
