@@ -1,0 +1,70 @@
+1:"$Sreact.fragment"
+2:I[75144,["/_next/static/chunks/2mm6bfp9kr5jr.js","/_next/static/chunks/2im7c515bo69p.js"],"ThemeProvider"]
+3:I[11110,["/_next/static/chunks/2mm6bfp9kr5jr.js","/_next/static/chunks/2im7c515bo69p.js"],"LanguageProvider"]
+4:I[45678,["/_next/static/chunks/2mm6bfp9kr5jr.js","/_next/static/chunks/2im7c515bo69p.js"],"default"]
+5:I[39756,["/_next/static/chunks/2mm6bfp9kr5jr.js","/_next/static/chunks/2im7c515bo69p.js"],"default"]
+6:I[37457,["/_next/static/chunks/2mm6bfp9kr5jr.js","/_next/static/chunks/2im7c515bo69p.js"],"default"]
+8:I[97367,["/_next/static/chunks/2mm6bfp9kr5jr.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
+9:"$Sreact.suspense"
+c:I[97367,["/_next/static/chunks/2mm6bfp9kr5jr.js","/_next/static/chunks/2im7c515bo69p.js"],"ViewportBoundary"]
+e:I[97367,["/_next/static/chunks/2mm6bfp9kr5jr.js","/_next/static/chunks/2im7c515bo69p.js"],"MetadataBoundary"]
+10:I[68027,["/_next/static/chunks/2mm6bfp9kr5jr.js","/_next/static/chunks/2im7c515bo69p.js"],"default",1]
+:HL["/_next/static/chunks/1ju5iovih5lno.css","style"]
+0:{"P":null,"c":["","notes","react-native-flipper-debug"],"q":"","i":false,"f":[[["",{"children":["notes",{"children":[["slug","react-native-flipper-debug","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/1ju5iovih5lno.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/2mm6bfp9kr5jr.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/2im7c515bo69p.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"children":["$","$L2",null,{"children":["$","$L3",null,{"children":[["$","$L4",null,{}],["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}]}]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L7",[["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/2-l7i9m0dht4u.js","async":true,"nonce":"$undefined"}]],["$","$L8",null,{"children":["$","$9",null,{"name":"Next.MetadataOutlet","children":"$@a"}]}]]}],{},null,false,null]},null,false,"$@b"]},null,false,"$@b"]},null,false,null],["$","$1","h",{"children":[null,["$","$Lc",null,{"children":"$Ld"}],["$","div",null,{"hidden":true,"children":["$","$Le",null,{"children":["$","$9",null,{"name":"Next.Metadata","children":"$Lf"}]}]}],null]}],false]],"m":"$undefined","G":["$10",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/1ju5iovih5lno.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"axcQnbUZ5sOX3PeJze-kY"}
+11:[]
+b:"$W11"
+d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+12:I[27201,["/_next/static/chunks/2mm6bfp9kr5jr.js","/_next/static/chunks/2im7c515bo69p.js"],"IconMark"]
+a:null
+f:[["$","link","0",{"rel":"icon","href":"/favicon.ico?favicon.2vob68tjqpejf.ico","sizes":"256x256","type":"image/x-icon"}],["$","$L12","1",{}]]
+13:I[30525,["/_next/static/chunks/2mm6bfp9kr5jr.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3io6jn7gqayyz.js","/_next/static/chunks/2-l7i9m0dht4u.js"],"default"]
+14:T79a,# 一、安装：
+
+### 1. 在官网下载桌面应用
+
+[Flipper官网地址](https://fbflipper.com/ "Flipper官网")
+[Flipper GitHub 首页](https://github.com/facebook/flipper "Flipper GitHub 首页")
+
+### 2. 打开程序，执行 `setup doctor` 检测环境是否缺失
+
+![image](/notes/react-native/rn-flipper-install-1.png)
+
+![image](/notes/react-native/rn-flipper-install-2.png)
+
+> [参考官方文档](https://fbflipper.com/docs/getting-started/react-native/ "参考官方文档")
+
+# 二、使用
+
+全部安装完以后启动react native项目，flipper会检测到运行中的项目模拟器
+以expo构建的项目为例：
+
+### 1. 安装 `expo-dev-client` 构建开发版本，**flipper的使用需要构建开发版本，否则flipper左上角会报无设备连接错误**。
+
+> build相关配置可查看官方文档 [https://docs.expo.dev/build/introduction/](https://docs.expo.dev/build/introduction/)
+
+```bash
+expo install expo-dev-client
+// 构建本地开发版本
+eas build --profile devclient --platform android --loacal
+```
+
+### 2. 启动项目，刷新flipper选中当前项目
+
+![image](/notes/react-native/rn-flipper-config.png)
+
+# 三、问题
+
+**1. "NO APPLICATION SELECTED"**
+由于开始一直用`expo go`打开项目，导致flipper可以看见logs和使用 `react devtools` 但是左上角一直显示 `NO APPLICATION SELECTED` 提示，而且其他的插件功能包括 `network layout` 等都无法使用。
+找了很多文章以及GitHub等论坛好多人遇到这个问题，但是可惜没有一个回答在我这里生效。
+最后构建开发版本后问题解决，flipper连接正常。
+
+![image](/notes/react-native/rn-flipper-error-1.png)
+
+![image](/notes/react-native/rn-flipper-error-2.png)
+
+# 四、补充
+
+**1. 使用expo构建的项目，构建开发版本app步骤参考官方文档如下：**
+[官方文档地址](https://docs.expo.dev/develop/development-builds/create-a-build/ "官方文档地址")
+7:["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L13",null,{"note":{"slug":"react-native-flipper-debug","title":"Flipper调试react native项目以及\"NO APPLICATION SELECTED\"问题处理","category":"ReactNative","type":"setup","description":"安装Flipper调试react native项目的步骤以及对\"NO APPLICATION SELECTED\"问题的处理。","status":"published","tags":["RN","Flipper","Configuration"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-09-14","readingTime":"2 min read","content":"$14"}}]}]

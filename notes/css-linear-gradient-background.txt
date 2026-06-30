@@ -1,0 +1,192 @@
+1:"$Sreact.fragment"
+2:I[75144,["/_next/static/chunks/2mm6bfp9kr5jr.js","/_next/static/chunks/2im7c515bo69p.js"],"ThemeProvider"]
+3:I[11110,["/_next/static/chunks/2mm6bfp9kr5jr.js","/_next/static/chunks/2im7c515bo69p.js"],"LanguageProvider"]
+4:I[45678,["/_next/static/chunks/2mm6bfp9kr5jr.js","/_next/static/chunks/2im7c515bo69p.js"],"default"]
+5:I[39756,["/_next/static/chunks/2mm6bfp9kr5jr.js","/_next/static/chunks/2im7c515bo69p.js"],"default"]
+6:I[37457,["/_next/static/chunks/2mm6bfp9kr5jr.js","/_next/static/chunks/2im7c515bo69p.js"],"default"]
+8:I[97367,["/_next/static/chunks/2mm6bfp9kr5jr.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
+9:"$Sreact.suspense"
+c:I[97367,["/_next/static/chunks/2mm6bfp9kr5jr.js","/_next/static/chunks/2im7c515bo69p.js"],"ViewportBoundary"]
+e:I[97367,["/_next/static/chunks/2mm6bfp9kr5jr.js","/_next/static/chunks/2im7c515bo69p.js"],"MetadataBoundary"]
+10:I[68027,["/_next/static/chunks/2mm6bfp9kr5jr.js","/_next/static/chunks/2im7c515bo69p.js"],"default",1]
+:HL["/_next/static/chunks/1ju5iovih5lno.css","style"]
+0:{"P":null,"c":["","notes","css-linear-gradient-background"],"q":"","i":false,"f":[[["",{"children":["notes",{"children":[["slug","css-linear-gradient-background","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/1ju5iovih5lno.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/2mm6bfp9kr5jr.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/2im7c515bo69p.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"children":["$","$L2",null,{"children":["$","$L3",null,{"children":[["$","$L4",null,{}],["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}]}]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L7",[["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/2-l7i9m0dht4u.js","async":true,"nonce":"$undefined"}]],["$","$L8",null,{"children":["$","$9",null,{"name":"Next.MetadataOutlet","children":"$@a"}]}]]}],{},null,false,null]},null,false,"$@b"]},null,false,"$@b"]},null,false,null],["$","$1","h",{"children":[null,["$","$Lc",null,{"children":"$Ld"}],["$","div",null,{"hidden":true,"children":["$","$Le",null,{"children":["$","$9",null,{"name":"Next.Metadata","children":"$Lf"}]}]}],null]}],false]],"m":"$undefined","G":["$10",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/1ju5iovih5lno.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"axcQnbUZ5sOX3PeJze-kY"}
+11:[]
+b:"$W11"
+d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+12:I[27201,["/_next/static/chunks/2mm6bfp9kr5jr.js","/_next/static/chunks/2im7c515bo69p.js"],"IconMark"]
+a:null
+f:[["$","link","0",{"rel":"icon","href":"/favicon.ico?favicon.2vob68tjqpejf.ico","sizes":"256x256","type":"image/x-icon"}],["$","$L12","1",{}]]
+13:I[30525,["/_next/static/chunks/2mm6bfp9kr5jr.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3io6jn7gqayyz.js","/_next/static/chunks/2-l7i9m0dht4u.js"],"default"]
+14:T1352,# 1. 水平条纹背景
+
+当给背景设置渐变效果时，默认的渐变方向是垂直由上到下的，效果如下：
+
+```css
+{
+  background: linear-gradient(#aaa, #ddd);
+}
+```
+
+![image](/notes/css/css-linear-gradient-stripe-1.png)
+
+尝试拉近色标的距离，会发现渐变区域变小了：
+
+```css
+{
+  background: linear-gradient(#aaa 40%, #ddd 60%);
+}
+```
+
+![image](/notes/css/css-linear-gradient-stripe-2.png)
+
+当渐变色的色标设置为相同位置时，过渡区域就会变成无限小，看起来的效果就会如下图所示：
+
+```css
+{
+  background: linear-gradient(#aaa 50%, #ddd 50%);
+}
+```
+
+![image](/notes/css/css-linear-gradient-stripe-3.png)
+
+然后通过 `background-size` 来调整他的尺寸，由于默认情况下背景是重复平铺的，所以得到的效果就是填满水平条纹：
+
+```css
+{
+  background: linear-gradient(#aaa 50%, #ddd 50%);
+  background-size: 100% 30px;
+}
+```
+
+![image](/notes/css/css-linear-gradient-stripe-4.png)
+
+如果某个色标的位置值比整个列表中在它之前的色标的位置值都要小，则该色标的位置值会被设置为它前面所有色标位置值的最大值。因此后面色标的位置可以写成0：
+
+```css
+{
+  background: linear-gradient(#aaa 50%, #ddd 0);
+  background-size: 100% 30px;
+}
+```
+
+可以通过修改色标的位置来生成不等宽的条纹：
+
+```css
+{
+  background: linear-gradient(#aaa 30%, #ddd 0);
+  background-size: 100% 30px;
+}
+
+{
+  background: linear-gradient(#aaa 70%, #ddd 0);
+  background-size: 100% 30px;
+}
+```
+
+![image](/notes/css/css-linear-gradient-stripe-5.png) ![image](/notes/css/css-linear-gradient-stripe-6.png)
+
+如果需要多种颜色的条纹，设置多种颜色渐变即可：
+
+```css
+{
+  background: linear-gradient(#aaa 33.33%, #ddd 0, #ddd 66.66%, #fff 0);
+}
+```
+
+![image](/notes/css/css-linear-gradient-stripe-7.png)
+
+# 2. 垂直条纹背景
+
+想要生成垂直方向的条纹，只需修改渐变的方向即可（别忘了把 `background-size` 颠倒一下）：
+
+```css
+{
+  background: linear-gradient(to right, #aaa 50%, #ddd 0);
+  background-size: 30px 100%;
+}
+/* 或 */
+{
+  background: linear-gradient(90deg, #aaa 50%, #ddd 0);
+  background-size: 30px 100%;
+}
+```
+
+![image](/notes/css/css-linear-gradient-stripe-8.png)
+
+# 3. 斜向条纹背景
+
+如果直接修改渐变方向，使其倾斜45°，并且修改 `background-size` ，会得到下面的效果：
+
+```css
+{
+  background: linear-gradient(45deg, #aaa 50%, #ddd 0);
+  background-size: 30px 30px;
+}
+```
+
+![image](/notes/css/css-linear-gradient-stripe-9.png)
+
+虽然效果也很好看，但是我们需要的效果是把整个背景旋转45°，而不是把每个小切片旋转45°。仔细观察会发现，想要通过小切片拼接成完整的斜向条纹，只需将每个切片分割为四份。因此需要新增两个色标：
+
+```css
+{
+  background: linear-gradient(45deg, #aaa 25%, #ddd 0, #ddd 50%, #aaa 0, #aaa 75%, #ddd 0);
+  background-size: 30px 30px;
+}
+```
+
+![image](/notes/css/css-linear-gradient-stripe-10.png) ![image](/notes/css/css-linear-gradient-stripe-11.png)
+
+效果实现了，再调整 `background-size` ，增加条纹宽度：
+
+```css
+{
+  background: linear-gradient(45deg, #aaa 25%, #ddd 0, #ddd 50%, #aaa 0, #aaa 75%, #ddd 0);
+  background-size: 60px 60px;
+}
+```
+
+![image](/notes/css/css-linear-gradient-stripe-12.png) ![image](/notes/css/css-linear-gradient-stripe-13.png)
+
+效果虽然实现，但是条纹的宽度如果想和上面的同样设置为15px，那 `background-size` 就需要根据勾股定理求出准确的值，此处的结果约为42，因为这个结果不能完全整除，所以只能根据想要的精确度四舍五入取值，因此这种方法不够灵活。如果想要其他倾斜角度的条纹便很难计算 `background-size` 。
+
+想要灵活地实现不同角度的条纹，这时候就需要用到 `repeating-linear-gradient()` ，重复线性渐变。重复线性渐变会循环色标，知道填满整个背景：
+
+```css
+{
+  background: repeating-linear-gradient(45deg, #aaa, #ddd 30px);
+}
+```
+
+![image](/notes/css/css-linear-gradient-stripe-14.png)
+
+改写成上面的效果就是：
+
+```css
+{
+  background: repeating-linear-gradient(45deg, #aaa 0, #aaa 15px, #ddd 0, #ddd 30px);
+}
+```
+
+![image](/notes/css/css-linear-gradient-stripe-15.png)
+
+只需修改角度便可以得到不同角度的条纹：
+
+```css
+{
+  background: repeating-linear-gradient(60deg, #aaa 0 15px, #ddd 0 30px);
+}
+
+{
+  background: repeating-linear-gradient(30deg, #aaa 0 15px, #ddd 0 30px);
+}
+```
+
+![image](/notes/css/css-linear-gradient-stripe-16.png) ![image](/notes/css/css-linear-gradient-stripe-17.png)
+
+# 4. 附录
+
+[MDN linear-gradient](https://developer.mozilla.org/zh-CN/docs/Web/CSS/gradient/linear-gradient "MDN linear-gradient")
+[MDN repeating-linear-gradient](https://developer.mozilla.org/zh-CN/docs/Web/CSS/gradient/repeating-linear-gradient "MDN repeating-linear-gradient")
+7:["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L13",null,{"note":{"slug":"css-linear-gradient-background","title":"css利用linear-gradient实现条纹背景","category":"CSS","type":"snippet","description":"记录css中通过利用linear-gradient来实现各种不同类型条纹背景的方法。","status":"published","tags":["CSS","linear-gradient","background"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-04-20","readingTime":"3 min read","content":"$14"}}]}]

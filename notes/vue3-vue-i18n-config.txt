@@ -1,0 +1,159 @@
+1:"$Sreact.fragment"
+2:I[75144,["/_next/static/chunks/2mm6bfp9kr5jr.js","/_next/static/chunks/2im7c515bo69p.js"],"ThemeProvider"]
+3:I[11110,["/_next/static/chunks/2mm6bfp9kr5jr.js","/_next/static/chunks/2im7c515bo69p.js"],"LanguageProvider"]
+4:I[45678,["/_next/static/chunks/2mm6bfp9kr5jr.js","/_next/static/chunks/2im7c515bo69p.js"],"default"]
+5:I[39756,["/_next/static/chunks/2mm6bfp9kr5jr.js","/_next/static/chunks/2im7c515bo69p.js"],"default"]
+6:I[37457,["/_next/static/chunks/2mm6bfp9kr5jr.js","/_next/static/chunks/2im7c515bo69p.js"],"default"]
+8:I[97367,["/_next/static/chunks/2mm6bfp9kr5jr.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
+9:"$Sreact.suspense"
+c:I[97367,["/_next/static/chunks/2mm6bfp9kr5jr.js","/_next/static/chunks/2im7c515bo69p.js"],"ViewportBoundary"]
+e:I[97367,["/_next/static/chunks/2mm6bfp9kr5jr.js","/_next/static/chunks/2im7c515bo69p.js"],"MetadataBoundary"]
+10:I[68027,["/_next/static/chunks/2mm6bfp9kr5jr.js","/_next/static/chunks/2im7c515bo69p.js"],"default",1]
+:HL["/_next/static/chunks/1ju5iovih5lno.css","style"]
+0:{"P":null,"c":["","notes","vue3-vue-i18n-config"],"q":"","i":false,"f":[[["",{"children":["notes",{"children":[["slug","vue3-vue-i18n-config","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/1ju5iovih5lno.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/2mm6bfp9kr5jr.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/2im7c515bo69p.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"children":["$","$L2",null,{"children":["$","$L3",null,{"children":[["$","$L4",null,{}],["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}]}]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L7",[["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/2-l7i9m0dht4u.js","async":true,"nonce":"$undefined"}]],["$","$L8",null,{"children":["$","$9",null,{"name":"Next.MetadataOutlet","children":"$@a"}]}]]}],{},null,false,null]},null,false,"$@b"]},null,false,"$@b"]},null,false,null],["$","$1","h",{"children":[null,["$","$Lc",null,{"children":"$Ld"}],["$","div",null,{"hidden":true,"children":["$","$Le",null,{"children":["$","$9",null,{"name":"Next.Metadata","children":"$Lf"}]}]}],null]}],false]],"m":"$undefined","G":["$10",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/1ju5iovih5lno.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"axcQnbUZ5sOX3PeJze-kY"}
+11:[]
+b:"$W11"
+d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+12:I[27201,["/_next/static/chunks/2mm6bfp9kr5jr.js","/_next/static/chunks/2im7c515bo69p.js"],"IconMark"]
+a:null
+f:[["$","link","0",{"rel":"icon","href":"/favicon.ico?favicon.2vob68tjqpejf.ico","sizes":"256x256","type":"image/x-icon"}],["$","$L12","1",{}]]
+13:I[30525,["/_next/static/chunks/2mm6bfp9kr5jr.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3io6jn7gqayyz.js","/_next/static/chunks/2-l7i9m0dht4u.js"],"default"]
+14:T93d,## 1. 插件地址：
+
+[Vue I18n官方文档](https://kazupon.github.io/vue-i18n/zh/ "Vue I18n官方文档")
+[GitHub地址](https://github.com/kazupon/vue-i18n "GitHub地址")
+
+## 2. 安装：
+
+在 Vue 之后引入 vue-i18n，它会自动安装：
+
+```html
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vue-i18n/dist/vue-i18n.js"></script>
+```
+
+NPM:
+
+```bash
+npm install vue-i18n
+```
+
+Yarn:
+
+```bash
+yarn add vue-i18n
+```
+
+## 3. 使用：
+
+#### ① src 目录下新建 locales 文件夹存放相关文件
+
+![image](/notes/vue/vue3-i18n-locales-create.png)
+
+`locales/index.js` 中创建 i18n 实例，内容如下：
+
+```js
+import { createI18n } from "vue-i18n";
+import enUS from "./en-US/index";
+import zhCN from "./zh-CN/index";
+import zhHK from "./zh-HK/index";
+
+const message = {
+  enUS: {
+    ...enUS,
+  },
+  zhCN: {
+    ...zhCN,
+  },
+  zhHK: {
+    ...zhHK,
+  },
+};
+
+const i18n = createI18n({
+  locale: "zhCN", // 设置语言类型
+  legacy: false, // 如果要支持compositionAPI，此项必须设置为false;
+  globalInjection: true, // 全局注册$t方法
+  messages: message,
+});
+
+export default i18n;
+```
+
+`en-US` 等文件夹用于存放不同语言配置，例如：
+
+```js
+// en-US/index.js
+export default {
+  message: {
+    hello: 'hello world'
+  }
+};
+// zh-CN/index.js
+export default {
+  message: {
+    hello: '你好 世界'
+  }
+};
+// ...
+```
+
+#### ② main.js 中引入 i18n
+
+```js
+import { createApp } from "vue";
+import i18n from "./locales/index";
+
+const app = createApp(App);
+app.use(i18n);
+app.mount("#app");
+```
+
+#### ③ 页面中使用
+
+```html
+<div id="app">
+  <p>{{ $t("message.hello") }}</p>
+</div>
+```
+
+#### ④ script中使用
+
+```jsx
+<script setup>
+import { useI18n } from "vue-i18n";
+import { computed } from "vue";
+
+const { t, locale } = useI18n();
+
+const changeLang = (lang) => {
+  locale.value = lang;
+  localStorage.setItem("LANG", lang);
+};
+const getCurrentLang = computed(() => {
+  return locale.value;
+});
+
+console.log(getCurrentLang.value);
+console.log(t("message.hello"));
+</script>
+```
+
+## 4. 问题：
+
+#### ① 使用vite时控制台报错如下：
+
+![image](/notes/vue/vue3-i18n-vite-warning-config.png)
+解决方法：vite中添加如下配置
+
+```js
+resolve: {
+  alias: [
+    {
+      find: "vue-i18n",
+      replacement: "vue-i18n/dist/vue-i18n.cjs.js",
+    },
+  ],
+},
+```
+7:["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L13",null,{"note":{"slug":"vue3-vue-i18n-config","title":"vue3使用vue-i18n配置多语言环境","category":"Vue","type":"snippet","description":"vue3 中使用 vue-i18n 配置多语言环境的步骤记录。","status":"published","tags":["Vue3","i18n"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-08-14","readingTime":"1 min read","content":"$14"}}]}]

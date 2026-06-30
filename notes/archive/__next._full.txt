@@ -9,8 +9,8 @@
 c:I[97367,["/_next/static/chunks/2mm6bfp9kr5jr.js","/_next/static/chunks/2im7c515bo69p.js"],"ViewportBoundary"]
 e:I[97367,["/_next/static/chunks/2mm6bfp9kr5jr.js","/_next/static/chunks/2im7c515bo69p.js"],"MetadataBoundary"]
 10:I[68027,["/_next/static/chunks/2mm6bfp9kr5jr.js","/_next/static/chunks/2im7c515bo69p.js"],"default",1]
-:HL["/_next/static/chunks/1x1dl17-9iohr.css","style"]
-0:{"P":null,"c":["","notes","archive"],"q":"","i":false,"f":[[["",{"children":["notes",{"children":["archive",{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/1x1dl17-9iohr.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/2mm6bfp9kr5jr.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/2im7c515bo69p.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"children":["$","$L2",null,{"children":["$","$L3",null,{"children":[["$","$L4",null,{}],["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}]}]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L7",[["$","script","script-0",{"src":"/_next/static/chunks/2x4d_5_az6ojh.js","async":true,"nonce":"$undefined"}]],["$","$L8",null,{"children":["$","$9",null,{"name":"Next.MetadataOutlet","children":"$@a"}]}]]}],{},null,false,null]},null,false,"$@b"]},null,false,"$@b"]},null,false,null],["$","$1","h",{"children":[null,["$","$Lc",null,{"children":"$Ld"}],["$","div",null,{"hidden":true,"children":["$","$Le",null,{"children":["$","$9",null,{"name":"Next.Metadata","children":"$Lf"}]}]}],null]}],false]],"m":"$undefined","G":["$10",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/1x1dl17-9iohr.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"s-yfolJKDSwudBG19fL28"}
+:HL["/_next/static/chunks/1ju5iovih5lno.css","style"]
+0:{"P":null,"c":["","notes","archive"],"q":"","i":false,"f":[[["",{"children":["notes",{"children":["archive",{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/1ju5iovih5lno.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/2mm6bfp9kr5jr.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/2im7c515bo69p.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"children":["$","$L2",null,{"children":["$","$L3",null,{"children":[["$","$L4",null,{}],["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}]}]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L7",[["$","script","script-0",{"src":"/_next/static/chunks/2x4d_5_az6ojh.js","async":true,"nonce":"$undefined"}]],["$","$L8",null,{"children":["$","$9",null,{"name":"Next.MetadataOutlet","children":"$@a"}]}]]}],{},null,false,null]},null,false,"$@b"]},null,false,"$@b"]},null,false,null],["$","$1","h",{"children":[null,["$","$Lc",null,{"children":"$Ld"}],["$","div",null,{"hidden":true,"children":["$","$Le",null,{"children":["$","$9",null,{"name":"Next.Metadata","children":"$Lf"}]}]}],null]}],false]],"m":"$undefined","G":["$10",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/1ju5iovih5lno.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"axcQnbUZ5sOX3PeJze-kY"}
 11:[]
 b:"$W11"
 d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
@@ -887,7 +887,7 @@ Pages 是否选择 gh-pages
 - 自定义域名
 - GitHub API 自动项目列表
 - monorepo 多项目部署
-17:T99c,## 1. 安装依赖：
+17:T99b,## 1. 安装依赖：
 
 ```bash
 #docx文档预览组件
@@ -908,7 +908,7 @@ npm install @vue-office/pdf vue-demi@0.14.6
 ```js
 <template>
   <div class="flex flex-col h-full">
-    <div class="flex flex-col justify-center items-center bg-[#fff]">
+    <div class="flex flex-col justify-center items-center bg-white">
       <div class="flex items-center w-1200px tab-box">
         <el-tabs v-model="activeName" class="custom-tabs">
           <el-tab-pane label="用户协议" name="1"> </el-tab-pane>
@@ -1778,7 +1778,728 @@ const spanMethod = ({ row, column, rowIndex, columnIndex }) => {
 
 刷新页面查看，问题解决：
 ![image](/notes/element-ui/el-table-span-result.png)
-1d:Tc6e,## 介绍
+1d:T853,### 1. 使用fetch请求stream流接口：
+
+封装fetch工具方法 `fetchRequest.js`
+
+```js
+const fetchStream = async (url, options) => {
+  const response = await fetch(url, options);
+  if (response.status !== 200) {
+    return false;
+  }
+  const reader = response.body.getReader();
+  return reader;
+};
+
+export default fetchStream;
+```
+
+统一管理api `api.js`
+
+```js
+// 引入封装好的 fetchRequest.js
+import fetchRequest from "./fetchRequest";
+
+const abortController = new AbortController();
+const abortSignal = abortController.signal;
+
+// 请求
+export function chatApi(data) {
+  return fetchRequest("/api/xxx", {
+    method: "post",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    signal: abortSignal,
+    body: JSON.stringify(data),
+  });
+}
+
+// 中断请求方法
+export function abortFetch() {
+  abortController.abort();
+}
+```
+
+使用封装好的方法进行请求，并处理响应结果
+
+```js
+...
+let params = {
+    message: xxx,
+};
+let reader = await $api.chatApi(params);
+while (true) {
+  const { value, done } = await reader.read();
+  if (done) {
+    break; // 读取完毕
+  } else {
+    console.log("message: ", new TextDecoder().decode(value));
+  }
+}
+...
+```
+
+### 2. 使用AbortController中断请求：
+
+AbortController 是一个用于控制一个或多个 AbortSignal 对象的接口，通过调用 AbortController 的 abort 方法，可以中断一个或多个关联的 AbortSignal。
+上面的 `api.js` 中，AbortController 创建了一个与 fetch 请求关联的 AbortSignal，然后将该 AbortSignal 传递给 fetch 的 signal 选项。当需要中断请求时，调用 `abortController.abort()` 方法即可。
+
+> 注意fetch请求中设置的 **signal: abortSignal**
+
+```js
+const abortController = new AbortController();
+const abortSignal = abortController.signal;
+
+function abortFetch() {
+  abortController.abort();
+}
+```
+
+```js
+// 按自己导出的方式引入并使用中断请求
+import { abortFetch } from "./api.js";
+abortFetch();
+```
+
+### 3. 参考文档
+
+[AbortController 文档](https://developer.mozilla.org/zh-CN/docs/Web/API/AbortController "AbortController 文档")
+1e:Taaf,## 一、安装并使用：
+
+### 1. 安装papaparse库，用于解析CSV文件：
+
+```shell
+npm install papaparse
+```
+
+### 2. 在组件中使用：
+
+- **关键代码**
+
+```js
+import Papa from 'papaparse';
+Papa.parse(file, config);
+const csv = Papa.unparse(data[, config]);
+```
+
+- **具体实例**
+
+页面结构：
+
+```jsx
+  <template>
+    <el-row
+      class="pd-tb-40"
+      :gutter="20"
+    >
+      <el-col :span="12">
+        <div class="upload-box mr-l-100">
+          <el-upload
+            action="#"
+            accept=".csv"
+            :multiple="false"
+            :limit="1"
+            :show-file-list="false"
+            :before-upload="beforeFileUpload"
+          >
+            <el-button
+              size="small"
+              type="primary"
+            >
+              点击上传
+            </el-button>
+            <div
+              slot="tip"
+              class="el-upload__tip"
+            >
+              <div class="upload-file-desc">
+                1、一次只能上传一份csv <br />
+                2、文件说明：
+                <p class="mr-l-20 tx-nowrap">·xxxxxxx</p>
+              </div>
+            </div>
+          </el-upload>
+        </div>
+      </el-col>
+      <el-col :span="12">
+        <el-table
+          :data="tableData"
+          style="width: 100%"
+          max-height="480"
+        >
+          <el-table-column
+            v-for="(header, index) in tableHeaders"
+            :key="index"
+            :prop="header"
+            :label="header"
+          ></el-table-column>
+        </el-table>
+      </el-col>
+    </el-row>
+  </template>
+```
+
+逻辑部分：
+
+```js
+<script>
+import Papa from "papaparse";
+export default {
+  data() {
+    return {
+      tableData: [],
+      tableHeaders: [],
+    };
+  },
+  methods: {
+    beforeFileUpload(file) {
+      // 使用 PapaParse 解析 CSV 文件
+      // const encodingList = ["utf-8", "gbk", "gb2312"];
+      Papa.parse(file, {
+        header: true,
+        skipEmptyLines: true,
+        encoding: "gb2312",
+        complete: result => {
+          // 解析完成后将数据存储到 tableData 中
+          this.tableData = result.data;
+          this.tableHeaders = Object.keys(result.data[0] || {});
+        },
+        error: error => {
+          console.error("CSV解析错误:", error.message);
+        },
+      });
+      return false; // 阻止上传行为
+    },
+  },
+};
+</script>
+```
+
+**csv文件内容包含中文时需要注意编码，通过 `encoding` 属性设置，避免出现中文乱码。更多功能及配置可查看官方文档。**
+
+## 二、参考文档：
+
+[Papa Parse 官网地址](https://www.papaparse.com/ "Papa Parse 官网地址")
+[GitHub 地址](https://github.com/mholt/PapaParse "GitHub 地址")
+1f:T79a,# 一、安装：
+
+### 1. 在官网下载桌面应用
+
+[Flipper官网地址](https://fbflipper.com/ "Flipper官网")
+[Flipper GitHub 首页](https://github.com/facebook/flipper "Flipper GitHub 首页")
+
+### 2. 打开程序，执行 `setup doctor` 检测环境是否缺失
+
+![image](/notes/react-native/rn-flipper-install-1.png)
+
+![image](/notes/react-native/rn-flipper-install-2.png)
+
+> [参考官方文档](https://fbflipper.com/docs/getting-started/react-native/ "参考官方文档")
+
+# 二、使用
+
+全部安装完以后启动react native项目，flipper会检测到运行中的项目模拟器
+以expo构建的项目为例：
+
+### 1. 安装 `expo-dev-client` 构建开发版本，**flipper的使用需要构建开发版本，否则flipper左上角会报无设备连接错误**。
+
+> build相关配置可查看官方文档 [https://docs.expo.dev/build/introduction/](https://docs.expo.dev/build/introduction/)
+
+```bash
+expo install expo-dev-client
+// 构建本地开发版本
+eas build --profile devclient --platform android --loacal
+```
+
+### 2. 启动项目，刷新flipper选中当前项目
+
+![image](/notes/react-native/rn-flipper-config.png)
+
+# 三、问题
+
+**1. "NO APPLICATION SELECTED"**
+由于开始一直用`expo go`打开项目，导致flipper可以看见logs和使用 `react devtools` 但是左上角一直显示 `NO APPLICATION SELECTED` 提示，而且其他的插件功能包括 `network layout` 等都无法使用。
+找了很多文章以及GitHub等论坛好多人遇到这个问题，但是可惜没有一个回答在我这里生效。
+最后构建开发版本后问题解决，flipper连接正常。
+
+![image](/notes/react-native/rn-flipper-error-1.png)
+
+![image](/notes/react-native/rn-flipper-error-2.png)
+
+# 四、补充
+
+**1. 使用expo构建的项目，构建开发版本app步骤参考官方文档如下：**
+[官方文档地址](https://docs.expo.dev/develop/development-builds/create-a-build/ "官方文档地址")
+20:T93d,## 1. 插件地址：
+
+[Vue I18n官方文档](https://kazupon.github.io/vue-i18n/zh/ "Vue I18n官方文档")
+[GitHub地址](https://github.com/kazupon/vue-i18n "GitHub地址")
+
+## 2. 安装：
+
+在 Vue 之后引入 vue-i18n，它会自动安装：
+
+```html
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vue-i18n/dist/vue-i18n.js"></script>
+```
+
+NPM:
+
+```bash
+npm install vue-i18n
+```
+
+Yarn:
+
+```bash
+yarn add vue-i18n
+```
+
+## 3. 使用：
+
+#### ① src 目录下新建 locales 文件夹存放相关文件
+
+![image](/notes/vue/vue3-i18n-locales-create.png)
+
+`locales/index.js` 中创建 i18n 实例，内容如下：
+
+```js
+import { createI18n } from "vue-i18n";
+import enUS from "./en-US/index";
+import zhCN from "./zh-CN/index";
+import zhHK from "./zh-HK/index";
+
+const message = {
+  enUS: {
+    ...enUS,
+  },
+  zhCN: {
+    ...zhCN,
+  },
+  zhHK: {
+    ...zhHK,
+  },
+};
+
+const i18n = createI18n({
+  locale: "zhCN", // 设置语言类型
+  legacy: false, // 如果要支持compositionAPI，此项必须设置为false;
+  globalInjection: true, // 全局注册$t方法
+  messages: message,
+});
+
+export default i18n;
+```
+
+`en-US` 等文件夹用于存放不同语言配置，例如：
+
+```js
+// en-US/index.js
+export default {
+  message: {
+    hello: 'hello world'
+  }
+};
+// zh-CN/index.js
+export default {
+  message: {
+    hello: '你好 世界'
+  }
+};
+// ...
+```
+
+#### ② main.js 中引入 i18n
+
+```js
+import { createApp } from "vue";
+import i18n from "./locales/index";
+
+const app = createApp(App);
+app.use(i18n);
+app.mount("#app");
+```
+
+#### ③ 页面中使用
+
+```html
+<div id="app">
+  <p>{{ $t("message.hello") }}</p>
+</div>
+```
+
+#### ④ script中使用
+
+```jsx
+<script setup>
+import { useI18n } from "vue-i18n";
+import { computed } from "vue";
+
+const { t, locale } = useI18n();
+
+const changeLang = (lang) => {
+  locale.value = lang;
+  localStorage.setItem("LANG", lang);
+};
+const getCurrentLang = computed(() => {
+  return locale.value;
+});
+
+console.log(getCurrentLang.value);
+console.log(t("message.hello"));
+</script>
+```
+
+## 4. 问题：
+
+#### ① 使用vite时控制台报错如下：
+
+![image](/notes/vue/vue3-i18n-vite-warning-config.png)
+解决方法：vite中添加如下配置
+
+```js
+resolve: {
+  alias: [
+    {
+      find: "vue-i18n",
+      replacement: "vue-i18n/dist/vue-i18n.cjs.js",
+    },
+  ],
+},
+```
+21:T1f5c,### 1. 新增组件 `IdentifyCode.vue` ，使用canvas绘制验证码内容：
+
+```jsx
+<template>
+  <div class="s-canvas" @click="refreshCode">
+    <canvas
+      id="s-canvas"
+      :width="contentWidth"
+      :height="contentHeight"
+    ></canvas>
+  </div>
+</template>
+<script setup>
+import { ref, onMounted, watch } from "vue";
+
+let curIdentifyCode = ref("");
+
+const props = defineProps({
+  identifyCode: {
+    type: String,
+    default: "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+  },
+  fontSizeMin: {
+    type: Number,
+    default: 16,
+  },
+  fontSizeMax: {
+    type: Number,
+    default: 40,
+  },
+  backgroundColorMin: {
+    type: Number,
+    default: 180,
+  },
+  backgroundColorMax: {
+    type: Number,
+    default: 240,
+  },
+  colorMin: {
+    type: Number,
+    default: 50,
+  },
+  colorMax: {
+    type: Number,
+    default: 160,
+  },
+  lineColorMin: {
+    type: Number,
+    default: 40,
+  },
+  lineColorMax: {
+    type: Number,
+    default: 180,
+  },
+  dotColorMin: {
+    type: Number,
+    default: 0,
+  },
+  dotColorMax: {
+    type: Number,
+    default: 255,
+  },
+  contentWidth: {
+    type: Number,
+    default: 112,
+  },
+  contentHeight: {
+    type: Number,
+    default: 38,
+  },
+});
+
+watch(curIdentifyCode, () => {
+  drawPic();
+});
+
+const emit = defineEmits(["updateIdentifyCode"]);
+
+// 生成一个随机数
+const randomNum = (min, max) => {
+  return Math.floor(Math.random() * (max - min) + min);
+};
+// 生成一个随机的颜色
+const randomColor = (min, max) => {
+  let r = randomNum(min, max);
+  let g = randomNum(min, max);
+  let b = randomNum(min, max);
+  return "rgb(" + r + "," + g + "," + b + ")";
+};
+const drawPic = () => {
+  let canvas = document.getElementById("s-canvas");
+  let ctx = canvas.getContext("2d");
+  ctx.textBaseline = "bottom";
+  // 绘制背景
+  ctx.fillStyle = randomColor(
+    props.backgroundColorMin,
+    props.backgroundColorMax
+  );
+  ctx.fillRect(0, 0, props.contentWidth, props.contentHeight);
+  // 绘制文字
+  for (let i = 0; i < curIdentifyCode.value.length; i++) {
+    drawText(ctx, curIdentifyCode.value[i], i);
+  }
+  drawLine(ctx);
+  drawDot(ctx);
+};
+const drawText = (ctx, txt, i) => {
+  ctx.fillStyle = randomColor(props.colorMin, props.colorMax);
+  ctx.font = randomNum(props.fontSizeMin, props.fontSizeMax) + "px SimHei";
+  let x = (i + 1) * (props.contentWidth / (curIdentifyCode.value.length + 1));
+  let y = randomNum(props.fontSizeMax, props.contentHeight - 5);
+  let deg = randomNum(-45, 45);
+  // 修改坐标原点和旋转角度
+  ctx.translate(x, y);
+  ctx.rotate((deg * Math.PI) / 180);
+  ctx.fillText(txt, 0, 0);
+  // 恢复坐标原点和旋转角度
+  ctx.rotate((-deg * Math.PI) / 180);
+  ctx.translate(-x, -y);
+};
+const drawLine = (ctx) => {
+  // 绘制干扰线
+  for (let i = 0; i < 8; i++) {
+    ctx.strokeStyle = randomColor(props.lineColorMin, props.lineColorMax);
+    ctx.beginPath();
+    ctx.moveTo(
+      randomNum(0, props.contentWidth),
+      randomNum(0, props.contentHeight)
+    );
+    ctx.lineTo(
+      randomNum(0, props.contentWidth),
+      randomNum(0, props.contentHeight)
+    );
+    ctx.stroke();
+  }
+};
+const drawDot = (ctx) => {
+  // 绘制干扰点
+  for (let i = 0; i < 100; i++) {
+    ctx.fillStyle = randomColor(0, 255);
+    ctx.beginPath();
+    ctx.arc(
+      randomNum(0, props.contentWidth),
+      randomNum(0, props.contentHeight),
+      1,
+      0,
+      2 * Math.PI
+    );
+    ctx.fill();
+  }
+};
+
+const refreshCode = () => {
+  curIdentifyCode.value = "";
+  makeCode(props.identifyCode, 4);
+};
+const makeCode = (o, l) => {
+  for (let i = 0; i < l; i++) {
+    curIdentifyCode.value += o[randomNum(0, o.length)];
+  }
+  // console.log(curIdentifyCode.value);
+  emit("updateIdentifyCode", curIdentifyCode.value);
+};
+
+onMounted(() => {
+  drawPic();
+  refreshCode();
+});
+
+defineExpose({
+  refreshCode,
+});
+</script>
+
+```
+
+### 2. 引入组件并使用：
+
+```html
+<div class="login-box tx-c pd-t-30">
+  <div>用户登录</div>
+  <div class="form-box flex-row just-c">
+    <el-form
+      class="mr-t-40"
+      ref="loginForm"
+      :model="state.loginForm"
+      :rules="state.loginFormRules"
+    >
+      <el-form-item prop="username">
+        <el-input
+          placeholder="请输入正确的用户名"
+          v-model.trim="state.loginForm.username"
+        >
+          <template #prefix>
+            <img src="@/assets/images/login/yonghu.png" alt="" />
+          </template>
+        </el-input>
+      </el-form-item>
+      <el-form-item prop="password">
+        <el-input
+          type="password"
+          placeholder="请输入正确的账号匹配密码"
+          v-model.trim="state.loginForm.password"
+        >
+          <template #prefix>
+            <img src="@/assets/images/login/mima.png" alt="" />
+          </template>
+        </el-input>
+      </el-form-item>
+      <el-form-item prop="identifyCode">
+        <el-input
+          placeholder="请输入验证码"
+          v-model.trim="state.loginForm.identifyCode"
+        >
+          <template #prefix>
+            <img src="@/assets/images/login/code.png" alt="" />
+          </template>
+        </el-input>
+        <IdentifyCode
+          ref="identify"
+          class="code-box"
+          :contentWidth="120"
+          :contentHeight="60"
+          @updateIdentifyCode="setIdentifyCode"
+        ></IdentifyCode>
+      </el-form-item>
+
+      <el-button type="primary" class="mr-t-30" @click="loginValidator"
+        >登录
+      </el-button>
+    </el-form>
+  </div>
+</div>
+```
+
+```js
+import IdentifyCode from "@/components/IdentifyCode.vue";
+
+const identify = ref(null);
+const validateIdentifyCode = (rule, value, callback) => {
+  if (value !== curIdentifyCode.value) {
+    callback(new Error("验证码错误!"));
+    state.loginForm.identifyCode = "";
+    identify.value.refreshCode();
+  } else {
+    callback();
+  }
+};
+
+const state = reactive({
+  loginForm: {
+    username: "",
+    password: "",
+    identifyCode: "",
+  },
+  loginFormRules: {
+    username: [{ required: true, message: "请输入用户名", trigger: "blur" }],
+    password: [{ required: true, message: "请输入密码", trigger: "blur" }],
+    identifyCode: [
+      { required: true, message: "请输入验证码", trigger: "blur" },
+      { validator: validateIdentifyCode, trigger: "blur" },
+    ],
+  },
+});
+let curIdentifyCode = ref("");
+
+const loginForm = ref(null);
+
+// 登录校验
+const loginValidator = () => {
+  loginForm.value.validate((valid) => {
+    if (valid) {
+      login();
+    }
+  });
+};
+
+// 登录
+const login = async () => {
+  const { username, password } = state.loginForm;
+  const params = {
+    username,
+    password,
+    type: "1",
+  };
+  const res = await $api.login(params);
+  const { code, data } = res;
+  if (code === 0 && data) {
+    sessionStorage.setItem("isLogin", true);
+    sessionStorage.setItem("token", data);
+    router.replace("/home");
+  } else {
+    identify.value.refreshCode();
+  }
+};
+
+const setIdentifyCode = (val) => {
+  curIdentifyCode.value = val;
+};
+```
+
+```css
+<style scoped>
+.code-box {
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+}
+</style>
+```
+
+### 3. 组件配置项：
+
+| 属性               | 类型   | 描述                  |
+| ------------------ | ------ | --------------------- |
+| identifyCode       | String | 验证码取值内容        |
+| fontSizeMin        | Number | 字体最小值            |
+| fontSizeMax        | Number | 字体最大值            |
+| backgroundColorMin | Number | 背景颜色rgb的最小值   |
+| backgroundColorMax | Number | 背景颜色rgb的最大值   |
+| colorMin           | Number | 字体颜色rgb的最小值   |
+| colorMax           | Number | 字体颜色rgb的最大值   |
+| lineColorMin       | Number | 干扰线颜色rgb的最小值 |
+| lineColorMax       | Number | 干扰线颜色rgb的最大值 |
+| dotColorMin        | Number | 干扰点颜色rgb的最小值 |
+| dotColorMax        | Number | 干扰点颜色rgb的最大值 |
+| contentWidth       | Number | 画布宽度              |
+| contentHeight      | Number | 画布高度              |
+22:Tc6e,## 介绍
 
 js-audio-recorder是一个纯js实现的浏览器端录音插件。
 目前支持以下功能：
@@ -1941,7 +2662,7 @@ recorder.getWAVBlob();
 ```
 
 > 更多api详见文档 [点击查看更多api](https://recorder-api.zhuyuntao.cn/Recorder/API.html "点击查看更多api")
-1e:T6b9,### 1. Element UI
+23:T6b9,### 1. Element UI
 
 使用 `picker-options 的 disabledDate` 属性限制选择相应日期。
 
@@ -2011,7 +2732,294 @@ const disabledDate = (time) => {
 
 > 官方文档： [点此查看](https://element-plus.org/zh-CN/component/date-picker.html#%E5%B1%9E%E6%80%A7 "点此查看")
 > ![image](/notes/element-ui/el-date-picker-options-3.png)
-1f:T942,## 1. CRLF概念
+24:T1352,# 1. 水平条纹背景
+
+当给背景设置渐变效果时，默认的渐变方向是垂直由上到下的，效果如下：
+
+```css
+{
+  background: linear-gradient(#aaa, #ddd);
+}
+```
+
+![image](/notes/css/css-linear-gradient-stripe-1.png)
+
+尝试拉近色标的距离，会发现渐变区域变小了：
+
+```css
+{
+  background: linear-gradient(#aaa 40%, #ddd 60%);
+}
+```
+
+![image](/notes/css/css-linear-gradient-stripe-2.png)
+
+当渐变色的色标设置为相同位置时，过渡区域就会变成无限小，看起来的效果就会如下图所示：
+
+```css
+{
+  background: linear-gradient(#aaa 50%, #ddd 50%);
+}
+```
+
+![image](/notes/css/css-linear-gradient-stripe-3.png)
+
+然后通过 `background-size` 来调整他的尺寸，由于默认情况下背景是重复平铺的，所以得到的效果就是填满水平条纹：
+
+```css
+{
+  background: linear-gradient(#aaa 50%, #ddd 50%);
+  background-size: 100% 30px;
+}
+```
+
+![image](/notes/css/css-linear-gradient-stripe-4.png)
+
+如果某个色标的位置值比整个列表中在它之前的色标的位置值都要小，则该色标的位置值会被设置为它前面所有色标位置值的最大值。因此后面色标的位置可以写成0：
+
+```css
+{
+  background: linear-gradient(#aaa 50%, #ddd 0);
+  background-size: 100% 30px;
+}
+```
+
+可以通过修改色标的位置来生成不等宽的条纹：
+
+```css
+{
+  background: linear-gradient(#aaa 30%, #ddd 0);
+  background-size: 100% 30px;
+}
+
+{
+  background: linear-gradient(#aaa 70%, #ddd 0);
+  background-size: 100% 30px;
+}
+```
+
+![image](/notes/css/css-linear-gradient-stripe-5.png) ![image](/notes/css/css-linear-gradient-stripe-6.png)
+
+如果需要多种颜色的条纹，设置多种颜色渐变即可：
+
+```css
+{
+  background: linear-gradient(#aaa 33.33%, #ddd 0, #ddd 66.66%, #fff 0);
+}
+```
+
+![image](/notes/css/css-linear-gradient-stripe-7.png)
+
+# 2. 垂直条纹背景
+
+想要生成垂直方向的条纹，只需修改渐变的方向即可（别忘了把 `background-size` 颠倒一下）：
+
+```css
+{
+  background: linear-gradient(to right, #aaa 50%, #ddd 0);
+  background-size: 30px 100%;
+}
+/* 或 */
+{
+  background: linear-gradient(90deg, #aaa 50%, #ddd 0);
+  background-size: 30px 100%;
+}
+```
+
+![image](/notes/css/css-linear-gradient-stripe-8.png)
+
+# 3. 斜向条纹背景
+
+如果直接修改渐变方向，使其倾斜45°，并且修改 `background-size` ，会得到下面的效果：
+
+```css
+{
+  background: linear-gradient(45deg, #aaa 50%, #ddd 0);
+  background-size: 30px 30px;
+}
+```
+
+![image](/notes/css/css-linear-gradient-stripe-9.png)
+
+虽然效果也很好看，但是我们需要的效果是把整个背景旋转45°，而不是把每个小切片旋转45°。仔细观察会发现，想要通过小切片拼接成完整的斜向条纹，只需将每个切片分割为四份。因此需要新增两个色标：
+
+```css
+{
+  background: linear-gradient(45deg, #aaa 25%, #ddd 0, #ddd 50%, #aaa 0, #aaa 75%, #ddd 0);
+  background-size: 30px 30px;
+}
+```
+
+![image](/notes/css/css-linear-gradient-stripe-10.png) ![image](/notes/css/css-linear-gradient-stripe-11.png)
+
+效果实现了，再调整 `background-size` ，增加条纹宽度：
+
+```css
+{
+  background: linear-gradient(45deg, #aaa 25%, #ddd 0, #ddd 50%, #aaa 0, #aaa 75%, #ddd 0);
+  background-size: 60px 60px;
+}
+```
+
+![image](/notes/css/css-linear-gradient-stripe-12.png) ![image](/notes/css/css-linear-gradient-stripe-13.png)
+
+效果虽然实现，但是条纹的宽度如果想和上面的同样设置为15px，那 `background-size` 就需要根据勾股定理求出准确的值，此处的结果约为42，因为这个结果不能完全整除，所以只能根据想要的精确度四舍五入取值，因此这种方法不够灵活。如果想要其他倾斜角度的条纹便很难计算 `background-size` 。
+
+想要灵活地实现不同角度的条纹，这时候就需要用到 `repeating-linear-gradient()` ，重复线性渐变。重复线性渐变会循环色标，知道填满整个背景：
+
+```css
+{
+  background: repeating-linear-gradient(45deg, #aaa, #ddd 30px);
+}
+```
+
+![image](/notes/css/css-linear-gradient-stripe-14.png)
+
+改写成上面的效果就是：
+
+```css
+{
+  background: repeating-linear-gradient(45deg, #aaa 0, #aaa 15px, #ddd 0, #ddd 30px);
+}
+```
+
+![image](/notes/css/css-linear-gradient-stripe-15.png)
+
+只需修改角度便可以得到不同角度的条纹：
+
+```css
+{
+  background: repeating-linear-gradient(60deg, #aaa 0 15px, #ddd 0 30px);
+}
+
+{
+  background: repeating-linear-gradient(30deg, #aaa 0 15px, #ddd 0 30px);
+}
+```
+
+![image](/notes/css/css-linear-gradient-stripe-16.png) ![image](/notes/css/css-linear-gradient-stripe-17.png)
+
+# 4. 附录
+
+[MDN linear-gradient](https://developer.mozilla.org/zh-CN/docs/Web/CSS/gradient/linear-gradient "MDN linear-gradient")
+[MDN repeating-linear-gradient](https://developer.mozilla.org/zh-CN/docs/Web/CSS/gradient/repeating-linear-gradient "MDN repeating-linear-gradient")
+25:T8a3,# 最终效果
+
+![image](/notes/css/clip-path-border-result.png)
+
+# 实现方法
+
+### 1. ::before、::after伪元素裁剪拼接
+
+#### 完整代码：
+
+> 示例中图标引用了iconfont，地址 [点击这里](https://www.iconfont.cn/ "点击这里")
+
+html代码
+
+```html
+<body>
+  <ul>
+    <li class="active"><i class="iconfont">&#xe61d;</i></li>
+    <li><i class="iconfont">&#xe61e;</i></li>
+    <li><i class="iconfont">&#xe61f;</i></li>
+    <li><i class="iconfont">&#xe620;</i></li>
+    <li><i class="iconfont">&#xe621;</i></li>
+  </ul>
+</body>
+```
+
+css代码
+
+```css
+@import "./font/iconfont.css";
+
+.iconfont {
+  font-size: 40px;
+  color: #ffffff;
+}
+
+ul {
+  width: 150px;
+  margin: 200px auto 0;
+  padding: 40px 0 40px 10px;
+  background-color: #40699e;
+  border-right: 10px solid #00aaff;
+  box-sizing: border-box;
+}
+
+li {
+  position: relative;
+  height: 80px;
+  line-height: 80px;
+  list-style: none;
+  background-color: #40699e;
+  border-radius: 20px 0 0 20px;
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+
+li::before,
+li::after {
+  position: absolute;
+  right: 0;
+  content: "";
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  box-shadow: 0 0 0 20px transparent;
+  transition-duration: 0.3s;
+  z-index: 1;
+}
+
+li::before {
+  top: -40px;
+  clip-path: inset(50% 0 0 50%);
+}
+
+li::after {
+  bottom: -40px;
+  clip-path: inset(0 0 50% 50%);
+}
+
+li.active,
+li:hover {
+  background-color: #00aaff;
+  transition-duration: 0.3s;
+}
+
+li.active::before,
+li.active::after,
+li:hover::before,
+li:hover::after {
+  box-shadow: 0 0 0 20px #00aaff;
+}
+
+li i {
+  margin-left: 20px;
+}
+```
+
+#### 分析：
+
+首先给伪元素设置足够宽的box-shadow或border，然后分别定位在右上角和右下角位置。
+
+![image](/notes/css/clip-path-border-step-1.png)
+
+通过clip-path对其进行切割，分别得到右下和右上方向的一角。
+
+![image](/notes/css/clip-path-border-step-2.png)
+
+通过对伪元素在不同状态下（static、hover、active）的阴影（或边框）颜色的修改来达到最终效果。
+
+![image](/notes/css/clip-path-border-step-3.png)
+
+#### 附录：
+
+[MDN clip-path](https://developer.mozilla.org/zh-CN/docs/Web/CSS/clip-path "MDN clip-path")
+
+### 2. 方法二待补充
+26:T942,## 1. CRLF概念
 
 CRLF（Carriage-Return Line-Feed），CR是回车符，LF是换行符。它们都是文本文件用于标记换行的控制字符（control characters）或字节码（bytecode）。
 
@@ -2053,7 +3061,138 @@ git config --global core.autocrlf false
 
 - 使用 Windows 系统的开发`git config --global core.aurocrlf true`
 - 使用Linux/MacOS 的开发`git config --global core.autocrlf input`
-20:T7fa,### 1. 滚动条不在body元素
+27:T102b,# 1. 图标获取
+
+:shaved_ice: [阿里巴巴矢量图标库](https://www.iconfont.cn/ "阿里巴巴矢量图标库")
+
+- **进入阿里图标库登录，创建项目，选择需要的图标添加购物车。然后添加至项目。**
+  ![image](/notes/css/ali-iconfont-get-step-1.png)
+- **在我的项目中可以找到添加的图标。**
+  ![image](/notes/css/ali-iconfont-get-step-2.png)
+- **下载图标文件至本地。**
+  ![image](/notes/css/ali-iconfont-get-step-3.png)
+  > **打开demo_index.html文件或者在图标库网站均可查看使用教程以及字体编码、样式类名等信息。**
+
+# 2. 图标使用
+
+> 把下载好的文件放在项目目录中，此处我的文件放在了font文件夹下
+
+### 引用方式有三种：unicode 引用、font-class 引用、symbol 引用
+
+### 1. unicode 引用
+
+---
+
+unicode是字体在网页端最原始的应用方式，特点是：
+
+- 支持按字体的方式去动态调整图标大小，颜色等等。
+- 默认情况下不支持多色，直接添加多色图标会自动去色。
+  > 注意：新版 iconfont 支持两种方式引用多色图标：SVG symbol 引用方式和彩色字体图标模式。（使用彩色字体图标需要在「编辑项目」中开启「彩色」选项后并重新生成。）
+
+Unicode 使用步骤如下：
+
+第一步：拷贝项目下面生成的 @font-face
+
+```css
+@font-face {
+  font-family: "iconfont"; /* Project id 3993956 */
+  src:
+    url("./font/iconfont.woff2?t=1680511106479") format("woff2"),
+    url("./font/iconfont.woff?t=1680511106479") format("woff"),
+    url("./font/iconfont.ttf?t=1680511106479") format("truetype");
+}
+```
+
+> 注意字体文件的路径要正确，否则无法引用
+
+第二步：定义使用 iconfont 的样式
+
+```css
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+```
+
+第三步：挑选相应图标并获取字体编码，应用于页面
+![image](/notes/css/ali-iconfont-unicode-import.png)
+
+```html
+<span class="iconfont">&#x33;</span>
+```
+
+> "iconfont" 是你项目下的 font-family。可以通过编辑项目查看，默认是 "iconfont"。
+
+### 2. font-class 引用
+
+---
+
+font-class 是 Unicode 使用方式的一种变种，主要是解决 Unicode 书写不直观，语意不明确的问题。与 Unicode 使用方式相比，具有如下特点：
+
+- 相比于 Unicode 语意明确，书写更直观。可以很容易分辨这个 icon 是什么。
+- 因为使用 class 来定义图标，所以当要替换图标时，只需要修改 class 里面的 Unicode 引用。
+
+使用步骤如下：
+第一步：引入项目下面生成的 fontclass 代码：
+
+```html
+<link rel="stylesheet" href="./font/iconfont.css" />
+```
+
+第二步：挑选相应图标并获取类名，应用于页面：
+![image](/notes/css/ali-iconfont-class-import.png)
+
+```html
+<span class="iconfont icon-xxx"></span>
+```
+
+### 3. Symbol 引用
+
+---
+
+这是一种全新的使用方式，应该说这才是未来的主流，也是平台目前推荐的用法。相关介绍可以参考这篇文章 这种用法其实是做了一个 SVG 的集合，与另外两种相比具有如下特点：
+
+- 支持多色图标了，不再受单色限制。
+- 通过一些技巧，支持像字体那样，通过 font-size, color 来调整样式。
+- 兼容性较差，支持 IE9+，及现代浏览器。
+- 浏览器渲染 SVG 的性能一般，还不如 png。
+
+使用步骤如下：
+第一步：引入项目下面生成的 symbol 代码：
+
+```html
+<script src="./font/iconfont.js"></script>
+```
+
+第二步：加入通用 CSS 代码（引入一次就行）：
+
+```css
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+```
+
+第三步：挑选相应图标并获取类名，应用于页面：
+![image](/notes/css/ali-iconfont-symbol-import.png)
+
+```html
+<svg class="icon" aria-hidden="true">
+  <use xlink:href="#icon-xxx"></use>
+</svg>
+```
+
+# 3. 其他端使用
+
+详见官方文档
+🍰 [链接地址](https://www.iconfont.cn/help/detail?helptype=code "链接地址")
+28:T7fa,### 1. 滚动条不在body元素
 
 > 场景：页面布局使用如下container容器布局，Aside固定高度，Main部分带纵向滚动条。
 > ![image](/notes/vue/vue3-scroll-to-top.png)
@@ -2134,7 +3273,7 @@ router.afterEach((to, from, next) => {
   window.scrollTo(0, 0);
 });
 ```
-21:T7e5,# 官网
+29:T7e5,# 官网
 
 [Vue Flow 官网](https://vueflow.dev/ "Vue Flow 官网")
 [Vue Flow GitHub](https://github.com/bcakmakoglu/vue-flow "Vue Flow GitHub")
@@ -2227,7 +3366,7 @@ state.instance.zoomTo(1);
     console.log(node.id);
   };
 ```
-22:T1308,### 1. 安装 turn.js
+2a:T1308,### 1. 安装 turn.js
 
 > 需要jQuery
 
@@ -2420,4 +3559,4 @@ export default {
 }
 </style>
 ```
-7:["$","main",null,{"className":"mx-auto max-w-6xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L13",null,{"notes":[{"slug":"react-usedeferredvalue-concept","title":"React useDeferredValue 详解与最佳实践","category":"React","type":"concept","description":"深入理解 React 18 useDeferredValue 的作用、使用场景、适用边界以及与 debounce、useTransition 的区别。","status":"published","tags":["React","React18","Hooks","Performance","Concurrent Rendering"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-29","readingTime":"2 min read","content":"$14"},{"slug":"axios-baseurl-089fd3","title":"Axios在实例化之后修改baseURL或其他配置","category":"JavaScript","type":"setup","description":"在使用axios请求的时候一般会进行封装，如：","status":"published","tags":["JavaScript","setup","Axios"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"$15"},{"slug":"next-js-plus-github-pages-ci-cd-2c6362","title":"🚀 Next.js + GitHub Pages 自动部署（CI/CD 笔记）","category":"Next.js","type":"setup","description":"main 分支（源码）","status":"published","tags":["Next.js","setup","GitHub Pages"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"$16"},{"slug":"vue-docx-excel-pdf-959f53","title":"vue 在网页中预览(docx、excel、pdf)文件","category":"Vue","type":"snippet","description":"npm install @vue-office/docx vue-demi@0.14.6","status":"published","tags":["Vue","snippet","PDF","Excel"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"$17"},{"slug":"vue3-html5-qrcode-41e695","title":"vue3 使用 html5-qrcode 实现扫描二维码功能","category":"Vue","type":"snippet","description":"npm安装","status":"published","tags":["Vue","snippet","QRCode"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"2 min read","content":"$18"},{"slug":"chrome-overwrite-window-config","title":"Google浏览器打开网页会覆盖原来的页面","category":"Browser","type":"guide","description":"Google浏览器打开网页会覆盖原来的页面，修改搜索设置即可解决。","status":"published","tags":["Chrome","Browser","Configuration"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-06-05","readingTime":"1 min read","content":"### 1. 打开主页\n\n[https://www.google.com/](https://www.google.com/ \"https://www.google.com/\")\n\n### 2. 选择右下角设置 -> 搜索设置\n\n![image](/notes/browser/google-search-setting.png)\n\n### 3. 找到在新窗口打开搜索结果即可\n\n![image](/notes/browser/other-setting-new-window.png)\n"},{"slug":"uni-app-miniproject-vant","title":"uniapp开发小程序引入vant","category":"UniApp","type":"snippet","description":"uni-app 开发微信小程序引入 vant 组件库的流程记录。","status":"published","tags":["UniApp","Vant","小程序"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-05-07","readingTime":"1 min read","content":"$19"},{"slug":"vue3-el-menu-recursive","title":"el-menu递归组件实现多级菜单（vue3+element plus版）","category":"Vue","type":"snippet","description":"vue3 + element plus 中 使用 el-menu 递归组件实现多级菜单。","status":"published","tags":["Vue","Element","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-04-23","readingTime":"1 min read","content":"$1a"},{"slug":"uni-app-run-android-studio","title":"uni-app 项目运行到 Android Studio 模拟器","category":"UniApp","type":"snippet","description":"uni-app 项目运行到 Android Studio 模拟器。","status":"published","tags":["UniApp","Android Studio"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-04-07","readingTime":"2 min read","content":"$1b"},{"slug":"el-table-display-issues","title":"el-table 设置合并行或列时，显示错乱问题","category":"Vue","type":"snippet","description":"记录 el-table 合并行或列时显示错乱问题的解决方法。","status":"published","tags":["Vue","Element","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-01-05","readingTime":"2 min read","content":"$1c"},{"slug":"vscode-err-connection-closed","title":"vscode 安装插件报错：ERR_CONNECTION_CLOSED","category":"Tooling","type":"debugging","description":"vscode 安装插件时报错 [error] Download: net::ERR_CONNECTION_CLOSED 。","status":"published","tags":["VScode","Error"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-10-30","readingTime":"1 min read","content":"## 背景：\n\nvscode安装扩展插件时报错，显示下载失败：\n`[error] Download: net::ERR_CONNECTION_CLOSED`\n`[error] net::ERR_CONNECTION_CLOSED: Download: net::ERR_CONNECTION_CLOSED`\n\n![image](/notes/ide/err-connection-closed.png)\n\n## 解决方法：\n\n查找相关文档发现这么一段：\n**If you are behind a firewall that needs to allow specific domains used by VS Code, here's the list of hostnames you should allow communication to go through:**\n猜测可能是防火墙的问题，关闭后问题解决。\n\n## 链接：\n\n[Network Connections in Visual Studio Code](https://code.visualstudio.com/docs/setup/network \"Network Connections in Visual Studio Code\")\n"},{"slug":"vite-https-plugin-basic-ssl","title":"Vite 本地开启 https 模式便于调试","category":"Tooling","type":"setup","description":"Vite 本地开启 https 模式配置。","status":"published","tags":["Vite","Https"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-08-17","readingTime":"1 min read","content":"### 1. 安装依赖\n\n```shell\nnpm install @vitejs/plugin-basic-ssl -D\n```\n\n### 2. 配置 vite.config.js\n\n```js\n// vite.config.js\nimport  basicSsl  from  '@vitejs/plugin-basic-ssl'\n\nexport  default  {\n  plugins : [\n    basicSsl ( {\n      /** 认证名称 */\n      name : 'test' ,\n      /** 自定义信任域 * /\n      domains : [ '*.custom.com' ] ,\n      /** 自定义认证目录 */\n      certDir : '/Users/.../.devServer/cert'\n    } )\n  ]\n}\n```\n\n### 3. 相关链接\n\n[@vitejs/plugin-basic-ssl npm 地址](https://www.npmjs.com/package/@vitejs/plugin-basic-ssl \"@vitejs/plugin-basic-ssl npm 地址\")\n[GitHub 地址](https://github.com/vitejs/vite-plugin-basic-ssl \"GitHub 地址\")\n[Vite server-https](https://vitejs.dev/config/server-options.html#server-https \"Vite server-https\")\n"},{"slug":"js-audio-recorder","title":"js-audio-recorder 插件实现web端录音","category":"JavaScript","type":"snippet","description":"使用 js-audio-recorder 插件实现web端录音。","status":"published","tags":["JavaScript","Frontend","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-06-19","readingTime":"2 min read","content":"$1d"},{"slug":"vite-https-self-signed-certificate","title":"vite 本地代理请求https接口 self signed certificate 自签名证书错误","category":"Tooling","type":"debugging","description":"记录 vite 本地代理请求https接口时自签名证书错误。","status":"published","tags":["Vite","Tooling"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-06-14","readingTime":"1 min read","content":"### vite本地代理后端接口为https时，无法发送请求，并报错如下：\n\n![image](/notes/vite/error-self-signed-certificate.png)\n\n### 查询vite文档，更改配置 `server.https` 为 `true` ，无效\n\n![image](/notes/vite/server.https-config.png)\n\n### 又根据vite文档中描述添加 @vitejs/plugin-basic-ssl 到项目插件中，它会自动创建和缓存一个自签名的证书。 结果无效\n\n### 于是本地添加证书文件并配置在 `server.https` 中 ，无效\n\n### 最终 `server.proxy` 中增加配置 `secure: false` 后，请求发起成功，问题解决\n\n```js\n  server: {\n    hmr: true,\n    open: true,\n    port: \"8080\",\n    proxy: {\n      \"/api\": {\n        target: \"https://xx.xx.xx.xx:xx\",\n        changeOrigin: true,\n        rewrite: (path) => path.replace(/^\\/api/, \"\"),\n        secure: false,\n      },\n    },\n  },\n```\n\n> [参考链接 https://github.com/vitejs/vite/issues/3475](https://github.com/vitejs/vite/issues/3475 \"参考链接\")\n> ![image](/notes/vite/github-issues-error-self-signed-cetificate.png)\n"},{"slug":"el-date-picker-before-today","title":"element 日期选择器禁止选择今天之后的日期","category":"Vue","type":"snippet","description":"element 日期选择器禁止选择今天之后的日期。","status":"published","tags":["Vue","Element","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-05-25","readingTime":"1 min read","content":"$1e"},{"slug":"crlf-lf-concept","title":"CRLF和LF区别","category":"Engineering","type":"concept","description":"CRLF 和 LF 概念和区别。","status":"published","tags":["Git","CRLF","LF","工程化"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-04-07","readingTime":"2 min read","content":"$1f"},{"slug":"vue3-define-expose","title":"Vue3 父组件调用子组件内部的方法","category":"Vue","type":"snippet","description":"vue3 通过 defineExpose 和 ref ，父组件可访问子组件中定义的方法。","status":"published","tags":["Vue","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-03-03","readingTime":"1 min read","content":"### 1. 子组件中定义方法并通过defineExpose暴露出去\n\n```js\nimport { reactive, defineExpose } from \"vue\";\nconst state = reactive({\n  dataList: [],\n});\nconst changeData = () => {\n  state.dataList.push(1);\n};\ndefineExpose({\n  changeData,\n});\n```\n\n### 2. 父组件通过ref调用子组件暴露的方法\n\n```js\n<child ref=\"childRef\"></child>\n\nimport {ref} from \"vue\"；\nconst childRef = ref(null);\nchildRef.value.changeData();\n```\n\n_vue2中通过$refs方法调用_\n"},{"slug":"vue3-scroll-to-top","title":"vue3 中路由切换后让页面返回到顶部","category":"Vue","type":"snippet","description":"记录在 vue3 中，不同情况下，路由切换时让页面正常返回到顶部的方法。","status":"published","tags":["Vue","Frontend","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-02-28","readingTime":"1 min read","content":"$20"},{"slug":"vue3-vue-flow","title":"Vue3 流程图组件库 Vue Flow 简单使用","category":"Vue","type":"snippet","description":"记录 Vue Flow 流程图组件库的使用。","status":"published","tags":["Vue","Frontend","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-01-03","readingTime":"1 min read","content":"$21"},{"slug":"vue-turnjs-pdf","title":"Vue 借助 turn.js 实现翻书效果预览pdf文件","category":"Vue","type":"snippet","description":"vue 中使用 turn.js 插件实现翻书预览pdf文件效果。","status":"published","tags":["Vue","PDF","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2022-06-09","readingTime":"1 min read","content":"$22"},{"slug":"mini-program-router","title":"小程序返回上级页面并刷新列表","category":"MiniProgram","type":"snippet","description":"微信小程序返回上级页面并刷新列表。","status":"published","tags":["小程序"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2019-11-13","readingTime":"1 min read","content":"### 微信小程序进行操作后返回之前页面并刷新列表的方法。\n\n```js\nlet pages = getCurrentPages();\nlet beforePage = pages[pages.length - 2]; // -2 是上一个页面，-3是上上个页面以此类推。\nbeforePage.getList(参数);\nwx.navigateBack({\n  delta: 1,\n});\n```\n\n> 小程序以栈的形式维护当前的所有页面。\n\n![](/notes/mini-program/mini-stack-router-doc.png)\n\n> `getCurrentPages()` 函数可以获取当前页面栈.\n>\n> 前一页面栈： `pages[pages.length - 2];`\n>\n> 当前页面栈：`pages[pages.length - 1];`\n\n_获取到之前的页面栈，就可以调用其中获取列表的方法，从而做到刷新列表，然后执行跳转页面方法返回上一级页面_\n_还可以将要传递的参数直接`beforePage.setData`。上个页面就会执行这里的操作。_\n"}]}]}]
+7:["$","main",null,{"className":"mx-auto max-w-6xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L13",null,{"notes":[{"slug":"react-usedeferredvalue-concept","title":"React useDeferredValue 详解与最佳实践","category":"React","type":"concept","description":"深入理解 React 18 useDeferredValue 的作用、使用场景、适用边界以及与 debounce、useTransition 的区别。","status":"published","tags":["React","React18","Hooks","Performance","Concurrent Rendering"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-29","readingTime":"2 min read","content":"$14"},{"slug":"axios-baseurl-089fd3","title":"Axios在实例化之后修改baseURL或其他配置","category":"JavaScript","type":"setup","description":"在使用axios请求的时候一般会进行封装，如：","status":"published","tags":["JavaScript","setup","Axios"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"$15"},{"slug":"next-js-plus-github-pages-ci-cd-2c6362","title":"🚀 Next.js + GitHub Pages 自动部署（CI/CD 笔记）","category":"Next.js","type":"setup","description":"main 分支（源码）","status":"published","tags":["Next.js","setup","GitHub Pages"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"$16"},{"slug":"vue-docx-excel-pdf-959f53","title":"vue 在网页中预览(docx、excel、pdf)文件","category":"Vue","type":"snippet","description":"npm install @vue-office/docx vue-demi@0.14.6","status":"published","tags":["Vue","snippet","PDF","Excel"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"$17"},{"slug":"vue3-html5-qrcode-41e695","title":"vue3 使用 html5-qrcode 实现扫描二维码功能","category":"Vue","type":"snippet","description":"npm安装","status":"published","tags":["Vue","snippet","QRCode"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"2 min read","content":"$18"},{"slug":"chrome-overwrite-window-config","title":"Google浏览器打开网页会覆盖原来的页面","category":"Browser","type":"guide","description":"Google浏览器打开网页会覆盖原来的页面，修改搜索设置即可解决。","status":"published","tags":["Chrome","Browser","Configuration"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-06-05","readingTime":"1 min read","content":"### 1. 打开主页\n\n[https://www.google.com/](https://www.google.com/ \"https://www.google.com/\")\n\n### 2. 选择右下角设置 -> 搜索设置\n\n![image](/notes/browser/google-search-setting.png)\n\n### 3. 找到在新窗口打开搜索结果即可\n\n![image](/notes/browser/other-setting-new-window.png)\n"},{"slug":"uni-app-miniproject-vant","title":"uniapp开发小程序引入vant","category":"UniApp","type":"snippet","description":"uni-app 开发微信小程序引入 vant 组件库的流程记录。","status":"published","tags":["UniApp","Vant","小程序"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-05-07","readingTime":"1 min read","content":"$19"},{"slug":"vue3-el-menu-recursive","title":"el-menu递归组件实现多级菜单（vue3+element plus版）","category":"Vue","type":"snippet","description":"vue3 + element plus 中 使用 el-menu 递归组件实现多级菜单。","status":"published","tags":["Vue","Element","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-04-23","readingTime":"1 min read","content":"$1a"},{"slug":"uni-app-run-android-studio","title":"uni-app 项目运行到 Android Studio 模拟器","category":"UniApp","type":"snippet","description":"uni-app 项目运行到 Android Studio 模拟器。","status":"published","tags":["UniApp","Android Studio"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-04-07","readingTime":"2 min read","content":"$1b"},{"slug":"el-table-display-issues","title":"el-table 设置合并行或列时，显示错乱问题","category":"Vue","type":"snippet","description":"记录 el-table 合并行或列时显示错乱问题的解决方法。","status":"published","tags":["Vue","Element","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-01-05","readingTime":"2 min read","content":"$1c"},{"slug":"js-fetch-stream-abort","title":"fetch请求stream流接口并使用AbortController中断结果响应","category":"JavaScript","type":"snippet","description":"记录 fetch 请求 stream 流接口的写法并且使用 AbortController 中断结果响应。","status":"published","tags":["fetch","stream","AbortController"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-12-29","readingTime":"1 min read","content":"$1d"},{"slug":"vue-papaparse-csv","title":"使用papaparse解析本地上传的csv文件，并在el-table中展示","category":"Vue","type":"snippet","description":"Vue 项目中使用 papaparse 插件解析本地上传的 csv 文件，并在 el-table 中展示。","status":"published","tags":["Vue","papaparse","CSV"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-11-03","readingTime":"1 min read","content":"$1e"},{"slug":"vscode-err-connection-closed","title":"vscode 安装插件报错：ERR_CONNECTION_CLOSED","category":"Tooling","type":"debugging","description":"vscode 安装插件时报错 [error] Download: net::ERR_CONNECTION_CLOSED 。","status":"published","tags":["VScode","Error"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-10-30","readingTime":"1 min read","content":"## 背景：\n\nvscode安装扩展插件时报错，显示下载失败：\n`[error] Download: net::ERR_CONNECTION_CLOSED`\n`[error] net::ERR_CONNECTION_CLOSED: Download: net::ERR_CONNECTION_CLOSED`\n\n![image](/notes/ide/err-connection-closed.png)\n\n## 解决方法：\n\n查找相关文档发现这么一段：\n**If you are behind a firewall that needs to allow specific domains used by VS Code, here's the list of hostnames you should allow communication to go through:**\n猜测可能是防火墙的问题，关闭后问题解决。\n\n## 链接：\n\n[Network Connections in Visual Studio Code](https://code.visualstudio.com/docs/setup/network \"Network Connections in Visual Studio Code\")\n"},{"slug":"react-native-flipper-debug","title":"Flipper调试react native项目以及\"NO APPLICATION SELECTED\"问题处理","category":"ReactNative","type":"setup","description":"安装Flipper调试react native项目的步骤以及对\"NO APPLICATION SELECTED\"问题的处理。","status":"published","tags":["RN","Flipper","Configuration"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-09-14","readingTime":"2 min read","content":"$1f"},{"slug":"vite-https-plugin-basic-ssl","title":"Vite 本地开启 https 模式便于调试","category":"Tooling","type":"setup","description":"Vite 本地开启 https 模式配置。","status":"published","tags":["Vite","Https"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-08-17","readingTime":"1 min read","content":"### 1. 安装依赖\n\n```shell\nnpm install @vitejs/plugin-basic-ssl -D\n```\n\n### 2. 配置 vite.config.js\n\n```js\n// vite.config.js\nimport  basicSsl  from  '@vitejs/plugin-basic-ssl'\n\nexport  default  {\n  plugins : [\n    basicSsl ( {\n      /** 认证名称 */\n      name : 'test' ,\n      /** 自定义信任域 * /\n      domains : [ '*.custom.com' ] ,\n      /** 自定义认证目录 */\n      certDir : '/Users/.../.devServer/cert'\n    } )\n  ]\n}\n```\n\n### 3. 相关链接\n\n[@vitejs/plugin-basic-ssl npm 地址](https://www.npmjs.com/package/@vitejs/plugin-basic-ssl \"@vitejs/plugin-basic-ssl npm 地址\")\n[GitHub 地址](https://github.com/vitejs/vite-plugin-basic-ssl \"GitHub 地址\")\n[Vite server-https](https://vitejs.dev/config/server-options.html#server-https \"Vite server-https\")\n"},{"slug":"vue3-vue-i18n-config","title":"vue3使用vue-i18n配置多语言环境","category":"Vue","type":"snippet","description":"vue3 中使用 vue-i18n 配置多语言环境的步骤记录。","status":"published","tags":["Vue3","i18n"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-08-14","readingTime":"1 min read","content":"$20"},{"slug":"vue3-login-identify-code","title":"vue3登录添加图形验证码","category":"Vue","type":"snippet","description":"vue3项目中给登录添加图形验证码功能。","status":"published","tags":["Vue3","IdentifyCode","canvas"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-07-20","readingTime":"1 min read","content":"$21"},{"slug":"js-audio-recorder","title":"js-audio-recorder 插件实现web端录音","category":"JavaScript","type":"snippet","description":"使用 js-audio-recorder 插件实现web端录音。","status":"published","tags":["JavaScript","Frontend","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-06-19","readingTime":"2 min read","content":"$22"},{"slug":"vite-https-self-signed-certificate","title":"vite 本地代理请求https接口 self signed certificate 自签名证书错误","category":"Tooling","type":"debugging","description":"记录 vite 本地代理请求https接口时自签名证书错误。","status":"published","tags":["Vite","Tooling"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-06-14","readingTime":"1 min read","content":"### vite本地代理后端接口为https时，无法发送请求，并报错如下：\n\n![image](/notes/vite/error-self-signed-certificate.png)\n\n### 查询vite文档，更改配置 `server.https` 为 `true` ，无效\n\n![image](/notes/vite/server.https-config.png)\n\n### 又根据vite文档中描述添加 @vitejs/plugin-basic-ssl 到项目插件中，它会自动创建和缓存一个自签名的证书。 结果无效\n\n### 于是本地添加证书文件并配置在 `server.https` 中 ，无效\n\n### 最终 `server.proxy` 中增加配置 `secure: false` 后，请求发起成功，问题解决\n\n```js\n  server: {\n    hmr: true,\n    open: true,\n    port: \"8080\",\n    proxy: {\n      \"/api\": {\n        target: \"https://xx.xx.xx.xx:xx\",\n        changeOrigin: true,\n        rewrite: (path) => path.replace(/^\\/api/, \"\"),\n        secure: false,\n      },\n    },\n  },\n```\n\n> [参考链接 https://github.com/vitejs/vite/issues/3475](https://github.com/vitejs/vite/issues/3475 \"参考链接\")\n> ![image](/notes/vite/github-issues-error-self-signed-cetificate.png)\n"},{"slug":"el-date-picker-before-today","title":"element 日期选择器禁止选择今天之后的日期","category":"Vue","type":"snippet","description":"element 日期选择器禁止选择今天之后的日期。","status":"published","tags":["Vue","Element","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-05-25","readingTime":"1 min read","content":"$23"},{"slug":"css-linear-gradient-background","title":"css利用linear-gradient实现条纹背景","category":"CSS","type":"snippet","description":"记录css中通过利用linear-gradient来实现各种不同类型条纹背景的方法。","status":"published","tags":["CSS","linear-gradient","background"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-04-20","readingTime":"3 min read","content":"$24"},{"slug":"css-border-radius-clip-path","title":"CSS实现菜单选项向外圆角效果","category":"CSS","type":"snippet","description":"通过伪元素裁剪拼接实现菜单选项向外圆角效果。","status":"published","tags":["CSS","伪元素","clip-path"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-04-11","readingTime":"1 min read","content":"$25"},{"slug":"crlf-lf-concept","title":"CRLF和LF区别","category":"Engineering","type":"concept","description":"CRLF 和 LF 概念和区别。","status":"published","tags":["Git","CRLF","LF","工程化"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-04-07","readingTime":"2 min read","content":"$26"},{"slug":"css-iconfont-import-use","title":"阿里巴巴iconfont字体图标使用","category":"CSS","type":"guide","description":"讲解了阿里巴巴iconfont字体图标的多种引入和使用方式的步骤。","status":"published","tags":["CSS","iconfont"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-04-03","readingTime":"3 min read","content":"$27"},{"slug":"vue3-define-expose","title":"Vue3 父组件调用子组件内部的方法","category":"Vue","type":"snippet","description":"vue3 通过 defineExpose 和 ref ，父组件可访问子组件中定义的方法。","status":"published","tags":["Vue","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-03-03","readingTime":"1 min read","content":"### 1. 子组件中定义方法并通过defineExpose暴露出去\n\n```js\nimport { reactive, defineExpose } from \"vue\";\nconst state = reactive({\n  dataList: [],\n});\nconst changeData = () => {\n  state.dataList.push(1);\n};\ndefineExpose({\n  changeData,\n});\n```\n\n### 2. 父组件通过ref调用子组件暴露的方法\n\n```js\n<child ref=\"childRef\"></child>\n\nimport {ref} from \"vue\"；\nconst childRef = ref(null);\nchildRef.value.changeData();\n```\n\n_vue2中通过$refs方法调用_\n"},{"slug":"js-blob-to-excel","title":"js把文件流导出下载excel文件","category":"JavaScript","type":"snippet","description":"记录js中把文件流导出下载excel文件的方法。","status":"published","tags":["js","blob","excel"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-03-02","readingTime":"1 min read","content":"```js\nlet btn = document.querySelector('#app > button');\nlet resData = null;\n\nfetch('http://127.0.0.1:3333', {\n    method: \"GET\",\n    responseType: \"blob\"\n  })\n  .then(response => {\n    return response.blob()\n  })\n  .then(res => {\n    console.log(res);\n    resData = res;\n  })\n\nbtn.addEventListener(\"click\", () => {\n  const link = document.createElement(\"a\");\n  let blob = new Blob([resData], {\n    type: \"application/octet-stream\"\n  });\n  link.style.display = \"none\";\n  link.href = URL.createObjectURL(blob);\n  link.download = \"xxxfile.xlsx\";\n  document.body.appendChild(link);\n  link.click();\n  document.body.removeChild(link);\n  window.URL.revokeObjectURL(link);\n})\n```\n\n> 注意：需要设置 `responseType: \"blob\"` ，否则可能会出现下载的文件打开损坏问题。\n\n#### 动态截取请求中 `content-disposition` 的文件名:动态截取请求中 `content-disposition` 的文件名:\n\n```js\nlet fileName = res.headers[\"content-disposition\"]\n    .split(\";\")[1]\n    .split(\"filename=\")[1];\n...\nlink.download = decodeURIComponent(fileName);\n```\n\n> 使用 `decodeURIComponent` 可以解决文件名乱码问题。\n"},{"slug":"vue3-scroll-to-top","title":"vue3 中路由切换后让页面返回到顶部","category":"Vue","type":"snippet","description":"记录在 vue3 中，不同情况下，路由切换时让页面正常返回到顶部的方法。","status":"published","tags":["Vue","Frontend","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-02-28","readingTime":"1 min read","content":"$28"},{"slug":"vue3-vue-flow","title":"Vue3 流程图组件库 Vue Flow 简单使用","category":"Vue","type":"snippet","description":"记录 Vue Flow 流程图组件库的使用。","status":"published","tags":["Vue","Frontend","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-01-03","readingTime":"1 min read","content":"$29"},{"slug":"vue-turnjs-pdf","title":"Vue 借助 turn.js 实现翻书效果预览pdf文件","category":"Vue","type":"snippet","description":"vue 中使用 turn.js 插件实现翻书预览pdf文件效果。","status":"published","tags":["Vue","PDF","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2022-06-09","readingTime":"1 min read","content":"$2a"},{"slug":"moment-get-different-date","title":"Moment.js 获取前几天和后几天时间","category":"JavaScript","type":"snippet","description":"Moment.js 获取前几天和后几天时间的方法。","status":"published","tags":["JavaScript","Frontend","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2021-06-12","readingTime":"1 min read","content":"### 1. 获取今天\n\n```js\nimport moment from \"moment\";\nmoment().startOf(\"day\");\n```\n\n### 2. 获取本周\n\n```js\nimport moment from \"moment\";\nmoment().startOf(\"week\");\n```\n\n### 3. 获取n天前的日期\n\n```js\nimport moment from \"moment\";\n\n// subtract向前获取日期\nmoment().subtract(n, 'days');\n// startOf获取当天的00:00:00\nmoment().subtract(n, 'days').startOf(\"day\").format(\"YYYY-MM-DD HH:mm:ss\");\n// endOf获取当天的23:59:59\nmoment().subtract(n, 'days').endOf(\"day\").format(\"YYYY-MM-DD HH:mm:ss\");\n```\n\n### 4. 获取n天后的日期\n\n```js\nimport moment from \"moment\";\n\n// add向后获取日期\nmoment().add(n, 'days');\n// startOf获取当天的00:00:00\nmoment().add(n, 'days').startOf(\"day\").format(\"YYYY-MM-DD HH:mm:ss\");\n// endOf获取当天的23:59:59\nmoment().add(n, 'days').endOf(\"day\").format(\"YYYY-MM-DD HH:mm:ss\");\n```\n"},{"slug":"mini-program-router","title":"小程序返回上级页面并刷新列表","category":"MiniProgram","type":"snippet","description":"微信小程序返回上级页面并刷新列表。","status":"published","tags":["小程序"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2019-11-13","readingTime":"1 min read","content":"### 微信小程序进行操作后返回之前页面并刷新列表的方法。\n\n```js\nlet pages = getCurrentPages();\nlet beforePage = pages[pages.length - 2]; // -2 是上一个页面，-3是上上个页面以此类推。\nbeforePage.getList(参数);\nwx.navigateBack({\n  delta: 1,\n});\n```\n\n> 小程序以栈的形式维护当前的所有页面。\n\n![](/notes/mini-program/mini-stack-router-doc.png)\n\n> `getCurrentPages()` 函数可以获取当前页面栈.\n>\n> 前一页面栈： `pages[pages.length - 2];`\n>\n> 当前页面栈：`pages[pages.length - 1];`\n\n_获取到之前的页面栈，就可以调用其中获取列表的方法，从而做到刷新列表，然后执行跳转页面方法返回上一级页面_\n_还可以将要传递的参数直接`beforePage.setData`。上个页面就会执行这里的操作。_\n"}]}]}]

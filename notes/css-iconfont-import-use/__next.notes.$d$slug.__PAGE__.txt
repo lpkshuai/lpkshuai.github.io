@@ -1,0 +1,137 @@
+1:"$Sreact.fragment"
+2:I[30525,["/_next/static/chunks/2mm6bfp9kr5jr.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3io6jn7gqayyz.js","/_next/static/chunks/2-l7i9m0dht4u.js"],"default"]
+4:I[97367,["/_next/static/chunks/2mm6bfp9kr5jr.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
+5:"$Sreact.suspense"
+3:T102b,# 1. 图标获取
+
+:shaved_ice: [阿里巴巴矢量图标库](https://www.iconfont.cn/ "阿里巴巴矢量图标库")
+
+- **进入阿里图标库登录，创建项目，选择需要的图标添加购物车。然后添加至项目。**
+  ![image](/notes/css/ali-iconfont-get-step-1.png)
+- **在我的项目中可以找到添加的图标。**
+  ![image](/notes/css/ali-iconfont-get-step-2.png)
+- **下载图标文件至本地。**
+  ![image](/notes/css/ali-iconfont-get-step-3.png)
+  > **打开demo_index.html文件或者在图标库网站均可查看使用教程以及字体编码、样式类名等信息。**
+
+# 2. 图标使用
+
+> 把下载好的文件放在项目目录中，此处我的文件放在了font文件夹下
+
+### 引用方式有三种：unicode 引用、font-class 引用、symbol 引用
+
+### 1. unicode 引用
+
+---
+
+unicode是字体在网页端最原始的应用方式，特点是：
+
+- 支持按字体的方式去动态调整图标大小，颜色等等。
+- 默认情况下不支持多色，直接添加多色图标会自动去色。
+  > 注意：新版 iconfont 支持两种方式引用多色图标：SVG symbol 引用方式和彩色字体图标模式。（使用彩色字体图标需要在「编辑项目」中开启「彩色」选项后并重新生成。）
+
+Unicode 使用步骤如下：
+
+第一步：拷贝项目下面生成的 @font-face
+
+```css
+@font-face {
+  font-family: "iconfont"; /* Project id 3993956 */
+  src:
+    url("./font/iconfont.woff2?t=1680511106479") format("woff2"),
+    url("./font/iconfont.woff?t=1680511106479") format("woff"),
+    url("./font/iconfont.ttf?t=1680511106479") format("truetype");
+}
+```
+
+> 注意字体文件的路径要正确，否则无法引用
+
+第二步：定义使用 iconfont 的样式
+
+```css
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+```
+
+第三步：挑选相应图标并获取字体编码，应用于页面
+![image](/notes/css/ali-iconfont-unicode-import.png)
+
+```html
+<span class="iconfont">&#x33;</span>
+```
+
+> "iconfont" 是你项目下的 font-family。可以通过编辑项目查看，默认是 "iconfont"。
+
+### 2. font-class 引用
+
+---
+
+font-class 是 Unicode 使用方式的一种变种，主要是解决 Unicode 书写不直观，语意不明确的问题。与 Unicode 使用方式相比，具有如下特点：
+
+- 相比于 Unicode 语意明确，书写更直观。可以很容易分辨这个 icon 是什么。
+- 因为使用 class 来定义图标，所以当要替换图标时，只需要修改 class 里面的 Unicode 引用。
+
+使用步骤如下：
+第一步：引入项目下面生成的 fontclass 代码：
+
+```html
+<link rel="stylesheet" href="./font/iconfont.css" />
+```
+
+第二步：挑选相应图标并获取类名，应用于页面：
+![image](/notes/css/ali-iconfont-class-import.png)
+
+```html
+<span class="iconfont icon-xxx"></span>
+```
+
+### 3. Symbol 引用
+
+---
+
+这是一种全新的使用方式，应该说这才是未来的主流，也是平台目前推荐的用法。相关介绍可以参考这篇文章 这种用法其实是做了一个 SVG 的集合，与另外两种相比具有如下特点：
+
+- 支持多色图标了，不再受单色限制。
+- 通过一些技巧，支持像字体那样，通过 font-size, color 来调整样式。
+- 兼容性较差，支持 IE9+，及现代浏览器。
+- 浏览器渲染 SVG 的性能一般，还不如 png。
+
+使用步骤如下：
+第一步：引入项目下面生成的 symbol 代码：
+
+```html
+<script src="./font/iconfont.js"></script>
+```
+
+第二步：加入通用 CSS 代码（引入一次就行）：
+
+```css
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+```
+
+第三步：挑选相应图标并获取类名，应用于页面：
+![image](/notes/css/ali-iconfont-symbol-import.png)
+
+```html
+<svg class="icon" aria-hidden="true">
+  <use xlink:href="#icon-xxx"></use>
+</svg>
+```
+
+# 3. 其他端使用
+
+详见官方文档
+🍰 [链接地址](https://www.iconfont.cn/help/detail?helptype=code "链接地址")
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"css-iconfont-import-use","title":"阿里巴巴iconfont字体图标使用","category":"CSS","type":"guide","description":"讲解了阿里巴巴iconfont字体图标的多种引入和使用方式的步骤。","status":"published","tags":["CSS","iconfont"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-04-03","readingTime":"3 min read","content":"$3"}}]}],[["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/2-l7i9m0dht4u.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"axcQnbUZ5sOX3PeJze-kY"}
+6:null
