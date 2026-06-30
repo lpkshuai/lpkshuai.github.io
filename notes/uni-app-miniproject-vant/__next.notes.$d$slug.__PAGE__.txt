@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
-2:I[30525,["/_next/static/chunks/2mm6bfp9kr5jr.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3io6jn7gqayyz.js","/_next/static/chunks/2-l7i9m0dht4u.js"],"default"]
-4:I[97367,["/_next/static/chunks/2mm6bfp9kr5jr.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
+2:I[30525,["/_next/static/chunks/18g4y81qebd94.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3io6jn7gqayyz.js","/_next/static/chunks/2-l7i9m0dht4u.js"],"default"]
+4:I[97367,["/_next/static/chunks/18g4y81qebd94.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
 5:"$Sreact.suspense"
 3:T6c2,## 1. 安装
 
@@ -70,5 +70,5 @@ npm i vant-weapp -S --production
 ## 文档
 
 [vant-weapp官方文档](https://vant-ui.github.io/vant-weapp/#/home "vant-weapp官方文档")
-0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"uni-app-miniproject-vant","title":"uniapp开发小程序引入vant","category":"UniApp","type":"snippet","description":"uni-app 开发微信小程序引入 vant 组件库的流程记录。","status":"published","tags":["UniApp","Vant","小程序"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-05-07","readingTime":"1 min read","content":"$3"}}]}],[["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/2-l7i9m0dht4u.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"axcQnbUZ5sOX3PeJze-kY"}
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"uni-app-miniproject-vant","title":"uniapp开发小程序引入vant","category":"UniApp","type":"snippet","description":"uni-app 开发微信小程序引入 vant 组件库的流程记录。","status":"published","tags":["UniApp","Vant","小程序"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-05-07","readingTime":"1 min read","content":"$3"}}]}],[["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/2-l7i9m0dht4u.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"hO_ja41hN-tuQZuQ_axPH"}
 6:null
