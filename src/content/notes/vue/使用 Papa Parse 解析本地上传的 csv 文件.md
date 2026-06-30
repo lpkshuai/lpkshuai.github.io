@@ -1,0 +1,128 @@
+---
+slug: vue-papaparse-csv
+title: 使用papaparse解析本地上传的csv文件，并在el-table中展示
+category: Vue
+type: snippet
+description: Vue 项目中使用 papaparse 插件解析本地上传的 csv 文件，并在 el-table 中展示。
+status: published
+tags: Vue, papaparse, CSV
+updatedAt: 2023-11-03
+---
+
+## 一、安装并使用：
+
+### 1. 安装papaparse库，用于解析CSV文件：
+
+```shell
+npm install papaparse
+```
+
+### 2. 在组件中使用：
+
+- **关键代码**
+
+```js
+import Papa from 'papaparse';
+Papa.parse(file, config);
+const csv = Papa.unparse(data[, config]);
+```
+
+- **具体实例**
+
+页面结构：
+
+```jsx
+  <template>
+    <el-row
+      class="pd-tb-40"
+      :gutter="20"
+    >
+      <el-col :span="12">
+        <div class="upload-box mr-l-100">
+          <el-upload
+            action="#"
+            accept=".csv"
+            :multiple="false"
+            :limit="1"
+            :show-file-list="false"
+            :before-upload="beforeFileUpload"
+          >
+            <el-button
+              size="small"
+              type="primary"
+            >
+              点击上传
+            </el-button>
+            <div
+              slot="tip"
+              class="el-upload__tip"
+            >
+              <div class="upload-file-desc">
+                1、一次只能上传一份csv <br />
+                2、文件说明：
+                <p class="mr-l-20 tx-nowrap">·xxxxxxx</p>
+              </div>
+            </div>
+          </el-upload>
+        </div>
+      </el-col>
+      <el-col :span="12">
+        <el-table
+          :data="tableData"
+          style="width: 100%"
+          max-height="480"
+        >
+          <el-table-column
+            v-for="(header, index) in tableHeaders"
+            :key="index"
+            :prop="header"
+            :label="header"
+          ></el-table-column>
+        </el-table>
+      </el-col>
+    </el-row>
+  </template>
+```
+
+逻辑部分：
+
+```js
+<script>
+import Papa from "papaparse";
+export default {
+  data() {
+    return {
+      tableData: [],
+      tableHeaders: [],
+    };
+  },
+  methods: {
+    beforeFileUpload(file) {
+      // 使用 PapaParse 解析 CSV 文件
+      // const encodingList = ["utf-8", "gbk", "gb2312"];
+      Papa.parse(file, {
+        header: true,
+        skipEmptyLines: true,
+        encoding: "gb2312",
+        complete: result => {
+          // 解析完成后将数据存储到 tableData 中
+          this.tableData = result.data;
+          this.tableHeaders = Object.keys(result.data[0] || {});
+        },
+        error: error => {
+          console.error("CSV解析错误:", error.message);
+        },
+      });
+      return false; // 阻止上传行为
+    },
+  },
+};
+</script>
+```
+
+**csv文件内容包含中文时需要注意编码，通过 `encoding` 属性设置，避免出现中文乱码。更多功能及配置可查看官方文档。**
+
+## 二、参考文档：
+
+[Papa Parse 官网地址](https://www.papaparse.com/ "Papa Parse 官网地址")
+[GitHub 地址](https://github.com/mholt/PapaParse "GitHub 地址")

@@ -19,7 +19,7 @@ npm install @vue-office/pdf vue-demi@0.14.6
 ```js
 <template>
   <div class="flex flex-col h-full">
-    <div class="flex flex-col justify-center items-center bg-[#fff]">
+    <div class="flex flex-col justify-center items-center bg-white">
       <div class="flex items-center w-1200px tab-box">
         <el-tabs v-model="activeName" class="custom-tabs">
           <el-tab-pane label="用户协议" name="1"> </el-tab-pane>

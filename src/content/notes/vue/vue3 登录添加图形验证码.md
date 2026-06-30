@@ -1,0 +1,340 @@
+---
+slug: vue3-login-identify-code
+title: vue3登录添加图形验证码
+category: Vue
+type: snippet
+description: vue3项目中给登录添加图形验证码功能。
+status: published
+tags: Vue3, IdentifyCode, canvas
+updatedAt: 2023-07-20
+---
+
+### 1. 新增组件 `IdentifyCode.vue` ，使用canvas绘制验证码内容：
+
+```jsx
+<template>
+  <div class="s-canvas" @click="refreshCode">
+    <canvas
+      id="s-canvas"
+      :width="contentWidth"
+      :height="contentHeight"
+    ></canvas>
+  </div>
+</template>
+<script setup>
+import { ref, onMounted, watch } from "vue";
+
+let curIdentifyCode = ref("");
+
+const props = defineProps({
+  identifyCode: {
+    type: String,
+    default: "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+  },
+  fontSizeMin: {
+    type: Number,
+    default: 16,
+  },
+  fontSizeMax: {
+    type: Number,
+    default: 40,
+  },
+  backgroundColorMin: {
+    type: Number,
+    default: 180,
+  },
+  backgroundColorMax: {
+    type: Number,
+    default: 240,
+  },
+  colorMin: {
+    type: Number,
+    default: 50,
+  },
+  colorMax: {
+    type: Number,
+    default: 160,
+  },
+  lineColorMin: {
+    type: Number,
+    default: 40,
+  },
+  lineColorMax: {
+    type: Number,
+    default: 180,
+  },
+  dotColorMin: {
+    type: Number,
+    default: 0,
+  },
+  dotColorMax: {
+    type: Number,
+    default: 255,
+  },
+  contentWidth: {
+    type: Number,
+    default: 112,
+  },
+  contentHeight: {
+    type: Number,
+    default: 38,
+  },
+});
+
+watch(curIdentifyCode, () => {
+  drawPic();
+});
+
+const emit = defineEmits(["updateIdentifyCode"]);
+
+// 生成一个随机数
+const randomNum = (min, max) => {
+  return Math.floor(Math.random() * (max - min) + min);
+};
+// 生成一个随机的颜色
+const randomColor = (min, max) => {
+  let r = randomNum(min, max);
+  let g = randomNum(min, max);
+  let b = randomNum(min, max);
+  return "rgb(" + r + "," + g + "," + b + ")";
+};
+const drawPic = () => {
+  let canvas = document.getElementById("s-canvas");
+  let ctx = canvas.getContext("2d");
+  ctx.textBaseline = "bottom";
+  // 绘制背景
+  ctx.fillStyle = randomColor(
+    props.backgroundColorMin,
+    props.backgroundColorMax
+  );
+  ctx.fillRect(0, 0, props.contentWidth, props.contentHeight);
+  // 绘制文字
+  for (let i = 0; i < curIdentifyCode.value.length; i++) {
+    drawText(ctx, curIdentifyCode.value[i], i);
+  }
+  drawLine(ctx);
+  drawDot(ctx);
+};
+const drawText = (ctx, txt, i) => {
+  ctx.fillStyle = randomColor(props.colorMin, props.colorMax);
+  ctx.font = randomNum(props.fontSizeMin, props.fontSizeMax) + "px SimHei";
+  let x = (i + 1) * (props.contentWidth / (curIdentifyCode.value.length + 1));
+  let y = randomNum(props.fontSizeMax, props.contentHeight - 5);
+  let deg = randomNum(-45, 45);
+  // 修改坐标原点和旋转角度
+  ctx.translate(x, y);
+  ctx.rotate((deg * Math.PI) / 180);
+  ctx.fillText(txt, 0, 0);
+  // 恢复坐标原点和旋转角度
+  ctx.rotate((-deg * Math.PI) / 180);
+  ctx.translate(-x, -y);
+};
+const drawLine = (ctx) => {
+  // 绘制干扰线
+  for (let i = 0; i < 8; i++) {
+    ctx.strokeStyle = randomColor(props.lineColorMin, props.lineColorMax);
+    ctx.beginPath();
+    ctx.moveTo(
+      randomNum(0, props.contentWidth),
+      randomNum(0, props.contentHeight)
+    );
+    ctx.lineTo(
+      randomNum(0, props.contentWidth),
+      randomNum(0, props.contentHeight)
+    );
+    ctx.stroke();
+  }
+};
+const drawDot = (ctx) => {
+  // 绘制干扰点
+  for (let i = 0; i < 100; i++) {
+    ctx.fillStyle = randomColor(0, 255);
+    ctx.beginPath();
+    ctx.arc(
+      randomNum(0, props.contentWidth),
+      randomNum(0, props.contentHeight),
+      1,
+      0,
+      2 * Math.PI
+    );
+    ctx.fill();
+  }
+};
+
+const refreshCode = () => {
+  curIdentifyCode.value = "";
+  makeCode(props.identifyCode, 4);
+};
+const makeCode = (o, l) => {
+  for (let i = 0; i < l; i++) {
+    curIdentifyCode.value += o[randomNum(0, o.length)];
+  }
+  // console.log(curIdentifyCode.value);
+  emit("updateIdentifyCode", curIdentifyCode.value);
+};
+
+onMounted(() => {
+  drawPic();
+  refreshCode();
+});
+
+defineExpose({
+  refreshCode,
+});
+</script>
+
+```
+
+### 2. 引入组件并使用：
+
+```html
+<div class="login-box tx-c pd-t-30">
+  <div>用户登录</div>
+  <div class="form-box flex-row just-c">
+    <el-form
+      class="mr-t-40"
+      ref="loginForm"
+      :model="state.loginForm"
+      :rules="state.loginFormRules"
+    >
+      <el-form-item prop="username">
+        <el-input
+          placeholder="请输入正确的用户名"
+          v-model.trim="state.loginForm.username"
+        >
+          <template #prefix>
+            <img src="@/assets/images/login/yonghu.png" alt="" />
+          </template>
+        </el-input>
+      </el-form-item>
+      <el-form-item prop="password">
+        <el-input
+          type="password"
+          placeholder="请输入正确的账号匹配密码"
+          v-model.trim="state.loginForm.password"
+        >
+          <template #prefix>
+            <img src="@/assets/images/login/mima.png" alt="" />
+          </template>
+        </el-input>
+      </el-form-item>
+      <el-form-item prop="identifyCode">
+        <el-input
+          placeholder="请输入验证码"
+          v-model.trim="state.loginForm.identifyCode"
+        >
+          <template #prefix>
+            <img src="@/assets/images/login/code.png" alt="" />
+          </template>
+        </el-input>
+        <IdentifyCode
+          ref="identify"
+          class="code-box"
+          :contentWidth="120"
+          :contentHeight="60"
+          @updateIdentifyCode="setIdentifyCode"
+        ></IdentifyCode>
+      </el-form-item>
+
+      <el-button type="primary" class="mr-t-30" @click="loginValidator"
+        >登录
+      </el-button>
+    </el-form>
+  </div>
+</div>
+```
+
+```js
+import IdentifyCode from "@/components/IdentifyCode.vue";
+
+const identify = ref(null);
+const validateIdentifyCode = (rule, value, callback) => {
+  if (value !== curIdentifyCode.value) {
+    callback(new Error("验证码错误!"));
+    state.loginForm.identifyCode = "";
+    identify.value.refreshCode();
+  } else {
+    callback();
+  }
+};
+
+const state = reactive({
+  loginForm: {
+    username: "",
+    password: "",
+    identifyCode: "",
+  },
+  loginFormRules: {
+    username: [{ required: true, message: "请输入用户名", trigger: "blur" }],
+    password: [{ required: true, message: "请输入密码", trigger: "blur" }],
+    identifyCode: [
+      { required: true, message: "请输入验证码", trigger: "blur" },
+      { validator: validateIdentifyCode, trigger: "blur" },
+    ],
+  },
+});
+let curIdentifyCode = ref("");
+
+const loginForm = ref(null);
+
+// 登录校验
+const loginValidator = () => {
+  loginForm.value.validate((valid) => {
+    if (valid) {
+      login();
+    }
+  });
+};
+
+// 登录
+const login = async () => {
+  const { username, password } = state.loginForm;
+  const params = {
+    username,
+    password,
+    type: "1",
+  };
+  const res = await $api.login(params);
+  const { code, data } = res;
+  if (code === 0 && data) {
+    sessionStorage.setItem("isLogin", true);
+    sessionStorage.setItem("token", data);
+    router.replace("/home");
+  } else {
+    identify.value.refreshCode();
+  }
+};
+
+const setIdentifyCode = (val) => {
+  curIdentifyCode.value = val;
+};
+```
+
+```css
+<style scoped>
+.code-box {
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+}
+</style>
+```
+
+### 3. 组件配置项：
+
+| 属性               | 类型   | 描述                  |
+| ------------------ | ------ | --------------------- |
+| identifyCode       | String | 验证码取值内容        |
+| fontSizeMin        | Number | 字体最小值            |
+| fontSizeMax        | Number | 字体最大值            |
+| backgroundColorMin | Number | 背景颜色rgb的最小值   |
+| backgroundColorMax | Number | 背景颜色rgb的最大值   |
+| colorMin           | Number | 字体颜色rgb的最小值   |
+| colorMax           | Number | 字体颜色rgb的最大值   |
+| lineColorMin       | Number | 干扰线颜色rgb的最小值 |
+| lineColorMax       | Number | 干扰线颜色rgb的最大值 |
+| dotColorMin        | Number | 干扰点颜色rgb的最小值 |
+| dotColorMax        | Number | 干扰点颜色rgb的最大值 |
+| contentWidth       | Number | 画布宽度              |
+| contentHeight      | Number | 画布高度              |

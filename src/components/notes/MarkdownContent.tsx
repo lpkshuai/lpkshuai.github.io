@@ -165,7 +165,7 @@ export default function MarkdownContent({ content }: MarkdownContentProps) {
                   src={imageSrc}
                   alt={alt || ""}
                   loading="lazy"
-                  className="h-auto w-full cursor-zoom-in transition-transform duration-200 hover:scale-[1.01]"
+                  className="mx-auto h-auto max-w-full cursor-zoom-in transition-transform duration-200 hover:scale-[1.01]"
                   onClick={() => setPreviewImg(imageSrc)}
                 />
 
