@@ -1,0 +1,630 @@
+1:"$Sreact.fragment"
+2:I[30525,["/_next/static/chunks/0hbp5poerasux.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3io6jn7gqayyz.js","/_next/static/chunks/2-l7i9m0dht4u.js"],"default"]
+7:I[97367,["/_next/static/chunks/0hbp5poerasux.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
+8:"$Sreact.suspense"
+3:T19e5,# React useDeferredValue 详解与最佳实践
+
+## 什么是 useDeferredValue
+
+`useDeferredValue` 是 React 18 引入的并发特性（Concurrent Features）之一。
+
+它的作用是：
+
+> 让某个值延迟更新，从而降低其关联渲染任务的优先级，优先保证用户交互流畅。
+
+简单来说：
+
+```txt
+用户输入优先
+页面渲染其次
+```
+
+当某个状态变化后会触发大量计算或组件重新渲染时，可以通过 `useDeferredValue` 将这部分工作推迟执行。
+
+---
+
+## 基本用法
+
+```tsx
+import { useState, useDeferredValue } from "react";
+
+function Search() {
+  const [query, setQuery] = useState("");
+
+  const deferredQuery = useDeferredValue(query);
+
+  return (
+    <>
+      <input value={query} onChange={(e) => setQuery(e.target.value)} />
+
+      <ResultList keyword={deferredQuery} />
+    </>
+  );
+}
+```
+
+此时：
+
+```txt
+query
+↓
+用户输入的最新值
+
+deferredQuery
+↓
+延迟更新的值
+```
+
+---
+
+## 为什么需要 useDeferredValue
+
+假设有如下搜索功能：
+
+```tsx
+const filteredNotes = notes.filter((note) => note.title.includes(searchQuery));
+```
+
+数据量较小时：
+
+```txt
+10条数据
+50条数据
+100条数据
+```
+
+完全没有问题。
+
+但如果变成：
+
+```txt
+1000篇笔记
+5000篇文章
+10000条记录
+```
+
+每输入一个字符：
+
+```txt
+r
+re
+rea
+reac
+react
+```
+
+都会触发：
+
+```txt
+filter
+sort
+map
+组件重新渲染
+DOM更新
+```
+
+输入框可能出现卡顿。
+
+React 的解决方案是：
+
+```txt
+先保证输入流畅
+再更新搜索结果
+```
+
+---
+
+## useDeferredValue 的工作原理
+
+例如：
+
+```tsx
+const [query, setQuery] = useState("");
+
+const deferredQuery = useDeferredValue(query);
+```
+
+用户快速输入：
+
+```txt
+r
+re
+rea
+reac
+react
+```
+
+某个瞬间可能出现：
+
+```txt
+query = react
+
+deferredQuery = rea
+```
+
+说明：
+
+```txt
+输入框已经显示 react
+
+搜索结果仍然使用 rea
+```
+
+React 会在浏览器空闲时继续更新：
+
+```txt
+rea
+↓
+reac
+↓
+react
+```
+
+最终同步。
+
+因此：
+
+```txt
+输入框永远流畅
+搜索结果稍后刷新
+```
+
+---
+
+# 典型使用场景
+
+## 1. 大型列表搜索
+
+最经典场景。
+
+例如：
+
+```txt
+笔记搜索
+项目搜索
+文章搜索
+商品搜索（本地数据）
+```
+
+```tsx
+const deferredQuery =
+  useDeferredValue(searchQuery);
+
+const filteredNotes = useMemo(() => {
+  return notes.filter(...);
+}, [deferredQuery]);
+```
+
+---
+
+## 2. 大型列表筛选
+
+例如：
+
+```txt
+项目分类筛选
+标签筛选
+后台管理表格筛选
+```
+
+```tsx
+const deferredCategory = useDeferredValue(category);
+```
+
+适用于：
+
+```txt
+几百条数据
+上千条数据
+复杂排序逻辑
+```
+
+---
+
+## 3. Markdown 实时预览
+
+例如：
+
+```txt
+左侧编辑
+右侧预览
+```
+
+```tsx
+const deferredMarkdown = useDeferredValue(markdown);
+```
+
+避免：
+
+```txt
+每输入一个字符
+都重新解析 Markdown
+```
+
+导致编辑器卡顿。
+
+---
+
+## 4. 图表刷新
+
+例如：
+
+```txt
+ECharts
+AntV
+D3
+```
+
+筛选条件变化时：
+
+```tsx
+const deferredFilter = useDeferredValue(filter);
+```
+
+可以保证：
+
+```txt
+筛选器立即响应
+
+图表稍后更新
+```
+
+---
+
+## 5. 代码编辑器
+
+例如：
+
+```txt
+Monaco Editor
+CodeMirror
+```
+
+涉及：
+
+```txt
+AST解析
+ESLint检查
+格式化
+代码分析
+```
+
+使用：
+
+```tsx
+const deferredCode = useDeferredValue(code);
+```
+
+保证编辑体验流畅。
+
+---
+
+## 6. Three.js / WebGL 场景控制
+
+例如：
+
+```txt
+粒子数量
+光照强度
+后处理参数
+```
+
+拖动滑块时：
+
+```tsx
+const deferredValue = useDeferredValue(value);
+```
+
+保证：
+
+```txt
+滑块流畅
+
+场景稍后刷新
+```
+
+---
+
+# 不适合使用的场景
+
+## 1. 接口请求防抖
+
+错误示例：
+
+```tsx
+const deferredKeyword = useDeferredValue(keyword);
+
+useEffect(() => {
+  fetch(`/api/search?q=${deferredKeyword}`);
+}, [deferredKeyword]);
+```
+
+很多人误以为：
+
+```txt
+useDeferredValue
+=
+减少请求次数
+```
+
+实际上：
+
+```txt
+不会减少请求次数
+```
+
+输入：
+
+```txt
+r
+re
+rea
+reac
+react
+```
+
+仍然可能产生：
+
+```txt
+5次请求
+```
+
+正确方案：
+
+```txt
+debounce
+throttle
+react-query
+SWR
+```
+
+---
+
+## 2. 表单校验
+
+例如：
+
+```txt
+密码强度
+邮箱校验
+手机号校验
+```
+
+不适合：
+
+```tsx
+useDeferredValue(password);
+```
+
+否则：
+
+```txt
+输入已经更新
+
+校验结果还没更新
+```
+
+体验反而更差。
+
+---
+
+## 3. UI状态控制
+
+例如：
+
+```txt
+Drawer
+Modal
+Dropdown
+Tab
+```
+
+不要：
+
+```tsx
+useDeferredValue(isOpen);
+```
+
+否则：
+
+```txt
+点击按钮
+弹窗延迟打开
+```
+
+用户会感觉异常。
+
+---
+
+# useDeferredValue 与 Debounce 的区别
+
+很多开发者容易混淆。
+
+## Debounce
+
+特点：
+
+```txt
+停止输入后
+等待指定时间
+再执行
+```
+
+例如：
+
+```txt
+输入：
+r
+re
+rea
+reac
+react
+
+等待300ms
+
+执行一次
+```
+
+典型场景：
+
+```txt
+接口搜索
+远程请求
+联想搜索
+```
+
+目的：
+
+```txt
+减少执行次数
+减少请求次数
+```
+
+---
+
+## useDeferredValue
+
+特点：
+
+```txt
+每次变化都会更新
+
+只是优先级降低
+```
+
+例如：
+
+```txt
+输入：
+r
+re
+rea
+reac
+react
+
+每次都会触发更新
+
+但不会阻塞输入
+```
+
+目的：
+
+```txt
+保证交互流畅
+降低渲染优先级
+```
+
+---
+
+## 对比总结
+
+| 特性         | Debounce | useDeferredValue |
+| ------------ | -------- | ---------------- |
+| 减少执行次数 | ✅       | ❌               |
+| 减少请求次数 | ✅       | ❌               |
+| 延迟渲染     | ❌       | ✅               |
+| 保证输入流畅 | ❌       | ✅               |
+| 接口搜索     | ✅       | ❌               |
+| 本地列表搜索 | ⚠️       | ✅               |
+
+---
+
+# useDeferredValue 与 useTransition 的区别
+
+React 18 还有一个相关 Hook：
+
+```tsx
+useTransition();
+```
+
+二者区别：
+
+## useDeferredValue
+
+延迟：
+
+```txt
+值（Value）
+```
+
+例如：
+
+```tsx
+const deferredQuery = useDeferredValue(query);
+```
+
+---
+
+## useTransition
+
+延迟：
+
+```txt
+状态更新（State Update）
+```
+
+例如：
+
+```tsx
+const [isPending, startTransition] = useTransition();
+
+startTransition(() => {
+  setTab(nextTab);
+});
+```
+
+---
+
+## 如何选择
+
+搜索框：
+
+```txt
+useDeferredValue
+```
+
+页面切换：
+
+```txt
+useTransition
+```
+
+大型 Tab 切换：
+
+```txt
+useTransition
+```
+
+列表筛选：
+
+```txt
+useDeferredValue
+```
+
+---
+
+# 总结
+
+useDeferredValue 的核心思想并不是搜索，而是：
+
+```txt
+让昂贵渲染延后执行
+优先保证用户交互流畅
+```
+
+记住下面这句话即可：
+
+某个状态变化后：
+
+A. 需要立刻响应用户
+↓
+不要使用 useDeferredValue
+
+B. 会导致大量组件重新渲染
+↓
+考虑使用 useDeferredValue
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"react-usedeferredvalue-concept-84b792","title":"React useDeferredValue 详解与最佳实践","category":"React","type":"concept","description":"深入理解 React 18 useDeferredValue 的作用、使用场景、适用边界以及与 debounce、useTransition 的区别。","status":"published","tags":["React","React18","Hooks","Performance","Concurrent Rendering"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-29","readingTime":"2 min read","content":"$3"}}]}],["$L4","$L5"],"$L6"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"lbOqBlHH_txM3ieiNSpgJ"}
+4:["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true}]
+5:["$","script","script-1",{"src":"/_next/static/chunks/2-l7i9m0dht4u.js","async":true}]
+6:["$","$L7",null,{"children":["$","$8",null,{"name":"Next.MetadataOutlet","children":"$@9"}]}]
+9:null

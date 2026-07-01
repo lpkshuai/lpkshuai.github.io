@@ -1,0 +1,48 @@
+1:"$Sreact.fragment"
+2:I[30525,["/_next/static/chunks/0hbp5poerasux.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3io6jn7gqayyz.js","/_next/static/chunks/2-l7i9m0dht4u.js"],"default"]
+4:I[97367,["/_next/static/chunks/0hbp5poerasux.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
+5:"$Sreact.suspense"
+3:T75e,## 1. 启动模拟器
+
+**①可以在Android Studio中打开安装好的模拟器**
+![image](/notes/uni-app/open-android-studio-emulator.png)
+
+**②也可以不通过Android Studio，使用指令直接启动模拟器**
+
+- 首先找到Android Studio模拟器安装位置，一般如下图：
+
+`C:\Users\Lee\AppData\Local\Android\Sdk\emulator`
+![image](/notes/uni-app/open-emulator-command.png)
+
+> AppData文件夹默认隐藏，需要设置可见。
+
+- 然后再该路径下打开cmd控制台，输入指令`emulator.exe -list-avds`可以查看已安装的模拟器列表：
+  ![image](/notes/uni-app/emulator-list.png)
+
+- 选择需要启动的模拟器执行`emulator.exe -avd Pixel_7_Pro_API_33`指令，此时会启动相应的模拟器：
+  ![image](/notes/uni-app/emulator-avd.png)
+  > 指令`emulator.exe -avd Pixel_7_Pro_API_33`中的模拟器名称要换成自己的
+
+## 2. 启动项目
+
+![image](/notes/uni-app/start-project-emulator.png)
+
+在设备列表中找到对应的模拟器点击运行。
+
+## 3. 遇到的一些问题
+
+①***当前设备cpu类型×86_64不支持运行标准基座***
+在使用标准基座运行时提示了该问题，解决方法是改用自定义基座。
+（更为诡异的是，提示不支持后点击刷新模拟器列表，然后再使用标准基座竟然又可以使用了。。）
+
+> 后面尝试了别的版本也可以运行标准基座，如：
+> ![image](/notes/uni-app/problem-custom-avd.png)
+
+②***安装自定义基座App失败***
+在创建了自定义基座后运行，控制台提示该错误。经过多方搜查，由于我使用的是Android studio中的模拟器，之前用react native开发过其它app，可能模拟器内存不足以安装基座。在重新创建了一个新的模拟器后，安装基座成功。
+③***页面卡死在同步手机端程序文件完成***
+暂未解决
+
+> 有人说用Android 11可以进入
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"uni-app-run-android-studio-3ab79f","title":"uni-app 项目运行到 Android Studio 模拟器","category":"UniApp","type":"snippet","description":"uni-app 项目运行到 Android Studio 模拟器。","status":"published","tags":["UniApp","Android Studio"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-04-07","readingTime":"2 min read","content":"$3"}}]}],[["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/2-l7i9m0dht4u.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"lbOqBlHH_txM3ieiNSpgJ"}
+6:null

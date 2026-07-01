@@ -1,0 +1,87 @@
+1:"$Sreact.fragment"
+2:I[30525,["/_next/static/chunks/0hbp5poerasux.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3io6jn7gqayyz.js","/_next/static/chunks/2-l7i9m0dht4u.js"],"default"]
+4:I[97367,["/_next/static/chunks/0hbp5poerasux.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
+5:"$Sreact.suspense"
+3:T7fa,### 1. 滚动条不在body元素
+
+> 场景：页面布局使用如下container容器布局，Aside固定高度，Main部分带纵向滚动条。
+> ![image](/notes/vue/vue3-scroll-to-top.png)
+
+- 页面部分
+
+```html
+<template>
+  <el-container>
+    <el-aside width="224px">
+      <div class="title fs-16 c-999">标题xxx</div>
+      <LeftMenu :menuData="menuList"></LeftMenu>
+    </el-aside>
+    <el-main id="monitor-main-box">
+      <el-backtop :right="50" :bottom="50" target="#monitor-main-box" />
+      <router-view v-slot="{ Component }">
+        <transition name="fade-slide" mode="out-in" appear>
+          <component :is="Component" id="main" />
+        </transition>
+      </router-view>
+    </el-main>
+  </el-container>
+</template>
+```
+
+- script部分
+
+```js
+<script setup>
+import { onBeforeRouteUpdate } from "vue-router";
+
+onBeforeRouteUpdate((to, from) => {
+  // 由于路由设置了0.3s过渡效果，所以此处设置了0.3s定时器。避免页面切换效果突兀。
+  setTimeout(() => {
+    document.getElementById("main").scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }, 300);
+});
+</script>
+```
+
+### 2. 滚动条直接在body元素
+
+- 方法一
+  > 如果滚动条是直接在body上时，可以使用vue router自带的 `scrollBehavior` 方法。
+  > [详见地址](https://router.vuejs.org/zh/guide/advanced/scroll-behavior.html "详见地址")
+
+```js
+const router = createRouter({
+  history: createWebHashHistory(),
+  routes: [...],
+  scrollBehavior (to, from, savedPosition) {
+    // 滚动到顶部
+    return { top: 0 }
+  }
+})
+```
+
+> 注：在 `vue router 4.x` 中使用 `top、left` 来设置纵向和水平方向滚动的距离，`vue router 3.x` 中则使用 `x、y` 属性
+
+- 方法二
+
+```js
+// main.js中添加
+router.beforeEach((to, from, next) => {
+  // chrome
+  document.body.scrollTop = 0;
+  // firefox
+  document.documentElement.scrollTop = 0;
+  // safari
+  window.pageYOffset = 0;
+  next();
+});
+// 或
+router.afterEach((to, from, next) => {
+  window.scrollTo(0, 0);
+});
+```
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"vue3-scroll-to-top-ee6e5b","title":"vue3 中路由切换后让页面返回到顶部","category":"Vue","type":"snippet","description":"记录在 vue3 中，不同情况下，路由切换时让页面正常返回到顶部的方法。","status":"published","tags":["Vue","Frontend","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-02-28","readingTime":"1 min read","content":"$3"}}]}],[["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/2-l7i9m0dht4u.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"lbOqBlHH_txM3ieiNSpgJ"}
+6:null

@@ -1,0 +1,48 @@
+1:"$Sreact.fragment"
+2:I[30525,["/_next/static/chunks/0hbp5poerasux.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3io6jn7gqayyz.js","/_next/static/chunks/2-l7i9m0dht4u.js"],"default"]
+4:I[97367,["/_next/static/chunks/0hbp5poerasux.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
+5:"$Sreact.suspense"
+3:T942,## 1. CRLF概念
+
+CRLF（Carriage-Return Line-Feed），CR是回车符，LF是换行符。它们都是文本文件用于标记换行的控制字符（control characters）或字节码（bytecode）。
+
+**CR（Carriage Return）**，回车符号，对应字符 `'\r'`，十六进制 ascii 码为 `0x0D`，十进制 ascii 码为 `13`，用于将鼠标移动到行首，并不前进至下一行。
+
+**LF（Line Feed）**，换行符号，对应字符 `'\n'`，十六进制 ascii 码为 `0x0A`，十进制 ascii 码为 `10`，用于换行。
+
+紧邻的 CR 和 LF（组成 CRLF，`\r\n`，或十六进制 `0x0D0A`）将鼠标移动到下一行行首。
+
+Windows 操作系统默认的文本换行符为 CRLF；
+Linux 以及 macOS 系统默认使用 LF，早期的 mac os 系统使用 CR 换行。
+
+## 2. Git中配置
+
+由于编辑器的不同或者文件行尾的换行符在 Windows 下被替换了，一些细微的空格变化会不经意地混入提交的补丁或其它协作成果中。 Git 提供了一些配置项来帮助解决这些问题。
+
+### core.autocrlf
+
+- Git 可以在提交时自动地把回车和换行转换成换行，而在检出代码时把换行转换成回车和换行。 可以用 core.autocrlf 来打开此项功能。 如果是在 Windows 系统上，把它设置成 true，这样在检出代码时，换行会被转换成回车和换行：
+
+```bash
+git config --global core.autocrlf true # 全局设置
+git config --local core.autocrlf true # 项目设置
+```
+
+- 如果使用以换行作为行结束符的 Linux 或 macOS，不需要 Git 在检出文件时进行自动的转换； 然而当一个以回车加换行作为行结束符的文件不小心被引入时，想让 Git 修正。可以把 core.autocrlf 设置成 input 来告诉 Git 在提交时把回车和换行转换成换行，检出时不转换，这样在 Windows 上的检出文件中会保留回车和换行，而在 macOS 和 Linux 上，以及版本库中会保留换行。
+
+```bash
+git config --global core.autocrlf input
+```
+
+- 如果正在开发仅运行在 Windows 上的项目，可以设置 false 取消此功能，把回车保留在版本库中：
+
+```bash
+git config --global core.autocrlf false
+```
+
+###一般开发规范：
+
+- 使用 Windows 系统的开发`git config --global core.aurocrlf true`
+- 使用Linux/MacOS 的开发`git config --global core.autocrlf input`
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"crlf-lf-concept-2ee70f","title":"CRLF和LF区别","category":"Engineering","type":"concept","description":"CRLF 和 LF 概念和区别。","status":"published","tags":["Git","CRLF","LF","工程化"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-04-07","readingTime":"2 min read","content":"$3"}}]}],[["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/2-l7i9m0dht4u.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"lbOqBlHH_txM3ieiNSpgJ"}
+6:null

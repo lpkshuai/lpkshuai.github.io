@@ -1,0 +1,180 @@
+1:"$Sreact.fragment"
+2:I[30525,["/_next/static/chunks/0hbp5poerasux.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3io6jn7gqayyz.js","/_next/static/chunks/2-l7i9m0dht4u.js"],"default"]
+7:I[97367,["/_next/static/chunks/0hbp5poerasux.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
+8:"$Sreact.suspense"
+3:T1352,# 1. 水平条纹背景
+
+当给背景设置渐变效果时，默认的渐变方向是垂直由上到下的，效果如下：
+
+```css
+{
+  background: linear-gradient(#aaa, #ddd);
+}
+```
+
+![image](/notes/css/css-linear-gradient-stripe-1.png)
+
+尝试拉近色标的距离，会发现渐变区域变小了：
+
+```css
+{
+  background: linear-gradient(#aaa 40%, #ddd 60%);
+}
+```
+
+![image](/notes/css/css-linear-gradient-stripe-2.png)
+
+当渐变色的色标设置为相同位置时，过渡区域就会变成无限小，看起来的效果就会如下图所示：
+
+```css
+{
+  background: linear-gradient(#aaa 50%, #ddd 50%);
+}
+```
+
+![image](/notes/css/css-linear-gradient-stripe-3.png)
+
+然后通过 `background-size` 来调整他的尺寸，由于默认情况下背景是重复平铺的，所以得到的效果就是填满水平条纹：
+
+```css
+{
+  background: linear-gradient(#aaa 50%, #ddd 50%);
+  background-size: 100% 30px;
+}
+```
+
+![image](/notes/css/css-linear-gradient-stripe-4.png)
+
+如果某个色标的位置值比整个列表中在它之前的色标的位置值都要小，则该色标的位置值会被设置为它前面所有色标位置值的最大值。因此后面色标的位置可以写成0：
+
+```css
+{
+  background: linear-gradient(#aaa 50%, #ddd 0);
+  background-size: 100% 30px;
+}
+```
+
+可以通过修改色标的位置来生成不等宽的条纹：
+
+```css
+{
+  background: linear-gradient(#aaa 30%, #ddd 0);
+  background-size: 100% 30px;
+}
+
+{
+  background: linear-gradient(#aaa 70%, #ddd 0);
+  background-size: 100% 30px;
+}
+```
+
+![image](/notes/css/css-linear-gradient-stripe-5.png) ![image](/notes/css/css-linear-gradient-stripe-6.png)
+
+如果需要多种颜色的条纹，设置多种颜色渐变即可：
+
+```css
+{
+  background: linear-gradient(#aaa 33.33%, #ddd 0, #ddd 66.66%, #fff 0);
+}
+```
+
+![image](/notes/css/css-linear-gradient-stripe-7.png)
+
+# 2. 垂直条纹背景
+
+想要生成垂直方向的条纹，只需修改渐变的方向即可（别忘了把 `background-size` 颠倒一下）：
+
+```css
+{
+  background: linear-gradient(to right, #aaa 50%, #ddd 0);
+  background-size: 30px 100%;
+}
+/* 或 */
+{
+  background: linear-gradient(90deg, #aaa 50%, #ddd 0);
+  background-size: 30px 100%;
+}
+```
+
+![image](/notes/css/css-linear-gradient-stripe-8.png)
+
+# 3. 斜向条纹背景
+
+如果直接修改渐变方向，使其倾斜45°，并且修改 `background-size` ，会得到下面的效果：
+
+```css
+{
+  background: linear-gradient(45deg, #aaa 50%, #ddd 0);
+  background-size: 30px 30px;
+}
+```
+
+![image](/notes/css/css-linear-gradient-stripe-9.png)
+
+虽然效果也很好看，但是我们需要的效果是把整个背景旋转45°，而不是把每个小切片旋转45°。仔细观察会发现，想要通过小切片拼接成完整的斜向条纹，只需将每个切片分割为四份。因此需要新增两个色标：
+
+```css
+{
+  background: linear-gradient(45deg, #aaa 25%, #ddd 0, #ddd 50%, #aaa 0, #aaa 75%, #ddd 0);
+  background-size: 30px 30px;
+}
+```
+
+![image](/notes/css/css-linear-gradient-stripe-10.png) ![image](/notes/css/css-linear-gradient-stripe-11.png)
+
+效果实现了，再调整 `background-size` ，增加条纹宽度：
+
+```css
+{
+  background: linear-gradient(45deg, #aaa 25%, #ddd 0, #ddd 50%, #aaa 0, #aaa 75%, #ddd 0);
+  background-size: 60px 60px;
+}
+```
+
+![image](/notes/css/css-linear-gradient-stripe-12.png) ![image](/notes/css/css-linear-gradient-stripe-13.png)
+
+效果虽然实现，但是条纹的宽度如果想和上面的同样设置为15px，那 `background-size` 就需要根据勾股定理求出准确的值，此处的结果约为42，因为这个结果不能完全整除，所以只能根据想要的精确度四舍五入取值，因此这种方法不够灵活。如果想要其他倾斜角度的条纹便很难计算 `background-size` 。
+
+想要灵活地实现不同角度的条纹，这时候就需要用到 `repeating-linear-gradient()` ，重复线性渐变。重复线性渐变会循环色标，知道填满整个背景：
+
+```css
+{
+  background: repeating-linear-gradient(45deg, #aaa, #ddd 30px);
+}
+```
+
+![image](/notes/css/css-linear-gradient-stripe-14.png)
+
+改写成上面的效果就是：
+
+```css
+{
+  background: repeating-linear-gradient(45deg, #aaa 0, #aaa 15px, #ddd 0, #ddd 30px);
+}
+```
+
+![image](/notes/css/css-linear-gradient-stripe-15.png)
+
+只需修改角度便可以得到不同角度的条纹：
+
+```css
+{
+  background: repeating-linear-gradient(60deg, #aaa 0 15px, #ddd 0 30px);
+}
+
+{
+  background: repeating-linear-gradient(30deg, #aaa 0 15px, #ddd 0 30px);
+}
+```
+
+![image](/notes/css/css-linear-gradient-stripe-16.png) ![image](/notes/css/css-linear-gradient-stripe-17.png)
+
+# 4. 附录
+
+[MDN linear-gradient](https://developer.mozilla.org/zh-CN/docs/Web/CSS/gradient/linear-gradient "MDN linear-gradient")
+[MDN repeating-linear-gradient](https://developer.mozilla.org/zh-CN/docs/Web/CSS/gradient/repeating-linear-gradient "MDN repeating-linear-gradient")
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"css-linear-gradient-background-233966","title":"css利用linear-gradient实现条纹背景","category":"CSS","type":"snippet","description":"记录css中通过利用linear-gradient来实现各种不同类型条纹背景的方法。","status":"published","tags":["CSS","linear-gradient","background"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-04-20","readingTime":"3 min read","content":"$3"}}]}],["$L4","$L5"],"$L6"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"lbOqBlHH_txM3ieiNSpgJ"}
+4:["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true}]
+5:["$","script","script-1",{"src":"/_next/static/chunks/2-l7i9m0dht4u.js","async":true}]
+6:["$","$L7",null,{"children":["$","$8",null,{"name":"Next.MetadataOutlet","children":"$@9"}]}]
+9:null

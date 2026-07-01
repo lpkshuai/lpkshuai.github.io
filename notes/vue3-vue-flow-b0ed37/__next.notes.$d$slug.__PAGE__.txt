@@ -1,0 +1,99 @@
+1:"$Sreact.fragment"
+2:I[30525,["/_next/static/chunks/0hbp5poerasux.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3io6jn7gqayyz.js","/_next/static/chunks/2-l7i9m0dht4u.js"],"default"]
+4:I[97367,["/_next/static/chunks/0hbp5poerasux.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
+5:"$Sreact.suspense"
+3:T7e5,# 官网
+
+[Vue Flow 官网](https://vueflow.dev/ "Vue Flow 官网")
+[Vue Flow GitHub](https://github.com/bcakmakoglu/vue-flow "Vue Flow GitHub")
+
+# 安装
+
+```bash
+npm i --save @vue-flow/core
+
+yarn add @vue-flow/core
+
+pnpm i @vue-flow/core
+```
+
+# 使用
+
+```js
+<template>
+  <VueFlow v-model="elements" />
+</template>
+
+<script setup>
+import { VueFlow  } from '@vue-flow/core'
+
+const elements = ref([
+  // Nodes
+  // An input node, specified by using `type: 'input'`
+  { id: '1', type: 'input', label: 'Node 1', position: { x: 250, y: 5 } },
+
+  // Default nodes, you can omit `type: 'default'`
+  { id: '2', label: 'Node 2', position: { x: 100, y: 100 }, },
+  { id: '3', label: 'Node 3', position: { x: 400, y: 100 } },
+
+  // An output node, specified by using `type: 'output'`
+  { id: '4', type: 'output', label: 'Node 4', position: { x: 400, y: 200 } },
+
+  // Edges
+  // Most basic edge, only consists of an id, source-id and target-id
+  { id: 'e1-3', source: '1', target: '3' },
+
+  // An animated edge
+  { id: 'e1-2', source: '1', target: '2', animated: true },
+])
+</script>
+
+<style>
+/* these are necessary styles for vue flow */
+@import "@vue-flow/core/dist/style.css";
+
+/* this contains the default theme, these are optional styles */
+@import "@vue-flow/core/dist/theme-default.css";
+</style>
+```
+
+![image](/notes/vue/vue3-vue-flow-preview.png)
+
+常用功能：
+
+1. 画布居中
+
+```js
+import { VueFlow, useVueFlow } from "@vue-flow/core";
+const { onPaneReady } = useVueFlow();
+const state = reactive({
+  instance: null,
+});
+onPaneReady((instance) => {
+  instance.fitView();
+  // 将对象缓存
+  state.instance = instance;
+});
+
+// 设置缩放级别
+state.instance.fitView({ offset: { y: 50 } });
+state.instance.zoomTo(1);
+```
+
+2. 点击事件
+
+```js
+  <VueFlow
+    v-model="flowElement"
+    :style="{ background: 'transparent' }"
+    :default-zoom="1"
+    fit-view-on-init
+    @nodeClick="nodeClickHandler"
+  />
+  const nodeClickHandler = (props) => {
+    const node = props.node;
+    console.log(node.id);
+  };
+```
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"vue3-vue-flow-b0ed37","title":"Vue3 流程图组件库 Vue Flow 简单使用","category":"Vue","type":"snippet","description":"记录 Vue Flow 流程图组件库的使用。","status":"published","tags":["Vue","Frontend","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-01-03","readingTime":"1 min read","content":"$3"}}]}],[["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/2-l7i9m0dht4u.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"lbOqBlHH_txM3ieiNSpgJ"}
+6:null

@@ -1,7 +1,7 @@
 1:"$Sreact.fragment"
-2:I[87519,["/_next/static/chunks/18g4y81qebd94.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/2x4d_5_az6ojh.js"],"default"]
-1c:I[97367,["/_next/static/chunks/18g4y81qebd94.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
-1d:"$Sreact.suspense"
+2:I[87519,["/_next/static/chunks/0hbp5poerasux.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/2x4d_5_az6ojh.js"],"default"]
+20:I[97367,["/_next/static/chunks/0hbp5poerasux.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
+21:"$Sreact.suspense"
 3:T19e5,# React useDeferredValue 详解与最佳实践
 
 ## 什么是 useDeferredValue
@@ -1251,7 +1251,117 @@ const uploadImg = () => {
 [官方教程](https://scanapp.org/html5-qrcode-docs/docs/intro "官方教程")
 [qrcode.minhazav.dev](https://blog.minhazav.dev/research/html5-qrcode "qrcode.minhazav.dev")
 [vite 本地开启 https](https://www.cnblogs.com/lpkshuai/p/17636869.html "vite 本地开启 https")
-8:T6c2,## 1. 安装
+8:T1068,# 一、创建证书、标识符和描述文件等：
+
+## **1. 前提条件**
+
+**可正常运行和打包的代码、Apple开发者账号**
+
+> [点击注册Apple开发者账号](https://developer.apple.com/account "点击注册Apple开发者账号")
+
+**注册完进入页面可以看到证书、标识符和描述文件创建入口**
+
+![image](/notes/react-native/rn-apple-account-register.png)
+
+## **2. 创建App ID**
+
+- **点击Identifiers旁边的加号**
+  ![image](/notes/react-native/rn-apple-app-id-create-1.png)
+
+- **选择 App IDs，点击 Continue。**
+  ![image](/notes/react-native/rn-apple-app-id-create-2.png)
+
+- **选择 App，点击 Continue。**
+  ![image](/notes/react-native/rn-apple-app-id-create-3.png)
+
+- **填写描述、包名（Bundle ID）、并且勾选需要的能力**
+  ![image](/notes/react-native/rn-apple-app-id-create-4.png)
+
+- **创建完毕回到第一个步骤中的列表就能看到新创建的App ID**
+
+## **3. 生成CSR文件**
+
+- **生成证书前需要先生成一个Certificate Signing Request (CSR)文件，在电脑中找到钥匙串访问并打开：**
+
+![image](/notes/react-native/rn-csr-get-1.png)
+
+- **点击屏幕左上角，选择钥匙串访问 -> 证书助理 -> 从证书颁发机构请求证书：**
+
+![image](/notes/react-native/rn-csr-get-2.png)
+
+- **填写完相关信息后存储到磁盘等下使用：**
+
+![image](/notes/react-native/rn-csr-get-3.png)
+
+## **4. 创建和配置证书**
+
+- **点击证书，进入证书配置页。然后点击加号创建证书**
+  ![image](/notes/react-native/rn-certificates-create-1.png)
+
+- **选择分类**
+  ![image](/notes/react-native/rn-certificates-create-2.png)
+
+- **选择上面创建的CSR文件**
+  ![image](/notes/react-native/rn-certificates-create-3.png)
+
+- **创建完毕后下载文件（.cer格式）到本地，双击运行会导入到钥匙串中**
+  ![image](/notes/react-native/rn-certificates-create-4.png)
+
+- **如果需要在其他地方使用，可以导出为.p12格式文件。钥匙串中找到刚刚的证书鼠标右键点击，选择导出（导出文件为.p12格式）**
+  ![image](/notes/react-native/rn-certificates-create-5.png)
+
+## **5. 创建描述文件（Provisioning Profiles）**
+
+- **点击描述文件，进入Profiles配置页。然后点击加号创建Profiles**
+  ![image](/notes/react-native/rn-profiles-create-1.png)
+
+- **选择App Store Connect**
+  ![image](/notes/react-native/rn-profiles-create-2.png)
+
+- **选择App ID**
+  ![image](/notes/react-native/rn-profiles-create-3.png)
+
+- **选择之前创建的证书**
+  ![image](/notes/react-native/rn-profiles-create-4.png)
+
+- **给描述文件命名，到此描述文件创建完毕**
+  ![image](/notes/react-native/rn-profiles-create-5.png)
+
+- **回到描述文件列表，下载刚创建好的描述文件**
+  ![image](/notes/react-native/rn-profiles-create-6.png)
+  > 下载的文件为（.mobileprovision）格式：
+  > ![image](/notes/react-native/rn-profiles-create-7.png)
+
+# 二、Xcode中配置证书和描述文件：
+
+## 1. 配置Profile
+
+- **Xcode打开项目，选择Signing & Capabilities选项，取消勾选Automatically manage signing，点击Provisioning Profiles，导入刚下载的profile文件（xxx.mobileprovision）：**
+  ![image](/notes/react-native/rn-xcode-profile-config-1.png)
+
+- **切换到Build Settings，可以看到刚配置的描述文件**
+  ![image](/notes/react-native/rn-xcode-profile-config-2.png)
+
+# 三、打包app：
+
+- **选择Product -> Archive，等待打包**
+  ![image](/notes/react-native/rn-xcode-product-archive-1.png)
+
+- **点击分发app**
+  ![image](/notes/react-native/rn-xcode-product-archive-2.png)
+
+- **选择分发方式**
+  ![image](/notes/react-native/rn-xcode-product-archive-3.png)
+
+- **上传成功**
+  ![image](/notes/react-native/rn-xcode-product-archive-4.png)
+
+- **在 App Store Connect 中查看**
+  [App Store Connect](https://appstoreconnect.apple.com/ "App Store Connect")
+
+> 此处可以看见上传的app，创建测试群组选择用户可以进行内部测试。点击分发下面填写相关信息然后选择构建版本后可以提交审核发布App Store。
+> ![image](/notes/react-native/rn-xcode-product-archive-5.png)
+9:T6c2,## 1. 安装
 
 ```bash
 # 通过 npm 安装
@@ -1319,7 +1429,7 @@ npm i vant-weapp -S --production
 ## 文档
 
 [vant-weapp官方文档](https://vant-ui.github.io/vant-weapp/#/home "vant-weapp官方文档")
-9:T11bd,vue2 + element ui版：[点击此处](https://www.cnblogs.com/lpkshuai/p/17310220.html "点击此处")
+a:T11bd,vue2 + element ui版：[点击此处](https://www.cnblogs.com/lpkshuai/p/17310220.html "点击此处")
 
 ### 1. 外层菜单组件：
 
@@ -1529,7 +1639,7 @@ const menuList = [
 ```
 
 > 注意vite图片引入的方式
-a:T75e,## 1. 启动模拟器
+b:T75e,## 1. 启动模拟器
 
 **①可以在Android Studio中打开安装好的模拟器**
 ![image](/notes/uni-app/open-android-studio-emulator.png)
@@ -1571,7 +1681,7 @@ a:T75e,## 1. 启动模拟器
 暂未解决
 
 > 有人说用Android 11可以进入
-b:T148f,### 1. 需求效果图：
+c:T148f,### 1. 需求效果图：
 
 ![image](/notes/element-ui/el-table-display-need.png)
 
@@ -1762,7 +1872,7 @@ const spanMethod = ({ row, column, rowIndex, columnIndex }) => {
 
 刷新页面查看，问题解决：
 ![image](/notes/element-ui/el-table-span-result.png)
-c:T853,### 1. 使用fetch请求stream流接口：
+d:T853,### 1. 使用fetch请求stream流接口：
 
 封装fetch工具方法 `fetchRequest.js`
 
@@ -1850,7 +1960,7 @@ abortFetch();
 ### 3. 参考文档
 
 [AbortController 文档](https://developer.mozilla.org/zh-CN/docs/Web/API/AbortController "AbortController 文档")
-d:Taaf,## 一、安装并使用：
+e:Taaf,## 一、安装并使用：
 
 ### 1. 安装papaparse库，用于解析CSV文件：
 
@@ -1967,7 +2077,7 @@ export default {
 
 [Papa Parse 官网地址](https://www.papaparse.com/ "Papa Parse 官网地址")
 [GitHub 地址](https://github.com/mholt/PapaParse "GitHub 地址")
-e:T79a,# 一、安装：
+f:T79a,# 一、安装：
 
 ### 1. 在官网下载桌面应用
 
@@ -2016,7 +2126,7 @@ eas build --profile devclient --platform android --loacal
 
 **1. 使用expo构建的项目，构建开发版本app步骤参考官方文档如下：**
 [官方文档地址](https://docs.expo.dev/develop/development-builds/create-a-build/ "官方文档地址")
-f:T93d,## 1. 插件地址：
+10:T93d,## 1. 插件地址：
 
 [Vue I18n官方文档](https://kazupon.github.io/vue-i18n/zh/ "Vue I18n官方文档")
 [GitHub地址](https://github.com/kazupon/vue-i18n "GitHub地址")
@@ -2154,7 +2264,7 @@ resolve: {
   ],
 },
 ```
-10:T1f5c,### 1. 新增组件 `IdentifyCode.vue` ，使用canvas绘制验证码内容：
+11:T1f5c,### 1. 新增组件 `IdentifyCode.vue` ，使用canvas绘制验证码内容：
 
 ```jsx
 <template>
@@ -2483,7 +2593,204 @@ const setIdentifyCode = (val) => {
 | dotColorMax        | Number | 干扰点颜色rgb的最大值 |
 | contentWidth       | Number | 画布宽度              |
 | contentHeight      | Number | 画布高度              |
-11:Tc6e,## 介绍
+12:T1936,## 1. 简介：
+
+postcss-px-to-viewport是一个将px单位转换为视口单位的 (vw, vh, vmin, vmax) 的 PostCSS 插件。将CSS中的px单位转化为vw，来进行移动端适配，1vw等于1/100视口宽度。
+
+## 2. 地址：
+
+[postcss-px-to-viewport GitHub 地址](https://github.com/evrone/postcss-px-to-viewport.git "postcss-px-to-viewport  GitHub 地址")
+
+## 3. 安装：
+
+npm
+
+```shell
+npm install postcss-px-to-viewport --save-dev
+```
+
+yarn
+
+```shell
+yarn add -D postcss-px-to-viewport
+```
+
+## 4. 不同项目中配置：
+
+### **① 在vite项目中使用**
+
+在 `vite.config.js` 中添加如下配置:
+
+```js
+import { defineConfig } from "vite";
+import { resolve } from "path";
+import vue from "@vitejs/plugin-vue";
+import Components from "unplugin-vue-components/vite";
+import { VantResolver } from "unplugin-vue-components/resolvers";
+import px2viewport from "postcss-px-to-viewport";
+export default defineConfig({
+  plugins: [
+    vue(),
+    Components({
+      resolvers: [VantResolver()],
+    }),
+  ],
+  css: {
+    postcss: {
+      plugins: [
+        px2viewport({
+          unitToConvert: "px",
+          viewportWidth: 375,
+          unitPrecision: 3,
+          viewportUnit: "vw",
+          // exclude: /node_modules\/vant/i,
+        }),
+      ],
+    },
+  },
+  resolve: {
+    alias: [
+      {
+        find: "@",
+        replacement: resolve(__dirname, "src"),
+      },
+    ],
+  },
+  // ...
+});
+```
+
+### **② 在vue-cli项目中使用**
+
+在 `vue.config.js` 中添加如下配置:
+
+```js
+const px2viewport = require("postcss-px-to-viewport");
+
+module.exports = {
+  css: {
+    loaderOptions: {
+      postcss: {
+        plugins: [
+          new px2viewport({
+            unitToConvert: "px",
+            viewportWidth: 375,
+            unitPrecision: 3,
+            viewportUnit: "vw",
+          }),
+        ],
+      },
+    },
+  },
+};
+```
+
+### **③ 在使用PostCss时配置文件**
+
+在`postcss.config.js`添加如下配置
+
+```js
+module.exports = {
+  plugins: {
+    // ...
+    "postcss-px-to-viewport": {
+      // options
+    },
+  },
+};
+```
+
+### **④ 在gulp中使用，添加gulp-postcss**
+
+在 `gulpfile.js` 添加如下配置:
+
+```js
+var gulp = require("gulp");
+var postcss = require("gulp-postcss");
+var pxtoviewport = require("postcss-px-to-viewport");
+
+gulp.task("css", function () {
+  var processors = [
+    pxtoviewport({
+      viewportWidth: 320,
+      viewportUnit: "vmin",
+    }),
+  ];
+
+  return gulp
+    .src(["build/css/**/*.css"])
+    .pipe(postcss(processors))
+    .pipe(gulp.dest("build/css"));
+});
+```
+
+## 5. 配置项：
+
+```js
+{
+  unitToConvert: 'px',
+  viewportWidth: 320,
+  unitPrecision: 5,
+  propList: ['*'],
+  viewportUnit: 'vw',
+  fontViewportUnit: 'vw',
+  selectorBlackList: [],
+  minPixelValue: 1,
+  mediaQuery: false,
+  replace: true,
+  exclude: undefined,
+  include: undefined,
+  landscape: false,
+  landscapeUnit: 'vw',
+  landscapeWidth: 568
+}
+```
+
+| 属性              | 类型            | 描述                                                                           |
+| ----------------- | --------------- | ------------------------------------------------------------------------------ |
+| unitToConvert     | String          | 需要转换的单位，默认为"px"                                                     |
+| viewportWidth     | Number          | 设计稿的视口宽度                                                               |
+| unitPrecision     | Number          | 单位转换后保留的精度                                                           |
+| propList          | Array           | 能转化为vw的属性列表                                                           |
+| viewportUnit      | String          | 希望使用的视口单位                                                             |
+| fontViewportUnit  | String          | 字体使用的视口单位                                                             |
+| selectorBlackList | Array           | 需要忽略的CSS选择器，不会转为视口单位，使用原有的px等单位                      |
+| minPixelValue     | Number          | 设置最小的转换数值，如果为1的话，只有大于1的值会被转换                         |
+| mediaQuery        | Boolean         | 媒体查询里的单位是否需要转换单位                                               |
+| replace           | Boolean         | 是否直接更换属性值，而不添加备用属性                                           |
+| exclude           | Array or Regexp | 忽略某些文件夹下的文件或特定文件，例如 'node_modules' 下的文件                 |
+| include           | Array or Regexp | 如果设置了include，那将只有匹配到的文件才会被转换                              |
+| landscape         | Boolean         | 是否添加根据 landscapeWidth 生成的媒体查询条件 @media (orientation: landscape) |
+| landscapeUnit     | String          | 横屏时使用的单位                                                               |
+| landscapeWidth    | Number          | 横屏时使用的视口宽度                                                           |
+
+> exclude和include是可以一起设置的，将取两者规则的交集。
+
+**Array类型属性额外说明：**
+propList
+
+- 传入特定的CSS属性；
+- 可以传入通配符""去匹配所有属性，例如：['']；
+- 在属性的前或后添加"\*",可以匹配特定的属性. (例如['position'] 会匹配 background-position-y)
+- 在特定属性前加 "!"，将不转换该属性的单位 . 例如: ['*', '!letter-spacing']，将不转换letter-spacing
+- "!" 和 ""可以组合使用， 例如: ['', '!font*']，将不转换font-size以及font-weight等属性
+
+selectorBlackList
+
+- 如果传入的值为字符串的话，只要选择器中含有传入值就会被匹配
+  例如 selectorBlackList 为 ['body'] 的话， 那么 .body-class 就会被忽略
+- 如果传入的值为正则表达式的话，那么就会依据CSS选择器是否匹配该正则
+  例如 selectorBlackList 为 [/^body$/] , 那么 body 会被忽略，而 .body 不会
+
+exclude / include
+
+- 如果值是一个正则表达式，那么匹配这个正则的文件会被忽略 / 包含
+- 如果传入的值是一个数组，那么数组里的值必须为正则
+
+## 6. 参考链接：
+
+[https://juejin.cn/post/6844903845617729549](https://juejin.cn/post/6844903845617729549 "掘金文章")
+13:Tc6e,## 介绍
 
 js-audio-recorder是一个纯js实现的浏览器端录音插件。
 目前支持以下功能：
@@ -2646,7 +2953,7 @@ recorder.getWAVBlob();
 ```
 
 > 更多api详见文档 [点击查看更多api](https://recorder-api.zhuyuntao.cn/Recorder/API.html "点击查看更多api")
-12:T6b9,### 1. Element UI
+14:T6b9,### 1. Element UI
 
 使用 `picker-options 的 disabledDate` 属性限制选择相应日期。
 
@@ -2716,7 +3023,7 @@ const disabledDate = (time) => {
 
 > 官方文档： [点此查看](https://element-plus.org/zh-CN/component/date-picker.html#%E5%B1%9E%E6%80%A7 "点此查看")
 > ![image](/notes/element-ui/el-date-picker-options-3.png)
-13:T1352,# 1. 水平条纹背景
+15:T1352,# 1. 水平条纹背景
 
 当给背景设置渐变效果时，默认的渐变方向是垂直由上到下的，效果如下：
 
@@ -2887,7 +3194,7 @@ const disabledDate = (time) => {
 
 [MDN linear-gradient](https://developer.mozilla.org/zh-CN/docs/Web/CSS/gradient/linear-gradient "MDN linear-gradient")
 [MDN repeating-linear-gradient](https://developer.mozilla.org/zh-CN/docs/Web/CSS/gradient/repeating-linear-gradient "MDN repeating-linear-gradient")
-14:T8a3,# 最终效果
+16:T8a3,# 最终效果
 
 ![image](/notes/css/clip-path-border-result.png)
 
@@ -3003,7 +3310,7 @@ li i {
 [MDN clip-path](https://developer.mozilla.org/zh-CN/docs/Web/CSS/clip-path "MDN clip-path")
 
 ### 2. 方法二待补充
-15:T942,## 1. CRLF概念
+17:T942,## 1. CRLF概念
 
 CRLF（Carriage-Return Line-Feed），CR是回车符，LF是换行符。它们都是文本文件用于标记换行的控制字符（control characters）或字节码（bytecode）。
 
@@ -3045,7 +3352,95 @@ git config --global core.autocrlf false
 
 - 使用 Windows 系统的开发`git config --global core.aurocrlf true`
 - 使用Linux/MacOS 的开发`git config --global core.autocrlf input`
-16:T102b,# 1. 图标获取
+18:Tfe1,## MIME type
+
+- ###定义
+
+媒体类型（通常称为 Multipurpose Internet Mail Extensions 或 MIME 类型）是一种标准，用来表示文档、文件或字节流的性质和格式。
+
+- ###语法
+
+MIME 的组成结构非常简单；由类型与子类型两个字符串中间用'/'分隔而组成。不允许空格存在。type 表示可以被分多个子类的独立类别。subtype 表示细分后的每个类型。MIME 类型对大小写不敏感，但是传统写法都是小写。
+
+```shell
+type/subtype
+```
+
+- ###独立类型
+
+| 类型        | 描述                                                                    | 示例                                                                                        |
+| :---------- | :---------------------------------------------------------------------- | :------------------------------------------------------------------------------------------ |
+| text        | 表明文件是普通文本，理论上是人类可读                                    | `text/plain` , `text/html` , `text/css` , `text/javascript`                                 |
+| image       | 表明是某种图像。不包括视频，但是动态图（比如动态 gif）也使用 image 类型 | `image/gif` , `image/png`, `image/jpeg` , `image/bmp` , `image/webp` , `image/x-icon`       |
+| video       | 表明是某种视频文件                                                      | `video/webm` , `video/ogg`                                                                  |
+| audio       | 表明是某种音频文件                                                      | `audio/midi` , `audio/mpeg` , `audio/webm` , `audio/ogg` , `audio/wav`                      |
+| application | 表明是某种二进制数据                                                    | `application/octet-stream` , `application/xhtml+xml`, `application/xml` , `application/pdf` |
+
+> 对于 text 文件类型若没有特定的 subtype，就使用 text/plain。类似的，二进制文件没有特定或已知的 subtype，即使用 application/octet-stream。
+
+## 完整 MIME 类型
+
+完整的 MIME 类型列表可在 [IANA | MIME Media Types](https://www.iana.org/assignments/media-types/media-types.xhtml "1") 查看。
+
+- ###常用
+
+| 后缀名 | 类型                     |
+| :----- | :----------------------- |
+| .\*    | application/octet-stream |
+| .txt   | text/plain               |
+| .png   | image/png                |
+| .jpeg  | image/jpeg               |
+| .xls   | application/-excel       |
+| .xls   | application/x-xls        |
+| .pdf   | application/pdf          |
+| .mp3   | audio/mp3                |
+| .mp4   | video/mp4                |
+| .exe   | application/x-msdownload |
+
+## Content-Type
+
+- ###定义
+
+Content-Type 实体头部用于指示资源的 MIME 类型 media type 。
+在响应中，Content-Type 标头告诉客户端实际返回的内容的内容类型。
+在请求中 (如POST 或 PUT)，客户端告诉服务器实际发送的数据类型。
+
+- ###语法
+
+```shell
+Content-Type: text/html; charset=utf-8
+Content-Type: multipart/form-data; boundary=something
+```
+
+- ###常用
+
+**1. application/json**
+请求的主题内容是json格式的字符串
+
+**2. application/x-www-form-urlencoded**
+请求发送过程中会对数据进行序列化处理，以键值对形式？key1=value1&key2=value2的方式发送到服务器,如果是中文或特殊字符如"/"、","、“:" 等会自动进行URL转码。用于表单提交。
+
+**3. multipart/form-data**
+用于表单中进行文件上传。
+
+```shell
+POST /foo HTTP/1.1
+Content-Length: 68137
+Content-Type: multipart/form-data; boundary=---------------------------974767299852498929531610575
+
+---------------------------974767299852498929531610575
+Content-Disposition: form-data; name="description"
+
+some text
+---------------------------974767299852498929531610575
+Content-Disposition: form-data; name="myFile"; filename="foo.txt"
+Content-Type: text/plain
+
+(content of the uploaded file foo.txt)
+---------------------------974767299852498929531610575
+
+```
+19:T102b,# 1. 图标获取
 
 :shaved_ice: [阿里巴巴矢量图标库](https://www.iconfont.cn/ "阿里巴巴矢量图标库")
 
@@ -3176,7 +3571,7 @@ font-class 是 Unicode 使用方式的一种变种，主要是解决 Unicode 书
 
 详见官方文档
 🍰 [链接地址](https://www.iconfont.cn/help/detail?helptype=code "链接地址")
-17:T7fa,### 1. 滚动条不在body元素
+1a:T7fa,### 1. 滚动条不在body元素
 
 > 场景：页面布局使用如下container容器布局，Aside固定高度，Main部分带纵向滚动条。
 > ![image](/notes/vue/vue3-scroll-to-top.png)
@@ -3257,7 +3652,7 @@ router.afterEach((to, from, next) => {
   window.scrollTo(0, 0);
 });
 ```
-18:T7e5,# 官网
+1b:T7e5,# 官网
 
 [Vue Flow 官网](https://vueflow.dev/ "Vue Flow 官网")
 [Vue Flow GitHub](https://github.com/bcakmakoglu/vue-flow "Vue Flow GitHub")
@@ -3350,7 +3745,68 @@ state.instance.zoomTo(1);
     console.log(node.id);
   };
 ```
-19:T1308,### 1. 安装 turn.js
+1c:T9ff,### 1. 安装 qrcode.vue
+
+[仓库地址](https://github.com/scopewu/qrcode.vue "仓库地址")
+
+```shell
+// vue2 安装1.x版本、vue3 安装3.x版本
+npm install --save qrcode.vue
+// 或
+yarn add qrcode.vue
+```
+
+### 2. 使用
+
+```js
+// 使用
+import { createApp } from 'vue'
+import QrcodeVue from 'qrcode.vue'
+
+createApp({
+  data: {
+    value: 'https://example.com',
+  },
+  template: '<qrcode-vue :value="value"></qrcode-vue>',
+  components: {
+    QrcodeVue,
+  },
+}).mount('#root')
+
+// 单文件组件使用
+<template>
+  <qrcode-vue :value="value" :size="size" level="H" />
+</template>
+<script>
+  import QrcodeVue from 'qrcode.vue'
+
+  export default {
+    data() {
+      return {
+        value: 'https://example.com',
+        size: 200,
+      }
+    },
+    components: {
+      QrcodeVue,
+    },
+  }
+</script>
+```
+
+### 3. 属性配置
+
+| 属性名     | 类型   | 默认值  | 说明                                                                                                                              |
+| ---------- | ------ | ------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| value      | string | ''      | 二维码的内容                                                                                                                      |
+| size       | number | 100     | 二维码的尺寸                                                                                                                      |
+| render-as  | string | canvas  | QRcode 渲染方式 canvas 或 svg。svg 可以在 SSR 上工作。                                                                            |
+| margin     | number | 0       | margin宽度                                                                                                                        |
+| level      | string | H       | 纠错级别（'L', 'M', 'Q', 'H'），[wikipedia: QR_code](https://en.wikipedia.org/wiki/QR_code#Error_correction "wikipedia: QR_code") |
+| background | string | #ffffff | 二维码背景颜色                                                                                                                    |
+| foreground | string | #000000 | 二维码颜色                                                                                                                        |
+| class      | string | ''      | 二维码元素类名                                                                                                                    |
+1d:T1308,### 1. 安装 turn.js
 
 > 需要jQuery
 
@@ -3543,7 +3999,7 @@ export default {
 }
 </style>
 ```
-0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-6xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"notes":[{"slug":"react-usedeferredvalue-concept","title":"React useDeferredValue 详解与最佳实践","category":"React","type":"concept","description":"深入理解 React 18 useDeferredValue 的作用、使用场景、适用边界以及与 debounce、useTransition 的区别。","status":"published","tags":["React","React18","Hooks","Performance","Concurrent Rendering"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-29","readingTime":"2 min read","content":"$3"},{"slug":"axios-baseurl-089fd3","title":"Axios在实例化之后修改baseURL或其他配置","category":"JavaScript","type":"setup","description":"在使用axios请求的时候一般会进行封装，如：","status":"published","tags":["JavaScript","setup","Axios"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"$4"},{"slug":"next-js-plus-github-pages-ci-cd-2c6362","title":"🚀 Next.js + GitHub Pages 自动部署（CI/CD 笔记）","category":"Next.js","type":"setup","description":"main 分支（源码）","status":"published","tags":["Next.js","setup","GitHub Pages"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"$5"},{"slug":"vue-docx-excel-pdf-959f53","title":"vue 在网页中预览(docx、excel、pdf)文件","category":"Vue","type":"snippet","description":"npm install @vue-office/docx vue-demi@0.14.6","status":"published","tags":["Vue","snippet","PDF","Excel"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"$6"},{"slug":"vue3-html5-qrcode-41e695","title":"vue3 使用 html5-qrcode 实现扫描二维码功能","category":"Vue","type":"snippet","description":"npm安装","status":"published","tags":["Vue","snippet","QRCode"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"2 min read","content":"$7"},{"slug":"chrome-overwrite-window-config","title":"Google浏览器打开网页会覆盖原来的页面","category":"Browser","type":"guide","description":"Google浏览器打开网页会覆盖原来的页面，修改搜索设置即可解决。","status":"published","tags":["Chrome","Browser","Configuration"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-06-05","readingTime":"1 min read","content":"### 1. 打开主页\n\n[https://www.google.com/](https://www.google.com/ \"https://www.google.com/\")\n\n### 2. 选择右下角设置 -> 搜索设置\n\n![image](/notes/browser/google-search-setting.png)\n\n### 3. 找到在新窗口打开搜索结果即可\n\n![image](/notes/browser/other-setting-new-window.png)\n"},{"slug":"uni-app-miniproject-vant","title":"uniapp开发小程序引入vant","category":"UniApp","type":"snippet","description":"uni-app 开发微信小程序引入 vant 组件库的流程记录。","status":"published","tags":["UniApp","Vant","小程序"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-05-07","readingTime":"1 min read","content":"$8"},{"slug":"vue3-el-menu-recursive","title":"el-menu递归组件实现多级菜单（vue3+element plus版）","category":"Vue","type":"snippet","description":"vue3 + element plus 中 使用 el-menu 递归组件实现多级菜单。","status":"published","tags":["Vue","Element","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-04-23","readingTime":"1 min read","content":"$9"},{"slug":"uni-app-run-android-studio","title":"uni-app 项目运行到 Android Studio 模拟器","category":"UniApp","type":"snippet","description":"uni-app 项目运行到 Android Studio 模拟器。","status":"published","tags":["UniApp","Android Studio"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-04-07","readingTime":"2 min read","content":"$a"},{"slug":"el-table-display-issues","title":"el-table 设置合并行或列时，显示错乱问题","category":"Vue","type":"snippet","description":"记录 el-table 合并行或列时显示错乱问题的解决方法。","status":"published","tags":["Vue","Element","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-01-05","readingTime":"2 min read","content":"$b"},{"slug":"js-fetch-stream-abort","title":"fetch请求stream流接口并使用AbortController中断结果响应","category":"JavaScript","type":"snippet","description":"记录 fetch 请求 stream 流接口的写法并且使用 AbortController 中断结果响应。","status":"published","tags":["fetch","stream","AbortController"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-12-29","readingTime":"1 min read","content":"$c"},{"slug":"vue-papaparse-csv","title":"使用papaparse解析本地上传的csv文件，并在el-table中展示","category":"Vue","type":"snippet","description":"Vue 项目中使用 papaparse 插件解析本地上传的 csv 文件，并在 el-table 中展示。","status":"published","tags":["Vue","papaparse","CSV"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-11-03","readingTime":"1 min read","content":"$d"},{"slug":"vscode-err-connection-closed","title":"vscode 安装插件报错：ERR_CONNECTION_CLOSED","category":"Tooling","type":"debugging","description":"vscode 安装插件时报错 [error] Download: net::ERR_CONNECTION_CLOSED 。","status":"published","tags":["VScode","Error"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-10-30","readingTime":"1 min read","content":"## 背景：\n\nvscode安装扩展插件时报错，显示下载失败：\n`[error] Download: net::ERR_CONNECTION_CLOSED`\n`[error] net::ERR_CONNECTION_CLOSED: Download: net::ERR_CONNECTION_CLOSED`\n\n![image](/notes/ide/err-connection-closed.png)\n\n## 解决方法：\n\n查找相关文档发现这么一段：\n**If you are behind a firewall that needs to allow specific domains used by VS Code, here's the list of hostnames you should allow communication to go through:**\n猜测可能是防火墙的问题，关闭后问题解决。\n\n## 链接：\n\n[Network Connections in Visual Studio Code](https://code.visualstudio.com/docs/setup/network \"Network Connections in Visual Studio Code\")\n"},{"slug":"react-native-flipper-debug","title":"Flipper调试react native项目以及\"NO APPLICATION SELECTED\"问题处理","category":"ReactNative","type":"setup","description":"安装Flipper调试react native项目的步骤以及对\"NO APPLICATION SELECTED\"问题的处理。","status":"published","tags":["RN","Flipper","Configuration"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-09-14","readingTime":"2 min read","content":"$e"},{"slug":"vite-https-plugin-basic-ssl","title":"Vite 本地开启 https 模式便于调试","category":"Tooling","type":"setup","description":"Vite 本地开启 https 模式配置。","status":"published","tags":["Vite","Https"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-08-17","readingTime":"1 min read","content":"### 1. 安装依赖\n\n```shell\nnpm install @vitejs/plugin-basic-ssl -D\n```\n\n### 2. 配置 vite.config.js\n\n```js\n// vite.config.js\nimport  basicSsl  from  '@vitejs/plugin-basic-ssl'\n\nexport  default  {\n  plugins : [\n    basicSsl ( {\n      /** 认证名称 */\n      name : 'test' ,\n      /** 自定义信任域 * /\n      domains : [ '*.custom.com' ] ,\n      /** 自定义认证目录 */\n      certDir : '/Users/.../.devServer/cert'\n    } )\n  ]\n}\n```\n\n### 3. 相关链接\n\n[@vitejs/plugin-basic-ssl npm 地址](https://www.npmjs.com/package/@vitejs/plugin-basic-ssl \"@vitejs/plugin-basic-ssl npm 地址\")\n[GitHub 地址](https://github.com/vitejs/vite-plugin-basic-ssl \"GitHub 地址\")\n[Vite server-https](https://vitejs.dev/config/server-options.html#server-https \"Vite server-https\")\n"},{"slug":"vue3-vue-i18n-config","title":"vue3使用vue-i18n配置多语言环境","category":"Vue","type":"snippet","description":"vue3 中使用 vue-i18n 配置多语言环境的步骤记录。","status":"published","tags":["Vue3","i18n"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-08-14","readingTime":"1 min read","content":"$f"},{"slug":"vue3-login-identify-code","title":"vue3登录添加图形验证码","category":"Vue","type":"snippet","description":"vue3项目中给登录添加图形验证码功能。","status":"published","tags":["Vue3","IdentifyCode","canvas"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-07-20","readingTime":"1 min read","content":"$10"},{"slug":"js-audio-recorder","title":"js-audio-recorder 插件实现web端录音","category":"JavaScript","type":"snippet","description":"使用 js-audio-recorder 插件实现web端录音。","status":"published","tags":["JavaScript","Frontend","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-06-19","readingTime":"2 min read","content":"$11"},{"slug":"vite-https-self-signed-certificate","title":"vite 本地代理请求https接口 self signed certificate 自签名证书错误","category":"Tooling","type":"debugging","description":"记录 vite 本地代理请求https接口时自签名证书错误。","status":"published","tags":["Vite","Tooling"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-06-14","readingTime":"1 min read","content":"### vite本地代理后端接口为https时，无法发送请求，并报错如下：\n\n![image](/notes/vite/error-self-signed-certificate.png)\n\n### 查询vite文档，更改配置 `server.https` 为 `true` ，无效\n\n![image](/notes/vite/server.https-config.png)\n\n### 又根据vite文档中描述添加 @vitejs/plugin-basic-ssl 到项目插件中，它会自动创建和缓存一个自签名的证书。 结果无效\n\n### 于是本地添加证书文件并配置在 `server.https` 中 ，无效\n\n### 最终 `server.proxy` 中增加配置 `secure: false` 后，请求发起成功，问题解决\n\n```js\n  server: {\n    hmr: true,\n    open: true,\n    port: \"8080\",\n    proxy: {\n      \"/api\": {\n        target: \"https://xx.xx.xx.xx:xx\",\n        changeOrigin: true,\n        rewrite: (path) => path.replace(/^\\/api/, \"\"),\n        secure: false,\n      },\n    },\n  },\n```\n\n> [参考链接 https://github.com/vitejs/vite/issues/3475](https://github.com/vitejs/vite/issues/3475 \"参考链接\")\n> ![image](/notes/vite/github-issues-error-self-signed-cetificate.png)\n"},{"slug":"el-date-picker-before-today","title":"element 日期选择器禁止选择今天之后的日期","category":"Vue","type":"snippet","description":"element 日期选择器禁止选择今天之后的日期。","status":"published","tags":["Vue","Element","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-05-25","readingTime":"1 min read","content":"$12"},{"slug":"css-linear-gradient-background","title":"css利用linear-gradient实现条纹背景","category":"CSS","type":"snippet","description":"记录css中通过利用linear-gradient来实现各种不同类型条纹背景的方法。","status":"published","tags":["CSS","linear-gradient","background"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-04-20","readingTime":"3 min read","content":"$13"},{"slug":"css-border-radius-clip-path","title":"CSS实现菜单选项向外圆角效果","category":"CSS","type":"snippet","description":"通过伪元素裁剪拼接实现菜单选项向外圆角效果。","status":"published","tags":["CSS","伪元素","clip-path"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-04-11","readingTime":"1 min read","content":"$14"},{"slug":"crlf-lf-concept","title":"CRLF和LF区别","category":"Engineering","type":"concept","description":"CRLF 和 LF 概念和区别。","status":"published","tags":["Git","CRLF","LF","工程化"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-04-07","readingTime":"2 min read","content":"$15"},{"slug":"css-iconfont-import-use","title":"阿里巴巴iconfont字体图标使用","category":"CSS","type":"guide","description":"讲解了阿里巴巴iconfont字体图标的多种引入和使用方式的步骤。","status":"published","tags":["CSS","iconfont"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-04-03","readingTime":"3 min read","content":"$16"},{"slug":"vue3-define-expose","title":"Vue3 父组件调用子组件内部的方法","category":"Vue","type":"snippet","description":"vue3 通过 defineExpose 和 ref ，父组件可访问子组件中定义的方法。","status":"published","tags":["Vue","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-03-03","readingTime":"1 min read","content":"### 1. 子组件中定义方法并通过defineExpose暴露出去\n\n```js\nimport { reactive, defineExpose } from \"vue\";\nconst state = reactive({\n  dataList: [],\n});\nconst changeData = () => {\n  state.dataList.push(1);\n};\ndefineExpose({\n  changeData,\n});\n```\n\n### 2. 父组件通过ref调用子组件暴露的方法\n\n```js\n<child ref=\"childRef\"></child>\n\nimport {ref} from \"vue\"；\nconst childRef = ref(null);\nchildRef.value.changeData();\n```\n\n_vue2中通过$refs方法调用_\n"},{"slug":"js-blob-to-excel","title":"js把文件流导出下载excel文件","category":"JavaScript","type":"snippet","description":"记录js中把文件流导出下载excel文件的方法。","status":"published","tags":["js","blob","excel"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-03-02","readingTime":"1 min read","content":"```js\nlet btn = document.querySelector('#app > button');\nlet resData = null;\n\nfetch('http://127.0.0.1:3333', {\n    method: \"GET\",\n    responseType: \"blob\"\n  })\n  .then(response => {\n    return response.blob()\n  })\n  .then(res => {\n    console.log(res);\n    resData = res;\n  })\n\nbtn.addEventListener(\"click\", () => {\n  const link = document.createElement(\"a\");\n  let blob = new Blob([resData], {\n    type: \"application/octet-stream\"\n  });\n  link.style.display = \"none\";\n  link.href = URL.createObjectURL(blob);\n  link.download = \"xxxfile.xlsx\";\n  document.body.appendChild(link);\n  link.click();\n  document.body.removeChild(link);\n  window.URL.revokeObjectURL(link);\n})\n```\n\n> 注意：需要设置 `responseType: \"blob\"` ，否则可能会出现下载的文件打开损坏问题。\n\n#### 动态截取请求中 `content-disposition` 的文件名:动态截取请求中 `content-disposition` 的文件名:\n\n```js\nlet fileName = res.headers[\"content-disposition\"]\n    .split(\";\")[1]\n    .split(\"filename=\")[1];\n...\nlink.download = decodeURIComponent(fileName);\n```\n\n> 使用 `decodeURIComponent` 可以解决文件名乱码问题。\n"},{"slug":"vue3-scroll-to-top","title":"vue3 中路由切换后让页面返回到顶部","category":"Vue","type":"snippet","description":"记录在 vue3 中，不同情况下，路由切换时让页面正常返回到顶部的方法。","status":"published","tags":["Vue","Frontend","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-02-28","readingTime":"1 min read","content":"$17"},{"slug":"vue3-vue-flow","title":"Vue3 流程图组件库 Vue Flow 简单使用","category":"Vue","type":"snippet","description":"记录 Vue Flow 流程图组件库的使用。","status":"published","tags":["Vue","Frontend","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-01-03","readingTime":"1 min read","content":"$18"},{"slug":"vue-turnjs-pdf","title":"Vue 借助 turn.js 实现翻书效果预览pdf文件","category":"Vue","type":"snippet","description":"vue 中使用 turn.js 插件实现翻书预览pdf文件效果。","status":"published","tags":["Vue","PDF","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2022-06-09","readingTime":"1 min read","content":"$19"},{"slug":"moment-get-different-date","title":"Moment.js 获取前几天和后几天时间","category":"JavaScript","type":"snippet","description":"Moment.js 获取前几天和后几天时间的方法。","status":"published","tags":["JavaScript","Frontend","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2021-06-12","readingTime":"1 min read","content":"### 1. 获取今天\n\n```js\nimport moment from \"moment\";\nmoment().startOf(\"day\");\n```\n\n### 2. 获取本周\n\n```js\nimport moment from \"moment\";\nmoment().startOf(\"week\");\n```\n\n### 3. 获取n天前的日期\n\n```js\nimport moment from \"moment\";\n\n// subtract向前获取日期\nmoment().subtract(n, 'days');\n// startOf获取当天的00:00:00\nmoment().subtract(n, 'days').startOf(\"day\").format(\"YYYY-MM-DD HH:mm:ss\");\n// endOf获取当天的23:59:59\nmoment().subtract(n, 'days').endOf(\"day\").format(\"YYYY-MM-DD HH:mm:ss\");\n```\n\n### 4. 获取n天后的日期\n\n```js\nimport moment from \"moment\";\n\n// add向后获取日期\nmoment().add(n, 'days');\n// startOf获取当天的00:00:00\nmoment().add(n, 'days').startOf(\"day\").format(\"YYYY-MM-DD HH:mm:ss\");\n// endOf获取当天的23:59:59\nmoment().add(n, 'days').endOf(\"day\").format(\"YYYY-MM-DD HH:mm:ss\");\n```\n"},{"slug":"mini-program-router","title":"小程序返回上级页面并刷新列表","category":"MiniProgram","type":"snippet","description":"微信小程序返回上级页面并刷新列表。","status":"published","tags":["小程序"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2019-11-13","readingTime":"1 min read","content":"### 微信小程序进行操作后返回之前页面并刷新列表的方法。\n\n```js\nlet pages = getCurrentPages();\nlet beforePage = pages[pages.length - 2]; // -2 是上一个页面，-3是上上个页面以此类推。\nbeforePage.getList(参数);\nwx.navigateBack({\n  delta: 1,\n});\n```\n\n> 小程序以栈的形式维护当前的所有页面。\n\n![](/notes/mini-program/mini-stack-router-doc.png)\n\n> `getCurrentPages()` 函数可以获取当前页面栈.\n>\n> 前一页面栈： `pages[pages.length - 2];`\n>\n> 当前页面栈：`pages[pages.length - 1];`\n\n_获取到之前的页面栈，就可以调用其中获取列表的方法，从而做到刷新列表，然后执行跳转页面方法返回上一级页面_\n_还可以将要传递的参数直接`beforePage.setData`。上个页面就会执行这里的操作。_\n"}]}]}],["$L1a"],"$L1b"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"hO_ja41hN-tuQZuQ_axPH"}
-1a:["$","script","script-0",{"src":"/_next/static/chunks/2x4d_5_az6ojh.js","async":true}]
-1b:["$","$L1c",null,{"children":["$","$1d",null,{"name":"Next.MetadataOutlet","children":"$@1e"}]}]
-1e:null
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-6xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"notes":[{"slug":"react-usedeferredvalue-concept-84b792","title":"React useDeferredValue 详解与最佳实践","category":"React","type":"concept","description":"深入理解 React 18 useDeferredValue 的作用、使用场景、适用边界以及与 debounce、useTransition 的区别。","status":"published","tags":["React","React18","Hooks","Performance","Concurrent Rendering"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-29","readingTime":"2 min read","content":"$3"},{"slug":"axios-baseurl-089fd3","title":"Axios在实例化之后修改baseURL或其他配置","category":"JavaScript","type":"setup","description":"在使用axios请求的时候一般会进行封装，如：","status":"published","tags":["JavaScript","setup","Axios"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"$4"},{"slug":"next-js-plus-github-pages-ci-cd-2c6362","title":"🚀 Next.js + GitHub Pages 自动部署（CI/CD 笔记）","category":"Next.js","type":"setup","description":"main 分支（源码）","status":"published","tags":["Next.js","setup","GitHub Pages"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"$5"},{"slug":"vue-docx-excel-pdf-959f53","title":"vue 在网页中预览(docx、excel、pdf)文件","category":"Vue","type":"snippet","description":"npm install @vue-office/docx vue-demi@0.14.6","status":"published","tags":["Vue","snippet","PDF","Excel"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"$6"},{"slug":"vue3-html5-qrcode-41e695","title":"vue3 使用 html5-qrcode 实现扫描二维码功能","category":"Vue","type":"snippet","description":"npm安装","status":"published","tags":["Vue","snippet","QRCode"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"2 min read","content":"$7"},{"slug":"chrome-overwrite-window-config-ba4eb1","title":"Google浏览器打开网页会覆盖原来的页面","category":"Browser","type":"guide","description":"Google浏览器打开网页会覆盖原来的页面，修改搜索设置即可解决。","status":"published","tags":["Chrome","Browser","Configuration"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-06-05","readingTime":"1 min read","content":"### 1. 打开主页\n\n[https://www.google.com/](https://www.google.com/ \"https://www.google.com/\")\n\n### 2. 选择右下角设置 -> 搜索设置\n\n![image](/notes/browser/google-search-setting.png)\n\n### 3. 找到在新窗口打开搜索结果即可\n\n![image](/notes/browser/other-setting-new-window.png)\n"},{"slug":"react-native-xcode-appstore-dbe694","title":"react native项目使用Xcode打包上架App Store","category":"ReactNative","type":"setup","description":"react native项目使用Xcode打包上架App Store的步骤记录。","status":"published","tags":["RN","xcode","app store"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-05-13","readingTime":"3 min read","content":"$8"},{"slug":"uni-app-miniproject-vant-cb8494","title":"uniapp开发小程序引入vant","category":"UniApp","type":"snippet","description":"uni-app 开发微信小程序引入 vant 组件库的流程记录。","status":"published","tags":["UniApp","Vant","小程序"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-05-07","readingTime":"1 min read","content":"$9"},{"slug":"vue3-el-menu-recursive-e88659","title":"el-menu递归组件实现多级菜单（vue3+element plus版）","category":"Vue","type":"snippet","description":"vue3 + element plus 中 使用 el-menu 递归组件实现多级菜单。","status":"published","tags":["Vue","Element","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-04-23","readingTime":"1 min read","content":"$a"},{"slug":"uni-app-run-android-studio-3ab79f","title":"uni-app 项目运行到 Android Studio 模拟器","category":"UniApp","type":"snippet","description":"uni-app 项目运行到 Android Studio 模拟器。","status":"published","tags":["UniApp","Android Studio"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-04-07","readingTime":"2 min read","content":"$b"},{"slug":"uni-app-lazycodeloading-a66d5d","title":"uni-app启用组件按需注入","category":"UniApp","type":"setup","description":"uni-app 中通过配置\"lazyCodeLoading\" : \"requiredComponents\"启用组件按需注入。","status":"published","tags":["UniApp","小程序"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-03-07","readingTime":"1 min read","content":"### 1. 打开 manifest.json 配置文件\n\n### 2. 选择最后的源码视图，并找到小程序特有相关 `mp-weixin`\n\n增加 `\"lazyCodeLoading\" : \"requiredComponents\"`\n\n```json\n    /* 小程序特有相关 */\n    \"mp-weixin\" : {\n        // ...\n        \"lazyCodeLoading\" : \"requiredComponents\"\n    },\n```\n\n![image](/notes/uni-app/uni-app-lazyCodeLoading-config.png)\n\n### 3. 相关链接\n\n[按需注入文档](https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html \"按需注入文档\")\n"},{"slug":"css-tailwind-import-iconify-a24190","title":"Tailwind CSS 使用 Iconify 图标","category":"CSS","type":"guide","description":"讲解了Tailwind CSS 中引入和使用 Iconify 图标的方式的步骤。","status":"published","tags":["Tailwind CSS","Iconify"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-02-23","readingTime":"1 min read","content":"### 1. 安装依赖\n\n通过 npm 安装 tailwindcss，并创建 tailwind.config.js 文件。\n\n```shell\nnpm install tailwindcss -D\nnpx tailwindcss init\n```\n\n安装 iconify 图标库和 TailwindCSS 插件。\n\n```shell\nnpm install @iconify/json @iconify/tailwind -D\n```\n\n### 2. 配置插件\n\n配置 tailwind.config.js 文件。\n\n```js\n/** @type {import('tailwindcss').Config} */\nconst { addDynamicIconSelectors } = require('@iconify/tailwind')\nexport default {\n  content: [\n    './src/**/*.{vue,js,ts,jsx,tsx}'\n  ],\n  theme: {\n    extend: {},\n  },\n  plugins: [addDynamicIconSelectors()],\n}\n```\n\n### 3. 使用图标\n\n```html\n<span class=\"icon-[svg-spinners--12-dots-scale-rotate]\"></span>\n```\n\n![image](/notes/css/tailwind-css-iconify-use.png)\n\n### 4. 相关链接\n\n[tailwindcss官方文档](https://tailwindcss.com/ \"tailwindcss官方文档\")\n[iconify官方文档](https://iconify.design/ \"iconify官方文档\")\n[iconify图标库](https://icon-sets.iconify.design/ \"iconify图标库\")\n"},{"slug":"vscode-prettier-typeerror-f70653","title":"Prettier格式化报错 A dynamic import callback was not specified","category":"Tooling","type":"debugging","description":"Prettier 格式化报错 TypeError: A dynamic import callback was not specified。","status":"published","tags":["VScode","Prettier","TypeError"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-01-26","readingTime":"1 min read","content":"记录今天遇到的奇怪的问题，在vscode中使用Prettier格式化代码时，控制台报错：\n\n```bash\n[\"ERROR\" - 9:30:18 AM] Error resolving prettier configuration for c:\\My\\Test\\learning\\src\\utils\\index.js\n[\"ERROR\" - 9:30:18 AM] A dynamic import callback was not specified.\nTypeError: A dynamic import callback was not specified.\n```\n\n尝试修改Prettier配置文件`.prettierrc`或者` prettier.config.js`，没有效果。\n最后重启vscode发现问题解决了，不再报错了。。\n"},{"slug":"el-table-display-issues-278254","title":"el-table 设置合并行或列时，显示错乱问题","category":"Vue","type":"snippet","description":"记录 el-table 合并行或列时显示错乱问题的解决方法。","status":"published","tags":["Vue","Element","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-01-05","readingTime":"2 min read","content":"$c"},{"slug":"js-fetch-stream-abort-cbfc2d","title":"fetch请求stream流接口并使用AbortController中断结果响应","category":"JavaScript","type":"snippet","description":"记录 fetch 请求 stream 流接口的写法并且使用 AbortController 中断结果响应。","status":"published","tags":["fetch","stream","AbortController"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-12-29","readingTime":"1 min read","content":"$d"},{"slug":"vue-papaparse-csv-55803c","title":"使用papaparse解析本地上传的csv文件，并在el-table中展示","category":"Vue","type":"snippet","description":"Vue 项目中使用 papaparse 插件解析本地上传的 csv 文件，并在 el-table 中展示。","status":"published","tags":["Vue","papaparse","CSV"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-11-03","readingTime":"1 min read","content":"$e"},{"slug":"vscode-err-connection-closed-7a4370","title":"vscode 安装插件报错：ERR_CONNECTION_CLOSED","category":"Tooling","type":"debugging","description":"vscode 安装插件时报错 [error] Download: net::ERR_CONNECTION_CLOSED 。","status":"published","tags":["VScode","Error"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-10-30","readingTime":"1 min read","content":"## 背景：\n\nvscode安装扩展插件时报错，显示下载失败：\n`[error] Download: net::ERR_CONNECTION_CLOSED`\n`[error] net::ERR_CONNECTION_CLOSED: Download: net::ERR_CONNECTION_CLOSED`\n\n![image](/notes/ide/err-connection-closed.png)\n\n## 解决方法：\n\n查找相关文档发现这么一段：\n**If you are behind a firewall that needs to allow specific domains used by VS Code, here's the list of hostnames you should allow communication to go through:**\n猜测可能是防火墙的问题，关闭后问题解决。\n\n## 链接：\n\n[Network Connections in Visual Studio Code](https://code.visualstudio.com/docs/setup/network \"Network Connections in Visual Studio Code\")\n"},{"slug":"react-native-flipper-debug-abd253","title":"Flipper调试react native项目以及\"NO APPLICATION SELECTED\"问题处理","category":"ReactNative","type":"setup","description":"安装Flipper调试react native项目的步骤以及对\"NO APPLICATION SELECTED\"问题的处理。","status":"published","tags":["RN","Flipper","Configuration"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-09-14","readingTime":"2 min read","content":"$f"},{"slug":"vscode-terminal-error-9704d1","title":"vscode终端报错：无法加载文件 D:\\nodejs\\npm.ps1，因为在此系统上禁止运行脚本","category":"Tooling","type":"debugging","description":"vscode 终端报错：无法加载文件 D:\\nodejs\\npm.ps1，因为在此系统上禁止运行脚本。","status":"published","tags":["VScode","Error"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-09-12","readingTime":"1 min read","content":"## 问题：vscode终端执行npm指令时报错如下\n\n![image](/notes/ide/vscode-terminal-err-running-script.png)\n\n## 解决：\n\n**1. 在终端通过输入指令 `get-ExecutionPolicy` 得到以下结果：**\n\n![image](/notes/ide/vscode-terminal-err-get-ExecutionPolicy.png)\n\n> 表示当前执行策略为受限的\n\n**2. 执行指令 `Set-ExecutionPolicy -Scope CurrentUser`，并输入 `RemoteSigned`。**\n\n![image](/notes/ide/vscode-terminal-err-set-ExecutionPolicy.png)\n\n> Set-ExecutionPolicy 语法如下：\n\n```shell\nSet-ExecutionPolicy\n   [-ExecutionPolicy] <ExecutionPolicy>\n   [[-Scope] <ExecutionPolicyScope>]\n   [-Force]\n   [-WhatIf]\n   [-Confirm]\n   [<CommonParameters>]\n```\n\n**3. 然后终端就可以正常使用了。**\n\n## 参考：\n\n[Set-ExecutionPolicy Microsoft 文档](https://learn.microsoft.com/fr-fr/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7.3 \"Set-ExecutionPolicy Microsoft 文档\")\n"},{"slug":"vite-https-plugin-basic-ssl-c6ac59","title":"Vite 本地开启 https 模式便于调试","category":"Tooling","type":"setup","description":"Vite 本地开启 https 模式配置。","status":"published","tags":["Vite","Https"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-08-17","readingTime":"1 min read","content":"### 1. 安装依赖\n\n```shell\nnpm install @vitejs/plugin-basic-ssl -D\n```\n\n### 2. 配置 vite.config.js\n\n```js\n// vite.config.js\nimport  basicSsl  from  '@vitejs/plugin-basic-ssl'\n\nexport  default  {\n  plugins : [\n    basicSsl ( {\n      /** 认证名称 */\n      name : 'test' ,\n      /** 自定义信任域 * /\n      domains : [ '*.custom.com' ] ,\n      /** 自定义认证目录 */\n      certDir : '/Users/.../.devServer/cert'\n    } )\n  ]\n}\n```\n\n### 3. 相关链接\n\n[@vitejs/plugin-basic-ssl npm 地址](https://www.npmjs.com/package/@vitejs/plugin-basic-ssl \"@vitejs/plugin-basic-ssl npm 地址\")\n[GitHub 地址](https://github.com/vitejs/vite-plugin-basic-ssl \"GitHub 地址\")\n[Vite server-https](https://vitejs.dev/config/server-options.html#server-https \"Vite server-https\")\n"},{"slug":"vue3-vue-i18n-config-e8f6f5","title":"vue3使用vue-i18n配置多语言环境","category":"Vue","type":"snippet","description":"vue3 中使用 vue-i18n 配置多语言环境的步骤记录。","status":"published","tags":["Vue3","i18n"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-08-14","readingTime":"1 min read","content":"$10"},{"slug":"vue3-login-identify-code-6e1a27","title":"vue3登录添加图形验证码","category":"Vue","type":"snippet","description":"vue3项目中给登录添加图形验证码功能。","status":"published","tags":["Vue3","IdentifyCode","canvas"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-07-20","readingTime":"1 min read","content":"$11"},{"slug":"css-postcss-px-to-viewport-ed1e37","title":"postcss-px-to-viewport插件移动端适配","category":"CSS","type":"snippet","description":"使用 postcss-px-to-viewport 插件实现移动端适配。","status":"published","tags":["CSS","移动端","viewport"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-07-17","readingTime":"3 min read","content":"$12"},{"slug":"js-audio-recorder-17d428","title":"js-audio-recorder 插件实现web端录音","category":"JavaScript","type":"snippet","description":"使用 js-audio-recorder 插件实现web端录音。","status":"published","tags":["JavaScript","Frontend","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-06-19","readingTime":"2 min read","content":"$13"},{"slug":"vite-https-self-signed-certificate-115fa2","title":"vite 本地代理请求https接口 self signed certificate 自签名证书错误","category":"Tooling","type":"debugging","description":"记录 vite 本地代理请求https接口时自签名证书错误。","status":"published","tags":["Vite","Tooling"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-06-14","readingTime":"1 min read","content":"### vite本地代理后端接口为https时，无法发送请求，并报错如下：\n\n![image](/notes/vite/error-self-signed-certificate.png)\n\n### 查询vite文档，更改配置 `server.https` 为 `true` ，无效\n\n![image](/notes/vite/server.https-config.png)\n\n### 又根据vite文档中描述添加 @vitejs/plugin-basic-ssl 到项目插件中，它会自动创建和缓存一个自签名的证书。 结果无效\n\n### 于是本地添加证书文件并配置在 `server.https` 中 ，无效\n\n### 最终 `server.proxy` 中增加配置 `secure: false` 后，请求发起成功，问题解决\n\n```js\n  server: {\n    hmr: true,\n    open: true,\n    port: \"8080\",\n    proxy: {\n      \"/api\": {\n        target: \"https://xx.xx.xx.xx:xx\",\n        changeOrigin: true,\n        rewrite: (path) => path.replace(/^\\/api/, \"\"),\n        secure: false,\n      },\n    },\n  },\n```\n\n> [参考链接 https://github.com/vitejs/vite/issues/3475](https://github.com/vitejs/vite/issues/3475 \"参考链接\")\n> ![image](/notes/vite/github-issues-error-self-signed-cetificate.png)\n"},{"slug":"el-date-picker-before-today-6b293f","title":"element 日期选择器禁止选择今天之后的日期","category":"Vue","type":"snippet","description":"element 日期选择器禁止选择今天之后的日期。","status":"published","tags":["Vue","Element","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-05-25","readingTime":"1 min read","content":"$14"},{"slug":"node-nvm-npm-install-error-04046d","title":"nvm管理node版本后，执行npm install提示系统找不到指定的路径。","category":"Node.js","type":"debugging","description":"通过 nvm 管理 node 版本后，在执行 npm install 时提示系统找不到指定的路径问题解决。","status":"published","tags":["nvm","node","npm"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-05-23","readingTime":"1 min read","content":"## 问题背景：\n\n由于项目需要，需要切换node版本，所以安装了 nvm-windows 来管理node版本。安装nvm之前已有18版本的node.js，所以直接选择了用nvm对之前安装的版本也进行了管理，可能也是导致问题的关键。之后在项目中执行npm install 时，出现一些奇怪的报错，如：\n\n1. node_modules\\yorkie npm ERR! command failed\n2. npm WARN deprecated core-js@2.6.11: core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.x\n\n打开cmd 执行 node -v 和 npm -v 提示系统找不到指定的路径。\n\n## 解决方案：\n\n1. 卸载node.js\n2. 删除 npm 文件夹 ，在c盘/用户/AppData下，删除npm npm-cache两个文件夹。\n3. 重新安装nvm-windows，然后下载需要的node版本进行管理。\n"},{"slug":"vue-el-menu-white-space-bb7938","title":"el-menu文本长度过长时换行展示","category":"Vue","type":"snippet","description":"让el-menu文本长度过长时进行换行展示的方法记录。","status":"published","tags":["Vue","Element","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-05-10","readingTime":"1 min read","content":"### **el-menu菜单文字字数过多时默认是设置的不进行换行，如下所示：**\n\n![image](/notes/element-ui/el-menu-text-nowrap.png)\n\n![image](/notes/element-ui/el-menu-text-default.png)\n\n### **如果需要让文本换行展示需要自定义样式，代码如下：**\n\n```css\n{\n  white-space: normal; // 允许换行显示\n  word-break: break-all; // 英文单词允许拆分显示\n  line-height: normal; // 调整行高\n}\n```\n\n![image](/notes/element-ui/el-menu-text-normal.png)\n"},{"slug":"css-linear-gradient-background-233966","title":"css利用linear-gradient实现条纹背景","category":"CSS","type":"snippet","description":"记录css中通过利用linear-gradient来实现各种不同类型条纹背景的方法。","status":"published","tags":["CSS","linear-gradient","background"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-04-20","readingTime":"3 min read","content":"$15"},{"slug":"css-border-radius-clip-path-a29273","title":"CSS实现菜单选项向外圆角效果","category":"CSS","type":"snippet","description":"通过伪元素裁剪拼接实现菜单选项向外圆角效果。","status":"published","tags":["CSS","伪元素","clip-path"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-04-11","readingTime":"1 min read","content":"$16"},{"slug":"crlf-lf-concept-2ee70f","title":"CRLF和LF区别","category":"Engineering","type":"concept","description":"CRLF 和 LF 概念和区别。","status":"published","tags":["Git","CRLF","LF","工程化"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-04-07","readingTime":"2 min read","content":"$17"},{"slug":"mime-content-type-673505","title":"常用Content-Type汇总","category":"Engineering","type":"concept","description":"Content-Type定义以及常见的类型汇总。","status":"published","tags":["MIME","Content-Type","工程化"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-04-06","readingTime":"2 min read","content":"$18"},{"slug":"css-iconfont-import-use-5e6d7d","title":"阿里巴巴iconfont字体图标使用","category":"CSS","type":"guide","description":"讲解了阿里巴巴iconfont字体图标的多种引入和使用方式的步骤。","status":"published","tags":["CSS","iconfont"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-04-03","readingTime":"3 min read","content":"$19"},{"slug":"vue3-define-expose-95feb2","title":"Vue3 父组件调用子组件内部的方法","category":"Vue","type":"snippet","description":"vue3 通过 defineExpose 和 ref ，父组件可访问子组件中定义的方法。","status":"published","tags":["Vue","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-03-03","readingTime":"1 min read","content":"### 1. 子组件中定义方法并通过defineExpose暴露出去\n\n```js\nimport { reactive, defineExpose } from \"vue\";\nconst state = reactive({\n  dataList: [],\n});\nconst changeData = () => {\n  state.dataList.push(1);\n};\ndefineExpose({\n  changeData,\n});\n```\n\n### 2. 父组件通过ref调用子组件暴露的方法\n\n```js\n<child ref=\"childRef\"></child>\n\nimport {ref} from \"vue\"；\nconst childRef = ref(null);\nchildRef.value.changeData();\n```\n\n_vue2中通过$refs方法调用_\n"},{"slug":"js-blob-to-excel-c03e2d","title":"js把文件流导出下载excel文件","category":"JavaScript","type":"snippet","description":"记录js中把文件流导出下载excel文件的方法。","status":"published","tags":["js","blob","excel"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-03-02","readingTime":"1 min read","content":"```js\nlet btn = document.querySelector('#app > button');\nlet resData = null;\n\nfetch('http://127.0.0.1:3333', {\n    method: \"GET\",\n    responseType: \"blob\"\n  })\n  .then(response => {\n    return response.blob()\n  })\n  .then(res => {\n    console.log(res);\n    resData = res;\n  })\n\nbtn.addEventListener(\"click\", () => {\n  const link = document.createElement(\"a\");\n  let blob = new Blob([resData], {\n    type: \"application/octet-stream\"\n  });\n  link.style.display = \"none\";\n  link.href = URL.createObjectURL(blob);\n  link.download = \"xxxfile.xlsx\";\n  document.body.appendChild(link);\n  link.click();\n  document.body.removeChild(link);\n  window.URL.revokeObjectURL(link);\n})\n```\n\n> 注意：需要设置 `responseType: \"blob\"` ，否则可能会出现下载的文件打开损坏问题。\n\n#### 动态截取请求中 `content-disposition` 的文件名:动态截取请求中 `content-disposition` 的文件名:\n\n```js\nlet fileName = res.headers[\"content-disposition\"]\n    .split(\";\")[1]\n    .split(\"filename=\")[1];\n...\nlink.download = decodeURIComponent(fileName);\n```\n\n> 使用 `decodeURIComponent` 可以解决文件名乱码问题。\n"},{"slug":"vue3-scroll-to-top-ee6e5b","title":"vue3 中路由切换后让页面返回到顶部","category":"Vue","type":"snippet","description":"记录在 vue3 中，不同情况下，路由切换时让页面正常返回到顶部的方法。","status":"published","tags":["Vue","Frontend","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-02-28","readingTime":"1 min read","content":"$1a"},{"slug":"vue3-vue-flow-b0ed37","title":"Vue3 流程图组件库 Vue Flow 简单使用","category":"Vue","type":"snippet","description":"记录 Vue Flow 流程图组件库的使用。","status":"published","tags":["Vue","Frontend","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-01-03","readingTime":"1 min read","content":"$1b"},{"slug":"vue-qrcode-csv-79e9ca","title":"Vue 二维码生成插件","category":"Vue","type":"snippet","description":"Vue 项目中使用 qrcode.vue 实现二维码生成。","status":"published","tags":["Vue","qrcode"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2022-12-05","readingTime":"1 min read","content":"$1c"},{"slug":"vue-turnjs-pdf-50dbb3","title":"Vue 借助 turn.js 实现翻书效果预览pdf文件","category":"Vue","type":"snippet","description":"vue 中使用 turn.js 插件实现翻书预览pdf文件效果。","status":"published","tags":["Vue","PDF","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2022-06-09","readingTime":"1 min read","content":"$1d"},{"slug":"moment-get-different-date-cc1ddd","title":"Moment.js 获取前几天和后几天时间","category":"JavaScript","type":"snippet","description":"Moment.js 获取前几天和后几天时间的方法。","status":"published","tags":["JavaScript","Frontend","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2021-06-12","readingTime":"1 min read","content":"### 1. 获取今天\n\n```js\nimport moment from \"moment\";\nmoment().startOf(\"day\");\n```\n\n### 2. 获取本周\n\n```js\nimport moment from \"moment\";\nmoment().startOf(\"week\");\n```\n\n### 3. 获取n天前的日期\n\n```js\nimport moment from \"moment\";\n\n// subtract向前获取日期\nmoment().subtract(n, 'days');\n// startOf获取当天的00:00:00\nmoment().subtract(n, 'days').startOf(\"day\").format(\"YYYY-MM-DD HH:mm:ss\");\n// endOf获取当天的23:59:59\nmoment().subtract(n, 'days').endOf(\"day\").format(\"YYYY-MM-DD HH:mm:ss\");\n```\n\n### 4. 获取n天后的日期\n\n```js\nimport moment from \"moment\";\n\n// add向后获取日期\nmoment().add(n, 'days');\n// startOf获取当天的00:00:00\nmoment().add(n, 'days').startOf(\"day\").format(\"YYYY-MM-DD HH:mm:ss\");\n// endOf获取当天的23:59:59\nmoment().add(n, 'days').endOf(\"day\").format(\"YYYY-MM-DD HH:mm:ss\");\n```\n"},{"slug":"mini-program-router-5f9695","title":"小程序返回上级页面并刷新列表","category":"MiniProgram","type":"snippet","description":"微信小程序返回上级页面并刷新列表。","status":"published","tags":["小程序"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2019-11-13","readingTime":"1 min read","content":"### 微信小程序进行操作后返回之前页面并刷新列表的方法。\n\n```js\nlet pages = getCurrentPages();\nlet beforePage = pages[pages.length - 2]; // -2 是上一个页面，-3是上上个页面以此类推。\nbeforePage.getList(参数);\nwx.navigateBack({\n  delta: 1,\n});\n```\n\n> 小程序以栈的形式维护当前的所有页面。\n\n![](/notes/mini-program/mini-stack-router-doc.png)\n\n> `getCurrentPages()` 函数可以获取当前页面栈.\n>\n> 前一页面栈： `pages[pages.length - 2];`\n>\n> 当前页面栈：`pages[pages.length - 1];`\n\n_获取到之前的页面栈，就可以调用其中获取列表的方法，从而做到刷新列表，然后执行跳转页面方法返回上一级页面_\n_还可以将要传递的参数直接`beforePage.setData`。上个页面就会执行这里的操作。_\n"}]}]}],["$L1e"],"$L1f"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"lbOqBlHH_txM3ieiNSpgJ"}
+1e:["$","script","script-0",{"src":"/_next/static/chunks/2x4d_5_az6ojh.js","async":true}]
+1f:["$","$L20",null,{"children":["$","$21",null,{"name":"Next.MetadataOutlet","children":"$@22"}]}]
+22:null

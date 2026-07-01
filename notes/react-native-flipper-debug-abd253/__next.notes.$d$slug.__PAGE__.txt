@@ -1,0 +1,55 @@
+1:"$Sreact.fragment"
+2:I[30525,["/_next/static/chunks/0hbp5poerasux.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3io6jn7gqayyz.js","/_next/static/chunks/2-l7i9m0dht4u.js"],"default"]
+4:I[97367,["/_next/static/chunks/0hbp5poerasux.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
+5:"$Sreact.suspense"
+3:T79a,# 一、安装：
+
+### 1. 在官网下载桌面应用
+
+[Flipper官网地址](https://fbflipper.com/ "Flipper官网")
+[Flipper GitHub 首页](https://github.com/facebook/flipper "Flipper GitHub 首页")
+
+### 2. 打开程序，执行 `setup doctor` 检测环境是否缺失
+
+![image](/notes/react-native/rn-flipper-install-1.png)
+
+![image](/notes/react-native/rn-flipper-install-2.png)
+
+> [参考官方文档](https://fbflipper.com/docs/getting-started/react-native/ "参考官方文档")
+
+# 二、使用
+
+全部安装完以后启动react native项目，flipper会检测到运行中的项目模拟器
+以expo构建的项目为例：
+
+### 1. 安装 `expo-dev-client` 构建开发版本，**flipper的使用需要构建开发版本，否则flipper左上角会报无设备连接错误**。
+
+> build相关配置可查看官方文档 [https://docs.expo.dev/build/introduction/](https://docs.expo.dev/build/introduction/)
+
+```bash
+expo install expo-dev-client
+// 构建本地开发版本
+eas build --profile devclient --platform android --loacal
+```
+
+### 2. 启动项目，刷新flipper选中当前项目
+
+![image](/notes/react-native/rn-flipper-config.png)
+
+# 三、问题
+
+**1. "NO APPLICATION SELECTED"**
+由于开始一直用`expo go`打开项目，导致flipper可以看见logs和使用 `react devtools` 但是左上角一直显示 `NO APPLICATION SELECTED` 提示，而且其他的插件功能包括 `network layout` 等都无法使用。
+找了很多文章以及GitHub等论坛好多人遇到这个问题，但是可惜没有一个回答在我这里生效。
+最后构建开发版本后问题解决，flipper连接正常。
+
+![image](/notes/react-native/rn-flipper-error-1.png)
+
+![image](/notes/react-native/rn-flipper-error-2.png)
+
+# 四、补充
+
+**1. 使用expo构建的项目，构建开发版本app步骤参考官方文档如下：**
+[官方文档地址](https://docs.expo.dev/develop/development-builds/create-a-build/ "官方文档地址")
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"react-native-flipper-debug-abd253","title":"Flipper调试react native项目以及\"NO APPLICATION SELECTED\"问题处理","category":"ReactNative","type":"setup","description":"安装Flipper调试react native项目的步骤以及对\"NO APPLICATION SELECTED\"问题的处理。","status":"published","tags":["RN","Flipper","Configuration"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-09-14","readingTime":"2 min read","content":"$3"}}]}],[["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/2-l7i9m0dht4u.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"lbOqBlHH_txM3ieiNSpgJ"}
+6:null
