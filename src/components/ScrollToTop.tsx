@@ -33,7 +33,7 @@ export default function ScrollToTop() {
     <button
       onClick={scrollToTop}
       aria-label="返回顶部"
-      className={`fixed bottom-6 right-6 z-50 group flex size-10 items-center justify-center overflow-hidden rounded border border-(--panel-border) bg-(--panel) text-(--foreground-muted) transition-all duration-300 hover:border-(--accent) hover:text-(--accent) hover:shadow-[0_0_15px_var(--accent)] active:scale-90 ${
+      className={`fixed bottom-6 right-6 z-50 group flex size-8 items-center justify-center overflow-hidden rounded border border-(--panel-border) bg-(--panel) text-(--foreground-muted) transition-all duration-300 hover:border-(--accent) hover:text-(--accent) hover:shadow-[0_0_15px_var(--accent)] active:scale-90 ${
         isVisible
           ? "translate-y-0 opacity-100"
           : "translate-y-10 opacity-0 pointer-events-none"

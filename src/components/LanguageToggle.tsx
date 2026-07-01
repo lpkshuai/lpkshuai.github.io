@@ -1,7 +1,6 @@
 "use client";
 
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Languages } from "lucide-react";
 
 export default function LanguageToggle() {
   const { language, toggleLanguage } = useLanguage();
@@ -9,14 +8,13 @@ export default function LanguageToggle() {
   return (
     <button
       onClick={toggleLanguage}
-      className="group relative flex size-9 items-center justify-center rounded bg-panel transition-all duration-200 hover:border-accent hover:bg-accent-bg active:scale-90"
       aria-label="Switch language"
+      className="group flex size-8 items-center justify-center rounded-full bg-(--panel)/40 ring-1 ring-transparent transition-all duration-300 hover:bg-(--panel) hover:ring-(--accent)/50 active:scale-95"
     >
-      <Languages className="size-4 text-foreground/70 transition-colors group-hover:text-accent" />
-      {/* 增加一个小标签，显示当前状态，更有“装备感” */}
-      {/* <span className="absolute -top-1 -right-1 text-[8px] font-bold text-accent opacity-80">
+      {/* 抛弃图标，直接使用极简文字，类似魔法书上的刻字 */}
+      <span className="font-serif text-[12px] font-bold text-(--foreground-muted) transition-colors duration-300 group-hover:text-(--accent)">
         {language === "zh" ? "中" : "EN"}
-      </span> */}
+      </span>
     </button>
   );
 }
