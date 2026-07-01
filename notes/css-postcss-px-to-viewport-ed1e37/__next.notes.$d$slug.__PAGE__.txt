@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
-2:I[30525,["/_next/static/chunks/2g9pn-3pjvcb2.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3io6jn7gqayyz.js","/_next/static/chunks/2-l7i9m0dht4u.js"],"default"]
-7:I[97367,["/_next/static/chunks/2g9pn-3pjvcb2.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
+2:I[30525,["/_next/static/chunks/2nhyqlootp1tb.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3io6jn7gqayyz.js","/_next/static/chunks/2-l7i9m0dht4u.js"],"default"]
+7:I[97367,["/_next/static/chunks/2nhyqlootp1tb.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
 8:"$Sreact.suspense"
 3:T1936,## 1. 简介：
 
@@ -199,7 +199,7 @@ exclude / include
 ## 6. 参考链接：
 
 [https://juejin.cn/post/6844903845617729549](https://juejin.cn/post/6844903845617729549 "掘金文章")
-0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"css-postcss-px-to-viewport-ed1e37","title":"postcss-px-to-viewport插件移动端适配","category":"CSS","type":"snippet","description":"使用 postcss-px-to-viewport 插件实现移动端适配。","status":"published","tags":["CSS","移动端","viewport"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-07-17","readingTime":"3 min read","content":"$3"}}]}],["$L4","$L5"],"$L6"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"natHqpnVULBcbG9uYKUgl"}
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"css-postcss-px-to-viewport-ed1e37","title":"postcss-px-to-viewport插件移动端适配","category":"CSS","type":"snippet","description":"使用 postcss-px-to-viewport 插件实现移动端适配。","status":"published","tags":["CSS","移动端","viewport"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-07-17","readingTime":"3 min read","content":"$3"}}]}],["$L4","$L5"],"$L6"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"zRlRE6dcP1yBDKzxklKFA"}
 4:["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true}]
 5:["$","script","script-1",{"src":"/_next/static/chunks/2-l7i9m0dht4u.js","async":true}]
 6:["$","$L7",null,{"children":["$","$8",null,{"name":"Next.MetadataOutlet","children":"$@9"}]}]

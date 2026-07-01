@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
-2:I[30525,["/_next/static/chunks/2g9pn-3pjvcb2.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3io6jn7gqayyz.js","/_next/static/chunks/2-l7i9m0dht4u.js"],"default"]
-7:I[97367,["/_next/static/chunks/2g9pn-3pjvcb2.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
+2:I[30525,["/_next/static/chunks/2nhyqlootp1tb.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3io6jn7gqayyz.js","/_next/static/chunks/2-l7i9m0dht4u.js"],"default"]
+7:I[97367,["/_next/static/chunks/2nhyqlootp1tb.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
 8:"$Sreact.suspense"
 3:T1f5c,### 1. 新增组件 `IdentifyCode.vue` ，使用canvas绘制验证码内容：
 
@@ -331,7 +331,7 @@ const setIdentifyCode = (val) => {
 | dotColorMax        | Number | 干扰点颜色rgb的最大值 |
 | contentWidth       | Number | 画布宽度              |
 | contentHeight      | Number | 画布高度              |
-0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"vue3-login-identify-code-6e1a27","title":"vue3登录添加图形验证码","category":"Vue","type":"snippet","description":"vue3项目中给登录添加图形验证码功能。","status":"published","tags":["Vue3","IdentifyCode","canvas"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-07-20","readingTime":"1 min read","content":"$3"}}]}],["$L4","$L5"],"$L6"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"natHqpnVULBcbG9uYKUgl"}
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"vue3-login-identify-code-6e1a27","title":"vue3登录添加图形验证码","category":"Vue","type":"snippet","description":"vue3项目中给登录添加图形验证码功能。","status":"published","tags":["Vue3","IdentifyCode","canvas"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-07-20","readingTime":"1 min read","content":"$3"}}]}],["$L4","$L5"],"$L6"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"zRlRE6dcP1yBDKzxklKFA"}
 4:["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true}]
 5:["$","script","script-1",{"src":"/_next/static/chunks/2-l7i9m0dht4u.js","async":true}]
 6:["$","$L7",null,{"children":["$","$8",null,{"name":"Next.MetadataOutlet","children":"$@9"}]}]
