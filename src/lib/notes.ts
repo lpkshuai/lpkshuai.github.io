@@ -33,11 +33,12 @@ function slugifyText(text: string) {
 }
 
 function createSlug(title: string, frontmatterSlug?: string) {
-  if (frontmatterSlug) {
-    return slugifyText(frontmatterSlug);
-  }
+  // if (frontmatterSlug) {
+  //   return slugifyText(frontmatterSlug);
+  // }
 
-  const readablePart = slugifyText(title);
+  const source = frontmatterSlug || title;
+  const readablePart = slugifyText(source);
   const hash = createStableHash(title);
 
   return readablePart ? `${readablePart}-${hash}` : `note-${hash}`;

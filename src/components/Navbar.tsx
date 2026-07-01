@@ -38,7 +38,7 @@ export default function Navbar() {
   return (
     <>
       {/* 顶部常规栏 (PC & 移动端共用骨架) */}
-      <header className="sticky top-0 z-50 border-b border-(--panel-border) bg-(--background)/90 backdrop-blur-xl">
+      <header className="sticky top-0 z-50 border-b border-white/6 bg-white/2 backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
           {/* === Logo 区域 (保持不变) === */}
           <Link

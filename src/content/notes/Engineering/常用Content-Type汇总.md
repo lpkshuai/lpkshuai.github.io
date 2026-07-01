@@ -1,0 +1,99 @@
+---
+slug: MIME-content-type
+title: 常用Content-Type汇总
+category: Engineering
+type: concept
+description: Content-Type定义以及常见的类型汇总。
+status: published
+tags: MIME, Content-Type, 工程化
+updatedAt: 2023-04-06
+---
+
+## MIME type
+
+- ###定义
+
+媒体类型（通常称为 Multipurpose Internet Mail Extensions 或 MIME 类型）是一种标准，用来表示文档、文件或字节流的性质和格式。
+
+- ###语法
+
+MIME 的组成结构非常简单；由类型与子类型两个字符串中间用'/'分隔而组成。不允许空格存在。type 表示可以被分多个子类的独立类别。subtype 表示细分后的每个类型。MIME 类型对大小写不敏感，但是传统写法都是小写。
+
+```shell
+type/subtype
+```
+
+- ###独立类型
+
+| 类型        | 描述                                                                    | 示例                                                                                        |
+| :---------- | :---------------------------------------------------------------------- | :------------------------------------------------------------------------------------------ |
+| text        | 表明文件是普通文本，理论上是人类可读                                    | `text/plain` , `text/html` , `text/css` , `text/javascript`                                 |
+| image       | 表明是某种图像。不包括视频，但是动态图（比如动态 gif）也使用 image 类型 | `image/gif` , `image/png`, `image/jpeg` , `image/bmp` , `image/webp` , `image/x-icon`       |
+| video       | 表明是某种视频文件                                                      | `video/webm` , `video/ogg`                                                                  |
+| audio       | 表明是某种音频文件                                                      | `audio/midi` , `audio/mpeg` , `audio/webm` , `audio/ogg` , `audio/wav`                      |
+| application | 表明是某种二进制数据                                                    | `application/octet-stream` , `application/xhtml+xml`, `application/xml` , `application/pdf` |
+
+> 对于 text 文件类型若没有特定的 subtype，就使用 text/plain。类似的，二进制文件没有特定或已知的 subtype，即使用 application/octet-stream。
+
+## 完整 MIME 类型
+
+完整的 MIME 类型列表可在 [IANA | MIME Media Types](https://www.iana.org/assignments/media-types/media-types.xhtml "1") 查看。
+
+- ###常用
+
+| 后缀名 | 类型                     |
+| :----- | :----------------------- |
+| .\*    | application/octet-stream |
+| .txt   | text/plain               |
+| .png   | image/png                |
+| .jpeg  | image/jpeg               |
+| .xls   | application/-excel       |
+| .xls   | application/x-xls        |
+| .pdf   | application/pdf          |
+| .mp3   | audio/mp3                |
+| .mp4   | video/mp4                |
+| .exe   | application/x-msdownload |
+
+## Content-Type
+
+- ###定义
+
+Content-Type 实体头部用于指示资源的 MIME 类型 media type 。
+在响应中，Content-Type 标头告诉客户端实际返回的内容的内容类型。
+在请求中 (如POST 或 PUT)，客户端告诉服务器实际发送的数据类型。
+
+- ###语法
+
+```shell
+Content-Type: text/html; charset=utf-8
+Content-Type: multipart/form-data; boundary=something
+```
+
+- ###常用
+
+**1. application/json**
+请求的主题内容是json格式的字符串
+
+**2. application/x-www-form-urlencoded**
+请求发送过程中会对数据进行序列化处理，以键值对形式？key1=value1&key2=value2的方式发送到服务器,如果是中文或特殊字符如"/"、","、“:" 等会自动进行URL转码。用于表单提交。
+
+**3. multipart/form-data**
+用于表单中进行文件上传。
+
+```shell
+POST /foo HTTP/1.1
+Content-Length: 68137
+Content-Type: multipart/form-data; boundary=---------------------------974767299852498929531610575
+
+---------------------------974767299852498929531610575
+Content-Disposition: form-data; name="description"
+
+some text
+---------------------------974767299852498929531610575
+Content-Disposition: form-data; name="myFile"; filename="foo.txt"
+Content-Type: text/plain
+
+(content of the uploaded file foo.txt)
+---------------------------974767299852498929531610575
+
+```

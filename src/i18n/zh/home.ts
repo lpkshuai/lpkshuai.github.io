@@ -24,7 +24,7 @@ export const home = {
 
       questTitle: "当前任务",
 
-      questName: "精通 React 与 Next.js",
+      questName: "掌握 React 与 Next.js",
 
       skills: "已装备技能",
 

@@ -1,0 +1,208 @@
+---
+slug: css-postcss-px-to-viewport
+title: postcss-px-to-viewport插件移动端适配
+category: CSS
+type: snippet
+description: 使用 postcss-px-to-viewport 插件实现移动端适配。
+status: published
+tags: CSS, 移动端, viewport
+updatedAt: 2023-07-17
+---
+
+## 1. 简介：
+
+postcss-px-to-viewport是一个将px单位转换为视口单位的 (vw, vh, vmin, vmax) 的 PostCSS 插件。将CSS中的px单位转化为vw，来进行移动端适配，1vw等于1/100视口宽度。
+
+## 2. 地址：
+
+[postcss-px-to-viewport GitHub 地址](https://github.com/evrone/postcss-px-to-viewport.git "postcss-px-to-viewport  GitHub 地址")
+
+## 3. 安装：
+
+npm
+
+```shell
+npm install postcss-px-to-viewport --save-dev
+```
+
+yarn
+
+```shell
+yarn add -D postcss-px-to-viewport
+```
+
+## 4. 不同项目中配置：
+
+### **① 在vite项目中使用**
+
+在 `vite.config.js` 中添加如下配置:
+
+```js
+import { defineConfig } from "vite";
+import { resolve } from "path";
+import vue from "@vitejs/plugin-vue";
+import Components from "unplugin-vue-components/vite";
+import { VantResolver } from "unplugin-vue-components/resolvers";
+import px2viewport from "postcss-px-to-viewport";
+export default defineConfig({
+  plugins: [
+    vue(),
+    Components({
+      resolvers: [VantResolver()],
+    }),
+  ],
+  css: {
+    postcss: {
+      plugins: [
+        px2viewport({
+          unitToConvert: "px",
+          viewportWidth: 375,
+          unitPrecision: 3,
+          viewportUnit: "vw",
+          // exclude: /node_modules\/vant/i,
+        }),
+      ],
+    },
+  },
+  resolve: {
+    alias: [
+      {
+        find: "@",
+        replacement: resolve(__dirname, "src"),
+      },
+    ],
+  },
+  // ...
+});
+```
+
+### **② 在vue-cli项目中使用**
+
+在 `vue.config.js` 中添加如下配置:
+
+```js
+const px2viewport = require("postcss-px-to-viewport");
+
+module.exports = {
+  css: {
+    loaderOptions: {
+      postcss: {
+        plugins: [
+          new px2viewport({
+            unitToConvert: "px",
+            viewportWidth: 375,
+            unitPrecision: 3,
+            viewportUnit: "vw",
+          }),
+        ],
+      },
+    },
+  },
+};
+```
+
+### **③ 在使用PostCss时配置文件**
+
+在`postcss.config.js`添加如下配置
+
+```js
+module.exports = {
+  plugins: {
+    // ...
+    "postcss-px-to-viewport": {
+      // options
+    },
+  },
+};
+```
+
+### **④ 在gulp中使用，添加gulp-postcss**
+
+在 `gulpfile.js` 添加如下配置:
+
+```js
+var gulp = require("gulp");
+var postcss = require("gulp-postcss");
+var pxtoviewport = require("postcss-px-to-viewport");
+
+gulp.task("css", function () {
+  var processors = [
+    pxtoviewport({
+      viewportWidth: 320,
+      viewportUnit: "vmin",
+    }),
+  ];
+
+  return gulp
+    .src(["build/css/**/*.css"])
+    .pipe(postcss(processors))
+    .pipe(gulp.dest("build/css"));
+});
+```
+
+## 5. 配置项：
+
+```js
+{
+  unitToConvert: 'px',
+  viewportWidth: 320,
+  unitPrecision: 5,
+  propList: ['*'],
+  viewportUnit: 'vw',
+  fontViewportUnit: 'vw',
+  selectorBlackList: [],
+  minPixelValue: 1,
+  mediaQuery: false,
+  replace: true,
+  exclude: undefined,
+  include: undefined,
+  landscape: false,
+  landscapeUnit: 'vw',
+  landscapeWidth: 568
+}
+```
+
+| 属性              | 类型            | 描述                                                                           |
+| ----------------- | --------------- | ------------------------------------------------------------------------------ |
+| unitToConvert     | String          | 需要转换的单位，默认为"px"                                                     |
+| viewportWidth     | Number          | 设计稿的视口宽度                                                               |
+| unitPrecision     | Number          | 单位转换后保留的精度                                                           |
+| propList          | Array           | 能转化为vw的属性列表                                                           |
+| viewportUnit      | String          | 希望使用的视口单位                                                             |
+| fontViewportUnit  | String          | 字体使用的视口单位                                                             |
+| selectorBlackList | Array           | 需要忽略的CSS选择器，不会转为视口单位，使用原有的px等单位                      |
+| minPixelValue     | Number          | 设置最小的转换数值，如果为1的话，只有大于1的值会被转换                         |
+| mediaQuery        | Boolean         | 媒体查询里的单位是否需要转换单位                                               |
+| replace           | Boolean         | 是否直接更换属性值，而不添加备用属性                                           |
+| exclude           | Array or Regexp | 忽略某些文件夹下的文件或特定文件，例如 'node_modules' 下的文件                 |
+| include           | Array or Regexp | 如果设置了include，那将只有匹配到的文件才会被转换                              |
+| landscape         | Boolean         | 是否添加根据 landscapeWidth 生成的媒体查询条件 @media (orientation: landscape) |
+| landscapeUnit     | String          | 横屏时使用的单位                                                               |
+| landscapeWidth    | Number          | 横屏时使用的视口宽度                                                           |
+
+> exclude和include是可以一起设置的，将取两者规则的交集。
+
+**Array类型属性额外说明：**
+propList
+
+- 传入特定的CSS属性；
+- 可以传入通配符""去匹配所有属性，例如：['']；
+- 在属性的前或后添加"\*",可以匹配特定的属性. (例如['position'] 会匹配 background-position-y)
+- 在特定属性前加 "!"，将不转换该属性的单位 . 例如: ['*', '!letter-spacing']，将不转换letter-spacing
+- "!" 和 ""可以组合使用， 例如: ['', '!font*']，将不转换font-size以及font-weight等属性
+
+selectorBlackList
+
+- 如果传入的值为字符串的话，只要选择器中含有传入值就会被匹配
+  例如 selectorBlackList 为 ['body'] 的话， 那么 .body-class 就会被忽略
+- 如果传入的值为正则表达式的话，那么就会依据CSS选择器是否匹配该正则
+  例如 selectorBlackList 为 [/^body$/] , 那么 body 会被忽略，而 .body 不会
+
+exclude / include
+
+- 如果值是一个正则表达式，那么匹配这个正则的文件会被忽略 / 包含
+- 如果传入的值是一个数组，那么数组里的值必须为正则
+
+## 6. 参考链接：
+
+[https://juejin.cn/post/6844903845617729549](https://juejin.cn/post/6844903845617729549 "掘金文章")
