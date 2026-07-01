@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
-2:I[30525,["/_next/static/chunks/0hbp5poerasux.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3io6jn7gqayyz.js","/_next/static/chunks/2-l7i9m0dht4u.js"],"default"]
-7:I[97367,["/_next/static/chunks/0hbp5poerasux.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
+2:I[30525,["/_next/static/chunks/2g9pn-3pjvcb2.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3io6jn7gqayyz.js","/_next/static/chunks/2-l7i9m0dht4u.js"],"default"]
+7:I[97367,["/_next/static/chunks/2g9pn-3pjvcb2.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
 8:"$Sreact.suspense"
 3:T1352,# 1. 水平条纹背景
 
@@ -173,7 +173,7 @@
 
 [MDN linear-gradient](https://developer.mozilla.org/zh-CN/docs/Web/CSS/gradient/linear-gradient "MDN linear-gradient")
 [MDN repeating-linear-gradient](https://developer.mozilla.org/zh-CN/docs/Web/CSS/gradient/repeating-linear-gradient "MDN repeating-linear-gradient")
-0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"css-linear-gradient-background-233966","title":"css利用linear-gradient实现条纹背景","category":"CSS","type":"snippet","description":"记录css中通过利用linear-gradient来实现各种不同类型条纹背景的方法。","status":"published","tags":["CSS","linear-gradient","background"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-04-20","readingTime":"3 min read","content":"$3"}}]}],["$L4","$L5"],"$L6"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"lbOqBlHH_txM3ieiNSpgJ"}
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"css-linear-gradient-background-233966","title":"css利用linear-gradient实现条纹背景","category":"CSS","type":"snippet","description":"记录css中通过利用linear-gradient来实现各种不同类型条纹背景的方法。","status":"published","tags":["CSS","linear-gradient","background"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-04-20","readingTime":"3 min read","content":"$3"}}]}],["$L4","$L5"],"$L6"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"natHqpnVULBcbG9uYKUgl"}
 4:["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true}]
 5:["$","script","script-1",{"src":"/_next/static/chunks/2-l7i9m0dht4u.js","async":true}]
 6:["$","$L7",null,{"children":["$","$8",null,{"name":"Next.MetadataOutlet","children":"$@9"}]}]

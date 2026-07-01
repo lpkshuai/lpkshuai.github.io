@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
-2:I[30525,["/_next/static/chunks/0hbp5poerasux.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3io6jn7gqayyz.js","/_next/static/chunks/2-l7i9m0dht4u.js"],"default"]
-4:I[97367,["/_next/static/chunks/0hbp5poerasux.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
+2:I[30525,["/_next/static/chunks/2g9pn-3pjvcb2.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3io6jn7gqayyz.js","/_next/static/chunks/2-l7i9m0dht4u.js"],"default"]
+4:I[97367,["/_next/static/chunks/2g9pn-3pjvcb2.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
 5:"$Sreact.suspense"
 3:T8a3,# 最终效果
 
@@ -118,5 +118,5 @@ li i {
 [MDN clip-path](https://developer.mozilla.org/zh-CN/docs/Web/CSS/clip-path "MDN clip-path")
 
 ### 2. 方法二待补充
-0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"css-border-radius-clip-path-a29273","title":"CSS实现菜单选项向外圆角效果","category":"CSS","type":"snippet","description":"通过伪元素裁剪拼接实现菜单选项向外圆角效果。","status":"published","tags":["CSS","伪元素","clip-path"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-04-11","readingTime":"1 min read","content":"$3"}}]}],[["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/2-l7i9m0dht4u.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"lbOqBlHH_txM3ieiNSpgJ"}
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"css-border-radius-clip-path-a29273","title":"CSS实现菜单选项向外圆角效果","category":"CSS","type":"snippet","description":"通过伪元素裁剪拼接实现菜单选项向外圆角效果。","status":"published","tags":["CSS","伪元素","clip-path"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-04-11","readingTime":"1 min read","content":"$3"}}]}],[["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/2-l7i9m0dht4u.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"natHqpnVULBcbG9uYKUgl"}
 6:null

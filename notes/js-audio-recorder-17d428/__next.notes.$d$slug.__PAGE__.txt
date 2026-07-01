@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
-2:I[30525,["/_next/static/chunks/0hbp5poerasux.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3io6jn7gqayyz.js","/_next/static/chunks/2-l7i9m0dht4u.js"],"default"]
-4:I[97367,["/_next/static/chunks/0hbp5poerasux.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
+2:I[30525,["/_next/static/chunks/2g9pn-3pjvcb2.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3io6jn7gqayyz.js","/_next/static/chunks/2-l7i9m0dht4u.js"],"default"]
+4:I[97367,["/_next/static/chunks/2g9pn-3pjvcb2.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
 5:"$Sreact.suspense"
 3:Tc6e,## 介绍
 
@@ -165,5 +165,5 @@ recorder.getWAVBlob();
 ```
 
 > 更多api详见文档 [点击查看更多api](https://recorder-api.zhuyuntao.cn/Recorder/API.html "点击查看更多api")
-0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"js-audio-recorder-17d428","title":"js-audio-recorder 插件实现web端录音","category":"JavaScript","type":"snippet","description":"使用 js-audio-recorder 插件实现web端录音。","status":"published","tags":["JavaScript","Frontend","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-06-19","readingTime":"2 min read","content":"$3"}}]}],[["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/2-l7i9m0dht4u.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"lbOqBlHH_txM3ieiNSpgJ"}
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"js-audio-recorder-17d428","title":"js-audio-recorder 插件实现web端录音","category":"JavaScript","type":"snippet","description":"使用 js-audio-recorder 插件实现web端录音。","status":"published","tags":["JavaScript","Frontend","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-06-19","readingTime":"2 min read","content":"$3"}}]}],[["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/2-l7i9m0dht4u.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"natHqpnVULBcbG9uYKUgl"}
 6:null
