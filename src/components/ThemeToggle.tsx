@@ -4,8 +4,10 @@ import { useTheme } from "@/contexts/ThemeContext";
 import { Sun, Moon } from "lucide-react";
 
 export default function ThemeToggle() {
-  const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme, mounted } = useTheme();
   const isDark = theme === "dark";
+
+  if (!mounted) return <div className="size-8" />;
 
   return (
     <button
