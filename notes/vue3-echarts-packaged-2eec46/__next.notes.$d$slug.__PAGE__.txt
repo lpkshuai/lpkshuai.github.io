@@ -1,0 +1,160 @@
+1:"$Sreact.fragment"
+2:I[30525,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3io6jn7gqayyz.js","/_next/static/chunks/2-l7i9m0dht4u.js"],"default"]
+6:I[97367,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
+7:"$Sreact.suspense"
+3:Tb88,### 1. 新建 _echartsLib.js_ 文件，统一导入需要的组件
+
+```js
+import * as echarts from "echarts/core";
+
+import { SVGRenderer, CanvasRenderer } from "echarts/renderers";
+
+import { BarChart, LineChart, PieChart } from "echarts/charts";
+
+import {
+  TitleComponent,
+  TooltipComponent,
+  GridComponent,
+  LegendComponent,
+  ToolboxComponent,
+  DataZoomComponent,
+  TimelineComponent,
+} from "echarts/components";
+
+echarts.use([
+  BarChart,
+  LineChart,
+  PieChart,
+  TitleComponent,
+  TooltipComponent,
+  LegendComponent,
+  GridComponent,
+  ToolboxComponent,
+  DataZoomComponent,
+  TimelineComponent,
+  CanvasRenderer
+]);
+
+export default echarts;
+```
+
+### 2. 新建 _newChart.js_ 文件封装用法
+
+```js
+import { nextTick, onMounted, onUnmounted, unref, getCurrentInstance } from "vue";
+import echarts from "./echartsLib.js";
+import { SVGRenderer, CanvasRenderer } from "echarts/renderers";
+
+export default function newChart(
+  elRef,
+  autoChartSize = false,
+  animation = false,
+  theme = "default"
+) {
+  // 设置渲染模式
+  echarts.use(CanvasRenderer);
+
+  // echart实例
+  let chartInstance = null;
+
+  // 初始化图表
+  const initCharts = () => {
+    const el = unref(elRef);
+    if (!el || !unref(el)) {
+      return;
+    }
+    chartInstance = echarts.init(el, theme);
+  };
+
+  const setOption = (option) => {
+    nextTick(() => {
+      if (!chartInstance) {
+        initCharts();
+        if (!chartInstance) return;
+      }
+
+      chartInstance.setOption(option);
+      hideLoading();
+    });
+  };
+
+  // 获取echart实例
+  function getInstance() {
+    if (!chartInstance) {
+      initCharts();
+    }
+    return chartInstance;
+  }
+
+  function resize() {
+    chartInstance?.resize();
+  }
+
+  // 监听元素大小
+  function watchEl() {
+    // 添加过渡
+    if (animation) {
+      elRef.value.style.transition = "width 1s, height 1s";
+    }
+    const resizeObserver = new ResizeObserver((entries) => resize());
+    resizeObserver.observe(elRef.value);
+  }
+
+  // 显示加载
+  function showLoading() {
+    if (!chartInstance) {
+      initCharts();
+    }
+    chartInstance?.showLoading();
+  }
+  // 隐藏加载
+  function hideLoading() {
+    if (!chartInstance) {
+      initCharts();
+    }
+    chartInstance?.hideLoading();
+  }
+
+  // 只有在组件实例存在时才使用生命周期钩子
+  const instance = getCurrentInstance();
+  if (instance) {
+    onMounted(() => {
+      window.addEventListener("resize", resize);
+      if (autoChartSize) watchEl();
+    });
+
+    onUnmounted(() => {
+      window.removeEventListener("resize", resize);
+    });
+  }
+
+  return {
+    setOption,
+    getInstance,
+    showLoading,
+    hideLoading,
+  };
+}
+
+```
+
+### 3. 使用
+
+```jsx
+<div ref="myChart"></div>
+
+import newChart from "@/utils/newChart";
+import { reactive, onMounted, ref } from "vue";
+
+const myChart = ref(null);
+const { setOption } = newChart(myChart, true, true);
+let option = {}
+
+onMounted(() => {
+  setOption(option);
+});
+```
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"vue3-echarts-packaged-2eec46","title":"Vue3 + echarts 统一封装","category":"Echarts","type":"snippet","description":"记录 vue3 中，echarts 封装成公共方法。","status":"published","tags":["Vue，Echarts"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-02-23","readingTime":"1 min read","content":"$3"}}]}],[["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true}],"$L4"],"$L5"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"fxvBa3GiS8hZNjd6tXGga"}
+4:["$","script","script-1",{"src":"/_next/static/chunks/2-l7i9m0dht4u.js","async":true}]
+5:["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]
+8:null
