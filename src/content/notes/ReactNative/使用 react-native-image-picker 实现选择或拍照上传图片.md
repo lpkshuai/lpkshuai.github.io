@@ -1,0 +1,152 @@
+---
+slug: react-native-image-picker
+title: 使用 react-native-image-picker 实现选择或拍照上传图片
+category: ReactNative
+type: snippet
+description: react native 项目使用 react-native-image-picker 实现选择或拍照上传图片。
+status: published
+tags: RN, image-picker, camera
+updatedAt: 2024-07-09
+---
+
+## 1. 安装依赖
+
+```shell
+npm install react-native-image-picker
+```
+
+或
+
+```shell
+yarn add react-native-image-picker
+```
+
+> [react-native-image-picker Github地址](https://github.com/react-native-image-picker/react-native-image-picker "react-native-image-picker Github地址")
+
+## 2. Android/ios额外配置
+
+在使用前需要进行一些配置，并且引入相应权限。
+
+额外配置见 -> [https://github.com/react-native-image-picker/react-native-image-picker?tab=readme-ov-file#new-architecture](https://github.com/react-native-image-picker/react-native-image-picker?tab=readme-ov-file#new-architecture "https://github.com/react-native-image-picker/react-native-image-picker?tab=readme-ov-file#new-architecture")
+
+## 3. 引入使用
+
+```js
+import { launchCamera, launchImageLibrary } from "react-native-image-picker";
+```
+
+- **launchCamera() -相机拍照**
+
+```js
+const options = {
+  mediaType: "photo",
+  includeBase64: false,
+  saveToPhotos: true,
+  maxHeight: 2000,
+  maxWidth: 2000,
+};
+launchCamera(options, (response) => {
+  if (response.didCancel) {
+    console.log("取消选择");
+  } else if (response.error) {
+    console.log("出错: ", response.error);
+  } else {
+    let imageUri = response.uri || response.assets?.[0]?.uri;
+    let imageInfo = response.assets?.[0];
+    console.log(response);
+  }
+});
+```
+
+- **launchImageLibrary() -从相册选择**
+
+```js
+const options = {
+  mediaType: "photo",
+  includeBase64: false,
+  saveToPhotos: true,
+  maxHeight: 2000,
+  maxWidth: 2000,
+};
+launchImageLibrary(options, (response) => {
+  if (response.didCancel) {
+    console.log("取消选择");
+  } else if (response.error) {
+    console.log("选择出错: ", response.error);
+  } else {
+    let imageUri = response.uri || response.assets?.[0]?.uri;
+    let imageInfo = response.assets?.[0];
+    console.log(response);
+  }
+});
+```
+
+> 其它options详细字段可参考文档 [https://github.com/react-native-image-picker/react-native-image-picker?tab=readme-ov-file#options](https://github.com/react-native-image-picker/react-native-image-picker?tab=readme-ov-file#options)
+
+## 4. 完整示例
+
+<details>
+<summary>点击查看代码</summary>
+
+```jsx
+import React from "react";
+import { Button, View, Alert } from "react-native";
+import { launchCamera, launchImageLibrary } from "react-native-image-picker";
+
+const App = () => {
+  const options = {
+    mediaType: "photo", // 'photo' | 'video' | 'mixed'
+    includeBase64: false,
+    saveToPhotos: true,
+  };
+
+  const openCamera = () => {
+    launchCamera(options, (response) => {
+      if (response.didCancel) {
+        console.log("User cancelled image picker");
+      } else if (response.errorCode) {
+        console.log("ImagePicker Error: ", response.errorMessage);
+      } else {
+        console.log("Image URI: ", response.assets[0].uri);
+      }
+    });
+  };
+
+  const openGallery = () => {
+    launchImageLibrary(options, (response) => {
+      if (response.didCancel) {
+        console.log("User cancelled image picker");
+      } else if (response.errorCode) {
+        console.log("ImagePicker Error: ", response.errorMessage);
+      } else {
+        console.log("Image URI: ", response.assets[0].uri);
+      }
+    });
+  };
+
+  const showPickerOptions = () => {
+    Alert.alert(
+      "Select Image",
+      "Choose from below options",
+      [
+        { text: "Camera", onPress: openCamera },
+        { text: "Gallery", onPress: openGallery },
+        { text: "Cancel", style: "cancel" },
+      ],
+      { cancelable: true },
+    );
+  };
+
+  return (
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <Button title="Select Image" onPress={showPickerOptions} />
+    </View>
+  );
+};
+
+export default App;
+```
+
+</details>
+
+> 可以搭配 react-native-permissions 手动控制权限获取。
