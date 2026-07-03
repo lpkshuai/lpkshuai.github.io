@@ -1,0 +1,113 @@
+---
+slug: vue-el-table-to-excel
+title: Vue 将elementUI表格导出excel文件
+category: Vue
+type: snippet
+description: 将elementUI表格导出excel文件。
+status: published
+tags: Vue, excel, table
+updatedAt: 2022-11-04
+---
+
+### 1. 依赖安装
+
+```shell
+npm install xlsx file-saver --save
+```
+
+[https://github.com/eligrey/FileSaver.js](https://github.com/eligrey/FileSaver.js "FileSaver.js")
+[https://github.com/SheetJS/sheetjs](https://github.com/SheetJS/sheetjs "sheetjs github")
+
+### 2. 创建文件，封装导出方法
+
+```js
+import FileSaver from "file-saver";
+import * as XLSX from "xlsx";
+
+export default {
+  /**
+   * @param tableId 要导出的表格ID
+   * @param fileName 文件导出名称
+   * @param fileType 文件类型
+   * @param rawFlag - true 导出的内容只做解析，不进行格式转换
+   * @returns {*}
+   */
+  exportExcel(tableId, fileName, fileType, rawFlag) {
+    let fix = document.querySelector(".el-table__fixed-right");
+    let wb;
+    /* 判断要导出的节点中是否有fixed的表格，如果有，转换excel时先将该dom移除，然后append */
+    if (fix) {
+      wb = XLSX.utils.table_to_book(
+        document.querySelector("#" + tableId).removeChild(fix),
+        {
+          raw: rawFlag,
+        },
+      );
+      document.querySelector("#" + tableId).appendChild(fix);
+    } else {
+      wb = XLSX.utils.table_to_book(document.querySelector("#" + tableId), {
+        raw: rawFlag,
+      });
+    }
+    /* 获取二进制字符串作为输出 */
+    let wbout = XLSX.write(wb, {
+      bookType: "xlsx",
+      bookSST: true,
+      type: "array",
+    });
+    try {
+      FileSaver.saveAs(
+        //Blob 对象表示一个不可变、原始数据的类文件对象。
+        //Blob 表示的不一定是JavaScript原生格式的数据。
+        //File 接口基于Blob，继承了 blob 的功能并将其扩展使其支持用户系统上的文件。
+        //返回一个新创建的 Blob 对象，其内容由参数中给定的数组串联组成。
+        new Blob([wbout], {
+          type: "application/octet-stream",
+        }),
+        //设置导出文件名称
+        fileName + fileType,
+      );
+    } catch (e) {
+      if (typeof console !== "undefined") console.log(e, wbout);
+    }
+    return wbout;
+  },
+};
+```
+
+### 3. 使用
+
+```jsx
+<el-table
+  id="exportTable"
+  :data="tableData"
+  style="width: 100%"
+>
+  <el-table-column
+    prop="xx"
+    label="xx"
+    width="180"
+  >
+  </el-table-column>
+  ...
+</el-table>
+
+<button class="btn btn-default" @click="exportExcelHandle('exportTable')">
+  导出excel
+</button>
+```
+
+```js
+// 导入封装方法
+import excelExportUtil from "@/utils/excelExportUtil.js";
+
+// 导出
+exportExcelHandle(tableId) {
+  excelExportUtil.exportExcel(tableId, "文件名", ".xls", true);
+},
+```
+
+### 4. 问题
+
+- 当表格中有固定列时，导出数据会出现重复现象。如果有固定列，根据上面的代码，转换excel时先将该dom移除，然后append。
+- 超过12位的数字导出后变成科学记数法：配置{raw:true}表示不自动获取格式，统一按照文本格式导出，可以避免该问题。

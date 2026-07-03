@@ -1,0 +1,87 @@
+---
+slug: react-native-KeyboardAvoidingView-problem
+title: react native 使用 KeyboardAvoidingView 无效
+category: ReactNative
+type: debugging
+description: react native 使用 KeyboardAvoidingView 无效的问题记录。
+status: published
+tags: RN, KeyboardAvoidingView
+updatedAt: 2023-09-22
+---
+
+### 组件介绍：
+
+该组件将根据键盘高度自动调整其高度、位置或底部填充，以在显示虚拟键盘时保持可见。
+
+### 官方文档：
+
+[KeyboardAvoidingView 文档地址](https://reactnative.dev/docs/keyboardavoidingview "KeyboardAvoidingView 文档地址")
+
+### 遇到的问题：
+
+1. KeyboardAvoidingView 标签要设置 `behavior={Platform.OS === "ios" ? "padding" : "height"}`，iOS系统要使用padding否则样式可能会达不到预期效果。
+2. KeyboardAvoidingView 包裹的内容最外层的盒子的 `justifyContent` 需要设置为 `flex-end、space-around` 等（具体使用哪个要根据需求确定），默认的 `flex-start` 会导致不生效。
+3. KeyboardAvoidingView 包裹的内容最外层的盒子的高度设置为 `100%` 时，或者设置 `flex：1` 时，也可能会导致无效（在我的项目里出现了这个问题）。
+
+### 官方示例代码：
+
+```jsx
+import React from "react";
+import {
+  View,
+  KeyboardAvoidingView,
+  TextInput,
+  StyleSheet,
+  Text,
+  Platform,
+  TouchableWithoutFeedback,
+  Button,
+  Keyboard,
+} from "react-native";
+
+const KeyboardAvoidingComponent = () => {
+  return (
+    <KeyboardAvoidingView
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+      style={styles.container}
+    >
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <View style={styles.inner}>
+          <Text style={styles.header}>Header</Text>
+          <TextInput placeholder="Username" style={styles.textInput} />
+          <View style={styles.btnContainer}>
+            <Button title="Submit" onPress={() => null} />
+          </View>
+        </View>
+      </TouchableWithoutFeedback>
+    </KeyboardAvoidingView>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  inner: {
+    padding: 24,
+    flex: 1,
+    justifyContent: "space-around",
+  },
+  header: {
+    fontSize: 36,
+    marginBottom: 48,
+  },
+  textInput: {
+    height: 40,
+    borderColor: "#000000",
+    borderBottomWidth: 1,
+    marginBottom: 36,
+  },
+  btnContainer: {
+    backgroundColor: "white",
+    marginTop: 12,
+  },
+});
+
+export default KeyboardAvoidingComponent;
+```

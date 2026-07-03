@@ -1,0 +1,94 @@
+---
+slug: vue3-wordcloud2-js
+title: vue3 中使用 wordcloud2.js 实现词云功能
+category: Vue
+type: snippet
+description: vue3 中使用 wordcloud2.js 实现词云功能。
+status: published
+tags: Vue, wordcloud, 词云
+updatedAt: 2025-04-17
+---
+
+### 1. 效果
+
+![image](/notes/vue/vue3-wordcloud2-preview.png)
+
+### 2. 安装wordcloud
+
+```shell
+npm install wordcloud
+```
+
+### 3. 使用
+
+首先设定画布容器
+
+```html
+...
+<div
+  class="h-[400px] bg-white shadow-[0_4px_16px_0_rgba(69,70,92,0.08)] mb-[10px]"
+  ref="wordcloudRef"
+></div>
+...
+```
+
+然后引入wordcloud
+
+```js
+import WordCloud from "wordcloud";
+const wordcloudRef = ref(null);
+
+onMounted(() => {
+  initWordcloud();
+});
+const initWordcloud = () => {
+  const list = [
+    ["存款业务", 2],
+    ["活期存款", 3],
+    ["零存整取", 1],
+    ["整存整取", 3],
+    ["大额存单", 1],
+    ["通知存款", 4],
+    ["贷款业务", 2],
+    ["个人消费贷款", 3],
+    ["住房按揭贷款", 3],
+    ["经营性贷款", 1],
+    ["无抵押信用贷款", 2],
+    ["有房产抵押贷款", 3],
+    ["有车抵押贷款", 2],
+    ["外汇业务", 2],
+    ["人民币兑换外币", 3],
+    ["跨境汇款票汇", 2],
+    ["跨境汇款电汇", 1],
+    ["外币现钞存取", 2],
+    ["现金业务", 2],
+    ["存取款", 2],
+    ["零钞兑换", 2],
+    ["残损币兑换", 2],
+  ];
+  const options = {
+    list: list, // 【必需】二维数组格式数据，格式：[["关键词", 权重], ...]
+    gridSize: 8, // 网格尺寸（单位：px），控制词语间距，值越大词语间隔越大
+    weightFactor: 20, // 字体大小系数，计算公式：Math.sqrt(value) * weightFactor
+    fontFamily: "Hiragino Mincho Pro, serif", // 字体设置（建议使用系统安全字体）
+    color: "random-dark", // 字体颜色模式，可选值："random-dark" 随机深色 "random-light" 随机浅色 ，其它查看文档
+    backgroundColor: "#fff", // 画布背景色
+    rotateRatio: 0, // 文字旋转比例（0-1）
+    drawOutOfBound: false, // 是否允许绘制超出画布的词语
+    shrinkToFit: true, // 是否自动缩小字体以适应容器
+    shape: "square", // 词云形状
+  };
+
+  if (wordcloudRef.value) {
+    WordCloud(wordcloudRef.value, options);
+  }
+};
+```
+
+> 代码中只写了部分常用配置，详细配置查看官方文档链接。
+
+### 4. 相关链接
+
+[wordcloud2 github 地址](https://github.com/timdream/wordcloud2.js/ "wordcloud2 github 地址")
+[配置项及其它api方法](https://github.com/timdream/wordcloud2.js/blob/gh-pages/API.md "配置项及其它api方法")
+[demo展示](https://wordcloud2-js.timdream.org/#love "demo展示")
