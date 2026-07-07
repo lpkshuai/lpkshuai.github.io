@@ -1,7 +1,7 @@
 1:"$Sreact.fragment"
 2:I[34127,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/2lmpwbcsmjcnh.js"],"default"]
-2c:I[97367,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
-2d:"$Sreact.suspense"
+3a:I[97367,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
+3b:"$Sreact.suspense"
 3:T19e5,# React useDeferredValue 详解与最佳实践
 
 ## 什么是 useDeferredValue
@@ -1415,7 +1415,240 @@ const tableData = ref([
 
 [vxe-table GitHub地址](https://github.com/x-extends/vxe-table "vxe-table GitHub地址")
 [vxetable 官网](https://vxetable.cn/ "vxetable 官网")
-a:Ted8,## 1. 安装依赖
+a:T864,## 1. 项目中部分相关依赖的版本
+
+```json
+"vue": "^3.2.45"
+"vue-router": "^4.1.6"
+"vite": "^4.1.0"
+"element-plus": "^2.2.30"
+```
+
+## 2. 封装的vue router hooks代码如下
+
+```js
+import { useRouter } from "vue-router";
+
+export default function useVueRouter() {
+  const router = useRouter();
+  const { query } = router.currentRoute.value;
+  const routerState = window.history.state;
+
+  const jumpPage = (name, state = {}) => {
+    if (!name) {
+      return;
+    }
+    router.push({
+      name,
+      state,
+    });
+  };
+  const goBack = (step = -1) => {
+    router.back(step);
+  };
+
+  return {
+    query,
+    routerState,
+    jumpPage,
+    goBack,
+  };
+}
+```
+
+## 3. 出现问题的背景
+
+出现问题的部分如下：
+
+```jsx
+<el-table-column fixed="right" label="操作" width="250">
+  <template #default="scope">
+    <el-button
+      link
+      type="primary"
+      @click="jumpPage('Detail', scope.row)"
+    >
+      詳情
+    </el-button>
+    <el-divider direction="vertical" />
+    <el-button
+      link
+      type="primary"
+      @click="jumpPage('Edit', scope.row)"
+    >
+      編輯
+    </el-button>
+  </template>
+</el-table-column>
+```
+
+详情页执行如下代码发现没有接收到参数：
+
+```js
+import useRouter from "@/hooks/useRouter.js";
+const { jumpPage, routerState } = useRouter();
+console.log(routerState);
+```
+
+**由于在其他页面的表格操作列也使用同样的写法跳转，但是没有遇到该问题，所以开始寻找不同的地方，经过观察发现在点击跳转时页面会刷新然后传参丢失。**
+
+**经过对比`scope.row`的内容以及依次删除其它不同类型属性的测试，最终找到了导致页面刷新的属性：`scope.row`中的tags数组**
+
+```json
+// scope.row 内容如下
+{
+  "shopId": 2,
+  "shopName": "李家菜",
+  "storeId": "218",
+  "name": "李家宴（李家菜）",
+  "tags": ["704"],
+  "users": 0,
+  "status": 1,
+  "createTime": "1900-01-20",
+  "creator": "system"
+}
+```
+
+## 4. 解决方案
+
+① 使用 `JSON.parse(JSON.stringify(scope.row))`
+② 避免传递数组或其他会导致问题的复杂数据类型参数
+③ 使用query或params传参
+b:Te90,## 1. 安装依赖
+
+```shell
+npx expo install react-native-sse
+```
+
+> [react-native-sse Github地址](https://github.com/binaryminds/react-native-sse "react-native-sse Github地址")
+
+## 2. 引入
+
+```js
+import EventSource from "react-native-sse";
+```
+
+## 3. 创建连接与监听器
+
+```js
+import EventSource from "react-native-sse";
+
+const es = new EventSource("https://your-sse-server.com/.well-known/mercure");
+
+es.addEventListener("open", (event) => {
+  console.log("Open SSE connection.");
+});
+
+es.addEventListener("message", (event) => {
+  console.log("New message event:", event.data);
+});
+
+es.addEventListener("error", (event) => {
+  if (event.type === "error") {
+    console.error("Connection error:", event.message);
+  } else if (event.type === "exception") {
+    console.error("Error:", event.message, event.error);
+  }
+});
+
+es.addEventListener("close", (event) => {
+  console.log("Close SSE connection.");
+});
+```
+
+## 4. 传参以及其他配置
+
+```js
+new EventSource(url: string | URL, options?: EventSourceOptions);
+```
+
+```js
+const options: EventSourceOptions = {
+  method: 'GET', // 请求方法。默认值: GET
+  timeout: 0, // 在没有任何活动的情况下，连接超时的时间（毫秒）。默认值: 0（无超时）
+  timeoutBeforeConnection: 500, // 在建立初始连接之前等待的时间（毫秒）。默认值: 500
+  withCredentials: false, // 在跨站点的Access-Control请求中包含凭据。默认值: false
+  headers: {}, // 请求头信息。默认值: {}
+  body: undefined, // 在连接时发送的请求体。默认值: undefined
+  debug: false, // 显示用于调试目的的 console.debug 消息。默认值: false
+  pollingInterval: 5000, // 重连之间的时间间隔（毫秒）。如果设置为 0，则禁用重连。默认值: 5000
+  lineEndingCharacter: null // 用于表示接收数据中行结尾的字符。常见值：'\n' 表示 LF（Unix/Linux），'\r\n' 表示 CRLF（Windows），'\r' 表示 CR（旧版Mac）。默认值: null（从事件中自动检测）
+}
+```
+
+## 5. 完整示例
+
+<details>
+<summary>点击查看代码</summary>
+
+```jsx
+import { useEffect, useState } from "react";
+import { Text, View } from "react-native";
+import EventSource from "react-native-sse";
+
+const OpenAIToken = "[Your OpenAI token]";
+
+export default function App() {
+  const [text, setText] = useState < string > "Loading...";
+
+  useEffect(() => {
+    const es = new EventSource("https://api.openai.com/v1/chat/completions", {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${OpenAIToken}`,
+      },
+      method: "POST",
+      // Remember to read the OpenAI API documentation to set the correct body
+      body: JSON.stringify({
+        model: "gpt-3.5-turbo-0125",
+        messages: [
+          {
+            role: "system",
+            content: "You are a helpful assistant.",
+          },
+          {
+            role: "user",
+            content: "What is the meaning of life?",
+          },
+        ],
+        max_tokens: 600,
+        n: 1,
+        temperature: 0.7,
+        stream: true,
+      }),
+      pollingInterval: 0, // Remember to set pollingInterval to 0 to disable reconnections
+    });
+
+    es.addEventListener("open", () => {
+      setText("");
+    });
+
+    es.addEventListener("message", (event) => {
+      if (event.data !== "[DONE]") {
+        const data = JSON.parse(event.data);
+
+        if (data.choices[0].delta.content !== undefined) {
+          setText((text) => text + data.choices[0].delta.content);
+        }
+      }
+    });
+
+    return () => {
+      es.removeAllEventListeners();
+      es.close();
+    };
+  }, []);
+
+  return (
+    <View>
+      <Text>{text}</Text>
+    </View>
+  );
+}
+```
+
+</details>
+c:Ted8,## 1. 安装依赖
 
 ```shell
 npm install react-native-image-picker
@@ -1556,7 +1789,7 @@ export default App;
 </details>
 
 > 可以搭配 react-native-permissions 手动控制权限获取。
-b:T679,共需要替换几个部分的镜像源：homebrew、homebrew-core、homebrew-cask、homebrew-bottles。
+d:T679,共需要替换几个部分的镜像源：homebrew、homebrew-core、homebrew-cask、homebrew-bottles。
 
 ### 1. 查看地址：
 
@@ -1614,7 +1847,7 @@ $ git -C "$(brew --repo homebrew/cask)" remote set-url origin https://github.com
 
 [阿里云镜像](https://developer.aliyun.com/mirror/homebrew "阿里云镜像")
 [Homebrew官网](https://brew.sh/?spm=a2c6h.13651104.d-4025.8.1fc17608aTal5l "Homebrew官网")
-c:Tced,# 1. 定义 v-permission 指令
+e:Tced,# 1. 定义 v-permission 指令
 
 创建一个文件来定义自定义指令，例如 directives/permission.js。
 
@@ -1745,7 +1978,141 @@ const hasPermission = (permissionName) => {
 };
 </script>
 ```
-d:T1068,# 一、创建证书、标识符和描述文件等：
+f:Tc07,### 1. 创建一个名为 BottomSheetComponent.js 的文件
+
+```jsx
+// BottomSheetComponent.js
+import React, { useState, useEffect } from "react";
+import {
+  Modal,
+  View,
+  Text,
+  TouchableOpacity,
+  Animated,
+  StyleSheet,
+  Dimensions,
+} from "react-native";
+
+const { height } = Dimensions.get("window");
+
+const BottomSheetComponent = ({ visible, onClose }) => {
+  const [showModal, setShowModal] = useState(visible);
+  const translateY = useState(new Animated.Value(height))[0];
+
+  useEffect(() => {
+    if (visible) {
+      setShowModal(true);
+      Animated.spring(translateY, {
+        toValue: 0,
+        useNativeDriver: true,
+      }).start();
+    } else {
+      Animated.timing(translateY, {
+        toValue: height,
+        duration: 300,
+        useNativeDriver: true,
+      }).start(() => {
+        setShowModal(false);
+      });
+    }
+  }, [visible, translateY]);
+
+  return (
+    <Modal transparent visible={showModal} onRequestClose={onClose}>
+      <TouchableOpacity style={styles.overlay} onPress={onClose} />
+      <Animated.View
+        style={[styles.container, { transform: [{ translateY }] }]}
+      >
+        <View style={styles.content}>
+          <Text style={styles.title}>Hello, World!</Text>
+          <Text style={styles.subtitle}>This is a bottom sheet panel</Text>
+        </View>
+      </Animated.View>
+    </Modal>
+  );
+};
+
+const styles = StyleSheet.create({
+  overlay: {
+    flex: 1,
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+  },
+  container: {
+    position: "absolute",
+    bottom: 0,
+    width: "100%",
+    height: "50%", // Adjust the height as needed
+    backgroundColor: "white",
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+  },
+  content: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 16,
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: "bold",
+  },
+  subtitle: {
+    fontSize: 16,
+    color: "gray",
+  },
+});
+
+export default BottomSheetComponent;
+```
+
+### 2. 在其他页面中使用 BottomSheetComponent
+
+```jsx
+// MainScreen.js
+import React, { useState } from "react";
+import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import BottomSheetComponent from "./BottomSheetComponent"; // Adjust the path as needed
+
+const MainScreen = () => {
+  const [isBottomSheetVisible, setBottomSheetVisible] = useState(false);
+
+  const toggleBottomSheet = () => {
+    setBottomSheetVisible(!isBottomSheetVisible);
+  };
+
+  return (
+    <View style={styles.container}>
+      <TouchableOpacity style={styles.button} onPress={toggleBottomSheet}>
+        <Text style={styles.buttonText}>Open Bottom Sheet</Text>
+      </TouchableOpacity>
+      <BottomSheetComponent
+        visible={isBottomSheetVisible}
+        onClose={toggleBottomSheet}
+      />
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  button: {
+    backgroundColor: "#6200ee",
+    padding: 15,
+    borderRadius: 25,
+  },
+  buttonText: {
+    color: "#fff",
+    fontSize: 16,
+  },
+});
+
+export default MainScreen;
+```
+10:T1068,# 一、创建证书、标识符和描述文件等：
 
 ## **1. 前提条件**
 
@@ -1855,7 +2222,7 @@ d:T1068,# 一、创建证书、标识符和描述文件等：
 
 > 此处可以看见上传的app，创建测试群组选择用户可以进行内部测试。点击分发下面填写相关信息然后选择构建版本后可以提交审核发布App Store。
 > ![image](/notes/react-native/rn-xcode-product-archive-5.png)
-e:T6c2,## 1. 安装
+11:T6c2,## 1. 安装
 
 ```bash
 # 通过 npm 安装
@@ -1923,7 +2290,7 @@ npm i vant-weapp -S --production
 ## 文档
 
 [vant-weapp官方文档](https://vant-ui.github.io/vant-weapp/#/home "vant-weapp官方文档")
-f:T11bd,vue2 + element ui版：[点击此处](https://www.cnblogs.com/lpkshuai/p/17310220.html "点击此处")
+12:T11bd,vue2 + element ui版：[点击此处](https://www.cnblogs.com/lpkshuai/p/17310220.html "点击此处")
 
 ### 1. 外层菜单组件：
 
@@ -2133,7 +2500,7 @@ const menuList = [
 ```
 
 > 注意vite图片引入的方式
-10:T75e,## 1. 启动模拟器
+13:T75e,## 1. 启动模拟器
 
 **①可以在Android Studio中打开安装好的模拟器**
 ![image](/notes/uni-app/open-android-studio-emulator.png)
@@ -2175,7 +2542,96 @@ const menuList = [
 暂未解决
 
 > 有人说用Android 11可以进入
-11:T148f,### 1. 需求效果图：
+14:Tc76,### 1. 效果：
+
+![image](/notes/react-native/react-native-shadow.png)
+
+### 2. 实现：
+
+```jsx
+import React from "react";
+import { View, Text, StyleSheet } from "react-native";
+
+const ShadowExample = () => {
+  return (
+    <View style={styles.container}>
+      <View style={styles.shadowBox}>
+        <Text style={styles.text}>Hello, Shadow!</Text>
+      </View>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  shadowBox: {
+    width: 200,
+    height: 100,
+    backgroundColor: "#fff",
+    borderRadius: 8,
+    elevation: 16, // Android 投影
+    shadowColor: "#000", // iOS 投影
+    shadowOffset: { width: 0, height: 10 },
+    shadowOpacity: 0.3,
+    shadowRadius: 16,
+  },
+  text: {
+    fontSize: 16,
+    fontWeight: "bold",
+    textAlign: "center",
+  },
+});
+
+export default ShadowExample;
+```
+
+> 说明：在上面的例子中，elevation 属性用于在 Android 设备上创建投影效果，而在 iOS 设备上，shadowColor、shadowOffset、shadowOpacity 和 shadowRadius 属性用于创建投影效果。可以根据需要调整这些属性的值。
+
+### 3. 文档：
+
+[react native shadow-props 文档](https://reactnative.dev/docs/shadow-props "react native shadow-props 文档")
+[elevation 介绍](https://reactnative.dev/docs/view-style-props#elevation-android "elevation 介绍")
+
+### 4. 属性对比：
+
+**在 CSS 中，box-shadow 属性包含如下几种：**
+
+```css
+box-shadow: h-offset v-offset blur-radius spread-radius color inset;
+```
+
+1. h-offset（水平偏移）：必填。阴影的水平偏移量。正值会使阴影向右偏移，负值则向左偏移。
+2. v-offset（垂直偏移）：必填。阴影的垂直偏移量。正值使阴影向下偏移，负值则向上偏移。
+3. blur-radius（模糊半径）：可选。定义阴影的模糊程度。该值越大，阴影的边缘就越模糊。不能为负值，如果省略，则默认为0，此时阴影将以固态颜色显示。
+4. spread-radius（扩展半径）：可选。定义阴影的大小。正值会使阴影增大，负值会使阴影缩小。如果省略，则阴影大小将和元素一样。
+5. color：可选。定义阴影的颜色。如果省略，则将使用浏览器的默认阴影颜色。
+6. inset：可选。 通常阴影是外发的，当添加 inset 关键字时，会改变阴影从外部投射到元素内部（即内阴影）。
+
+**在react native中阴影属性为：**
+
+```css
+{
+  shadowColor: '#000',
+  shadowOffset: {
+    width: 0,
+    height: 1
+  },
+  shadowOpacity: 0.2,
+  shadowRadius: 1.41
+}
+```
+
+1. shadowColor: 用于设置阴影的颜色。接受一个颜色值作为输入。
+2. shadowOffset: 此属性接受一个对象，该对象有两个属性：
+   - width: 水平方向的阴影偏移量。正值向右偏移，负值向左偏移。
+   - height: 垂直方向的阴影偏移量。正值向下偏移，负值向上偏移。
+3. shadowOpacity: 用于设置阴影的透明度，其值范围在 0（完全透明）到 1（完全不透明）之间。
+4. shadowRadius: 这是模糊半径，决定了阴影的模糊程度。值越大，阴影边缘就越模糊。
+15:T148f,### 1. 需求效果图：
 
 ![image](/notes/element-ui/el-table-display-need.png)
 
@@ -2366,7 +2822,7 @@ const spanMethod = ({ row, column, rowIndex, columnIndex }) => {
 
 刷新页面查看，问题解决：
 ![image](/notes/element-ui/el-table-span-result.png)
-12:T853,### 1. 使用fetch请求stream流接口：
+16:T853,### 1. 使用fetch请求stream流接口：
 
 封装fetch工具方法 `fetchRequest.js`
 
@@ -2454,7 +2910,7 @@ abortFetch();
 ### 3. 参考文档
 
 [AbortController 文档](https://developer.mozilla.org/zh-CN/docs/Web/API/AbortController "AbortController 文档")
-13:Taaf,## 一、安装并使用：
+17:Taaf,## 一、安装并使用：
 
 ### 1. 安装papaparse库，用于解析CSV文件：
 
@@ -2571,7 +3027,75 @@ export default {
 
 [Papa Parse 官网地址](https://www.papaparse.com/ "Papa Parse 官网地址")
 [GitHub 地址](https://github.com/mholt/PapaParse "GitHub 地址")
-14:T5a9,## 1. 安装：
+18:T6fa,## 背景：
+
+由于项目使用的expo-router，一开始时在退出登录是如下实现的：
+
+```js
+import { router } from "expo-router";
+
+...
+router.replace("/my/login/login");
+...
+
+```
+
+> 使用expo-router的router.replace方法跳转至登录页。
+
+结果发现虽然跳转成功，但是点击手机返回操作时，虽然上一个页面没有了，还能返回上上个页面。在web开发时，使用router.replace之后浏览器是不能返回之前页面的，但是这里的replace只会删掉上一个路由，之前的还在路由栈中。
+
+## 解决：
+
+[reactnavigation文档](https://reactnavigation.org/docs/navigation-actions#reset "reactnavigation文档")
+解决方法如下：
+
+```js
+import { useNavigation, CommonActions } from "@react-navigation/native";
+
+...
+const navigation = useNavigation();
+navigation.dispatch(
+  CommonActions.reset({
+    index: 0,
+    routes: [{ name: "my/login/login" }],
+  })
+);
+...
+```
+
+## 过程记录：
+
+1. 首先尝试了router.reset()方法，发现expo-router没有这个方法；
+2. 然后查阅react navigation文档找到reset方法，按如下使用：
+
+```js
+navigation.dispatch(
+  CommonActions.reset({
+    index: 0,
+    routes: [{ name: "/my/login/login" }],
+  })
+);
+```
+
+> 与正确代码只差了一个 / ，因为expo-router中路由地址是 "/my/login/login" 。
+
+然后控制台报警告
+![image](/notes/react-native/react-native-navigation-reset-err.png)
+
+3. 打印出全部的路由后发现路由路径不对，修改路径后问题解决。
+
+```js
+import { useNavigationState } from '@react-navigation/native';
+
+...
+const navigationState = useNavigationState((state) => state);
+// 获取所有路由信息
+const allRoutes = navigationState.routes;
+// 输出所有路由信息
+console.log(allRoutes);
+...
+```
+19:T5a9,## 1. 安装：
 
 ```shell
 # NPM
@@ -2639,7 +3163,102 @@ useStore.subscribe((newState) => {
 
 [官方网址](https://zustand-demo.pmnd.rs/ "官方网址")
 [文档地址](https://docs.pmnd.rs/zustand/getting-started/introduction "文档地址")
-15:T874,### 组件介绍：
+1a:Taaf,## 问题描述：
+
+react native 中使用 expo-location 获取位置信息时，按照官方文档执行案例，获取不到位置结果。Location.requestForegroundPermissionsAsync() 执行后可以获取授权状态，但是执行到 Location.getCurrentPositionAsync() 时不会打印结果。
+
+## 解决方法：
+
+给 Location.getCurrentPositionAsync() 添加参数，如下
+
+```js
+let location = await Location.getCurrentPositionAsync({
+  accuracy: Location.Accuracy.Highest,
+  maximumAge: 10000,
+});
+console.log("Location:", location);
+```
+
+## 官方文档：
+
+[expo-location文档地址](https://docs.expo.dev/versions/latest/sdk/location/ "expo-location文档地址")
+
+1. 安装：
+
+```shell
+npx expo install expo-location
+```
+
+2. 使用：
+
+下面是官方案例写法
+
+```jsx
+import React, { useState, useEffect } from "react";
+import { Platform, Text, View, StyleSheet } from "react-native";
+import Device from "expo-device";
+import * as Location from "expo-location";
+
+export default function App() {
+  const [location, setLocation] = useState(null);
+  const [errorMsg, setErrorMsg] = useState(null);
+
+  useEffect(() => {
+    (async () => {
+      if (Platform.OS === "android" && !Device.isDevice) {
+        setErrorMsg(
+          "Oops, this will not work on Snack in an Android Emulator. Try it on your device!",
+        );
+        return;
+      }
+      let { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== "granted") {
+        setErrorMsg("Permission to access location was denied");
+        return;
+      }
+
+      let location = await Location.getCurrentPositionAsync({});
+      setLocation(location);
+    })();
+  }, []);
+
+  let text = "Waiting..";
+  if (errorMsg) {
+    text = errorMsg;
+  } else if (location) {
+    text = JSON.stringify(location);
+  }
+
+  return (
+    <View style={styles.container}>
+      <Text style={styles.paragraph}>{text}</Text>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 20,
+  },
+  paragraph: {
+    fontSize: 18,
+    textAlign: "center",
+  },
+});
+```
+
+> 官方案例中 getCurrentPositionAsync 方法传参为空对象 {} ，这是打印不出结果的原因。
+> 添加参数后便可以获取结果数据。
+
+## 参考文章：
+
+[StackOverflow 讨论](https://stackoverflow.com/questions/69957907/expo-location-react-native-location-getcurrentpositionasync-never-returns "StackOverflow 讨论")
+[GitHub 相关 issues](https://github.com/expo/expo/issues/4304 "GitHub 相关 issues")
+[expo 开发论坛相关文章](https://forums.expo.dev/t/getcurrentpositionasync-doesnt-return-any-value-infinity-loading/23643 "expo 开发论坛相关文章")
+1b:T874,### 组件介绍：
 
 该组件将根据键盘高度自动调整其高度、位置或底部填充，以在显示虚拟键盘时保持可见。
 
@@ -2715,7 +3334,7 @@ const styles = StyleSheet.create({
 
 export default KeyboardAvoidingComponent;
 ```
-16:T79a,# 一、安装：
+1c:T79a,# 一、安装：
 
 ### 1. 在官网下载桌面应用
 
@@ -2764,7 +3383,68 @@ eas build --profile devclient --platform android --loacal
 
 **1. 使用expo构建的项目，构建开发版本app步骤参考官方文档如下：**
 [官方文档地址](https://docs.expo.dev/develop/development-builds/create-a-build/ "官方文档地址")
-17:T93d,## 1. 插件地址：
+1d:T521,```jsx
+<template>
+  <router-view v-slot="{ Component, route }">
+    <keep-alive :include="['ComponentName']">
+      <component :is="Component" :key="route.name" />
+    </keep-alive>
+  </router-view>
+</template>
+```
+
+`vue3` 使用 `keep-alive` 缓存页面时，如果需要使用 `include / exclude` 参数，那么就要用到组件名称。如果用 `setup` 语法糖书写时无法直接获取组件名，此时想要设置组件 `name` 的话有如下方法：
+
+#### 1. 多写一个script标签，并设置组件名：
+
+```jsx
+<script>
+export default {
+  name: "ComponentName",
+}
+</script>
+```
+
+#### 2. 通过插件扩展：
+
+[vite-plugin-vue-setup-extend](https://www.viterc.cn/en/vite-plugin-vue-setup-extend.html "vite-plugin-vue-setup-extend")
+
+**安装插件：**
+
+```shell
+yarn add vite-plugin-vue-setup-extend -D
+```
+
+或
+
+```shell
+npm i vite-plugin-vue-setup-extend -D
+```
+
+**使用插件：**
+先引入
+
+```js
+import { defineConfig, Plugin } from "vite";
+import vue from "@vitejs/plugin-vue";
+import vueSetupExtend from "vite-plugin-vue-setup-extend";
+
+export default defineConfig({
+  plugins: [vue(), vueSetupExtend()],
+});
+```
+
+然后便可以设置name属性
+
+```jsx
+<template>
+  <div>hello world {{ a }}</div>
+</template>
+<script lang="ts" setup name="ComponentName">
+  const a = 1
+</script>
+```
+1e:T93d,## 1. 插件地址：
 
 [Vue I18n官方文档](https://kazupon.github.io/vue-i18n/zh/ "Vue I18n官方文档")
 [GitHub地址](https://github.com/kazupon/vue-i18n "GitHub地址")
@@ -2902,7 +3582,57 @@ resolve: {
   ],
 },
 ```
-18:T806,## 1. 官方文档
+1f:T560,### 1. 背景
+
+vue-router4.x版本，想在路由文件中引入并使用pinia后报错如下：
+
+![image](/notes/vue/vue-router4x-pinia-error.png)
+
+表面意思是 `getActivePinia()` 方法在pinia还没有激活的时候被调用，导致报错。
+
+参考官方文档：
+[pinia官方文档-在组件外使用存储](https://pinia.web3doc.top/core-concepts/outside-component-usage.html#%E5%8D%95%E9%A1%B5%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F "pinia官方文档-在组件外使用存储")
+
+### 2. 解决方法
+
+- 在 stores 文件夹下新建 pinia.js 文件，用来引入并创建 pinia 实例。
+
+```js
+// 使用了数据持久化存储插件
+import piniaPluginPersistedstate from "pinia-plugin-persistedstate";
+import { createPinia } from "pinia";
+
+const pinia = createPinia();
+pinia.use(piniaPluginPersistedstate);
+
+export default pinia;
+```
+
+- 在 main.js 里引入 pinia.js 文件。
+
+```js
+import { createApp } from "vue";
+import App from "./App.vue";
+import router from "./router/index";
+import pinia from "./stores/pinia";
+
+const app = createApp(App);
+
+app.use(router);
+app.use(pinia);
+app.mount("#app");
+```
+
+- 在路由文件里引入并使用。
+
+```js
+import pinia from "@/stores/pinia";
+import { useUserStore } from "@/stores/userStore";
+// pinia实例要作为参数传给useUserStore
+const userStore = useUserStore(pinia);
+console.log(userStore.userInfo);
+```
+20:T806,## 1. 官方文档
 
 [pinia官方文档地址](https://pinia.web3doc.top/introduction.html "pinia官方文档地址")
 [pinia-plugin-persistedstate数据持久化插件](https://www.npmjs.com/package/pinia-plugin-persistedstate "pinia-plugin-persistedstate数据持久化插件")
@@ -2986,7 +3716,7 @@ console.log(mainStore.counter);
 
 1. store 是一个用reactive 包裹的对象，这意味着不需要在getter 之后写.value，但是，就像setup 中的props 一样，我们不能对其进行解构；
 2. 为了从 Store 中提取属性同时保持其响应式，您需要使用storeToRefs()。 它将为任何响应式属性创建 refs。
-19:T1f5c,### 1. 新增组件 `IdentifyCode.vue` ，使用canvas绘制验证码内容：
+21:T1f5c,### 1. 新增组件 `IdentifyCode.vue` ，使用canvas绘制验证码内容：
 
 ```jsx
 <template>
@@ -3315,7 +4045,7 @@ const setIdentifyCode = (val) => {
 | dotColorMax        | Number | 干扰点颜色rgb的最大值 |
 | contentWidth       | Number | 画布宽度              |
 | contentHeight      | Number | 画布高度              |
-1a:T1936,## 1. 简介：
+22:T1936,## 1. 简介：
 
 postcss-px-to-viewport是一个将px单位转换为视口单位的 (vw, vh, vmin, vmax) 的 PostCSS 插件。将CSS中的px单位转化为vw，来进行移动端适配，1vw等于1/100视口宽度。
 
@@ -3512,7 +4242,7 @@ exclude / include
 ## 6. 参考链接：
 
 [https://juejin.cn/post/6844903845617729549](https://juejin.cn/post/6844903845617729549 "掘金文章")
-1b:Tc6e,## 介绍
+23:Tc6e,## 介绍
 
 js-audio-recorder是一个纯js实现的浏览器端录音插件。
 目前支持以下功能：
@@ -3675,7 +4405,7 @@ recorder.getWAVBlob();
 ```
 
 > 更多api详见文档 [点击查看更多api](https://recorder-api.zhuyuntao.cn/Recorder/API.html "点击查看更多api")
-1c:T6b9,### 1. Element UI
+24:T6b9,### 1. Element UI
 
 使用 `picker-options 的 disabledDate` 属性限制选择相应日期。
 
@@ -3745,7 +4475,7 @@ const disabledDate = (time) => {
 
 > 官方文档： [点此查看](https://element-plus.org/zh-CN/component/date-picker.html#%E5%B1%9E%E6%80%A7 "点此查看")
 > ![image](/notes/element-ui/el-date-picker-options-3.png)
-1d:T93c,## 1. 相关文档：
+25:T93c,## 1. 相关文档：
 
 [unocss github 地址](https://github.com/unocss/unocss "unocss github 地址")
 [unocss 官网地址](https://unocss.dev/ "unocss官网地址")
@@ -3840,7 +4570,7 @@ import "virtual:uno.css";
 [指令转换器相关文档](https://unocss.dev/transformers/directives "指令转换器相关文档")
 
 > 更多用法可以查看文档
-1e:T1352,# 1. 水平条纹背景
+26:T1352,# 1. 水平条纹背景
 
 当给背景设置渐变效果时，默认的渐变方向是垂直由上到下的，效果如下：
 
@@ -4011,7 +4741,7 @@ import "virtual:uno.css";
 
 [MDN linear-gradient](https://developer.mozilla.org/zh-CN/docs/Web/CSS/gradient/linear-gradient "MDN linear-gradient")
 [MDN repeating-linear-gradient](https://developer.mozilla.org/zh-CN/docs/Web/CSS/gradient/repeating-linear-gradient "MDN repeating-linear-gradient")
-1f:T8a3,# 最终效果
+27:T8a3,# 最终效果
 
 ![image](/notes/css/clip-path-border-result.png)
 
@@ -4127,7 +4857,7 @@ li i {
 [MDN clip-path](https://developer.mozilla.org/zh-CN/docs/Web/CSS/clip-path "MDN clip-path")
 
 ### 2. 方法二待补充
-20:T942,## 1. CRLF概念
+28:T942,## 1. CRLF概念
 
 CRLF（Carriage-Return Line-Feed），CR是回车符，LF是换行符。它们都是文本文件用于标记换行的控制字符（control characters）或字节码（bytecode）。
 
@@ -4169,7 +4899,7 @@ git config --global core.autocrlf false
 
 - 使用 Windows 系统的开发`git config --global core.aurocrlf true`
 - 使用Linux/MacOS 的开发`git config --global core.autocrlf input`
-21:Tfe1,## MIME type
+29:Tfe1,## MIME type
 
 - ###定义
 
@@ -4257,7 +4987,7 @@ Content-Type: text/plain
 ---------------------------974767299852498929531610575
 
 ```
-22:T102b,# 1. 图标获取
+2a:T102b,# 1. 图标获取
 
 :shaved_ice: [阿里巴巴矢量图标库](https://www.iconfont.cn/ "阿里巴巴矢量图标库")
 
@@ -4388,7 +5118,111 @@ font-class 是 Unicode 使用方式的一种变种，主要是解决 Unicode 书
 
 详见官方文档
 🍰 [链接地址](https://www.iconfont.cn/help/detail?helptype=code "链接地址")
-23:T5bc,# 1. 插件地址
+2b:T756,# 效果
+
+![image](/notes/echarts/echarts-legend-custom-formatter.png)
+
+---
+
+# 配置
+
+```js
+let chartData = [
+  {
+    value: 6.33,
+    name: "公共安全支出：",
+  },
+  {
+    value: 7.12,
+    name: "教育支出：",
+  },
+  {
+    value: 8.34,
+    name: "科学技术支出：",
+  },
+  {
+    value: 3.54,
+    name: "社会保障和就业支出：",
+  },
+  {
+    value: 3.54,
+    name: "卫生健康支出：",
+  },
+  {
+    value: 3.54,
+    name: "城乡社区支出：",
+  },
+  {
+    value: 3.54,
+    name: "节能环保支出：",
+  },
+  {
+    value: 3.54,
+    name: "其他：",
+  },
+];
+let pieChartOption = {
+  orient: "vertical",
+  title: {
+    text: "一般公共服务支出构成",
+    top: 25,
+    left: "center",
+    textStyle: {
+      color: "#fff",
+      fontSize: 16,
+    },
+  },
+  tooltip: {
+    trigger: "axis",
+    axisPointer: {
+      type: "cross",
+      crossStyle: {
+        color: "#999",
+      },
+    },
+  },
+  legend: {
+    top: 80,
+    left: 213,
+    icon: "circle",
+    itemWidth: 12, // 设置宽度
+    itemHeight: 12, // 设置高度
+    formatter: (name) => {
+      const data = chartData;
+      let total = 0;
+      let target;
+      for (let i = 0, l = data.length; i < l; i++) {
+        total += data[i].value;
+        if (data[i].name == name) {
+          target = data[i].value;
+        }
+      }
+      const percent = ((target / total) * 100).toFixed(2);
+      return `${name}${target}亿元，占比${percent}%`;
+    },
+    textStyle: {
+      color: "#C5F6FF",
+    },
+  },
+  series: [
+    {
+      type: "pie",
+      center: [107, 172],
+      radius: "50%",
+      data: chartData,
+      label: {
+        show: false,
+        position: "inside",
+        // formatter: "{b}：{d}%",
+        formatter: "{d}%",
+        color: "#fff",
+      },
+      color: ["#3DCDE9", "#3B7CFF", "#059B53", "#27D17C", "#21FCCA", "#B1FFED"],
+    },
+  ],
+};
+```
+2c:T5bc,# 1. 插件地址
 
 :rocket: [TypewriterJS GitHub](https://github.com/tameemsafi/typewriterjs "TypewriterJS")
 :airplane: [npm 地址](https://www.npmjs.com/package/typewriter-effect "npm 地址")
@@ -4463,7 +5297,7 @@ typewriter
 | typeString | 要输出的字符串，可包含HTML标签 |
 | deleteChars | 在结尾删除指定长度的字符串 |
 | ... | ... |
-24:T7fa,### 1. 滚动条不在body元素
+2d:T7fa,### 1. 滚动条不在body元素
 
 > 场景：页面布局使用如下container容器布局，Aside固定高度，Main部分带纵向滚动条。
 > ![image](/notes/vue/vue3-scroll-to-top.png)
@@ -4544,7 +5378,7 @@ router.afterEach((to, from, next) => {
   window.scrollTo(0, 0);
 });
 ```
-25:Tb88,### 1. 新建 _echartsLib.js_ 文件，统一导入需要的组件
+2e:Tb88,### 1. 新建 _echartsLib.js_ 文件，统一导入需要的组件
 
 ```js
 import * as echarts from "echarts/core";
@@ -4696,7 +5530,7 @@ onMounted(() => {
   setOption(option);
 });
 ```
-26:T7e5,# 官网
+2f:T7e5,# 官网
 
 [Vue Flow 官网](https://vueflow.dev/ "Vue Flow 官网")
 [Vue Flow GitHub](https://github.com/bcakmakoglu/vue-flow "Vue Flow GitHub")
@@ -4789,7 +5623,7 @@ state.instance.zoomTo(1);
     console.log(node.id);
   };
 ```
-27:T9ff,### 1. 安装 qrcode.vue
+30:T9ff,### 1. 安装 qrcode.vue
 
 [仓库地址](https://github.com/scopewu/qrcode.vue "仓库地址")
 
@@ -4850,7 +5684,7 @@ createApp({
 | background | string | #ffffff | 二维码背景颜色                                                                                                                    |
 | foreground | string | #000000 | 二维码颜色                                                                                                                        |
 | class      | string | ''      | 二维码元素类名                                                                                                                    |
-28:Tb57,### 1. 依赖安装
+31:Tb57,### 1. 依赖安装
 
 ```shell
 npm install xlsx file-saver --save
@@ -4952,7 +5786,91 @@ exportExcelHandle(tableId) {
 
 - 当表格中有固定列时，导出数据会出现重复现象。如果有固定列，根据上面的代码，转换excel时先将该dom移除，然后append。
 - 超过12位的数字导出后变成科学记数法：配置{raw:true}表示不自动获取格式，统一按照文本格式导出，可以避免该问题。
-29:T1308,### 1. 安装 turn.js
+32:T9ac,**dom结构**
+
+```html
+<div class="box" id="list">
+  <ul class="list flex-row-inline flex-nowrap">
+    <li v-for="item in 5" :class="{ active: item === 1 }"></li>
+  </ul>
+</div>
+```
+
+```css
+.box {
+  overflow-x: auto;
+}
+/* 隐藏滚动条 */
+.box::-webkit-scrollbar {
+  display: none;
+}
+```
+
+> 应确保绑定id的dom元素存在再绑定事件
+
+**1. 鼠标拖拽滚动**
+
+```js
+function initScroll() {
+  // 获取要绑定事件的元素
+  const tarDom = document.getElementById("list");
+  let flag; // 鼠标按下
+  let downX; // 鼠标点击的x下标
+  let scrollLeft; // 当前元素滚动条的偏移量
+  tarDom.addEventListener("mousedown", function (event) {
+    flag = true;
+    downX = event.clientX; // 获取到点击的x下标
+    scrollLeft = tarDom.scrollLeft; // 获取当前元素滚动条的偏移量
+  });
+  tarDom.addEventListener("mousemove", function (event) {
+    if (flag) {
+      // 判断是否是鼠标按下滚动元素区域
+      let moveX = event.clientX; // 获取移动的x轴
+      let scrollX = moveX - downX; // 当前移动的x轴下标减去刚点击下去的x轴下标得到鼠标滑动距离
+      tarDom.scrollLeft = scrollLeft - scrollX; // 鼠标按下的滚动条偏移量减去当前鼠标的滑动距离
+    }
+  });
+  // 鼠标抬起停止拖动
+  tarDom.addEventListener("mouseup", function () {
+    flag = false;
+  });
+  // 鼠标离开元素停止拖动
+  tarDom.addEventListener("mouseleave", function (event) {
+    flag = false;
+  });
+}
+```
+
+**2. 鼠标滚轮滚动**
+
+```js
+function initScroll() {
+  // 获取要绑定事件的元素
+  const tarDom = document.getElementById("list");
+  // document.addEventListener('DOMMouseScroll', handler, false)
+  // 添加滚轮滚动监听事件，一般是用下面的方法，上面的是火狐的写法
+  tarDom.addEventListener("mousewheel", handler, false);
+  // 滚动事件的出来函数
+  function handler(event) {
+    // 获取滚动方向
+    const detail = event.wheelDelta || event.detail;
+    // 定义滚动方向，其实也可以在赋值的时候写
+    const moveForwardStep = 1;
+    const moveBackStep = -1;
+    // 定义滚动距离
+    let step = 0;
+    // 判断滚动方向,这里的100可以改，代表滚动幅度，也就是说滚动幅度是自定义的
+    if (detail < 0) {
+      step = moveForwardStep * 100;
+    } else {
+      step = moveBackStep * 100;
+    }
+    // 对需要滚动的元素进行滚动操作
+    tarDom.scrollLeft += step;
+  }
+}
+```
+33:T1308,### 1. 安装 turn.js
 
 > 需要jQuery
 
@@ -5145,7 +6063,639 @@ export default {
 }
 </style>
 ```
-0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-6xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"notes":[{"slug":"react-usedeferredvalue-concept-84b792","title":"React useDeferredValue 详解与最佳实践","category":"React","type":"concept","description":"深入理解 React 18 useDeferredValue 的作用、使用场景、适用边界以及与 debounce、useTransition 的区别。","status":"published","tags":["React","React18","Hooks","Performance","Concurrent Rendering"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-29","readingTime":"2 min read","content":"$3"},{"slug":"axios-baseurl-089fd3","title":"Axios在实例化之后修改baseURL或其他配置","category":"JavaScript","type":"setup","description":"在使用axios请求的时候一般会进行封装，如：","status":"published","tags":["JavaScript","setup","Axios"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"$4"},{"slug":"next-js-plus-github-pages-ci-cd-2c6362","title":"🚀 Next.js + GitHub Pages 自动部署（CI/CD 笔记）","category":"Next.js","type":"setup","description":"main 分支（源码）","status":"published","tags":["Next.js","setup","GitHub Pages"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"$5"},{"slug":"vue-docx-excel-pdf-959f53","title":"vue 在网页中预览(docx、excel、pdf)文件","category":"Vue","type":"snippet","description":"npm install @vue-office/docx vue-demi@0.14.6","status":"published","tags":["Vue","snippet","PDF","Excel"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"$6"},{"slug":"vue3-html5-qrcode-41e695","title":"vue3 使用 html5-qrcode 实现扫描二维码功能","category":"Vue","type":"snippet","description":"npm安装","status":"published","tags":["Vue","snippet","QRCode"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"2 min read","content":"$7"},{"slug":"vue3-wordcloud2-js-fcafb2","title":"vue3 中使用 wordcloud2.js 实现词云功能","category":"Vue","type":"snippet","description":"vue3 中使用 wordcloud2.js 实现词云功能。","status":"published","tags":["Vue","wordcloud","词云"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2025-04-17","readingTime":"1 min read","content":"$8"},{"slug":"uni-app-settabbaritem-error-cfddcb","title":"uniapp中uni.setTabBarItem方法在非tabbar页面使用会报错","category":"UniApp","type":"debugging","description":"uniapp中uni.setTabBarItem方法在非tabbar页面使用会报错问题记录。","status":"published","tags":["UniApp","I18n","小程序"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-11-12","readingTime":"1 min read","content":"### 背景：\n\nuniapp在开发小程序多语言切换功能时，使用`uni.setTabBarItem`方法切换tabbar语言时报错，查阅文档发现微信小程序该功能只能在tabbar页面或其子页面中使用，不能在其他页面直接使用。\n\n### 解决：\n\n在tabbar页面中使用onShow方法监听切换语言设置，部分代码示例如下：\n\n```jsx\n<script setup>\nimport { onShow } from '@dcloudio/uni-app';\nimport { useI18n } from 'vue-i18n';\nconst { t } = useI18n();\n\nonShow(() => {\n  updateTabBarText();\n});\n\nconst updateTabBarText = () => {\n  uni.setTabBarItem({\n    index: 0,\n    text: t('tabBar.index')\n  });\n  uni.setTabBarItem({\n    index: 1,\n    text: t('tabBar.my')\n  });\n};\n</script>\n```\n"},{"slug":"vue3-mobile-vxe-table-9107ff","title":"vue3 移动端使用 vxe-table 实现表格功能","category":"Vue","type":"snippet","description":"vue3 移动端使用 vxe-table 实现表格功能。","status":"published","tags":["Vue3","移动端","Table"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-09-24","readingTime":"1 min read","content":"$9"},{"slug":"el-date-picker-invalid-5ffb16","title":"element plus 选择多个日期（年月日）时功能不生效问题","category":"Vue","type":"debugging","description":"记录 element plus 选择多个日期（年月日）时功能不生效问题。","status":"published","tags":["Vue","Element"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-09-11","readingTime":"1 min read","content":"## 问题：\n\nelement plus 官网文档中的日期多选功能，设置 `type=\"months|years|dates\"` 发现功能失效，日期选择面板显示也是默认的date，控制台警告提示type的值无效。\n\n![image](/notes/element-ui/el-date-picker-muti-type.png)\n\n```html\n<div class=\"block\">\n  <span class=\"demonstration\">Months</span>\n  <el-date-picker\n    v-model=\"value6\"\n    type=\"months\"\n    placeholder=\"Pick one or more months\"\n  />\n</div>\n```\n\n## 解决：\n\n首先检查element的版本，旧版本不支持该功能。\n**重要：更新完版本后要删除node_modules重新安装，直接更新element后就使用也是不会生效的，需要把旧的依赖删除重新安装。**\n"},{"slug":"react-native-image-picker-ba4d4a","title":"使用 react-native-image-picker 实现选择或拍照上传图片","category":"ReactNative","type":"snippet","description":"react native 项目使用 react-native-image-picker 实现选择或拍照上传图片。","status":"published","tags":["RN","image-picker","camera"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-07-09","readingTime":"1 min read","content":"$a"},{"slug":"chrome-overwrite-window-config-ba4eb1","title":"Google浏览器打开网页会覆盖原来的页面","category":"Browser","type":"guide","description":"Google浏览器打开网页会覆盖原来的页面，修改搜索设置即可解决。","status":"published","tags":["Chrome","Browser","Configuration"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-06-05","readingTime":"1 min read","content":"### 1. 打开主页\n\n[https://www.google.com/](https://www.google.com/ \"https://www.google.com/\")\n\n### 2. 选择右下角设置 -> 搜索设置\n\n![image](/notes/browser/google-search-setting.png)\n\n### 3. 找到在新窗口打开搜索结果即可\n\n![image](/notes/browser/other-setting-new-window.png)\n"},{"slug":"react-native-macos-homebrew-100555","title":"MacOS Homebrew下载替换国内镜像源","category":"ReactNative","type":"setup","description":"MacOS Homebrew下载时替换国内镜像源的步骤记录。","status":"published","tags":["RN","MacOS","Homebrew"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-05-8","readingTime":"1 min read","content":"$b"},{"slug":"vue3-define-expose-f7e823","title":"自定义 v-permission 控制按钮权限","category":"Vue","type":"snippet","description":"自定义 v-permission 控制按钮权限的步骤记录。","status":"published","tags":["Vue","Snippet","permission"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-05-30","readingTime":"1 min read","content":"$c"},{"slug":"react-native-xcode-appstore-dbe694","title":"react native项目使用Xcode打包上架App Store","category":"ReactNative","type":"setup","description":"react native项目使用Xcode打包上架App Store的步骤记录。","status":"published","tags":["RN","xcode","app store"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-05-13","readingTime":"3 min read","content":"$d"},{"slug":"uni-app-miniproject-vant-cb8494","title":"uniapp开发小程序引入vant","category":"UniApp","type":"snippet","description":"uni-app 开发微信小程序引入 vant 组件库的流程记录。","status":"published","tags":["UniApp","Vant","小程序"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-05-07","readingTime":"1 min read","content":"$e"},{"slug":"vue3-el-menu-recursive-e88659","title":"el-menu递归组件实现多级菜单（vue3+element plus版）","category":"Vue","type":"snippet","description":"vue3 + element plus 中 使用 el-menu 递归组件实现多级菜单。","status":"published","tags":["Vue","Element","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-04-23","readingTime":"1 min read","content":"$f"},{"slug":"uni-app-run-android-studio-3ab79f","title":"uni-app 项目运行到 Android Studio 模拟器","category":"UniApp","type":"snippet","description":"uni-app 项目运行到 Android Studio 模拟器。","status":"published","tags":["UniApp","Android Studio"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-04-07","readingTime":"2 min read","content":"$10"},{"slug":"uni-app-lazycodeloading-a66d5d","title":"uni-app启用组件按需注入","category":"UniApp","type":"setup","description":"uni-app 中通过配置\"lazyCodeLoading\" : \"requiredComponents\"启用组件按需注入。","status":"published","tags":["UniApp","小程序"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-03-07","readingTime":"1 min read","content":"### 1. 打开 manifest.json 配置文件\n\n### 2. 选择最后的源码视图，并找到小程序特有相关 `mp-weixin`\n\n增加 `\"lazyCodeLoading\" : \"requiredComponents\"`\n\n```json\n    /* 小程序特有相关 */\n    \"mp-weixin\" : {\n        // ...\n        \"lazyCodeLoading\" : \"requiredComponents\"\n    },\n```\n\n![image](/notes/uni-app/uni-app-lazyCodeLoading-config.png)\n\n### 3. 相关链接\n\n[按需注入文档](https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html \"按需注入文档\")\n"},{"slug":"css-tailwind-import-iconify-a24190","title":"Tailwind CSS 使用 Iconify 图标","category":"CSS","type":"guide","description":"讲解了Tailwind CSS 中引入和使用 Iconify 图标的方式的步骤。","status":"published","tags":["Tailwind CSS","Iconify"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-02-23","readingTime":"1 min read","content":"### 1. 安装依赖\n\n通过 npm 安装 tailwindcss，并创建 tailwind.config.js 文件。\n\n```shell\nnpm install tailwindcss -D\nnpx tailwindcss init\n```\n\n安装 iconify 图标库和 TailwindCSS 插件。\n\n```shell\nnpm install @iconify/json @iconify/tailwind -D\n```\n\n### 2. 配置插件\n\n配置 tailwind.config.js 文件。\n\n```js\n/** @type {import('tailwindcss').Config} */\nconst { addDynamicIconSelectors } = require('@iconify/tailwind')\nexport default {\n  content: [\n    './src/**/*.{vue,js,ts,jsx,tsx}'\n  ],\n  theme: {\n    extend: {},\n  },\n  plugins: [addDynamicIconSelectors()],\n}\n```\n\n### 3. 使用图标\n\n```html\n<span class=\"icon-[svg-spinners--12-dots-scale-rotate]\"></span>\n```\n\n![image](/notes/css/tailwind-css-iconify-use.png)\n\n### 4. 相关链接\n\n[tailwindcss官方文档](https://tailwindcss.com/ \"tailwindcss官方文档\")\n[iconify官方文档](https://iconify.design/ \"iconify官方文档\")\n[iconify图标库](https://icon-sets.iconify.design/ \"iconify图标库\")\n"},{"slug":"vscode-prettier-typeerror-f70653","title":"Prettier格式化报错 A dynamic import callback was not specified","category":"Tooling","type":"debugging","description":"Prettier 格式化报错 TypeError: A dynamic import callback was not specified。","status":"published","tags":["VScode","Prettier","TypeError"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-01-26","readingTime":"1 min read","content":"记录今天遇到的奇怪的问题，在vscode中使用Prettier格式化代码时，控制台报错：\n\n```bash\n[\"ERROR\" - 9:30:18 AM] Error resolving prettier configuration for c:\\My\\Test\\learning\\src\\utils\\index.js\n[\"ERROR\" - 9:30:18 AM] A dynamic import callback was not specified.\nTypeError: A dynamic import callback was not specified.\n```\n\n尝试修改Prettier配置文件`.prettierrc`或者` prettier.config.js`，没有效果。\n最后重启vscode发现问题解决了，不再报错了。。\n"},{"slug":"el-table-display-issues-278254","title":"el-table 设置合并行或列时，显示错乱问题","category":"Vue","type":"snippet","description":"记录 el-table 合并行或列时显示错乱问题的解决方法。","status":"published","tags":["Vue","Element","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-01-05","readingTime":"2 min read","content":"$11"},{"slug":"js-fetch-stream-abort-cbfc2d","title":"fetch请求stream流接口并使用AbortController中断结果响应","category":"JavaScript","type":"snippet","description":"记录 fetch 请求 stream 流接口的写法并且使用 AbortController 中断结果响应。","status":"published","tags":["fetch","stream","AbortController"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-12-29","readingTime":"1 min read","content":"$12"},{"slug":"vue-papaparse-csv-55803c","title":"使用papaparse解析本地上传的csv文件，并在el-table中展示","category":"Vue","type":"snippet","description":"Vue 项目中使用 papaparse 插件解析本地上传的 csv 文件，并在 el-table 中展示。","status":"published","tags":["Vue","papaparse","CSV"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-11-03","readingTime":"1 min read","content":"$13"},{"slug":"vscode-err-connection-closed-7a4370","title":"vscode 安装插件报错：ERR_CONNECTION_CLOSED","category":"Tooling","type":"debugging","description":"vscode 安装插件时报错 [error] Download: net::ERR_CONNECTION_CLOSED 。","status":"published","tags":["VScode","Error"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-10-30","readingTime":"1 min read","content":"## 背景：\n\nvscode安装扩展插件时报错，显示下载失败：\n`[error] Download: net::ERR_CONNECTION_CLOSED`\n`[error] net::ERR_CONNECTION_CLOSED: Download: net::ERR_CONNECTION_CLOSED`\n\n![image](/notes/ide/err-connection-closed.png)\n\n## 解决方法：\n\n查找相关文档发现这么一段：\n**If you are behind a firewall that needs to allow specific domains used by VS Code, here's the list of hostnames you should allow communication to go through:**\n猜测可能是防火墙的问题，关闭后问题解决。\n\n## 链接：\n\n[Network Connections in Visual Studio Code](https://code.visualstudio.com/docs/setup/network \"Network Connections in Visual Studio Code\")\n"},{"slug":"react-native-zustand-2bb301","title":"react native使用zustand进行状态管理","category":"ReactNative","type":"snippet","description":"react native使用zustand进行状态管理简要步骤记录。","status":"published","tags":["RN","zustand"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-10-11","readingTime":"1 min read","content":"$14"},{"slug":"react-native-keyboardavoidingview-problem-bac90c","title":"react native 使用 KeyboardAvoidingView 无效","category":"ReactNative","type":"debugging","description":"react native 使用 KeyboardAvoidingView 无效的问题记录。","status":"published","tags":["RN","KeyboardAvoidingView"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-09-22","readingTime":"1 min read","content":"$15"},{"slug":"react-native-flipper-debug-abd253","title":"Flipper调试react native项目以及\"NO APPLICATION SELECTED\"问题处理","category":"ReactNative","type":"setup","description":"安装Flipper调试react native项目的步骤以及对\"NO APPLICATION SELECTED\"问题的处理。","status":"published","tags":["RN","Flipper","Configuration"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-09-14","readingTime":"2 min read","content":"$16"},{"slug":"vscode-terminal-error-9704d1","title":"vscode终端报错：无法加载文件 D:\\nodejs\\npm.ps1，因为在此系统上禁止运行脚本","category":"Tooling","type":"debugging","description":"vscode 终端报错：无法加载文件 D:\\nodejs\\npm.ps1，因为在此系统上禁止运行脚本。","status":"published","tags":["VScode","Error"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-09-12","readingTime":"1 min read","content":"## 问题：vscode终端执行npm指令时报错如下\n\n![image](/notes/ide/vscode-terminal-err-running-script.png)\n\n## 解决：\n\n**1. 在终端通过输入指令 `get-ExecutionPolicy` 得到以下结果：**\n\n![image](/notes/ide/vscode-terminal-err-get-ExecutionPolicy.png)\n\n> 表示当前执行策略为受限的\n\n**2. 执行指令 `Set-ExecutionPolicy -Scope CurrentUser`，并输入 `RemoteSigned`。**\n\n![image](/notes/ide/vscode-terminal-err-set-ExecutionPolicy.png)\n\n> Set-ExecutionPolicy 语法如下：\n\n```shell\nSet-ExecutionPolicy\n   [-ExecutionPolicy] <ExecutionPolicy>\n   [[-Scope] <ExecutionPolicyScope>]\n   [-Force]\n   [-WhatIf]\n   [-Confirm]\n   [<CommonParameters>]\n```\n\n**3. 然后终端就可以正常使用了。**\n\n## 参考：\n\n[Set-ExecutionPolicy Microsoft 文档](https://learn.microsoft.com/fr-fr/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7.3 \"Set-ExecutionPolicy Microsoft 文档\")\n"},{"slug":"js-fetch-stream-data-c6c8e0","title":"fetch方法请求并处理接口返回的stream流数据","category":"JavaScript","type":"snippet","description":"记录 fetch 请求 stream 流接口的写法并且处理返回的数据。","status":"published","tags":["fetch","stream"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-08-21","readingTime":"1 min read","content":"```js\nconst fetchStream = async (url, options) => {\n  const response = await fetch(url, options);\n  if (response.status !== 200) {\n    return false;\n  }\n  const reader = response.body.getReader();\n  return reader;\n\n  while (true) {\n    const { value, done } = await reader.read();\n    if (done) {\n      break;\n    } else {\n      console.log(new TextDecoder().decode(value));\n    }\n  }\n};\n\nfetchRequest(\"/api/chat/scend\", {\n  method: \"post\",\n  body: JSON.stringify(data),\n});\n```\n"},{"slug":"vite-https-plugin-basic-ssl-c6ac59","title":"Vite 本地开启 https 模式便于调试","category":"Tooling","type":"setup","description":"Vite 本地开启 https 模式配置。","status":"published","tags":["Vite","Https"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-08-17","readingTime":"1 min read","content":"### 1. 安装依赖\n\n```shell\nnpm install @vitejs/plugin-basic-ssl -D\n```\n\n### 2. 配置 vite.config.js\n\n```js\n// vite.config.js\nimport  basicSsl  from  '@vitejs/plugin-basic-ssl'\n\nexport  default  {\n  plugins : [\n    basicSsl ( {\n      /** 认证名称 */\n      name : 'test' ,\n      /** 自定义信任域 * /\n      domains : [ '*.custom.com' ] ,\n      /** 自定义认证目录 */\n      certDir : '/Users/.../.devServer/cert'\n    } )\n  ]\n}\n```\n\n### 3. 相关链接\n\n[@vitejs/plugin-basic-ssl npm 地址](https://www.npmjs.com/package/@vitejs/plugin-basic-ssl \"@vitejs/plugin-basic-ssl npm 地址\")\n[GitHub 地址](https://github.com/vitejs/vite-plugin-basic-ssl \"GitHub 地址\")\n[Vite server-https](https://vitejs.dev/config/server-options.html#server-https \"Vite server-https\")\n"},{"slug":"vue3-vue-i18n-config-e8f6f5","title":"vue3使用vue-i18n配置多语言环境","category":"Vue","type":"snippet","description":"vue3 中使用 vue-i18n 配置多语言环境的步骤记录。","status":"published","tags":["Vue3","i18n"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-08-14","readingTime":"1 min read","content":"$17"},{"slug":"vue3-pinia-persistedstate-f92b36","title":"vue3 使用 pinia 并持久化存储数据","category":"Vue","type":"snippet","description":"vue3 中使用 pinia 持久化存储数据的用法记录。","status":"published","tags":["Vue3","Pinia"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-08-09","readingTime":"1 min read","content":"$18"},{"slug":"vue3-login-identify-code-6e1a27","title":"vue3登录添加图形验证码","category":"Vue","type":"snippet","description":"vue3项目中给登录添加图形验证码功能。","status":"published","tags":["Vue3","IdentifyCode","canvas"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-07-20","readingTime":"1 min read","content":"$19"},{"slug":"css-postcss-px-to-viewport-ed1e37","title":"postcss-px-to-viewport插件移动端适配","category":"CSS","type":"snippet","description":"使用 postcss-px-to-viewport 插件实现移动端适配。","status":"published","tags":["CSS","移动端","viewport"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-07-17","readingTime":"3 min read","content":"$1a"},{"slug":"js-scrollintoview-problem-7daea7","title":"scrollIntoView返回顶部失效问题","category":"JavaScript","type":"debugging","description":"记录scrollIntoView返回顶部失效问题。","status":"published","tags":["JavaScript","scrollIntoView"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-07-04","readingTime":"1 min read","content":"### 背景：\n\n在vue项目中进入页面使用了 `scrollIntoView` 方法让页面滚动回顶部，同样的详情页面发现有的可以返回顶部，但是有的失效。\n\n### 代码如下：\n\n```js\nimport { onBeforeRouteUpdate } from \"vue-router\";\n\nonBeforeRouteUpdate((to, from) => {\n  setTimeout(() => {\n    document.getElementById(\"main\").scrollIntoView({\n      behavior: \"smooth\",\n      block: \"start\",\n    });\n  }, 300);\n});\n```\n\n### 解决：\n\n在经过对比排查之后，发现失效的页面获取数据的接口响应时间超出了300ms，即上面设置的定时器的时间。猜测是因为数据没渲染好便执行了 `scrollIntoView` 方法，导致滚动失效。把定时器事件改为500ms后问题得到解决。也可以在保证数据渲染完毕后再执行该方法。\n\n### 一些已知的 scrollIntoView 生效的前提条件：\n\n1. 元素的 CSS 属性 overflow 必须设置为 scroll 或 auto，或者其父级元素的 overflow 属性设置为 scroll 或 auto，以确保滚动条可见。\n2. 元素的高度不能为0，且必须大于容器的高度，否则无需滚动。\n3. 元素的 display 属性不能设置为 none，visibility属性不能为hidden，否则元素将不可见且无法滚动。\n4. scrollIntoView 方法必须在已经完成页面的加载和渲染之后调用，否则可能无法正确滚动到指定的元素。\n"},{"slug":"js-audio-recorder-17d428","title":"js-audio-recorder 插件实现web端录音","category":"JavaScript","type":"snippet","description":"使用 js-audio-recorder 插件实现web端录音。","status":"published","tags":["JavaScript","Frontend","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-06-19","readingTime":"2 min read","content":"$1b"},{"slug":"vite-https-self-signed-certificate-115fa2","title":"vite 本地代理请求https接口 self signed certificate 自签名证书错误","category":"Tooling","type":"debugging","description":"记录 vite 本地代理请求https接口时自签名证书错误。","status":"published","tags":["Vite","Tooling"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-06-14","readingTime":"1 min read","content":"### vite本地代理后端接口为https时，无法发送请求，并报错如下：\n\n![image](/notes/vite/error-self-signed-certificate.png)\n\n### 查询vite文档，更改配置 `server.https` 为 `true` ，无效\n\n![image](/notes/vite/server.https-config.png)\n\n### 又根据vite文档中描述添加 @vitejs/plugin-basic-ssl 到项目插件中，它会自动创建和缓存一个自签名的证书。 结果无效\n\n### 于是本地添加证书文件并配置在 `server.https` 中 ，无效\n\n### 最终 `server.proxy` 中增加配置 `secure: false` 后，请求发起成功，问题解决\n\n```js\n  server: {\n    hmr: true,\n    open: true,\n    port: \"8080\",\n    proxy: {\n      \"/api\": {\n        target: \"https://xx.xx.xx.xx:xx\",\n        changeOrigin: true,\n        rewrite: (path) => path.replace(/^\\/api/, \"\"),\n        secure: false,\n      },\n    },\n  },\n```\n\n> [参考链接 https://github.com/vitejs/vite/issues/3475](https://github.com/vitejs/vite/issues/3475 \"参考链接\")\n> ![image](/notes/vite/github-issues-error-self-signed-cetificate.png)\n"},{"slug":"el-dropdown-command-param-1c610c","title":"el-dropdown  @command事件传参","category":"Vue","type":"snippet","description":"element el-dropdown  @command事件传参方法记录。","status":"published","tags":["Vue","Element","dropdown","command"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-06-07","readingTime":"1 min read","content":"```jsx\n<template>\n  <el-dropdown @command=\"handleCommand($event, \"111\")\">\n    <span class=\"el-dropdown-link\">\n      Dropdown List\n      <el-icon class=\"el-icon--right\">\n        <arrow-down />\n      </el-icon>\n    </span>\n    <template #dropdown>\n      <el-dropdown-menu>\n        <el-dropdown-item>Action 1</el-dropdown-item>\n        <el-dropdown-item>Action 2</el-dropdown-item>\n        <el-dropdown-item>Action 3</el-dropdown-item>\n        <el-dropdown-item disabled>Action 4</el-dropdown-item>\n        <el-dropdown-item divided>Action 5</el-dropdown-item>\n      </el-dropdown-menu>\n    </template>\n  </el-dropdown>\n</template>\n```\n\n```jsx\n<script setup>\nconst handleCommand = (command, params) => {\n  console.log(command, params);\n}\n</script>\n```\n"},{"slug":"el-date-picker-before-today-6b293f","title":"element 日期选择器禁止选择今天之后的日期","category":"Vue","type":"snippet","description":"element 日期选择器禁止选择今天之后的日期。","status":"published","tags":["Vue","Element","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-05-25","readingTime":"1 min read","content":"$1c"},{"slug":"node-npm-check-updates-4f353b","title":"使用 npm-check-updates 检查项目的 npm 依赖项是否有更新。","category":"Node.js","type":"guide","description":"使用 npm-check-updates 检查项目的 npm 依赖项是否有更新。","status":"published","tags":["node","npm","ncu"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-05-23","readingTime":"1 min read","content":"## 一、 安装 npm-check-updates：\n\n```shell\nnpm install -g npm-check-updates\n```\n\n## 二、 使用：\n\n1. 在项目根目录运行以下命令，检查所有项目依赖项的最新版本：\n\n```shell\nncu\n```\n\n执行结果如下：\n![image](/notes/nodejs/npm-check-updates-ncu.png)\n\n> 红色 = 主要升级\n> 青色 = 小幅升级\n> 绿色 = 补丁升级 2. 更新版本：\n\n```shell\nncu -u\n```\n\n> 注意备份或者提交代码，确保包文件处于版本控制中并且所有更改均已提交，以防出现不兼容或其他问题。3. 运行 npm install 以安装新版本。\n\n```shell\nnpm install       #更新已安装的软件包和 package-lock.json\n```\n\n## 三、其他选项：\n\n其他高级功能及指令参见官方文档：\n[npm 地址](https://www.npmjs.com/package/npm-check-updates \"npm 地址\")\n[GitHub 地址](https://github.com/raineorshine/npm-check-updates \"GitHub 地址\")\n"},{"slug":"node-nvm-npm-install-error-04046d","title":"nvm管理node版本后，执行npm install提示系统找不到指定的路径。","category":"Node.js","type":"debugging","description":"通过 nvm 管理 node 版本后，在执行 npm install 时提示系统找不到指定的路径问题解决。","status":"published","tags":["nvm","node","npm"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-05-23","readingTime":"1 min read","content":"## 问题背景：\n\n由于项目需要，需要切换node版本，所以安装了 nvm-windows 来管理node版本。安装nvm之前已有18版本的node.js，所以直接选择了用nvm对之前安装的版本也进行了管理，可能也是导致问题的关键。之后在项目中执行npm install 时，出现一些奇怪的报错，如：\n\n1. node_modules\\yorkie npm ERR! command failed\n2. npm WARN deprecated core-js@2.6.11: core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.x\n\n打开cmd 执行 node -v 和 npm -v 提示系统找不到指定的路径。\n\n## 解决方案：\n\n1. 卸载node.js\n2. 删除 npm 文件夹 ，在c盘/用户/AppData下，删除npm npm-cache两个文件夹。\n3. 重新安装nvm-windows，然后下载需要的node版本进行管理。\n"},{"slug":"vue-el-menu-white-space-bb7938","title":"el-menu文本长度过长时换行展示","category":"Vue","type":"snippet","description":"让el-menu文本长度过长时进行换行展示的方法记录。","status":"published","tags":["Vue","Element","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-05-10","readingTime":"1 min read","content":"### **el-menu菜单文字字数过多时默认是设置的不进行换行，如下所示：**\n\n![image](/notes/element-ui/el-menu-text-nowrap.png)\n\n![image](/notes/element-ui/el-menu-text-default.png)\n\n### **如果需要让文本换行展示需要自定义样式，代码如下：**\n\n```css\n{\n  white-space: normal; // 允许换行显示\n  word-break: break-all; // 英文单词允许拆分显示\n  line-height: normal; // 调整行高\n}\n```\n\n![image](/notes/element-ui/el-menu-text-normal.png)\n"},{"slug":"vue3-uno-css-e83d34","title":"vue3项目中使用UnoCSS","category":"Vue","type":"snippet","description":"在vue3项目中引入和使用UnoCSS的步骤以及常用配置。","status":"published","tags":["Vue3","UnoCSS"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-04-26","readingTime":"1 min read","content":"$1d"},{"slug":"css-linear-gradient-background-233966","title":"css利用linear-gradient实现条纹背景","category":"CSS","type":"snippet","description":"记录css中通过利用linear-gradient来实现各种不同类型条纹背景的方法。","status":"published","tags":["CSS","linear-gradient","background"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-04-20","readingTime":"3 min read","content":"$1e"},{"slug":"css-border-radius-clip-path-a29273","title":"CSS实现菜单选项向外圆角效果","category":"CSS","type":"snippet","description":"通过伪元素裁剪拼接实现菜单选项向外圆角效果。","status":"published","tags":["CSS","伪元素","clip-path"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-04-11","readingTime":"1 min read","content":"$1f"},{"slug":"crlf-lf-concept-2ee70f","title":"CRLF和LF区别","category":"Engineering","type":"concept","description":"CRLF 和 LF 概念和区别。","status":"published","tags":["Git","CRLF","LF","工程化"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-04-07","readingTime":"2 min read","content":"$20"},{"slug":"mime-content-type-673505","title":"常用Content-Type汇总","category":"Engineering","type":"concept","description":"Content-Type定义以及常见的类型汇总。","status":"published","tags":["MIME","Content-Type","工程化"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-04-06","readingTime":"2 min read","content":"$21"},{"slug":"css-iconfont-import-use-5e6d7d","title":"阿里巴巴iconfont字体图标使用","category":"CSS","type":"guide","description":"讲解了阿里巴巴iconfont字体图标的多种引入和使用方式的步骤。","status":"published","tags":["CSS","iconfont"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-04-03","readingTime":"3 min read","content":"$22"},{"slug":"javascript-type-writer-90b942","title":"使用TypewriterJS插件实现打字机效果","category":"JavaScript","type":"snippet","description":"使用TypewriterJS插件实现打字机效果。","status":"published","tags":["JavaScript","TypewriterJS"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-03-20","readingTime":"1 min read","content":"$23"},{"slug":"vue3-define-expose-95feb2","title":"Vue3 父组件调用子组件内部的方法","category":"Vue","type":"snippet","description":"vue3 通过 defineExpose 和 ref ，父组件可访问子组件中定义的方法。","status":"published","tags":["Vue","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-03-03","readingTime":"1 min read","content":"### 1. 子组件中定义方法并通过defineExpose暴露出去\n\n```js\nimport { reactive, defineExpose } from \"vue\";\nconst state = reactive({\n  dataList: [],\n});\nconst changeData = () => {\n  state.dataList.push(1);\n};\ndefineExpose({\n  changeData,\n});\n```\n\n### 2. 父组件通过ref调用子组件暴露的方法\n\n```js\n<child ref=\"childRef\"></child>\n\nimport {ref} from \"vue\"；\nconst childRef = ref(null);\nchildRef.value.changeData();\n```\n\n_vue2中通过$refs方法调用_\n"},{"slug":"js-blob-to-excel-c03e2d","title":"js把文件流导出下载excel文件","category":"JavaScript","type":"snippet","description":"记录js中把文件流导出下载excel文件的方法。","status":"published","tags":["js","blob","excel"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-03-02","readingTime":"1 min read","content":"```js\nlet btn = document.querySelector('#app > button');\nlet resData = null;\n\nfetch('http://127.0.0.1:3333', {\n    method: \"GET\",\n    responseType: \"blob\"\n  })\n  .then(response => {\n    return response.blob()\n  })\n  .then(res => {\n    console.log(res);\n    resData = res;\n  })\n\nbtn.addEventListener(\"click\", () => {\n  const link = document.createElement(\"a\");\n  let blob = new Blob([resData], {\n    type: \"application/octet-stream\"\n  });\n  link.style.display = \"none\";\n  link.href = URL.createObjectURL(blob);\n  link.download = \"xxxfile.xlsx\";\n  document.body.appendChild(link);\n  link.click();\n  document.body.removeChild(link);\n  window.URL.revokeObjectURL(link);\n})\n```\n\n> 注意：需要设置 `responseType: \"blob\"` ，否则可能会出现下载的文件打开损坏问题。\n\n#### 动态截取请求中 `content-disposition` 的文件名:动态截取请求中 `content-disposition` 的文件名:\n\n```js\nlet fileName = res.headers[\"content-disposition\"]\n    .split(\";\")[1]\n    .split(\"filename=\")[1];\n...\nlink.download = decodeURIComponent(fileName);\n```\n\n> 使用 `decodeURIComponent` 可以解决文件名乱码问题。\n"},{"slug":"vue3-scroll-to-top-ee6e5b","title":"vue3 中路由切换后让页面返回到顶部","category":"Vue","type":"snippet","description":"记录在 vue3 中，不同情况下，路由切换时让页面正常返回到顶部的方法。","status":"published","tags":["Vue","Frontend","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-02-28","readingTime":"1 min read","content":"$24"},{"slug":"vue3-echarts-packaged-2eec46","title":"Vue3 + echarts 统一封装","category":"Echarts","type":"snippet","description":"记录 vue3 中，echarts 封装成公共方法。","status":"published","tags":["Vue，Echarts"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-02-23","readingTime":"1 min read","content":"$25"},{"slug":"js-fetch-stream-abort-bc3f18","title":"echarts 让y轴只显示0和最大刻度值","category":"Echarts","type":"snippet","description":"记录 echarts 中，让y轴只显示0和最大刻度值的办法。","status":"published","tags":["Echarts"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-02-16","readingTime":"1 min read","content":"# 效果\n\n![image](/notes/echarts/echarts-y-0-max.png)\n\n# 实现方法\n\n### 1. 将interval属性设置为一个很大的数值\n\n![image](/notes/echarts/echarts-y-interval-doc.png)\n\n```js\nyAxis: [{\n  type: \"value\",\n  interval: 100000000\n}],\n```\n\n> 暂时只想到一种方法，后续补充。\n"},{"slug":"el-table-display-issues-0d440e","title":"el-table固定列错位问题","category":"Vue","type":"debugging","description":"记录el-table设置固定列时，使用keep-alive后页面切换导致该列错位的问题。","status":"published","tags":["Vue","Element"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-01-05","readingTime":"1 min read","content":"#### **1. 问题描述：el-table使用固定列时，使用keep-alive后页面切换导致该列错位。**\n\n![image](/notes/element-ui/el-table-fix-column-layout-error.png)\n\n#### **2. 解决方法：使用el-table的doLayout方法对表格进行重新布局**\n\n![image](/notes/element-ui/el-table-fix-column-layout-error-doc.png)\n\n```js\n  activated() {\n    this.$nextTick(() => {\n      this.$refs.myTable.doLayout();\n    });\n  },\n```\n"},{"slug":"vue3-vue-flow-b0ed37","title":"Vue3 流程图组件库 Vue Flow 简单使用","category":"Vue","type":"snippet","description":"记录 Vue Flow 流程图组件库的使用。","status":"published","tags":["Vue","Frontend","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-01-03","readingTime":"1 min read","content":"$26"},{"slug":"vue-qrcode-csv-79e9ca","title":"Vue 二维码生成插件","category":"Vue","type":"snippet","description":"Vue 项目中使用 qrcode.vue 实现二维码生成。","status":"published","tags":["Vue","qrcode"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2022-12-05","readingTime":"1 min read","content":"$27"},{"slug":"vue-el-table-to-excel-1cf166","title":"Vue 将elementUI表格导出excel文件","category":"Vue","type":"snippet","description":"将elementUI表格导出excel文件。","status":"published","tags":["Vue","excel","table"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2022-11-04","readingTime":"1 min read","content":"$28"},{"slug":"vue-turnjs-pdf-50dbb3","title":"Vue 借助 turn.js 实现翻书效果预览pdf文件","category":"Vue","type":"snippet","description":"vue 中使用 turn.js 插件实现翻书预览pdf文件效果。","status":"published","tags":["Vue","PDF","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2022-06-09","readingTime":"1 min read","content":"$29"},{"slug":"moment-get-different-date-cc1ddd","title":"Moment.js 获取前几天和后几天时间","category":"JavaScript","type":"snippet","description":"Moment.js 获取前几天和后几天时间的方法。","status":"published","tags":["JavaScript","Frontend","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2021-06-12","readingTime":"1 min read","content":"### 1. 获取今天\n\n```js\nimport moment from \"moment\";\nmoment().startOf(\"day\");\n```\n\n### 2. 获取本周\n\n```js\nimport moment from \"moment\";\nmoment().startOf(\"week\");\n```\n\n### 3. 获取n天前的日期\n\n```js\nimport moment from \"moment\";\n\n// subtract向前获取日期\nmoment().subtract(n, 'days');\n// startOf获取当天的00:00:00\nmoment().subtract(n, 'days').startOf(\"day\").format(\"YYYY-MM-DD HH:mm:ss\");\n// endOf获取当天的23:59:59\nmoment().subtract(n, 'days').endOf(\"day\").format(\"YYYY-MM-DD HH:mm:ss\");\n```\n\n### 4. 获取n天后的日期\n\n```js\nimport moment from \"moment\";\n\n// add向后获取日期\nmoment().add(n, 'days');\n// startOf获取当天的00:00:00\nmoment().add(n, 'days').startOf(\"day\").format(\"YYYY-MM-DD HH:mm:ss\");\n// endOf获取当天的23:59:59\nmoment().add(n, 'days').endOf(\"day\").format(\"YYYY-MM-DD HH:mm:ss\");\n```\n"},{"slug":"mini-program-router-5f9695","title":"小程序返回上级页面并刷新列表","category":"MiniProgram","type":"snippet","description":"微信小程序返回上级页面并刷新列表。","status":"published","tags":["小程序"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2019-11-13","readingTime":"1 min read","content":"### 微信小程序进行操作后返回之前页面并刷新列表的方法。\n\n```js\nlet pages = getCurrentPages();\nlet beforePage = pages[pages.length - 2]; // -2 是上一个页面，-3是上上个页面以此类推。\nbeforePage.getList(参数);\nwx.navigateBack({\n  delta: 1,\n});\n```\n\n> 小程序以栈的形式维护当前的所有页面。\n\n![](/notes/mini-program/mini-stack-router-doc.png)\n\n> `getCurrentPages()` 函数可以获取当前页面栈.\n>\n> 前一页面栈： `pages[pages.length - 2];`\n>\n> 当前页面栈：`pages[pages.length - 1];`\n\n_获取到之前的页面栈，就可以调用其中获取列表的方法，从而做到刷新列表，然后执行跳转页面方法返回上一级页面_\n_还可以将要传递的参数直接`beforePage.setData`。上个页面就会执行这里的操作。_\n"}],"categories":["React","JavaScript","Next.js","Vue","UniApp","ReactNative","Browser","CSS","Tooling","Node.js","Engineering","Echarts","MiniProgram"],"featuredNote":"$0:rsc:props:children:0:props:children:props:notes:0","recentNotes":["$0:rsc:props:children:0:props:children:props:notes:1","$0:rsc:props:children:0:props:children:props:notes:2","$0:rsc:props:children:0:props:children:props:notes:3","$0:rsc:props:children:0:props:children:props:notes:4"],"publishedCount":61,"draftCount":0}]}],["$L2a"],"$L2b"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"G9P0_faNQc9HvQXaFhgxx"}
-2a:["$","script","script-0",{"src":"/_next/static/chunks/2lmpwbcsmjcnh.js","async":true}]
-2b:["$","$L2c",null,{"children":["$","$2d",null,{"name":"Next.MetadataOutlet","children":"$@2e"}]}]
-2e:null
+34:Tbd5,#### 使用`movable-area`和`movable-view`实现列表项左滑取消收藏（其他操作同理）
+
+> 效果：
+> ![](/notes/mini-program/movable-area-view-preview.gif)
+
+wxml：
+
+```jsx
+<movable-area
+  style="height:200rpx;width:690rpx;overflow:hidden;"
+  class="mb-20 bs-e0 br-32"
+>
+  <movable-view
+    style="height:200rpx;width:910rpx;"
+    x="{{x}}"
+    y="{{y}}"
+    direction="horizontal"
+    catchtouchstart="touchStart"
+    catchtouchend="touchEnd"
+  >
+    <view class="favourite-list">
+      <image src="/images/register-img.png"></image>
+      <view class="book-info">
+        <view class="mb-15 mxw-470 ellipse1">新版林格伦作品选集·美绘版</view>
+        <view class="fs-20 c-999 mb-10 mxw-470 ellipse1">
+          阿斯特里德·林格伦/中国少年儿童出版社/2009-10-11
+        </view>
+        <view class="fs-24">原价:18.00元</view>
+      </view>
+      <view class="cancel fs-24 c-fff">取消收藏</view>
+    </view>
+  </movable-view>
+</movable-area>
+```
+
+> 文档：[https://developers.weixin.qq.com/miniprogram/dev/component/movable-view.html](https://developers.weixin.qq.com/miniprogram/dev/component/movable-view.html)
+
+部分样式：
+
+```css
+.favourite-list {
+  display: flex;
+  align-items: center;
+  height: 200rpx;
+  padding: 0 0 0 30rpx;
+}
+.favourite-list image {
+  width: 140rpx;
+  height: 140rpx;
+  margin-right: 20rpx;
+  border-radius: 16rpx;
+}
+.favourite-list .book-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.favourite-list .cancel {
+  width: 220rpx;
+  height: 200rpx;
+  line-height: 200rpx;
+  margin-left: auto;
+  background: #ff7777;
+  text-align: center;
+}
+.mxw-470 {
+  max-width: 470rpx;
+}
+.ellipse1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+```
+
+> 其中的`margin-left: auto;`可以让取消收藏位于容器最右侧
+
+js：
+
+```js
+    data: {
+      x: 0,
+      y: 0
+    },
+    touchStart(e) {
+      // console.log(e)
+      this.setData({
+        "startX": e.changedTouches[0].clientX,
+        "startY": e.changedTouches[0].clientY
+      });
+    },
+    touchEnd(e) {
+      let endX = e.changedTouches[0].clientX;
+      let endY = e.changedTouches[0].clientY;
+      let startX = this.data.startX;
+      let startY = this.data.startY;
+      let percentage = wx.getSystemInfoSync().windowWidth / 750;
+      let x = 220 * percentage;
+      if (endX - startX > 50 && Math.abs(endY - startY) < 50) {  //右滑
+        this.setData({
+          x
+        })
+      } else if (endX - startX < -50 && Math.abs(endY - startY) < 50) {   //左滑
+        this.setData({
+          x: -x
+        })
+      } else {
+        this.setData({
+          x: 0
+        })
+      }
+    },
+```
+
+> 这里的单位需要将rpx转为px
+>
+> rpx（responsive pixel）: 可以根据屏幕宽度进行自适应。规定屏幕宽为750rpx。如在 iPhone6 上，屏幕宽度为375px，共有750个物理像素，则750rpx = 375px = 750物理像素，1rpx = 0.5px = 1物理像素。
+
+![](/notes/mini-program/mini-movable-area-doc.png)
+35:Teeb,## 如何用node简单的爬取网页上的内容：
+
+#### 1.安装express以及生成器
+
+express官网：[http://www.expressjs.com.cn/](http://www.expressjs.com.cn/)
+
+```shell
+      npm install express --save
+
+      npm install express-generator -g
+```
+
+#### 2.用生成器创建新Express应用,进入项目并安装依赖包
+
+```shell
+      express myapp
+
+      cd myapp
+
+      npm install
+```
+
+#### 3.安装superagent
+
+superagent官网：[http://visionmedia.github.io/superagent/](http://visionmedia.github.io/superagent/)
+
+`npm install superagent`
+
+#### 4.安装cheerio
+
+cheerio官网：[https://cheerio.js.org/](https://cheerio.js.org/)
+
+`npm install cheerio`
+
+#### 5.在routes文件夹下新建路由文件news.js
+
+```js
+var express = require("express");
+const cheerio = require("cheerio");
+const superagent = require("superagent");
+var router = express.Router();
+
+router.get("/", function (req, res, next) {
+  // 抓取内容
+  superagent.get("http://www.donews.com/").end(function (err, sres) {
+    if (err) {
+      return next(err);
+    }
+    var $ = cheerio.load(sres.text);
+    var items = [];
+    $("div.block h3.block a").each(function (idx, element) {
+      var $element = $(element);
+      items.push({
+        title: $element.text(),
+        href: $element.attr("href"),
+      });
+    });
+    res.send(items);
+  });
+});
+
+module.exports = router;
+```
+
+> superagent.get('抓取网页的地址')
+>
+> 网页的 html 内容存储在 **sres.text** 里面
+>
+> 用 **cheerio.load** 加载得到的html内容并赋给变量 **$**
+>
+> 后面选择需要的内容部分语法和jQuery选择器基本一致，选择需要的元素进行遍历
+>
+> 然后返回遍历的内容
+
+#### 6.在app.js中引入路由文件
+
+```js
+var createError = require("http-errors");
+var express = require("express");
+var path = require("path");
+var cookieParser = require("cookie-parser");
+var logger = require("morgan");
+
+var newsRouter = require("./routes/news");
+
+var app = express(); // 创建实例
+
+var myLogger = function (req, res, next) {
+  console.log("LOGGED");
+  next();
+};
+
+var requestTime = function (req, res, next) {
+  req.requestTime = Date.now();
+  console.log(req.requestTime);
+  next();
+};
+
+// view engine setup
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "pug");
+
+app.use(logger("dev"));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, "public"))); // 将 public 目录下的图片、CSS 文件、JavaScript 文件对外开放访问(此写法为绝对路径)
+
+app.use(myLogger);
+app.use(requestTime);
+
+app.use("/news", newsRouter);
+
+//设置跨域请求
+app.use("*", function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Content-Type, Content-Length, Authorization, Accept, X-Requested-With , yourHeaderFeild",
+  );
+  res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
+  res.header("X-Powered-By", " 3.2.1");
+  res.header("Content-Type", "application/json;charset=utf-8");
+  next();
+});
+
+// catch 404 and forward to error handler
+app.use(function (req, res, next) {
+  next(createError(404));
+});
+
+// error handler
+app.use(function (err, req, res, next) {
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = req.app.get("env") === "development" ? err : {};
+
+  // render the error page
+  res.status(err.status || 500);
+  res.render("error");
+});
+
+module.exports = app;
+```
+
+> 引入路由的代码：
+>
+> **var newsRouter = require('./routes/news');**
+>
+> **app.use('/news', newsRouter);**
+
+#### 7.运行
+
+`npm start`
+
+浏览器打开项目即可看到爬取的数据
+
+![image](/notes/nodejs/node-express-superagent-cheerio.jpg)
+36:T1345,## 1.尽量使用缩写
+
+使用缩写语句，如下面所示的 margin 声明，可以从根本上减小 CSS 文件的大小。在 google 上搜索 CSS Shorthand 可以找到许多其他的速记形式。
+
+```css
+p {
+  margin-top: 1px;
+  margin-right: 2px;
+  margin-bottom: 3px;
+  margin-left: 4px;
+}
+
+p {
+  margin: 1px 2px 3px 4px;
+}
+```
+
+## 2.查找并删除未使用的 CSS
+
+删除不必要的部分 CSS，j显然会加快网页的加载速度。谷歌的Chrome浏览器有这种开箱即用的功能。只需F12然后打开Sources选项卡，然后打开命令菜单（Ctrl+shift+P）。然后，选择Show Coverage，在Coverage analysis窗口中高亮显示当前页面上未使用的代码。
+打开谷歌浏览器开发都工具，在 Conlse 旁边更多选择 Coverage，就可以看到未使用的 CSS, 点击对应的项，高亮显示当前页面上未使用的代码。
+![](/notes/css/css-performance-show-coverage-analysis.png)
+
+## 3.分析工具
+
+谷歌浏览器的 Audits 就可以快速帮我们分析，使用方式，打开开发者工具，点击 Audits 栏位，点击 Run audits 后就开始分析结果。
+![](/notes/css/css-performance-run-audits.png)
+
+> 对 CSS 的自动分析总是会导致错误。用压缩后的 CSS 文件替换 未压缩CSS文件之后，对整个网站进行彻底的测试——没有人知道优化器会导致什么错误。
+
+## 4.内联关键 CSS
+
+加载外部样式表需要花费时间，这是由于延迟造成的——因此，可以把最关键的代码位放在 head 中。但是，请确保不要做得过火，记住，执行维护任务的人员也必须读取代码。
+
+```html
+<html>
+  <head>
+    <style>
+      .blue {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="blue">Hello, world!</p>
+  </body>
+</html>
+```
+
+## 5.允许反并行解析
+
+@import 将 CSS 样式方便添加代码中。遗憾的是，这些好处并不是没有代价的：由于 @import 可以嵌套，因此无法并行解析它们。更并行的方法是使用一系列 <link> 标记，浏览器可以立即获取这些标记。
+
+```css
+@import url("a.css");
+@import url("b.css");
+@import url("c.css");
+```
+
+```html
+<link rel="stylesheet" href="a.css" />
+<link rel="stylesheet" href="b.css" />
+<link rel="stylesheet" href="c.css" />
+```
+
+## 6.用 CSS 替换图片
+
+几年前，一套半透明的 png 在网站上创建半透明效果是司空见惯的。现在，CSS过 滤器提供了一种节省资源的替代方法。例如，以下这个代码片段可以确保所讨论的图片显示为其自身的灰度版本。
+
+```css
+img {
+  -webkit-filter: grayscale(100%);
+  /* old safari */
+  filter: grayscale(100%);
+}
+```
+
+## 7.使用颜色快捷方式
+
+常识告诉我们，六位数的颜色描述符是表达颜色最有效的方式。事实并非如此——在某些情况下，速记描述或颜色名称可以更短。
+
+```css
+target {
+  background-color: #ffffff;
+}
+target {
+  background: #fff;
+}
+```
+
+## 8.删除不必要的零和单位
+
+CSS 支持多种单位和数字格式。它们是一个值得感谢的优化目标——可以删除尾随和跟随的零，如下面的代码片段所示。此外，请记住，零始终是零，添加维度不会为包含的信息附带价值。为 0 的数值默认单位是 px—— 删除 px 可以为每个数字节省两个字节。
+
+```css
+{
+  padding: 0.2em;
+  margin: 20em;
+  avalue: 0px;
+
+  padding: 0.2em;
+  margin: 20em;
+  avalue: 0;
+}
+```
+
+## 9.使用精灵图
+
+由于协议开销的原因，加载多个小图片的效率很低。CSS 精灵将一系列小图片组合成一个大的PNG 文件，然后通过 CSS 规则将其分解。TexturePacker 等程序大大简化了创建过程。
+
+```css
+.download {
+  width: 80px;
+  height: 31px;
+  background-position: -160px -160px;
+}
+
+.download:hover {
+  width: 80px;
+  height: 32px;
+  background-position: -80px -160px;
+}
+```
+
+## 10.避免需要性能要求的属性
+
+分析表明，一些标签比其他标签更昂贵。以下这些解析会影响性能—如果在没有必要的情况，尽量不要使用它们。
+
+```css
+border-radius
+box-shadow
+transform
+filter
+:nth-child
+position: fixed;
+```
+
+## 11.删除空格
+
+空格——考虑制表符、回车符和空格——使代码更容易阅读，但从解析器的角度看，它没有什么用处。在发布前删除它们，更好的方法是将此任务委托给 shell 脚本或类似的工具。
+
+## 12.删除注释
+
+注释对编译器也没有任何作用。创建一个自定义解析器，以便在发布之前删除它们。这不仅节省了带宽，而且还确保攻击者和克隆者更难理解手头代码背后的思想。
+
+## 13.使用自动压缩
+
+Yahoo　的用户体验团队创建了一个处理许多压缩任务的应用程序。它以　JAR　文件的形式发布，并且可以使用所选的JVM运行。
+[http://yui.github.io/yuicompressor](http://yui.github.io/yuicompressor)
+37:T1025,#### 1.首先在app.json中的window项设置："navigationStyle": "custom"开启导航栏自定义。
+
+#### 2.components中创建相应文件：
+
+.wxml
+
+```jsx
+<view style="height:{{titleBarHeight}}px;padding-top:{{statusBarHeight}}px;">
+  <view
+    class="header"
+    style="height:{{titleBarHeight}}px;padding-top:{{statusBarHeight}}px;background:{{bgColor}};"
+  >
+    <view class="title-bar">
+      <view class="back" wx:if="{{showBack}}" bindtap="headerBack">
+        <image class="img" src="../../images/back.png"></image>
+      </view>
+    </view>
+    <view class="header-title ellipsis">{{ title }}</view>
+    <block wx:if="{{currPath === 'pages/index/index'}}">
+      <navigator
+        url="/pages/setting/setting"
+        hover-class="none"
+        class="setting"
+      >
+        <image class="img" src="/image/setting.png"></image>
+      </navigator>
+    </block>
+  </view>
+</view>
+```
+
+> showBack表示是否显示左上角返回箭头图标
+>
+> 下方的navigator表示如果是首页则左上角显示自定义的图标（如设置）
+
+.js
+
+```js
+const app = getApp();
+Component({
+  properties: {
+    //标题
+    title: {
+      type: String,
+      value: "首页",
+    },
+    // 是否显示返回
+    showBack: {
+      type: Boolean,
+      value: false,
+    },
+    // 背景色
+    bgColor: {
+      type: String,
+      value: "#fff",
+    },
+  },
+
+  data: {
+    statusBarHeight: 0,
+    titleBarHeight: 0,
+  },
+
+  ready: function () {
+    // 因为很多地方都需要用到，所有保存到全局对象中
+    if (
+      app.globalData &&
+      app.globalData.statusBarHeight &&
+      app.globalData.titleBarHeight
+    ) {
+      this.setData({
+        statusBarHeight: app.globalData.statusBarHeight,
+        titleBarHeight: app.globalData.titleBarHeight,
+      });
+
+      this.emit();
+    } else {
+      let that = this;
+      wx.getSystemInfo({
+        success: function (res) {
+          if (!app.globalData) {
+            app.globalData = {};
+          }
+          if (res.model.indexOf("iPhone") !== -1) {
+            app.globalData.titleBarHeight = 44;
+          } else {
+            app.globalData.titleBarHeight = 48;
+          }
+          app.globalData.statusBarHeight = res.statusBarHeight;
+          that.setData({
+            statusBarHeight: app.globalData.statusBarHeight,
+            titleBarHeight: app.globalData.titleBarHeight,
+          });
+
+          that.emit();
+        },
+        failure() {
+          that.setData({
+            statusBarHeight: 0,
+            titleBarHeight: 0,
+          });
+        },
+      });
+    }
+  },
+
+  methods: {
+    headerBack() {
+      wx.navigateBack({
+        delta: 1,
+        fail(e) {
+          wx.switchTab({
+            url: "/pages/index/index",
+          });
+        },
+      });
+    },
+    emit() {
+      this.triggerEvent("ready", {
+        statusBarHeight: app.globalData.statusBarHeight,
+        titleBarHeight: app.globalData.titleBarHeight,
+      });
+    },
+  },
+});
+```
+
+> properties内是外部传入的数据
+
+> titleBarHeight和statusBarHeight分别是导航栏高度和内边距
+
+.wxss
+
+```css
+.header {
+  display: flex;
+  align-items: center;
+  top: 0;
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+  z-index: 99999;
+}
+.header .back {
+  width: 59rpx;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.header .title-bar {
+  padding-left: 22rpx;
+  height: 56rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+.header .title-bar .img,
+.setting .img {
+  width: 44rpx;
+  height: 44rpx;
+  /* vertical-align: top; */
+  display: block;
+}
+.header .header-title {
+  position: absolute;
+  left: 50%;
+  font-size: 37rpx;
+  transform: translateX(-50%);
+  max-width: 40%;
+}
+
+.setting {
+  position: absolute;
+  left: 30rpx;
+}
+
+/* 一行省略号 */
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+```
+
+.json
+
+```json
+{
+  "component": true,
+  "usingComponents": {}
+}
+```
+
+#### 3.引用
+
+1. 在其他页面的json文件中设置：
+
+   `{
+  "usingComponents": {
+    "navbar": "/components/navbar/navbar"
+  }
+}`
+
+2. 在wxml文件中加入：
+
+   `<navbar title="首页"></navbar>`
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-6xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"notes":[{"slug":"react-usedeferredvalue-concept-84b792","title":"React useDeferredValue 详解与最佳实践","category":"React","type":"concept","description":"深入理解 React 18 useDeferredValue 的作用、使用场景、适用边界以及与 debounce、useTransition 的区别。","status":"published","tags":["React","React18","Hooks","Performance","Concurrent Rendering"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-29","readingTime":"2 min read","content":"$3"},{"slug":"axios-baseurl-089fd3","title":"Axios在实例化之后修改baseURL或其他配置","category":"JavaScript","type":"setup","description":"在使用axios请求的时候一般会进行封装，如：","status":"published","tags":["JavaScript","setup","Axios"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"$4"},{"slug":"next-js-plus-github-pages-ci-cd-2c6362","title":"🚀 Next.js + GitHub Pages 自动部署（CI/CD 笔记）","category":"Next.js","type":"setup","description":"main 分支（源码）","status":"published","tags":["Next.js","setup","GitHub Pages"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"$5"},{"slug":"vue-docx-excel-pdf-959f53","title":"vue 在网页中预览(docx、excel、pdf)文件","category":"Vue","type":"snippet","description":"npm install @vue-office/docx vue-demi@0.14.6","status":"published","tags":["Vue","snippet","PDF","Excel"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"1 min read","content":"$6"},{"slug":"vue3-html5-qrcode-41e695","title":"vue3 使用 html5-qrcode 实现扫描二维码功能","category":"Vue","type":"snippet","description":"npm安装","status":"published","tags":["Vue","snippet","QRCode"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2026-06-20","readingTime":"2 min read","content":"$7"},{"slug":"vue3-wordcloud2-js-fcafb2","title":"vue3 中使用 wordcloud2.js 实现词云功能","category":"Vue","type":"snippet","description":"vue3 中使用 wordcloud2.js 实现词云功能。","status":"published","tags":["Vue","wordcloud","词云"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2025-04-17","readingTime":"1 min read","content":"$8"},{"slug":"uni-app-settabbaritem-error-cfddcb","title":"uniapp中uni.setTabBarItem方法在非tabbar页面使用会报错","category":"UniApp","type":"debugging","description":"uniapp中uni.setTabBarItem方法在非tabbar页面使用会报错问题记录。","status":"published","tags":["UniApp","I18n","小程序"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-11-12","readingTime":"1 min read","content":"### 背景：\n\nuniapp在开发小程序多语言切换功能时，使用`uni.setTabBarItem`方法切换tabbar语言时报错，查阅文档发现微信小程序该功能只能在tabbar页面或其子页面中使用，不能在其他页面直接使用。\n\n### 解决：\n\n在tabbar页面中使用onShow方法监听切换语言设置，部分代码示例如下：\n\n```jsx\n<script setup>\nimport { onShow } from '@dcloudio/uni-app';\nimport { useI18n } from 'vue-i18n';\nconst { t } = useI18n();\n\nonShow(() => {\n  updateTabBarText();\n});\n\nconst updateTabBarText = () => {\n  uni.setTabBarItem({\n    index: 0,\n    text: t('tabBar.index')\n  });\n  uni.setTabBarItem({\n    index: 1,\n    text: t('tabBar.my')\n  });\n};\n</script>\n```\n"},{"slug":"vue3-mobile-vxe-table-9107ff","title":"vue3 移动端使用 vxe-table 实现表格功能","category":"Vue","type":"snippet","description":"vue3 移动端使用 vxe-table 实现表格功能。","status":"published","tags":["Vue3","移动端","Table"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-09-24","readingTime":"1 min read","content":"$9"},{"slug":"el-date-picker-invalid-5ffb16","title":"element plus 选择多个日期（年月日）时功能不生效问题","category":"Vue","type":"debugging","description":"记录 element plus 选择多个日期（年月日）时功能不生效问题。","status":"published","tags":["Vue","Element"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-09-11","readingTime":"1 min read","content":"## 问题：\n\nelement plus 官网文档中的日期多选功能，设置 `type=\"months|years|dates\"` 发现功能失效，日期选择面板显示也是默认的date，控制台警告提示type的值无效。\n\n![image](/notes/element-ui/el-date-picker-muti-type.png)\n\n```html\n<div class=\"block\">\n  <span class=\"demonstration\">Months</span>\n  <el-date-picker\n    v-model=\"value6\"\n    type=\"months\"\n    placeholder=\"Pick one or more months\"\n  />\n</div>\n```\n\n## 解决：\n\n首先检查element的版本，旧版本不支持该功能。\n**重要：更新完版本后要删除node_modules重新安装，直接更新element后就使用也是不会生效的，需要把旧的依赖删除重新安装。**\n"},{"slug":"vue-router-state-error-59018f","title":"vue router 4.x 版本state传参，页面自动刷新传参丢失","category":"Vue","type":"debugging","description":"vue router 4.x 版本 路由跳转时使用state传参，页面会自动刷新并且传参丢失的问题记录。","status":"published","tags":["Vue","Vue-Router"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-08-21","readingTime":"1 min read","content":"$a"},{"slug":"react-native-sse-6cf3c4","title":"react native使用react-native-sse接收聊天数据","category":"ReactNative","type":"snippet","description":"react native使用react-native-sse接收聊天数据。","status":"published","tags":["RN","SSE"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-08-13","readingTime":"1 min read","content":"$b"},{"slug":"react-native-image-picker-ba4d4a","title":"使用 react-native-image-picker 实现选择或拍照上传图片","category":"ReactNative","type":"snippet","description":"react native 项目使用 react-native-image-picker 实现选择或拍照上传图片。","status":"published","tags":["RN","image-picker","camera"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-07-09","readingTime":"1 min read","content":"$c"},{"slug":"chrome-overwrite-window-config-ba4eb1","title":"Google浏览器打开网页会覆盖原来的页面","category":"Browser","type":"guide","description":"Google浏览器打开网页会覆盖原来的页面，修改搜索设置即可解决。","status":"published","tags":["Chrome","Browser","Configuration"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-06-05","readingTime":"1 min read","content":"### 1. 打开主页\n\n[https://www.google.com/](https://www.google.com/ \"https://www.google.com/\")\n\n### 2. 选择右下角设置 -> 搜索设置\n\n![image](/notes/browser/google-search-setting.png)\n\n### 3. 找到在新窗口打开搜索结果即可\n\n![image](/notes/browser/other-setting-new-window.png)\n"},{"slug":"react-native-macos-homebrew-100555","title":"MacOS Homebrew下载替换国内镜像源","category":"ReactNative","type":"setup","description":"MacOS Homebrew下载时替换国内镜像源的步骤记录。","status":"published","tags":["RN","MacOS","Homebrew"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-05-8","readingTime":"1 min read","content":"$d"},{"slug":"vue3-define-expose-f7e823","title":"自定义 v-permission 控制按钮权限","category":"Vue","type":"snippet","description":"自定义 v-permission 控制按钮权限的步骤记录。","status":"published","tags":["Vue","Snippet","permission"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-05-30","readingTime":"1 min read","content":"$e"},{"slug":"react-native-modal-sheet-c25722","title":"React Native封装底部弹出面板组件","category":"ReactNative","type":"snippet","description":"react native 使用 Modal 封装底部弹出面板（Bottom Sheet）组件。","status":"published","tags":["RN","Modal"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-05-14","readingTime":"1 min read","content":"$f"},{"slug":"react-native-xcode-appstore-dbe694","title":"react native项目使用Xcode打包上架App Store","category":"ReactNative","type":"setup","description":"react native项目使用Xcode打包上架App Store的步骤记录。","status":"published","tags":["RN","xcode","app store"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-05-13","readingTime":"3 min read","content":"$10"},{"slug":"uni-app-miniproject-vant-cb8494","title":"uniapp开发小程序引入vant","category":"UniApp","type":"snippet","description":"uni-app 开发微信小程序引入 vant 组件库的流程记录。","status":"published","tags":["UniApp","Vant","小程序"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-05-07","readingTime":"1 min read","content":"$11"},{"slug":"vue3-el-menu-recursive-e88659","title":"el-menu递归组件实现多级菜单（vue3+element plus版）","category":"Vue","type":"snippet","description":"vue3 + element plus 中 使用 el-menu 递归组件实现多级菜单。","status":"published","tags":["Vue","Element","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-04-23","readingTime":"1 min read","content":"$12"},{"slug":"uni-app-run-android-studio-3ab79f","title":"uni-app 项目运行到 Android Studio 模拟器","category":"UniApp","type":"setup","description":"uni-app 项目运行到 Android Studio 模拟器。","status":"published","tags":["UniApp","Android Studio"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-04-07","readingTime":"2 min read","content":"$13"},{"slug":"uni-app-wechat-tool-preview-51ffa4","title":"uni-app 微信小程序开发者工具预览项目","category":"UniApp","type":"setup","description":"uni-app 微信小程序开发者工具预览项目。","status":"published","tags":["UniApp","微信开发者工具"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-03-10","readingTime":"1 min read","content":"### 1. 打开微信开发者工具\n\n① 设置 -> 代理设置 -> 选择使用系统代理\n② 安全设置 -> 开启服务端口\n![image](/notes/mini-program/mini-wechat-tool-preview-1.png)\n![image](/notes/mini-program/mini-wechat-tool-preview-2.png)\n\n### 2. 项目中找到并打开配置文件 `mainfest.json` -> `微信小程序配置` -> `AppID配置`\n\n![image](/notes/mini-program/mini-wechat-tool-preview-3.png)\n\n### 3. 运行小程序\n\n![image](/notes/mini-program/mini-wechat-tool-preview-4.png)\n\n> 如果没有配置微信开发者工具地址，在工具下拉 -> 设置 -> 运行配置 -> 小程序配置 -> 微信开发者工具路径，配置微信开发者工具安装的路径：\n> ![image](/notes/mini-program/mini-wechat-tool-preview-5.png)\n"},{"slug":"uni-app-lazycodeloading-a66d5d","title":"uni-app启用组件按需注入","category":"UniApp","type":"setup","description":"uni-app 中通过配置\"lazyCodeLoading\" : \"requiredComponents\"启用组件按需注入。","status":"published","tags":["UniApp","小程序"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-03-07","readingTime":"1 min read","content":"### 1. 打开 manifest.json 配置文件\n\n### 2. 选择最后的源码视图，并找到小程序特有相关 `mp-weixin`\n\n增加 `\"lazyCodeLoading\" : \"requiredComponents\"`\n\n```json\n    /* 小程序特有相关 */\n    \"mp-weixin\" : {\n        // ...\n        \"lazyCodeLoading\" : \"requiredComponents\"\n    },\n```\n\n![image](/notes/uni-app/uni-app-lazyCodeLoading-config.png)\n\n### 3. 相关链接\n\n[按需注入文档](https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html \"按需注入文档\")\n"},{"slug":"css-tailwind-import-iconify-a24190","title":"Tailwind CSS 使用 Iconify 图标","category":"CSS","type":"guide","description":"讲解了Tailwind CSS 中引入和使用 Iconify 图标的方式的步骤。","status":"published","tags":["Tailwind CSS","Iconify"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-02-23","readingTime":"1 min read","content":"### 1. 安装依赖\n\n通过 npm 安装 tailwindcss，并创建 tailwind.config.js 文件。\n\n```shell\nnpm install tailwindcss -D\nnpx tailwindcss init\n```\n\n安装 iconify 图标库和 TailwindCSS 插件。\n\n```shell\nnpm install @iconify/json @iconify/tailwind -D\n```\n\n### 2. 配置插件\n\n配置 tailwind.config.js 文件。\n\n```js\n/** @type {import('tailwindcss').Config} */\nconst { addDynamicIconSelectors } = require('@iconify/tailwind')\nexport default {\n  content: [\n    './src/**/*.{vue,js,ts,jsx,tsx}'\n  ],\n  theme: {\n    extend: {},\n  },\n  plugins: [addDynamicIconSelectors()],\n}\n```\n\n### 3. 使用图标\n\n```html\n<span class=\"icon-[svg-spinners--12-dots-scale-rotate]\"></span>\n```\n\n![image](/notes/css/tailwind-css-iconify-use.png)\n\n### 4. 相关链接\n\n[tailwindcss官方文档](https://tailwindcss.com/ \"tailwindcss官方文档\")\n[iconify官方文档](https://iconify.design/ \"iconify官方文档\")\n[iconify图标库](https://icon-sets.iconify.design/ \"iconify图标库\")\n"},{"slug":"vscode-prettier-typeerror-f70653","title":"Prettier格式化报错 A dynamic import callback was not specified","category":"Tooling","type":"debugging","description":"Prettier 格式化报错 TypeError: A dynamic import callback was not specified。","status":"published","tags":["VScode","Prettier","TypeError"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-01-26","readingTime":"1 min read","content":"记录今天遇到的奇怪的问题，在vscode中使用Prettier格式化代码时，控制台报错：\n\n```bash\n[\"ERROR\" - 9:30:18 AM] Error resolving prettier configuration for c:\\My\\Test\\learning\\src\\utils\\index.js\n[\"ERROR\" - 9:30:18 AM] A dynamic import callback was not specified.\nTypeError: A dynamic import callback was not specified.\n```\n\n尝试修改Prettier配置文件`.prettierrc`或者` prettier.config.js`，没有效果。\n最后重启vscode发现问题解决了，不再报错了。。\n"},{"slug":"js-axios-get-stringify-202651","title":"axios中使用qs.stringify格式化get请求参数","category":"JavaScript","type":"snippet","description":"axios中使用qs.stringify格式化get请求参数。","status":"published","tags":["axios","qs","get"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-01-12","readingTime":"1 min read","content":"### 安装使用：\n\n安装：\n\n```shell\nnpm install qs\n```\n\n引入使用：\n\n```js\n// 引入封装的 request.js\nimport request from \"@/utils/request\";\nimport qs from \"qs\";\n\nexport function getXXX(params) {\n  return request({\n    url: \"/api/xxx/xxx\",\n    method: \"get\",\n    params,\n    paramsSerializer: (params) => {\n      return qs.stringify(params, { indices: false });\n    },\n  });\n}\n```\n\n### 其它选项：\n\n```js\nqs.stringify({ a: [\"b\", \"c\", \"d\"] }, { indices: false });\n// 'a=b&a=c&a=d'\nqs.stringify({ a: [\"b\", \"c\"] }, { arrayFormat: \"indices\" });\n// 'a[0]=b&a[1]=c'\nqs.stringify({ a: [\"b\", \"c\"] }, { arrayFormat: \"brackets\" });\n// 'a[]=b&a[]=c'\nqs.stringify({ a: [\"b\", \"c\"] }, { arrayFormat: \"repeat\" });\n// 'a=b&a=c'\nqs.stringify({ a: [\"b\", \"c\"] }, { arrayFormat: \"comma\" });\n// 'a=b,c'\n```\n\n### 文档：\n\n[GitHub地址](https://github.com/ljharb/qs \"GitHub地址\")\n[npm 地址](https://www.npmjs.com/package/qs \"npm 地址\")\n"},{"slug":"react-native-shadow-db0116","title":"React Native 中，实现投影（shadow）效果","category":"ReactNative","type":"snippet","description":"React Native 中，实现投影（shadow）效果的方法记录。","status":"published","tags":["RN","shadow"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-01-08","readingTime":"2 min read","content":"$14"},{"slug":"el-table-display-issues-278254","title":"el-table 设置合并行或列时，显示错乱问题","category":"Vue","type":"snippet","description":"记录 el-table 合并行或列时显示错乱问题的解决方法。","status":"published","tags":["Vue","Element","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-01-05","readingTime":"2 min read","content":"$15"},{"slug":"js-fetch-stream-abort-cbfc2d","title":"fetch请求stream流接口并使用AbortController中断结果响应","category":"JavaScript","type":"snippet","description":"记录 fetch 请求 stream 流接口的写法并且使用 AbortController 中断结果响应。","status":"published","tags":["fetch","stream","AbortController"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-12-29","readingTime":"1 min read","content":"$16"},{"slug":"vue-papaparse-csv-55803c","title":"使用papaparse解析本地上传的csv文件，并在el-table中展示","category":"Vue","type":"snippet","description":"Vue 项目中使用 papaparse 插件解析本地上传的 csv 文件，并在 el-table 中展示。","status":"published","tags":["Vue","papaparse","CSV"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-11-03","readingTime":"1 min read","content":"$17"},{"slug":"vscode-err-connection-closed-7a4370","title":"vscode 安装插件报错：ERR_CONNECTION_CLOSED","category":"Tooling","type":"debugging","description":"vscode 安装插件时报错 [error] Download: net::ERR_CONNECTION_CLOSED 。","status":"published","tags":["VScode","Error"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-10-30","readingTime":"1 min read","content":"## 背景：\n\nvscode安装扩展插件时报错，显示下载失败：\n`[error] Download: net::ERR_CONNECTION_CLOSED`\n`[error] net::ERR_CONNECTION_CLOSED: Download: net::ERR_CONNECTION_CLOSED`\n\n![image](/notes/ide/err-connection-closed.png)\n\n## 解决方法：\n\n查找相关文档发现这么一段：\n**If you are behind a firewall that needs to allow specific domains used by VS Code, here's the list of hostnames you should allow communication to go through:**\n猜测可能是防火墙的问题，关闭后问题解决。\n\n## 链接：\n\n[Network Connections in Visual Studio Code](https://code.visualstudio.com/docs/setup/network \"Network Connections in Visual Studio Code\")\n"},{"slug":"react-native-navigation-reset-34eb15","title":"react native 退出登录后清空路由栈并返回登录页","category":"ReactNative","type":"debugging","description":"react native 项目退出登录后清空路由栈并返回登录页的实现。","status":"published","tags":["RN","navigation"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-10-19","readingTime":"1 min read","content":"$18"},{"slug":"react-native-zustand-2bb301","title":"react native使用zustand进行状态管理","category":"ReactNative","type":"snippet","description":"react native使用zustand进行状态管理简要步骤记录。","status":"published","tags":["RN","zustand"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-10-11","readingTime":"1 min read","content":"$19"},{"slug":"react-native-expo-location-problem-2f668d","title":"expo-location 获取不到位置信息","category":"ReactNative","type":"debugging","description":"使用 expo-location 获取不到位置信息 Location.getCurrentPositionAsync() 结果无打印。","status":"published","tags":["RN","Expo","expo-location"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-10-05","readingTime":"1 min read","content":"$1a"},{"slug":"react-native-keyboardavoidingview-problem-bac90c","title":"react native 使用 KeyboardAvoidingView 无效","category":"ReactNative","type":"debugging","description":"react native 使用 KeyboardAvoidingView 无效的问题记录。","status":"published","tags":["RN","KeyboardAvoidingView"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-09-22","readingTime":"1 min read","content":"$1b"},{"slug":"react-native-flipper-debug-abd253","title":"Flipper调试react native项目以及\"NO APPLICATION SELECTED\"问题处理","category":"ReactNative","type":"setup","description":"安装Flipper调试react native项目的步骤以及对\"NO APPLICATION SELECTED\"问题的处理。","status":"published","tags":["RN","Flipper","Configuration"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-09-14","readingTime":"2 min read","content":"$1c"},{"slug":"vscode-terminal-error-9704d1","title":"vscode终端报错：无法加载文件 D:\\nodejs\\npm.ps1，因为在此系统上禁止运行脚本","category":"Tooling","type":"debugging","description":"vscode 终端报错：无法加载文件 D:\\nodejs\\npm.ps1，因为在此系统上禁止运行脚本。","status":"published","tags":["VScode","Error"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-09-12","readingTime":"1 min read","content":"## 问题：vscode终端执行npm指令时报错如下\n\n![image](/notes/ide/vscode-terminal-err-running-script.png)\n\n## 解决：\n\n**1. 在终端通过输入指令 `get-ExecutionPolicy` 得到以下结果：**\n\n![image](/notes/ide/vscode-terminal-err-get-ExecutionPolicy.png)\n\n> 表示当前执行策略为受限的\n\n**2. 执行指令 `Set-ExecutionPolicy -Scope CurrentUser`，并输入 `RemoteSigned`。**\n\n![image](/notes/ide/vscode-terminal-err-set-ExecutionPolicy.png)\n\n> Set-ExecutionPolicy 语法如下：\n\n```shell\nSet-ExecutionPolicy\n   [-ExecutionPolicy] <ExecutionPolicy>\n   [[-Scope] <ExecutionPolicyScope>]\n   [-Force]\n   [-WhatIf]\n   [-Confirm]\n   [<CommonParameters>]\n```\n\n**3. 然后终端就可以正常使用了。**\n\n## 参考：\n\n[Set-ExecutionPolicy Microsoft 文档](https://learn.microsoft.com/fr-fr/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7.3 \"Set-ExecutionPolicy Microsoft 文档\")\n"},{"slug":"vue3-setup-keep-alive-d4ec07","title":"vue3 使用 setup 语法糖时，keep-alive 缓存使用 include / exclude 获取组件名","category":"Vue","type":"snippet","description":"记录在 vue3 中，keep-alive 缓存使用 include / exclude 获取组件名。","status":"published","tags":["Vue","setup","keep-alive"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-08-24","readingTime":"1 min read","content":"$1d"},{"slug":"js-fetch-stream-data-c6c8e0","title":"fetch方法请求并处理接口返回的stream流数据","category":"JavaScript","type":"snippet","description":"记录 fetch 请求 stream 流接口的写法并且处理返回的数据。","status":"published","tags":["fetch","stream"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-08-21","readingTime":"1 min read","content":"```js\nconst fetchStream = async (url, options) => {\n  const response = await fetch(url, options);\n  if (response.status !== 200) {\n    return false;\n  }\n  const reader = response.body.getReader();\n  return reader;\n\n  while (true) {\n    const { value, done } = await reader.read();\n    if (done) {\n      break;\n    } else {\n      console.log(new TextDecoder().decode(value));\n    }\n  }\n};\n\nfetchRequest(\"/api/chat/scend\", {\n  method: \"post\",\n  body: JSON.stringify(data),\n});\n```\n"},{"slug":"vite-https-plugin-basic-ssl-c6ac59","title":"Vite 本地开启 https 模式便于调试","category":"Tooling","type":"setup","description":"Vite 本地开启 https 模式配置。","status":"published","tags":["Vite","Https"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-08-17","readingTime":"1 min read","content":"### 1. 安装依赖\n\n```shell\nnpm install @vitejs/plugin-basic-ssl -D\n```\n\n### 2. 配置 vite.config.js\n\n```js\n// vite.config.js\nimport  basicSsl  from  '@vitejs/plugin-basic-ssl'\n\nexport  default  {\n  plugins : [\n    basicSsl ( {\n      /** 认证名称 */\n      name : 'test' ,\n      /** 自定义信任域 * /\n      domains : [ '*.custom.com' ] ,\n      /** 自定义认证目录 */\n      certDir : '/Users/.../.devServer/cert'\n    } )\n  ]\n}\n```\n\n### 3. 相关链接\n\n[@vitejs/plugin-basic-ssl npm 地址](https://www.npmjs.com/package/@vitejs/plugin-basic-ssl \"@vitejs/plugin-basic-ssl npm 地址\")\n[GitHub 地址](https://github.com/vitejs/vite-plugin-basic-ssl \"GitHub 地址\")\n[Vite server-https](https://vitejs.dev/config/server-options.html#server-https \"Vite server-https\")\n"},{"slug":"vue3-vue-i18n-config-e8f6f5","title":"vue3使用vue-i18n配置多语言环境","category":"Vue","type":"snippet","description":"vue3 中使用 vue-i18n 配置多语言环境的步骤记录。","status":"published","tags":["Vue3","i18n"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-08-14","readingTime":"1 min read","content":"$1e"},{"slug":"vue-router-pinia-error-cabc40","title":"vue-router4.x版本在router文件中使用pinia报错","category":"Vue","type":"debugging","description":"vue3 + vite + vue-router 4.x项目在router文件中使用pinia报错。","status":"published","tags":["Vite","Vue","Vue-Router"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-08-09","readingTime":"1 min read","content":"$1f"},{"slug":"vue3-pinia-persistedstate-f92b36","title":"vue3 使用 pinia 并持久化存储数据","category":"Vue","type":"snippet","description":"vue3 中使用 pinia 持久化存储数据的用法记录。","status":"published","tags":["Vue3","Pinia"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-08-09","readingTime":"1 min read","content":"$20"},{"slug":"vue3-login-identify-code-6e1a27","title":"vue3登录添加图形验证码","category":"Vue","type":"snippet","description":"vue3项目中给登录添加图形验证码功能。","status":"published","tags":["Vue3","IdentifyCode","canvas"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-07-20","readingTime":"1 min read","content":"$21"},{"slug":"css-postcss-px-to-viewport-ed1e37","title":"postcss-px-to-viewport插件移动端适配","category":"CSS","type":"snippet","description":"使用 postcss-px-to-viewport 插件实现移动端适配。","status":"published","tags":["CSS","移动端","viewport"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-07-17","readingTime":"3 min read","content":"$22"},{"slug":"js-scrollintoview-problem-7daea7","title":"scrollIntoView返回顶部失效问题","category":"JavaScript","type":"debugging","description":"记录scrollIntoView返回顶部失效问题。","status":"published","tags":["JavaScript","scrollIntoView"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-07-04","readingTime":"1 min read","content":"### 背景：\n\n在vue项目中进入页面使用了 `scrollIntoView` 方法让页面滚动回顶部，同样的详情页面发现有的可以返回顶部，但是有的失效。\n\n### 代码如下：\n\n```js\nimport { onBeforeRouteUpdate } from \"vue-router\";\n\nonBeforeRouteUpdate((to, from) => {\n  setTimeout(() => {\n    document.getElementById(\"main\").scrollIntoView({\n      behavior: \"smooth\",\n      block: \"start\",\n    });\n  }, 300);\n});\n```\n\n### 解决：\n\n在经过对比排查之后，发现失效的页面获取数据的接口响应时间超出了300ms，即上面设置的定时器的时间。猜测是因为数据没渲染好便执行了 `scrollIntoView` 方法，导致滚动失效。把定时器事件改为500ms后问题得到解决。也可以在保证数据渲染完毕后再执行该方法。\n\n### 一些已知的 scrollIntoView 生效的前提条件：\n\n1. 元素的 CSS 属性 overflow 必须设置为 scroll 或 auto，或者其父级元素的 overflow 属性设置为 scroll 或 auto，以确保滚动条可见。\n2. 元素的高度不能为0，且必须大于容器的高度，否则无需滚动。\n3. 元素的 display 属性不能设置为 none，visibility属性不能为hidden，否则元素将不可见且无法滚动。\n4. scrollIntoView 方法必须在已经完成页面的加载和渲染之后调用，否则可能无法正确滚动到指定的元素。\n"},{"slug":"js-audio-recorder-17d428","title":"js-audio-recorder 插件实现web端录音","category":"JavaScript","type":"snippet","description":"使用 js-audio-recorder 插件实现web端录音。","status":"published","tags":["JavaScript","Frontend","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-06-19","readingTime":"2 min read","content":"$23"},{"slug":"vite-https-self-signed-certificate-115fa2","title":"vite 本地代理请求https接口 self signed certificate 自签名证书错误","category":"Tooling","type":"debugging","description":"记录 vite 本地代理请求https接口时自签名证书错误。","status":"published","tags":["Vite","Tooling"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-06-14","readingTime":"1 min read","content":"### vite本地代理后端接口为https时，无法发送请求，并报错如下：\n\n![image](/notes/vite/error-self-signed-certificate.png)\n\n### 查询vite文档，更改配置 `server.https` 为 `true` ，无效\n\n![image](/notes/vite/server.https-config.png)\n\n### 又根据vite文档中描述添加 @vitejs/plugin-basic-ssl 到项目插件中，它会自动创建和缓存一个自签名的证书。 结果无效\n\n### 于是本地添加证书文件并配置在 `server.https` 中 ，无效\n\n### 最终 `server.proxy` 中增加配置 `secure: false` 后，请求发起成功，问题解决\n\n```js\n  server: {\n    hmr: true,\n    open: true,\n    port: \"8080\",\n    proxy: {\n      \"/api\": {\n        target: \"https://xx.xx.xx.xx:xx\",\n        changeOrigin: true,\n        rewrite: (path) => path.replace(/^\\/api/, \"\"),\n        secure: false,\n      },\n    },\n  },\n```\n\n> [参考链接 https://github.com/vitejs/vite/issues/3475](https://github.com/vitejs/vite/issues/3475 \"参考链接\")\n> ![image](/notes/vite/github-issues-error-self-signed-cetificate.png)\n"},{"slug":"el-dropdown-command-param-1c610c","title":"el-dropdown  @command事件传参","category":"Vue","type":"snippet","description":"element el-dropdown  @command事件传参方法记录。","status":"published","tags":["Vue","Element","dropdown","command"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-06-07","readingTime":"1 min read","content":"```jsx\n<template>\n  <el-dropdown @command=\"handleCommand($event, \"111\")\">\n    <span class=\"el-dropdown-link\">\n      Dropdown List\n      <el-icon class=\"el-icon--right\">\n        <arrow-down />\n      </el-icon>\n    </span>\n    <template #dropdown>\n      <el-dropdown-menu>\n        <el-dropdown-item>Action 1</el-dropdown-item>\n        <el-dropdown-item>Action 2</el-dropdown-item>\n        <el-dropdown-item>Action 3</el-dropdown-item>\n        <el-dropdown-item disabled>Action 4</el-dropdown-item>\n        <el-dropdown-item divided>Action 5</el-dropdown-item>\n      </el-dropdown-menu>\n    </template>\n  </el-dropdown>\n</template>\n```\n\n```jsx\n<script setup>\nconst handleCommand = (command, params) => {\n  console.log(command, params);\n}\n</script>\n```\n"},{"slug":"el-date-picker-before-today-6b293f","title":"element 日期选择器禁止选择今天之后的日期","category":"Vue","type":"snippet","description":"element 日期选择器禁止选择今天之后的日期。","status":"published","tags":["Vue","Element","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-05-25","readingTime":"1 min read","content":"$24"},{"slug":"node-npm-check-updates-4f353b","title":"使用 npm-check-updates 检查项目的 npm 依赖项是否有更新。","category":"Node.js","type":"guide","description":"使用 npm-check-updates 检查项目的 npm 依赖项是否有更新。","status":"published","tags":["node","npm","ncu"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-05-23","readingTime":"1 min read","content":"## 一、 安装 npm-check-updates：\n\n```shell\nnpm install -g npm-check-updates\n```\n\n## 二、 使用：\n\n1. 在项目根目录运行以下命令，检查所有项目依赖项的最新版本：\n\n```shell\nncu\n```\n\n执行结果如下：\n![image](/notes/nodejs/npm-check-updates-ncu.png)\n\n> 红色 = 主要升级\n> 青色 = 小幅升级\n> 绿色 = 补丁升级 2. 更新版本：\n\n```shell\nncu -u\n```\n\n> 注意备份或者提交代码，确保包文件处于版本控制中并且所有更改均已提交，以防出现不兼容或其他问题。3. 运行 npm install 以安装新版本。\n\n```shell\nnpm install       #更新已安装的软件包和 package-lock.json\n```\n\n## 三、其他选项：\n\n其他高级功能及指令参见官方文档：\n[npm 地址](https://www.npmjs.com/package/npm-check-updates \"npm 地址\")\n[GitHub 地址](https://github.com/raineorshine/npm-check-updates \"GitHub 地址\")\n"},{"slug":"node-nvm-npm-install-error-04046d","title":"nvm管理node版本后，执行npm install提示系统找不到指定的路径。","category":"Node.js","type":"debugging","description":"通过 nvm 管理 node 版本后，在执行 npm install 时提示系统找不到指定的路径问题解决。","status":"published","tags":["nvm","node","npm"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-05-23","readingTime":"1 min read","content":"## 问题背景：\n\n由于项目需要，需要切换node版本，所以安装了 nvm-windows 来管理node版本。安装nvm之前已有18版本的node.js，所以直接选择了用nvm对之前安装的版本也进行了管理，可能也是导致问题的关键。之后在项目中执行npm install 时，出现一些奇怪的报错，如：\n\n1. node_modules\\yorkie npm ERR! command failed\n2. npm WARN deprecated core-js@2.6.11: core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.x\n\n打开cmd 执行 node -v 和 npm -v 提示系统找不到指定的路径。\n\n## 解决方案：\n\n1. 卸载node.js\n2. 删除 npm 文件夹 ，在c盘/用户/AppData下，删除npm npm-cache两个文件夹。\n3. 重新安装nvm-windows，然后下载需要的node版本进行管理。\n"},{"slug":"vue-el-menu-white-space-bb7938","title":"el-menu文本长度过长时换行展示","category":"Vue","type":"snippet","description":"让el-menu文本长度过长时进行换行展示的方法记录。","status":"published","tags":["Vue","Element","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-05-10","readingTime":"1 min read","content":"### **el-menu菜单文字字数过多时默认是设置的不进行换行，如下所示：**\n\n![image](/notes/element-ui/el-menu-text-nowrap.png)\n\n![image](/notes/element-ui/el-menu-text-default.png)\n\n### **如果需要让文本换行展示需要自定义样式，代码如下：**\n\n```css\n{\n  white-space: normal; // 允许换行显示\n  word-break: break-all; // 英文单词允许拆分显示\n  line-height: normal; // 调整行高\n}\n```\n\n![image](/notes/element-ui/el-menu-text-normal.png)\n"},{"slug":"vue3-uno-css-e83d34","title":"vue3项目中使用UnoCSS","category":"Vue","type":"snippet","description":"在vue3项目中引入和使用UnoCSS的步骤以及常用配置。","status":"published","tags":["Vue3","UnoCSS"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-04-26","readingTime":"1 min read","content":"$25"},{"slug":"css-linear-gradient-background-233966","title":"css利用linear-gradient实现条纹背景","category":"CSS","type":"snippet","description":"记录css中通过利用linear-gradient来实现各种不同类型条纹背景的方法。","status":"published","tags":["CSS","linear-gradient","background"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-04-20","readingTime":"3 min read","content":"$26"},{"slug":"css-border-radius-clip-path-a29273","title":"CSS实现菜单选项向外圆角效果","category":"CSS","type":"snippet","description":"通过伪元素裁剪拼接实现菜单选项向外圆角效果。","status":"published","tags":["CSS","伪元素","clip-path"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-04-11","readingTime":"1 min read","content":"$27"},{"slug":"crlf-lf-concept-2ee70f","title":"CRLF和LF区别","category":"Engineering","type":"concept","description":"CRLF 和 LF 概念和区别。","status":"published","tags":["Git","CRLF","LF","工程化"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-04-07","readingTime":"2 min read","content":"$28"},{"slug":"mime-content-type-673505","title":"常用Content-Type汇总","category":"Engineering","type":"concept","description":"Content-Type定义以及常见的类型汇总。","status":"published","tags":["MIME","Content-Type","工程化"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-04-06","readingTime":"2 min read","content":"$29"},{"slug":"css-iconfont-import-use-5e6d7d","title":"阿里巴巴iconfont字体图标使用","category":"CSS","type":"guide","description":"讲解了阿里巴巴iconfont字体图标的多种引入和使用方式的步骤。","status":"published","tags":["CSS","iconfont"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-04-03","readingTime":"3 min read","content":"$2a"},{"slug":"echarts-legend-custom-formatter-4c9d77","title":"echarts自定义legend内容","category":"Echarts","type":"snippet","description":"echarts自定义legend内容的办法。","status":"published","tags":["Echarts"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-03-28","readingTime":"1 min read","content":"$2b"},{"slug":"javascript-type-writer-90b942","title":"使用TypewriterJS插件实现打字机效果","category":"JavaScript","type":"snippet","description":"使用TypewriterJS插件实现打字机效果。","status":"published","tags":["JavaScript","TypewriterJS"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-03-20","readingTime":"1 min read","content":"$2c"},{"slug":"element-ui-locale-lang-en-7f64ac","title":"Element UI设置默认语言为英文","category":"Vue","type":"snippet","description":"Element UI设置默认语言为英文。","status":"published","tags":["Vue","Element","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-03-09","readingTime":"1 min read","content":"### 1. 完整引入：\n\n```js\nimport Vue from \"vue\";\nimport ElementUI from \"element-ui\";\nimport locale from \"element-ui/lib/locale/lang/en\";\n\nVue.use(ElementUI, { locale });\n```\n\n### 2. 按需引入：\n\n```js\nimport Vue from \"vue\";\nimport { Button, Select } from \"element-ui\";\nimport lang from \"element-ui/lib/locale/lang/en\";\nimport locale from \"element-ui/lib/locale\";\n\n// 设置语言\nlocale.use(lang);\n\n// 引入组件\nVue.component(Button.name, Button);\nVue.component(Select.name, Select);\n```\n\n### 3. 文档：\n\n[element官方文档](https://element.eleme.cn/#/zh-CN/component/i18n \"官方文档\")\n"},{"slug":"vue3-define-expose-95feb2","title":"Vue3 父组件调用子组件内部的方法","category":"Vue","type":"snippet","description":"vue3 通过 defineExpose 和 ref ，父组件可访问子组件中定义的方法。","status":"published","tags":["Vue","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-03-03","readingTime":"1 min read","content":"### 1. 子组件中定义方法并通过defineExpose暴露出去\n\n```js\nimport { reactive, defineExpose } from \"vue\";\nconst state = reactive({\n  dataList: [],\n});\nconst changeData = () => {\n  state.dataList.push(1);\n};\ndefineExpose({\n  changeData,\n});\n```\n\n### 2. 父组件通过ref调用子组件暴露的方法\n\n```js\n<child ref=\"childRef\"></child>\n\nimport {ref} from \"vue\"；\nconst childRef = ref(null);\nchildRef.value.changeData();\n```\n\n_vue2中通过$refs方法调用_\n"},{"slug":"js-blob-to-excel-c03e2d","title":"js把文件流导出下载excel文件","category":"JavaScript","type":"snippet","description":"记录js中把文件流导出下载excel文件的方法。","status":"published","tags":["js","blob","excel"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-03-02","readingTime":"1 min read","content":"```js\nlet btn = document.querySelector('#app > button');\nlet resData = null;\n\nfetch('http://127.0.0.1:3333', {\n    method: \"GET\",\n    responseType: \"blob\"\n  })\n  .then(response => {\n    return response.blob()\n  })\n  .then(res => {\n    console.log(res);\n    resData = res;\n  })\n\nbtn.addEventListener(\"click\", () => {\n  const link = document.createElement(\"a\");\n  let blob = new Blob([resData], {\n    type: \"application/octet-stream\"\n  });\n  link.style.display = \"none\";\n  link.href = URL.createObjectURL(blob);\n  link.download = \"xxxfile.xlsx\";\n  document.body.appendChild(link);\n  link.click();\n  document.body.removeChild(link);\n  window.URL.revokeObjectURL(link);\n})\n```\n\n> 注意：需要设置 `responseType: \"blob\"` ，否则可能会出现下载的文件打开损坏问题。\n\n#### 动态截取请求中 `content-disposition` 的文件名:动态截取请求中 `content-disposition` 的文件名:\n\n```js\nlet fileName = res.headers[\"content-disposition\"]\n    .split(\";\")[1]\n    .split(\"filename=\")[1];\n...\nlink.download = decodeURIComponent(fileName);\n```\n\n> 使用 `decodeURIComponent` 可以解决文件名乱码问题。\n"},{"slug":"vue3-scroll-to-top-ee6e5b","title":"vue3 中路由切换后让页面返回到顶部","category":"Vue","type":"snippet","description":"记录在 vue3 中，不同情况下，路由切换时让页面正常返回到顶部的方法。","status":"published","tags":["Vue","Frontend","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-02-28","readingTime":"1 min read","content":"$2d"},{"slug":"vue3-echarts-packaged-2eec46","title":"Vue3 + echarts 统一封装","category":"Echarts","type":"snippet","description":"记录 vue3 中，echarts 封装成公共方法。","status":"published","tags":["Vue，Echarts"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-02-23","readingTime":"1 min read","content":"$2e"},{"slug":"js-fetch-stream-abort-bc3f18","title":"echarts 让y轴只显示0和最大刻度值","category":"Echarts","type":"snippet","description":"记录 echarts 中，让y轴只显示0和最大刻度值的办法。","status":"published","tags":["Echarts"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-02-16","readingTime":"1 min read","content":"# 效果\n\n![image](/notes/echarts/echarts-y-0-max.png)\n\n# 实现方法\n\n### 1. 将interval属性设置为一个很大的数值\n\n![image](/notes/echarts/echarts-y-interval-doc.png)\n\n```js\nyAxis: [{\n  type: \"value\",\n  interval: 100000000\n}],\n```\n\n> 暂时只想到一种方法，后续补充。\n"},{"slug":"vue3-vite-import-meta-url-f48d65","title":"vue3 + vite 动态引入图片","category":"Vue","type":"snippet","description":"vue3 + vite 动态引入图片方法。","status":"published","tags":["Vue3","Vite","Image"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-01-16","readingTime":"1 min read","content":"**在vite中不能使用require引入图片资源，所以使用vite提供的方法引入**\n\n详见链接 -> [vite静态资源处理](https://cn.vitejs.dev/guide/assets.html \"vite静态资源处理\")\n\n1. `import.meta.url` 是一个 ESM 的原生功能，会暴露当前模块的 URL。将它与原生的 URL 构造器 组合使用，在一个 JavaScript 模块中，通过相对路径我们就能得到一个被完整解析的静态资源\n\n```js\nnew URL(\"@/assets/images/xxx.png\", import.meta.url).href;\n```\n\n2. 通过字符串模板支持动态 URL：\n\n```js\nfunction getImageUrl(name) {\n  return new URL(`./dir/${name}.png`, import.meta.url).href;\n}\n```\n\n3. 在生产构建时，Vite 才会进行必要的转换保证 URL 在打包和资源哈希后仍指向正确的地址。然而，这个 URL 字符串必须是静态的，这样才好分析。否则代码将被原样保留、因而在 `build.target` 不支持 `import.meta.url` 时会导致运行时错误。\n\n```js\n// Vite 不会转换这个\nconst imgUrl = new URL(imagePath, import.meta.url).href;\n```\n"},{"slug":"el-table-display-issues-0d440e","title":"el-table固定列错位问题","category":"Vue","type":"debugging","description":"记录el-table设置固定列时，使用keep-alive后页面切换导致该列错位的问题。","status":"published","tags":["Vue","Element"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-01-05","readingTime":"1 min read","content":"#### **1. 问题描述：el-table使用固定列时，使用keep-alive后页面切换导致该列错位。**\n\n![image](/notes/element-ui/el-table-fix-column-layout-error.png)\n\n#### **2. 解决方法：使用el-table的doLayout方法对表格进行重新布局**\n\n![image](/notes/element-ui/el-table-fix-column-layout-error-doc.png)\n\n```js\n  activated() {\n    this.$nextTick(() => {\n      this.$refs.myTable.doLayout();\n    });\n  },\n```\n"},{"slug":"vue3-vue-flow-b0ed37","title":"Vue3 流程图组件库 Vue Flow 简单使用","category":"Vue","type":"snippet","description":"记录 Vue Flow 流程图组件库的使用。","status":"published","tags":["Vue","Frontend","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-01-03","readingTime":"1 min read","content":"$2f"},{"slug":"vue-qrcode-csv-79e9ca","title":"Vue 二维码生成插件","category":"Vue","type":"snippet","description":"Vue 项目中使用 qrcode.vue 实现二维码生成。","status":"published","tags":["Vue","qrcode"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2022-12-05","readingTime":"1 min read","content":"$30"},{"slug":"vue-el-table-to-excel-1cf166","title":"Vue 将elementUI表格导出excel文件","category":"Vue","type":"snippet","description":"将elementUI表格导出excel文件。","status":"published","tags":["Vue","excel","table"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2022-11-04","readingTime":"1 min read","content":"$31"},{"slug":"vue-horizontal-scroll-aea033","title":"Vue横向滚动实现","category":"Vue","type":"snippet","description":"Vue中横向滚动功能的实现。","status":"published","tags":["Vue","Scroll"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2022-08-14","readingTime":"1 min read","content":"$32"},{"slug":"vue-turnjs-pdf-50dbb3","title":"Vue 借助 turn.js 实现翻书效果预览pdf文件","category":"Vue","type":"snippet","description":"vue 中使用 turn.js 插件实现翻书预览pdf文件效果。","status":"published","tags":["Vue","PDF","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2022-06-09","readingTime":"1 min read","content":"$33"},{"slug":"moment-get-different-date-cc1ddd","title":"Moment.js 获取前几天和后几天时间","category":"JavaScript","type":"snippet","description":"Moment.js 获取前几天和后几天时间的方法。","status":"published","tags":["JavaScript","Frontend","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2021-06-12","readingTime":"1 min read","content":"### 1. 获取今天\n\n```js\nimport moment from \"moment\";\nmoment().startOf(\"day\");\n```\n\n### 2. 获取本周\n\n```js\nimport moment from \"moment\";\nmoment().startOf(\"week\");\n```\n\n### 3. 获取n天前的日期\n\n```js\nimport moment from \"moment\";\n\n// subtract向前获取日期\nmoment().subtract(n, 'days');\n// startOf获取当天的00:00:00\nmoment().subtract(n, 'days').startOf(\"day\").format(\"YYYY-MM-DD HH:mm:ss\");\n// endOf获取当天的23:59:59\nmoment().subtract(n, 'days').endOf(\"day\").format(\"YYYY-MM-DD HH:mm:ss\");\n```\n\n### 4. 获取n天后的日期\n\n```js\nimport moment from \"moment\";\n\n// add向后获取日期\nmoment().add(n, 'days');\n// startOf获取当天的00:00:00\nmoment().add(n, 'days').startOf(\"day\").format(\"YYYY-MM-DD HH:mm:ss\");\n// endOf获取当天的23:59:59\nmoment().add(n, 'days').endOf(\"day\").format(\"YYYY-MM-DD HH:mm:ss\");\n```\n"},{"slug":"mini-program-movable-area-view-36b354","title":"小程序左滑列表进行操作","category":"MiniProgram","type":"snippet","description":"微信小程序左滑列表进行操作功能实现。","status":"published","tags":["小程序"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2019-11-22","readingTime":"1 min read","content":"$34"},{"slug":"mini-program-router-5f9695","title":"小程序返回上级页面并刷新列表","category":"MiniProgram","type":"snippet","description":"微信小程序返回上级页面并刷新列表。","status":"published","tags":["小程序"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2019-11-13","readingTime":"1 min read","content":"### 微信小程序进行操作后返回之前页面并刷新列表的方法。\n\n```js\nlet pages = getCurrentPages();\nlet beforePage = pages[pages.length - 2]; // -2 是上一个页面，-3是上上个页面以此类推。\nbeforePage.getList(参数);\nwx.navigateBack({\n  delta: 1,\n});\n```\n\n> 小程序以栈的形式维护当前的所有页面。\n\n![](/notes/mini-program/mini-stack-router-doc.png)\n\n> `getCurrentPages()` 函数可以获取当前页面栈.\n>\n> 前一页面栈： `pages[pages.length - 2];`\n>\n> 当前页面栈：`pages[pages.length - 1];`\n\n_获取到之前的页面栈，就可以调用其中获取列表的方法，从而做到刷新列表，然后执行跳转页面方法返回上一级页面_\n_还可以将要传递的参数直接`beforePage.setData`。上个页面就会执行这里的操作。_\n"},{"slug":"node-express-superagent-cheerio-38bf5c","title":"用node爬取网页上的内容。","category":"Node.js","type":"snippet","description":"如何用node简单的爬取网页上的内容。","status":"published","tags":["node","express","superagent","cheerio"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2019-11-07","readingTime":"1 min read","content":"$35"},{"slug":"css-performance-optimization-3f3d21","title":"CSS一些性能优化方法","category":"CSS","type":"review","description":"记录CSS一些性能优化方法。","status":"published","tags":["CSS"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2019-11-06","readingTime":"3 min read","content":"$36"},{"slug":"mini-program-custom-navigation-b7c70d","title":"小程序自定义顶部导航栏","category":"MiniProgram","type":"snippet","description":"微信小程序自定义顶部导航栏。","status":"published","tags":["小程序"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2019-11-06","readingTime":"1 min read","content":"$37"}],"categories":["React","JavaScript","Next.js","Vue","UniApp","ReactNative","Browser","CSS","Tooling","Node.js","Engineering","Echarts","MiniProgram"],"featuredNote":"$0:rsc:props:children:0:props:children:props:notes:0","recentNotes":["$0:rsc:props:children:0:props:children:props:notes:1","$0:rsc:props:children:0:props:children:props:notes:2","$0:rsc:props:children:0:props:children:props:notes:3","$0:rsc:props:children:0:props:children:props:notes:4"],"publishedCount":79,"draftCount":0}]}],["$L38"],"$L39"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"3rzn5eRu1E5SN5195Wxu-"}
+38:["$","script","script-0",{"src":"/_next/static/chunks/2lmpwbcsmjcnh.js","async":true}]
+39:["$","$L3a",null,{"children":["$","$3b",null,{"name":"Next.MetadataOutlet","children":"$@3c"}]}]
+3c:null

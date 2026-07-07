@@ -1,0 +1,117 @@
+1:"$Sreact.fragment"
+2:I[75144,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"ThemeProvider"]
+3:I[11110,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"LanguageProvider"]
+4:I[45678,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"default"]
+5:I[39756,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"default"]
+6:I[37457,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"default"]
+7:I[63687,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"default"]
+9:I[97367,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
+a:"$Sreact.suspense"
+d:I[97367,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"ViewportBoundary"]
+f:I[97367,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"MetadataBoundary"]
+11:I[68027,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"default",1]
+:HL["/_next/static/chunks/0ejmqocvhwfx7.css","style"]
+0:{"P":null,"c":["","notes","react-native-expo-location-problem-2f668d"],"q":"","i":false,"f":[[["",{"children":["notes",{"children":[["slug","react-native-expo-location-problem-2f668d","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0ejmqocvhwfx7.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/10tvgll65k0sf.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/2im7c515bo69p.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n(function() {\n  try {\n    // 1. 初始化主题\n    const savedTheme = localStorage.getItem('theme');\n    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;\n    const theme = savedTheme || (prefersDark ? 'dark' : 'light');\n    document.documentElement.setAttribute('data-theme', theme);\n\n    // 2. 初始化语言 (假设默认语言是 'zh')\n    const savedLang = localStorage.getItem('lang');\n    if (savedLang && savedLang !== 'zh') {\n      document.documentElement.setAttribute('lang', savedLang);\n      // 如果不是默认语言，隐藏页面防止闪烁\n      document.documentElement.style.visibility = 'hidden';\n    }\n  } catch (e) {}\n})();\n"}}]}],["$","body",null,{"children":["$","$L2",null,{"children":["$","$L3",null,{"children":[["$","$L4",null,{}],["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}],["$","$L7",null,{}]]}]}]}]]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L8",[["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/2-l7i9m0dht4u.js","async":true,"nonce":"$undefined"}]],["$","$L9",null,{"children":["$","$a",null,{"name":"Next.MetadataOutlet","children":"$@b"}]}]]}],{},null,false,null]},null,false,"$@c"]},null,false,"$@c"]},null,false,null],["$","$1","h",{"children":[null,["$","$Ld",null,{"children":"$Le"}],["$","div",null,{"hidden":true,"children":["$","$Lf",null,{"children":["$","$a",null,{"name":"Next.Metadata","children":"$L10"}]}]}],null]}],false]],"m":"$undefined","G":["$11",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0ejmqocvhwfx7.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"3rzn5eRu1E5SN5195Wxu-"}
+12:[]
+c:"$W12"
+e:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+13:I[27201,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"IconMark"]
+b:null
+10:[["$","link","0",{"rel":"icon","href":"/favicon.ico?favicon.2vob68tjqpejf.ico","sizes":"256x256","type":"image/x-icon"}],["$","$L13","1",{}]]
+14:I[30525,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3io6jn7gqayyz.js","/_next/static/chunks/2-l7i9m0dht4u.js"],"default"]
+15:Taaf,## 问题描述：
+
+react native 中使用 expo-location 获取位置信息时，按照官方文档执行案例，获取不到位置结果。Location.requestForegroundPermissionsAsync() 执行后可以获取授权状态，但是执行到 Location.getCurrentPositionAsync() 时不会打印结果。
+
+## 解决方法：
+
+给 Location.getCurrentPositionAsync() 添加参数，如下
+
+```js
+let location = await Location.getCurrentPositionAsync({
+  accuracy: Location.Accuracy.Highest,
+  maximumAge: 10000,
+});
+console.log("Location:", location);
+```
+
+## 官方文档：
+
+[expo-location文档地址](https://docs.expo.dev/versions/latest/sdk/location/ "expo-location文档地址")
+
+1. 安装：
+
+```shell
+npx expo install expo-location
+```
+
+2. 使用：
+
+下面是官方案例写法
+
+```jsx
+import React, { useState, useEffect } from "react";
+import { Platform, Text, View, StyleSheet } from "react-native";
+import Device from "expo-device";
+import * as Location from "expo-location";
+
+export default function App() {
+  const [location, setLocation] = useState(null);
+  const [errorMsg, setErrorMsg] = useState(null);
+
+  useEffect(() => {
+    (async () => {
+      if (Platform.OS === "android" && !Device.isDevice) {
+        setErrorMsg(
+          "Oops, this will not work on Snack in an Android Emulator. Try it on your device!",
+        );
+        return;
+      }
+      let { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== "granted") {
+        setErrorMsg("Permission to access location was denied");
+        return;
+      }
+
+      let location = await Location.getCurrentPositionAsync({});
+      setLocation(location);
+    })();
+  }, []);
+
+  let text = "Waiting..";
+  if (errorMsg) {
+    text = errorMsg;
+  } else if (location) {
+    text = JSON.stringify(location);
+  }
+
+  return (
+    <View style={styles.container}>
+      <Text style={styles.paragraph}>{text}</Text>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 20,
+  },
+  paragraph: {
+    fontSize: 18,
+    textAlign: "center",
+  },
+});
+```
+
+> 官方案例中 getCurrentPositionAsync 方法传参为空对象 {} ，这是打印不出结果的原因。
+> 添加参数后便可以获取结果数据。
+
+## 参考文章：
+
+[StackOverflow 讨论](https://stackoverflow.com/questions/69957907/expo-location-react-native-location-getcurrentpositionasync-never-returns "StackOverflow 讨论")
+[GitHub 相关 issues](https://github.com/expo/expo/issues/4304 "GitHub 相关 issues")
+[expo 开发论坛相关文章](https://forums.expo.dev/t/getcurrentpositionasync-doesnt-return-any-value-infinity-loading/23643 "expo 开发论坛相关文章")
+8:["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L14",null,{"note":{"slug":"react-native-expo-location-problem-2f668d","title":"expo-location 获取不到位置信息","category":"ReactNative","type":"debugging","description":"使用 expo-location 获取不到位置信息 Location.getCurrentPositionAsync() 结果无打印。","status":"published","tags":["RN","Expo","expo-location"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-10-05","readingTime":"1 min read","content":"$15"}}]}]

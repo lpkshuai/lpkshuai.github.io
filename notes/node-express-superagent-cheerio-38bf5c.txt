@@ -1,0 +1,180 @@
+1:"$Sreact.fragment"
+2:I[75144,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"ThemeProvider"]
+3:I[11110,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"LanguageProvider"]
+4:I[45678,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"default"]
+5:I[39756,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"default"]
+6:I[37457,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"default"]
+7:I[63687,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"default"]
+9:I[97367,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
+a:"$Sreact.suspense"
+d:I[97367,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"ViewportBoundary"]
+f:I[97367,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"MetadataBoundary"]
+11:I[68027,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"default",1]
+:HL["/_next/static/chunks/0ejmqocvhwfx7.css","style"]
+0:{"P":null,"c":["","notes","node-express-superagent-cheerio-38bf5c"],"q":"","i":false,"f":[[["",{"children":["notes",{"children":[["slug","node-express-superagent-cheerio-38bf5c","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0ejmqocvhwfx7.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/10tvgll65k0sf.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/2im7c515bo69p.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n(function() {\n  try {\n    // 1. 初始化主题\n    const savedTheme = localStorage.getItem('theme');\n    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;\n    const theme = savedTheme || (prefersDark ? 'dark' : 'light');\n    document.documentElement.setAttribute('data-theme', theme);\n\n    // 2. 初始化语言 (假设默认语言是 'zh')\n    const savedLang = localStorage.getItem('lang');\n    if (savedLang && savedLang !== 'zh') {\n      document.documentElement.setAttribute('lang', savedLang);\n      // 如果不是默认语言，隐藏页面防止闪烁\n      document.documentElement.style.visibility = 'hidden';\n    }\n  } catch (e) {}\n})();\n"}}]}],["$","body",null,{"children":["$","$L2",null,{"children":["$","$L3",null,{"children":[["$","$L4",null,{}],["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}],["$","$L7",null,{}]]}]}]}]]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L8",[["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/2-l7i9m0dht4u.js","async":true,"nonce":"$undefined"}]],["$","$L9",null,{"children":["$","$a",null,{"name":"Next.MetadataOutlet","children":"$@b"}]}]]}],{},null,false,null]},null,false,"$@c"]},null,false,"$@c"]},null,false,null],["$","$1","h",{"children":[null,["$","$Ld",null,{"children":"$Le"}],["$","div",null,{"hidden":true,"children":["$","$Lf",null,{"children":["$","$a",null,{"name":"Next.Metadata","children":"$L10"}]}]}],null]}],false]],"m":"$undefined","G":["$11",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0ejmqocvhwfx7.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"3rzn5eRu1E5SN5195Wxu-"}
+12:[]
+c:"$W12"
+e:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+13:I[27201,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"IconMark"]
+b:null
+10:[["$","link","0",{"rel":"icon","href":"/favicon.ico?favicon.2vob68tjqpejf.ico","sizes":"256x256","type":"image/x-icon"}],["$","$L13","1",{}]]
+14:I[30525,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3io6jn7gqayyz.js","/_next/static/chunks/2-l7i9m0dht4u.js"],"default"]
+15:Teeb,## 如何用node简单的爬取网页上的内容：
+
+#### 1.安装express以及生成器
+
+express官网：[http://www.expressjs.com.cn/](http://www.expressjs.com.cn/)
+
+```shell
+      npm install express --save
+
+      npm install express-generator -g
+```
+
+#### 2.用生成器创建新Express应用,进入项目并安装依赖包
+
+```shell
+      express myapp
+
+      cd myapp
+
+      npm install
+```
+
+#### 3.安装superagent
+
+superagent官网：[http://visionmedia.github.io/superagent/](http://visionmedia.github.io/superagent/)
+
+`npm install superagent`
+
+#### 4.安装cheerio
+
+cheerio官网：[https://cheerio.js.org/](https://cheerio.js.org/)
+
+`npm install cheerio`
+
+#### 5.在routes文件夹下新建路由文件news.js
+
+```js
+var express = require("express");
+const cheerio = require("cheerio");
+const superagent = require("superagent");
+var router = express.Router();
+
+router.get("/", function (req, res, next) {
+  // 抓取内容
+  superagent.get("http://www.donews.com/").end(function (err, sres) {
+    if (err) {
+      return next(err);
+    }
+    var $ = cheerio.load(sres.text);
+    var items = [];
+    $("div.block h3.block a").each(function (idx, element) {
+      var $element = $(element);
+      items.push({
+        title: $element.text(),
+        href: $element.attr("href"),
+      });
+    });
+    res.send(items);
+  });
+});
+
+module.exports = router;
+```
+
+> superagent.get('抓取网页的地址')
+>
+> 网页的 html 内容存储在 **sres.text** 里面
+>
+> 用 **cheerio.load** 加载得到的html内容并赋给变量 **$**
+>
+> 后面选择需要的内容部分语法和jQuery选择器基本一致，选择需要的元素进行遍历
+>
+> 然后返回遍历的内容
+
+#### 6.在app.js中引入路由文件
+
+```js
+var createError = require("http-errors");
+var express = require("express");
+var path = require("path");
+var cookieParser = require("cookie-parser");
+var logger = require("morgan");
+
+var newsRouter = require("./routes/news");
+
+var app = express(); // 创建实例
+
+var myLogger = function (req, res, next) {
+  console.log("LOGGED");
+  next();
+};
+
+var requestTime = function (req, res, next) {
+  req.requestTime = Date.now();
+  console.log(req.requestTime);
+  next();
+};
+
+// view engine setup
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "pug");
+
+app.use(logger("dev"));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, "public"))); // 将 public 目录下的图片、CSS 文件、JavaScript 文件对外开放访问(此写法为绝对路径)
+
+app.use(myLogger);
+app.use(requestTime);
+
+app.use("/news", newsRouter);
+
+//设置跨域请求
+app.use("*", function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Content-Type, Content-Length, Authorization, Accept, X-Requested-With , yourHeaderFeild",
+  );
+  res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
+  res.header("X-Powered-By", " 3.2.1");
+  res.header("Content-Type", "application/json;charset=utf-8");
+  next();
+});
+
+// catch 404 and forward to error handler
+app.use(function (req, res, next) {
+  next(createError(404));
+});
+
+// error handler
+app.use(function (err, req, res, next) {
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = req.app.get("env") === "development" ? err : {};
+
+  // render the error page
+  res.status(err.status || 500);
+  res.render("error");
+});
+
+module.exports = app;
+```
+
+> 引入路由的代码：
+>
+> **var newsRouter = require('./routes/news');**
+>
+> **app.use('/news', newsRouter);**
+
+#### 7.运行
+
+`npm start`
+
+浏览器打开项目即可看到爬取的数据
+
+![image](/notes/nodejs/node-express-superagent-cheerio.jpg)
+8:["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L14",null,{"note":{"slug":"node-express-superagent-cheerio-38bf5c","title":"用node爬取网页上的内容。","category":"Node.js","type":"snippet","description":"如何用node简单的爬取网页上的内容。","status":"published","tags":["node","express","superagent","cheerio"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2019-11-07","readingTime":"1 min read","content":"$15"}}]}]

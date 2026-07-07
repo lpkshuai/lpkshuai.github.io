@@ -1,0 +1,121 @@
+1:"$Sreact.fragment"
+2:I[75144,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"ThemeProvider"]
+3:I[11110,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"LanguageProvider"]
+4:I[45678,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"default"]
+5:I[39756,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"default"]
+6:I[37457,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"default"]
+7:I[63687,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"default"]
+9:I[97367,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
+a:"$Sreact.suspense"
+d:I[97367,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"ViewportBoundary"]
+f:I[97367,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"MetadataBoundary"]
+11:I[68027,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"default",1]
+:HL["/_next/static/chunks/0ejmqocvhwfx7.css","style"]
+0:{"P":null,"c":["","notes","vue-router-state-error-59018f"],"q":"","i":false,"f":[[["",{"children":["notes",{"children":[["slug","vue-router-state-error-59018f","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0ejmqocvhwfx7.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/10tvgll65k0sf.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/2im7c515bo69p.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n(function() {\n  try {\n    // 1. 初始化主题\n    const savedTheme = localStorage.getItem('theme');\n    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;\n    const theme = savedTheme || (prefersDark ? 'dark' : 'light');\n    document.documentElement.setAttribute('data-theme', theme);\n\n    // 2. 初始化语言 (假设默认语言是 'zh')\n    const savedLang = localStorage.getItem('lang');\n    if (savedLang && savedLang !== 'zh') {\n      document.documentElement.setAttribute('lang', savedLang);\n      // 如果不是默认语言，隐藏页面防止闪烁\n      document.documentElement.style.visibility = 'hidden';\n    }\n  } catch (e) {}\n})();\n"}}]}],["$","body",null,{"children":["$","$L2",null,{"children":["$","$L3",null,{"children":[["$","$L4",null,{}],["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}],["$","$L7",null,{}]]}]}]}]]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L8",[["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/2-l7i9m0dht4u.js","async":true,"nonce":"$undefined"}]],["$","$L9",null,{"children":["$","$a",null,{"name":"Next.MetadataOutlet","children":"$@b"}]}]]}],{},null,false,null]},null,false,"$@c"]},null,false,"$@c"]},null,false,null],["$","$1","h",{"children":[null,["$","$Ld",null,{"children":"$Le"}],["$","div",null,{"hidden":true,"children":["$","$Lf",null,{"children":["$","$a",null,{"name":"Next.Metadata","children":"$L10"}]}]}],null]}],false]],"m":"$undefined","G":["$11",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0ejmqocvhwfx7.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"3rzn5eRu1E5SN5195Wxu-"}
+12:[]
+c:"$W12"
+e:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+13:I[27201,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"IconMark"]
+b:null
+10:[["$","link","0",{"rel":"icon","href":"/favicon.ico?favicon.2vob68tjqpejf.ico","sizes":"256x256","type":"image/x-icon"}],["$","$L13","1",{}]]
+14:I[30525,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3io6jn7gqayyz.js","/_next/static/chunks/2-l7i9m0dht4u.js"],"default"]
+15:T864,## 1. 项目中部分相关依赖的版本
+
+```json
+"vue": "^3.2.45"
+"vue-router": "^4.1.6"
+"vite": "^4.1.0"
+"element-plus": "^2.2.30"
+```
+
+## 2. 封装的vue router hooks代码如下
+
+```js
+import { useRouter } from "vue-router";
+
+export default function useVueRouter() {
+  const router = useRouter();
+  const { query } = router.currentRoute.value;
+  const routerState = window.history.state;
+
+  const jumpPage = (name, state = {}) => {
+    if (!name) {
+      return;
+    }
+    router.push({
+      name,
+      state,
+    });
+  };
+  const goBack = (step = -1) => {
+    router.back(step);
+  };
+
+  return {
+    query,
+    routerState,
+    jumpPage,
+    goBack,
+  };
+}
+```
+
+## 3. 出现问题的背景
+
+出现问题的部分如下：
+
+```jsx
+<el-table-column fixed="right" label="操作" width="250">
+  <template #default="scope">
+    <el-button
+      link
+      type="primary"
+      @click="jumpPage('Detail', scope.row)"
+    >
+      詳情
+    </el-button>
+    <el-divider direction="vertical" />
+    <el-button
+      link
+      type="primary"
+      @click="jumpPage('Edit', scope.row)"
+    >
+      編輯
+    </el-button>
+  </template>
+</el-table-column>
+```
+
+详情页执行如下代码发现没有接收到参数：
+
+```js
+import useRouter from "@/hooks/useRouter.js";
+const { jumpPage, routerState } = useRouter();
+console.log(routerState);
+```
+
+**由于在其他页面的表格操作列也使用同样的写法跳转，但是没有遇到该问题，所以开始寻找不同的地方，经过观察发现在点击跳转时页面会刷新然后传参丢失。**
+
+**经过对比`scope.row`的内容以及依次删除其它不同类型属性的测试，最终找到了导致页面刷新的属性：`scope.row`中的tags数组**
+
+```json
+// scope.row 内容如下
+{
+  "shopId": 2,
+  "shopName": "李家菜",
+  "storeId": "218",
+  "name": "李家宴（李家菜）",
+  "tags": ["704"],
+  "users": 0,
+  "status": 1,
+  "createTime": "1900-01-20",
+  "creator": "system"
+}
+```
+
+## 4. 解决方案
+
+① 使用 `JSON.parse(JSON.stringify(scope.row))`
+② 避免传递数组或其他会导致问题的复杂数据类型参数
+③ 使用query或params传参
+8:["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L14",null,{"note":{"slug":"vue-router-state-error-59018f","title":"vue router 4.x 版本state传参，页面自动刷新传参丢失","category":"Vue","type":"debugging","description":"vue router 4.x 版本 路由跳转时使用state传参，页面会自动刷新并且传参丢失的问题记录。","status":"published","tags":["Vue","Vue-Router"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-08-21","readingTime":"1 min read","content":"$15"}}]}]
