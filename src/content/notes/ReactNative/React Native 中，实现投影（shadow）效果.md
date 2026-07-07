@@ -1,0 +1,100 @@
+---
+slug: react-native-shadow
+title: React Native 中，实现投影（shadow）效果
+category: ReactNative
+type: snippet
+description: React Native 中，实现投影（shadow）效果的方法记录。
+status: published
+tags: RN, shadow
+updatedAt: 2024-01-08
+---
+
+### 1. 效果：
+
+![image](/notes/react-native/react-native-shadow.png)
+
+### 2. 实现：
+
+```jsx
+import React from "react";
+import { View, Text, StyleSheet } from "react-native";
+
+const ShadowExample = () => {
+  return (
+    <View style={styles.container}>
+      <View style={styles.shadowBox}>
+        <Text style={styles.text}>Hello, Shadow!</Text>
+      </View>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  shadowBox: {
+    width: 200,
+    height: 100,
+    backgroundColor: "#fff",
+    borderRadius: 8,
+    elevation: 16, // Android 投影
+    shadowColor: "#000", // iOS 投影
+    shadowOffset: { width: 0, height: 10 },
+    shadowOpacity: 0.3,
+    shadowRadius: 16,
+  },
+  text: {
+    fontSize: 16,
+    fontWeight: "bold",
+    textAlign: "center",
+  },
+});
+
+export default ShadowExample;
+```
+
+> 说明：在上面的例子中，elevation 属性用于在 Android 设备上创建投影效果，而在 iOS 设备上，shadowColor、shadowOffset、shadowOpacity 和 shadowRadius 属性用于创建投影效果。可以根据需要调整这些属性的值。
+
+### 3. 文档：
+
+[react native shadow-props 文档](https://reactnative.dev/docs/shadow-props "react native shadow-props 文档")
+[elevation 介绍](https://reactnative.dev/docs/view-style-props#elevation-android "elevation 介绍")
+
+### 4. 属性对比：
+
+**在 CSS 中，box-shadow 属性包含如下几种：**
+
+```css
+box-shadow: h-offset v-offset blur-radius spread-radius color inset;
+```
+
+1. h-offset（水平偏移）：必填。阴影的水平偏移量。正值会使阴影向右偏移，负值则向左偏移。
+2. v-offset（垂直偏移）：必填。阴影的垂直偏移量。正值使阴影向下偏移，负值则向上偏移。
+3. blur-radius（模糊半径）：可选。定义阴影的模糊程度。该值越大，阴影的边缘就越模糊。不能为负值，如果省略，则默认为0，此时阴影将以固态颜色显示。
+4. spread-radius（扩展半径）：可选。定义阴影的大小。正值会使阴影增大，负值会使阴影缩小。如果省略，则阴影大小将和元素一样。
+5. color：可选。定义阴影的颜色。如果省略，则将使用浏览器的默认阴影颜色。
+6. inset：可选。 通常阴影是外发的，当添加 inset 关键字时，会改变阴影从外部投射到元素内部（即内阴影）。
+
+**在react native中阴影属性为：**
+
+```css
+{
+  shadowColor: '#000',
+  shadowOffset: {
+    width: 0,
+    height: 1
+  },
+  shadowOpacity: 0.2,
+  shadowRadius: 1.41
+}
+```
+
+1. shadowColor: 用于设置阴影的颜色。接受一个颜色值作为输入。
+2. shadowOffset: 此属性接受一个对象，该对象有两个属性：
+   - width: 水平方向的阴影偏移量。正值向右偏移，负值向左偏移。
+   - height: 垂直方向的阴影偏移量。正值向下偏移，负值向上偏移。
+3. shadowOpacity: 用于设置阴影的透明度，其值范围在 0（完全透明）到 1（完全不透明）之间。
+4. shadowRadius: 这是模糊半径，决定了阴影的模糊程度。值越大，阴影边缘就越模糊。

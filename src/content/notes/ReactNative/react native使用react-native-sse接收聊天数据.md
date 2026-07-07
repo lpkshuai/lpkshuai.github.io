@@ -1,0 +1,145 @@
+---
+slug: react-native-sse
+title: react native使用react-native-sse接收聊天数据
+category: ReactNative
+type: snippet
+description: react native使用react-native-sse接收聊天数据。
+status: published
+tags: RN, SSE
+updatedAt: 2024-08-13
+---
+
+## 1. 安装依赖
+
+```shell
+npx expo install react-native-sse
+```
+
+> [react-native-sse Github地址](https://github.com/binaryminds/react-native-sse "react-native-sse Github地址")
+
+## 2. 引入
+
+```js
+import EventSource from "react-native-sse";
+```
+
+## 3. 创建连接与监听器
+
+```js
+import EventSource from "react-native-sse";
+
+const es = new EventSource("https://your-sse-server.com/.well-known/mercure");
+
+es.addEventListener("open", (event) => {
+  console.log("Open SSE connection.");
+});
+
+es.addEventListener("message", (event) => {
+  console.log("New message event:", event.data);
+});
+
+es.addEventListener("error", (event) => {
+  if (event.type === "error") {
+    console.error("Connection error:", event.message);
+  } else if (event.type === "exception") {
+    console.error("Error:", event.message, event.error);
+  }
+});
+
+es.addEventListener("close", (event) => {
+  console.log("Close SSE connection.");
+});
+```
+
+## 4. 传参以及其他配置
+
+```js
+new EventSource(url: string | URL, options?: EventSourceOptions);
+```
+
+```js
+const options: EventSourceOptions = {
+  method: 'GET', // 请求方法。默认值: GET
+  timeout: 0, // 在没有任何活动的情况下，连接超时的时间（毫秒）。默认值: 0（无超时）
+  timeoutBeforeConnection: 500, // 在建立初始连接之前等待的时间（毫秒）。默认值: 500
+  withCredentials: false, // 在跨站点的Access-Control请求中包含凭据。默认值: false
+  headers: {}, // 请求头信息。默认值: {}
+  body: undefined, // 在连接时发送的请求体。默认值: undefined
+  debug: false, // 显示用于调试目的的 console.debug 消息。默认值: false
+  pollingInterval: 5000, // 重连之间的时间间隔（毫秒）。如果设置为 0，则禁用重连。默认值: 5000
+  lineEndingCharacter: null // 用于表示接收数据中行结尾的字符。常见值：'\n' 表示 LF（Unix/Linux），'\r\n' 表示 CRLF（Windows），'\r' 表示 CR（旧版Mac）。默认值: null（从事件中自动检测）
+}
+```
+
+## 5. 完整示例
+
+<details>
+<summary>点击查看代码</summary>
+
+```jsx
+import { useEffect, useState } from "react";
+import { Text, View } from "react-native";
+import EventSource from "react-native-sse";
+
+const OpenAIToken = "[Your OpenAI token]";
+
+export default function App() {
+  const [text, setText] = useState < string > "Loading...";
+
+  useEffect(() => {
+    const es = new EventSource("https://api.openai.com/v1/chat/completions", {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${OpenAIToken}`,
+      },
+      method: "POST",
+      // Remember to read the OpenAI API documentation to set the correct body
+      body: JSON.stringify({
+        model: "gpt-3.5-turbo-0125",
+        messages: [
+          {
+            role: "system",
+            content: "You are a helpful assistant.",
+          },
+          {
+            role: "user",
+            content: "What is the meaning of life?",
+          },
+        ],
+        max_tokens: 600,
+        n: 1,
+        temperature: 0.7,
+        stream: true,
+      }),
+      pollingInterval: 0, // Remember to set pollingInterval to 0 to disable reconnections
+    });
+
+    es.addEventListener("open", () => {
+      setText("");
+    });
+
+    es.addEventListener("message", (event) => {
+      if (event.data !== "[DONE]") {
+        const data = JSON.parse(event.data);
+
+        if (data.choices[0].delta.content !== undefined) {
+          setText((text) => text + data.choices[0].delta.content);
+        }
+      }
+    });
+
+    return () => {
+      es.removeAllEventListeners();
+      es.close();
+    };
+  }, []);
+
+  return (
+    <View>
+      <Text>{text}</Text>
+    </View>
+  );
+}
+```
+
+</details>

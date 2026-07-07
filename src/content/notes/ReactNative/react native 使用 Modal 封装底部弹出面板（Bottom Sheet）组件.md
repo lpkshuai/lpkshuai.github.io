@@ -1,0 +1,145 @@
+---
+slug: react-native-modal-sheet
+title: React Native封装底部弹出面板组件
+category: ReactNative
+type: snippet
+description: react native 使用 Modal 封装底部弹出面板（Bottom Sheet）组件。
+status: published
+tags: RN, Modal
+updatedAt: 2024-05-14
+---
+
+### 1. 创建一个名为 BottomSheetComponent.js 的文件
+
+```jsx
+// BottomSheetComponent.js
+import React, { useState, useEffect } from "react";
+import {
+  Modal,
+  View,
+  Text,
+  TouchableOpacity,
+  Animated,
+  StyleSheet,
+  Dimensions,
+} from "react-native";
+
+const { height } = Dimensions.get("window");
+
+const BottomSheetComponent = ({ visible, onClose }) => {
+  const [showModal, setShowModal] = useState(visible);
+  const translateY = useState(new Animated.Value(height))[0];
+
+  useEffect(() => {
+    if (visible) {
+      setShowModal(true);
+      Animated.spring(translateY, {
+        toValue: 0,
+        useNativeDriver: true,
+      }).start();
+    } else {
+      Animated.timing(translateY, {
+        toValue: height,
+        duration: 300,
+        useNativeDriver: true,
+      }).start(() => {
+        setShowModal(false);
+      });
+    }
+  }, [visible, translateY]);
+
+  return (
+    <Modal transparent visible={showModal} onRequestClose={onClose}>
+      <TouchableOpacity style={styles.overlay} onPress={onClose} />
+      <Animated.View
+        style={[styles.container, { transform: [{ translateY }] }]}
+      >
+        <View style={styles.content}>
+          <Text style={styles.title}>Hello, World!</Text>
+          <Text style={styles.subtitle}>This is a bottom sheet panel</Text>
+        </View>
+      </Animated.View>
+    </Modal>
+  );
+};
+
+const styles = StyleSheet.create({
+  overlay: {
+    flex: 1,
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+  },
+  container: {
+    position: "absolute",
+    bottom: 0,
+    width: "100%",
+    height: "50%", // Adjust the height as needed
+    backgroundColor: "white",
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+  },
+  content: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 16,
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: "bold",
+  },
+  subtitle: {
+    fontSize: 16,
+    color: "gray",
+  },
+});
+
+export default BottomSheetComponent;
+```
+
+### 2. 在其他页面中使用 BottomSheetComponent
+
+```jsx
+// MainScreen.js
+import React, { useState } from "react";
+import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import BottomSheetComponent from "./BottomSheetComponent"; // Adjust the path as needed
+
+const MainScreen = () => {
+  const [isBottomSheetVisible, setBottomSheetVisible] = useState(false);
+
+  const toggleBottomSheet = () => {
+    setBottomSheetVisible(!isBottomSheetVisible);
+  };
+
+  return (
+    <View style={styles.container}>
+      <TouchableOpacity style={styles.button} onPress={toggleBottomSheet}>
+        <Text style={styles.buttonText}>Open Bottom Sheet</Text>
+      </TouchableOpacity>
+      <BottomSheetComponent
+        visible={isBottomSheetVisible}
+        onClose={toggleBottomSheet}
+      />
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  button: {
+    backgroundColor: "#6200ee",
+    padding: 15,
+    borderRadius: 25,
+  },
+  buttonText: {
+    color: "#fff",
+    fontSize: 16,
+  },
+});
+
+export default MainScreen;
+```

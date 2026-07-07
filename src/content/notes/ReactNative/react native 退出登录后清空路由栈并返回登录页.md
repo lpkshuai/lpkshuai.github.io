@@ -1,0 +1,79 @@
+---
+slug: react-native-navigation-reset
+title: react native 退出登录后清空路由栈并返回登录页
+category: ReactNative
+type: debugging
+description: react native 项目退出登录后清空路由栈并返回登录页的实现。
+status: published
+tags: RN, navigation
+updatedAt: 2023-10-19
+---
+
+## 背景：
+
+由于项目使用的expo-router，一开始时在退出登录是如下实现的：
+
+```js
+import { router } from "expo-router";
+
+...
+router.replace("/my/login/login");
+...
+
+```
+
+> 使用expo-router的router.replace方法跳转至登录页。
+
+结果发现虽然跳转成功，但是点击手机返回操作时，虽然上一个页面没有了，还能返回上上个页面。在web开发时，使用router.replace之后浏览器是不能返回之前页面的，但是这里的replace只会删掉上一个路由，之前的还在路由栈中。
+
+## 解决：
+
+[reactnavigation文档](https://reactnavigation.org/docs/navigation-actions#reset "reactnavigation文档")
+解决方法如下：
+
+```js
+import { useNavigation, CommonActions } from "@react-navigation/native";
+
+...
+const navigation = useNavigation();
+navigation.dispatch(
+  CommonActions.reset({
+    index: 0,
+    routes: [{ name: "my/login/login" }],
+  })
+);
+...
+```
+
+## 过程记录：
+
+1. 首先尝试了router.reset()方法，发现expo-router没有这个方法；
+2. 然后查阅react navigation文档找到reset方法，按如下使用：
+
+```js
+navigation.dispatch(
+  CommonActions.reset({
+    index: 0,
+    routes: [{ name: "/my/login/login" }],
+  })
+);
+```
+
+> 与正确代码只差了一个 / ，因为expo-router中路由地址是 "/my/login/login" 。
+
+然后控制台报警告
+![image](/notes/react-native/react-native-navigation-reset-err.png)
+
+3. 打印出全部的路由后发现路由路径不对，修改路径后问题解决。
+
+```js
+import { useNavigationState } from '@react-navigation/native';
+
+...
+const navigationState = useNavigationState((state) => state);
+// 获取所有路由信息
+const allRoutes = navigationState.routes;
+// 输出所有路由信息
+console.log(allRoutes);
+...
+```

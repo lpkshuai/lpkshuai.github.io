@@ -2,7 +2,7 @@
 slug: uni-app-run-android-studio
 title: uni-app 项目运行到 Android Studio 模拟器
 category: UniApp
-type: snippet
+type: setup
 description: uni-app 项目运行到 Android Studio 模拟器。
 status: published
 tags: UniApp, Android Studio

@@ -1,0 +1,95 @@
+---
+slug: vue-horizontal-scroll
+title: Vue横向滚动实现
+category: Vue
+type: snippet
+description: Vue中横向滚动功能的实现。
+status: published
+tags: Vue, Scroll
+updatedAt: 2022-08-14
+---
+
+**dom结构**
+
+```html
+<div class="box" id="list">
+  <ul class="list flex-row-inline flex-nowrap">
+    <li v-for="item in 5" :class="{ active: item === 1 }"></li>
+  </ul>
+</div>
+```
+
+```css
+.box {
+  overflow-x: auto;
+}
+/* 隐藏滚动条 */
+.box::-webkit-scrollbar {
+  display: none;
+}
+```
+
+> 应确保绑定id的dom元素存在再绑定事件
+
+**1. 鼠标拖拽滚动**
+
+```js
+function initScroll() {
+  // 获取要绑定事件的元素
+  const tarDom = document.getElementById("list");
+  let flag; // 鼠标按下
+  let downX; // 鼠标点击的x下标
+  let scrollLeft; // 当前元素滚动条的偏移量
+  tarDom.addEventListener("mousedown", function (event) {
+    flag = true;
+    downX = event.clientX; // 获取到点击的x下标
+    scrollLeft = tarDom.scrollLeft; // 获取当前元素滚动条的偏移量
+  });
+  tarDom.addEventListener("mousemove", function (event) {
+    if (flag) {
+      // 判断是否是鼠标按下滚动元素区域
+      let moveX = event.clientX; // 获取移动的x轴
+      let scrollX = moveX - downX; // 当前移动的x轴下标减去刚点击下去的x轴下标得到鼠标滑动距离
+      tarDom.scrollLeft = scrollLeft - scrollX; // 鼠标按下的滚动条偏移量减去当前鼠标的滑动距离
+    }
+  });
+  // 鼠标抬起停止拖动
+  tarDom.addEventListener("mouseup", function () {
+    flag = false;
+  });
+  // 鼠标离开元素停止拖动
+  tarDom.addEventListener("mouseleave", function (event) {
+    flag = false;
+  });
+}
+```
+
+**2. 鼠标滚轮滚动**
+
+```js
+function initScroll() {
+  // 获取要绑定事件的元素
+  const tarDom = document.getElementById("list");
+  // document.addEventListener('DOMMouseScroll', handler, false)
+  // 添加滚轮滚动监听事件，一般是用下面的方法，上面的是火狐的写法
+  tarDom.addEventListener("mousewheel", handler, false);
+  // 滚动事件的出来函数
+  function handler(event) {
+    // 获取滚动方向
+    const detail = event.wheelDelta || event.detail;
+    // 定义滚动方向，其实也可以在赋值的时候写
+    const moveForwardStep = 1;
+    const moveBackStep = -1;
+    // 定义滚动距离
+    let step = 0;
+    // 判断滚动方向,这里的100可以改，代表滚动幅度，也就是说滚动幅度是自定义的
+    if (detail < 0) {
+      step = moveForwardStep * 100;
+    } else {
+      step = moveBackStep * 100;
+    }
+    // 对需要滚动的元素进行滚动操作
+    tarDom.scrollLeft += step;
+  }
+}
+```

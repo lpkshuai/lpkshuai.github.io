@@ -1,0 +1,169 @@
+---
+slug: node-express-superagent-cheerio
+title: 用node爬取网页上的内容。
+category: Node.js
+type: snippet
+description: 如何用node简单的爬取网页上的内容。
+status: published
+tags: node, express, superagent, cheerio
+updatedAt: 2019-11-07
+---
+
+## 如何用node简单的爬取网页上的内容：
+
+#### 1.安装express以及生成器
+
+express官网：[http://www.expressjs.com.cn/](http://www.expressjs.com.cn/)
+
+```shell
+      npm install express --save
+
+      npm install express-generator -g
+```
+
+#### 2.用生成器创建新Express应用,进入项目并安装依赖包
+
+```shell
+      express myapp
+
+      cd myapp
+
+      npm install
+```
+
+#### 3.安装superagent
+
+superagent官网：[http://visionmedia.github.io/superagent/](http://visionmedia.github.io/superagent/)
+
+`npm install superagent`
+
+#### 4.安装cheerio
+
+cheerio官网：[https://cheerio.js.org/](https://cheerio.js.org/)
+
+`npm install cheerio`
+
+#### 5.在routes文件夹下新建路由文件news.js
+
+```js
+var express = require("express");
+const cheerio = require("cheerio");
+const superagent = require("superagent");
+var router = express.Router();
+
+router.get("/", function (req, res, next) {
+  // 抓取内容
+  superagent.get("http://www.donews.com/").end(function (err, sres) {
+    if (err) {
+      return next(err);
+    }
+    var $ = cheerio.load(sres.text);
+    var items = [];
+    $("div.block h3.block a").each(function (idx, element) {
+      var $element = $(element);
+      items.push({
+        title: $element.text(),
+        href: $element.attr("href"),
+      });
+    });
+    res.send(items);
+  });
+});
+
+module.exports = router;
+```
+
+> superagent.get('抓取网页的地址')
+>
+> 网页的 html 内容存储在 **sres.text** 里面
+>
+> 用 **cheerio.load** 加载得到的html内容并赋给变量 **$**
+>
+> 后面选择需要的内容部分语法和jQuery选择器基本一致，选择需要的元素进行遍历
+>
+> 然后返回遍历的内容
+
+#### 6.在app.js中引入路由文件
+
+```js
+var createError = require("http-errors");
+var express = require("express");
+var path = require("path");
+var cookieParser = require("cookie-parser");
+var logger = require("morgan");
+
+var newsRouter = require("./routes/news");
+
+var app = express(); // 创建实例
+
+var myLogger = function (req, res, next) {
+  console.log("LOGGED");
+  next();
+};
+
+var requestTime = function (req, res, next) {
+  req.requestTime = Date.now();
+  console.log(req.requestTime);
+  next();
+};
+
+// view engine setup
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "pug");
+
+app.use(logger("dev"));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, "public"))); // 将 public 目录下的图片、CSS 文件、JavaScript 文件对外开放访问(此写法为绝对路径)
+
+app.use(myLogger);
+app.use(requestTime);
+
+app.use("/news", newsRouter);
+
+//设置跨域请求
+app.use("*", function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Content-Type, Content-Length, Authorization, Accept, X-Requested-With , yourHeaderFeild",
+  );
+  res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
+  res.header("X-Powered-By", " 3.2.1");
+  res.header("Content-Type", "application/json;charset=utf-8");
+  next();
+});
+
+// catch 404 and forward to error handler
+app.use(function (req, res, next) {
+  next(createError(404));
+});
+
+// error handler
+app.use(function (err, req, res, next) {
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = req.app.get("env") === "development" ? err : {};
+
+  // render the error page
+  res.status(err.status || 500);
+  res.render("error");
+});
+
+module.exports = app;
+```
+
+> 引入路由的代码：
+>
+> **var newsRouter = require('./routes/news');**
+>
+> **app.use('/news', newsRouter);**
+
+#### 7.运行
+
+`npm start`
+
+浏览器打开项目即可看到爬取的数据
+
+![image](/notes/nodejs/node-express-superagent-cheerio.jpg)

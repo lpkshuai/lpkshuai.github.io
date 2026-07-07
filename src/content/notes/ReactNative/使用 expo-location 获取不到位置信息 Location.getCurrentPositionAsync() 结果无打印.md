@@ -1,0 +1,106 @@
+---
+slug: react-native-expo-location-problem
+title: expo-location 获取不到位置信息
+category: ReactNative
+type: debugging
+description: 使用 expo-location 获取不到位置信息 Location.getCurrentPositionAsync() 结果无打印。
+status: published
+tags: RN, Expo, expo-location
+updatedAt: 2023-10-05
+---
+
+## 问题描述：
+
+react native 中使用 expo-location 获取位置信息时，按照官方文档执行案例，获取不到位置结果。Location.requestForegroundPermissionsAsync() 执行后可以获取授权状态，但是执行到 Location.getCurrentPositionAsync() 时不会打印结果。
+
+## 解决方法：
+
+给 Location.getCurrentPositionAsync() 添加参数，如下
+
+```js
+let location = await Location.getCurrentPositionAsync({
+  accuracy: Location.Accuracy.Highest,
+  maximumAge: 10000,
+});
+console.log("Location:", location);
+```
+
+## 官方文档：
+
+[expo-location文档地址](https://docs.expo.dev/versions/latest/sdk/location/ "expo-location文档地址")
+
+1. 安装：
+
+```shell
+npx expo install expo-location
+```
+
+2. 使用：
+
+下面是官方案例写法
+
+```jsx
+import React, { useState, useEffect } from "react";
+import { Platform, Text, View, StyleSheet } from "react-native";
+import Device from "expo-device";
+import * as Location from "expo-location";
+
+export default function App() {
+  const [location, setLocation] = useState(null);
+  const [errorMsg, setErrorMsg] = useState(null);
+
+  useEffect(() => {
+    (async () => {
+      if (Platform.OS === "android" && !Device.isDevice) {
+        setErrorMsg(
+          "Oops, this will not work on Snack in an Android Emulator. Try it on your device!",
+        );
+        return;
+      }
+      let { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== "granted") {
+        setErrorMsg("Permission to access location was denied");
+        return;
+      }
+
+      let location = await Location.getCurrentPositionAsync({});
+      setLocation(location);
+    })();
+  }, []);
+
+  let text = "Waiting..";
+  if (errorMsg) {
+    text = errorMsg;
+  } else if (location) {
+    text = JSON.stringify(location);
+  }
+
+  return (
+    <View style={styles.container}>
+      <Text style={styles.paragraph}>{text}</Text>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 20,
+  },
+  paragraph: {
+    fontSize: 18,
+    textAlign: "center",
+  },
+});
+```
+
+> 官方案例中 getCurrentPositionAsync 方法传参为空对象 {} ，这是打印不出结果的原因。
+> 添加参数后便可以获取结果数据。
+
+## 参考文章：
+
+[StackOverflow 讨论](https://stackoverflow.com/questions/69957907/expo-location-react-native-location-getcurrentpositionasync-never-returns "StackOverflow 讨论")
+[GitHub 相关 issues](https://github.com/expo/expo/issues/4304 "GitHub 相关 issues")
+[expo 开发论坛相关文章](https://forums.expo.dev/t/getcurrentpositionasync-doesnt-return-any-value-infinity-loading/23643 "expo 开发论坛相关文章")

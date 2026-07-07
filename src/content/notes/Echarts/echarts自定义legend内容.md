@@ -1,0 +1,115 @@
+---
+slug: echarts-legend-custom-formatter
+title: echarts自定义legend内容
+category: Echarts
+type: snippet
+description: echarts自定义legend内容的办法。
+status: published
+tags: Echarts
+updatedAt: 2023-03-28
+---
+
+# 效果
+
+![image](/notes/echarts/echarts-legend-custom-formatter.png)
+
+---
+
+# 配置
+
+```js
+let chartData = [
+  {
+    value: 6.33,
+    name: "公共安全支出：",
+  },
+  {
+    value: 7.12,
+    name: "教育支出：",
+  },
+  {
+    value: 8.34,
+    name: "科学技术支出：",
+  },
+  {
+    value: 3.54,
+    name: "社会保障和就业支出：",
+  },
+  {
+    value: 3.54,
+    name: "卫生健康支出：",
+  },
+  {
+    value: 3.54,
+    name: "城乡社区支出：",
+  },
+  {
+    value: 3.54,
+    name: "节能环保支出：",
+  },
+  {
+    value: 3.54,
+    name: "其他：",
+  },
+];
+let pieChartOption = {
+  orient: "vertical",
+  title: {
+    text: "一般公共服务支出构成",
+    top: 25,
+    left: "center",
+    textStyle: {
+      color: "#fff",
+      fontSize: 16,
+    },
+  },
+  tooltip: {
+    trigger: "axis",
+    axisPointer: {
+      type: "cross",
+      crossStyle: {
+        color: "#999",
+      },
+    },
+  },
+  legend: {
+    top: 80,
+    left: 213,
+    icon: "circle",
+    itemWidth: 12, // 设置宽度
+    itemHeight: 12, // 设置高度
+    formatter: (name) => {
+      const data = chartData;
+      let total = 0;
+      let target;
+      for (let i = 0, l = data.length; i < l; i++) {
+        total += data[i].value;
+        if (data[i].name == name) {
+          target = data[i].value;
+        }
+      }
+      const percent = ((target / total) * 100).toFixed(2);
+      return `${name}${target}亿元，占比${percent}%`;
+    },
+    textStyle: {
+      color: "#C5F6FF",
+    },
+  },
+  series: [
+    {
+      type: "pie",
+      center: [107, 172],
+      radius: "50%",
+      data: chartData,
+      label: {
+        show: false,
+        position: "inside",
+        // formatter: "{b}：{d}%",
+        formatter: "{d}%",
+        color: "#fff",
+      },
+      color: ["#3DCDE9", "#3B7CFF", "#059B53", "#27D17C", "#21FCCA", "#B1FFED"],
+    },
+  ],
+};
+```
