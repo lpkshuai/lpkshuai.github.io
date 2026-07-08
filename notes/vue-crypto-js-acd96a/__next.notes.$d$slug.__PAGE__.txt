@@ -1,0 +1,82 @@
+1:"$Sreact.fragment"
+2:I[30525,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3io6jn7gqayyz.js","/_next/static/chunks/2-l7i9m0dht4u.js"],"default"]
+4:I[97367,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
+5:"$Sreact.suspense"
+3:T5fa,## 1. 安装crypto-js库：
+
+```bash
+npm install crypto-js
+# 或
+yarn add crypto-js
+```
+
+## 2. 封装encryption.js
+
+```JavaScript
+// utils/encryption.js
+import CryptoJS from 'crypto-js';
+
+// AES加密
+export function encrypt(text, key) {
+  return CryptoJS.AES.encrypt(text, key).toString();
+}
+
+// AES解密
+export function decrypt(ciphertext, key) {
+  const bytes = CryptoJS.AES.decrypt(ciphertext, key);
+  return bytes.toString(CryptoJS.enc.Utf8);
+}
+```
+
+## 3. 使用
+
+```jsx
+<template>
+  <div>
+    <h1>AES Encryption Example</h1>
+    <input v-model="inputText" placeholder="Enter text to encrypt" />
+    <input v-model="encryptionKey" placeholder="Enter encryption key" />
+    <button @click="handleEncrypt">Encrypt</button>
+    <button @click="handleDecrypt">Decrypt</button>
+    <p>Encrypted Text: {{ encryptedText }}</p>
+    <p>Decrypted Text: {{ decryptedText }}</p>
+  </div>
+</template>
+
+<script>
+// 导入封装好的加解密方法
+import { encrypt, decrypt } from "@/utils/encryption";
+
+export default {
+  data() {
+    return {
+      inputText: "",
+      encryptionKey: "",
+      encryptedText: "",
+      decryptedText: "",
+    };
+  },
+  methods: {
+    handleEncrypt() {
+      this.encryptedText = encrypt(this.inputText, this.encryptionKey);
+    },
+    handleDecrypt() {
+      this.decryptedText = decrypt(this.encryptedText, this.encryptionKey);
+    },
+  },
+};
+</script>
+
+<style scoped>
+/* 添加一些简单的样式 */
+input {
+  margin-bottom: 10px;
+  display: block;
+}
+button {
+  margin-right: 10px;
+}
+</style>
+```
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"vue-crypto-js-acd96a","title":"Vue使用AES加密","category":"Vue","type":"snippet","description":"vue 中使用 AES 加密。","status":"published","tags":["Vue","AES","crypto-js"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-05-16","readingTime":"1 min read","content":"$3"}}]}],[["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/2-l7i9m0dht4u.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"1FH8hT9etTS0U3fgOn2KZ"}
+6:null
