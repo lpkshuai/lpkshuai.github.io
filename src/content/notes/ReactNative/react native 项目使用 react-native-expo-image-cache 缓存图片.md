@@ -1,0 +1,98 @@
+---
+slug: react-native-expo-image-cache
+title: 使用 react-native-expo-image-cache 缓存图片
+category: ReactNative
+type: snippet
+description: react native 项目使用 react-native-expo-image-cache 缓存图片，提高图片加载速度。
+status: published
+tags: RN, cache
+updatedAt: 2023-11-04
+---
+
+## 一、背景：
+
+项目中数据列表中的图片加载速度比较慢，而且每次都要重新加载，效果很差。经过调研找到一个图片组件库 `react-native-fast-image` ，它是一个高性能的图片组件，支持自动缓存和预加载。它与内置的 Image 组件的 API 类似，但具有更快的加载速度。
+但是，由于项目使用expo框架，无法直接使用需要进行原生链接的第三方库。所以又找到了一个支持expo的图片组件库 **`react-native-expo-image-cache`**。
+
+## 二、安装：
+
+```bash
+npm install react-native-expo-image-cache
+yarn add react-native-expo-image-cache
+```
+
+## 三、使用：
+
+### 1. 正常使用：
+
+这里将库中引入的 Image 重命名以区分 react native 中的 Image。
+
+```jsx
+import { Image } from "react-native";
+import { Image as CacheImage } from "react-native-expo-image-cache";
+
+// 原版Image
+<Image
+  resizeMode="cover"
+  style={styles.cardImage}
+  source={{ uri: data.url }}
+></Image>
+
+// 组件库Image
+<CacheImage
+  resizeMode="cover"
+  style={styles.cardImage}
+  uri={data.url}
+  preview={require("../assets/xxx/previewImg.png")}
+></CacheImage>
+```
+
+> 属性：
+> uri：图片的在线地址
+> preview：图片未加载时的占位图片地址（可以是本地图片或data uri）
+> tint: 加载的图片添加颜色滤镜，仅在加载图片时有效
+> transitionDuration：加载时渐变效果的过渡时间
+
+### 2. 缓存控制：
+
+CacheManager 可以用于更精细地控制图片的缓存和管理。通过 CacheManager，可以手动控制缓存的行为，例如手动清除缓存、获取缓存信息等。
+
+1. 手动清除缓存：
+
+```js
+import { CacheManager } from "react-native-expo-image-cache";
+
+// 清除所有缓存
+CacheManager.clearCache();
+
+// 清除特定 URL 的缓存
+CacheManager.clearCacheUrl("https://example.com/image.jpg");
+```
+
+2. 获取缓存信息：
+
+```js
+import { CacheManager } from "react-native-expo-image-cache";
+
+// 获取缓存的大小（字节）
+const cacheSize = await CacheManager.getCacheSize();
+
+// 获取缓存的文件数量
+const cacheFilesCount = await CacheManager.getCacheFilesCount();
+```
+
+3. 缓存控制选项：
+
+```jsx
+<Image
+  style={styles.image}
+  uri={imageUrl}
+  preview={{ uri: "https://example.com/preview.jpg" }}
+  cacheOptions={{ behavior: CacheManager.CACHE_ONLY }}
+/>
+```
+
+## 四、参考文档：
+
+[react-native-expo-image-cache GitHub地址](https://github.com/wcandillon/react-native-expo-image-cache "react-native-expo-image-cache GitHub地址")
+[react-native-fast-image GitHub地址](https://github.com/DylanVann/react-native-fast-image "react-native-fast-image GitHub地址")
