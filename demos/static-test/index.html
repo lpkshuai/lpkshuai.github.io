@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Static Demo Test</title>
+    <style>
+      /* 简单的 Reset 和全屏布局 */
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #050505; /* 匹配主站暗色背景 */
+        overflow: hidden;
+        font-family: "Courier New", Courier, monospace;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* 核心演示样式 */
+      .box {
+        width: 300px;
+        height: 300px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        background: rgba(255, 255, 255, 0.02);
+      }
+
+      /* 旋转边框特效 */
+      .box::before {
+        content: "";
+        position: absolute;
+        width: 140%;
+        height: 140%;
+        background: conic-gradient(
+          from 0deg,
+          transparent 0%,
+          #00ffcc 50%,
+          transparent 100%
+        );
+        animation: rotate 4s linear infinite;
+      }
+
+      .box::after {
+        content: "";
+        position: absolute;
+        inset: 2px; /* 稍微缩小一点，形成边框效果 */
+        background: #050505; /* 遮挡中间部分 */
+      }
+
+      .text {
+        position: relative; /* 保证文字在最上层 */
+        z-index: 10;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        font-weight: bold;
+        text-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+      }
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="text">IFRAME_OK</div>
+    </div>
+  </body>
+</html>
