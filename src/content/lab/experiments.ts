@@ -14,47 +14,46 @@ export const labCategories: LabCategory[] = [
     },
     icon: "✧",
     experiments: [
-      {
-        id: "glitch-matrix",
-        title: "Glitch Matrix",
-        description: "利用伪元素与关键帧动画实现的赛博朋克故障文字破坏效果。",
-        tags: ["CSS3", "Keyframes", "Mix-blend"],
-        cover:
-          "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800&auto=format&fit=crop",
-        // demoUrl: "/lab/glitch-matrix",
-        sourceUrl: "https://github.com/lpkshuai", // 替换为你的真实仓库地址
-        // ✅ 核心代码片段
-        codeSnippet: `
-.glitch-text {
-  position: relative;
-  font-weight: 900;
-  color: #fff;
-  text-shadow: 0 0 10px rgba(0,255,255,0.5);
-}
+      //       {
+      //         id: "glitch-matrix",
+      //         title: "Glitch Matrix",
+      //         description: "利用伪元素与关键帧动画实现的赛博朋克故障文字破坏效果。",
+      //         tags: ["CSS3", "Keyframes", "Mix-blend"],
+      //         cover:
+      //           "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800&auto=format&fit=crop",
+      //         // demoUrl: "/lab/glitch-matrix",
+      //         sourceUrl: "https://github.com/lpkshuai",
+      //         codeSnippet: `
+      // .glitch-text {
+      //   position: relative;
+      //   font-weight: 900;
+      //   color: #fff;
+      //   text-shadow: 0 0 10px rgba(0,255,255,0.5);
+      // }
 
-.glitch-text::before,
-.glitch-text::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-}
+      // .glitch-text::before,
+      // .glitch-text::after {
+      //   content: attr(data-text);
+      //   position: absolute;
+      //   top: 0; left: 0;
+      //   width: 100%; height: 100%;
+      // }
 
-.glitch-text::before {
-  animation: glitch-1 2s infinite linear alternate-reverse;
-  color: #0ff; /* Cyan glitch */
-  clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
-}
+      // .glitch-text::before {
+      //   animation: glitch-1 2s infinite linear alternate-reverse;
+      //   color: #0ff; /* Cyan glitch */
+      //   clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+      // }
 
-@keyframes glitch-1 {
-  0% { transform: translateX(0); }
-  20% { transform: translateX(-3px); }
-  40% { transform: translateX(3px); }
-  60% { transform: translateX(-1px); }
-  100% { transform: translateX(0); }
-}
-        `.trim(),
-      },
+      // @keyframes glitch-1 {
+      //   0% { transform: translateX(0); }
+      //   20% { transform: translateX(-3px); }
+      //   40% { transform: translateX(3px); }
+      //   60% { transform: translateX(-1px); }
+      //   100% { transform: translateX(0); }
+      // }
+      //         `.trim(),
+      //       },
       {
         id: "glassmorphism-card",
         title: "Glassmorphism Card",
@@ -83,14 +82,14 @@ export const labCategories: LabCategory[] = [
         `.trim(),
       },
       {
-        id: "neon-pulse", // ✅ 唯一标识符，用于路由和组件匹配
-        title: "Neon Pulse", // 标题
-        description: "使用 CSS 滤镜与多重阴影模拟的真实霓虹灯管闪烁效果。", // 描述
+        id: "neon-pulse", // 路由和组件匹配
+        title: "Neon Pulse",
+        description: "使用 CSS 滤镜与多重阴影模拟的真实霓虹灯管闪烁效果。",
         tags: ["CSS", "Filter", "Animation"], // 技术标签
         cover: "/experiments/css/neon-pulse.png", // 封面图 URL
         // demoUrl: "/lab/neon-pulse", // 演示链接（通常就是当前页面）
         sourceUrl: "https://github.com/lpkshuai", // 源码地址
-        // ✅ 核心代码片段（用于详情页展示）
+        // 核心代码片段（用于详情页展示）
         codeSnippet: `
 .neon-text {
   color: #fff;
@@ -102,7 +101,7 @@ export const labCategories: LabCategory[] = [
   animation: flicker 1.5s infinite alternate;
 }
         `.trim(),
-        // ✅ RPG 属性（可选，用于展示复杂度或性能指标）
+        //（可选，用于展示复杂度或性能指标）
         stats: [
           {
             name: { zh: "性能消耗", en: "GPU Cost" },
@@ -111,8 +110,57 @@ export const labCategories: LabCategory[] = [
           },
         ],
       },
+      {
+        id: "static-iframe-test",
+        title: "Static Iframe Demo",
+        description: "这是一个测试 Iframe 嵌入模式的纯静态 HTML 案例。",
+        tags: ["HTML", "Static", "Test"],
+        cover:
+          "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop", // 随便找一张封面
+        renderType: "iframe", // ✅ 关键：指定为 iframe 模式
+        embedUrl: "/demos/static-test/index.html", // ✅ 关键：指向 public 目录下的文件
+        codeSnippet: `
+/* 这是一个纯静态的 HTML 文件演示 */
+.box::before {
+  content: '';
+  position: absolute;
+  background: conic-gradient(from 0deg, transparent, #00ffcc, transparent);
+  animation: rotate 4s linear infinite;
+}
+        `.trim(),
+      },
+
+      // Iframe 嵌入模式 (Vue 项目)
+      // {
+      //   id: "vue-todo",
+      //   title: "Vue Legacy Todo",
+      //   description: "早期 Vue 开发的经典待办事项应用。",
+      //   tags: ["Vue2", "LocalStorage"],
+      //   cover: "/covers/vue-todo.png",
+      //   renderType: "iframe", // ✅ 指定为 iframe
+      //   embedUrl: "/demos/vue-todo/index.html", // ✅ 指向 public 目录下的文件
+      //   sourceUrl: "https://github.com/...",
+      // },
+
+      // 媒体预览模式 (外部链接项目)
+      // {
+      //   id: "threejs-world",
+      //   title: "Three.js World",
+      //   description: "一个部署在独立服务器上的大型 WebGL 世界。",
+      //   tags: ["Three.js", "WebGL"],
+      //   cover: "/covers/threejs-world.png",
+      //   renderType: "media", // ✅ 指定为媒体展示
+      //   previewMedia: {
+      //     type: "video", // 或者 'gif'
+      //     src: "https://your-cdn.com/demo-preview.mp4",
+      //     poster: "/covers/threejs-world.png",
+      //   },
+      //   demoUrl: "https://threejs-world.example.com", // ✅ 点击按钮跳转
+      //   sourceUrl: "https://github.com/...",
+      // },
     ],
   },
+  /** 
   {
     id: "webgl-threejs",
     category: "WebGL & Three.js",
@@ -138,4 +186,5 @@ export const labCategories: LabCategory[] = [
       },
     ],
   },
+  */
 ];

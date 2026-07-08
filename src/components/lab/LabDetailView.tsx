@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import dynamic from "next/dynamic"; // ✅ 核心工具：用于懒加载重型组件
+import dynamic from "next/dynamic";
 import { useDictionary } from "@/hooks/useDictionary";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { labCategories } from "@/content/lab/experiments";
@@ -11,15 +11,9 @@ import type { LabExperiment, LabCategory } from "@/types/lab";
 // ============================================================
 // 1. 组件映射表
 // ============================================================
-// 这里定义 ID 与实际组件的对应关系。
-// 使用 dynamic 可以确保只有访问该页面时才加载对应的 JS 代码。
-// 对于 Three.js 等大型库，务必设置 { ssr: false } 避免服务端报错。
+// 仅针对 renderType 为 'component' 的本地 React 组件
+// 使用 dynamic import 实现懒加载，优化首屏速度
 const componentsMap: Record<string, React.ComponentType> = {
-  // 示例：如果你写好了 css-01 的组件，在这里引入
-  // "css-01": dynamic(() => import("@/components/experiments/GlitchMatrix")),
-  // 示例：对于 Three.js 项目
-  // "webgl-01": dynamic(() => import("@/components/experiments/ParticleCore"), { ssr: false }),
-
   "glitch-matrix": dynamic(
     () => import("@/components/experiments/GlitchMatrix"),
   ),
@@ -27,6 +21,7 @@ const componentsMap: Record<string, React.ComponentType> = {
     () => import("@/components/experiments/GlassmorphismCard"),
   ),
   "neon-pulse": dynamic(() => import("@/components/experiments/NeonPulse")),
+  // 在此处继续添加其他 React 组件...
 };
 
 // ============================================================
@@ -50,7 +45,6 @@ export default function LabDetailView({ id }: Props) {
   let experiment: LabExperiment | undefined;
   let category: LabCategory | undefined;
 
-  // 遍历所有分类，找到匹配 ID 的实验
   for (const cat of labCategories) {
     const found = cat.experiments.find((exp) => exp.id === id);
     if (found) {
@@ -60,10 +54,9 @@ export default function LabDetailView({ id }: Props) {
     }
   }
 
-  // 如果找不到数据，展示错误提示
   if (!experiment || !category) {
     return (
-      <div className="p-10 text-center text-red-500 font-mono border border-red-500/30 bg-red-500/10 rounded-xl mx-auto max-w-6xl">
+      <div className="p-10 text-center text-red-500 font-mono border border-red-500/30 bg-red-500/10 rounded-xl mx-auto max-w-6xl my-20">
         ERROR: ARTIFACT_NOT_FOUND <br />
         <span className="text-xs text-(--foreground-dim)">ID: {id}</span>
       </div>
@@ -75,7 +68,6 @@ export default function LabDetailView({ id }: Props) {
   // --------------------------------------------------------
   const displayCategoryTitle = category.title[language];
 
-  // 处理复制代码功能
   const handleCopy = () => {
     if (!experiment.codeSnippet) return;
     navigator.clipboard.writeText(experiment.codeSnippet);
@@ -84,16 +76,81 @@ export default function LabDetailView({ id }: Props) {
   };
 
   // --------------------------------------------------------
-  // C. 获取要渲染的动态组件
+  // C. 核心渲染策略
   // --------------------------------------------------------
-  const ExperimentComponent = componentsMap[id];
+  const renderExperimentContent = () => {
+    const type = experiment.renderType || "component";
+
+    switch (type) {
+      // 场景 B: Iframe 嵌入 (Vue/旧项目/静态Demo)
+      case "iframe":
+        return (
+          <iframe
+            src={experiment.embedUrl}
+            title={experiment.title}
+            className="w-full h-full border-0 bg-(--background)"
+            // 安全沙箱：允许脚本运行，但禁止弹出窗口等潜在风险
+            sandbox="allow-scripts allow-same-origin allow-forms"
+            loading="lazy"
+          />
+        );
+
+      // 场景 C: 媒体预览 (外部链接/视频/GIF)
+      case "media":
+        if (!experiment.previewMedia)
+          return <PreviewPlaceholder title={experiment.title} />;
+
+        // 视频预览
+        if (experiment.previewMedia.type === "video") {
+          return (
+            <video
+              className="w-full h-full object-cover"
+              src={experiment.previewMedia.src}
+              poster={experiment.previewMedia.poster}
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
+          );
+        }
+
+        // 图片/GIF 预览
+        return (
+          <div className="w-full h-full flex items-center justify-center overflow-hidden">
+            <img
+              src={experiment.previewMedia.src}
+              alt={experiment.title}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        );
+
+      // 场景 A: React 组件
+      case "component":
+      default:
+        const Component = componentsMap[id];
+        return Component ? (
+          <Component />
+        ) : (
+          <PreviewPlaceholder title={experiment.title} />
+        );
+    }
+  };
+
+  // 根据类型决定状态栏文案
+  const getStatusText = () => {
+    if (experiment.renderType === "media") return "EXTERNAL_LINK";
+    if (experiment.renderType === "iframe") return "EMBED_RUNNING";
+    return t.detail.live;
+  };
 
   // --------------------------------------------------------
   // D. 渲染 UI
   // --------------------------------------------------------
   return (
     <section className="mx-auto max-w-6xl px-6 py-12 font-mono text-(--foreground) selection:bg-(--accent)/30">
-      {/* 1. 顶部返回导航栏 */}
+      {/* 1. 顶部导航栏 */}
       <nav className="mb-10 flex items-center justify-between text-xs font-bold uppercase tracking-widest text-(--foreground-muted)">
         <Link
           href="/lab"
@@ -126,40 +183,26 @@ export default function LabDetailView({ id }: Props) {
       {/* 3. 预览区域 */}
       <div className="mb-12 rounded-3xl border border-(--panel-border) bg-(--panel) p-1.5 shadow-2xl">
         <div className="relative flex aspect-video w-full flex-col items-center justify-center overflow-hidden rounded-2xl bg-(--background) border border-(--panel-border)">
-          {/* 
-             [关键逻辑]：如果组件存在则渲染，否则显示占位符 
-          */}
-          {ExperimentComponent ? (
-            <ExperimentComponent />
-          ) : (
-            // 兜底 UI：如果没有写具体组件，显示一个静态效果
-            <div className="z-10 text-center p-8">
-              <h2 className="text-4xl font-black uppercase tracking-[0.2em] text-(--foreground) animate-pulse">
-                {experiment.title.replace(/ /g, "_")}
-              </h2>
-              <p className="mt-4 text-xs text-(--foreground-dim)">
-                [ DEMO_PLACEHOLDER ]
-              </p>
-            </div>
-          )}
+          {/* 渲染策略执行 */}
+          {renderExperimentContent()}
 
           {/* 背景网格特效 */}
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-size-[24px_24px] pointer-events-none" />
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
 
           {/* 状态悬浮窗 */}
-          <div className="absolute bottom-4 right-4 flex items-center gap-2 rounded border border-(--panel-border) bg-(--panel)/90 px-2.5 py-1 text-[10px] font-bold text-(--foreground) shadow-lg backdrop-blur-md">
-            <span className="size-1.5 animate-pulse rounded-full bg-green-500" />
-            {t.detail.live}
+          <div className="absolute bottom-4 right-4 flex items-center gap-2 rounded-full border border-(--foreground)/10 bg-(--foreground)/80 px-3 py-1 text-[10px] font-bold text-(--background) backdrop-blur-sm shadow-sm">
+            <span className="size-1.5 animate-pulse rounded-full bg-green-400" />
+            {getStatusText()}
           </div>
         </div>
       </div>
 
-      {/* 4. 核心信息网格：左侧代码，右侧标签 */}
+      {/* 4. 核心信息网格 */}
       <div className="grid gap-6 lg:grid-cols-3 lg:items-start">
         {/* 左侧：代码区域 */}
         <div className="rounded-2xl border border-(--panel-border) bg-(--panel) p-1.5 lg:col-span-2">
           <div className="rounded-xl border border-(--panel-border) bg-(--background) overflow-hidden">
-            {/* 代码块头部 - 终端风格 */}
+            {/* 代码块头部 */}
             <div className="flex items-center justify-between border-b border-(--panel-border) bg-(--panel)/30 px-4 py-2">
               <div className="flex items-center gap-2 text-(--accent)">
                 <svg
@@ -227,7 +270,7 @@ export default function LabDetailView({ id }: Props) {
             </p>
 
             <div className="flex flex-col gap-3">
-              {/* 在线演示按钮 (仅当有 demoUrl 时显示) */}
+              {/* 在线演示按钮 */}
               {experiment.demoUrl && (
                 <Link
                   href={experiment.demoUrl}
@@ -243,7 +286,7 @@ export default function LabDetailView({ id }: Props) {
                 </Link>
               )}
 
-              {/* 源码按钮 (仅当有 sourceUrl 时显示) */}
+              {/* 源码按钮 */}
               {experiment.sourceUrl && (
                 <Link
                   href={experiment.sourceUrl}
@@ -263,5 +306,19 @@ export default function LabDetailView({ id }: Props) {
         </div>
       </div>
     </section>
+  );
+}
+
+// 占位符组件
+function PreviewPlaceholder({ title }: { title?: string }) {
+  return (
+    <div className="z-10 text-center p-8">
+      <h2 className="text-4xl font-black uppercase tracking-[0.2em] text-(--foreground) animate-pulse">
+        {title?.replace(/ /g, "_") || "DEMO"}
+      </h2>
+      <p className="mt-4 text-xs text-(--foreground-dim)">
+        [ DEMO_PLACEHOLDER ]
+      </p>
+    </div>
   );
 }
