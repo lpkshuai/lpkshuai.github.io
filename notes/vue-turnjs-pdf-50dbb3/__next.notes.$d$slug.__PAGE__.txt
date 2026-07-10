@@ -195,7 +195,7 @@ export default {
 }
 </style>
 ```
-0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"vue-turnjs-pdf-50dbb3","title":"Vue 借助 turn.js 实现翻书效果预览pdf文件","category":"Vue","type":"snippet","description":"vue 中使用 turn.js 插件实现翻书预览pdf文件效果。","status":"published","tags":["Vue","PDF","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2022-06-09","readingTime":"1 min read","content":"$3"}}]}],["$L4","$L5"],"$L6"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"vrNmabmU8jF7DRnS9Y7_r"}
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"vue-turnjs-pdf-50dbb3","title":"Vue 借助 turn.js 实现翻书效果预览pdf文件","category":"Vue","type":"snippet","description":"vue 中使用 turn.js 插件实现翻书预览pdf文件效果。","status":"published","tags":["Vue","PDF","Snippet"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2022-06-09","readingTime":"1 min read","content":"$3"}}]}],["$L4","$L5"],"$L6"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"altN75fshVsvCM1HaU1_C"}
 4:["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true}]
 5:["$","script","script-1",{"src":"/_next/static/chunks/2-l7i9m0dht4u.js","async":true}]
 6:["$","$L7",null,{"children":["$","$8",null,{"name":"Next.MetadataOutlet","children":"$@9"}]}]
