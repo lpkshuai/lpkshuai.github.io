@@ -5,6 +5,7 @@ import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
 import rehypeRaw from "rehype-raw";
 import remarkBreaks from "remark-breaks";
+
 import { useTheme } from "@/contexts/ThemeContext";
 import { useEffect, useState } from "react";
 
@@ -15,10 +16,11 @@ type MarkdownContentProps = {
 export default function MarkdownContent({ content }: MarkdownContentProps) {
   const { theme } = useTheme();
 
-  // ⭐ 图片预览状态
   const [previewImg, setPreviewImg] = useState<string | null>(null);
 
-  // ⭐ ESC 关闭预览
+  /**
+   * ESC关闭图片预览
+   */
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -27,59 +29,81 @@ export default function MarkdownContent({ content }: MarkdownContentProps) {
     };
 
     window.addEventListener("keydown", handler);
-    return () => window.removeEventListener("keydown", handler);
+
+    return () => {
+      window.removeEventListener("keydown", handler);
+    };
   }, []);
 
-  // ⭐ highlight.js 主题
+  /**
+   * highlight.js主题
+   */
   useEffect(() => {
-    const loadHighlightStyle = async () => {
-      const existingLink = document.querySelector("link[data-highlight-style]");
-      if (existingLink) existingLink.remove();
+    const old = document.querySelector("link[data-highlight-style]");
 
-      const style = theme === "dark" ? "github-dark" : "github";
+    if (old) {
+      old.remove();
+    }
 
-      const link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.href = `https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/${style}.min.css`;
-      link.setAttribute("data-highlight-style", "true");
+    const link = document.createElement("link");
 
-      document.head.appendChild(link);
-    };
+    link.rel = "stylesheet";
 
-    loadHighlightStyle();
+    link.href = `https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/${
+      theme === "dark" ? "github-dark" : "github"
+    }.min.css`;
+
+    link.dataset.highlightStyle = "true";
+
+    document.head.appendChild(link);
   }, [theme]);
 
   return (
-    <div className="space-y-6 prose prose-invert max-w-none">
+    <div className="prose prose-invert max-w-none space-y-6">
       <ReactMarkdown
         remarkPlugins={[remarkGfm, remarkBreaks]}
         rehypePlugins={[rehypeHighlight, rehypeRaw]}
         components={{
           h1: ({ children }) => (
-            <h1 className="text-3xl font-semibold tracking-tight text-foreground pt-4">
+            <h1
+              className="
+              pt-4
+              text-3xl
+              font-semibold
+              tracking-tight
+              text-foreground
+            "
+            >
               {children}
             </h1>
           ),
 
           h2: ({ children }) => (
-            <h2 className="text-2xl font-semibold tracking-tight text-foreground pt-4">
+            <h2
+              className="
+              pt-4
+              text-2xl
+              font-semibold
+              text-foreground
+            "
+            >
               {children}
             </h2>
           ),
 
           h3: ({ children }) => (
-            <h3 className="text-xl font-semibold tracking-tight text-foreground pt-3">
+            <h3
+              className="
+              pt-3
+              text-xl
+              font-semibold
+              text-foreground
+            "
+            >
               {children}
             </h3>
           ),
 
-          h4: ({ children }) => (
-            <h4 className="text-lg font-semibold tracking-tight text-foreground pt-2">
-              {children}
-            </h4>
-          ),
-
-          // ⭐ 修复：避免 <p><img/></p> + figure 嵌套问题
           p: ({ node, children }) => {
             const hasImage = node?.children?.some(
               (child: any) => child.tagName === "img",
@@ -90,7 +114,14 @@ export default function MarkdownContent({ content }: MarkdownContentProps) {
             }
 
             return (
-              <p className="leading-8 text-foreground-muted">{children}</p>
+              <p
+                className="
+                leading-8
+                text-foreground-muted
+              "
+              >
+                {children}
+              </p>
             );
           },
 
@@ -99,40 +130,75 @@ export default function MarkdownContent({ content }: MarkdownContentProps) {
               href={href}
               target="_blank"
               rel="noreferrer"
-              className="text-(--accent) underline decoration-white/20 underline-offset-4 transition hover:text-(--accent-strong)"
+              className="
+                text-(--accent)
+                underline
+                underline-offset-4
+                transition
+                hover:text-(--accent-strong)
+              "
             >
               {children}
             </a>
           ),
 
           blockquote: ({ children }) => (
-            <blockquote className="border-l-2 border-(--accent)/70 pl-4 text-foreground-muted">
+            <blockquote
+              className="
+                border-l-2
+                border-(--accent)
+                pl-4
+                text-foreground-muted
+              "
+            >
               {children}
             </blockquote>
           ),
 
           ul: ({ children }) => (
-            <ul className="space-y-2 pl-5 leading-7 text-foreground-muted list-disc">
+            <ul
+              className="
+              list-disc
+              space-y-2
+              pl-5
+              leading-7
+              text-foreground-muted
+            "
+            >
               {children}
             </ul>
           ),
 
           ol: ({ children }) => (
-            <ol className="space-y-2 pl-5 leading-7 text-foreground-muted list-decimal">
+            <ol
+              className="
+              list-decimal
+              space-y-2
+              pl-5
+              leading-7
+              text-foreground-muted
+            "
+            >
               {children}
             </ol>
           ),
 
-          li: ({ children }) => <li>{children}</li>,
-
           code: ({ className, children }) => {
-            const isInline = !className?.includes("language-");
+            const inline = !className?.includes("language-");
 
-            if (isInline) {
+            if (inline) {
               return (
                 <code
-                  className="rounded px-1.5 py-0.5 text-[0.9em] text-(--accent)"
-                  style={{ backgroundColor: "var(--accent-bg)" }}
+                  className="
+                    rounded
+                    px-1.5
+                    py-0.5
+                    text-[0.9em]
+                    text-(--accent)
+                  "
+                  style={{
+                    backgroundColor: "var(--accent-bg)",
+                  }}
                 >
                   {children}
                 </code>
@@ -144,33 +210,76 @@ export default function MarkdownContent({ content }: MarkdownContentProps) {
 
           pre: ({ children }) => (
             <div
-              className="overflow-hidden rounded-lg border border-white/10"
-              style={{ backgroundColor: "var(--panel)" }}
+              className="
+                overflow-hidden
+                rounded-lg
+                border
+              "
+              style={{
+                backgroundColor: "var(--panel)",
+
+                borderColor: "var(--panel-border)",
+              }}
             >
-              <pre className="overflow-x-auto p-4 text-sm leading-7">
+              <pre
+                className="
+                  overflow-x-auto
+                  p-4
+                  text-sm
+                  leading-7
+                "
+              >
                 {children}
               </pre>
             </div>
           ),
 
-          // ⭐ 图片 + Lightbox 核心
           img: ({ src, alt }) => {
             const imageSrc = typeof src === "string" ? src : undefined;
 
             if (!imageSrc) return null;
 
             return (
-              <figure className="my-6 overflow-hidden rounded-xl border border-white/10 bg-white/3">
+              <figure
+                className="
+                  my-6
+                  overflow-hidden
+                  rounded-xl
+                  border
+                "
+                style={{
+                  backgroundColor: "var(--panel)",
+
+                  borderColor: "var(--panel-border)",
+                }}
+              >
                 <img
                   src={imageSrc}
                   alt={alt || ""}
                   loading="lazy"
-                  className="mx-auto h-auto max-w-full cursor-zoom-in transition-transform duration-200 hover:scale-[1.01]"
+                  className="
+                    mx-auto
+                    max-w-full
+                    cursor-zoom-in
+                    transition
+                    hover:scale-[1.01]
+                  "
                   onClick={() => setPreviewImg(imageSrc)}
                 />
 
                 {alt && (
-                  <figcaption className="border-t border-white/10 px-4 py-3 text-sm text-foreground-dim">
+                  <figcaption
+                    className="
+                        border-t
+                        px-4
+                        py-3
+                        text-sm
+                        text-foreground-dim
+                      "
+                    style={{
+                      borderColor: "var(--panel-border)",
+                    }}
+                  >
                     {alt}
                   </figcaption>
                 )}
@@ -179,33 +288,79 @@ export default function MarkdownContent({ content }: MarkdownContentProps) {
           },
 
           table: ({ children }) => (
-            <div className="overflow-x-auto">
-              <table className="min-w-full border border-white/10">
+            <div
+              className="
+                my-6
+                overflow-x-auto
+                rounded-lg
+                border
+              "
+              style={{
+                borderColor: "var(--table-border)",
+              }}
+            >
+              <table
+                className="
+                  min-w-full
+                  border-collapse
+                "
+              >
                 {children}
               </table>
             </div>
           ),
 
           thead: ({ children }) => (
-            <thead className="border-b border-white/10 bg-white/3">
+            <thead
+              style={{
+                backgroundColor: "var(--table-header)",
+              }}
+            >
               {children}
             </thead>
           ),
 
-          tbody: ({ children }) => (
-            <tbody className="divide-y divide-white/10">{children}</tbody>
+          tr: ({ children }) => (
+            <tr
+              className="
+                transition-colors
+                hover:bg-(--panel)
+              "
+            >
+              {children}
+            </tr>
           ),
 
-          tr: ({ children }) => <tr>{children}</tr>,
-
           th: ({ children }) => (
-            <th className="px-4 py-2 text-left text-sm font-semibold text-foreground">
+            <th
+              className="
+                px-4
+                py-3
+                text-left
+                text-sm
+                font-semibold
+                text-foreground
+              "
+              style={{
+                borderBottom: "1px solid var(--table-border)",
+              }}
+            >
               {children}
             </th>
           ),
 
           td: ({ children }) => (
-            <td className="px-4 py-2 text-sm text-foreground-muted">
+            <td
+              className="
+                px-4
+                py-3
+                text-sm
+                text-foreground-muted
+              "
+              style={{
+                borderBottom: "1px solid var(--table-border)",
+              }}
+            >
               {children}
             </td>
           ),
@@ -214,15 +369,28 @@ export default function MarkdownContent({ content }: MarkdownContentProps) {
         {content}
       </ReactMarkdown>
 
-      {/* ⭐ Lightbox */}
       {previewImg && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
+          className="
+              fixed
+              inset-0
+              z-50
+              flex
+              items-center
+              justify-center
+              bg-black/80
+              backdrop-blur-sm
+            "
           onClick={() => setPreviewImg(null)}
         >
           <img
             src={previewImg}
-            className="max-h-[90vh] max-w-[90vw] rounded-lg shadow-2xl transition-transform duration-200"
+            className="
+                max-h-[90vh]
+                max-w-[90vw]
+                rounded-lg
+                shadow-2xl
+              "
             onClick={(e) => e.stopPropagation()}
           />
         </div>

@@ -10,6 +10,8 @@
   --accent: #63e6be;
   --accent-strong: #38bdf8;
   --accent-bg: rgba(99, 230, 190, 0.1);
+  --table-header: rgba(255, 255, 255, 0.05);
+  --table-border: rgba(255, 255, 255, 0.12);
 }
 
 [data-theme="light"] {
@@ -22,6 +24,8 @@
   --accent: #059669;
   --accent-strong: #0284c7;
   --accent-bg: rgba(5, 150, 105, 0.1);
+  --table-header: #f3f4f6;
+  --table-border: #e5e7eb;
 }
 
 html {
