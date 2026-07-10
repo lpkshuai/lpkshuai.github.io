@@ -1,0 +1,123 @@
+---
+slug: react-native-vision-camera
+title: react-native-vision-camera页面跳转后屏幕仍然是黑色的问题
+category: ReactNative
+type: debugging
+description: 使用react-native-vision-camera实现扫描解析二维码功能时，扫码页面扫码成功跳转其它页时，页面和相机页一样变成了黑色。
+status: published
+tags: RN, Expo, camera
+updatedAt: 2024-03-27
+---
+
+### 1. 问题描述：
+
+项目中使用`react-native-vision-camera`实现扫描解析二维码功能时，扫码页面扫码成功跳转其它页时，页面和相机页一样变成了黑色。
+
+### 2. 解决方法：
+
+开始是以为页面离开时相机没有关闭或者相机组件没有成功卸载，在设置了页面离开关闭相机之后发现还是黑屏。经过多次试验，camera组件的高度在设置成100%或设置flex: 1时均会出现这个问题。最后把高度调整后没有再出现黑屏问题。（只能算临时解决方案，后续会再寻找更好的方案）
+
+代码如下：
+
+```jsx
+import React, { useEffect, useState } from "react";
+import {
+  View,
+  StyleSheet,
+  Text,
+  Linking,
+  SafeAreaView,
+  Alert,
+} from "react-native";
+
+import {
+  Camera,
+  useCameraDevice,
+  useCodeScanner,
+} from "react-native-vision-camera";
+
+import { useIsForeground } from "../../hooks/useIsForeground";
+import { useIsFocused } from "@react-navigation/core";
+
+import { useNavigation } from "@react-navigation/native";
+
+function Scan() {
+  const isFocussed = useIsFocused();
+  const isForeground = useIsForeground();
+  const isActive = isFocussed && isForeground;
+
+  const device = useCameraDevice("back");
+  const [cameraFlag, setCameraFlag] = useState(true);
+
+  useEffect(() => {
+    return () => {
+      // 在这里处理组件卸载时的清理工作
+      // 如果 VisionCamera 提供了清理方法，请在这里调用
+      setCameraFlag(false);
+    };
+  }, []);
+
+  // const handleCameraPermission = async () => {
+  //   console.log('Requesting camera permission...');
+  //   const permission = await Camera.requestCameraPermission();
+  //   console.log(`Camera permission status: ${permission}`);
+
+  //   if (permission === 'denied') {
+  //     Alert.alert('摄像头被禁用。');
+  //     await Linking.openSettings();
+  //   }
+  //   setCameraPermissionStatus(permission);
+  // };
+
+  const navigation = useNavigation();
+  const codeScanner = useCodeScanner({
+    codeTypes: ["qr", "ean-13"],
+    onCodeScanned: (codes) => {
+      let value = codes[0]?.value;
+      let type = codes[0]?.type;
+      if (type === "qr" && value) {
+        // setCameraFlag(false);
+        navigation.navigate("Detail", {
+          code: value,
+        });
+      }
+    },
+  });
+
+  return (
+    <SafeAreaView style={styles.container}>
+      {/* <RoundButtonWithImage /> */}
+      {device === null && cameraFlag ? (
+        <View
+          style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+        >
+          <Text style={{ margin: 10 }}>找不到摄像头</Text>
+        </View>
+      ) : (
+        <Camera
+          codeScanner={codeScanner}
+          style={styles.absoluteFill}
+          device={device}
+          isActive={isActive}
+          // torch={torchOn ? 'on' : 'off'}
+          // onTouchEnd={() => setEnableOnCodeScanned(true)}
+        />
+      )}
+    </SafeAreaView>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    // padding: 20,
+    backgroundColor: "#000",
+  },
+  absoluteFill: {
+    // flex: 1,
+    height: "80%",
+  },
+});
+
+export default Scan;
+```
