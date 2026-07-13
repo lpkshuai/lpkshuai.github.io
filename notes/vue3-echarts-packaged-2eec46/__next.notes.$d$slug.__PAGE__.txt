@@ -154,7 +154,7 @@ onMounted(() => {
   setOption(option);
 });
 ```
-0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"vue3-echarts-packaged-2eec46","title":"Vue3 + echarts 统一封装","category":"Echarts","type":"snippet","description":"记录 vue3 中，echarts 封装成公共方法。","status":"published","tags":["Vue，Echarts"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-02-23","readingTime":"1 min read","content":"$3"}}]}],[["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true}],"$L4"],"$L5"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"DL1_vPC838DZXlYpHaNH_"}
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"vue3-echarts-packaged-2eec46","title":"Vue3 + echarts 统一封装","category":"Echarts","type":"snippet","description":"记录 vue3 中，echarts 封装成公共方法。","status":"published","tags":["Vue，Echarts"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-02-23","readingTime":"1 min read","content":"$3"}}]}],[["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true}],"$L4"],"$L5"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"LJIVceJ80t2ui04E3nC_z"}
 4:["$","script","script-1",{"src":"/_next/static/chunks/1mxc0ey88uhq9.js","async":true}]
 5:["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]
 8:null
