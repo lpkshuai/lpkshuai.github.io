@@ -1,0 +1,118 @@
+---
+slug: js-array-func
+title: ES6数组扩展方法的实现
+category: JavaScript
+type: snippet
+description: ES6数组扩展方法的实现。
+status: published
+tags: JavaScript, Array
+updatedAt: 2019-12-15
+---
+
+#### 实现 Array.of()
+
+> Array.of() 方法创建一个具有可变数量参数的新数组实例，而不考虑参数的数量或类型。
+
+```js
+// 接收任意个参数，使其按顺序成为返回数组中的元素。
+Array.pkOf = function () {
+  return Array.prototype.slice.call(arguments);
+};
+let arr1 = Array.pkOf(10);
+let arr2 = Array.pkOf("10");
+let arr3 = Array.pkOf(10, 20);
+console.log(arr1);
+console.log(arr2);
+console.log(arr3);
+```
+
+![](/notes/js/js-array-of-custom.png)
+
+#### 实现 Array.from()
+
+> Array.from() 方法从一个类似数组或可迭代对象创建一个新的，浅拷贝的数组实例。
+
+```js
+Array.pkFrom = function (arrlike, fn) {
+  let result = [];
+  for (let i = 0; i < arrlike.length; i++) {
+    if (fn) {
+      result.push(fn(arrlike[i], i));
+    } else {
+      result.push(arrlike[i]);
+    }
+  }
+  return result;
+};
+let arrlike = {
+  0: "11",
+  1: "22",
+  length: 2,
+};
+let res = Array.pkFrom(arrlike);
+console.log(res);
+```
+
+![](/notes/js/js-array-from-custom.png)
+
+#### 实现 Array.copyWithin()
+
+> Array.copyWithin() 方法浅复制数组的一部分到同一数组中的另一个位置，并返回它，不会改变原数组的长度。
+
+```js
+Array.prototype.pkCopyWithin = function (pos, start, end) {
+  let arr = this.slice(start, end);
+  // this.splice(pos, end - start, arr);
+  Array.prototype.splice.apply(this, [pos, end - start].concat(arr));
+  return this;
+};
+let arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+console.log(arr.pkCopyWithin(2, 7, 9));
+```
+
+![](/notes/js/js-array-copywithin-custom.png)
+
+#### 实现 Array.find()
+
+> Array.find() 方法返回数组中满足提供的测试函数的第一个元素的值。否则返回 undefined。
+
+```js
+Array.prototype.pkFind = function (fn) {
+  for (let i = 0; i < this.length; i++) {
+    if (fn(this[i], i, this)) {
+      return this[i];
+    }
+  }
+};
+let arr = ["1", "2", "3"];
+let res = arr.pkFind(function (item, index, arr) {
+  console.log(arguments);
+  return item === "2";
+});
+console.log(res);
+```
+
+![](/notes/js/js-array-find-custom.png)
+
+#### 实现 Array.findIndex()
+
+> Array.findIndex()方法返回数组中满足提供的测试函数的第一个元素的索引。否则返回-1。
+
+```js
+Array.prototype.pkFindIndex = function (fn) {
+  for (let i = 0; i < this.length; i++) {
+    if (fn(this[i], i, this)) {
+      return i;
+    }
+  }
+  return -1;
+};
+let arr = ["1", "2", "3"];
+let res = arr.pkFindIndex(function (item, index, arr) {
+  console.log(arguments);
+  return item === "2";
+});
+console.log(res);
+```
+
+![](/notes/js/js-array-findindex-custom.png)

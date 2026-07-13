@@ -1,0 +1,160 @@
+---
+slug: element-plus-theme
+title: element plus 配置主题色
+category: Vue
+type: snippet
+description: element plus 配置主题色。
+status: published
+tags: Vue, Element
+updatedAt: 2025-09-29
+---
+
+# Element Plus 主题配置步骤
+
+[参考官方文档](https://element-plus.org/zh-CN/guide/theming#%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%BB%E9%A2%98 "参考官方文档")
+
+## 1. 安装 Sass 预处理器
+
+```bash
+npm i sass -D
+```
+
+## 2. 创建 Element Plus 主题样式文件
+
+在 `src/styles/element.scss` 中配置主题变量：
+
+```scss
+/* just override what you need */
+@forward "element-plus/theme-chalk/src/common/var.scss" with (
+  $colors: (
+    "primary": (
+      "base": #c91830,
+    ),
+  )
+);
+
+// 如果你想导入所有样式:
+// @use "element-plus/theme-chalk/src/index.scss" as *;
+```
+
+## 3. 配置 unplugin-vue-components 自动导入
+
+在 `vite.config.js` 中配置 Element Plus 组件解析器，设置样式导入方式为 sass：
+
+```javascript
+import Components from "unplugin-vue-components/vite";
+import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
+
+export default defineConfig({
+  plugins: [
+    Components({
+      resolvers: [
+        ElementPlusResolver({
+          importStyle: "sass",
+        }),
+      ],
+    }),
+  ],
+});
+```
+
+## 4. 配置 Vite CSS 预处理器选项
+
+在 `vite.config.js` 中添加 CSS 预处理器配置，让所有 scss 文件自动导入 Element Plus 主题变量：
+
+```javascript
+export default defineConfig({
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@use "@/styles/element.scss" as *;`,
+      },
+    },
+  },
+});
+```
+
+## 5. 完整 vite.config.js 配置示例
+
+```javascript
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
+import { resolve } from "path";
+import tailwindcss from "@tailwindcss/vite";
+import AutoImport from "unplugin-auto-import/vite";
+import Components from "unplugin-vue-components/vite";
+import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
+
+export default defineConfig({
+  plugins: [
+    vue(),
+    tailwindcss(),
+    AutoImport({
+      resolvers: [ElementPlusResolver()],
+    }),
+    Components({
+      resolvers: [ElementPlusResolver({ importStyle: "sass" })],
+    }),
+  ],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@use "@/styles/element.scss" as *;`,
+      },
+    },
+  },
+  resolve: {
+    alias: [
+      {
+        find: "@",
+        replacement: resolve(__dirname, "src"),
+      },
+    ],
+  },
+});
+```
+
+## 6. 使用说明
+
+配置完成后，你可以：
+
+- 在组件中使用 Element Plus 组件，无需手动导入样式
+- 通过修改 `element.scss` 中的变量来自定义主题色
+- 在其他 scss 文件中直接使用 Element Plus 的 CSS 变量
+
+## 注意事项
+
+- 确保 `sass` 已安装为开发依赖
+- `@use` 语法是 Sass 的现代导入方式，推荐使用
+- `additionalData` 会自动注入到每个 scss 文件的开头
+- 如果只需要按需导入样式，可以注释掉 `element.scss` 中的全局导入语句
+
+## 常见问题
+
+### Q: 为什么需要配置 `importStyle: "sass"`？
+
+A: 让 unplugin-vue-components 在自动导入组件时使用 Sass 版本的样式文件，而不是默认的 CSS 文件，这样可以更好地进行主题定制。
+
+### Q: `additionalData` 的作用是什么？
+
+A: 它会在每个 scss 文件的开头自动注入指定的代码，这里用来全局导入 Element Plus 的主题变量文件。
+
+### Q: 如何自定义更多主题颜色？
+
+A: 在 `element.scss` 中修改 `$colors` 对象，添加更多颜色定义：
+
+```scss
+@forward "element-plus/theme-chalk/src/common/var.scss" with (
+  $colors: (
+    "primary": (
+      "base": #c91830,
+    ),
+    "success": (
+      "base": #67c23a,
+    ),
+    "warning": (
+      "base": #e6a23c,
+    ),
+  )
+);
+```
