@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import ScrollToTop from "@/components/ScrollToTop";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { LanguageProvider } from "@/contexts/LanguageContext";
+import AnalyticsProvider from "@/components/analytics/AnalyticsProvider";
 
 // 合并主题与语言的初始化脚本
 const initScript = `
@@ -40,6 +41,7 @@ export default function RootLayout({
             <Navbar />
             {children}
             <ScrollToTop />
+            <AnalyticsProvider />
           </LanguageProvider>
         </ThemeProvider>
       </body>
