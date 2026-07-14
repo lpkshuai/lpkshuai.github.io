@@ -160,7 +160,7 @@ module.exports = app;
 浏览器打开项目即可看到爬取的数据
 
 ![image](/notes/nodejs/node-express-superagent-cheerio.jpg)
-0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"node-express-superagent-cheerio-38bf5c","title":"用node爬取网页上的内容。","category":"Node.js","type":"snippet","description":"如何用node简单的爬取网页上的内容。","status":"published","tags":["node","express","superagent","cheerio"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2019-11-07","readingTime":"1 min read","content":"$3"}}]}],["$L4","$L5"],"$L6"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"LJIVceJ80t2ui04E3nC_z"}
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"node-express-superagent-cheerio-38bf5c","title":"用node爬取网页上的内容。","category":"Node.js","type":"snippet","description":"如何用node简单的爬取网页上的内容。","status":"published","tags":["node","express","superagent","cheerio"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2019-11-07","readingTime":"1 min read","content":"$3"}}]}],["$L4","$L5"],"$L6"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"KcBRdcrisr71jXWgIEW9Q"}
 4:["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true}]
 5:["$","script","script-1",{"src":"/_next/static/chunks/1mxc0ey88uhq9.js","async":true}]
 6:["$","$L7",null,{"children":["$","$8",null,{"name":"Next.MetadataOutlet","children":"$@9"}]}]

@@ -1,0 +1,153 @@
+1:"$Sreact.fragment"
+2:I[75144,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"ThemeProvider"]
+3:I[11110,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"LanguageProvider"]
+4:I[45678,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"default"]
+5:I[39756,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"default"]
+6:I[37457,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"default"]
+7:I[63687,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"default"]
+9:I[97367,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
+a:"$Sreact.suspense"
+d:I[97367,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"ViewportBoundary"]
+f:I[97367,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"MetadataBoundary"]
+11:I[68027,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"default",1]
+:HL["/_next/static/chunks/3600rb8tdukun.css","style"]
+0:{"P":null,"c":["","notes","react-native-expo-use-b2704e"],"q":"","i":false,"f":[[["",{"children":["notes",{"children":[["slug","react-native-expo-use-b2704e","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/3600rb8tdukun.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/10tvgll65k0sf.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/2im7c515bo69p.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n(function() {\n  try {\n    // 1. 初始化主题\n    const savedTheme = localStorage.getItem('theme');\n    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;\n    const theme = savedTheme || (prefersDark ? 'dark' : 'light');\n    document.documentElement.setAttribute('data-theme', theme);\n\n    // 2. 初始化语言 (假设默认语言是 'zh')\n    const savedLang = localStorage.getItem('lang');\n    if (savedLang && savedLang !== 'zh') {\n      document.documentElement.setAttribute('lang', savedLang);\n      // 如果不是默认语言，隐藏页面防止闪烁\n      document.documentElement.style.visibility = 'hidden';\n    }\n  } catch (e) {}\n})();\n"}}]}],["$","body",null,{"children":["$","$L2",null,{"children":["$","$L3",null,{"children":[["$","$L4",null,{}],["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}],["$","$L7",null,{}]]}]}]}]]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L8",[["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/1mxc0ey88uhq9.js","async":true,"nonce":"$undefined"}]],["$","$L9",null,{"children":["$","$a",null,{"name":"Next.MetadataOutlet","children":"$@b"}]}]]}],{},null,false,null]},null,false,"$@c"]},null,false,"$@c"]},null,false,null],["$","$1","h",{"children":[null,["$","$Ld",null,{"children":"$Le"}],["$","div",null,{"hidden":true,"children":["$","$Lf",null,{"children":["$","$a",null,{"name":"Next.Metadata","children":"$L10"}]}]}],null]}],false]],"m":"$undefined","G":["$11",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/3600rb8tdukun.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"KcBRdcrisr71jXWgIEW9Q"}
+12:[]
+c:"$W12"
+e:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+13:I[27201,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"IconMark"]
+b:null
+10:[["$","link","0",{"rel":"icon","href":"/favicon.ico?favicon.2vob68tjqpejf.ico","sizes":"256x256","type":"image/x-icon"}],["$","$L13","1",{}]]
+14:I[30525,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3io6jn7gqayyz.js","/_next/static/chunks/1mxc0ey88uhq9.js"],"default"]
+15:Ta5d,# 一、调试：
+
+### 1. React DevTools
+
+> 通过在启动 Expo 的终端中按Shift+m打开。
+
+![image](/notes/react-native/rn-expo-devtools.png)
+
+### 2. Developer menu(开发者菜单)
+
+> 开启方式：
+> 模拟器：`CTRL` + `m` / `cmd⌘` + `m`
+> 手机：摇晃设备
+
+![image](/notes/react-native/rn-expo-developer-menu.png)
+
+### 3. React Native Debugger
+
+> 不支持使用 Hermes 的 app
+
+### 4. Flipper
+
+# 构建
+
+```sh
+eas build --profile development --platform android
+// 本地构建
+eas build --profile development --platform android --local
+```
+
+# 打包
+
+1. 配置eas.json
+
+```json
+{
+  "cli": {
+    "version": ">= 5.2.0",
+    "promptToConfigurePushNotifications": false,
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "ios": {
+        "simulator": true
+      },
+      "android": {
+        "env": {
+          "ANDROID_SDK_ROOT": "/Users/xiaozhi/Library/Android/sdk"
+        },
+        "buildType": "apk",
+        "gradleCommand": ":app:assembleDebug"
+      }
+    },
+    "preview": {
+      "android": {
+        "env": {
+          "ANDROID_SDK_ROOT": "/Users/xiaozhi/Library/Android/sdk"
+        },
+        "buildType": "apk"
+      },
+      "ios": {
+        "credentialsSource": "local"
+      },
+      "distribution": "internal"
+    },
+    "production": {
+      "android": {
+        "buildType": "app-bundle",
+        "env": {
+          "ANDROID_SDK_ROOT": "/Users/xiaozhi/Library/Android/sdk"
+        }
+      },
+      "ios": {
+        "credentialsSource": "local"
+      }
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}
+```
+
+> preview和production中buildType为apk打包出的文件是.apk文件，app-bundle打包出的文件是谷歌应用商店使用的.aab文件。
+>
+> ### [eas.json相关详细配置](https://docs.expo.dev/eas/json/ "eas.json相关详细配置")
+>
+> 2. 设置版本号
+>    每次打包上传版本号要求递增
+
+```sh
+eas build:version:set -p android
+```
+
+3. 打包
+
+```sh
+eas build --local -p android --profile preview
+```
+
+> --local 代表本地打包，去掉则会在expo平台线上打包；
+> -p 代表平台
+> --profile 代表使用eas.json中的build中配置的不同类型（preview/production/其它）
+
+4. ios版本指令基本相同，-p设置为ios
+   如果要提交线上打包文件到应用商店
+
+```sh
+eas submit -p ios
+```
+
+# 其它
+
+### 1. 更新SDK版本
+
+```sh
+npx expo install expo@latest
+#或
+npx expo install expo@^52.0.0
+```
+
+升级依赖项
+
+```sh
+npx expo install --fix
+```
+
+> [Upgrade Expo SDK](https://docs.expo.dev/workflow/upgrading-expo-sdk-walkthrough/ "Upgrade Expo SDK")
+8:["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L14",null,{"note":{"slug":"react-native-expo-use-b2704e","title":"expo 使用记录","category":"ReactNative","type":"guide","description":"expo 一些使用过程中的调试或配置等记录。","status":"published","tags":["RN","Expo"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2025-04-29","readingTime":"1 min read","content":"$15"}}]}]
