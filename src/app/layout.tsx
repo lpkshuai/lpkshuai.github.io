@@ -5,6 +5,13 @@ import { ThemeProvider } from "@/contexts/ThemeContext";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import AnalyticsProvider from "@/components/analytics/AnalyticsProvider";
 
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  verification: {
+    google: "OdsoXbZN5yDWQ7Qi0wIhECK2PZ9cxBQT1yISuMb1zFM",
+  },
+};
+
 // 合并主题与语言的初始化脚本
 const initScript = `
 (function() {
@@ -31,7 +38,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     // suppressHydrationWarning 允许 html 标签的属性在客户端与服务端不一致时不报错
-    <html lang="en" suppressHydrationWarning>
+    <html lang="zh-CN" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: initScript }} />
       </head>
@@ -41,9 +48,9 @@ export default function RootLayout({
             <Navbar />
             {children}
             <ScrollToTop />
-            <AnalyticsProvider />
           </LanguageProvider>
         </ThemeProvider>
+        <AnalyticsProvider />
       </body>
     </html>
   );
