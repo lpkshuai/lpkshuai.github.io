@@ -112,7 +112,7 @@
 
 > 此处可以看见上传的app，创建测试群组选择用户可以进行内部测试。点击分发下面填写相关信息然后选择构建版本后可以提交审核发布App Store。
 > ![image](/notes/react-native/rn-xcode-product-archive-5.png)
-0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"react-native-xcode-appstore-dbe694","title":"react native项目使用Xcode打包上架App Store","category":"ReactNative","type":"setup","description":"react native项目使用Xcode打包上架App Store的步骤记录。","status":"published","tags":["RN","xcode","app store"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-05-13","readingTime":"3 min read","content":"$3"}}]}],["$L4","$L5"],"$L6"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"luR6JD8HI2qoAaVU3Q3VG"}
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"react-native-xcode-appstore-dbe694","title":"react native项目使用Xcode打包上架App Store","category":"ReactNative","type":"setup","description":"react native项目使用Xcode打包上架App Store的步骤记录。","status":"published","tags":["RN","xcode","app store"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-05-13","readingTime":"3 min read","content":"$3"}}]}],["$L4","$L5"],"$L6"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"-7y5530UXFI_Ur2Eu_O_R"}
 4:["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true}]
 5:["$","script","script-1",{"src":"/_next/static/chunks/1mxc0ey88uhq9.js","async":true}]
 6:["$","$L7",null,{"children":["$","$8",null,{"name":"Next.MetadataOutlet","children":"$@9"}]}]
