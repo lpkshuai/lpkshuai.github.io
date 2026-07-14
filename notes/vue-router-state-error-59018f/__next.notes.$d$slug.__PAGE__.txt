@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
-2:I[30525,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3io6jn7gqayyz.js","/_next/static/chunks/1mxc0ey88uhq9.js"],"default"]
-4:I[97367,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
+2:I[30525,["/_next/static/chunks/2hn7pf_l3a592.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3io6jn7gqayyz.js","/_next/static/chunks/1mxc0ey88uhq9.js"],"default"]
+4:I[97367,["/_next/static/chunks/2hn7pf_l3a592.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
 5:"$Sreact.suspense"
 3:T864,## 1. 项目中部分相关依赖的版本
 
@@ -101,5 +101,5 @@ console.log(routerState);
 ① 使用 `JSON.parse(JSON.stringify(scope.row))`
 ② 避免传递数组或其他会导致问题的复杂数据类型参数
 ③ 使用query或params传参
-0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"vue-router-state-error-59018f","title":"vue router 4.x 版本state传参，页面自动刷新传参丢失","category":"Vue","type":"debugging","description":"vue router 4.x 版本 路由跳转时使用state传参，页面会自动刷新并且传参丢失的问题记录。","status":"published","tags":["Vue","Vue-Router"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-08-21","readingTime":"1 min read","content":"$3"}}]}],[["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/1mxc0ey88uhq9.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"KcBRdcrisr71jXWgIEW9Q"}
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"vue-router-state-error-59018f","title":"vue router 4.x 版本state传参，页面自动刷新传参丢失","category":"Vue","type":"debugging","description":"vue router 4.x 版本 路由跳转时使用state传参，页面会自动刷新并且传参丢失的问题记录。","status":"published","tags":["Vue","Vue-Router"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-08-21","readingTime":"1 min read","content":"$3"}}]}],[["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/1mxc0ey88uhq9.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"luR6JD8HI2qoAaVU3Q3VG"}
 6:null

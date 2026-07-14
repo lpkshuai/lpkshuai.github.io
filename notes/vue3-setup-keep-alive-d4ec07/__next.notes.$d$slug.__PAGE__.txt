@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
-2:I[30525,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3io6jn7gqayyz.js","/_next/static/chunks/1mxc0ey88uhq9.js"],"default"]
-4:I[97367,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
+2:I[30525,["/_next/static/chunks/2hn7pf_l3a592.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3io6jn7gqayyz.js","/_next/static/chunks/1mxc0ey88uhq9.js"],"default"]
+4:I[97367,["/_next/static/chunks/2hn7pf_l3a592.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
 5:"$Sreact.suspense"
 3:T521,```jsx
 <template>
@@ -63,5 +63,5 @@ export default defineConfig({
   const a = 1
 </script>
 ```
-0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"vue3-setup-keep-alive-d4ec07","title":"vue3 使用 setup 语法糖时，keep-alive 缓存使用 include / exclude 获取组件名","category":"Vue","type":"snippet","description":"记录在 vue3 中，keep-alive 缓存使用 include / exclude 获取组件名。","status":"published","tags":["Vue","setup","keep-alive"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-08-24","readingTime":"1 min read","content":"$3"}}]}],[["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/1mxc0ey88uhq9.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"KcBRdcrisr71jXWgIEW9Q"}
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"vue3-setup-keep-alive-d4ec07","title":"vue3 使用 setup 语法糖时，keep-alive 缓存使用 include / exclude 获取组件名","category":"Vue","type":"snippet","description":"记录在 vue3 中，keep-alive 缓存使用 include / exclude 获取组件名。","status":"published","tags":["Vue","setup","keep-alive"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-08-24","readingTime":"1 min read","content":"$3"}}]}],[["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/1mxc0ey88uhq9.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"luR6JD8HI2qoAaVU3Q3VG"}
 6:null

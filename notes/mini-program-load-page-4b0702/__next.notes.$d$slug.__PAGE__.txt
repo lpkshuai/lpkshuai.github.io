@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
-2:I[30525,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3io6jn7gqayyz.js","/_next/static/chunks/1mxc0ey88uhq9.js"],"default"]
-4:I[97367,["/_next/static/chunks/10tvgll65k0sf.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
+2:I[30525,["/_next/static/chunks/2hn7pf_l3a592.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3io6jn7gqayyz.js","/_next/static/chunks/1mxc0ey88uhq9.js"],"default"]
+4:I[97367,["/_next/static/chunks/2hn7pf_l3a592.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
 5:"$Sreact.suspense"
 3:T6b2,### 简易版的数据分页加载，滚动加载下一页
 
@@ -71,5 +71,5 @@
 > `hasMoreData`设置为`false`，避免下拉到底一直请求接口。
 
 _有tab切换时要重置数据_
-0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"mini-program-load-page-4b0702","title":"小程序分页加载","category":"MiniProgram","type":"snippet","description":"微信小程序分页加载功能实现。","status":"published","tags":["小程序"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2019-11-13","readingTime":"1 min read","content":"$3"}}]}],[["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/1mxc0ey88uhq9.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"KcBRdcrisr71jXWgIEW9Q"}
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"mini-program-load-page-4b0702","title":"小程序分页加载","category":"MiniProgram","type":"snippet","description":"微信小程序分页加载功能实现。","status":"published","tags":["小程序"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2019-11-13","readingTime":"1 min read","content":"$3"}}]}],[["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/1mxc0ey88uhq9.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"luR6JD8HI2qoAaVU3Q3VG"}
 6:null
