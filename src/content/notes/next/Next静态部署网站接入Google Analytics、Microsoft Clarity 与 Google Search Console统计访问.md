@@ -1,0 +1,817 @@
+---
+slug: nextjs-analytics-clarity-search-console
+title: Next.js 静态网站接入 Google Analytics、Microsoft Clarity 与 Google Search Console
+category: Next.js
+type: guide
+description: 记录 Next.js 静态网站（GitHub Pages）接入 Google Analytics、Microsoft Clarity 和 Google Search Console 的完整实践，包括流量统计、用户行为分析、SEO 配置、环境变量管理以及常见问题排查。
+status: published
+tags: Next.js, GitHub Pages, Google Analytics, Microsoft Clarity, Google Search Console, Analytics, SEO, Performance
+updatedAt: 2026-07-16
+---
+
+# Next.js 静态网站接入 Google Analytics、Microsoft Clarity 与 Google Search Console
+
+> **项目环境**
+>
+> - Next.js 16（App Router）
+> - TypeScript
+> - GitHub Pages（Static Export）
+> - 无服务端、无数据库
+
+---
+
+# 前言
+
+对于个人博客或者作品集网站来说，仅仅完成页面开发是不够的。
+
+随着网站上线，我们通常还会关注下面几个问题：
+
+- 网站每天有多少人访问？
+- 用户来自哪些国家或地区？
+- 用户是通过 Google 搜索进入，还是 GitHub、掘金、知乎等外部链接进入？
+- 哪些页面最受欢迎？
+- 用户进入页面之后如何操作？
+- Google 是否已经收录我的网站？
+- 哪些文章在 Google 搜索中表现最好？
+
+对于部署在 **GitHub Pages** 上的静态网站来说，由于没有后端，也没有数据库，因此需要借助第三方统计工具来完成这些工作。
+
+目前比较推荐的免费组合为：
+
+- **Google Analytics** —— 网站流量分析
+- **Microsoft Clarity** —— 用户行为分析
+- **Google Search Console** —— 搜索引擎收录与 SEO 分析
+
+三者各自负责不同的内容，组合使用能够形成一套完整的网站数据分析方案。
+
+---
+
+# 三个工具分别解决什么问题？
+
+## Google Analytics
+
+### 定位
+
+Google Analytics（简称 GA4）主要负责网站流量统计。
+
+它回答的问题是：
+
+> **网站来了多少人，他们来自哪里，他们访问了哪些页面？**
+
+---
+
+### 可以统计的数据
+
+例如：
+
+- 用户数量（Users）
+- 页面浏览量（Page Views）
+- 实时在线人数
+- 新用户 / 老用户
+- 用户来源（Google、GitHub、Direct、Bing 等）
+- 国家和地区
+- 浏览器
+- 操作系统
+- 设备类型（PC / Mobile）
+- 热门页面
+- 平均停留时间
+- 页面跳出率（部分指标方式与旧版 GA 不同）
+
+---
+
+### 适用场景
+
+例如：
+
+- 博客访问量分析
+- 哪篇文章最受欢迎
+- SEO 带来的流量
+- 用户来源分析
+- 流量增长趋势
+
+---
+
+## Microsoft Clarity
+
+### 定位
+
+Microsoft Clarity 更关注 **用户行为分析**。
+
+它回答的问题是：
+
+> **用户进入网站之后，是如何浏览和操作页面的？**
+
+---
+
+### 可以查看的数据
+
+#### Heatmap（热力图）
+
+例如：
+
+- 哪个按钮点击最多
+- 用户最关注哪些区域
+- 页面滚动深度
+
+---
+
+#### Session Replay（匿名操作回放）
+
+可以查看用户的浏览过程，例如：
+
+```text
+进入首页
+
+↓
+
+浏览 Hero
+
+↓
+
+点击 Notes
+
+↓
+
+搜索 React
+
+↓
+
+阅读文章
+
+↓
+
+离开网站
+```
+
+---
+
+### 适用场景
+
+例如：
+
+- 页面布局优化
+- 用户体验优化
+- CTA 按钮位置优化
+- 首页内容调整
+- 导航栏设计优化
+
+---
+
+## Google Search Console
+
+### 定位
+
+Google Search Console 负责 **搜索引擎分析**。
+
+它回答的问题是：
+
+> **Google 是如何发现、收录和展示我的网站的？**
+
+---
+
+### 可以查看的数据
+
+例如：
+
+- 网站是否被 Google 收录
+- 哪些页面已建立索引
+- Sitemap 是否正常
+- 哪些关键词带来了流量
+- 搜索曝光量（Impressions）
+- 点击次数（Clicks）
+- 点击率（CTR）
+- 平均排名（Average Position）
+- 页面是否存在抓取错误
+
+---
+
+### 适用场景
+
+例如：
+
+- SEO 优化
+- 收录情况检查
+- 搜索关键词分析
+- 页面排名分析
+
+---
+
+# 三者关系
+
+```text
+                       Website
+
+                          │
+      ┌───────────────────┼───────────────────┐
+      │                   │                   │
+      ▼                   ▼                   ▼
+
+Google Analytics     Microsoft Clarity   Search Console
+
+      │                   │                   │
+
+   流量统计             行为分析            SEO分析
+```
+
+| 工具                  | 主要作用     |
+| --------------------- | ------------ |
+| Google Analytics      | 网站流量分析 |
+| Microsoft Clarity     | 用户行为分析 |
+| Google Search Console | 搜索引擎分析 |
+
+---
+
+# 一、Google Analytics 接入
+
+## 1. 创建项目
+
+进入：
+
+> https://analytics.google.com/
+
+登录后按步骤创建Analytics账号和媒体资源：
+![image](/notes/next/google-analytics-create.png)
+最后一步选择网站：
+![image](/notes/next/google-analytics-create-finish.png)
+然后配置网址和名称，可选择需要监测的功能：
+![image](/notes/next/google-analytics-create-config.png)
+![image](/notes/next/google-analytics-create-set-func.png)
+创建成功后，会得到：
+`Measurement ID 如：G-XXXXXXXXXX`
+将代码配置到项目中，配置完毕可以点击右上角测试安装是否成功：
+![image](/notes/next/google-analytics-create-config-code.png)
+
+---
+
+## 2. 配置环境变量
+
+创建：
+
+```text
+.env.local
+```
+
+添加：
+
+```env
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+```
+
+> `NEXT_PUBLIC_` 表示变量会被打包到前端。
+
+---
+
+## 3. 创建组件
+
+```text
+src/
+└── components/
+    └── analytics/
+        ├── GoogleAnalytics.tsx
+        ├── Clarity.tsx
+        └── AnalyticsProvider.tsx
+```
+
+GoogleAnalytics.tsx：
+
+```tsx
+"use client";
+
+import Script from "next/script";
+
+export default function GoogleAnalytics() {
+  const id = process.env.NEXT_PUBLIC_GA_ID;
+
+  if (!id) return null;
+
+  return (
+    <>
+      <Script async src={`https://www.googletagmanager.com/gtag/js?id=${id}`} />
+
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+
+          function gtag(){
+            dataLayer.push(arguments);
+          }
+
+          gtag('js', new Date());
+
+          gtag('config', '${id}');
+        `}
+      </Script>
+    </>
+  );
+}
+```
+
+---
+
+## 4. AnalyticsProvider
+
+```tsx
+import GoogleAnalytics from "./GoogleAnalytics";
+import Clarity from "./Clarity";
+
+export default function AnalyticsProvider() {
+  return (
+    <>
+      <GoogleAnalytics />
+      <Clarity />
+    </>
+  );
+}
+```
+
+---
+
+## 5. layout.tsx
+
+```tsx
+<body>
+  <ThemeProvider>
+    <LanguageProvider>
+      <Navbar />
+      {children}
+      <ScrollToTop />
+    </LanguageProvider>
+  </ThemeProvider>
+
+  <AnalyticsProvider />
+</body>
+```
+
+Analytics 不依赖 Theme 或 Language，因此建议放在 Provider 外部。
+
+---
+
+## 6. 验证
+
+后台等待一段时间即可看到实时数据。
+![image](/notes/next/google-analytics-dashboard.png)
+
+---
+
+# 二、Microsoft Clarity 接入
+
+## 1. 创建项目
+
+进入：
+
+> https://clarity.microsoft.com/
+
+创建：
+
+```text
+New Project
+```
+
+填写：
+
+```text
+Project Name
+
+Website URL
+```
+
+创建完成后获得：
+
+```text
+Project ID
+
+例如：
+
+xmagxst674
+```
+
+---
+
+创建的步骤类似Google，最后也会给一段代码，配置完成后等待一段时间后可查看监控面板：
+![image](/notes/next/microsoft-clarity-dashboard.png)
+
+---
+
+## 2. 配置环境变量
+
+```env
+NEXT_PUBLIC_CLARITY_ID=xmagxst674
+```
+
+---
+
+## 3. 创建 Clarity.tsx
+
+```tsx
+"use client";
+
+import Script from "next/script";
+
+export default function Clarity() {
+  const id = process.env.NEXT_PUBLIC_CLARITY_ID;
+
+  if (!id) return null;
+
+  return (
+    <>
+      <Script id="clarity-init" strategy="afterInteractive">
+        {`
+          window.clarity = window.clarity || function () {
+            (window.clarity.q = window.clarity.q || []).push(arguments);
+          };
+        `}
+      </Script>
+
+      <Script
+        id="clarity-loader"
+        strategy="afterInteractive"
+        src={`https://www.clarity.ms/tag/${id}`}
+      />
+    </>
+  );
+}
+```
+
+---
+
+## 为什么拆成两个 Script？
+
+官方脚本实际上做了两件事情。
+
+### 第一步
+
+创建：
+
+```javascript
+window.clarity = function () {};
+```
+
+### 第二步
+
+加载：
+
+```text
+clarity.ms/tag/projectId
+```
+
+正确顺序：
+
+```text
+创建 window.clarity
+
+↓
+
+加载 SDK
+
+↓
+
+SDK 调用 window.clarity()
+```
+
+如果初始化顺序错误，会出现：
+
+```sh
+TypeError: a[c] is not a function
+```
+
+这是本文实践过程中遇到的一个问题。
+
+---
+
+## 如何验证
+
+浏览器 Console：
+
+```javascript
+typeof window.clarity;
+```
+
+应该输出：
+
+```text
+function
+```
+
+Network：
+
+```text
+clarity.ms
+
+scripts.clarity.ms
+```
+
+都应该返回 200。
+
+---
+
+## Clarity 可以看到哪些内容？
+
+例如：
+
+- Heatmap
+- Session Replay
+- 点击位置
+- 页面滚动深度
+- 页面停留时间
+
+---
+
+# 三、Google Search Console 接入
+
+## 1. 创建站点
+
+进入：
+
+> https://search.google.com/search-console
+
+选择：
+
+```text
+URL Prefix
+```
+
+填写：
+
+```text
+https://xxx.xxx
+```
+
+---
+
+## 2. 网站验证
+
+Google 提供：
+
+```html
+<meta name="google-site-verification" content="xxxxxxxx" />
+```
+
+---
+
+## 3. Next.js 推荐方式
+
+App Router 推荐使用 Metadata API：
+
+```tsx
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  verification: {
+    google: "xxxxxxxx",
+  },
+};
+```
+
+不需要手动写 `<meta>`。
+
+---
+
+## 4. 提交 Sitemap
+
+推荐安装：
+
+```text
+next-sitemap
+```
+
+生成：
+
+```text
+sitemap.xml
+
+robots.txt
+```
+
+然后提交给：
+
+```text
+Search Console
+```
+
+---
+
+# 四、关于 GitHub Pages
+
+GitHub Pages 可以正常使用：
+
+- Google Analytics
+- Microsoft Clarity
+- Google Search Console
+
+原因很简单。
+
+这些工具本质上都是：
+
+```text
+浏览器执行 JavaScript
+
+↓
+
+发送统计数据
+
+↓
+
+平台后台分析
+```
+
+因此：
+
+**不需要服务器。**
+
+---
+
+# 五、为什么 Cloudflare Web Analytics 无法使用？
+
+本文项目部署地址：
+
+```text
+https://lpkshuai.github.io
+```
+
+属于：
+
+```text
+GitHub Pages 子域名
+```
+
+Cloudflare Web Analytics 当前更倾向于：
+
+```text
+Cloudflare 管理的独立域名
+```
+
+因此：
+
+```text
+No active websites found
+```
+
+属于正常情况。
+
+如果以后购买：
+
+```text
+lpkshuai.com
+
+或者
+
+lpk.dev
+```
+
+并接入 Cloudflare DNS，即可启用 Cloudflare Web Analytics。
+
+---
+
+# 六、环境变量是否安全？
+
+很多人担心：
+
+```text
+NEXT_PUBLIC_GA_ID
+
+NEXT_PUBLIC_CLARITY_ID
+```
+
+会不会泄露。
+
+答案：
+
+**不会。**
+
+因为：
+
+Google Analytics ID
+
+和
+
+Clarity Project ID
+
+本来就是公开信息。
+
+浏览器访问页面时，本身就可以看到这些 ID。
+
+真正不能暴露的是：
+
+- API Key
+- Secret
+- Token
+- Database Password
+- OpenAI Key
+- GitHub Token
+
+这些只能放在服务端。
+
+---
+
+# 七、部署后如何验证？
+
+Google Analytics：
+
+```text
+Realtime
+
+↓
+
+查看是否出现在线用户
+```
+
+Microsoft Clarity：
+
+```text
+Dashboard
+
+↓
+
+等待几分钟
+
+↓
+
+查看 Session
+```
+
+Search Console：
+
+```text
+Pages
+
+↓
+
+Indexed
+```
+
+查看是否建立索引。
+
+---
+
+# 八、后续推荐优化
+
+完成基础统计后，可以继续添加：
+
+## Event Tracking
+
+例如：
+
+- 点击 Enter Lab
+- 点击 GitHub
+- 下载简历
+- 打开某篇文章
+- 搜索 Notes
+
+这样可以进一步分析：
+
+- 哪个按钮点击最多
+- 哪篇文章最受欢迎
+- 用户最关注哪些内容
+
+---
+
+## SEO
+
+建议继续完善：
+
+- title
+- description
+- Open Graph
+- Twitter Card
+- JSON-LD
+- canonical
+- sitemap
+- robots.txt
+
+进一步提升搜索引擎表现。
+
+---
+
+# 总结
+
+对于基于 Next.js 的个人技术博客，推荐采用以下组合：
+
+| 工具                  | 作用           | 推荐程度   |
+| --------------------- | -------------- | ---------- |
+| Google Analytics 4    | 网站流量分析   | ⭐⭐⭐⭐⭐ |
+| Microsoft Clarity     | 用户行为分析   | ⭐⭐⭐⭐⭐ |
+| Google Search Console | SEO 与搜索分析 | ⭐⭐⭐⭐⭐ |
+
+三者结合后，可以完整回答以下几个问题：
+
+```text
+用户从哪里来？
+
+↓
+
+浏览了哪些页面？
+
+↓
+
+如何操作页面？
+
+↓
+
+通过哪些关键词找到网站？
+
+↓
+
+Google 是否成功收录网站？
+```
+
+对于部署在 GitHub Pages 上的静态博客，这是一套免费、轻量且功能完善的网站分析解决方案，也是现代前端项目中非常常见的一套实践方案。
