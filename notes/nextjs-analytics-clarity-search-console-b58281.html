@@ -1,0 +1,639 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/chunks/3600rb8tdukun.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/0g6rrfd8-h0li.js"/><script src="/_next/static/chunks/0paxexg6-m0de.js" async=""></script><script src="/_next/static/chunks/35ewwwnf5l9ft.js" async=""></script><script src="/_next/static/chunks/082obv3v03b-9.js" async=""></script><script src="/_next/static/chunks/turbopack-1_6uz8wx6ti45.js" async=""></script><script src="/_next/static/chunks/3spz7vbggeheh.js" async=""></script><script src="/_next/static/chunks/2im7c515bo69p.js" async=""></script><script src="/_next/static/chunks/3io6jn7gqayyz.js" async=""></script><script src="/_next/static/chunks/1mxc0ey88uhq9.js" async=""></script><link rel="preload" href="https://www.googletagmanager.com/gtag/js?id=G-4HJSHPTHV1" as="script"/><link rel="preload" href="https://www.clarity.ms/tag/xmagxst674" as="script"/><meta name="google-site-verification" content="OdsoXbZN5yDWQ7Qi0wIhECK2PZ9cxBQT1yISuMb1zFM"/><link rel="icon" href="/favicon.ico?favicon.2vob68tjqpejf.ico" sizes="256x256" type="image/x-icon"/><script>
+(function() {
+  try {
+    // 1. 初始化主题
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+
+    // 2. 初始化语言 (假设默认语言是 'zh')
+    const savedLang = localStorage.getItem('lang');
+    if (savedLang && savedLang !== 'zh') {
+      document.documentElement.setAttribute('lang', savedLang);
+      // 如果不是默认语言，隐藏页面防止闪烁
+      document.documentElement.style.visibility = 'hidden';
+    }
+  } catch (e) {}
+})();
+</script><script src="/_next/static/chunks/0cz1d0mv5g_q7.js" noModule=""></script></head><body><div hidden=""><!--$--><!--/$--></div><header class="sticky top-0 z-50 border-b border-white/6 bg-white/2 backdrop-blur-md"><div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6"><a class="group relative flex items-center gap-3 px-1 py-1 overflow-visible z-50" href="/"><div class="absolute -top-6 left-0 right-0 bottom-0 pointer-events-none overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-300"><div class="absolute bottom-0 left-3 w-[2px] h-8 bg-linear-to-t from-transparent to-(--accent) translate-y-0 group-hover:-translate-y-16 transition-transform duration-700 ease-out"></div><div class="absolute bottom-0 left-7 w-px h-6 bg-linear-to-t from-transparent to-(--accent-strong) translate-y-0 group-hover:-translate-y-20 transition-transform duration-1000 ease-out delay-75"></div></div><div class="relative flex size-8 items-center justify-center rounded border border-(--accent-strong) bg-(--panel) shadow-[0_0_10px_rgba(56,189,248,0.15)] transition-all duration-300 group-hover:border-(--accent) group-hover:shadow-[0_0_15px_var(--accent)] overflow-hidden"><span class="font-mono text-[10px] font-black text-(--accent-strong) transition-all duration-300 group-hover:-translate-y-8 group-hover:opacity-0">LV</span><span class="absolute font-mono text-[10px] font-black text-(--accent) translate-y-8 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 group-hover:animate-pulse">UP!</span></div><div class="flex flex-col justify-center"><div class="flex items-baseline gap-1.5"><span class="font-mono text-sm font-black tracking-[0.15em] text-(--foreground) transition-colors duration-300 group-hover:text-(--accent)">PERSONAL LAB</span><span class="text-[10px] font-mono text-(--foreground-dim) opacity-0 scale-50 transition-all duration-300 group-hover:opacity-100 group-hover:scale-100 group-hover:text-(--accent) group-hover:animate-bounce">▲</span></div><div class="mt-1 h-1 w-28 rounded-full bg-(--panel-border) overflow-hidden border border-white/5"><div class="h-full w-[70%] bg-linear-to-r from-(--accent-strong) to-(--accent) transition-all duration-500 ease-out group-hover:w-full group-hover:animate-pulse"></div></div></div></a><div class="flex items-center gap-4 md:gap-6 z-50"><nav class="hidden sm:block" aria-label="Primary navigation"><ul class="flex items-center mr-6 gap-4 font-mono text-sm font-bold uppercase tracking-widest"><li><a class="group relative py-2 transition-colors text-(--foreground-muted) hover:text-(--foreground)" href="/">首页<span class="absolute bottom-0 left-0 h-0.5 bg-(--accent) transition-all duration-300 w-0 group-hover:w-full"></span></a></li><li><a class="group relative py-2 transition-colors text-(--accent)" href="/notes">笔记<span class="absolute bottom-0 left-0 h-0.5 bg-(--accent) transition-all duration-300 w-full shadow-[0_0_8px_var(--accent)]"></span></a></li><li><a class="group relative py-2 transition-colors text-(--foreground-muted) hover:text-(--foreground)" href="/lab">实验室<span class="absolute bottom-0 left-0 h-0.5 bg-(--accent) transition-all duration-300 w-0 group-hover:w-full"></span></a></li><li><a class="group relative py-2 transition-colors text-(--foreground-muted) hover:text-(--foreground)" href="/about">关于<span class="absolute bottom-0 left-0 h-0.5 bg-(--accent) transition-all duration-300 w-0 group-hover:w-full"></span></a></li></ul></nav><div class="flex items-center gap-2"><div class="size-8"></div><button aria-label="Switch language" class="group flex size-8 items-center justify-center rounded-full bg-(--panel)/40 ring-1 ring-transparent transition-all duration-300 hover:bg-(--panel) hover:ring-(--accent)/50 active:scale-95"><span class="font-serif text-[12px] font-bold text-(--foreground-muted) transition-colors duration-300 group-hover:text-(--accent)"></span></button></div><button class="flex size-8 flex-col items-center justify-center gap-1.5 sm:hidden relative z-50"><span class="block h-[2px] w-6 bg-(--foreground) transition-all duration-300 "></span><span class="block h-[2px] w-6 bg-(--foreground) transition-all duration-300 "></span><span class="block h-[2px] w-6 bg-(--foreground) transition-all duration-300 "></span></button></div></div></header><div class="fixed inset-0 z-40 flex flex-col items-center justify-center bg-(--background)/98 backdrop-blur-2xl transition-all duration-500 sm:hidden opacity-0 pointer-events-none scale-105"><nav class="flex flex-col items-center gap-8 font-mono tracking-widest uppercase"><a class="text-4xl font-black transition-all duration-300 hover:scale-110 text-(--foreground-dim) hover:text-(--foreground)" style="transition-delay:0ms;transform:translateY(20px);opacity:0" href="/">首页</a><a class="text-4xl font-black transition-all duration-300 hover:scale-110 text-(--accent) drop-shadow-[0_0_15px_var(--accent)]" style="transition-delay:0ms;transform:translateY(20px);opacity:0" href="/notes">笔记</a><a class="text-4xl font-black transition-all duration-300 hover:scale-110 text-(--foreground-dim) hover:text-(--foreground)" style="transition-delay:0ms;transform:translateY(20px);opacity:0" href="/lab">实验室</a><a class="text-4xl font-black transition-all duration-300 hover:scale-110 text-(--foreground-dim) hover:text-(--foreground)" style="transition-delay:0ms;transform:translateY(20px);opacity:0" href="/about">关于</a></nav><div class="absolute bottom-10 font-mono text-[10px] text-(--foreground-dim) transition-opacity duration-700 delay-500 opacity-0">SYSTEM_NAV_OVERRIDE_ACTIVE // [AWAITING_INPUT]</div></div><main class="mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30"><a class="group inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-(--foreground-dim) transition-colors hover:text-(--accent)" href="/notes/archive"><span class="transition-transform group-hover:-translate-x-1">◄</span>RETURN_TO_ARCHIVE / 返回图鉴</a><header class="mt-8 border-b border-dashed border-(--panel-border) pb-10"><div class="flex flex-wrap items-center gap-2 text-xs"><span class="border border-(--accent)/30 bg-(--accent-bg) px-2 py-0.5 font-bold uppercase tracking-widest text-(--accent) shadow-sm">Next.js</span><span class="text-(--foreground-dim)">// <!-- -->解决方案</span><span class="flex shrink-0 items-center gap-1.5 border border-(--panel-border) px-2 py-0.5 uppercase tracking-wider text-(--foreground-muted)"><span class="h-1.5 w-1.5 animate-pulse rounded-full bg-(--accent)"></span>已发布</span></div><h1 class="mt-5 text-4xl font-extrabold tracking-tight text-(--foreground) md:text-5xl">Next.js 静态网站接入 Google Analytics、Microsoft Clarity 与 Google Search Console</h1><p class="mt-4 max-w-2xl text-base leading-8 text-(--foreground-muted)">记录 Next.js 静态网站（GitHub Pages）接入 Google Analytics、Microsoft Clarity 和 Google Search Console 的完整实践，包括流量统计、用户行为分析、SEO 配置、环境变量管理以及常见问题排查。</p><div class="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-[11px] uppercase tracking-widest text-(--foreground-dim)"><time dateTime="2026-07-16">更新于<!-- -->: <!-- -->2026-07-16</time><span class="flex items-center gap-1.5"><svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>5 min read</span><a href="https://www.cnblogs.com/lpkshuai" target="_blank" rel="noreferrer" class="text-(--foreground-muted) transition-colors hover:text-(--accent)">来源<!-- -->: <!-- -->Cnblogs<!-- --> ↗</a></div><div class="mt-5 flex flex-wrap gap-3"><span class="text-[10px] text-(--foreground-muted) transition-colors hover:text-(--accent-strong)"><span class="mr-0.5 opacity-50">#</span>Next.js</span><span class="text-[10px] text-(--foreground-muted) transition-colors hover:text-(--accent-strong)"><span class="mr-0.5 opacity-50">#</span>GitHub Pages</span><span class="text-[10px] text-(--foreground-muted) transition-colors hover:text-(--accent-strong)"><span class="mr-0.5 opacity-50">#</span>Google Analytics</span><span class="text-[10px] text-(--foreground-muted) transition-colors hover:text-(--accent-strong)"><span class="mr-0.5 opacity-50">#</span>Microsoft Clarity</span><span class="text-[10px] text-(--foreground-muted) transition-colors hover:text-(--accent-strong)"><span class="mr-0.5 opacity-50">#</span>Google Search Console</span><span class="text-[10px] text-(--foreground-muted) transition-colors hover:text-(--accent-strong)"><span class="mr-0.5 opacity-50">#</span>Analytics</span><span class="text-[10px] text-(--foreground-muted) transition-colors hover:text-(--accent-strong)"><span class="mr-0.5 opacity-50">#</span>SEO</span><span class="text-[10px] text-(--foreground-muted) transition-colors hover:text-(--accent-strong)"><span class="mr-0.5 opacity-50">#</span>Performance</span></div></header><article class="mt-10"><div class="prose prose-invert max-w-none space-y-6"><h1 class=" pt-4 text-3xl font-semibold tracking-tight text-foreground ">Next.js 静态网站接入 Google Analytics、Microsoft Clarity 与 Google Search Console</h1>
+<blockquote class=" border-l-2 border-(--accent) pl-4 text-foreground-muted ">
+<p class=" leading-8 text-foreground-muted "><strong>项目环境</strong></p>
+<ul class=" list-disc space-y-2 pl-5 leading-7 text-foreground-muted ">
+<li>Next.js 16（App Router）</li>
+<li>TypeScript</li>
+<li>GitHub Pages（Static Export）</li>
+<li>无服务端、无数据库</li>
+</ul>
+</blockquote>
+<hr/>
+<h1 class=" pt-4 text-3xl font-semibold tracking-tight text-foreground ">前言</h1>
+<p class=" leading-8 text-foreground-muted ">对于个人博客或者作品集网站来说，仅仅完成页面开发是不够的。</p>
+<p class=" leading-8 text-foreground-muted ">随着网站上线，我们通常还会关注下面几个问题：</p>
+<ul class=" list-disc space-y-2 pl-5 leading-7 text-foreground-muted ">
+<li>网站每天有多少人访问？</li>
+<li>用户来自哪些国家或地区？</li>
+<li>用户是通过 Google 搜索进入，还是 GitHub、掘金、知乎等外部链接进入？</li>
+<li>哪些页面最受欢迎？</li>
+<li>用户进入页面之后如何操作？</li>
+<li>Google 是否已经收录我的网站？</li>
+<li>哪些文章在 Google 搜索中表现最好？</li>
+</ul>
+<p class=" leading-8 text-foreground-muted ">对于部署在 <strong>GitHub Pages</strong> 上的静态网站来说，由于没有后端，也没有数据库，因此需要借助第三方统计工具来完成这些工作。</p>
+<p class=" leading-8 text-foreground-muted ">目前比较推荐的免费组合为：</p>
+<ul class=" list-disc space-y-2 pl-5 leading-7 text-foreground-muted ">
+<li><strong>Google Analytics</strong> —— 网站流量分析</li>
+<li><strong>Microsoft Clarity</strong> —— 用户行为分析</li>
+<li><strong>Google Search Console</strong> —— 搜索引擎收录与 SEO 分析</li>
+</ul>
+<p class=" leading-8 text-foreground-muted ">三者各自负责不同的内容，组合使用能够形成一套完整的网站数据分析方案。</p>
+<hr/>
+<h1 class=" pt-4 text-3xl font-semibold tracking-tight text-foreground ">三个工具分别解决什么问题？</h1>
+<h2 class=" pt-4 text-2xl font-semibold text-foreground ">Google Analytics</h2>
+<h3 class=" pt-3 text-xl font-semibold text-foreground ">定位</h3>
+<p class=" leading-8 text-foreground-muted ">Google Analytics（简称 GA4）主要负责网站流量统计。</p>
+<p class=" leading-8 text-foreground-muted ">它回答的问题是：</p>
+<blockquote class=" border-l-2 border-(--accent) pl-4 text-foreground-muted ">
+<p class=" leading-8 text-foreground-muted "><strong>网站来了多少人，他们来自哪里，他们访问了哪些页面？</strong></p>
+</blockquote>
+<hr/>
+<h3 class=" pt-3 text-xl font-semibold text-foreground ">可以统计的数据</h3>
+<p class=" leading-8 text-foreground-muted ">例如：</p>
+<ul class=" list-disc space-y-2 pl-5 leading-7 text-foreground-muted ">
+<li>用户数量（Users）</li>
+<li>页面浏览量（Page Views）</li>
+<li>实时在线人数</li>
+<li>新用户 / 老用户</li>
+<li>用户来源（Google、GitHub、Direct、Bing 等）</li>
+<li>国家和地区</li>
+<li>浏览器</li>
+<li>操作系统</li>
+<li>设备类型（PC / Mobile）</li>
+<li>热门页面</li>
+<li>平均停留时间</li>
+<li>页面跳出率（部分指标方式与旧版 GA 不同）</li>
+</ul>
+<hr/>
+<h3 class=" pt-3 text-xl font-semibold text-foreground ">适用场景</h3>
+<p class=" leading-8 text-foreground-muted ">例如：</p>
+<ul class=" list-disc space-y-2 pl-5 leading-7 text-foreground-muted ">
+<li>博客访问量分析</li>
+<li>哪篇文章最受欢迎</li>
+<li>SEO 带来的流量</li>
+<li>用户来源分析</li>
+<li>流量增长趋势</li>
+</ul>
+<hr/>
+<h2 class=" pt-4 text-2xl font-semibold text-foreground ">Microsoft Clarity</h2>
+<h3 class=" pt-3 text-xl font-semibold text-foreground ">定位</h3>
+<p class=" leading-8 text-foreground-muted ">Microsoft Clarity 更关注 <strong>用户行为分析</strong>。</p>
+<p class=" leading-8 text-foreground-muted ">它回答的问题是：</p>
+<blockquote class=" border-l-2 border-(--accent) pl-4 text-foreground-muted ">
+<p class=" leading-8 text-foreground-muted "><strong>用户进入网站之后，是如何浏览和操作页面的？</strong></p>
+</blockquote>
+<hr/>
+<h3 class=" pt-3 text-xl font-semibold text-foreground ">可以查看的数据</h3>
+<h4>Heatmap（热力图）</h4>
+<p class=" leading-8 text-foreground-muted ">例如：</p>
+<ul class=" list-disc space-y-2 pl-5 leading-7 text-foreground-muted ">
+<li>哪个按钮点击最多</li>
+<li>用户最关注哪些区域</li>
+<li>页面滚动深度</li>
+</ul>
+<hr/>
+<h4>Session Replay（匿名操作回放）</h4>
+<p class=" leading-8 text-foreground-muted ">可以查看用户的浏览过程，例如：</p>
+<div class=" overflow-hidden rounded-lg border " style="background-color:var(--panel);border-color:var(--panel-border)"><pre class=" overflow-x-auto p-4 text-sm leading-7 "><code class="hljs language-text">进入首页
+
+↓
+
+浏览 Hero
+
+↓
+
+点击 Notes
+
+↓
+
+搜索 React
+
+↓
+
+阅读文章
+
+↓
+
+离开网站
+</code></pre></div>
+<hr/>
+<h3 class=" pt-3 text-xl font-semibold text-foreground ">适用场景</h3>
+<p class=" leading-8 text-foreground-muted ">例如：</p>
+<ul class=" list-disc space-y-2 pl-5 leading-7 text-foreground-muted ">
+<li>页面布局优化</li>
+<li>用户体验优化</li>
+<li>CTA 按钮位置优化</li>
+<li>首页内容调整</li>
+<li>导航栏设计优化</li>
+</ul>
+<hr/>
+<h2 class=" pt-4 text-2xl font-semibold text-foreground ">Google Search Console</h2>
+<h3 class=" pt-3 text-xl font-semibold text-foreground ">定位</h3>
+<p class=" leading-8 text-foreground-muted ">Google Search Console 负责 <strong>搜索引擎分析</strong>。</p>
+<p class=" leading-8 text-foreground-muted ">它回答的问题是：</p>
+<blockquote class=" border-l-2 border-(--accent) pl-4 text-foreground-muted ">
+<p class=" leading-8 text-foreground-muted "><strong>Google 是如何发现、收录和展示我的网站的？</strong></p>
+</blockquote>
+<hr/>
+<h3 class=" pt-3 text-xl font-semibold text-foreground ">可以查看的数据</h3>
+<p class=" leading-8 text-foreground-muted ">例如：</p>
+<ul class=" list-disc space-y-2 pl-5 leading-7 text-foreground-muted ">
+<li>网站是否被 Google 收录</li>
+<li>哪些页面已建立索引</li>
+<li>Sitemap 是否正常</li>
+<li>哪些关键词带来了流量</li>
+<li>搜索曝光量（Impressions）</li>
+<li>点击次数（Clicks）</li>
+<li>点击率（CTR）</li>
+<li>平均排名（Average Position）</li>
+<li>页面是否存在抓取错误</li>
+</ul>
+<hr/>
+<h3 class=" pt-3 text-xl font-semibold text-foreground ">适用场景</h3>
+<p class=" leading-8 text-foreground-muted ">例如：</p>
+<ul class=" list-disc space-y-2 pl-5 leading-7 text-foreground-muted ">
+<li>SEO 优化</li>
+<li>收录情况检查</li>
+<li>搜索关键词分析</li>
+<li>页面排名分析</li>
+</ul>
+<hr/>
+<h1 class=" pt-4 text-3xl font-semibold tracking-tight text-foreground ">三者关系</h1>
+<div class=" overflow-hidden rounded-lg border " style="background-color:var(--panel);border-color:var(--panel-border)"><pre class=" overflow-x-auto p-4 text-sm leading-7 "><code class="hljs language-text">                       Website
+
+                          │
+      ┌───────────────────┼───────────────────┐
+      │                   │                   │
+      ▼                   ▼                   ▼
+
+Google Analytics     Microsoft Clarity   Search Console
+
+      │                   │                   │
+
+   流量统计             行为分析            SEO分析
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=" my-6 overflow-x-auto rounded-lg border " style="border-color:var(--table-border)"><table class=" min-w-full border-collapse "><thead style="background-color:var(--table-header)"><tr class=" transition-colors hover:bg-(--panel) "><th class=" px-4 py-3 text-left text-sm font-semibold text-foreground " style="border-bottom:1px solid var(--table-border)">工具</th><th class=" px-4 py-3 text-left text-sm font-semibold text-foreground " style="border-bottom:1px solid var(--table-border)">主要作用</th></tr></thead><tbody><tr class=" transition-colors hover:bg-(--panel) "><td class=" px-4 py-3 text-sm text-foreground-muted " style="border-bottom:1px solid var(--table-border)">Google Analytics</td><td class=" px-4 py-3 text-sm text-foreground-muted " style="border-bottom:1px solid var(--table-border)">网站流量分析</td></tr><tr class=" transition-colors hover:bg-(--panel) "><td class=" px-4 py-3 text-sm text-foreground-muted " style="border-bottom:1px solid var(--table-border)">Microsoft Clarity</td><td class=" px-4 py-3 text-sm text-foreground-muted " style="border-bottom:1px solid var(--table-border)">用户行为分析</td></tr><tr class=" transition-colors hover:bg-(--panel) "><td class=" px-4 py-3 text-sm text-foreground-muted " style="border-bottom:1px solid var(--table-border)">Google Search Console</td><td class=" px-4 py-3 text-sm text-foreground-muted " style="border-bottom:1px solid var(--table-border)">搜索引擎分析</td></tr></tbody></table></div>
+<hr/>
+<h1 class=" pt-4 text-3xl font-semibold tracking-tight text-foreground ">一、Google Analytics 接入</h1>
+<h2 class=" pt-4 text-2xl font-semibold text-foreground ">1. 创建项目</h2>
+<p class=" leading-8 text-foreground-muted ">进入：</p>
+<blockquote class=" border-l-2 border-(--accent) pl-4 text-foreground-muted ">
+<p class=" leading-8 text-foreground-muted "><a href="https://analytics.google.com/" target="_blank" rel="noreferrer" class=" text-(--accent) underline underline-offset-4 transition hover:text-(--accent-strong) ">https://analytics.google.com/</a></p>
+</blockquote>
+<!-- -->登录后按步骤创建Analytics账号和媒体资源：<br/>
+<figure class=" my-6 overflow-hidden rounded-xl border " style="background-color:var(--panel);border-color:var(--panel-border)"><img src="/notes/next/google-analytics-create.png" alt="image" loading="lazy" class=" mx-auto max-w-full cursor-zoom-in transition hover:scale-[1.01] "/><figcaption class=" border-t px-4 py-3 text-sm text-foreground-dim " style="border-color:var(--panel-border)">image</figcaption></figure><br/>
+最后一步选择网站：<br/>
+<figure class=" my-6 overflow-hidden rounded-xl border " style="background-color:var(--panel);border-color:var(--panel-border)"><img src="/notes/next/google-analytics-create-finish.png" alt="image" loading="lazy" class=" mx-auto max-w-full cursor-zoom-in transition hover:scale-[1.01] "/><figcaption class=" border-t px-4 py-3 text-sm text-foreground-dim " style="border-color:var(--panel-border)">image</figcaption></figure><br/>
+然后配置网址和名称，可选择需要监测的功能：<br/>
+<figure class=" my-6 overflow-hidden rounded-xl border " style="background-color:var(--panel);border-color:var(--panel-border)"><img src="/notes/next/google-analytics-create-config.png" alt="image" loading="lazy" class=" mx-auto max-w-full cursor-zoom-in transition hover:scale-[1.01] "/><figcaption class=" border-t px-4 py-3 text-sm text-foreground-dim " style="border-color:var(--panel-border)">image</figcaption></figure><br/>
+<figure class=" my-6 overflow-hidden rounded-xl border " style="background-color:var(--panel);border-color:var(--panel-border)"><img src="/notes/next/google-analytics-create-set-func.png" alt="image" loading="lazy" class=" mx-auto max-w-full cursor-zoom-in transition hover:scale-[1.01] "/><figcaption class=" border-t px-4 py-3 text-sm text-foreground-dim " style="border-color:var(--panel-border)">image</figcaption></figure><br/>
+创建成功后，会得到：<br/>
+<code class=" rounded px-1.5 py-0.5 text-[0.9em] text-(--accent) " style="background-color:var(--accent-bg)">Measurement ID 如：G-XXXXXXXXXX</code><br/>
+将代码配置到项目中，配置完毕可以点击右上角测试安装是否成功：<br/>
+<figure class=" my-6 overflow-hidden rounded-xl border " style="background-color:var(--panel);border-color:var(--panel-border)"><img src="/notes/next/google-analytics-create-config-code.png" alt="image" loading="lazy" class=" mx-auto max-w-full cursor-zoom-in transition hover:scale-[1.01] "/><figcaption class=" border-t px-4 py-3 text-sm text-foreground-dim " style="border-color:var(--panel-border)">image</figcaption></figure>
+<hr/>
+<h2 class=" pt-4 text-2xl font-semibold text-foreground ">2. 配置环境变量</h2>
+<p class=" leading-8 text-foreground-muted ">创建：</p>
+<div class=" overflow-hidden rounded-lg border " style="background-color:var(--panel);border-color:var(--panel-border)"><pre class=" overflow-x-auto p-4 text-sm leading-7 "><code class="hljs language-text">.env.local
+</code></pre></div>
+<p class=" leading-8 text-foreground-muted ">添加：</p>
+<div class=" overflow-hidden rounded-lg border " style="background-color:var(--panel);border-color:var(--panel-border)"><pre class=" overflow-x-auto p-4 text-sm leading-7 "><code class="hljs language-env">NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+</code></pre></div>
+<blockquote class=" border-l-2 border-(--accent) pl-4 text-foreground-muted ">
+<p class=" leading-8 text-foreground-muted "><code class=" rounded px-1.5 py-0.5 text-[0.9em] text-(--accent) " style="background-color:var(--accent-bg)">NEXT_PUBLIC_</code> 表示变量会被打包到前端。</p>
+</blockquote>
+<hr/>
+<h2 class=" pt-4 text-2xl font-semibold text-foreground ">3. 创建组件</h2>
+<div class=" overflow-hidden rounded-lg border " style="background-color:var(--panel);border-color:var(--panel-border)"><pre class=" overflow-x-auto p-4 text-sm leading-7 "><code class="hljs language-text">src/
+└── components/
+    └── analytics/
+        ├── GoogleAnalytics.tsx
+        ├── Clarity.tsx
+        └── AnalyticsProvider.tsx
+</code></pre></div>
+<p class=" leading-8 text-foreground-muted ">GoogleAnalytics.tsx：</p>
+<div class=" overflow-hidden rounded-lg border " style="background-color:var(--panel);border-color:var(--panel-border)"><pre class=" overflow-x-auto p-4 text-sm leading-7 "><code class="hljs language-tsx"><span class="hljs-string">&quot;use client&quot;</span>;
+
+<span class="hljs-keyword">import</span> <span class="hljs-title class_">Script</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;next/script&quot;</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">GoogleAnalytics</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">const</span> id = process.<span class="hljs-property">env</span>.<span class="hljs-property">NEXT_PUBLIC_GA_ID</span>;
+
+  <span class="hljs-keyword">if</span> (!id) <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;
+
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Script</span> <span class="hljs-attr">async</span> <span class="hljs-attr">src</span>=<span class="hljs-string">{</span>`<span class="hljs-attr">https:</span>//<span class="hljs-attr">www.googletagmanager.com</span>/<span class="hljs-attr">gtag</span>/<span class="hljs-attr">js</span>?<span class="hljs-attr">id</span>=<span class="hljs-string">${id}</span>`} /&gt;</span><span class="xml">
+
+      <span class="hljs-tag">&lt;<span class="hljs-name">Script</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;google-analytics&quot;</span>&gt;</span><span class="javascript">
+        {<span class="hljs-string">`
+          window.dataLayer = window.dataLayer || [];
+
+          function gtag(){
+            dataLayer.push(arguments);
+          }
+
+          gtag(&#x27;js&#x27;, new Date());
+
+          gtag(&#x27;config&#x27;, &#x27;<span class="hljs-subst">${id}</span>&#x27;);
+        `</span>}
+      </span></span><span class="hljs-tag">&lt;/<span class="hljs-name">Script</span>&gt;</span>
+    <span class="hljs-tag">&lt;/&gt;</span></span>
+  );
+}
+</code></pre></div>
+<hr/>
+<h2 class=" pt-4 text-2xl font-semibold text-foreground ">4. AnalyticsProvider</h2>
+<div class=" overflow-hidden rounded-lg border " style="background-color:var(--panel);border-color:var(--panel-border)"><pre class=" overflow-x-auto p-4 text-sm leading-7 "><code class="hljs language-tsx"><span class="hljs-keyword">import</span> <span class="hljs-title class_">GoogleAnalytics</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./GoogleAnalytics&quot;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-title class_">Clarity</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./Clarity&quot;</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">AnalyticsProvider</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">GoogleAnalytics</span> /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Clarity</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/&gt;</span></span>
+  );
+}
+</code></pre></div>
+<hr/>
+<h2 class=" pt-4 text-2xl font-semibold text-foreground ">5. layout.tsx</h2>
+<div class=" overflow-hidden rounded-lg border " style="background-color:var(--panel);border-color:var(--panel-border)"><pre class=" overflow-x-auto p-4 text-sm leading-7 "><code class="hljs language-tsx">&lt;body&gt;
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ThemeProvider</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">LanguageProvider</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Navbar</span> /&gt;</span>
+      {children}
+      <span class="hljs-tag">&lt;<span class="hljs-name">ScrollToTop</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">LanguageProvider</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ThemeProvider</span>&gt;</span></span>
+
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">AnalyticsProvider</span> /&gt;</span></span>
+&lt;/body&gt;
+</code></pre></div>
+<p class=" leading-8 text-foreground-muted ">Analytics 不依赖 Theme 或 Language，因此建议放在 Provider 外部。</p>
+<hr/>
+<h2 class=" pt-4 text-2xl font-semibold text-foreground ">6. 验证</h2>
+<!-- -->后台等待一段时间即可看到实时数据。<br/>
+<figure class=" my-6 overflow-hidden rounded-xl border " style="background-color:var(--panel);border-color:var(--panel-border)"><img src="/notes/next/google-analytics-dashboard.png" alt="image" loading="lazy" class=" mx-auto max-w-full cursor-zoom-in transition hover:scale-[1.01] "/><figcaption class=" border-t px-4 py-3 text-sm text-foreground-dim " style="border-color:var(--panel-border)">image</figcaption></figure>
+<hr/>
+<h1 class=" pt-4 text-3xl font-semibold tracking-tight text-foreground ">二、Microsoft Clarity 接入</h1>
+<h2 class=" pt-4 text-2xl font-semibold text-foreground ">1. 创建项目</h2>
+<p class=" leading-8 text-foreground-muted ">进入：</p>
+<blockquote class=" border-l-2 border-(--accent) pl-4 text-foreground-muted ">
+<p class=" leading-8 text-foreground-muted "><a href="https://clarity.microsoft.com/" target="_blank" rel="noreferrer" class=" text-(--accent) underline underline-offset-4 transition hover:text-(--accent-strong) ">https://clarity.microsoft.com/</a></p>
+</blockquote>
+<p class=" leading-8 text-foreground-muted ">创建：</p>
+<div class=" overflow-hidden rounded-lg border " style="background-color:var(--panel);border-color:var(--panel-border)"><pre class=" overflow-x-auto p-4 text-sm leading-7 "><code class="hljs language-text">New Project
+</code></pre></div>
+<p class=" leading-8 text-foreground-muted ">填写：</p>
+<div class=" overflow-hidden rounded-lg border " style="background-color:var(--panel);border-color:var(--panel-border)"><pre class=" overflow-x-auto p-4 text-sm leading-7 "><code class="hljs language-text">Project Name
+
+Website URL
+</code></pre></div>
+<p class=" leading-8 text-foreground-muted ">创建完成后获得：</p>
+<div class=" overflow-hidden rounded-lg border " style="background-color:var(--panel);border-color:var(--panel-border)"><pre class=" overflow-x-auto p-4 text-sm leading-7 "><code class="hljs language-text">Project ID
+
+例如：
+
+xmagxst674
+</code></pre></div>
+<hr/>
+<!-- -->创建的步骤类似Google，最后也会给一段代码，配置完成后等待一段时间后可查看监控面板：<br/>
+<figure class=" my-6 overflow-hidden rounded-xl border " style="background-color:var(--panel);border-color:var(--panel-border)"><img src="/notes/next/microsoft-clarity-dashboard.png" alt="image" loading="lazy" class=" mx-auto max-w-full cursor-zoom-in transition hover:scale-[1.01] "/><figcaption class=" border-t px-4 py-3 text-sm text-foreground-dim " style="border-color:var(--panel-border)">image</figcaption></figure>
+<hr/>
+<h2 class=" pt-4 text-2xl font-semibold text-foreground ">2. 配置环境变量</h2>
+<div class=" overflow-hidden rounded-lg border " style="background-color:var(--panel);border-color:var(--panel-border)"><pre class=" overflow-x-auto p-4 text-sm leading-7 "><code class="hljs language-env">NEXT_PUBLIC_CLARITY_ID=xmagxst674
+</code></pre></div>
+<hr/>
+<h2 class=" pt-4 text-2xl font-semibold text-foreground ">3. 创建 Clarity.tsx</h2>
+<div class=" overflow-hidden rounded-lg border " style="background-color:var(--panel);border-color:var(--panel-border)"><pre class=" overflow-x-auto p-4 text-sm leading-7 "><code class="hljs language-tsx"><span class="hljs-string">&quot;use client&quot;</span>;
+
+<span class="hljs-keyword">import</span> <span class="hljs-title class_">Script</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;next/script&quot;</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">Clarity</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">const</span> id = process.<span class="hljs-property">env</span>.<span class="hljs-property">NEXT_PUBLIC_CLARITY_ID</span>;
+
+  <span class="hljs-keyword">if</span> (!id) <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;
+
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Script</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;clarity-init&quot;</span> <span class="hljs-attr">strategy</span>=<span class="hljs-string">&quot;afterInteractive&quot;</span>&gt;</span><span class="javascript">
+        {<span class="hljs-string">`
+          window.clarity = window.clarity || function () {
+            (window.clarity.q = window.clarity.q || []).push(arguments);
+          };
+        `</span>}
+      </span><span class="hljs-tag">&lt;/<span class="hljs-name">Script</span>&gt;</span>
+
+      <span class="hljs-tag">&lt;<span class="hljs-name">Script</span>
+        <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;clarity-loader&quot;</span>
+        <span class="hljs-attr">strategy</span>=<span class="hljs-string">&quot;afterInteractive&quot;</span>
+        <span class="hljs-attr">src</span>=<span class="hljs-string">{</span>`<span class="hljs-attr">https:</span>//<span class="hljs-attr">www.clarity.ms</span>/<span class="hljs-attr">tag</span>/${<span class="hljs-attr">id</span>}`}
+      /&gt;</span><span class="xml">
+    <span class="hljs-tag">&lt;/&gt;</span></span></span>
+  );
+}
+</code></pre></div>
+<hr/>
+<h2 class=" pt-4 text-2xl font-semibold text-foreground ">为什么拆成两个 Script？</h2>
+<p class=" leading-8 text-foreground-muted ">官方脚本实际上做了两件事情。</p>
+<h3 class=" pt-3 text-xl font-semibold text-foreground ">第一步</h3>
+<p class=" leading-8 text-foreground-muted ">创建：</p>
+<div class=" overflow-hidden rounded-lg border " style="background-color:var(--panel);border-color:var(--panel-border)"><pre class=" overflow-x-auto p-4 text-sm leading-7 "><code class="hljs language-javascript"><span class="hljs-variable language_">window</span>.<span class="hljs-property">clarity</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {};
+</code></pre></div>
+<h3 class=" pt-3 text-xl font-semibold text-foreground ">第二步</h3>
+<p class=" leading-8 text-foreground-muted ">加载：</p>
+<div class=" overflow-hidden rounded-lg border " style="background-color:var(--panel);border-color:var(--panel-border)"><pre class=" overflow-x-auto p-4 text-sm leading-7 "><code class="hljs language-text">clarity.ms/tag/projectId
+</code></pre></div>
+<p class=" leading-8 text-foreground-muted ">正确顺序：</p>
+<div class=" overflow-hidden rounded-lg border " style="background-color:var(--panel);border-color:var(--panel-border)"><pre class=" overflow-x-auto p-4 text-sm leading-7 "><code class="hljs language-text">创建 window.clarity
+
+↓
+
+加载 SDK
+
+↓
+
+SDK 调用 window.clarity()
+</code></pre></div>
+<p class=" leading-8 text-foreground-muted ">如果初始化顺序错误，会出现：</p>
+<div class=" overflow-hidden rounded-lg border " style="background-color:var(--panel);border-color:var(--panel-border)"><pre class=" overflow-x-auto p-4 text-sm leading-7 "><code class="hljs language-sh">TypeError: a[c] is not a <span class="hljs-keyword">function</span>
+</code></pre></div>
+<p class=" leading-8 text-foreground-muted ">这是本文实践过程中遇到的一个问题。</p>
+<hr/>
+<h2 class=" pt-4 text-2xl font-semibold text-foreground ">如何验证</h2>
+<p class=" leading-8 text-foreground-muted ">浏览器 Console：</p>
+<div class=" overflow-hidden rounded-lg border " style="background-color:var(--panel);border-color:var(--panel-border)"><pre class=" overflow-x-auto p-4 text-sm leading-7 "><code class="hljs language-javascript"><span class="hljs-keyword">typeof</span> <span class="hljs-variable language_">window</span>.<span class="hljs-property">clarity</span>;
+</code></pre></div>
+<p class=" leading-8 text-foreground-muted ">应该输出：</p>
+<div class=" overflow-hidden rounded-lg border " style="background-color:var(--panel);border-color:var(--panel-border)"><pre class=" overflow-x-auto p-4 text-sm leading-7 "><code class="hljs language-text">function
+</code></pre></div>
+<p class=" leading-8 text-foreground-muted ">Network：</p>
+<div class=" overflow-hidden rounded-lg border " style="background-color:var(--panel);border-color:var(--panel-border)"><pre class=" overflow-x-auto p-4 text-sm leading-7 "><code class="hljs language-text">clarity.ms
+
+scripts.clarity.ms
+</code></pre></div>
+<p class=" leading-8 text-foreground-muted ">都应该返回 200。</p>
+<hr/>
+<h2 class=" pt-4 text-2xl font-semibold text-foreground ">Clarity 可以看到哪些内容？</h2>
+<p class=" leading-8 text-foreground-muted ">例如：</p>
+<ul class=" list-disc space-y-2 pl-5 leading-7 text-foreground-muted ">
+<li>Heatmap</li>
+<li>Session Replay</li>
+<li>点击位置</li>
+<li>页面滚动深度</li>
+<li>页面停留时间</li>
+</ul>
+<hr/>
+<h1 class=" pt-4 text-3xl font-semibold tracking-tight text-foreground ">三、Google Search Console 接入</h1>
+<h2 class=" pt-4 text-2xl font-semibold text-foreground ">1. 创建站点</h2>
+<p class=" leading-8 text-foreground-muted ">进入：</p>
+<blockquote class=" border-l-2 border-(--accent) pl-4 text-foreground-muted ">
+<p class=" leading-8 text-foreground-muted "><a href="https://search.google.com/search-console" target="_blank" rel="noreferrer" class=" text-(--accent) underline underline-offset-4 transition hover:text-(--accent-strong) ">https://search.google.com/search-console</a></p>
+</blockquote>
+<p class=" leading-8 text-foreground-muted ">选择：</p>
+<div class=" overflow-hidden rounded-lg border " style="background-color:var(--panel);border-color:var(--panel-border)"><pre class=" overflow-x-auto p-4 text-sm leading-7 "><code class="hljs language-text">URL Prefix
+</code></pre></div>
+<p class=" leading-8 text-foreground-muted ">填写：</p>
+<div class=" overflow-hidden rounded-lg border " style="background-color:var(--panel);border-color:var(--panel-border)"><pre class=" overflow-x-auto p-4 text-sm leading-7 "><code class="hljs language-text">https://xxx.xxx
+</code></pre></div>
+<hr/>
+<h2 class=" pt-4 text-2xl font-semibold text-foreground ">2. 网站验证</h2>
+<p class=" leading-8 text-foreground-muted ">Google 提供：</p>
+<div class=" overflow-hidden rounded-lg border " style="background-color:var(--panel);border-color:var(--panel-border)"><pre class=" overflow-x-auto p-4 text-sm leading-7 "><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;google-site-verification&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;xxxxxxxx&quot;</span> /&gt;</span>
+</code></pre></div>
+<hr/>
+<h2 class=" pt-4 text-2xl font-semibold text-foreground ">3. Next.js 推荐方式</h2>
+<p class=" leading-8 text-foreground-muted ">App Router 推荐使用 Metadata API：</p>
+<div class=" overflow-hidden rounded-lg border " style="background-color:var(--panel);border-color:var(--panel-border)"><pre class=" overflow-x-auto p-4 text-sm leading-7 "><code class="hljs language-tsx"><span class="hljs-keyword">import</span> <span class="hljs-keyword">type</span> { <span class="hljs-title class_">Metadata</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;next&quot;</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-attr">metadata</span>: <span class="hljs-title class_">Metadata</span> = {
+  <span class="hljs-attr">verification</span>: {
+    <span class="hljs-attr">google</span>: <span class="hljs-string">&quot;xxxxxxxx&quot;</span>,
+  },
+};
+</code></pre></div>
+<p class=" leading-8 text-foreground-muted ">不需要手动写 <code class=" rounded px-1.5 py-0.5 text-[0.9em] text-(--accent) " style="background-color:var(--accent-bg)">&lt;meta&gt;</code>。</p>
+<hr/>
+<h2 class=" pt-4 text-2xl font-semibold text-foreground ">4. 提交 Sitemap</h2>
+<p class=" leading-8 text-foreground-muted ">推荐安装：</p>
+<div class=" overflow-hidden rounded-lg border " style="background-color:var(--panel);border-color:var(--panel-border)"><pre class=" overflow-x-auto p-4 text-sm leading-7 "><code class="hljs language-text">next-sitemap
+</code></pre></div>
+<p class=" leading-8 text-foreground-muted ">生成：</p>
+<div class=" overflow-hidden rounded-lg border " style="background-color:var(--panel);border-color:var(--panel-border)"><pre class=" overflow-x-auto p-4 text-sm leading-7 "><code class="hljs language-text">sitemap.xml
+
+robots.txt
+</code></pre></div>
+<p class=" leading-8 text-foreground-muted ">然后提交给：</p>
+<div class=" overflow-hidden rounded-lg border " style="background-color:var(--panel);border-color:var(--panel-border)"><pre class=" overflow-x-auto p-4 text-sm leading-7 "><code class="hljs language-text">Search Console
+</code></pre></div>
+<hr/>
+<h1 class=" pt-4 text-3xl font-semibold tracking-tight text-foreground ">四、关于 GitHub Pages</h1>
+<p class=" leading-8 text-foreground-muted ">GitHub Pages 可以正常使用：</p>
+<ul class=" list-disc space-y-2 pl-5 leading-7 text-foreground-muted ">
+<li>Google Analytics</li>
+<li>Microsoft Clarity</li>
+<li>Google Search Console</li>
+</ul>
+<p class=" leading-8 text-foreground-muted ">原因很简单。</p>
+<p class=" leading-8 text-foreground-muted ">这些工具本质上都是：</p>
+<div class=" overflow-hidden rounded-lg border " style="background-color:var(--panel);border-color:var(--panel-border)"><pre class=" overflow-x-auto p-4 text-sm leading-7 "><code class="hljs language-text">浏览器执行 JavaScript
+
+↓
+
+发送统计数据
+
+↓
+
+平台后台分析
+</code></pre></div>
+<p class=" leading-8 text-foreground-muted ">因此：</p>
+<p class=" leading-8 text-foreground-muted "><strong>不需要服务器。</strong></p>
+<hr/>
+<h1 class=" pt-4 text-3xl font-semibold tracking-tight text-foreground ">五、为什么 Cloudflare Web Analytics 无法使用？</h1>
+<p class=" leading-8 text-foreground-muted ">本文项目部署地址：</p>
+<div class=" overflow-hidden rounded-lg border " style="background-color:var(--panel);border-color:var(--panel-border)"><pre class=" overflow-x-auto p-4 text-sm leading-7 "><code class="hljs language-text">https://lpkshuai.github.io
+</code></pre></div>
+<p class=" leading-8 text-foreground-muted ">属于：</p>
+<div class=" overflow-hidden rounded-lg border " style="background-color:var(--panel);border-color:var(--panel-border)"><pre class=" overflow-x-auto p-4 text-sm leading-7 "><code class="hljs language-text">GitHub Pages 子域名
+</code></pre></div>
+<p class=" leading-8 text-foreground-muted ">Cloudflare Web Analytics 当前更倾向于：</p>
+<div class=" overflow-hidden rounded-lg border " style="background-color:var(--panel);border-color:var(--panel-border)"><pre class=" overflow-x-auto p-4 text-sm leading-7 "><code class="hljs language-text">Cloudflare 管理的独立域名
+</code></pre></div>
+<p class=" leading-8 text-foreground-muted ">因此：</p>
+<div class=" overflow-hidden rounded-lg border " style="background-color:var(--panel);border-color:var(--panel-border)"><pre class=" overflow-x-auto p-4 text-sm leading-7 "><code class="hljs language-text">No active websites found
+</code></pre></div>
+<p class=" leading-8 text-foreground-muted ">属于正常情况。</p>
+<p class=" leading-8 text-foreground-muted ">如果以后购买：</p>
+<div class=" overflow-hidden rounded-lg border " style="background-color:var(--panel);border-color:var(--panel-border)"><pre class=" overflow-x-auto p-4 text-sm leading-7 "><code class="hljs language-text">lpkshuai.com
+
+或者
+
+lpk.dev
+</code></pre></div>
+<p class=" leading-8 text-foreground-muted ">并接入 Cloudflare DNS，即可启用 Cloudflare Web Analytics。</p>
+<hr/>
+<h1 class=" pt-4 text-3xl font-semibold tracking-tight text-foreground ">六、环境变量是否安全？</h1>
+<p class=" leading-8 text-foreground-muted ">很多人担心：</p>
+<div class=" overflow-hidden rounded-lg border " style="background-color:var(--panel);border-color:var(--panel-border)"><pre class=" overflow-x-auto p-4 text-sm leading-7 "><code class="hljs language-text">NEXT_PUBLIC_GA_ID
+
+NEXT_PUBLIC_CLARITY_ID
+</code></pre></div>
+<p class=" leading-8 text-foreground-muted ">会不会泄露。</p>
+<p class=" leading-8 text-foreground-muted ">答案：</p>
+<p class=" leading-8 text-foreground-muted "><strong>不会。</strong></p>
+<p class=" leading-8 text-foreground-muted ">因为：</p>
+<p class=" leading-8 text-foreground-muted ">Google Analytics ID</p>
+<p class=" leading-8 text-foreground-muted ">和</p>
+<p class=" leading-8 text-foreground-muted ">Clarity Project ID</p>
+<p class=" leading-8 text-foreground-muted ">本来就是公开信息。</p>
+<p class=" leading-8 text-foreground-muted ">浏览器访问页面时，本身就可以看到这些 ID。</p>
+<p class=" leading-8 text-foreground-muted ">真正不能暴露的是：</p>
+<ul class=" list-disc space-y-2 pl-5 leading-7 text-foreground-muted ">
+<li>API Key</li>
+<li>Secret</li>
+<li>Token</li>
+<li>Database Password</li>
+<li>OpenAI Key</li>
+<li>GitHub Token</li>
+</ul>
+<p class=" leading-8 text-foreground-muted ">这些只能放在服务端。</p>
+<hr/>
+<h1 class=" pt-4 text-3xl font-semibold tracking-tight text-foreground ">七、部署后如何验证？</h1>
+<p class=" leading-8 text-foreground-muted ">Google Analytics：</p>
+<div class=" overflow-hidden rounded-lg border " style="background-color:var(--panel);border-color:var(--panel-border)"><pre class=" overflow-x-auto p-4 text-sm leading-7 "><code class="hljs language-text">Realtime
+
+↓
+
+查看是否出现在线用户
+</code></pre></div>
+<p class=" leading-8 text-foreground-muted ">Microsoft Clarity：</p>
+<div class=" overflow-hidden rounded-lg border " style="background-color:var(--panel);border-color:var(--panel-border)"><pre class=" overflow-x-auto p-4 text-sm leading-7 "><code class="hljs language-text">Dashboard
+
+↓
+
+等待几分钟
+
+↓
+
+查看 Session
+</code></pre></div>
+<p class=" leading-8 text-foreground-muted ">Search Console：</p>
+<div class=" overflow-hidden rounded-lg border " style="background-color:var(--panel);border-color:var(--panel-border)"><pre class=" overflow-x-auto p-4 text-sm leading-7 "><code class="hljs language-text">Pages
+
+↓
+
+Indexed
+</code></pre></div>
+<p class=" leading-8 text-foreground-muted ">查看是否建立索引。</p>
+<hr/>
+<h1 class=" pt-4 text-3xl font-semibold tracking-tight text-foreground ">八、后续推荐优化</h1>
+<p class=" leading-8 text-foreground-muted ">完成基础统计后，可以继续添加：</p>
+<h2 class=" pt-4 text-2xl font-semibold text-foreground ">Event Tracking</h2>
+<p class=" leading-8 text-foreground-muted ">例如：</p>
+<ul class=" list-disc space-y-2 pl-5 leading-7 text-foreground-muted ">
+<li>点击 Enter Lab</li>
+<li>点击 GitHub</li>
+<li>下载简历</li>
+<li>打开某篇文章</li>
+<li>搜索 Notes</li>
+</ul>
+<p class=" leading-8 text-foreground-muted ">这样可以进一步分析：</p>
+<ul class=" list-disc space-y-2 pl-5 leading-7 text-foreground-muted ">
+<li>哪个按钮点击最多</li>
+<li>哪篇文章最受欢迎</li>
+<li>用户最关注哪些内容</li>
+</ul>
+<hr/>
+<h2 class=" pt-4 text-2xl font-semibold text-foreground ">SEO</h2>
+<p class=" leading-8 text-foreground-muted ">建议继续完善：</p>
+<ul class=" list-disc space-y-2 pl-5 leading-7 text-foreground-muted ">
+<li>title</li>
+<li>description</li>
+<li>Open Graph</li>
+<li>Twitter Card</li>
+<li>JSON-LD</li>
+<li>canonical</li>
+<li>sitemap</li>
+<li>robots.txt</li>
+</ul>
+<p class=" leading-8 text-foreground-muted ">进一步提升搜索引擎表现。</p>
+<hr/>
+<h1 class=" pt-4 text-3xl font-semibold tracking-tight text-foreground ">总结</h1>
+<p class=" leading-8 text-foreground-muted ">对于基于 Next.js 的个人技术博客，推荐采用以下组合：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=" my-6 overflow-x-auto rounded-lg border " style="border-color:var(--table-border)"><table class=" min-w-full border-collapse "><thead style="background-color:var(--table-header)"><tr class=" transition-colors hover:bg-(--panel) "><th class=" px-4 py-3 text-left text-sm font-semibold text-foreground " style="border-bottom:1px solid var(--table-border)">工具</th><th class=" px-4 py-3 text-left text-sm font-semibold text-foreground " style="border-bottom:1px solid var(--table-border)">作用</th><th class=" px-4 py-3 text-left text-sm font-semibold text-foreground " style="border-bottom:1px solid var(--table-border)">推荐程度</th></tr></thead><tbody><tr class=" transition-colors hover:bg-(--panel) "><td class=" px-4 py-3 text-sm text-foreground-muted " style="border-bottom:1px solid var(--table-border)">Google Analytics 4</td><td class=" px-4 py-3 text-sm text-foreground-muted " style="border-bottom:1px solid var(--table-border)">网站流量分析</td><td class=" px-4 py-3 text-sm text-foreground-muted " style="border-bottom:1px solid var(--table-border)">⭐⭐⭐⭐⭐</td></tr><tr class=" transition-colors hover:bg-(--panel) "><td class=" px-4 py-3 text-sm text-foreground-muted " style="border-bottom:1px solid var(--table-border)">Microsoft Clarity</td><td class=" px-4 py-3 text-sm text-foreground-muted " style="border-bottom:1px solid var(--table-border)">用户行为分析</td><td class=" px-4 py-3 text-sm text-foreground-muted " style="border-bottom:1px solid var(--table-border)">⭐⭐⭐⭐⭐</td></tr><tr class=" transition-colors hover:bg-(--panel) "><td class=" px-4 py-3 text-sm text-foreground-muted " style="border-bottom:1px solid var(--table-border)">Google Search Console</td><td class=" px-4 py-3 text-sm text-foreground-muted " style="border-bottom:1px solid var(--table-border)">SEO 与搜索分析</td><td class=" px-4 py-3 text-sm text-foreground-muted " style="border-bottom:1px solid var(--table-border)">⭐⭐⭐⭐⭐</td></tr></tbody></table></div>
+<p class=" leading-8 text-foreground-muted ">三者结合后，可以完整回答以下几个问题：</p>
+<div class=" overflow-hidden rounded-lg border " style="background-color:var(--panel);border-color:var(--panel-border)"><pre class=" overflow-x-auto p-4 text-sm leading-7 "><code class="hljs language-text">用户从哪里来？
+
+↓
+
+浏览了哪些页面？
+
+↓
+
+如何操作页面？
+
+↓
+
+通过哪些关键词找到网站？
+
+↓
+
+Google 是否成功收录网站？
+</code></pre></div>
+<p class=" leading-8 text-foreground-muted ">对于部署在 GitHub Pages 上的静态博客，这是一套免费、轻量且功能完善的网站分析解决方案，也是现代前端项目中非常常见的一套实践方案。</p></div></article></main><!--$--><!--/$--><button aria-label="返回顶部" class="fixed bottom-6 right-6 z-50 group flex size-8 items-center justify-center overflow-hidden rounded border border-(--panel-border) bg-(--panel) text-(--foreground-muted) transition-all duration-300 hover:border-(--accent) hover:text-(--accent) hover:shadow-[0_0_15px_var(--accent)] active:scale-90 translate-y-10 opacity-0 pointer-events-none"><span class="absolute left-0 top-0 size-1.5 border-b border-r border-(--accent) opacity-0 transition-opacity group-hover:opacity-100"></span><span class="absolute bottom-0 right-0 size-1.5 border-l border-t border-(--accent) opacity-0 transition-opacity group-hover:opacity-100"></span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-up size-5 transition-transform duration-300 group-hover:-translate-y-0.5" aria-hidden="true"><path d="m18 15-6-6-6 6"></path></svg></button><script src="/_next/static/chunks/0g6rrfd8-h0li.js" id="_R_" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[75144,[\"/_next/static/chunks/3spz7vbggeheh.js\",\"/_next/static/chunks/2im7c515bo69p.js\"],\"ThemeProvider\"]\n3:I[11110,[\"/_next/static/chunks/3spz7vbggeheh.js\",\"/_next/static/chunks/2im7c515bo69p.js\"],\"LanguageProvider\"]\n4:I[45678,[\"/_next/static/chunks/3spz7vbggeheh.js\",\"/_next/static/chunks/2im7c515bo69p.js\"],\"default\"]\n5:I[39756,[\"/_next/static/chunks/3spz7vbggeheh.js\",\"/_next/static/chunks/2im7c515bo69p.js\"],\"default\"]\n6:I[37457,[\"/_next/static/chunks/3spz7vbggeheh.js\",\"/_next/static/chunks/2im7c515bo69p.js\"],\"default\"]\n7:I[63687,[\"/_next/static/chunks/3spz7vbggeheh.js\",\"/_next/static/chunks/2im7c515bo69p.js\"],\"default\"]\n8:I[26817,[\"/_next/static/chunks/3spz7vbggeheh.js\",\"/_next/static/chunks/2im7c515bo69p.js\"],\"default\"]\n9:I[51274,[\"/_next/static/chunks/3spz7vbggeheh.js\",\"/_next/static/chunks/2im7c515bo69p.js\"],\"default\"]\nb:I[97367,[\"/_next/static/chunks/3spz7vbggeheh.js\",\"/_next/static/chunks/2im7c515bo69p.js\"],\"OutletBoundary\"]\nc:\"$Sreact.suspense\"\nf:I[97367,[\"/_next/static/chunks/3spz7vbggeheh.js\",\"/_next/static/chunks/2im7c515bo69p.js\"],\"ViewportBoundary\"]\n11:I[97367,[\"/_next/static/chunks/3spz7vbggeheh.js\",\"/_next/static/chunks/2im7c515bo69p.js\"],\"MetadataBoundary\"]\n13:I[68027,[\"/_next/static/chunks/3spz7vbggeheh.js\",\"/_next/static/chunks/2im7c515bo69p.js\"],\"default\",1]\n:HL[\"/_next/static/chunks/3600rb8tdukun.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"c\":[\"\",\"notes\",\"nextjs-analytics-clarity-search-console-b58281\"],\"q\":\"\",\"i\":false,\"f\":[[[\"\",{\"children\":[\"notes\",{\"children\":[[\"slug\",\"nextjs-analytics-clarity-search-console-b58281\",\"d\",null],{\"children\":[\"__PAGE__\",{}]}]}]},\"$undefined\",\"$undefined\",16],[[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/chunks/3600rb8tdukun.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-0\",{\"src\":\"/_next/static/chunks/3spz7vbggeheh.js\",\"async\":true,\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-1\",{\"src\":\"/_next/static/chunks/2im7c515bo69p.js\",\"async\":true,\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"zh-CN\",\"suppressHydrationWarning\":true,\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"script\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"\\n(function() {\\n  try {\\n    // 1. 初始化主题\\n    const savedTheme = localStorage.getItem('theme');\\n    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;\\n    const theme = savedTheme || (prefersDark ? 'dark' : 'light');\\n    document.documentElement.setAttribute('data-theme', theme);\\n\\n    // 2. 初始化语言 (假设默认语言是 'zh')\\n    const savedLang = localStorage.getItem('lang');\\n    if (savedLang \u0026\u0026 savedLang !== 'zh') {\\n      document.documentElement.setAttribute('lang', savedLang);\\n      // 如果不是默认语言，隐藏页面防止闪烁\\n      document.documentElement.style.visibility = 'hidden';\\n    }\\n  } catch (e) {}\\n})();\\n\"}}]}],[\"$\",\"body\",null,{\"children\":[[\"$\",\"$L2\",null,{\"children\":[\"$\",\"$L3\",null,{\"children\":[[\"$\",\"$L4\",null,{}],[\"$\",\"$L5\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L6\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}],[\"$\",\"$L7\",null,{}]]}]}],[[\"$\",\"$L8\",null,{}],[\"$\",\"$L9\",null,{}]]]}]]}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L5\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L6\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L5\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L6\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[\"$La\",[[\"$\",\"script\",\"script-0\",{\"src\":\"/_next/static/chunks/3io6jn7gqayyz.js\",\"async\":true,\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-1\",{\"src\":\"/_next/static/chunks/1mxc0ey88uhq9.js\",\"async\":true,\"nonce\":\"$undefined\"}]],[\"$\",\"$Lb\",null,{\"children\":[\"$\",\"$c\",null,{\"name\":\"Next.MetadataOutlet\",\"children\":\"$@d\"}]}]]}],{},null,false,null]},null,false,\"$@e\"]},null,false,\"$@e\"]},null,false,null],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$Lf\",null,{\"children\":\"$L10\"}],[\"$\",\"div\",null,{\"hidden\":true,\"children\":[\"$\",\"$L11\",null,{\"children\":[\"$\",\"$c\",null,{\"name\":\"Next.Metadata\",\"children\":\"$L12\"}]}]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$13\",[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/chunks/3600rb8tdukun.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]]],\"S\":true,\"h\":null,\"s\":\"$undefined\",\"l\":\"$undefined\",\"p\":\"$undefined\",\"d\":\"$undefined\",\"b\":\"YJmrr7gymIuboZVzlt_a4\"}\n"])</script><script>self.__next_f.push([1,"14:[]\ne:\"$W14\"\n"])</script><script>self.__next_f.push([1,"10:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n"])</script><script>self.__next_f.push([1,"15:I[27201,[\"/_next/static/chunks/3spz7vbggeheh.js\",\"/_next/static/chunks/2im7c515bo69p.js\"],\"IconMark\"]\nd:null\n12:[[\"$\",\"meta\",\"0\",{\"name\":\"google-site-verification\",\"content\":\"OdsoXbZN5yDWQ7Qi0wIhECK2PZ9cxBQT1yISuMb1zFM\"}],[\"$\",\"link\",\"1\",{\"rel\":\"icon\",\"href\":\"/favicon.ico?favicon.2vob68tjqpejf.ico\",\"sizes\":\"256x256\",\"type\":\"image/x-icon\"}],[\"$\",\"$L15\",\"2\",{}]]\n"])</script><script>self.__next_f.push([1,"16:I[30525,[\"/_next/static/chunks/3spz7vbggeheh.js\",\"/_next/static/chunks/2im7c515bo69p.js\",\"/_next/static/chunks/3io6jn7gqayyz.js\",\"/_next/static/chunks/1mxc0ey88uhq9.js\"],\"default\"]\n17:T2e93,"])</script><script>self.__next_f.push([1,"# Next.js 静态网站接入 Google Analytics、Microsoft Clarity 与 Google Search Console\n\n\u003e **项目环境**\n\u003e\n\u003e - Next.js 16（App Router）\n\u003e - TypeScript\n\u003e - GitHub Pages（Static Export）\n\u003e - 无服务端、无数据库\n\n---\n\n# 前言\n\n对于个人博客或者作品集网站来说，仅仅完成页面开发是不够的。\n\n随着网站上线，我们通常还会关注下面几个问题：\n\n- 网站每天有多少人访问？\n- 用户来自哪些国家或地区？\n- 用户是通过 Google 搜索进入，还是 GitHub、掘金、知乎等外部链接进入？\n- 哪些页面最受欢迎？\n- 用户进入页面之后如何操作？\n- Google 是否已经收录我的网站？\n- 哪些文章在 Google 搜索中表现最好？\n\n对于部署在 **GitHub Pages** 上的静态网站来说，由于没有后端，也没有数据库，因此需要借助第三方统计工具来完成这些工作。\n\n目前比较推荐的免费组合为：\n\n- **Google Analytics** —— 网站流量分析\n- **Microsoft Clarity** —— 用户行为分析\n- **Google Search Console** —— 搜索引擎收录与 SEO 分析\n\n三者各自负责不同的内容，组合使用能够形成一套完整的网站数据分析方案。\n\n---\n\n# 三个工具分别解决什么问题？\n\n## Google Analytics\n\n### 定位\n\nGoogle Analytics（简称 GA4）主要负责网站流量统计。\n\n它回答的问题是：\n\n\u003e **网站来了多少人，他们来自哪里，他们访问了哪些页面？**\n\n---\n\n### 可以统计的数据\n\n例如：\n\n- 用户数量（Users）\n- 页面浏览量（Page Views）\n- 实时在线人数\n- 新用户 / 老用户\n- 用户来源（Google、GitHub、Direct、Bing 等）\n- 国家和地区\n- 浏览器\n- 操作系统\n- 设备类型（PC / Mobile）\n- 热门页面\n- 平均停留时间\n- 页面跳出率（部分指标方式与旧版 GA 不同）\n\n---\n\n### 适用场景\n\n例如：\n\n- 博客访问量分析\n- 哪篇文章最受欢迎\n- SEO 带来的流量\n- 用户来源分析\n- 流量增长趋势\n\n---\n\n## Microsoft Clarity\n\n### 定位\n\nMicrosoft Clarity 更关注 **用户行为分析**。\n\n它回答的问题是：\n\n\u003e **用户进入网站之后，是如何浏览和操作页面的？**\n\n---\n\n### 可以查看的数据\n\n#### Heatmap（热力图）\n\n例如：\n\n- 哪个按钮点击最多\n- 用户最关注哪些区域\n- 页面滚动深度\n\n---\n\n#### Session Replay（匿名操作回放）\n\n可以查看用户的浏览过程，例如：\n\n```text\n进入首页\n\n↓\n\n浏览 Hero\n\n↓\n\n点击 Notes\n\n↓\n\n搜索 React\n\n↓\n\n阅读文章\n\n↓\n\n离开网站\n```\n\n---\n\n### 适用场景\n\n例如：\n\n- 页面布局优化\n- 用户体验优化\n- CTA 按钮位置优化\n- 首页内容调整\n- 导航栏设计优化\n\n---\n\n## Google Search Console\n\n### 定位\n\nGoogle Search Console 负责 **搜索引擎分析**。\n\n它回答的问题是：\n\n\u003e **Google 是如何发现、收录和展示我的网站的？**\n\n---\n\n### 可以查看的数据\n\n例如：\n\n- 网站是否被 Google 收录\n- 哪些页面已建立索引\n- Sitemap 是否正常\n- 哪些关键词带来了流量\n- 搜索曝光量（Impressions）\n- 点击次数（Clicks）\n- 点击率（CTR）\n- 平均排名（Average Position）\n- 页面是否存在抓取错误\n\n---\n\n### 适用场景\n\n例如：\n\n- SEO 优化\n- 收录情况检查\n- 搜索关键词分析\n- 页面排名分析\n\n---\n\n# 三者关系\n\n```text\n                       Website\n\n                          │\n      ┌───────────────────┼───────────────────┐\n      │                   │                   │\n      ▼                   ▼                   ▼\n\nGoogle Analytics     Microsoft Clarity   Search Console\n\n      │                   │                   │\n\n   流量统计             行为分析            SEO分析\n```\n\n| 工具                  | 主要作用     |\n| --------------------- | ------------ |\n| Google Analytics      | 网站流量分析 |\n| Microsoft Clarity     | 用户行为分析 |\n| Google Search Console | 搜索引擎分析 |\n\n---\n\n# 一、Google Analytics 接入\n\n## 1. 创建项目\n\n进入：\n\n\u003e https://analytics.google.com/\n\n登录后按步骤创建Analytics账号和媒体资源：\n![image](/notes/next/google-analytics-create.png)\n最后一步选择网站：\n![image](/notes/next/google-analytics-create-finish.png)\n然后配置网址和名称，可选择需要监测的功能：\n![image](/notes/next/google-analytics-create-config.png)\n![image](/notes/next/google-analytics-create-set-func.png)\n创建成功后，会得到：\n`Measurement ID 如：G-XXXXXXXXXX`\n将代码配置到项目中，配置完毕可以点击右上角测试安装是否成功：\n![image](/notes/next/google-analytics-create-config-code.png)\n\n---\n\n## 2. 配置环境变量\n\n创建：\n\n```text\n.env.local\n```\n\n添加：\n\n```env\nNEXT_PUBLIC_GA_ID=G-XXXXXXXXXX\n```\n\n\u003e `NEXT_PUBLIC_` 表示变量会被打包到前端。\n\n---\n\n## 3. 创建组件\n\n```text\nsrc/\n└── components/\n    └── analytics/\n        ├── GoogleAnalytics.tsx\n        ├── Clarity.tsx\n        └── AnalyticsProvider.tsx\n```\n\nGoogleAnalytics.tsx：\n\n```tsx\n\"use client\";\n\nimport Script from \"next/script\";\n\nexport default function GoogleAnalytics() {\n  const id = process.env.NEXT_PUBLIC_GA_ID;\n\n  if (!id) return null;\n\n  return (\n    \u003c\u003e\n      \u003cScript async src={`https://www.googletagmanager.com/gtag/js?id=${id}`} /\u003e\n\n      \u003cScript id=\"google-analytics\"\u003e\n        {`\n          window.dataLayer = window.dataLayer || [];\n\n          function gtag(){\n            dataLayer.push(arguments);\n          }\n\n          gtag('js', new Date());\n\n          gtag('config', '${id}');\n        `}\n      \u003c/Script\u003e\n    \u003c/\u003e\n  );\n}\n```\n\n---\n\n## 4. AnalyticsProvider\n\n```tsx\nimport GoogleAnalytics from \"./GoogleAnalytics\";\nimport Clarity from \"./Clarity\";\n\nexport default function AnalyticsProvider() {\n  return (\n    \u003c\u003e\n      \u003cGoogleAnalytics /\u003e\n      \u003cClarity /\u003e\n    \u003c/\u003e\n  );\n}\n```\n\n---\n\n## 5. layout.tsx\n\n```tsx\n\u003cbody\u003e\n  \u003cThemeProvider\u003e\n    \u003cLanguageProvider\u003e\n      \u003cNavbar /\u003e\n      {children}\n      \u003cScrollToTop /\u003e\n    \u003c/LanguageProvider\u003e\n  \u003c/ThemeProvider\u003e\n\n  \u003cAnalyticsProvider /\u003e\n\u003c/body\u003e\n```\n\nAnalytics 不依赖 Theme 或 Language，因此建议放在 Provider 外部。\n\n---\n\n## 6. 验证\n\n后台等待一段时间即可看到实时数据。\n![image](/notes/next/google-analytics-dashboard.png)\n\n---\n\n# 二、Microsoft Clarity 接入\n\n## 1. 创建项目\n\n进入：\n\n\u003e https://clarity.microsoft.com/\n\n创建：\n\n```text\nNew Project\n```\n\n填写：\n\n```text\nProject Name\n\nWebsite URL\n```\n\n创建完成后获得：\n\n```text\nProject ID\n\n例如：\n\nxmagxst674\n```\n\n---\n\n创建的步骤类似Google，最后也会给一段代码，配置完成后等待一段时间后可查看监控面板：\n![image](/notes/next/microsoft-clarity-dashboard.png)\n\n---\n\n## 2. 配置环境变量\n\n```env\nNEXT_PUBLIC_CLARITY_ID=xmagxst674\n```\n\n---\n\n## 3. 创建 Clarity.tsx\n\n```tsx\n\"use client\";\n\nimport Script from \"next/script\";\n\nexport default function Clarity() {\n  const id = process.env.NEXT_PUBLIC_CLARITY_ID;\n\n  if (!id) return null;\n\n  return (\n    \u003c\u003e\n      \u003cScript id=\"clarity-init\" strategy=\"afterInteractive\"\u003e\n        {`\n          window.clarity = window.clarity || function () {\n            (window.clarity.q = window.clarity.q || []).push(arguments);\n          };\n        `}\n      \u003c/Script\u003e\n\n      \u003cScript\n        id=\"clarity-loader\"\n        strategy=\"afterInteractive\"\n        src={`https://www.clarity.ms/tag/${id}`}\n      /\u003e\n    \u003c/\u003e\n  );\n}\n```\n\n---\n\n## 为什么拆成两个 Script？\n\n官方脚本实际上做了两件事情。\n\n### 第一步\n\n创建：\n\n```javascript\nwindow.clarity = function () {};\n```\n\n### 第二步\n\n加载：\n\n```text\nclarity.ms/tag/projectId\n```\n\n正确顺序：\n\n```text\n创建 window.clarity\n\n↓\n\n加载 SDK\n\n↓\n\nSDK 调用 window.clarity()\n```\n\n如果初始化顺序错误，会出现：\n\n```sh\nTypeError: a[c] is not a function\n```\n\n这是本文实践过程中遇到的一个问题。\n\n---\n\n## 如何验证\n\n浏览器 Console：\n\n```javascript\ntypeof window.clarity;\n```\n\n应该输出：\n\n```text\nfunction\n```\n\nNetwork：\n\n```text\nclarity.ms\n\nscripts.clarity.ms\n```\n\n都应该返回 200。\n\n---\n\n## Clarity 可以看到哪些内容？\n\n例如：\n\n- Heatmap\n- Session Replay\n- 点击位置\n- 页面滚动深度\n- 页面停留时间\n\n---\n\n# 三、Google Search Console 接入\n\n## 1. 创建站点\n\n进入：\n\n\u003e https://search.google.com/search-console\n\n选择：\n\n```text\nURL Prefix\n```\n\n填写：\n\n```text\nhttps://xxx.xxx\n```\n\n---\n\n## 2. 网站验证\n\nGoogle 提供：\n\n```html\n\u003cmeta name=\"google-site-verification\" content=\"xxxxxxxx\" /\u003e\n```\n\n---\n\n## 3. Next.js 推荐方式\n\nApp Router 推荐使用 Metadata API：\n\n```tsx\nimport type { Metadata } from \"next\";\n\nexport const metadata: Metadata = {\n  verification: {\n    google: \"xxxxxxxx\",\n  },\n};\n```\n\n不需要手动写 `\u003cmeta\u003e`。\n\n---\n\n## 4. 提交 Sitemap\n\n推荐安装：\n\n```text\nnext-sitemap\n```\n\n生成：\n\n```text\nsitemap.xml\n\nrobots.txt\n```\n\n然后提交给：\n\n```text\nSearch Console\n```\n\n---\n\n# 四、关于 GitHub Pages\n\nGitHub Pages 可以正常使用：\n\n- Google Analytics\n- Microsoft Clarity\n- Google Search Console\n\n原因很简单。\n\n这些工具本质上都是：\n\n```text\n浏览器执行 JavaScript\n\n↓\n\n发送统计数据\n\n↓\n\n平台后台分析\n```\n\n因此：\n\n**不需要服务器。**\n\n---\n\n# 五、为什么 Cloudflare Web Analytics 无法使用？\n\n本文项目部署地址：\n\n```text\nhttps://lpkshuai.github.io\n```\n\n属于：\n\n```text\nGitHub Pages 子域名\n```\n\nCloudflare Web Analytics 当前更倾向于：\n\n```text\nCloudflare 管理的独立域名\n```\n\n因此：\n\n```text\nNo active websites found\n```\n\n属于正常情况。\n\n如果以后购买：\n\n```text\nlpkshuai.com\n\n或者\n\nlpk.dev\n```\n\n并接入 Cloudflare DNS，即可启用 Cloudflare Web Analytics。\n\n---\n\n# 六、环境变量是否安全？\n\n很多人担心：\n\n```text\nNEXT_PUBLIC_GA_ID\n\nNEXT_PUBLIC_CLARITY_ID\n```\n\n会不会泄露。\n\n答案：\n\n**不会。**\n\n因为：\n\nGoogle Analytics ID\n\n和\n\nClarity Project ID\n\n本来就是公开信息。\n\n浏览器访问页面时，本身就可以看到这些 ID。\n\n真正不能暴露的是：\n\n- API Key\n- Secret\n- Token\n- Database Password\n- OpenAI Key\n- GitHub Token\n\n这些只能放在服务端。\n\n---\n\n# 七、部署后如何验证？\n\nGoogle Analytics：\n\n```text\nRealtime\n\n↓\n\n查看是否出现在线用户\n```\n\nMicrosoft Clarity：\n\n```text\nDashboard\n\n↓\n\n等待几分钟\n\n↓\n\n查看 Session\n```\n\nSearch Console：\n\n```text\nPages\n\n↓\n\nIndexed\n```\n\n查看是否建立索引。\n\n---\n\n# 八、后续推荐优化\n\n完成基础统计后，可以继续添加：\n\n## Event Tracking\n\n例如：\n\n- 点击 Enter Lab\n- 点击 GitHub\n- 下载简历\n- 打开某篇文章\n- 搜索 Notes\n\n这样可以进一步分析：\n\n- 哪个按钮点击最多\n- 哪篇文章最受欢迎\n- 用户最关注哪些内容\n\n---\n\n## SEO\n\n建议继续完善：\n\n- title\n- description\n- Open Graph\n- Twitter Card\n- JSON-LD\n- canonical\n- sitemap\n- robots.txt\n\n进一步提升搜索引擎表现。\n\n---\n\n# 总结\n\n对于基于 Next.js 的个人技术博客，推荐采用以下组合：\n\n| 工具                  | 作用           | 推荐程度   |\n| --------------------- | -------------- | ---------- |\n| Google Analytics 4    | 网站流量分析   | ⭐⭐⭐⭐⭐ |\n| Microsoft Clarity     | 用户行为分析   | ⭐⭐⭐⭐⭐ |\n| Google Search Console | SEO 与搜索分析 | ⭐⭐⭐⭐⭐ |\n\n三者结合后，可以完整回答以下几个问题：\n\n```text\n用户从哪里来？\n\n↓\n\n浏览了哪些页面？\n\n↓\n\n如何操作页面？\n\n↓\n\n通过哪些关键词找到网站？\n\n↓\n\nGoogle 是否成功收录网站？\n```\n\n对于部署在 GitHub Pages 上的静态博客，这是一套免费、轻量且功能完善的网站分析解决方案，也是现代前端项目中非常常见的一套实践方案。\n"])</script><script>self.__next_f.push([1,"a:[\"$\",\"main\",null,{\"className\":\"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30\",\"children\":[\"$\",\"$L16\",null,{\"note\":{\"slug\":\"nextjs-analytics-clarity-search-console-b58281\",\"title\":\"Next.js 静态网站接入 Google Analytics、Microsoft Clarity 与 Google Search Console\",\"category\":\"Next.js\",\"type\":\"guide\",\"description\":\"记录 Next.js 静态网站（GitHub Pages）接入 Google Analytics、Microsoft Clarity 和 Google Search Console 的完整实践，包括流量统计、用户行为分析、SEO 配置、环境变量管理以及常见问题排查。\",\"status\":\"published\",\"tags\":[\"Next.js\",\"GitHub Pages\",\"Google Analytics\",\"Microsoft Clarity\",\"Google Search Console\",\"Analytics\",\"SEO\",\"Performance\"],\"source\":{\"label\":\"Cnblogs\",\"url\":\"https://www.cnblogs.com/lpkshuai\"},\"updatedAt\":\"2026-07-16\",\"readingTime\":\"5 min read\",\"content\":\"$17\"}}]}]\n"])</script></body></html>

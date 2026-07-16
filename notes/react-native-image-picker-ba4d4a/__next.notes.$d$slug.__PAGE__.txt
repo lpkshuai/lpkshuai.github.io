@@ -143,7 +143,7 @@ export default App;
 </details>
 
 > 可以搭配 react-native-permissions 手动控制权限获取。
-0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"react-native-image-picker-ba4d4a","title":"使用 react-native-image-picker 实现选择或拍照上传图片","category":"ReactNative","type":"snippet","description":"react native 项目使用 react-native-image-picker 实现选择或拍照上传图片。","status":"published","tags":["RN","image-picker","camera"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-07-09","readingTime":"1 min read","content":"$3"}}]}],["$L4","$L5"],"$L6"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"G_LbfZH8sAPRazOXQQ4Rt"}
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"react-native-image-picker-ba4d4a","title":"使用 react-native-image-picker 实现选择或拍照上传图片","category":"ReactNative","type":"snippet","description":"react native 项目使用 react-native-image-picker 实现选择或拍照上传图片。","status":"published","tags":["RN","image-picker","camera"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-07-09","readingTime":"1 min read","content":"$3"}}]}],["$L4","$L5"],"$L6"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"YJmrr7gymIuboZVzlt_a4"}
 4:["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true}]
 5:["$","script","script-1",{"src":"/_next/static/chunks/1mxc0ey88uhq9.js","async":true}]
 6:["$","$L7",null,{"children":["$","$8",null,{"name":"Next.MetadataOutlet","children":"$@9"}]}]
