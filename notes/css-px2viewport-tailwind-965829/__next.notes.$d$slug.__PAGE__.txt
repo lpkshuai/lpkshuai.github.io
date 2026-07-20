@@ -1,0 +1,59 @@
+1:"$Sreact.fragment"
+2:I[30525,["/_next/static/chunks/3spz7vbggeheh.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3io6jn7gqayyz.js","/_next/static/chunks/1mxc0ey88uhq9.js"],"default"]
+4:I[97367,["/_next/static/chunks/3spz7vbggeheh.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
+5:"$Sreact.suspense"
+3:T4bc,**问题描述：postcss-px-to-viewport-8-plugin无法将tailwindcss设置的尺寸样式转换成vw单位。**
+
+**解决：添加设置 `mediaQuery: true`**
+
+示例：
+
+```js
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
+import { resolve } from "path";
+import tailwindcss from "@tailwindcss/vite";
+import AutoImport from "unplugin-auto-import/vite";
+import Components from "unplugin-vue-components/vite";
+import { VantResolver } from "@vant/auto-import-resolver";
+import px2viewport from "postcss-px-to-viewport-8-plugin";
+
+// https://vite.dev/config/
+export default defineConfig({
+  base: "./",
+  plugins: [
+    vue(),
+    tailwindcss(),
+    AutoImport({
+      resolvers: [VantResolver()],
+    }),
+    Components({
+      resolvers: [VantResolver()],
+    }),
+  ],
+  css: {
+    postcss: {
+      plugins: [
+        px2viewport({
+          unitToConvert: "px",
+          viewportWidth: 375,
+          unitPrecision: 3,
+          viewportUnit: "vw",
+          mediaQuery: true,
+          // exclude: /node_modules\/vant/i,
+        }),
+      ],
+    },
+  },
+  resolve: {
+    alias: [
+      {
+        find: "@",
+        replacement: resolve(__dirname, "src"),
+      },
+    ],
+  },
+});
+```
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"css-px2viewport-tailwind-965829","title":"postcss-px-to-viewport-8-plugin无法转换tailwindcss样式问题","category":"CSS","type":"debugging","description":"记录postcss-px-to-viewport-8-plugin无法转换tailwindcss样式问题。","status":"published","tags":["CSS","postcss-px-to-viewport","tailwind"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2025-09-08","readingTime":"1 min read","content":"$3"}}]}],[["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/1mxc0ey88uhq9.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"jafOW6bnmi-rtPDoIH1Ih"}
+6:null

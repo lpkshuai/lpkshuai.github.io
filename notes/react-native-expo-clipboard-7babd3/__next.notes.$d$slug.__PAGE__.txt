@@ -1,0 +1,60 @@
+1:"$Sreact.fragment"
+2:I[30525,["/_next/static/chunks/3spz7vbggeheh.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3io6jn7gqayyz.js","/_next/static/chunks/1mxc0ey88uhq9.js"],"default"]
+4:I[97367,["/_next/static/chunks/3spz7vbggeheh.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
+5:"$Sreact.suspense"
+3:T4e3,### 1. 安装
+
+```sh
+npx expo install expo-clipboard
+```
+
+### 2. 使用
+
+```jsx
+import * as React from "react";
+import { View, Text, Button, StyleSheet } from "react-native";
+import * as Clipboard from "expo-clipboard";
+
+export default function App() {
+  const [copiedText, setCopiedText] = React.useState("");
+
+  const copyToClipboard = async () => {
+    await Clipboard.setStringAsync("hello world");
+  };
+
+  const fetchCopiedText = async () => {
+    const text = await Clipboard.getStringAsync();
+    setCopiedText(text);
+  };
+
+  return (
+    <View style={styles.container}>
+      <Button
+        title="Click here to copy to Clipboard"
+        onPress={copyToClipboard}
+      />
+      <Button title="View copied text" onPress={fetchCopiedText} />
+      <Text style={styles.copiedText}>{copiedText}</Text>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  copiedText: {
+    marginTop: 10,
+    color: "red",
+  },
+});
+```
+
+### 3. 链接
+
+[expo clipboard 官方文档](https://docs.expo.dev/versions/latest/sdk/clipboard/ "expo clipboard 官方文档")
+[expo-clipboard npm 地址](https://www.npmjs.com/package/expo-clipboard "expo-clipboard npm 地址")
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"react-native-expo-clipboard-7babd3","title":"react native 使用 Expo Clipboard 复制内容到剪切板","category":"ReactNative","type":"snippet","description":"react native 使用 Expo Clipboard 复制内容到剪切板。","status":"published","tags":["RN","Expo","Clipboard"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2024-01-18","readingTime":"1 min read","content":"$3"}}]}],[["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/1mxc0ey88uhq9.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"jafOW6bnmi-rtPDoIH1Ih"}
+6:null
