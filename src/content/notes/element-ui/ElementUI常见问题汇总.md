@@ -1,0 +1,136 @@
+---
+slug: element-problem-record
+title: ElementUI常见问题汇总
+category: Vue
+type: debugging
+description: 一些ElementUI使用过程中常见的问题汇总。
+status: published
+tags: Vue, Element
+updatedAt: 2022-07-30
+---
+
+## el-table
+
+1.表格元素全部居中
+
+```jsx
+  :header-cell-style="{'text-align':'center'}"
+  :cell-style="{'text-align':'center'}"
+```
+
+2.表格元素部分居中
+
+```jsx
+align = "center";
+```
+
+3.数据回显toggleRowSelection失效问题
+
+```js
+comeBackfromEidt() {
+  let id = parseInt(this.$route.params.id);
+  this.items.forEach(x => {
+    if (x.id == id) {
+      this.$nextTick(() => {
+        this.$refs.multipleTable.toggleRowSelection(x, true);
+      });
+    }
+  });
+}
+```
+
+4.多个表格切换数据混合问题：给el-table添加 `key`
+
+## el-form
+
+1.el-form-item 使用v-if 表单校验失效问题 给v-if元素添加 `key`，直接改用v-show 会导致隐藏元素也参与表单校验
+2.el-form 只有一个按钮,阻止提交事件 `@submit.native.prevent`
+
+## el-input
+
+1.el-input/其它组件 change事件传参：
+
+```jsx
+  @change="((val)=>{changeStatus(val, index)})"
+```
+
+## el-input-number
+
+1.输入数字类型，保留小数位
+
+```jsx
+<el-input-number
+  v-model.trim="xxx"
+  :min="0"
+  :controls="false"
+  :precision="3"
+></el-input-number>
+```
+
+## el-select
+
+1.下拉框中的箭头居中
+
+```css
+:deep(.el-input__icon) {
+  line-height: normal;
+}
+```
+
+2.数据绑定对象时选项显示全部选中问题
+
+```jsx
+  <el-select v-model="value" placeholder="请选择" value-key="id">
+    <el-option
+      v-for="item in options"
+      :key="item.id"
+      :label="item.label"
+      :value="item.value">
+    </el-option>
+  </el-select>
+```
+
+![image](/notes/element-ui/el-select-value-key.png)
+
+## el-menu
+
+1.菜单项匹配路由高亮状态
+
+```jsx
+  <el-submenu index="/home/myProject">
+    <el-menu-item index="/home/myProject/xxx" class="tx-c">xxx</el-menu-item>
+  <el-submenu/>
+
+  // 让菜单项匹配路由时应添加下面两项属性配置
+  :default-active="activeMenu"
+  router
+  // 然后设置activeMenu
+  computed: {
+    activeMenu() {
+      const route = this.$route;
+      const { meta, path } = route;
+      if (meta.matchPath) {
+        return meta.matchPath;
+      } else {
+        return path;
+      }
+    },
+  }
+  // 想让所有二级菜单都对应同一个父级菜单高亮，在路由里设置meta即可
+  meta: {
+    matchPath: '/home/myProject/xxx', // 匹配到父级路径
+  }
+```
+
+## el-drawer
+
+1.遮罩层页面跳转不关闭 设置 `:modal-append-to-body="false"`
+
+## el-dialog
+
+1.el-dialog 里使用 `el-tabs` 时设置 `destroy-on-close=true` 会导致页面卡死
+
+## el-date-picker
+
+1.禁止选择今天以后的日期
+[点此查看](https://www.cnblogs.com/lpkshuai/p/17430979.html "点此查看")
