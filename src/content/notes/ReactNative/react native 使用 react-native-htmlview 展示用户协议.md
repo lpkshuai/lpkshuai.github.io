@@ -1,0 +1,145 @@
+---
+slug: react-native-htmlview
+title: 使用 react-native-htmlview 展示用户协议
+category: ReactNative
+type: snippet
+description: react native 使用 react-native-htmlview 展示用户协议。
+status: published
+tags: React Native, react-native-htmlview, Agreement
+updatedAt: 2024-06-18
+---
+
+## 1. 安装 react-native-htmlview
+
+[react-native-htmlview 仓库地址](https://github.com/jsdf/react-native-htmlview "react-native-htmlview 仓库地址")
+
+安装：
+`npm install react-native-htmlview --save`
+
+## 2. 将隐私协议word转html格式
+
+使用在线转换工具，如：
+[word2cleanhtml 工具在线](https://word2cleanhtml.com/ "word2cleanhtml 工具在线")
+
+## 3. 渲染协议html
+
+**示例代码**
+
+```jsx
+<ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+  <View style={styles.contentBox}>
+    <HTMLView value={data} stylesheet={styles} />
+  </View>
+</ScrollView>
+```
+
+> value为html代码
+> stylesheet为html中设置的样式
+> 其他属性可以查看文档
+
+<details>
+<summary>点击查看示例</summary>
+
+```js
+const data = `<p style="box-sizing: border-box; outline: 0px; margin: 0px 0px 16px; padding: 0px; font-size: 16px; color: rgb(77, 77, 77); overflow: auto hidden; font-synthesis-style: auto; overflow-wrap: break-word; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif, SimHei, SimSun; background-color: rgb(255, 255, 255); user-select: auto !important; line-height: 24px !important;">用户协议：</p><p style="box-sizing: border-box; outline: 0px; margin: 0px 0px 16px; padding: 0px; font-size: 16px; color: rgb(77, 77, 77); overflow: auto hidden; font-synthesis-style: auto; overflow-wrap: break-word; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif, SimHei, SimSun; background-color: rgb(255, 255, 255); user-select: auto !important; line-height: 24px !important;"></p><p style="box-sizing: border-box; outline: 0px; margin: 0px 0px 16px; padding: 0px; font-size: 16px; color: rgb(77, 77, 77); overflow: auto hidden; font-synthesis-style: auto; overflow-wrap: break-word; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif, SimHei, SimSun; background-color: rgb(255, 255, 255); user-select: auto !important; line-height: 24px !important;">为使用本软件及服务，您应当阅读并遵守《本软件许可协议》（以下简称（本协议）。请您务必审慎阅读，从分理解各条款内容，特别是免除或者限制责任的条款，以及开通或使用某项服务的单独协议，并选择接受或不接受。限制，免责条款可能以加粗形式提示您注意。</p><p style="box-sizing: border-box; outline: 0px; margin: 0px 0px 16px; padding: 0px; font-size: 16px; color: rgb(77, 77, 77); overflow: auto hidden; font-synthesis-style: auto; overflow-wrap: break-word; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif, SimHei, SimSun; background-color: rgb(255, 255, 255); user-select: auto !important; line-height: 24px !important;">除非您已阅读并接受本协议所有条款，否则您无权下载，安装或使用本软件及相关服务。您的下载，安装，登录等使用行为即视为您已阅读并同意上述协议的约束。 如果您未满18周岁，请在法定监护人的陪同下阅读本协议及其他上述协议，并特别注意未成年人使用条款。</p><p style="box-sizing: border-box; outline: 0px; margin: 0px 0px 16px; padding: 0px; font-size: 16px; color: rgb(77, 77, 77); overflow: auto hidden; font-synthesis-style: auto; overflow-wrap: break-word; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif, SimHei, SimSun; background-color: rgb(255, 255, 255); user-select: auto !important; line-height: 24px !important;"></p><p style="box-sizing: border-box; outline: 0px; margin: 0px 0px 16px; padding: 0px; font-size: 16px; color: rgb(77, 77, 77); overflow: auto hidden; font-synthesis-style: auto; overflow-wrap: break-word; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif, SimHei, SimSun; background-color: rgb(255, 255, 255); user-select: auto !important; line-height: 24px !important;">一， 协议的范围</p><p style="box-sizing: border-box; outline: 0px; margin: 0px 0px 16px; padding: 0px; font-size: 16px; color: rgb(77, 77, 77); overflow: auto hidden; font-synthesis-style: auto; overflow-wrap: break-word; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif, SimHei, SimSun; background-color: rgb(255, 255, 255); user-select: auto !important; line-height: 24px !important;">本协议是您与本软件之间关于您下载，安装，使用，复制本软件，以及使用本软件相关服务所订立的协议。</p><p style="box-sizing: border-box; outline: 0px; margin: 0px 0px 16px; padding: 0px; font-size: 16px; color: rgb(77, 77, 77); overflow: auto hidden; font-synthesis-style: auto; overflow-wrap: break-word; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif, SimHei, SimSun; background-color: rgb(255, 255, 255); user-select: auto !important; line-height: 24px !important;"></p><p style="box-sizing: border-box; outline: 0px; margin: 0px 0px 16px; padding: 0px; font-size: 16px; color: rgb(77, 77, 77); overflow: auto hidden; font-synthesis-style: auto; overflow-wrap: break-word; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif, SimHei, SimSun; background-color: rgb(255, 255, 255); user-select: auto !important; line-height: 24px !important;">二， 关于本服务</p><p style="box-sizing: border-box; outline: 0px; margin: 0px 0px 16px; padding: 0px; font-size: 16px; color: rgb(77, 77, 77); overflow: auto hidden; font-synthesis-style: auto; overflow-wrap: break-word; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif, SimHei, SimSun; background-color: rgb(255, 255, 255); user-select: auto !important; line-height: 24px !important;">本服务内容是指本软件客户端软件提供包括但不限于IOS及Android等多个版本，您必须选择与所安装手机相匹配的软件版本。</p>`;
+```
+
+</details>
+
+**完整示例如下**
+
+<details>
+<summary>点击查看代码</summary>
+
+```jsx
+import { ScrollView, Text, View, StyleSheet } from "react-native";
+import React, { useState, useEffect } from "react";
+
+import { MyStyleSheet, dp2px } from "../../utils/MyStyleSheet";
+
+import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
+const Tab = createMaterialTopTabNavigator();
+import HTMLView from "react-native-htmlview";
+
+import agreementData from "../../assets/files/agreement";
+
+function Agreement({ route }) {
+  const { initialRouteName } = route?.params || "UserAgreement";
+
+  return (
+    <View style={styles.container}>
+      <Tab.Navigator
+        initialRouteName={initialRouteName}
+        tabBarOptions={{
+          inactiveTintColor: "#666",
+          activeTintColor: "#4589FF",
+          indicatorStyle: {
+            backgroundColor: "#4589FF", // 下划线的颜色
+            // width: 33, // 下划线的长度
+          },
+          labelStyle: {
+            fontSize: dp2px(15),
+          },
+          tabStyle: {
+            padding: 0,
+          },
+        }}
+      >
+        <Tab.Screen
+          name="UserAgreement"
+          component={UserAgreement}
+          options={{ title: "用戶使用協議" }}
+        />
+        <Tab.Screen
+          name="PrivacyAgreement"
+          component={PrivacyAgreement}
+          options={{ title: "隱私協議" }}
+        />
+      </Tab.Navigator>
+    </View>
+  );
+}
+
+function UserAgreement() {
+  return (
+    <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+      <View style={styles.contentBox}>
+        <HTMLView value={agreementData.user} stylesheet={styles2} />
+      </View>
+    </ScrollView>
+  );
+}
+function PrivacyAgreement() {
+  return (
+    <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+      <View style={styles.contentBox}>
+        <HTMLView value={agreementData.privacy} stylesheet={styles2} />
+      </View>
+    </ScrollView>
+  );
+}
+
+const styles = MyStyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#FBFBFB",
+  },
+  contentBox: {
+    flex: 1,
+    backgroundColor: "#FBFBFB",
+    paddingHorizontal: 18,
+    paddingVertical: 13,
+  },
+});
+
+const styles2 = StyleSheet.create({
+  p: {
+    color: "#333",
+    // lineHeight: 23,
+  },
+});
+
+export default Agreement;
+```
+
+</details>
