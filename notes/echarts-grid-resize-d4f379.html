@@ -1,0 +1,559 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/chunks/2bf3uj_dh_i7j.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/0g6rrfd8-h0li.js"/><script src="/_next/static/chunks/0paxexg6-m0de.js" async=""></script><script src="/_next/static/chunks/35ewwwnf5l9ft.js" async=""></script><script src="/_next/static/chunks/1iri0dtwr3300.js" async=""></script><script src="/_next/static/chunks/turbopack-2j_gdzvj_uvko.js" async=""></script><script src="/_next/static/chunks/3spz7vbggeheh.js" async=""></script><script src="/_next/static/chunks/2im7c515bo69p.js" async=""></script><script src="/_next/static/chunks/3io6jn7gqayyz.js" async=""></script><script src="/_next/static/chunks/1mxc0ey88uhq9.js" async=""></script><link rel="preload" href="https://www.googletagmanager.com/gtag/js?id=G-4HJSHPTHV1" as="script"/><link rel="preload" href="https://www.clarity.ms/tag/xmagxst674" as="script"/><meta name="google-site-verification" content="OdsoXbZN5yDWQ7Qi0wIhECK2PZ9cxBQT1yISuMb1zFM"/><link rel="icon" href="/favicon.ico?favicon.2vob68tjqpejf.ico" sizes="256x256" type="image/x-icon"/><script>
+(function() {
+  try {
+    // 1. 初始化主题
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+
+    // 2. 初始化语言 (假设默认语言是 'zh')
+    const savedLang = localStorage.getItem('lang');
+    if (savedLang && savedLang !== 'zh') {
+      document.documentElement.setAttribute('lang', savedLang);
+      // 如果不是默认语言，隐藏页面防止闪烁
+      document.documentElement.style.visibility = 'hidden';
+    }
+  } catch (e) {}
+})();
+</script><script src="/_next/static/chunks/0cz1d0mv5g_q7.js" noModule=""></script></head><body><div hidden=""><!--$--><!--/$--></div><header class="sticky top-0 z-50 border-b border-white/6 bg-white/2 backdrop-blur-md"><div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6"><a class="group relative flex items-center gap-3 px-1 py-1 overflow-visible z-50" href="/"><div class="absolute -top-6 left-0 right-0 bottom-0 pointer-events-none overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-300"><div class="absolute bottom-0 left-3 w-[2px] h-8 bg-linear-to-t from-transparent to-(--accent) translate-y-0 group-hover:-translate-y-16 transition-transform duration-700 ease-out"></div><div class="absolute bottom-0 left-7 w-px h-6 bg-linear-to-t from-transparent to-(--accent-strong) translate-y-0 group-hover:-translate-y-20 transition-transform duration-1000 ease-out delay-75"></div></div><div class="relative flex size-8 items-center justify-center rounded border border-(--accent-strong) bg-(--panel) shadow-[0_0_10px_rgba(56,189,248,0.15)] transition-all duration-300 group-hover:border-(--accent) group-hover:shadow-[0_0_15px_var(--accent)] overflow-hidden"><span class="font-mono text-[10px] font-black text-(--accent-strong) transition-all duration-300 group-hover:-translate-y-8 group-hover:opacity-0">LV</span><span class="absolute font-mono text-[10px] font-black text-(--accent) translate-y-8 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 group-hover:animate-pulse">UP!</span></div><div class="flex flex-col justify-center"><div class="flex items-baseline gap-1.5"><span class="font-mono text-sm font-black tracking-[0.15em] text-(--foreground) transition-colors duration-300 group-hover:text-(--accent)">PERSONAL LAB</span><span class="text-[10px] font-mono text-(--foreground-dim) opacity-0 scale-50 transition-all duration-300 group-hover:opacity-100 group-hover:scale-100 group-hover:text-(--accent) group-hover:animate-bounce">▲</span></div><div class="mt-1 h-1 w-28 rounded-full bg-(--panel-border) overflow-hidden border border-white/5"><div class="h-full w-[70%] bg-linear-to-r from-(--accent-strong) to-(--accent) transition-all duration-500 ease-out group-hover:w-full group-hover:animate-pulse"></div></div></div></a><div class="flex items-center gap-4 md:gap-6 z-50"><nav class="hidden sm:block" aria-label="Primary navigation"><ul class="flex items-center mr-6 gap-4 font-mono text-sm font-bold uppercase tracking-widest"><li><a class="group relative py-2 transition-colors text-(--foreground-muted) hover:text-(--foreground)" href="/">首页<span class="absolute bottom-0 left-0 h-0.5 bg-(--accent) transition-all duration-300 w-0 group-hover:w-full"></span></a></li><li><a class="group relative py-2 transition-colors text-(--accent)" href="/notes">笔记<span class="absolute bottom-0 left-0 h-0.5 bg-(--accent) transition-all duration-300 w-full shadow-[0_0_8px_var(--accent)]"></span></a></li><li><a class="group relative py-2 transition-colors text-(--foreground-muted) hover:text-(--foreground)" href="/lab">实验室<span class="absolute bottom-0 left-0 h-0.5 bg-(--accent) transition-all duration-300 w-0 group-hover:w-full"></span></a></li><li><a class="group relative py-2 transition-colors text-(--foreground-muted) hover:text-(--foreground)" href="/about">关于<span class="absolute bottom-0 left-0 h-0.5 bg-(--accent) transition-all duration-300 w-0 group-hover:w-full"></span></a></li></ul></nav><div class="flex items-center gap-2"><div class="size-8"></div><button aria-label="Switch language" class="group flex size-8 items-center justify-center rounded-full bg-(--panel)/40 ring-1 ring-transparent transition-all duration-300 hover:bg-(--panel) hover:ring-(--accent)/50 active:scale-95"><span class="font-serif text-[12px] font-bold text-(--foreground-muted) transition-colors duration-300 group-hover:text-(--accent)"></span></button></div><button class="flex size-8 flex-col items-center justify-center gap-1.5 sm:hidden relative z-50"><span class="block h-[2px] w-6 bg-(--foreground) transition-all duration-300 "></span><span class="block h-[2px] w-6 bg-(--foreground) transition-all duration-300 "></span><span class="block h-[2px] w-6 bg-(--foreground) transition-all duration-300 "></span></button></div></div></header><div class="fixed inset-0 z-40 flex flex-col items-center justify-center bg-(--background)/98 backdrop-blur-2xl transition-all duration-500 sm:hidden opacity-0 pointer-events-none scale-105"><nav class="flex flex-col items-center gap-8 font-mono tracking-widest uppercase"><a class="text-4xl font-black transition-all duration-300 hover:scale-110 text-(--foreground-dim) hover:text-(--foreground)" style="transition-delay:0ms;transform:translateY(20px);opacity:0" href="/">首页</a><a class="text-4xl font-black transition-all duration-300 hover:scale-110 text-(--accent) drop-shadow-[0_0_15px_var(--accent)]" style="transition-delay:0ms;transform:translateY(20px);opacity:0" href="/notes">笔记</a><a class="text-4xl font-black transition-all duration-300 hover:scale-110 text-(--foreground-dim) hover:text-(--foreground)" style="transition-delay:0ms;transform:translateY(20px);opacity:0" href="/lab">实验室</a><a class="text-4xl font-black transition-all duration-300 hover:scale-110 text-(--foreground-dim) hover:text-(--foreground)" style="transition-delay:0ms;transform:translateY(20px);opacity:0" href="/about">关于</a></nav><div class="absolute bottom-10 font-mono text-[10px] text-(--foreground-dim) transition-opacity duration-700 delay-500 opacity-0">SYSTEM_NAV_OVERRIDE_ACTIVE // [AWAITING_INPUT]</div></div><main class="mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30"><a class="group inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-(--foreground-dim) transition-colors hover:text-(--accent)" href="/notes/archive"><span class="transition-transform group-hover:-translate-x-1">◄</span>RETURN_TO_ARCHIVE / 返回图鉴</a><header class="mt-8 border-b border-dashed border-(--panel-border) pb-10"><div class="flex flex-wrap items-center gap-2 text-xs"><span class="border border-(--accent)/30 bg-(--accent-bg) px-2 py-0.5 font-bold uppercase tracking-widest text-(--accent) shadow-sm">Echarts</span><span class="text-(--foreground-dim)">// <!-- -->总结复盘</span><span class="flex shrink-0 items-center gap-1.5 border border-(--panel-border) px-2 py-0.5 uppercase tracking-wider text-(--foreground-muted)"><span class="h-1.5 w-1.5 animate-pulse rounded-full bg-(--accent)"></span>已发布</span></div><h1 class="mt-5 text-4xl font-extrabold tracking-tight text-(--foreground) md:text-5xl">一次 grid 布局导致的echarts resize失效的记录</h1><p class="mt-4 max-w-2xl text-base leading-8 text-(--foreground-muted)">一次 grid 布局导致的echarts resize失效的记录。</p><div class="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-[11px] uppercase tracking-widest text-(--foreground-dim)"><time dateTime="2025-06-25">更新于<!-- -->: <!-- -->2025-06-25</time><span class="flex items-center gap-1.5"><svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>1 min read</span><a href="https://www.cnblogs.com/lpkshuai" target="_blank" rel="noreferrer" class="text-(--foreground-muted) transition-colors hover:text-(--accent)">来源<!-- -->: <!-- -->Cnblogs<!-- --> ↗</a></div><div class="mt-5 flex flex-wrap gap-3"><span class="text-[10px] text-(--foreground-muted) transition-colors hover:text-(--accent-strong)"><span class="mr-0.5 opacity-50">#</span>Echarts</span><span class="text-[10px] text-(--foreground-muted) transition-colors hover:text-(--accent-strong)"><span class="mr-0.5 opacity-50">#</span>grid</span></div></header><article class="mt-10"><div class="prose prose-invert max-w-none space-y-6"><h3 class=" pt-3 text-xl font-semibold text-foreground ">1. 问题背景：</h3>
+<p class=" leading-8 text-foreground-muted ">页面使用grid布局分成三列，前两列分别占1fr宽度，第三列固定450px宽度。开始只写了第一列的内容，页面缩放时图表可以正常resize，但是在开始写第二列图表时，缩放页面发现第一列宽度正常缩小，但是第二列的宽度不会自动缩小，要手动刷新页面才可以。</p>
+<p class=" leading-8 text-foreground-muted "><strong>页面主要布局结构如下：</strong></p>
+<div class=" overflow-hidden rounded-lg border " style="background-color:var(--panel);border-color:var(--panel-border)"><pre class=" overflow-x-auto p-4 text-sm leading-7 "><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;grid gap-10px grid-cols-3&quot;</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- 第一列内容 --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>// ... 原有内容 ...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+  <span class="hljs-comment">&lt;!-- 第二列内容 --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>// ... 原有内容 ...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+  <span class="hljs-comment">&lt;!-- 第三列保持固定宽度 --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre></div>
+<!-- -->页面缩小后的效果图：（中间列宽度没有按预期缩小，左侧列被挤压）<br/>
+<figure class=" my-6 overflow-hidden rounded-xl border " style="background-color:var(--panel);border-color:var(--panel-border)"><img src="/notes/echarts/echarts-resize-grid-error.png" alt="image" loading="lazy" class=" mx-auto max-w-full cursor-zoom-in transition hover:scale-[1.01] "/><figcaption class=" border-t px-4 py-3 text-sm text-foreground-dim " style="border-color:var(--panel-border)">image</figcaption></figure>
+<h3 class=" pt-3 text-xl font-semibold text-foreground ">2. 修复问题：</h3>
+<div class=" overflow-hidden rounded-lg border " style="background-color:var(--panel);border-color:var(--panel-border)"><pre class=" overflow-x-auto p-4 text-sm leading-7 "><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;grid gap-10px grid-cols-[minmax(0,1fr)_minmax(0,1fr)_450px]&quot;</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- 第一列 --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>// ... 原有内容 ...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+  <span class="hljs-comment">&lt;!-- 第二列 --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>// ... 原有内容 ...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+  <span class="hljs-comment">&lt;!-- 第三列保持固定宽度 --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre></div>
+<!-- -->修改后的效果图：（一、二列宽度一致且正常缩小，三列固定宽度不变）<br/>
+<figure class=" my-6 overflow-hidden rounded-xl border " style="background-color:var(--panel);border-color:var(--panel-border)"><img src="/notes/echarts/echarts-resize-grid-fix.png" alt="image" loading="lazy" class=" mx-auto max-w-full cursor-zoom-in transition hover:scale-[1.01] "/><figcaption class=" border-t px-4 py-3 text-sm text-foreground-dim " style="border-color:var(--panel-border)">image</figcaption></figure>
+<blockquote class=" border-l-2 border-(--accent) pl-4 text-foreground-muted ">
+<p class=" leading-8 text-foreground-muted ">使用 minmax(0,1fr) 替代简单的 1fr，防止内容溢出导致的布局问题。</p>
+</blockquote>
+<h3 class=" pt-3 text-xl font-semibold text-foreground ">3. 完整代码（仅用于参考）</h3>
+<details>
+<summary>点此可查看完整内容代码</summary>
+<div class=" overflow-hidden rounded-lg border " style="background-color:var(--panel);border-color:var(--panel-border)"><pre class=" overflow-x-auto p-4 text-sm leading-7 "><code class="hljs language-jsx">&lt;template&gt;
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;h-full p-20px box-border&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex items-center mb-20px&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">el-button-group</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;mr-20px&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span>
+          <span class="hljs-attr">plain</span>
+          <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;item in dateList&quot;</span>
+          <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;item.value&quot;</span>
+          <span class="hljs-attr">:class</span>=<span class="hljs-string">&quot;{
+            &#x27;active-btn&#x27;: currentDate === item.value,
+          }&quot;</span>
+          @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;dateChange(item.value)&quot;</span>
+        &gt;</span>
+          {{ item.label }}
+        <span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">el-button-group</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;w-260px&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">el-date-picker</span>
+          <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;dateSelectValue&quot;</span>
+          <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;daterange&quot;</span>
+          <span class="hljs-attr">range-separator</span>=<span class="hljs-string">&quot;至&quot;</span>
+          <span class="hljs-attr">start-placeholder</span>=<span class="hljs-string">&quot;开始日期&quot;</span>
+          <span class="hljs-attr">end-placeholder</span>=<span class="hljs-string">&quot;结束日期&quot;</span>
+        /&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;grid gap-10px grid-cols-[1fr_1fr_450px]&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;card&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;card-title&quot;</span>&gt;</span>工单统计<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;card-list flex flex-wrap&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;item in orderList&quot;</span> <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;item.name&quot;</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">:src</span>=<span class="hljs-string">&quot;item.icon&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;h-40px mr-10px&quot;</span> /&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex flex-col&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>{{ item.name }}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+                  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;font-bold text-20px&quot;</span>&gt;</span>{{ item.value }}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> 张
+                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;card&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;card-title&quot;</span>&gt;</span>报告任务统计<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;card-list grid grid-cols-2&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;item in reportList&quot;</span> <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;item.name&quot;</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">:src</span>=<span class="hljs-string">&quot;item.icon&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;h-40px mr-10px&quot;</span> /&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex flex-col&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>{{ item.name }}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+                  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;font-bold text-20px&quot;</span>&gt;</span>{{ item.value }}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> 个
+                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;card&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;card-title&quot;</span>&gt;</span>告警统计<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;card-list grid grid-cols-2&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;item in alarmList&quot;</span> <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;item.name&quot;</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">:src</span>=<span class="hljs-string">&quot;item.icon&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;h-40px mr-10px&quot;</span> /&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex flex-col&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>{{ item.name }}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+                  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;font-bold text-20px&quot;</span>&gt;</span>{{ item.value }}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> 个
+                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;card&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;card-title&quot;</span>&gt;</span>任务统计<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">&quot;taskChart&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;h-300px&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;card&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;card-title&quot;</span>&gt;</span>工单状态分布<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">&quot;orderStatusChart&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;h-300px&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;card&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;card-title&quot;</span>&gt;</span>报告任务状态分布<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">&quot;reportStatusChart&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;h-300px&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;card&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;card-title&quot;</span>&gt;</span>告警等级分布<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">&quot;alarmLevelChart&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;h-300px&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+&lt;/template&gt;
+
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">setup</span>&gt;</span><span class="javascript">
+<span class="hljs-keyword">import</span> { ref, getCurrentInstance, reactive, onMounted, nextTick } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;vue&quot;</span>;
+
+<span class="hljs-keyword">import</span> <span class="hljs-title class_">Header</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@/components/Header.vue&quot;</span>;
+<span class="hljs-keyword">import</span> { useUserStore } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@/stores/userStore&quot;</span>;
+<span class="hljs-keyword">const</span> userStore = <span class="hljs-title function_">useUserStore</span>();
+<span class="hljs-keyword">import</span> useVueRouter <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@/hooks/useRouter&quot;</span>;
+<span class="hljs-keyword">const</span> { goBack, jumpPage } = <span class="hljs-title function_">useVueRouter</span>();
+
+<span class="hljs-keyword">import</span> useChart <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@/utils/useChart&quot;</span>;
+
+<span class="hljs-keyword">const</span> {
+  <span class="hljs-attr">proxy</span>: { $api },
+} = <span class="hljs-title function_">getCurrentInstance</span>();
+
+<span class="hljs-keyword">const</span> dateList = <span class="hljs-title function_">ref</span>([
+  {
+    <span class="hljs-attr">label</span>: <span class="hljs-string">&quot;今天&quot;</span>,
+    <span class="hljs-attr">value</span>: <span class="hljs-string">&quot;1&quot;</span>,
+  },
+  {
+    <span class="hljs-attr">label</span>: <span class="hljs-string">&quot;近一周&quot;</span>,
+    <span class="hljs-attr">value</span>: <span class="hljs-string">&quot;2&quot;</span>,
+  },
+  {
+    <span class="hljs-attr">label</span>: <span class="hljs-string">&quot;近一个月&quot;</span>,
+    <span class="hljs-attr">value</span>: <span class="hljs-string">&quot;3&quot;</span>,
+  },
+]);
+<span class="hljs-keyword">const</span> currentDate = <span class="hljs-title function_">ref</span>(<span class="hljs-string">&quot;1&quot;</span>);
+<span class="hljs-keyword">const</span> dateSelectValue = <span class="hljs-title function_">ref</span>(<span class="hljs-string">&quot;&quot;</span>);
+
+<span class="hljs-keyword">const</span> <span class="hljs-title function_">dateChange</span> = (<span class="hljs-params">val</span>) =&gt; {
+  currentDate.<span class="hljs-property">value</span> = val;
+};
+
+<span class="hljs-keyword">const</span> allIcon = <span class="hljs-keyword">new</span> <span class="hljs-title function_">URL</span>(<span class="hljs-string">&quot;@/assets/images/icon1.png&quot;</span>, <span class="hljs-keyword">import</span>.<span class="hljs-property">meta</span>.<span class="hljs-property">url</span>).<span class="hljs-property">href</span>;
+<span class="hljs-keyword">const</span> finishIcon = <span class="hljs-keyword">new</span> <span class="hljs-title function_">URL</span>(<span class="hljs-string">&quot;@/assets/images/icon2.png&quot;</span>, <span class="hljs-keyword">import</span>.<span class="hljs-property">meta</span>.<span class="hljs-property">url</span>).<span class="hljs-property">href</span>;
+<span class="hljs-keyword">const</span> waitIcon = <span class="hljs-keyword">new</span> <span class="hljs-title function_">URL</span>(<span class="hljs-string">&quot;@/assets/images/icon3.png&quot;</span>, <span class="hljs-keyword">import</span>.<span class="hljs-property">meta</span>.<span class="hljs-property">url</span>).<span class="hljs-property">href</span>;
+<span class="hljs-keyword">const</span> processIcon = <span class="hljs-keyword">new</span> <span class="hljs-title function_">URL</span>(<span class="hljs-string">&quot;@/assets/images/icon4.png&quot;</span>, <span class="hljs-keyword">import</span>.<span class="hljs-property">meta</span>.<span class="hljs-property">url</span>).<span class="hljs-property">href</span>;
+<span class="hljs-keyword">const</span> overtimeIcon = <span class="hljs-keyword">new</span> <span class="hljs-title function_">URL</span>(<span class="hljs-string">&quot;@/assets/images/icon5.png&quot;</span>, <span class="hljs-keyword">import</span>.<span class="hljs-property">meta</span>.<span class="hljs-property">url</span>).<span class="hljs-property">href</span>;
+<span class="hljs-keyword">const</span> orderList = <span class="hljs-title function_">ref</span>([
+  {
+    <span class="hljs-attr">icon</span>: allIcon,
+    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;累计工单&quot;</span>,
+    <span class="hljs-attr">value</span>: <span class="hljs-number">310</span>,
+  },
+  {
+    <span class="hljs-attr">icon</span>: finishIcon,
+    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;已处理工单&quot;</span>,
+    <span class="hljs-attr">value</span>: <span class="hljs-number">270</span>,
+  },
+  {
+    <span class="hljs-attr">icon</span>: waitIcon,
+    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;待处理&quot;</span>,
+    <span class="hljs-attr">value</span>: <span class="hljs-number">40</span>,
+  },
+  {
+    <span class="hljs-attr">icon</span>: processIcon,
+    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;处理中&quot;</span>,
+    <span class="hljs-attr">value</span>: <span class="hljs-number">4</span>,
+  },
+  {
+    <span class="hljs-attr">icon</span>: overtimeIcon,
+    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;超时工单&quot;</span>,
+    <span class="hljs-attr">value</span>: <span class="hljs-number">40</span>,
+  },
+]);
+<span class="hljs-keyword">const</span> reportList = <span class="hljs-title function_">ref</span>([
+  {
+    <span class="hljs-attr">icon</span>: allIcon,
+    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;累计历史报告任务&quot;</span>,
+    <span class="hljs-attr">value</span>: <span class="hljs-number">314</span>,
+  },
+  {
+    <span class="hljs-attr">icon</span>: finishIcon,
+    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;已处理任务报告&quot;</span>,
+    <span class="hljs-attr">value</span>: <span class="hljs-number">40</span>,
+  },
+  {
+    <span class="hljs-attr">icon</span>: processIcon,
+    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;处理中任务报告&quot;</span>,
+    <span class="hljs-attr">value</span>: <span class="hljs-number">270</span>,
+  },
+  {
+    <span class="hljs-attr">icon</span>: waitIcon,
+    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;待处理任务报告&quot;</span>,
+    <span class="hljs-attr">value</span>: <span class="hljs-number">4</span>,
+  },
+]);
+<span class="hljs-keyword">const</span> alarmList = <span class="hljs-title function_">ref</span>([
+  {
+    <span class="hljs-attr">icon</span>: allIcon,
+    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;累计历史告警&quot;</span>,
+    <span class="hljs-attr">value</span>: <span class="hljs-number">88</span>,
+  },
+  {
+    <span class="hljs-attr">icon</span>: overtimeIcon,
+    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;高风险告警&quot;</span>,
+    <span class="hljs-attr">value</span>: <span class="hljs-number">12</span>,
+  },
+  {
+    <span class="hljs-attr">icon</span>: processIcon,
+    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;中风险告警&quot;</span>,
+    <span class="hljs-attr">value</span>: <span class="hljs-number">23</span>,
+  },
+  {
+    <span class="hljs-attr">icon</span>: finishIcon,
+    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;低风险告警&quot;</span>,
+    <span class="hljs-attr">value</span>: <span class="hljs-number">53</span>,
+  },
+]);
+
+<span class="hljs-keyword">const</span> taskChart = <span class="hljs-title function_">ref</span>(<span class="hljs-literal">null</span>);
+<span class="hljs-keyword">const</span> { <span class="hljs-attr">setOption</span>: setTaskOption } = <span class="hljs-title function_">useChart</span>(taskChart, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>);
+
+<span class="hljs-keyword">const</span> orderStatusChart = <span class="hljs-title function_">ref</span>(<span class="hljs-literal">null</span>);
+<span class="hljs-keyword">const</span> { <span class="hljs-attr">setOption</span>: setOrderStatusOption } = <span class="hljs-title function_">useChart</span>(
+  orderStatusChart,
+  <span class="hljs-literal">true</span>,
+  <span class="hljs-literal">false</span>
+);
+
+<span class="hljs-keyword">const</span> reportStatusChart = <span class="hljs-title function_">ref</span>(<span class="hljs-literal">null</span>);
+<span class="hljs-keyword">const</span> { <span class="hljs-attr">setOption</span>: setReportStatusOption } = <span class="hljs-title function_">useChart</span>(
+  reportStatusChart,
+  <span class="hljs-literal">true</span>,
+  <span class="hljs-literal">false</span>
+);
+
+<span class="hljs-keyword">const</span> alarmLevelChart = <span class="hljs-title function_">ref</span>(<span class="hljs-literal">null</span>);
+<span class="hljs-keyword">const</span> { <span class="hljs-attr">setOption</span>: setAlarmLevelOption } = <span class="hljs-title function_">useChart</span>(
+  alarmLevelChart,
+  <span class="hljs-literal">true</span>,
+  <span class="hljs-literal">false</span>
+);
+
+<span class="hljs-title function_">onMounted</span>(<span class="hljs-function">() =&gt;</span> {
+  <span class="hljs-title function_">initTaskChart</span>();
+  <span class="hljs-title function_">initOrderStatusChart</span>();
+  <span class="hljs-title function_">initReportStatusChart</span>();
+  <span class="hljs-title function_">initAlarmLevelChart</span>();
+  <span class="hljs-comment">// window.addEventListener(&quot;resize&quot;, () =&gt; {</span>
+  <span class="hljs-comment">//   taskChart.value?.resize();</span>
+  <span class="hljs-comment">//   orderStatusChart.value?.resize();</span>
+  <span class="hljs-comment">//   reportStatusChart.value?.resize();</span>
+  <span class="hljs-comment">//   alarmLevelChart.value?.resize();</span>
+  <span class="hljs-comment">// });</span>
+});
+<span class="hljs-keyword">const</span> <span class="hljs-title function_">initTaskChart</span> = (<span class="hljs-params"></span>) =&gt; {
+  <span class="hljs-keyword">const</span> option = {
+    <span class="hljs-attr">tooltip</span>: {
+      <span class="hljs-attr">trigger</span>: <span class="hljs-string">&quot;axis&quot;</span>,
+      <span class="hljs-attr">axisPointer</span>: {
+        <span class="hljs-comment">// Use axis to trigger tooltip</span>
+        <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;shadow&quot;</span>, <span class="hljs-comment">// &#x27;shadow&#x27; as default; can also be &#x27;line&#x27; or &#x27;shadow&#x27;</span>
+      },
+    },
+    <span class="hljs-attr">legend</span>: {},
+    <span class="hljs-attr">grid</span>: {
+      <span class="hljs-attr">left</span>: <span class="hljs-string">&quot;3%&quot;</span>,
+      <span class="hljs-attr">right</span>: <span class="hljs-string">&quot;4%&quot;</span>,
+      <span class="hljs-attr">bottom</span>: <span class="hljs-string">&quot;3%&quot;</span>,
+      <span class="hljs-attr">containLabel</span>: <span class="hljs-literal">true</span>,
+    },
+    <span class="hljs-attr">xAxis</span>: {
+      <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;value&quot;</span>,
+    },
+    <span class="hljs-attr">yAxis</span>: {
+      <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;category&quot;</span>,
+      <span class="hljs-attr">data</span>: [<span class="hljs-string">&quot;巡检&quot;</span>, <span class="hljs-string">&quot;配置&quot;</span>, <span class="hljs-string">&quot;变更&quot;</span>, <span class="hljs-string">&quot;发布&quot;</span>, <span class="hljs-string">&quot;事件&quot;</span>],
+    },
+    <span class="hljs-attr">series</span>: [
+      {
+        <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;执行中&quot;</span>,
+        <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;bar&quot;</span>,
+        <span class="hljs-attr">stack</span>: <span class="hljs-string">&quot;total&quot;</span>,
+        <span class="hljs-attr">label</span>: {
+          <span class="hljs-attr">show</span>: <span class="hljs-literal">true</span>,
+        },
+        <span class="hljs-attr">emphasis</span>: {
+          <span class="hljs-attr">focus</span>: <span class="hljs-string">&quot;series&quot;</span>,
+        },
+        <span class="hljs-attr">itemStyle</span>: {
+          <span class="hljs-attr">color</span>: <span class="hljs-string">&quot;#5299fb&quot;</span>,
+        },
+        <span class="hljs-attr">data</span>: [<span class="hljs-number">23</span>, <span class="hljs-number">31</span>, <span class="hljs-number">67</span>, <span class="hljs-number">24</span>, <span class="hljs-number">56</span>],
+      },
+      {
+        <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;已完成&quot;</span>,
+        <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;bar&quot;</span>,
+        <span class="hljs-attr">stack</span>: <span class="hljs-string">&quot;total&quot;</span>,
+        <span class="hljs-attr">label</span>: {
+          <span class="hljs-attr">show</span>: <span class="hljs-literal">true</span>,
+        },
+        <span class="hljs-attr">emphasis</span>: {
+          <span class="hljs-attr">focus</span>: <span class="hljs-string">&quot;series&quot;</span>,
+        },
+        <span class="hljs-attr">itemStyle</span>: {
+          <span class="hljs-attr">color</span>: <span class="hljs-string">&quot;#31de7a&quot;</span>,
+        },
+        <span class="hljs-attr">data</span>: [<span class="hljs-number">17</span>, <span class="hljs-number">69</span>, <span class="hljs-number">45</span>, <span class="hljs-number">46</span>, <span class="hljs-number">74</span>],
+      },
+    ],
+  };
+  <span class="hljs-title function_">setTaskOption</span>(option);
+};
+<span class="hljs-keyword">const</span> <span class="hljs-title function_">initOrderStatusChart</span> = (<span class="hljs-params"></span>) =&gt; {
+  <span class="hljs-keyword">const</span> option = {
+    <span class="hljs-attr">tooltip</span>: {
+      <span class="hljs-attr">trigger</span>: <span class="hljs-string">&quot;item&quot;</span>,
+    },
+    <span class="hljs-attr">series</span>: [
+      {
+        <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;状态&quot;</span>,
+        <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;pie&quot;</span>,
+        <span class="hljs-attr">radius</span>: [<span class="hljs-string">&quot;40%&quot;</span>, <span class="hljs-string">&quot;70%&quot;</span>],
+        <span class="hljs-attr">avoidLabelOverlap</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-attr">color</span>: [<span class="hljs-string">&quot;#ff9900&quot;</span>, <span class="hljs-string">&quot;#5299fb&quot;</span>, <span class="hljs-string">&quot;#31de7a&quot;</span>],
+        <span class="hljs-attr">label</span>: {
+          <span class="hljs-attr">show</span>: <span class="hljs-literal">true</span>,
+          <span class="hljs-attr">position</span>: <span class="hljs-string">&quot;outside&quot;</span>,
+          <span class="hljs-attr">formatter</span>: <span class="hljs-string">&quot;{a|{b}，{c}\n{d}%}&quot;</span>,
+          <span class="hljs-attr">rich</span>: {
+            <span class="hljs-attr">a</span>: {
+              <span class="hljs-attr">align</span>: <span class="hljs-string">&quot;left&quot;</span>,
+              <span class="hljs-attr">lineHeight</span>: <span class="hljs-number">20</span>,
+            },
+          },
+        },
+        <span class="hljs-comment">// labelLine: {</span>
+        <span class="hljs-comment">//   normal: {</span>
+        <span class="hljs-comment">//     length: 15,</span>
+        <span class="hljs-comment">//     length2: 30,</span>
+        <span class="hljs-comment">//     lineStyle: {</span>
+        <span class="hljs-comment">//       width: 1,</span>
+        <span class="hljs-comment">//     },</span>
+        <span class="hljs-comment">//   },</span>
+        <span class="hljs-comment">// },</span>
+        <span class="hljs-attr">data</span>: [
+          { <span class="hljs-attr">value</span>: <span class="hljs-number">40</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;待处理&quot;</span> },
+          { <span class="hljs-attr">value</span>: <span class="hljs-number">23</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;处理中&quot;</span> },
+          { <span class="hljs-attr">value</span>: <span class="hljs-number">270</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;已处理&quot;</span> },
+        ],
+      },
+    ],
+  };
+  <span class="hljs-title function_">setOrderStatusOption</span>(option);
+};
+<span class="hljs-keyword">const</span> <span class="hljs-title function_">initReportStatusChart</span> = (<span class="hljs-params"></span>) =&gt; {
+  <span class="hljs-keyword">const</span> option = {
+    <span class="hljs-attr">title</span>: [
+      {
+        <span class="hljs-attr">text</span>: <span class="hljs-string">&quot;报告任务&quot;</span>,
+        <span class="hljs-attr">x</span>: <span class="hljs-string">&quot;50%&quot;</span>,
+        <span class="hljs-attr">y</span>: <span class="hljs-string">&quot;43%&quot;</span>,
+        <span class="hljs-attr">textAlign</span>: <span class="hljs-string">&quot;center&quot;</span>,
+        <span class="hljs-attr">textStyle</span>: {
+          <span class="hljs-attr">fontSize</span>: <span class="hljs-string">&quot;14&quot;</span>,
+          <span class="hljs-attr">fontWeight</span>: <span class="hljs-string">&quot;normal&quot;</span>,
+          <span class="hljs-attr">color</span>: <span class="hljs-string">&quot;#7F8D9D&quot;</span>,
+          <span class="hljs-attr">textAlign</span>: <span class="hljs-string">&quot;center&quot;</span>,
+        },
+      },
+      {
+        <span class="hljs-attr">text</span>: <span class="hljs-string">&quot;310条&quot;</span>,
+        <span class="hljs-attr">left</span>: <span class="hljs-string">&quot;50%&quot;</span>,
+        <span class="hljs-attr">top</span>: <span class="hljs-string">&quot;52%&quot;</span>,
+        <span class="hljs-attr">textAlign</span>: <span class="hljs-string">&quot;center&quot;</span>,
+        <span class="hljs-attr">textStyle</span>: {
+          <span class="hljs-attr">fontSize</span>: <span class="hljs-string">&quot;18&quot;</span>,
+          <span class="hljs-attr">color</span>: <span class="hljs-string">&quot;#5c5a68&quot;</span>,
+          <span class="hljs-attr">textAlign</span>: <span class="hljs-string">&quot;center&quot;</span>,
+        },
+      },
+    ],
+    <span class="hljs-attr">tooltip</span>: {
+      <span class="hljs-attr">trigger</span>: <span class="hljs-string">&quot;item&quot;</span>,
+    },
+    <span class="hljs-attr">legend</span>: {
+      <span class="hljs-attr">top</span>: <span class="hljs-string">&quot;0&quot;</span>,
+      <span class="hljs-attr">left</span>: <span class="hljs-string">&quot;60%&quot;</span>,
+    },
+    <span class="hljs-attr">series</span>: [
+      {
+        <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;状态&quot;</span>,
+        <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;pie&quot;</span>,
+        <span class="hljs-attr">radius</span>: [<span class="hljs-string">&quot;40%&quot;</span>, <span class="hljs-string">&quot;51%&quot;</span>],
+        <span class="hljs-attr">avoidLabelOverlap</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-attr">padAngle</span>: <span class="hljs-number">5</span>,
+        <span class="hljs-attr">itemStyle</span>: {
+          <span class="hljs-attr">borderRadius</span>: <span class="hljs-number">10</span>,
+        },
+        <span class="hljs-attr">color</span>: [<span class="hljs-string">&quot;#5299fb&quot;</span>, <span class="hljs-string">&quot;#31de7a&quot;</span>],
+        <span class="hljs-attr">label</span>: {
+          <span class="hljs-attr">show</span>: <span class="hljs-literal">true</span>,
+          <span class="hljs-attr">position</span>: <span class="hljs-string">&quot;outside&quot;</span>,
+          <span class="hljs-attr">formatter</span>: <span class="hljs-string">&quot;{a|{b}，{c}}&quot;</span>,
+          <span class="hljs-attr">rich</span>: {
+            <span class="hljs-attr">a</span>: {
+              <span class="hljs-attr">align</span>: <span class="hljs-string">&quot;left&quot;</span>,
+              <span class="hljs-attr">lineHeight</span>: <span class="hljs-number">20</span>,
+            },
+          },
+        },
+        <span class="hljs-attr">itemStyle</span>: {
+          <span class="hljs-attr">borderRadius</span>: <span class="hljs-number">100</span>,
+          <span class="hljs-attr">shadowColor</span>: <span class="hljs-string">&quot;#e8effa&quot;</span>,
+          <span class="hljs-attr">shadowBlur</span>: <span class="hljs-number">0</span>,
+          <span class="hljs-attr">shadowOffsetY</span>: <span class="hljs-number">0</span>,
+          <span class="hljs-attr">shadowOffsetX</span>: <span class="hljs-number">0</span>,
+          <span class="hljs-attr">borderColor</span>: <span class="hljs-string">&quot;#e8effa&quot;</span>,
+          <span class="hljs-attr">borderWidth</span>: <span class="hljs-number">4</span>,
+        },
+        <span class="hljs-attr">data</span>: [
+          { <span class="hljs-attr">value</span>: <span class="hljs-number">270</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;处理中&quot;</span> },
+          { <span class="hljs-attr">value</span>: <span class="hljs-number">40</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;已处理&quot;</span> },
+        ],
+      },
+    ],
+  };
+  <span class="hljs-title function_">setReportStatusOption</span>(option);
+};
+<span class="hljs-keyword">const</span> <span class="hljs-title function_">initAlarmLevelChart</span> = (<span class="hljs-params"></span>) =&gt; {
+  <span class="hljs-keyword">const</span> option = {
+    <span class="hljs-attr">tooltip</span>: {
+      <span class="hljs-attr">trigger</span>: <span class="hljs-string">&quot;item&quot;</span>,
+    },
+    <span class="hljs-attr">series</span>: [
+      {
+        <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;等级&quot;</span>,
+        <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;pie&quot;</span>,
+        <span class="hljs-comment">// radius: [&quot;40%&quot;, &quot;70%&quot;],</span>
+        <span class="hljs-attr">avoidLabelOverlap</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-attr">color</span>: [<span class="hljs-string">&quot;#f05a28&quot;</span>, <span class="hljs-string">&quot;#ff9900&quot;</span>, <span class="hljs-string">&quot;#5299fb&quot;</span>],
+        <span class="hljs-attr">label</span>: {
+          <span class="hljs-attr">show</span>: <span class="hljs-literal">true</span>,
+          <span class="hljs-attr">position</span>: <span class="hljs-string">&quot;outside&quot;</span>,
+          <span class="hljs-attr">formatter</span>: <span class="hljs-string">&quot;{a|{b}，{c}\n{d}%}&quot;</span>,
+          <span class="hljs-attr">rich</span>: {
+            <span class="hljs-attr">a</span>: {
+              <span class="hljs-attr">align</span>: <span class="hljs-string">&quot;left&quot;</span>,
+              <span class="hljs-attr">lineHeight</span>: <span class="hljs-number">20</span>,
+            },
+          },
+        },
+        <span class="hljs-attr">data</span>: [
+          { <span class="hljs-attr">value</span>: <span class="hljs-number">12</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;高风险&quot;</span> },
+          { <span class="hljs-attr">value</span>: <span class="hljs-number">23</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;中风险&quot;</span> },
+          { <span class="hljs-attr">value</span>: <span class="hljs-number">53</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;低风险&quot;</span> },
+        ],
+      },
+    ],
+  };
+  <span class="hljs-title function_">setAlarmLevelOption</span>(option);
+};
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span>
+
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="css">
+<span class="hljs-selector-class">.el-button</span>,
+:<span class="hljs-built_in">deep</span>(.el-input__wrapper) {
+  <span class="hljs-attribute">background-color</span>: transparent;
+}
+:<span class="hljs-built_in">deep</span>(.el-date-editor.el-input),
+:<span class="hljs-built_in">deep</span>(.el-date-editor.el-input__wrapper) {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">260px</span>;
+}
+<span class="hljs-selector-class">.active-btn</span> {
+  <span class="hljs-attribute">border-color</span>: <span class="hljs-number">#409eff</span> <span class="hljs-meta">!important</span>;
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#409eff</span> <span class="hljs-meta">!important</span>;
+  <span class="hljs-attribute">z-index</span>: <span class="hljs-number">1</span>;
+}
+<span class="hljs-selector-class">.card</span> {
+  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">box-sizing</span>: border-box;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#fbfbfb</span>;
+}
+<span class="hljs-selector-class">.card-title</span> {
+  <span class="hljs-attribute">position</span>: relative;
+  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">padding-left</span>: <span class="hljs-number">15px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span>;
+  <span class="hljs-attribute">font-weight</span>: bold;
+}
+<span class="hljs-selector-class">.card-title</span><span class="hljs-selector-pseudo">::before</span> {
+  <span class="hljs-attribute">content</span>: <span class="hljs-string">&quot;&quot;</span>;
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">left</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">4px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#409eff</span>;
+}
+<span class="hljs-selector-class">.card-list</span> <span class="hljs-selector-tag">li</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">align-items</span>: center;
+  <span class="hljs-attribute">min-width</span>: <span class="hljs-number">180px</span>;
+  <span class="hljs-attribute">max-width</span>: <span class="hljs-number">200px</span>;
+  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">8px</span>;
+  <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">&quot;../../assets/images/card-bg.svg&quot;</span>);
+  <span class="hljs-attribute">background-size</span>: cover;
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#3d5063</span>;
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></span>
+
+</code></pre></div>
+</details></div></article></main><!--$--><!--/$--><button aria-label="返回顶部" class="fixed bottom-6 right-6 z-50 group flex size-8 items-center justify-center overflow-hidden rounded border border-(--panel-border) bg-(--panel) text-(--foreground-muted) transition-all duration-300 hover:border-(--accent) hover:text-(--accent) hover:shadow-[0_0_15px_var(--accent)] active:scale-90 translate-y-10 opacity-0 pointer-events-none"><span class="absolute left-0 top-0 size-1.5 border-b border-r border-(--accent) opacity-0 transition-opacity group-hover:opacity-100"></span><span class="absolute bottom-0 right-0 size-1.5 border-l border-t border-(--accent) opacity-0 transition-opacity group-hover:opacity-100"></span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-up size-5 transition-transform duration-300 group-hover:-translate-y-0.5" aria-hidden="true"><path d="m18 15-6-6-6 6"></path></svg></button><script src="/_next/static/chunks/0g6rrfd8-h0li.js" id="_R_" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[75144,[\"/_next/static/chunks/3spz7vbggeheh.js\",\"/_next/static/chunks/2im7c515bo69p.js\"],\"ThemeProvider\"]\n3:I[11110,[\"/_next/static/chunks/3spz7vbggeheh.js\",\"/_next/static/chunks/2im7c515bo69p.js\"],\"LanguageProvider\"]\n4:I[45678,[\"/_next/static/chunks/3spz7vbggeheh.js\",\"/_next/static/chunks/2im7c515bo69p.js\"],\"default\"]\n5:I[39756,[\"/_next/static/chunks/3spz7vbggeheh.js\",\"/_next/static/chunks/2im7c515bo69p.js\"],\"default\"]\n6:I[37457,[\"/_next/static/chunks/3spz7vbggeheh.js\",\"/_next/static/chunks/2im7c515bo69p.js\"],\"default\"]\n7:I[63687,[\"/_next/static/chunks/3spz7vbggeheh.js\",\"/_next/static/chunks/2im7c515bo69p.js\"],\"default\"]\n8:I[26817,[\"/_next/static/chunks/3spz7vbggeheh.js\",\"/_next/static/chunks/2im7c515bo69p.js\"],\"default\"]\n9:I[51274,[\"/_next/static/chunks/3spz7vbggeheh.js\",\"/_next/static/chunks/2im7c515bo69p.js\"],\"default\"]\nb:I[97367,[\"/_next/static/chunks/3spz7vbggeheh.js\",\"/_next/static/chunks/2im7c515bo69p.js\"],\"OutletBoundary\"]\nc:\"$Sreact.suspense\"\nf:I[97367,[\"/_next/static/chunks/3spz7vbggeheh.js\",\"/_next/static/chunks/2im7c515bo69p.js\"],\"ViewportBoundary\"]\n11:I[97367,[\"/_next/static/chunks/3spz7vbggeheh.js\",\"/_next/static/chunks/2im7c515bo69p.js\"],\"MetadataBoundary\"]\n13:I[68027,[\"/_next/static/chunks/3spz7vbggeheh.js\",\"/_next/static/chunks/2im7c515bo69p.js\"],\"default\",1]\n:HL[\"/_next/static/chunks/2bf3uj_dh_i7j.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"c\":[\"\",\"notes\",\"echarts-grid-resize-d4f379\"],\"q\":\"\",\"i\":false,\"f\":[[[\"\",{\"children\":[\"notes\",{\"children\":[[\"slug\",\"echarts-grid-resize-d4f379\",\"d\",null],{\"children\":[\"__PAGE__\",{}]}]}]},\"$undefined\",\"$undefined\",16],[[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/chunks/2bf3uj_dh_i7j.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-0\",{\"src\":\"/_next/static/chunks/3spz7vbggeheh.js\",\"async\":true,\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-1\",{\"src\":\"/_next/static/chunks/2im7c515bo69p.js\",\"async\":true,\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"zh-CN\",\"suppressHydrationWarning\":true,\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"script\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"\\n(function() {\\n  try {\\n    // 1. 初始化主题\\n    const savedTheme = localStorage.getItem('theme');\\n    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;\\n    const theme = savedTheme || (prefersDark ? 'dark' : 'light');\\n    document.documentElement.setAttribute('data-theme', theme);\\n\\n    // 2. 初始化语言 (假设默认语言是 'zh')\\n    const savedLang = localStorage.getItem('lang');\\n    if (savedLang \u0026\u0026 savedLang !== 'zh') {\\n      document.documentElement.setAttribute('lang', savedLang);\\n      // 如果不是默认语言，隐藏页面防止闪烁\\n      document.documentElement.style.visibility = 'hidden';\\n    }\\n  } catch (e) {}\\n})();\\n\"}}]}],[\"$\",\"body\",null,{\"children\":[[\"$\",\"$L2\",null,{\"children\":[\"$\",\"$L3\",null,{\"children\":[[\"$\",\"$L4\",null,{}],[\"$\",\"$L5\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L6\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}],[\"$\",\"$L7\",null,{}]]}]}],[[\"$\",\"$L8\",null,{}],[\"$\",\"$L9\",null,{}]]]}]]}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L5\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L6\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L5\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L6\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[\"$La\",[[\"$\",\"script\",\"script-0\",{\"src\":\"/_next/static/chunks/3io6jn7gqayyz.js\",\"async\":true,\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-1\",{\"src\":\"/_next/static/chunks/1mxc0ey88uhq9.js\",\"async\":true,\"nonce\":\"$undefined\"}]],[\"$\",\"$Lb\",null,{\"children\":[\"$\",\"$c\",null,{\"name\":\"Next.MetadataOutlet\",\"children\":\"$@d\"}]}]]}],{},null,false,null]},null,false,\"$@e\"]},null,false,\"$@e\"]},null,false,null],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$Lf\",null,{\"children\":\"$L10\"}],[\"$\",\"div\",null,{\"hidden\":true,\"children\":[\"$\",\"$L11\",null,{\"children\":[\"$\",\"$c\",null,{\"name\":\"Next.Metadata\",\"children\":\"$L12\"}]}]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$13\",[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/chunks/2bf3uj_dh_i7j.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]]],\"S\":true,\"h\":null,\"s\":\"$undefined\",\"l\":\"$undefined\",\"p\":\"$undefined\",\"d\":\"$undefined\",\"b\":\"cd6PZPVGbS8L5Pw_K6UPw\"}\n"])</script><script>self.__next_f.push([1,"14:[]\ne:\"$W14\"\n"])</script><script>self.__next_f.push([1,"10:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n"])</script><script>self.__next_f.push([1,"15:I[27201,[\"/_next/static/chunks/3spz7vbggeheh.js\",\"/_next/static/chunks/2im7c515bo69p.js\"],\"IconMark\"]\nd:null\n12:[[\"$\",\"meta\",\"0\",{\"name\":\"google-site-verification\",\"content\":\"OdsoXbZN5yDWQ7Qi0wIhECK2PZ9cxBQT1yISuMb1zFM\"}],[\"$\",\"link\",\"1\",{\"rel\":\"icon\",\"href\":\"/favicon.ico?favicon.2vob68tjqpejf.ico\",\"sizes\":\"256x256\",\"type\":\"image/x-icon\"}],[\"$\",\"$L15\",\"2\",{}]]\n"])</script><script>self.__next_f.push([1,"16:I[30525,[\"/_next/static/chunks/3spz7vbggeheh.js\",\"/_next/static/chunks/2im7c515bo69p.js\",\"/_next/static/chunks/3io6jn7gqayyz.js\",\"/_next/static/chunks/1mxc0ey88uhq9.js\"],\"default\"]\n17:T32f0,"])</script><script>self.__next_f.push([1,"### 1. 问题背景：\n\n页面使用grid布局分成三列，前两列分别占1fr宽度，第三列固定450px宽度。开始只写了第一列的内容，页面缩放时图表可以正常resize，但是在开始写第二列图表时，缩放页面发现第一列宽度正常缩小，但是第二列的宽度不会自动缩小，要手动刷新页面才可以。\n\n**页面主要布局结构如下：**\n\n```html\n\u003cdiv class=\"grid gap-10px grid-cols-3\"\u003e\n  \u003c!-- 第一列内容 --\u003e\n  \u003cdiv class=\"\"\u003e// ... 原有内容 ...\u003c/div\u003e\n\n  \u003c!-- 第二列内容 --\u003e\n  \u003cdiv class=\"\"\u003e// ... 原有内容 ...\u003c/div\u003e\n\n  \u003c!-- 第三列保持固定宽度 --\u003e\n  \u003cdiv class=\"\"\u003e\u003c/div\u003e\n\u003c/div\u003e\n```\n\n页面缩小后的效果图：（中间列宽度没有按预期缩小，左侧列被挤压）\n![image](/notes/echarts/echarts-resize-grid-error.png)\n\n### 2. 修复问题：\n\n```html\n\u003cdiv class=\"grid gap-10px grid-cols-[minmax(0,1fr)_minmax(0,1fr)_450px]\"\u003e\n  \u003c!-- 第一列 --\u003e\n  \u003cdiv class=\"\"\u003e// ... 原有内容 ...\u003c/div\u003e\n\n  \u003c!-- 第二列 --\u003e\n  \u003cdiv class=\"\"\u003e// ... 原有内容 ...\u003c/div\u003e\n\n  \u003c!-- 第三列保持固定宽度 --\u003e\n  \u003cdiv class=\"\"\u003e\u003c/div\u003e\n\u003c/div\u003e\n```\n\n修改后的效果图：（一、二列宽度一致且正常缩小，三列固定宽度不变）\n![image](/notes/echarts/echarts-resize-grid-fix.png)\n\n\u003e 使用 minmax(0,1fr) 替代简单的 1fr，防止内容溢出导致的布局问题。\n\n### 3. 完整代码（仅用于参考）\n\n\u003cdetails\u003e\n\u003csummary\u003e点此可查看完整内容代码\u003c/summary\u003e\n\n```jsx\n\u003ctemplate\u003e\n  \u003cdiv class=\"h-full p-20px box-border\"\u003e\n    \u003cdiv class=\"flex items-center mb-20px\"\u003e\n      \u003cel-button-group class=\"mr-20px\"\u003e\n        \u003cel-button\n          plain\n          v-for=\"item in dateList\"\n          :key=\"item.value\"\n          :class=\"{\n            'active-btn': currentDate === item.value,\n          }\"\n          @click=\"dateChange(item.value)\"\n        \u003e\n          {{ item.label }}\n        \u003c/el-button\u003e\n      \u003c/el-button-group\u003e\n      \u003cdiv class=\"w-260px\"\u003e\n        \u003cel-date-picker\n          v-model=\"dateSelectValue\"\n          type=\"daterange\"\n          range-separator=\"至\"\n          start-placeholder=\"开始日期\"\n          end-placeholder=\"结束日期\"\n        /\u003e\n      \u003c/div\u003e\n    \u003c/div\u003e\n    \u003cdiv class=\"grid gap-10px grid-cols-[1fr_1fr_450px]\"\u003e\n      \u003cdiv class=\"\"\u003e\n        \u003cdiv class=\"card\"\u003e\n          \u003cdiv class=\"card-title\"\u003e工单统计\u003c/div\u003e\n          \u003cul class=\"card-list flex flex-wrap\"\u003e\n            \u003cli v-for=\"item in orderList\" :key=\"item.name\"\u003e\n              \u003cimg :src=\"item.icon\" alt=\"\" class=\"h-40px mr-10px\" /\u003e\n              \u003cdiv class=\"flex flex-col\"\u003e\n                \u003cdiv\u003e{{ item.name }}\u003c/div\u003e\n                \u003cdiv\u003e\n                  \u003cspan class=\"font-bold text-20px\"\u003e{{ item.value }}\u003c/span\u003e 张\n                \u003c/div\u003e\n              \u003c/div\u003e\n            \u003c/li\u003e\n          \u003c/ul\u003e\n        \u003c/div\u003e\n        \u003cdiv class=\"card\"\u003e\n          \u003cdiv class=\"card-title\"\u003e报告任务统计\u003c/div\u003e\n          \u003cul class=\"card-list grid grid-cols-2\"\u003e\n            \u003cli v-for=\"item in reportList\" :key=\"item.name\"\u003e\n              \u003cimg :src=\"item.icon\" alt=\"\" class=\"h-40px mr-10px\" /\u003e\n              \u003cdiv class=\"flex flex-col\"\u003e\n                \u003cdiv\u003e{{ item.name }}\u003c/div\u003e\n                \u003cdiv\u003e\n                  \u003cspan class=\"font-bold text-20px\"\u003e{{ item.value }}\u003c/span\u003e 个\n                \u003c/div\u003e\n              \u003c/div\u003e\n            \u003c/li\u003e\n          \u003c/ul\u003e\n        \u003c/div\u003e\n        \u003cdiv class=\"card\"\u003e\n          \u003cdiv class=\"card-title\"\u003e告警统计\u003c/div\u003e\n          \u003cul class=\"card-list grid grid-cols-2\"\u003e\n            \u003cli v-for=\"item in alarmList\" :key=\"item.name\"\u003e\n              \u003cimg :src=\"item.icon\" alt=\"\" class=\"h-40px mr-10px\" /\u003e\n              \u003cdiv class=\"flex flex-col\"\u003e\n                \u003cdiv\u003e{{ item.name }}\u003c/div\u003e\n                \u003cdiv\u003e\n                  \u003cspan class=\"font-bold text-20px\"\u003e{{ item.value }}\u003c/span\u003e 个\n                \u003c/div\u003e\n              \u003c/div\u003e\n            \u003c/li\u003e\n          \u003c/ul\u003e\n        \u003c/div\u003e\n        \u003cdiv class=\"card\"\u003e\n          \u003cdiv class=\"card-title\"\u003e任务统计\u003c/div\u003e\n          \u003cdiv ref=\"taskChart\" class=\"h-300px\"\u003e\u003c/div\u003e\n        \u003c/div\u003e\n      \u003c/div\u003e\n      \u003cdiv class=\"\"\u003e\n        \u003cdiv class=\"card\"\u003e\n          \u003cdiv class=\"card-title\"\u003e工单状态分布\u003c/div\u003e\n          \u003cdiv ref=\"orderStatusChart\" class=\"h-300px\"\u003e\u003c/div\u003e\n        \u003c/div\u003e\n        \u003cdiv class=\"card\"\u003e\n          \u003cdiv class=\"card-title\"\u003e报告任务状态分布\u003c/div\u003e\n          \u003cdiv ref=\"reportStatusChart\" class=\"h-300px\"\u003e\u003c/div\u003e\n        \u003c/div\u003e\n        \u003cdiv class=\"card\"\u003e\n          \u003cdiv class=\"card-title\"\u003e告警等级分布\u003c/div\u003e\n          \u003cdiv ref=\"alarmLevelChart\" class=\"h-300px\"\u003e\u003c/div\u003e\n        \u003c/div\u003e\n      \u003c/div\u003e\n      \u003cdiv class=\"\"\u003e\u003c/div\u003e\n    \u003c/div\u003e\n  \u003c/div\u003e\n\u003c/template\u003e\n\n\u003cscript setup\u003e\nimport { ref, getCurrentInstance, reactive, onMounted, nextTick } from \"vue\";\n\nimport Header from \"@/components/Header.vue\";\nimport { useUserStore } from \"@/stores/userStore\";\nconst userStore = useUserStore();\nimport useVueRouter from \"@/hooks/useRouter\";\nconst { goBack, jumpPage } = useVueRouter();\n\nimport useChart from \"@/utils/useChart\";\n\nconst {\n  proxy: { $api },\n} = getCurrentInstance();\n\nconst dateList = ref([\n  {\n    label: \"今天\",\n    value: \"1\",\n  },\n  {\n    label: \"近一周\",\n    value: \"2\",\n  },\n  {\n    label: \"近一个月\",\n    value: \"3\",\n  },\n]);\nconst currentDate = ref(\"1\");\nconst dateSelectValue = ref(\"\");\n\nconst dateChange = (val) =\u003e {\n  currentDate.value = val;\n};\n\nconst allIcon = new URL(\"@/assets/images/icon1.png\", import.meta.url).href;\nconst finishIcon = new URL(\"@/assets/images/icon2.png\", import.meta.url).href;\nconst waitIcon = new URL(\"@/assets/images/icon3.png\", import.meta.url).href;\nconst processIcon = new URL(\"@/assets/images/icon4.png\", import.meta.url).href;\nconst overtimeIcon = new URL(\"@/assets/images/icon5.png\", import.meta.url).href;\nconst orderList = ref([\n  {\n    icon: allIcon,\n    name: \"累计工单\",\n    value: 310,\n  },\n  {\n    icon: finishIcon,\n    name: \"已处理工单\",\n    value: 270,\n  },\n  {\n    icon: waitIcon,\n    name: \"待处理\",\n    value: 40,\n  },\n  {\n    icon: processIcon,\n    name: \"处理中\",\n    value: 4,\n  },\n  {\n    icon: overtimeIcon,\n    name: \"超时工单\",\n    value: 40,\n  },\n]);\nconst reportList = ref([\n  {\n    icon: allIcon,\n    name: \"累计历史报告任务\",\n    value: 314,\n  },\n  {\n    icon: finishIcon,\n    name: \"已处理任务报告\",\n    value: 40,\n  },\n  {\n    icon: processIcon,\n    name: \"处理中任务报告\",\n    value: 270,\n  },\n  {\n    icon: waitIcon,\n    name: \"待处理任务报告\",\n    value: 4,\n  },\n]);\nconst alarmList = ref([\n  {\n    icon: allIcon,\n    name: \"累计历史告警\",\n    value: 88,\n  },\n  {\n    icon: overtimeIcon,\n    name: \"高风险告警\",\n    value: 12,\n  },\n  {\n    icon: processIcon,\n    name: \"中风险告警\",\n    value: 23,\n  },\n  {\n    icon: finishIcon,\n    name: \"低风险告警\",\n    value: 53,\n  },\n]);\n\nconst taskChart = ref(null);\nconst { setOption: setTaskOption } = useChart(taskChart, true, false);\n\nconst orderStatusChart = ref(null);\nconst { setOption: setOrderStatusOption } = useChart(\n  orderStatusChart,\n  true,\n  false\n);\n\nconst reportStatusChart = ref(null);\nconst { setOption: setReportStatusOption } = useChart(\n  reportStatusChart,\n  true,\n  false\n);\n\nconst alarmLevelChart = ref(null);\nconst { setOption: setAlarmLevelOption } = useChart(\n  alarmLevelChart,\n  true,\n  false\n);\n\nonMounted(() =\u003e {\n  initTaskChart();\n  initOrderStatusChart();\n  initReportStatusChart();\n  initAlarmLevelChart();\n  // window.addEventListener(\"resize\", () =\u003e {\n  //   taskChart.value?.resize();\n  //   orderStatusChart.value?.resize();\n  //   reportStatusChart.value?.resize();\n  //   alarmLevelChart.value?.resize();\n  // });\n});\nconst initTaskChart = () =\u003e {\n  const option = {\n    tooltip: {\n      trigger: \"axis\",\n      axisPointer: {\n        // Use axis to trigger tooltip\n        type: \"shadow\", // 'shadow' as default; can also be 'line' or 'shadow'\n      },\n    },\n    legend: {},\n    grid: {\n      left: \"3%\",\n      right: \"4%\",\n      bottom: \"3%\",\n      containLabel: true,\n    },\n    xAxis: {\n      type: \"value\",\n    },\n    yAxis: {\n      type: \"category\",\n      data: [\"巡检\", \"配置\", \"变更\", \"发布\", \"事件\"],\n    },\n    series: [\n      {\n        name: \"执行中\",\n        type: \"bar\",\n        stack: \"total\",\n        label: {\n          show: true,\n        },\n        emphasis: {\n          focus: \"series\",\n        },\n        itemStyle: {\n          color: \"#5299fb\",\n        },\n        data: [23, 31, 67, 24, 56],\n      },\n      {\n        name: \"已完成\",\n        type: \"bar\",\n        stack: \"total\",\n        label: {\n          show: true,\n        },\n        emphasis: {\n          focus: \"series\",\n        },\n        itemStyle: {\n          color: \"#31de7a\",\n        },\n        data: [17, 69, 45, 46, 74],\n      },\n    ],\n  };\n  setTaskOption(option);\n};\nconst initOrderStatusChart = () =\u003e {\n  const option = {\n    tooltip: {\n      trigger: \"item\",\n    },\n    series: [\n      {\n        name: \"状态\",\n        type: \"pie\",\n        radius: [\"40%\", \"70%\"],\n        avoidLabelOverlap: false,\n        color: [\"#ff9900\", \"#5299fb\", \"#31de7a\"],\n        label: {\n          show: true,\n          position: \"outside\",\n          formatter: \"{a|{b}，{c}\\n{d}%}\",\n          rich: {\n            a: {\n              align: \"left\",\n              lineHeight: 20,\n            },\n          },\n        },\n        // labelLine: {\n        //   normal: {\n        //     length: 15,\n        //     length2: 30,\n        //     lineStyle: {\n        //       width: 1,\n        //     },\n        //   },\n        // },\n        data: [\n          { value: 40, name: \"待处理\" },\n          { value: 23, name: \"处理中\" },\n          { value: 270, name: \"已处理\" },\n        ],\n      },\n    ],\n  };\n  setOrderStatusOption(option);\n};\nconst initReportStatusChart = () =\u003e {\n  const option = {\n    title: [\n      {\n        text: \"报告任务\",\n        x: \"50%\",\n        y: \"43%\",\n        textAlign: \"center\",\n        textStyle: {\n          fontSize: \"14\",\n          fontWeight: \"normal\",\n          color: \"#7F8D9D\",\n          textAlign: \"center\",\n        },\n      },\n      {\n        text: \"310条\",\n        left: \"50%\",\n        top: \"52%\",\n        textAlign: \"center\",\n        textStyle: {\n          fontSize: \"18\",\n          color: \"#5c5a68\",\n          textAlign: \"center\",\n        },\n      },\n    ],\n    tooltip: {\n      trigger: \"item\",\n    },\n    legend: {\n      top: \"0\",\n      left: \"60%\",\n    },\n    series: [\n      {\n        name: \"状态\",\n        type: \"pie\",\n        radius: [\"40%\", \"51%\"],\n        avoidLabelOverlap: false,\n        padAngle: 5,\n        itemStyle: {\n          borderRadius: 10,\n        },\n        color: [\"#5299fb\", \"#31de7a\"],\n        label: {\n          show: true,\n          position: \"outside\",\n          formatter: \"{a|{b}，{c}}\",\n          rich: {\n            a: {\n              align: \"left\",\n              lineHeight: 20,\n            },\n          },\n        },\n        itemStyle: {\n          borderRadius: 100,\n          shadowColor: \"#e8effa\",\n          shadowBlur: 0,\n          shadowOffsetY: 0,\n          shadowOffsetX: 0,\n          borderColor: \"#e8effa\",\n          borderWidth: 4,\n        },\n        data: [\n          { value: 270, name: \"处理中\" },\n          { value: 40, name: \"已处理\" },\n        ],\n      },\n    ],\n  };\n  setReportStatusOption(option);\n};\nconst initAlarmLevelChart = () =\u003e {\n  const option = {\n    tooltip: {\n      trigger: \"item\",\n    },\n    series: [\n      {\n        name: \"等级\",\n        type: \"pie\",\n        // radius: [\"40%\", \"70%\"],\n        avoidLabelOverlap: false,\n        color: [\"#f05a28\", \"#ff9900\", \"#5299fb\"],\n        label: {\n          show: true,\n          position: \"outside\",\n          formatter: \"{a|{b}，{c}\\n{d}%}\",\n          rich: {\n            a: {\n              align: \"left\",\n              lineHeight: 20,\n            },\n          },\n        },\n        data: [\n          { value: 12, name: \"高风险\" },\n          { value: 23, name: \"中风险\" },\n          { value: 53, name: \"低风险\" },\n        ],\n      },\n    ],\n  };\n  setAlarmLevelOption(option);\n};\n\u003c/script\u003e\n\n\u003cstyle scoped\u003e\n.el-button,\n:deep(.el-input__wrapper) {\n  background-color: transparent;\n}\n:deep(.el-date-editor.el-input),\n:deep(.el-date-editor.el-input__wrapper) {\n  width: 260px;\n}\n.active-btn {\n  border-color: #409eff !important;\n  color: #409eff !important;\n  z-index: 1;\n}\n.card {\n  margin-bottom: 20px;\n  padding: 10px;\n  box-sizing: border-box;\n  background-color: #fbfbfb;\n}\n.card-title {\n  position: relative;\n  margin-bottom: 10px;\n  padding-left: 15px;\n  font-size: 16px;\n  font-weight: bold;\n}\n.card-title::before {\n  content: \"\";\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 4px;\n  height: 100%;\n  background-color: #409eff;\n}\n.card-list li {\n  display: flex;\n  align-items: center;\n  min-width: 180px;\n  max-width: 200px;\n  margin-bottom: 20px;\n  margin-right: 10px;\n  padding: 10px;\n  border-radius: 8px;\n  background-image: url(\"../../assets/images/card-bg.svg\");\n  background-size: cover;\n  color: #3d5063;\n}\n\u003c/style\u003e\n\n```\n\n\u003c/details\u003e\n"])</script><script>self.__next_f.push([1,"a:[\"$\",\"main\",null,{\"className\":\"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30\",\"children\":[\"$\",\"$L16\",null,{\"note\":{\"slug\":\"echarts-grid-resize-d4f379\",\"title\":\"一次 grid 布局导致的echarts resize失效的记录\",\"category\":\"Echarts\",\"type\":\"review\",\"description\":\"一次 grid 布局导致的echarts resize失效的记录。\",\"status\":\"published\",\"tags\":[\"Echarts\",\"grid\"],\"source\":{\"label\":\"Cnblogs\",\"url\":\"https://www.cnblogs.com/lpkshuai\"},\"updatedAt\":\"2025-06-25\",\"readingTime\":\"1 min read\",\"content\":\"$17\"}}]}]\n"])</script></body></html>

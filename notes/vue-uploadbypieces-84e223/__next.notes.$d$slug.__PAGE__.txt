@@ -168,7 +168,7 @@ export { upload, uploadByPieces, getFileMd5 };
    <div slot="tip" class="el-upload__tip">提示</div>
 </el-upload>
 ```
-0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"vue-uploadbypieces-84e223","title":"大文件切片上传处理","category":"Vue","type":"snippet","description":"Vue 项目中使用大文件切片上传处理。","status":"published","tags":["Vue","file","upload","Pieces"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2022-08-14","readingTime":"1 min read","content":"$3"}}]}],["$L4","$L5"],"$L6"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"lV-0ro4vFuYEwp6N7ElJ2"}
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"vue-uploadbypieces-84e223","title":"大文件切片上传处理","category":"Vue","type":"snippet","description":"Vue 项目中使用大文件切片上传处理。","status":"published","tags":["Vue","file","upload","Pieces"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2022-08-14","readingTime":"1 min read","content":"$3"}}]}],["$L4","$L5"],"$L6"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"cd6PZPVGbS8L5Pw_K6UPw"}
 4:["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true}]
 5:["$","script","script-1",{"src":"/_next/static/chunks/1mxc0ey88uhq9.js","async":true}]
 6:["$","$L7",null,{"children":["$","$8",null,{"name":"Next.MetadataOutlet","children":"$@9"}]}]

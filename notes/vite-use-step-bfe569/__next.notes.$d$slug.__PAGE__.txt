@@ -1,0 +1,246 @@
+1:"$Sreact.fragment"
+2:I[30525,["/_next/static/chunks/3spz7vbggeheh.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3io6jn7gqayyz.js","/_next/static/chunks/1mxc0ey88uhq9.js"],"default"]
+7:I[97367,["/_next/static/chunks/3spz7vbggeheh.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
+8:"$Sreact.suspense"
+3:T1120,### 1. 搭建项目
+
+使用 NPM:
+
+```sh
+npm create vite@latest
+```
+
+使用 Yarn:
+
+```sh
+yarn create vite
+```
+
+使用 PNPM:
+
+```sh
+pnpm create vite
+```
+
+构建一个 Vite + Vue 项目
+
+```sh
+# npm 6.x
+npm create vite@latest my-vue-app --template vue
+
+# npm 7+, extra double-dash is needed:
+npm create vite@latest my-vue-app -- --template vue
+
+# yarn
+yarn create vite my-vue-app --template vue
+
+# pnpm
+pnpm create vite my-vue-app --template vue
+```
+
+### 2. 基础配置
+
+[官方文档地址](https://vitejs.dev/config/ "官方文档")
+
+```js
+import { defineConfig } from "vite";
+export default defineConfig({
+  // 配置选项
+});
+```
+
+### 3. 共享配置
+
+- 配置别名路径
+
+```js
+import { defineConfig } from "vite";
+import { resolve } from "path";
+export default defineConfig({
+  resolve: {
+    alias: [
+      {
+        find: "@",
+        replacement: resolve(__dirname, "src"),
+      },
+    ],
+  },
+});
+```
+
+- 图片便捷路径
+
+```jsx
+import { defineConfig } from "vite";
+export default defineConfig({
+  resolve: {
+    alias: [
+      {
+        find: "/img",
+        replacement: "src/assets/images/",
+      },
+    ],
+  },
+});
+
+// 使用
+<img src="/img/xx.png" alt="xx" />;
+```
+
+### 4. 开发服务器配置
+
+```js
+export default defineConfig({
+  server: {
+    host: true, // 服务器监听 IP 地址
+    port: 8080, // 服务器端口
+    hmr: true, // 热更新
+    open: true, // 项目启动自动打开浏览器
+    // 代理规则
+    proxy: {
+      // 字符串简写写法
+      "/foo": "http://localhost:4567",
+      // 选项写法
+      "/api": {
+        target: "http://jsonplaceholder.typicode.com",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ""),
+      },
+      // 正则表达式写法
+      "^/fallback/.*": {
+        target: "http://jsonplaceholder.typicode.com",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/fallback/, ""),
+      },
+      // 使用 proxy 实例
+      "/api": {
+        target: "http://jsonplaceholder.typicode.com",
+        changeOrigin: true,
+        configure: (proxy, options) => {
+          // proxy 是 'http-proxy' 的实例
+        },
+      },
+      // Proxying websockets or socket.io
+      "/socket.io": {
+        target: "ws://localhost:3000",
+        ws: true,
+      },
+    },
+  },
+});
+```
+
+### 5. 构建配置
+
+- 打包后按类型分文件夹
+
+```js
+import { defineConfig } from "vite";
+import { resolve } from "path";
+export default defineConfig({
+  build: {
+    assetsDir: "static",
+    rollupOptions: {
+      input: {
+        index: resolve(__dirname, "index.html"),
+      },
+      output: {
+        chunkFileNames: "static/js/[name]-[hash].js",
+        entryFileNames: "static/js/[name]-[hash].js",
+        assetFileNames: "static/[ext]/name-[hash].[ext]",
+      },
+    },
+  },
+});
+```
+
+### 6. 配置多环境
+
+根目录下分别新建`.env.development`,`.env.staging`,`.env.production`文件
+
+```sh
+//.env.development
+NODE_ENV="development"
+VITE_APP_BASEAPI="https://www.dev.com"
+
+//.env.staging
+NODE_ENV="staging"
+VITE_APP_BASEAPI="https://www.staging.com"
+
+//.env.production
+NODE_ENV="production"
+VITE_APP_BASEAPI="https://www.production.com"
+```
+
+package.json中修改
+
+```json
+ "scripts": {
+    "dev": "vite --mode development",
+    "build": "vite build --mode production",
+    "staging": "vite build --mode staging",
+    "preview": "vite preview"
+ },
+```
+
+项目中获取
+
+```jsx
+<script setup>console.log("env", import.meta.env.VITE_APP_BASEAPI)</script>
+```
+
+### 7. 配置多页面，多入口
+
+```js
+import { defineConfig } from "vite";
+import { resolve } from "path";
+export default defineConfig({
+  build: {
+    assetsDir: "static",
+    rollupOptions: {
+      input: {
+        index: resolve(__dirname, "index.html"),
+        project: resolve(__dirname, "project.html"),
+      },
+    },
+  },
+});
+```
+
+### 8. 打包文件分析
+
+安装 `rollup-plugin-visualizer` 插件
+
+```sh
+npm i rollup-plugin-visualizer
+```
+
+```js
+import { defineConfig } from "vite";
+import { visualizer } from "rollup-plugin-visualizer";
+export default defineConfig({
+  plugins: [
+    visualizer({
+      open: true, //注意这里要设置为true，否则无效
+      gzipSize: true,
+      brotliSize: true,
+    }),
+  ],
+});
+```
+
+### 9. 问题
+
+require is not defined
+
+```js
+// 报错
+require("./images/xx.png");
+// 修改成
+new URL("./images/xx.png", import.meta.url).href;
+```
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"vite-use-step-bfe569","title":"vite使用记录","category":"Tooling","type":"review","description":"vite使用记录。","status":"published","tags":["Vite"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2022-12-01","readingTime":"1 min read","content":"$3"}}]}],["$L4","$L5"],"$L6"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"cd6PZPVGbS8L5Pw_K6UPw"}
+4:["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true}]
+5:["$","script","script-1",{"src":"/_next/static/chunks/1mxc0ey88uhq9.js","async":true}]
+6:["$","$L7",null,{"children":["$","$8",null,{"name":"Next.MetadataOutlet","children":"$@9"}]}]
+9:null
