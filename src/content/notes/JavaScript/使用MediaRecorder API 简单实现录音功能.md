@@ -1,0 +1,96 @@
+---
+slug: js-使用MediaRecorder-api
+title: 使用MediaRecorder API 简单实现录音功能
+category: JavaScript
+type: snippet
+description: 使用 使用MediaRecorder API 简单实现录音功能。
+status: published
+tags: JavaScript, MediaRecorder
+updatedAt: 2024-07-23
+---
+
+### 1. 代码：
+
+```jsx
+<script setup>
+import { ref } from 'vue'
+
+const isRecording = ref(false)
+const mediaRecorder = ref(null)
+const audioChunks = ref([])
+
+const toggleRecording = async () => {
+  if (!isRecording.value) {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true })
+      mediaRecorder.value = new MediaRecorder(stream)
+
+      mediaRecorder.value.ondataavailable = (e) => {
+        audioChunks.value.push(e.data)
+      }
+
+      mediaRecorder.value.onstop = () => {
+        const audioBlob = new Blob(audioChunks.value, { type: 'audio/wav' })
+        const audioUrl = URL.createObjectURL(audioBlob)
+        // 这里可以处理录音文件，如上传或保存
+        console.log('录音文件:', audioUrl)
+      }
+
+      mediaRecorder.value.start()
+      isRecording.value = true
+    } catch (err) {
+      ElMessage.error('麦克风权限被拒绝')
+    }
+  } else {
+    mediaRecorder.value.stop()
+    isRecording.value = false
+    audioChunks.value = []
+  }
+}
+</template>
+
+<template>
+  <div class="audio-box mt-20px">
+    <button
+      class="record-btn"
+      :class="{ 'recording': isRecording }"
+      @click="toggleRecording"
+    >
+      {{ isRecording ? '停止录音' : '开始录音' }}
+    </button>
+  </div>
+</template>
+
+<style scoped>
+.audio-box {
+  height: 136px;
+  background: linear-gradient(145deg, #ffffff 0%, #ffffff 100%);
+  box-shadow: 0px 4px 20px 0px rgba(88, 125, 255, 0.1);
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+.record-btn {
+  width: 120px;
+  height: 40px;
+  background: #236ae5;
+  color: white;
+  border-radius: 20px;
+  transition: all 0.3s;
+}
+
+.record-btn.recording {
+  background: #ff4d4f;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+</style>
+```
+
+### 2. 参考：
+
+[MediaRecorder MDN 文档](https://developer.mozilla.org/zh-CN/docs/Web/API/MediaRecorder "MediaRecorder MDN 文档")
