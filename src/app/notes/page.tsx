@@ -1,5 +1,12 @@
 import { getAllNotes } from "@/lib/notes";
 import NotesHomeView from "@/components/notes/NotesHomeView";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "开发笔记",
+  description: "前端开发中的实战记录、问题排查与技术笔记。",
+  alternates: { canonical: "/notes" },
+};
 
 export default async function NotesPage() {
   const notes = await getAllNotes();

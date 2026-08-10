@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "个人项目",
+  description: "pkli 正在构建的前端交互实验、小工具与个人项目。",
+  alternates: { canonical: "/projects" },
+};
+
 export default function ProjectsPage() {
   const roadmap = [
     "Interactive animation demos",

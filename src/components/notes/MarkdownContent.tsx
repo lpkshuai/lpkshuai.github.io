@@ -65,7 +65,7 @@ export default function MarkdownContent({ content }: MarkdownContentProps) {
         rehypePlugins={[rehypeHighlight, rehypeRaw]}
         components={{
           h1: ({ children }) => (
-            <h1
+            <h2
               className="
               pt-4
               text-3xl
@@ -75,7 +75,7 @@ export default function MarkdownContent({ content }: MarkdownContentProps) {
             "
             >
               {children}
-            </h1>
+            </h2>
           ),
 
           h2: ({ children }) => (

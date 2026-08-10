@@ -4,9 +4,40 @@ import ScrollToTop from "@/components/ScrollToTop";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import AnalyticsProvider from "@/components/analytics/AnalyticsProvider";
+import { siteConfig } from "@/lib/seo";
 
 import type { Metadata } from "next";
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
+  applicationName: siteConfig.name,
+  title: {
+    default: siteConfig.name,
+    template: "%s | pkli's Personal Lab",
+  },
+  description: siteConfig.description,
+  authors: [{ name: siteConfig.author.name, url: siteConfig.author.url }],
+  creator: siteConfig.author.name,
+  publisher: siteConfig.author.name,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: siteConfig.locale,
+    url: "/",
+    siteName: siteConfig.name,
+    title: siteConfig.name,
+    description: siteConfig.description,
+  },
+  twitter: {
+    card: "summary",
+    title: siteConfig.name,
+    description: siteConfig.description,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   verification: {
     google: "OdsoXbZN5yDWQ7Qi0wIhECK2PZ9cxBQT1yISuMb1zFM",
   },
