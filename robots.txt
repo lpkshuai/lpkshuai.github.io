@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Host: https://lpkshuai.github.io/
+Sitemap: https://lpkshuai.github.io/sitemap.xml

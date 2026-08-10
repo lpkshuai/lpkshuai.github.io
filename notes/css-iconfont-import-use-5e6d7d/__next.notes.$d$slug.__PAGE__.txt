@@ -1,7 +1,7 @@
 1:"$Sreact.fragment"
-2:I[30525,["/_next/static/chunks/3spz7vbggeheh.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3io6jn7gqayyz.js","/_next/static/chunks/1mxc0ey88uhq9.js"],"default"]
-4:I[97367,["/_next/static/chunks/3spz7vbggeheh.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
-5:"$Sreact.suspense"
+2:I[30525,["/_next/static/chunks/3spz7vbggeheh.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3io6jn7gqayyz.js","/_next/static/chunks/25xf_lx6one9w.js"],"default"]
+7:I[97367,["/_next/static/chunks/3spz7vbggeheh.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
+8:"$Sreact.suspense"
 3:T102b,# 1. 图标获取
 
 :shaved_ice: [阿里巴巴矢量图标库](https://www.iconfont.cn/ "阿里巴巴矢量图标库")
@@ -133,5 +133,8 @@ font-class 是 Unicode 使用方式的一种变种，主要是解决 Unicode 书
 
 详见官方文档
 🍰 [链接地址](https://www.iconfont.cn/help/detail?helptype=code "链接地址")
-0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"css-iconfont-import-use-5e6d7d","title":"阿里巴巴iconfont字体图标使用","category":"CSS","type":"guide","description":"讲解了阿里巴巴iconfont字体图标的多种引入和使用方式的步骤。","status":"published","tags":["CSS","iconfont"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-04-03","readingTime":"3 min read","content":"$3"}}]}],[["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/1mxc0ey88uhq9.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"cd6PZPVGbS8L5Pw_K6UPw"}
-6:null
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"headline\":\"阿里巴巴iconfont字体图标使用\",\"description\":\"讲解了阿里巴巴iconfont字体图标的多种引入和使用方式的步骤。\",\"dateModified\":\"2023-04-03\",\"mainEntityOfPage\":\"https://lpkshuai.github.io/notes/css-iconfont-import-use-5e6d7d\",\"author\":{\"@type\":\"Person\",\"name\":\"pkli\",\"url\":\"https://github.com/lpkshuai\"},\"publisher\":{\"@type\":\"Person\",\"name\":\"pkli\"},\"keywords\":\"CSS, iconfont\",\"isBasedOn\":\"https://www.cnblogs.com/lpkshuai\"}"}}],["$","$L2",null,{"note":{"slug":"css-iconfont-import-use-5e6d7d","title":"阿里巴巴iconfont字体图标使用","category":"CSS","type":"guide","description":"讲解了阿里巴巴iconfont字体图标的多种引入和使用方式的步骤。","status":"published","tags":["CSS","iconfont"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-04-03","readingTime":"3 min read","content":"$3"}}]]}],["$L4","$L5"],"$L6"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"JfB7f7orLt5nmUrhU74bI"}
+4:["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true}]
+5:["$","script","script-1",{"src":"/_next/static/chunks/25xf_lx6one9w.js","async":true}]
+6:["$","$L7",null,{"children":["$","$8",null,{"name":"Next.MetadataOutlet","children":"$@9"}]}]
+9:null

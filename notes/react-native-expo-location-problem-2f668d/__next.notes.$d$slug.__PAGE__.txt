@@ -1,7 +1,7 @@
 1:"$Sreact.fragment"
-2:I[30525,["/_next/static/chunks/3spz7vbggeheh.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3io6jn7gqayyz.js","/_next/static/chunks/1mxc0ey88uhq9.js"],"default"]
-4:I[97367,["/_next/static/chunks/3spz7vbggeheh.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
-5:"$Sreact.suspense"
+2:I[30525,["/_next/static/chunks/3spz7vbggeheh.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3io6jn7gqayyz.js","/_next/static/chunks/25xf_lx6one9w.js"],"default"]
+7:I[97367,["/_next/static/chunks/3spz7vbggeheh.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
+8:"$Sreact.suspense"
 3:Taaf,## 问题描述：
 
 react native 中使用 expo-location 获取位置信息时，按照官方文档执行案例，获取不到位置结果。Location.requestForegroundPermissionsAsync() 执行后可以获取授权状态，但是执行到 Location.getCurrentPositionAsync() 时不会打印结果。
@@ -97,5 +97,8 @@ const styles = StyleSheet.create({
 [StackOverflow 讨论](https://stackoverflow.com/questions/69957907/expo-location-react-native-location-getcurrentpositionasync-never-returns "StackOverflow 讨论")
 [GitHub 相关 issues](https://github.com/expo/expo/issues/4304 "GitHub 相关 issues")
 [expo 开发论坛相关文章](https://forums.expo.dev/t/getcurrentpositionasync-doesnt-return-any-value-infinity-loading/23643 "expo 开发论坛相关文章")
-0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":["$","$L2",null,{"note":{"slug":"react-native-expo-location-problem-2f668d","title":"expo-location 获取不到位置信息","category":"ReactNative","type":"debugging","description":"使用 expo-location 获取不到位置信息 Location.getCurrentPositionAsync() 结果无打印。","status":"published","tags":["RN","Expo","expo-location"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-10-05","readingTime":"1 min read","content":"$3"}}]}],[["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/1mxc0ey88uhq9.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"cd6PZPVGbS8L5Pw_K6UPw"}
-6:null
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"headline\":\"expo-location 获取不到位置信息\",\"description\":\"使用 expo-location 获取不到位置信息 Location.getCurrentPositionAsync() 结果无打印。\",\"dateModified\":\"2023-10-05\",\"mainEntityOfPage\":\"https://lpkshuai.github.io/notes/react-native-expo-location-problem-2f668d\",\"author\":{\"@type\":\"Person\",\"name\":\"pkli\",\"url\":\"https://github.com/lpkshuai\"},\"publisher\":{\"@type\":\"Person\",\"name\":\"pkli\"},\"keywords\":\"RN, Expo, expo-location\",\"isBasedOn\":\"https://www.cnblogs.com/lpkshuai\"}"}}],["$","$L2",null,{"note":{"slug":"react-native-expo-location-problem-2f668d","title":"expo-location 获取不到位置信息","category":"ReactNative","type":"debugging","description":"使用 expo-location 获取不到位置信息 Location.getCurrentPositionAsync() 结果无打印。","status":"published","tags":["RN","Expo","expo-location"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-10-05","readingTime":"1 min read","content":"$3"}}]]}],["$L4","$L5"],"$L6"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"JfB7f7orLt5nmUrhU74bI"}
+4:["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true}]
+5:["$","script","script-1",{"src":"/_next/static/chunks/25xf_lx6one9w.js","async":true}]
+6:["$","$L7",null,{"children":["$","$8",null,{"name":"Next.MetadataOutlet","children":"$@9"}]}]
+9:null
