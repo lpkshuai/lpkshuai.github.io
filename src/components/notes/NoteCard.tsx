@@ -31,7 +31,7 @@ export default function NoteCard({ note, featured = false }: NoteCardProps) {
               {note.category}
             </span>
             <span className="text-(--foreground-dim)">
-              // {type[note.type]}
+              {"// "}{type[note.type]}
             </span>
           </div>
 

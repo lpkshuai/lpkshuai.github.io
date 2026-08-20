@@ -170,7 +170,7 @@ export default function LabDetailView({ id }: Props) {
       {/* 2. 标题区域 */}
       <header className="mb-10">
         <div className="mb-3 text-[10px] font-bold uppercase tracking-widest text-(--accent)">
-          // {displayCategoryTitle}
+          {"// "}{displayCategoryTitle}
         </div>
         <h1 className="text-3xl font-black uppercase tracking-tight md:text-5xl">
           {experiment.title}

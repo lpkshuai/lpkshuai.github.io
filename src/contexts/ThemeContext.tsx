@@ -1,5 +1,5 @@
 "use client";
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, startTransition, useContext, useEffect, useState } from "react";
 
 type Theme = "dark" | "light";
 type ThemeContextType = {
@@ -16,20 +16,25 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
     // 同步内联脚本已经设置的值，保证 React state 与 DOM 一致
     const current = document.documentElement.getAttribute(
       "data-theme",
     ) as Theme | null;
     if (current) {
-      setTheme(current);
+      startTransition(() => {
+        setMounted(true);
+        setTheme(current);
+      });
     } else {
       const savedTheme = localStorage.getItem("theme") as Theme | null;
       const prefersDark = window.matchMedia(
         "(prefers-color-scheme: dark)",
       ).matches;
       const resolved = savedTheme ?? (prefersDark ? "dark" : "light");
-      setTheme(resolved);
+      startTransition(() => {
+        setMounted(true);
+        setTheme(resolved);
+      });
       document.documentElement.setAttribute("data-theme", resolved);
     }
   }, []);

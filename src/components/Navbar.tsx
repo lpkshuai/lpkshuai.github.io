@@ -24,10 +24,6 @@ export default function Navbar() {
     };
   }, [isMenuOpen]);
 
-  useEffect(() => {
-    setIsMenuOpen(false);
-  }, [pathname]);
-
   const navItems = [
     { href: "/", label: dict.nav.home },
     { href: "/notes", label: dict.nav.notes },
@@ -139,6 +135,7 @@ export default function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
+                onClick={() => setIsMenuOpen(false)}
                 className={`text-4xl font-black transition-all duration-300 hover:scale-110 ${
                   isActive
                     ? "text-(--accent) drop-shadow-[0_0_15px_var(--accent)]"

@@ -32,7 +32,7 @@ export default function NotesDetailView({ note }: { note: NoteWithContent }) {
             {note.category}
           </span>
           <span className="text-(--foreground-dim)">
-            // {typeLabel[note.type]}
+            {"// "}{typeLabel[note.type]}
           </span>
           <span className="flex shrink-0 items-center gap-1.5 border border-(--panel-border) px-2 py-0.5 uppercase tracking-wider text-(--foreground-muted)">
             {note.status === "published" && (

@@ -1,5 +1,5 @@
 "use client";
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, startTransition, useContext, useEffect, useState } from "react";
 
 type Language = "zh" | "en";
 type LanguageContextType = {
@@ -19,11 +19,13 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
     const savedLang = localStorage.getItem("lang") as Language | null;
     const currentLang = savedLang || "zh";
 
-    setLanguageState(currentLang);
+    startTransition(() => {
+      setMounted(true);
+      setLanguageState(currentLang);
+    });
     document.documentElement.lang = currentLang;
 
     // 语言确定后，恢复页面显示 (配合 layout.tsx 中的脚本)

@@ -106,7 +106,7 @@ export default function MarkdownContent({ content }: MarkdownContentProps) {
 
           p: ({ node, children }) => {
             const hasImage = node?.children?.some(
-              (child: any) => child.tagName === "img",
+              (child) => child.type === "element" && child.tagName === "img",
             );
 
             if (hasImage) {
@@ -385,6 +385,7 @@ export default function MarkdownContent({ content }: MarkdownContentProps) {
         >
           <img
             src={previewImg}
+            alt=""
             className="
                 max-h-[90vh]
                 max-w-[90vw]
