@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
-2:I[30525,["/_next/static/chunks/3spz7vbggeheh.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3io6jn7gqayyz.js","/_next/static/chunks/25xf_lx6one9w.js"],"default"]
-7:I[97367,["/_next/static/chunks/3spz7vbggeheh.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
+2:I[30525,["/_next/static/chunks/323lf4udtd5cf.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3io6jn7gqayyz.js","/_next/static/chunks/32hhxo35kd9i2.js"],"default"]
+7:I[97367,["/_next/static/chunks/323lf4udtd5cf.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
 8:"$Sreact.suspense"
 3:Tfe1,## MIME type
 
@@ -90,8 +90,8 @@ Content-Type: text/plain
 ---------------------------974767299852498929531610575
 
 ```
-0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"headline\":\"常用Content-Type汇总\",\"description\":\"Content-Type定义以及常见的类型汇总。\",\"dateModified\":\"2023-04-06\",\"mainEntityOfPage\":\"https://lpkshuai.github.io/notes/mime-content-type-673505\",\"author\":{\"@type\":\"Person\",\"name\":\"pkli\",\"url\":\"https://github.com/lpkshuai\"},\"publisher\":{\"@type\":\"Person\",\"name\":\"pkli\"},\"keywords\":\"MIME, Content-Type, 工程化\",\"isBasedOn\":\"https://www.cnblogs.com/lpkshuai\"}"}}],["$","$L2",null,{"note":{"slug":"mime-content-type-673505","title":"常用Content-Type汇总","category":"Engineering","type":"concept","description":"Content-Type定义以及常见的类型汇总。","status":"published","tags":["MIME","Content-Type","工程化"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-04-06","readingTime":"2 min read","content":"$3"}}]]}],["$L4","$L5"],"$L6"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"JfB7f7orLt5nmUrhU74bI"}
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"headline\":\"常用Content-Type汇总\",\"description\":\"Content-Type定义以及常见的类型汇总。\",\"dateModified\":\"2023-04-06\",\"mainEntityOfPage\":\"https://lpkshuai.github.io/notes/mime-content-type-673505\",\"author\":{\"@type\":\"Person\",\"name\":\"pkli\",\"url\":\"https://github.com/lpkshuai\"},\"publisher\":{\"@type\":\"Person\",\"name\":\"pkli\"},\"keywords\":\"MIME, Content-Type, 工程化\",\"isBasedOn\":\"https://www.cnblogs.com/lpkshuai\"}"}}],["$","$L2",null,{"note":{"slug":"mime-content-type-673505","title":"常用Content-Type汇总","category":"Engineering","type":"concept","description":"Content-Type定义以及常见的类型汇总。","status":"published","tags":["MIME","Content-Type","工程化"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2023-04-06","readingTime":"2 min read","content":"$3"}}]]}],["$L4","$L5"],"$L6"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"IvElTKVDKTZlbp_yWRNDC"}
 4:["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true}]
-5:["$","script","script-1",{"src":"/_next/static/chunks/25xf_lx6one9w.js","async":true}]
+5:["$","script","script-1",{"src":"/_next/static/chunks/32hhxo35kd9i2.js","async":true}]
 6:["$","$L7",null,{"children":["$","$8",null,{"name":"Next.MetadataOutlet","children":"$@9"}]}]
 9:null
