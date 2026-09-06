@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
-2:I[30525,["/_next/static/chunks/323lf4udtd5cf.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3io6jn7gqayyz.js","/_next/static/chunks/32hhxo35kd9i2.js"],"default"]
-7:I[97367,["/_next/static/chunks/323lf4udtd5cf.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
+2:I[30525,["/_next/static/chunks/36oy-wyjck913.js","/_next/static/chunks/2im7c515bo69p.js","/_next/static/chunks/3io6jn7gqayyz.js","/_next/static/chunks/32hhxo35kd9i2.js"],"default"]
+7:I[97367,["/_next/static/chunks/36oy-wyjck913.js","/_next/static/chunks/2im7c515bo69p.js"],"OutletBoundary"]
 8:"$Sreact.suspense"
 3:T32f0,### 1. 问题背景：
 
@@ -556,7 +556,7 @@ const initAlarmLevelChart = () => {
 ```
 
 </details>
-0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"headline\":\"一次 grid 布局导致的echarts resize失效的记录\",\"description\":\"一次 grid 布局导致的echarts resize失效的记录。\",\"dateModified\":\"2025-06-25\",\"mainEntityOfPage\":\"https://lpkshuai.github.io/notes/echarts-grid-resize-d4f379\",\"author\":{\"@type\":\"Person\",\"name\":\"pkli\",\"url\":\"https://github.com/lpkshuai\"},\"publisher\":{\"@type\":\"Person\",\"name\":\"pkli\"},\"keywords\":\"Echarts, grid\",\"isBasedOn\":\"https://www.cnblogs.com/lpkshuai\"}"}}],["$","$L2",null,{"note":{"slug":"echarts-grid-resize-d4f379","title":"一次 grid 布局导致的echarts resize失效的记录","category":"Echarts","type":"review","description":"一次 grid 布局导致的echarts resize失效的记录。","status":"published","tags":["Echarts","grid"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2025-06-25","readingTime":"1 min read","content":"$3"}}]]}],["$L4","$L5"],"$L6"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"IvElTKVDKTZlbp_yWRNDC"}
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto max-w-3xl px-6 py-16 font-mono selection:bg-(--accent)/30","children":[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"headline\":\"一次 grid 布局导致的echarts resize失效的记录\",\"description\":\"一次 grid 布局导致的echarts resize失效的记录。\",\"dateModified\":\"2025-06-25\",\"mainEntityOfPage\":\"https://lpkshuai.github.io/notes/echarts-grid-resize-d4f379\",\"author\":{\"@type\":\"Person\",\"name\":\"pkli\",\"url\":\"https://github.com/lpkshuai\"},\"publisher\":{\"@type\":\"Person\",\"name\":\"pkli\"},\"keywords\":\"Echarts, grid\",\"isBasedOn\":\"https://www.cnblogs.com/lpkshuai\"}"}}],["$","$L2",null,{"note":{"slug":"echarts-grid-resize-d4f379","title":"一次 grid 布局导致的echarts resize失效的记录","category":"Echarts","type":"review","description":"一次 grid 布局导致的echarts resize失效的记录。","status":"published","tags":["Echarts","grid"],"source":{"label":"Cnblogs","url":"https://www.cnblogs.com/lpkshuai"},"updatedAt":"2025-06-25","readingTime":"1 min read","content":"$3"}}]]}],["$L4","$L5"],"$L6"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"-SjYub0APZmdWKJpYFjJg"}
 4:["$","script","script-0",{"src":"/_next/static/chunks/3io6jn7gqayyz.js","async":true}]
 5:["$","script","script-1",{"src":"/_next/static/chunks/32hhxo35kd9i2.js","async":true}]
 6:["$","$L7",null,{"children":["$","$8",null,{"name":"Next.MetadataOutlet","children":"$@9"}]}]
