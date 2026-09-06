@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Agent Lab · 迷你 Agent 实验室</title>
+  <meta name="description" content="纯前端实现的迷你 AI Agent：手写 SSE 流式解析 + Function Calling 工具调用循环，支持 DeepSeek / 智谱 / 通义 / Kimi 等多家 OpenAI 兼容 API。">
+  <!-- <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>"> -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <!-- <span class="logo">🤖</span> -->
+      <div>
+        <h1>AI Agent Lab</h1>
+        <p class="subtitle">浏览器里的迷你 Agent · 流式输出 + Function Calling</p>
+      </div>
+    </div>
+    <div class="controls">
+      <select id="provider-select" title="选择 API 平台"></select>
+      <input id="model-input" list="model-list" placeholder="模型名" title="模型名，可手动输入任意模型 ID">
+      <datalist id="model-list"></datalist>
+      <label class="switch" title="是否启用工具调用（Function Calling）">
+        <input type="checkbox" id="tools-toggle" checked>
+        <span>工具</span>
+      </label>
+      <button id="btn-clear" class="icon-btn" title="清空对话">🗑️</button>
+      <button id="btn-settings" class="icon-btn" title="设置 API Key">⚙️</button>
+    </div>
+  </header>
+
+  <main id="chat" class="chat" aria-live="polite"></main>
+
+  <div class="composer">
+    <div class="chips" id="chips">
+      <button data-q="计算 (3 + 4) × 12，再把结果开平方，保留两位小数">🧮 数学计算</button>
+      <button data-q="北京现在天气怎么样？">🌤️ 查天气</button>
+      <button data-q="现在几点了？距离 2027 年元旦还有多少天？">⏰ 时间</button>
+      <button data-q="先算距离 2027 年元旦还有多少天，再查北京和上海的天气，最后算出两地温差">🧪 多步任务</button>
+      <button data-q="不用工具，直接介绍一下什么是 Function Calling">💡 纯聊天</button>
+    </div>
+    <div class="input-row">
+      <textarea id="input" rows="1" placeholder="输入消息，Enter 发送，Shift+Enter 换行"></textarea>
+      <button id="btn-send" class="send-btn">发送</button>
+    </div>
+    <p class="footnote">API Key 只保存在你浏览器的 localStorage，不会上传到任何服务器 ·
+      <a href="./NOTES.md" target="_blank" rel="noopener">学习笔记</a> ·
+      <a href="https://github.com/lpkshuai" target="_blank" rel="noopener">by lpkshuai</a>
+    </p>
+  </div>
+
+  <!-- 设置弹窗 -->
+  <div class="modal-mask hidden" id="settings-modal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="settings-title">
+      <div class="modal-head">
+        <h2 id="settings-title">设置 · API 平台与 Key</h2>
+        <button id="btn-close-settings" class="icon-btn" title="关闭">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="tabs" id="provider-tabs"></div>
+
+        <p class="hint" id="provider-hint"></p>
+
+        <div class="field-group hidden" id="custom-fields">
+          <label>接口 Base URL（OpenAI 兼容）
+            <input id="custom-baseurl" placeholder="https://example.com/v1" autocomplete="off">
+          </label>
+          <label>模型名
+            <input id="custom-model" placeholder="例如 qwen-plus" autocomplete="off">
+          </label>
+        </div>
+
+        <label class="key-label">API Key
+          <div class="key-row">
+            <input id="key-input" type="password" placeholder="sk-..." autocomplete="off" spellcheck="false">
+            <button id="btn-toggle-key" class="icon-btn" title="显示 / 隐藏">👁</button>
+          </div>
+        </label>
+
+        <p class="hint" id="key-apply-hint"></p>
+        <p class="hint strong-hint">🔒 Key 只保存在当前浏览器的 localStorage，刷新后仍在、但不会离开你的电脑。
+          建议为演示单独申请一个、设置消费限额的 Key。</p>
+
+        <div class="modal-actions">
+          <button id="btn-remove-key" class="danger">删除本平台 Key</button>
+          <button id="btn-save-key" class="primary">保存</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>

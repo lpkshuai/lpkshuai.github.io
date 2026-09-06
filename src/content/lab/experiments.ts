@@ -160,7 +160,51 @@ export const labCategories: LabCategory[] = [
       // },
     ],
   },
-  /** 
+  {
+    id: "ai-agent",
+    category: "AI Agent",
+    title: {
+      zh: "魔像工坊 // Agent 循环",
+      en: "Golem Forge // Agent Loop",
+    },
+    description: {
+      zh: "以原生 JS 为符文，锻造栖息于浏览器中的迷你魔像——流式咒文（SSE）与召唤工具（Function Calling）环环相扣，令其自主行动。",
+      en: "Forge a golem that lives in the browser with vanilla JS — streaming incantations (SSE) bound to summoning circles (Function Calling).",
+    },
+    icon: "✦",
+    experiments: [
+      {
+        id: "agent-lab",
+        title: "Mini Agent Lab",
+        description:
+          "手写 SSE 流式解析 + Function Calling 工具循环的浏览器端迷你 AI Agent。访客在设置中填入自己的 API Key（仅存 localStorage），支持 DeepSeek、GLM、Kimi 等 OpenAI 兼容平台。",
+        tags: ["Vanilla JS", "SSE", "Function Calling"],
+        cover:
+          "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800&auto=format&fit=crop",
+        renderType: "iframe",
+        // 若未来在 next.config.ts 启用 basePath，这里需同步加上前缀
+        // 用完整文件路径：next dev 对 public 只按精确路径提供文件，
+        // 目录形式（/demos/agent-lab/）在开发环境会 404；GitHub Pages 两种都支持
+        embedUrl: "/demos/agent-lab/index.html",
+        sourceUrl: "https://github.com/lpkshuai/agent-lab",
+        codeSnippet: `
+// 迷你 Agent 循环：模型返回工具调用就执行，
+// 把结果喂回去，直到给出最终回答（或达到步数上限）
+while (steps++ < maxSteps) {
+  const { content, toolCalls } = await chat(messages);
+
+  if (!toolCalls?.length) return content; // 无工具调用 → 最终回答
+
+  for (const call of toolCalls) {
+    const result = await executeTool(call); // 计算器 / 时间 / 天气
+    messages.push({ role: "tool", content: String(result).slice(0, 4000) });
+  }
+}
+        `.trim(),
+      },
+    ],
+  },
+  /**
   {
     id: "webgl-threejs",
     category: "WebGL & Three.js",

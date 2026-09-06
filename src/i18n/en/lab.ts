@@ -27,6 +27,7 @@ export const lab = {
     viewSource: "VIEW_SOURCE_CODE",
     viewDemo: "VIEW_LIVE_DEMO",
     copyCode: "COPY_SPELL",
+    fullscreen: "FULLSCREEN",
     copied: "COPIED!",
   },
 };

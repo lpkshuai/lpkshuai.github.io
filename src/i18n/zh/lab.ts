@@ -26,6 +26,7 @@ export const lab = {
     viewSource: "查看源代码",
     viewDemo: "在线演示",
     copyCode: "复制咒语",
+    fullscreen: "全屏预览",
     copied: "已复制!",
   },
 };

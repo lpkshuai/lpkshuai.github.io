@@ -89,8 +89,9 @@ export default function LabDetailView({ id }: Props) {
             src={experiment.embedUrl}
             title={experiment.title}
             className="w-full h-full border-0 bg-(--background)"
-            // 安全沙箱：允许脚本运行，但禁止弹出窗口等潜在风险
-            sandbox="allow-scripts allow-same-origin allow-forms"
+            // 安全沙箱：允许脚本与表单；allow-popups（配合 escape-sandbox）
+            // 让 demo 内的 target="_blank" 外链能正常打开新窗口
+            sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"
             loading="lazy"
           />
         );
@@ -145,6 +146,11 @@ export default function LabDetailView({ id }: Props) {
     return t.detail.live;
   };
 
+  // iframe 案例未单独配置 demoUrl 时，自动把嵌入页作为在线演示入口
+  const demoHref =
+    experiment.demoUrl ??
+    (experiment.renderType === "iframe" ? experiment.embedUrl : undefined);
+
   // --------------------------------------------------------
   // D. 渲染 UI
   // --------------------------------------------------------
@@ -188,6 +194,18 @@ export default function LabDetailView({ id }: Props) {
 
           {/* 背景网格特效 */}
           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
+
+          {/* 全屏预览入口：iframe 案例可在独立页面查看 */}
+          {experiment.renderType === "iframe" && experiment.embedUrl && (
+            <a
+              href={experiment.embedUrl}
+              target="_blank"
+              rel="noopener"
+              className="absolute right-4 top-4 z-10 flex items-center gap-1.5 rounded-full border border-(--foreground)/10 bg-(--foreground)/80 px-3 py-1 text-[10px] font-bold text-(--background) backdrop-blur-sm shadow-sm transition-colors hover:bg-(--accent-strong)"
+            >
+              ⧉ {t.detail.fullscreen}
+            </a>
+          )}
 
           {/* 状态悬浮窗 */}
           <div className="absolute bottom-4 right-4 flex items-center gap-2 rounded-full border border-(--foreground)/10 bg-(--foreground)/80 px-3 py-1 text-[10px] font-bold text-(--background) backdrop-blur-sm shadow-sm">
@@ -271,9 +289,9 @@ export default function LabDetailView({ id }: Props) {
 
             <div className="flex flex-col gap-3">
               {/* 在线演示按钮 */}
-              {experiment.demoUrl && (
+              {demoHref && (
                 <Link
-                  href={experiment.demoUrl}
+                  href={demoHref}
                   target="_blank"
                   className="group relative flex w-full items-center justify-between overflow-hidden rounded-xl border border-(--accent-strong) bg-(--accent-strong)/10 px-4 py-3 transition-all hover:bg-(--accent-strong) hover:shadow-[0_0_20px_var(--accent-bg)]"
                 >
