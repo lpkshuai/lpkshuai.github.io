@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google AI 模式按钮 - 鼠标追踪彩色光弧</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: #ffffff;
+        font-family:
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+      }
+
+      /* 模拟 Google 搜索框外壳 */
+      .search-bar {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: min(520px, 92vw);
+        height: 52px;
+        padding: 0 8px 0 20px;
+        background: #fff;
+        border: 1px solid #dadce0;
+        border-radius: 26px;
+        box-shadow: 0 3px 10px rgba(31, 31, 31, 0.08);
+      }
+
+      .search-input {
+        flex: 1;
+        min-width: 0;
+        border: 0;
+        outline: 0;
+        font-size: 16px;
+        color: #1f1f1f;
+        background: transparent;
+      }
+
+      /* ── AI 模式按钮 ──
+     JS 只负责实时更新三个 CSS 变量：
+     --a: 光弧遮罩的旋转角度
+     --c: 底层彩色圆盘的自转角度
+     --o: 光效透明度 (0 ~ 1) */
+      .aim-btn {
+        --a: 20deg;
+        --c: 180deg;
+        --o: 0;
+        --sx: 4; /* 横向拉伸遮罩，使光弧贴合胶囊长边 */
+        --sy: 1.5;
+
+        position: relative;
+        isolation: isolate;
+        flex-shrink: 0;
+        height: 36px;
+        padding: 0 14px 0 12px;
+        border: 0;
+        border-radius: 100px;
+        background: none;
+        font: inherit;
+        font-size: 14px;
+        font-weight: 500;
+        color: #1f1f1f;
+        cursor: pointer;
+      }
+
+      /* 发光总容器 */
+      .aim-glow {
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        pointer-events: none;
+        opacity: 0.7;
+        z-index: 0;
+      }
+
+      .aim-fx {
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        opacity: var(--o);
+      }
+
+      /* 双层发光：soft 负责 4px 柔光外溢，sharp 负责 1px 贴边亮线 */
+      .aim-layer {
+        position: absolute;
+        inset: -1.5px;
+        border-radius: inherit;
+        overflow: hidden;
+        filter: blur(4px);
+      }
+
+      .aim-sharp {
+        filter: blur(1px);
+      }
+
+      /* 两个角向渐变取交集，切出两端渐隐的扇形光弧 */
+      .aim-mask {
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        scale: var(--sx) var(--sy);
+        -webkit-mask-image:
+          conic-gradient(
+            from var(--a),
+            transparent 0,
+            transparent 50%,
+            #000 68%,
+            #000 75%,
+            transparent 89%
+          ),
+          conic-gradient(from var(--a), #000 30%, transparent 50%, #000 70%);
+        mask-image:
+          conic-gradient(
+            from var(--a),
+            transparent 0,
+            transparent 50%,
+            #000 68%,
+            #000 75%,
+            transparent 89%
+          ),
+          conic-gradient(from var(--a), #000 30%, transparent 50%, #000 70%);
+        -webkit-mask-composite: source-in;
+        mask-composite: intersect;
+      }
+
+      .aim-sharp .aim-mask {
+        -webkit-mask-image:
+          conic-gradient(
+            from var(--a),
+            transparent 0,
+            transparent 62%,
+            #000 82%,
+            transparent 89%
+          ),
+          conic-gradient(from var(--a), #000 30%, transparent 50%, #000 70%);
+        mask-image:
+          conic-gradient(
+            from var(--a),
+            transparent 0,
+            transparent 62%,
+            #000 82%,
+            transparent 89%
+          ),
+          conic-gradient(from var(--a), #000 30%, transparent 50%, #000 70%);
+      }
+
+      /* 彩色角向渐变圆盘 */
+      .aim-disc {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        aspect-ratio: 1;
+        translate: 0 -50%;
+        border-radius: 50%;
+        rotate: var(--c);
+        background: conic-gradient(
+          #3186ff 34%,
+          #9378ff 37%,
+          #f96bd6 39%,
+          #fc413d 41%,
+          #fc413d 48%,
+          #ff6b2b 50%,
+          #fec700 52%,
+          #ffdb0f 56%,
+          #88de42 58%,
+          #0ebc5f 61%,
+          #0ebc5f 65%,
+          #2eaab2 70%,
+          #00a9bb 72%,
+          #3186ff 73%,
+          #3186ff 100%
+        );
+      }
+
+      /* 按钮实色盖板，遮住内部只留边缘光环 */
+      .aim-face {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        border-radius: inherit;
+        background: #f1f3f4;
+        transition: background 0.15s;
+      }
+
+      .aim-btn:hover .aim-face {
+        background: #e9ebee;
+      }
+      .aim-btn:active .aim-face {
+        background: #dfe2e6;
+      }
+
+      .aim-label {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        height: 100%;
+        white-space: nowrap;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="search-bar">
+      <input class="search-input" type="text" placeholder="向 Google 提问..." />
+      <button class="aim-btn" type="button">
+        <span class="aim-glow" aria-hidden="true">
+          <span class="aim-fx">
+            <span class="aim-layer"
+              ><span class="aim-mask"><span class="aim-disc"></span></span
+            ></span>
+            <span class="aim-layer aim-sharp"
+              ><span class="aim-mask"><span class="aim-disc"></span></span
+            ></span>
+          </span>
+        </span>
+        <span class="aim-face"></span>
+        <span class="aim-label">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.2"
+            stroke-linecap="round"
+            aria-hidden="true"
+          >
+            <circle cx="10" cy="10" r="6" />
+            <path d="M14.5 14.5 20 20" />
+            <path d="M19 2.5v5M16.5 5h5" stroke-width="1.8" />
+          </svg>
+          AI 模式
+        </span>
+      </button>
+    </div>
+
+    <script>
+      const ARC_OFFSET = 257; // 遮罩内光弧亮区的默认中心偏移角
+      const FOLLOW = 0.18; // 光弧追随鼠标的阻尼速度
+      const HUE_FOLLOW = 0.07; // 色盘随光弧缓慢漂移的速度
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+
+      const items = Array.from(document.querySelectorAll(".aim-btn")).map(
+        (el) => ({
+          el,
+          a: 20,
+          ta: 20, // 当前角度 / 目标角度
+          c: 180, // 色盘角度
+          o: 0,
+          to: 0, // 当前透明度 / 目标透明度
+        }),
+      );
+
+      // 计算两角度之间的最短带符号夹角，防止跨越 0°/360° 时反向绕大圈
+      function angleDiff(from, to) {
+        return ((((to - from) % 360) + 540) % 360) - 180;
+      }
+
+      let rafId = 0;
+      function kick() {
+        if (!rafId) rafId = requestAnimationFrame(frame);
+      }
+
+      function frame() {
+        rafId = 0;
+        let busy = false;
+
+        for (const it of items) {
+          const k = reduceMotion ? 1 : FOLLOW;
+          const d = angleDiff(it.a, it.ta);
+          it.a += d * k;
+
+          const dc = angleDiff(it.c, it.a + 25);
+          it.c += dc * (reduceMotion ? 1 : HUE_FOLLOW);
+
+          it.o += (it.to - it.o) * (reduceMotion ? 1 : 0.12);
+
+          it.el.style.setProperty("--a", it.a.toFixed(2) + "deg");
+          it.el.style.setProperty("--c", it.c.toFixed(2) + "deg");
+          it.el.style.setProperty("--o", it.o.toFixed(3));
+
+          if (
+            Math.abs(d) > 0.1 ||
+            Math.abs(dc) > 0.3 ||
+            Math.abs(it.to - it.o) > 0.003
+          ) {
+            busy = true;
+          }
+        }
+        if (busy) kick(); // 静止后自动停止动画循环，零空转开销
+      }
+
+      document.addEventListener(
+        "pointermove",
+        (e) => {
+          if (e.pointerType === "touch") return;
+
+          for (const it of items) {
+            const r = it.el.getBoundingClientRect();
+            const inside =
+              e.clientX >= r.left &&
+              e.clientX <= r.right &&
+              e.clientY >= r.top &&
+              e.clientY <= r.bottom;
+
+            if (inside) {
+              const cs = getComputedStyle(it.el);
+              const sx = parseFloat(cs.getPropertyValue("--sx")) || 1;
+              const sy = parseFloat(cs.getPropertyValue("--sy")) || 1;
+
+              // 还原遮罩拉伸前的坐标系再求角度，保证光弧对准指针最近一侧
+              const px = (e.clientX - (r.left + r.width / 2)) / sx;
+              const py = (e.clientY - (r.top + r.height / 2)) / sy;
+              const cursorAngle = (Math.atan2(py, px) * 180) / Math.PI + 90;
+
+              it.ta = cursorAngle - ARC_OFFSET;
+              it.to = 1;
+            } else {
+              it.to = 0;
+            }
+          }
+          kick();
+        },
+        { passive: true },
+      );
+
+      document.documentElement.addEventListener("mouseleave", () => {
+        for (const it of items) it.to = 0;
+        kick();
+      });
+    </script>
+  </body>
+</html>
