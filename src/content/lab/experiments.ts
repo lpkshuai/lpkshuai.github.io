@@ -158,6 +158,43 @@ export const labCategories: LabCategory[] = [
       //   demoUrl: "https://threejs-world.example.com", // ✅ 点击按钮跳转
       //   sourceUrl: "https://github.com/...",
       // },
+
+      {
+        id: "google-search-ai-button",
+        title: "Google AI 模式按钮彩色光弧",
+        description: "Google AI 模式搜索框按钮的鼠标追踪彩色光弧效果。",
+        tags: ["HTML", "CSS"],
+        cover: "/experiments/css/google-ai-btn.png",
+        renderType: "iframe",
+        embedUrl: "/demos/google-ai-button/index.html",
+        sourceUrl:
+          "https://github.com/lpkshuai/lpkshuai.github.io/tree/master/public/demos/google-ai-button",
+        codeSnippet: `
+.aim-mask {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  scale: var(--sx) var(--sy);
+  -webkit-mask-image:
+    conic-gradient(from var(--a), transparent 0, transparent 50%, #000 68%, #000 75%, transparent 89%),
+    conic-gradient(from var(--a), #000 30%, transparent 50%, #000 70%);
+  mask-image:
+    conic-gradient(from var(--a), transparent 0, transparent 50%, #000 68%, #000 75%, transparent 89%),
+    conic-gradient(from var(--a), #000 30%, transparent 50%, #000 70%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}
+
+.aim-sharp .aim-mask {
+  -webkit-mask-image:
+    conic-gradient(from var(--a), transparent 0, transparent 62%, #000 82%, transparent 89%),
+    conic-gradient(from var(--a), #000 30%, transparent 50%, #000 70%);
+  mask-image:
+    conic-gradient(from var(--a), transparent 0, transparent 62%, #000 82%, transparent 89%),
+    conic-gradient(from var(--a), #000 30%, transparent 50%, #000 70%);
+}
+        `.trim(),
+      },
     ],
   },
   {
